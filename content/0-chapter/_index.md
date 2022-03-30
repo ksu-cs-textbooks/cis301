@@ -8,7 +8,7 @@ pre = "<b>0. </b>"
 
 ### Chapter 0
 
-# Chapter Title Here
+# Getting started
 
 Chapter 0 tagline.
 
