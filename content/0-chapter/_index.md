@@ -11,3 +11,8 @@ pre = "<b>0. </b>"
 # Chapter Title Here
 
 Chapter 0 tagline.
+
+
+[Old textbook](http://logika.v3.sireum.org/dschmidt/)
+
+![Knights and knaves!](../images/knights-and-knaves.jpg "Smullyan")
