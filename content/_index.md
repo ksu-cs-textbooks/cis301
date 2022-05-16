@@ -5,10 +5,10 @@ date = 2021-05-24T01:01:01-05:00
 
 # CIS 301 Textbook
 
-This is the textbook for CIS 301.
+Julie Thornton  
+Computer Science Department  
+Kansas State University  
 
-Update this file in `content/_index.md`
+Email: juliet@ksu.edu
 
-Testing Deploy - if this appears, it is working!
-
-another line
+This is the textbook for CIS 301, Logical Foundations of Programming*, at Kansas State University. 
