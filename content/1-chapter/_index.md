@@ -1,13 +1,13 @@
 +++
-title = "Chapter 1 Title"
+title = "Basics and Logic Puzzles"
 date = 2018-08-24T10:53:05-05:00
-weight = 10
+weight = 2
 chapter = true
 pre = "<b>1. </b>"
 +++
 
 ### Chapter 1
 
-# Chapter Title Here
+# Basics and Logic Puzzles
 
 Chapter 1 tagline
