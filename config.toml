@@ -14,12 +14,11 @@ section = [ "HTML", "Iframeable", "Teleprompter"]
 
 [params]
   editURL = "https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/tree/master/content/"
-  description = "CIS 301 Textbook"
+  description = "CIS 301: Logical Foundations of Programming"
   author = "Julie Thornton"
   showVisitedLinks = false
   themeVariant = "purple"
   disableLanguageSwitchingButton = true
-  landingPageURL = "/"
 
 [blackfriday]
   plainIDAnchors = true
