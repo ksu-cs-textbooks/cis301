@@ -4,3 +4,13 @@ pre: "9.1. "
 weight: 100
 date: 2018-08-24T10:53:26-05:00
 ---
+
+## Function contracts
+
+## Preconditions
+
+## Postconditions
+
+## Work of the calling code
+
+## Examples

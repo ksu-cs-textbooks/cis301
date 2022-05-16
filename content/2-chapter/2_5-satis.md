@@ -1,5 +1,5 @@
 ---
 title: "Satisfiability"
-weight: 37
-pre: "2.8. "
+weight: 34
+pre: "2.5. "
 ---

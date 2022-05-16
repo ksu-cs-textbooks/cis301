@@ -1,5 +1,5 @@
 ---
 title: "Semantic Entailment"
-weight: 38
-pre: "2.9. "
+weight: 35
+pre: "2.6. "
 ---

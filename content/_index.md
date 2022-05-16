@@ -11,4 +11,4 @@ Kansas State University
 
 Email: juliet@ksu.edu
 
-This is the textbook for CIS 301, Logical Foundations of Programming*, at Kansas State University. 
+This is the textbook for CIS 301, *Logical Foundations of Programming*, at Kansas State University. 
