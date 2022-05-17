@@ -1,5 +1,5 @@
 ---
 title: "Logical Equivalence"
-weight: 33
-pre: "2.4. "
+weight: 32
+pre: "2.3. "
 ---

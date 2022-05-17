@@ -18,7 +18,14 @@ Knights ALWAYS tell the truth, and knaves ALWAYS lie.
 
 Can any inhabitant of the island of Knights and Knaves say, "I'm a knave"?
 
+<details>
+    <summary> <b> --> Click for solution </b></summary>
+
+
 No! A knight couldn't make that statement, as knights always tell the truth. And a knave couldn't make that statement either, since it would be true -- and knaves always lie.
+
+
+</details>
 
 ## Example 2
 
@@ -29,6 +36,9 @@ You see two inhabitants of the island of Knights and Knaves -- Ava and Bob.
 
 What types are Ava and Bob?
 
+<details>
+    <summary> <b> --> Click for solution </b></summary>
+
 Suppose Ava is a knight. Then her statement must be true, so Bob must be a knave. In this case, Bob's statement would be a lie (since he is a knave), which is what we want.
 
 Let's make sure there aren't any other answers that work.
@@ -36,6 +46,8 @@ Let's make sure there aren't any other answers that work.
 Suppose instead that Ava is a knave. Then her statement must be a lie, so Bob must be a knight. This would mean that Bob's statement should be true, but it's not -- Ava *is* a knave.
 
 We can conclude that Ava is a knight and Bob is a knave.
+
+</details>
 
 ## Example 3
 
@@ -47,6 +59,9 @@ You see two different inhabitants -- Eve and Fred.
 
 What types are Eve and Fred?
 
+<details>
+    <summary> <b> --> Click for solution </b></summary>
+
 Suppose first that Eve is a knight. Then her statement must be true. Since she isn't a knave, the only way for her statement to be true is if Fred is a knight.
 
 Let's make sure there aren't any other answers that work.
@@ -54,6 +69,8 @@ Let's make sure there aren't any other answers that work.
 Suppose instead that Eve is a knave. Already we are in trouble -- Eve's statement is already true no matter what type Fred is. Since Eve would lie if she was a knave, we know she must not be knave.
 
 We can conclude that Eve and Fred are both knights.
+
+</details>
 
 ## Example 4
 
@@ -64,6 +81,9 @@ You see three new inhabitants -- Sarah, Bill, and Mae.
 - Mae tells you, "Bill would tell you that I am a knave."
 
 What types are Sarah, Bill, and Mae?
+
+<details>
+    <summary> <b> --> Click for solution </b></summary>
 
 Before starting on this puzzle, it might help to rephrase Sarah's and Bill's statements. Sarah's statement that only a knave would say that Bill is knave is really saying that it is FALSE that Bill is a knave (since knaves lie). Another way to say it's false that Bill is a knave is to say that Bill is a knight. Similarly, we can rewrite Bill's statemnet to say that Mae is a knight.
 
@@ -78,5 +98,7 @@ Suppose Sarah is a knight. Then her statement is true, so Bill must also be a kn
 Suppose instead that Sarah is a knave. Then her statement is false, so Bill must be a knave. This would make Bill's claim false as well, so Mae must be a knave. Mae knows that Bill would say she was a knight (since Bill is a knave, and would lie), but if Mae was a knave then she would indeed lie and say that Bill would say she was a knave.
 
 We can conclude that all three are knights.
+
+</details>
 
 
