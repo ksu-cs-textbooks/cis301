@@ -9,5 +9,3 @@ pre = "<b>1. </b>"
 ### Chapter 1
 
 # Basics and Logic Puzzles
-
-Chapter 1 tagline
