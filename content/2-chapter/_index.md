@@ -8,5 +8,3 @@ pre = "<b>2. </b>"
 ### Chapter 2
 
 # Truth Tables
-
-Chapter X tagline.

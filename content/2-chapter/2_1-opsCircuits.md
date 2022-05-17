@@ -116,10 +116,10 @@ We can work out the outputs in stages, like this:
 
 ![circuit stages](/images/NotLogikaTT.png)
 
-We begin by writing the value of each set of inputs on the left, under their corresponding symbol on the right. Next we apply the operator (gate) with the highest precedence (covered in *Operator Precedence* in the next section). In our case the "()" make the AND (∧) symbol the highest.
+We begin by writing the value of each set of inputs on the left, under their corresponding symbol on the right. Next we apply the operator (gate) with the highest precedence (covered in *Operator Precedence* in the next section). In our case the `()` make the AND ( `∧` ) symbol the highest.
 
-A truth assignment is a unique permutation of the possible inputs for a system. For the ∧-gate, it is a 2-variable sequence. Considering the first row we see we have "T ∧ T". Looking that up in the ∧-gate truth table we see the result is also "T", and we record that under the "∧" symbol. We do the same thing all the other truth assignments.
+A truth assignment is a unique permutation of the possible inputs for a system. For the `∧`-gate, it is a 2-variable sequence. Considering the first row we see we have `T ∧ T`. Looking that up in the `∧`-gate truth table we see the result is also "T", and we record that under the `∧` symbol. We do the same thing all the other truth assignments.
 
-After the initial transcribing of the truth values under their respective variables, we look up the truth-values in the gate tables, not the variables. Also observe that while ∧ is symmetric -- i.e. "T ∧ F" and "F ∧ T" == "F" are both false -- the IMPLIES gate is not.
+After the initial transcribing of the truth values under their respective variables, we look up the truth-values in the gate tables, not the variables. Also observe that while `∧` is symmetric -- i.e. `T ∧ F` and `F ∧ T` are both false -- the IMPLIES gate is not.
 
-Now we look up the value under the "∧" symbol in the ¬ gate table. In the first row we see that the truth assignment for the first row, "T", is "F" and record it under the "¬" symbol. Do this for every row and we are done.
+Now we look up the value under the `∧` symbol in the ¬ gate table. In the first row we see that the truth assignment for the first row, "T", is "F" and record it under the `¬` symbol. Do this for every row and we are done.

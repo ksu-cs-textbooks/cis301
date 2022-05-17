@@ -95,9 +95,9 @@ Now we have the following statements:
 
 Suppose Sarah is a knight. Then her statement is true, so Bill must also be a knight. This would mean Bill's statement would also be true, so Mae is a knight as well. But Mae says that Bill would say she's a knave, and that's not true -- Bill would truthfully say that Mae is a knight.
 
-Suppose instead that Sarah is a knave. Then her statement is false, so Bill must be a knave. This would make Bill's claim false as well, so Mae must be a knave. Mae knows that Bill would say she was a knight (since Bill is a knave, and would lie), but if Mae was a knave then she would indeed lie and say that Bill would say she was a knave.
+Suppose instead that Sarah is a knave. Then her statement is false, so Bill must be a knave. This would make Bill's claim false as well, so Mae must be a knave. Mae knows that Bill would say she was a knight (since Bill is a knave, and would lie), and if Mae was a knave then she would indeed lie and say that Bill would say she was a knave.
 
-We can conclude that all three are knights.
+We can conclude that all three are knaves.
 
 </details>
 
