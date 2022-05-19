@@ -6,7 +6,7 @@ pre: "2.1. "
 
 In this chapter, we review basic notions about gates and learn the relationship between circuits and assignment-based computer programs. This sets the stage for analyzing modern programs.
 
-## Logical Operators
+## Logical operators
 
 There are four basic logic gates, with corresponding logical operators:
 
