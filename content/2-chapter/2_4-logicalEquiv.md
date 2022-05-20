@@ -49,8 +49,8 @@ We can similarly use truth tables to show the following common logical equivalen
 - Double negative: `¬ ¬ p` and `p`
 - Contrapositive: `p → q` and `¬ q → ¬ p`
 - Expressing an implies using an OR: `p → q` and `¬ p ∨ q`
-- One of DeMorgan's laws: `p ∧ q` and `( ¬ p ∨ ¬ q)`
-- Another of DeMorgan's laws: `p ∨ q` and `( ¬ p ∧ ¬ q)`
+- One of DeMorgan's laws: `¬ (p ∧ q)` and `( ¬ p ∨ ¬ q)`
+- Another of DeMorgan's laws: `¬ (p ∨ q)` and `( ¬ p ∧ ¬ q)`
 
 ## Expressing additional operators
 

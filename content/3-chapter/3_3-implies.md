@@ -38,7 +38,7 @@ Alternatively, if we don't get ice cream, we can be certain that it wasn't hot -
 !q -> !p
 ```
 
-(This form is called the *contrapositive*, which we learned about it in[section 2.4]({{<ref "2-chapter/2_4-logicalEquiv.md" >}})). We'll study it and other equivalent translations more in the next section.)
+(This form is called the *contrapositive*, which we learned about it in [section 2.4]({{<ref "2-chapter/2_4-logicalEquiv.md" >}})). We'll study it and other equivalent translations more in the next section.)
 
 ## p IF q statements
 
