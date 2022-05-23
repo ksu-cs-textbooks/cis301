@@ -8,5 +8,3 @@ pre = "<b>4. </b>"
 ### Chapter 4
 
 # Propositional Logic Proofs
-
-Chapter X tagline.
