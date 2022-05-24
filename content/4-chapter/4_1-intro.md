@@ -70,7 +70,7 @@ Each Logika proof should be written in a separate file with a .logika extension.
 Proofs in Logika are structured in two columns, with claims on the left and their supporting justification on the right:
 
 ```text
-premises ⊢ consequent
+premises ⊢ conclusion
 {
     1. claim_a          justification_a
     2. claim_b          justification_b
@@ -79,7 +79,7 @@ premises ⊢ consequent
 }
 ```
 
-Each claim is given a number, and these numbers are generally in order. However, the only rule is that claim numbers be unique (they may be out of order and/or non-consecutive). 
+Each claim is given a number, and these numbers are generally in order. However, the only rule is that claim numbers be unique (they may be out of order and/or non-consecutive). Once we have justified a claim in a proof, we will refer to it as a *fact*.
 
 We will see more details of Logika proof syntax as we progress through chapter 4.
 
@@ -95,6 +95,7 @@ p, q, !r |- p ^ q
     1. p            premise
     2. q            premise
     3. !r           premise
+    ...
 }
 ```
 
@@ -107,6 +108,7 @@ p, q, !r |- p ^ q
     10. q           premise
     2. !r           premise
     8. p            premise
+    ...
 }
 ```
 
@@ -116,6 +118,7 @@ We could only bring in some portion of our premises, if we wanted:
 p, q, !r |- p ^ q
 {
     1. p            premise
+    ...
 }
 ```
 
@@ -127,6 +130,7 @@ p, q, !r |- p ^ q
     //THIS IS WRONG!
 
     1. p, q, !r         premise
+    ...
 }
 ```
 

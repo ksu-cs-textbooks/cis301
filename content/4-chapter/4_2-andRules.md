@@ -204,6 +204,7 @@ p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)
     7. p                    ∧e1 3
     8. q                    ∧e2 3
     ...
+}
 ```
 
 Now, we look at what we are trying to prove -- `q ∧ (t ∨ s)`. Since its top-level operator is the AND, we know that we must separately prove `q` and `t ∨ s`. Then, we can use AND introduction to put the two pieces together to match our conclusion. We see that we already have `q` on line 8 and `t ∨ s` on line 6, so we add our final line to finish the proof:
