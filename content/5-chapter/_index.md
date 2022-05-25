@@ -8,5 +8,3 @@ pre = "<b>5. </b>"
 ### Chapter 5
 
 # Predicate Logic Translations
-
-Chapter X tagline.
