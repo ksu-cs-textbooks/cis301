@@ -24,7 +24,7 @@ Then we would first identify the propositional atom:
 p: I am going to work today
 ```
 
-and would then use a NOT operator to express the negation. Our full translation to propositional logic would be: `!p`
+and would then use a NOT operator to express the negation. Our full translation to propositional logic would be: ` ¬p`
 
 ### Example 2
 
@@ -39,7 +39,7 @@ We would identify the propositional atom:
 p: My sweater is replaceable.
 ```
 
-And again, our complete translation would be: `!p`
+And again, our complete translation would be: ` ¬p`
 
 ## AND translations
 
@@ -67,10 +67,10 @@ p: I like cake
 q: I like cupcakes
 ```
 
-We would then translate the clause "I don't like cupcakes" to `!q`, and then would translate the connective "but" to a logical AND operator. We would finish with the following translation:
+We would then translate the clause "I don't like cupcakes" to ` ¬q`, and then would translate the connective "but" to a logical AND operator. We would finish with the following translation:
 
 ```text
-p ^ !q
+p ∧  ¬q
 ```
 
 ### Example 2
@@ -91,7 +91,7 @@ q: The school has a track
 We would then see that we are really taking the sentence, "The school has a pool and a track" and negating it, which leaves us with the following translation: 
 
 ```text
-!(p ^ q)
+ ¬(p ∧ q)
 ```
 
 ## OR translations
@@ -141,5 +141,5 @@ q: Jane plays basketball on Saturday
 We then apply our equivalence for simulating an exclusive or operator, which we saw in [section 2.4]({{<ref "2-chapter/2_4-logicalEquiv.md" >}}). This leaves us with the following translation: 
 
 ```text
-(p V q) ^ !(p ^ q)
+(p V q) ∧  ¬(p ∧ q)
 ```

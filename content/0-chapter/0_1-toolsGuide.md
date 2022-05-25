@@ -20,7 +20,7 @@ Next, go [here](http://logika.v3.sireum.org/doc/01-getting-started/index.html) t
 
 Under 1.1.1 Installation, with the Release tab selected, choose either IVE for Windows or IVE for macOS. The instructions below should update based on your selection. For Windows, you will see:
 
-![download Sireum](/images/downloadSireum.png)
+ ![download Sireum](/images/downloadSireum.png)
 
 Follow the instructions to download and run Logika. For Windows, uncompress the download DIRECTLY on the C:\ drive (not in any subfolders). For Mac, put the Sireum application into the Applications folder.
 
@@ -49,12 +49,12 @@ Next, open Sireum IVE. You should see:
 
 Click *Get from VCS*. Now you should see something like:
 
-![Get from VCS](/images/getFromVCS.png)
+ ![Get from VCS](/images/getFromVCS.png)
 
 Paste the URL you copied from GitHub in the *URL* textbox above. 
 Under *Directory*, navigate to a folder on your computer specifically for CIS 301 (create one if it doesn't exist). Create a new empty folder within that CIS 301 folder to hold this new project. Select that new folder in the *Directory* box, so that you now have something like this:
 
-![Clone to Sireum](/images/cloneToSireum.png)
+ ![Clone to Sireum](/images/cloneToSireum.png)
 
 Click *Clone*. You should see a popup like this:
 
@@ -62,7 +62,7 @@ Click *Clone*. You should see a popup like this:
 
 Click *Use Token*. Now you see:
 
-![Generate token](/images/generateToken.png)
+ ![Generate token](/images/generateToken.png)
 
 Click *Generate...* This will bring up a browser asking you to login to your GitHub account. Do so there. It will then bring up a page about a *New personal access token*. Edit the expiration date of the token so that it expires after the end of the semester. Scroll down to the bottom of that page and click *Generate token*.
 
@@ -70,19 +70,19 @@ This should bring a new page that says *Personal access tokens*. There should be
 
 Go back to the dialog in Sireum/IntelliJ and paste in your token in the textbox. Click *Log In*.  You should see something like this:
 
-![Open project ](/images/openProject.png)
+ ![Open project ](/images/openProject.png)
 
 If you don't see the panel on the left side, click the *Project* label on the left border. Expand the *src* folder to see your starting files. Now you can double-click one of those src files to view and edit it.
 
 ## Check your GitHub settings in Sireum IVE
 
-After successfully cloning a GitHub repository, check your GitHub settings in Sireum/IntelliJ. Go to File->Settings, then Version Control, then GitHub. If you see your GitHub account listed, like this, then you are done:
+After successfully cloning a GitHub repository, check your GitHub settings in Sireum/IntelliJ. Go to File→Settings, then Version Control, then GitHub. If you see your GitHub account listed, like this, then you are done:
 
-![Check settings](/images/checkSettings.png)
+ ![Check settings](/images/checkSettings.png)
 
 If you don't see your GitHub account, click the + icon and then *Login with token...*. Paste in the same personal access token you used before, and select *Add Account*:
 
-![Add account](/images/addAccount.png)
+ ![Add account](/images/addAccount.png)
 
 ## Committing and pushing changes
 
@@ -90,7 +90,7 @@ When you are finished working, commit and push your changes to GitHub. (I recomm
 
 To do this, select *Git* in the menu, then *Commit*. Type in something under *Commit Message*. Click the down arrow next to the Commit button at the bottom, and select *Commit and Push*:
 
-![Commit and push](/images/commitAndPush.png)
+ ![Commit and push](/images/commitAndPush.png)
 
 In the resulting dialog, click *Push*. The first time you commit and push in IntelliJ, it will likely ask you to enter your name and email (this is just for documentation purposes in your repository). Enter them in the dialog and say OK.
 
@@ -102,7 +102,7 @@ Homework 0 will help you test the GitHub process.
 
 Sireum IVE looks a little different after it has been run the first time. If you want to clone a second (or third, etc.) repository, first open Sireum. It will automatically open your most recent project.
 
-To clone a new project, select *File->New->Project* from *Version control*. Then, follow the instructions in *Using GitHub to start homework assignments* above. You will likely not have to do anything with a personal access token or with entering information about your GitHub account. If you do have trouble working with additional repositories, though, I recommend trying to generate a new personal access token when prompted.
+To clone a new project, select *File→New→Project* from *Version control*. Then, follow the instructions in *Using GitHub to start homework assignments* above. You will likely not have to do anything with a personal access token or with entering information about your GitHub account. If you do have trouble working with additional repositories, though, I recommend trying to generate a new personal access token when prompted.
 
 ## Using Sireum IVE in the lab classrooms
 

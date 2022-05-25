@@ -77,7 +77,7 @@ This is the sentence structure I will use if I mean an exclusive or -- "either p
 
 In this setup, we CAN conclude that I do not have a car. This is because an exclusive or is FALSE when both sides are true, and I already know that one side is true (I have a bike). The only way for the first premise to be true is when I do not also have a car.
 
-## Logical arguments with *if/then* (aka *implies*, ->)
+## Logical arguments with *if/then* (aka *implies*, →)
 
 Statements with of the form, *if p, then q* are making a promise -- that if *p* is true, then they promise that *q* will also be true. We will later see this structure using the logical *implies* operator.
 

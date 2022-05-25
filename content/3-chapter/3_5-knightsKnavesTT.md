@@ -18,7 +18,7 @@ c: Carly is a knight
 
 ## Translating statements
 
-Once we have our propositional atoms, we can translate each statement in the puzzle to propositional logic. For each one, we want to capture that the statement is true IF AND ONLY IF the person speaking is a knight. (That way, the statement would be false whenever the person was not a knight -- i.e., when they were a knave.) We recall that we can express *if and only if* using a conjunction of implications. So if we want to write `p if and only if q`, then we can say `(p -> q) ^ (q -> p)`.
+Once we have our propositional atoms, we can translate each statement in the puzzle to propositional logic. For each one, we want to capture that the statement is true IF AND ONLY IF the person speaking is a knight. (That way, the statement would be false whenever the person was not a knight -- i.e., when they were a knave.) We recall that we can express *if and only if* using a conjunction of implications. So if we want to write `p if and only if q`, then we can say `(p → q) ∧ (q → p)`.
 
 As an example, suppose we have the following statement:
 
@@ -29,7 +29,7 @@ Adam says: Bob is a knight and Carly is a knave.
 Adam's statement should be true if and only if he is a knight, so we can translate it as follows:
 
 ```text
-(a -> (b ^ !c)) ^ ((b ^ !c) -> a)
+(a → (b ∧  ¬c)) ∧ ((b ∧  ¬c) → a)
 ```
 
 Which reads as:
@@ -59,29 +59,29 @@ b: Bob is a knight
 Then, we translate each statement:
 
 - *Bob and I are not the same*
-    - Translation: `(a -> (a ^ !b V !a ^ b)) ^ ((a ^ !b V !a ^ b) -> a)`
+    - Translation: `(a → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → a)`
     - Meaning: If Ava is a knight, then either Ava is a knight and Bob is a knave, or Ava is a knave and Bob is a knight (so they aren't the same type). Also, if Ava and Bob aren't the same type, then Ava must be a knight (because her statement would be true).
 - *Bob says, "Of Ava and I, exactly one is a knight.*
     - Bob is really saying the same thing as Ava...if exactly one is a knight, then either Ava is a knight and Bob is a knave, or Ava is a knave and Bob is a knight.
-    - Translation: `(b -> (a ^ !b V !a ^ b)) ^ ((a ^ !b V !a ^ b) -> b)`
+    - Translation: `(b → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → b)`
 
 We combine our translations for Ava and Bob and end up with the following propositional logic statement:
 
 ```text
-(a -> (a ^ !b V !a ^ b)) ^ ((a ^ !b V !a ^ b) -> a) ^ (b -> (a ^ !b V !a ^ b)) ^ ((a ^ !b V !a ^ b) -> b)`
+(a → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → a) ∧ (b → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → b)`
 ```
 
 We then complete the truth table for that statement:
 
 ```text
-                                                                                     *
+                                                                                  *
 ---------------------------------------------------------------------------------------------------------------
-a b | (a -> (a ^ !b V !a ^ b)) ^ ((a ^ !b V !a ^ b) -> a) ^ (b -> (a ^ !b V !a ^ b)) ^ ((a ^ !b V !a ^ b) -> b)
+a b | (a → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → a) ∧ (b → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → b)
 ---------------------------------------------------------------------------------------------------------------
-T T |    F     F F  F F  F     F     F F  F F  F    T     F    F     F F  F F  F     F     F F  F F  F    T
-T F |    T     T T  T F  F     T     T T  T F  F    T     T    T     T T  T F  F     F     T T  T F  F    F
-F T |    T     F F  T T  T     F     F F  T T  T    F     F    T     F F  T T  T     F     F F  T T  T    T
-F F |    T     F T  F T  F     T     F T  F T  F    T     T    T     F T  F T  F     T     F T  F T  F    T
+T T |    F    F F  F F  F     F     F F  F F  F    T    F    F    F F  F F  F     F     F F  F F  F    T
+T F |    T    T T  T F  F     T     T T  T F  F    T    T    T    T T  T F  F     F     T T  T F  F    F
+F T |    T    F F  T T  T     F     F F  T T  T    F    F    T    F F  T T  T     F     F F  T T  T    T
+F F |    T    F T  F T  F     T     F T  F T  F    T    T    T    F T  F T  F     T     F T  F T  F    T
 ---------------------------------------------------------------------------------------------------------------
 
 Contingent

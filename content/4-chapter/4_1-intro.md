@@ -29,7 +29,7 @@ For example, in the sequent:
 p → q , ¬ q  ⊢  ¬ p
 ```
 
-The premises are: `p -> q` and `!q`, and the conclusion is `!p`. 
+The premises are: `p → q` and ` ¬q`, and the conclusion is ` ¬p`. 
 
 (Shortcut: we can use `|-` in place of the `⊢` turnstile operator.)
 
@@ -49,7 +49,7 @@ To check if this sequent is valid, we must find all truth assignments for which 
 Here is a (non-Logika syntax) type of truth table that combines all three statements:
 
 ```text
-p q | (p -> q) | (!q) | !p
+p q | (p → q) | ( ¬q) |  ¬p
 ---------------------------
 T T |    T     |  F   | F
 T F |    F     |  T   | F
@@ -57,7 +57,7 @@ F T |    T     |  F   | T
 F F |    T     |  T   | T
 ```
 
-Examining each row in the above truth table, we see that only the truth assignment [F F] makes both premises (`p -> q` and `!q`) true. We look right to see that the same truth assignment also makes the conclusion (`!p`) true, which means that the sequent is valid.
+Examining each row in the above truth table, we see that only the truth assignment [F F] makes both premises (`p → q` and ` ¬q`) true. We look right to see that the same truth assignment also makes the conclusion (` ¬p`) true, which means that the sequent is valid.
 
 ## Logika proof syntax
 
@@ -90,11 +90,11 @@ The most basic justification for a claim in a proof is "premise". This justifica
 For example, we might bring in the premises from our sequent like this:
 
 ```text
-p, q, !r |- p ^ q
+p, q,  ¬r |- p ∧ q
 {
     1. p            premise
     2. q            premise
-    3. !r           premise
+    3.  ¬r           premise
     ...
 }
 ```
@@ -102,11 +102,11 @@ p, q, !r |- p ^ q
 We could also bring in the same premise multiple times, if we wanted. We could also use non-sequential line numbers, as long as each line number was unique:
 
 ```text
-p, q, !r |- p ^ q
+p, q,  ¬r |- p ∧ q
 {
     7. p            premise
     10. q           premise
-    2. !r           premise
+    2.  ¬r           premise
     8. p            premise
     ...
 }
@@ -115,7 +115,7 @@ p, q, !r |- p ^ q
 We could only bring in some portion of our premises, if we wanted:
 
 ```text
-p, q, !r |- p ^ q
+p, q,  ¬r |- p ∧ q
 {
     1. p            premise
     ...
@@ -125,11 +125,11 @@ p, q, !r |- p ^ q
 But we can only list one premise in each claim. For example, the following is not allowed:
 
 ```text
-p, q, !r |- p ^ q
+p, q,  ¬r |- p ∧ q
 {
-    //THIS IS WRONG!
+    //THIS IS WRONG ¬
 
-    1. p, q, !r         premise
+    1. p, q,  ¬r         premise
     ...
 }
 ```

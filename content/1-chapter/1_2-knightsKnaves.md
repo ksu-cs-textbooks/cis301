@@ -19,7 +19,7 @@ Knights ALWAYS tell the truth, and knaves ALWAYS lie.
 Can any inhabitant of the island of Knights and Knaves say, "I'm a knave"?
 
 <details>
-    <summary> <b> --> Click for solution </b></summary>
+    <summary> <b> -→ Click for solution </b></summary>
 
 
 No! A knight couldn't make that statement, as knights always tell the truth. And a knave couldn't make that statement either, since it would be true -- and knaves always lie.
@@ -37,7 +37,7 @@ You see two inhabitants of the island of Knights and Knaves -- Ava and Bob.
 What types are Ava and Bob?
 
 <details>
-    <summary> <b> --> Click for solution </b></summary>
+    <summary> <b> -→ Click for solution </b></summary>
 
 Suppose Ava is a knight. Then her statement must be true, so Bob must be a knave. In this case, Bob's statement would be a lie (since he is a knave), which is what we want.
 
@@ -60,7 +60,7 @@ You see two different inhabitants -- Eve and Fred.
 What types are Eve and Fred?
 
 <details>
-    <summary> <b> --> Click for solution </b></summary>
+    <summary> <b> -→ Click for solution </b></summary>
 
 Suppose first that Eve is a knight. Then her statement must be true. Since she isn't a knave, the only way for her statement to be true is if Fred is a knight.
 
@@ -83,7 +83,7 @@ You see three new inhabitants -- Sarah, Bill, and Mae.
 What types are Sarah, Bill, and Mae?
 
 <details>
-    <summary> <b> --> Click for solution </b></summary>
+    <summary> <b> -→ Click for solution </b></summary>
 
 Before starting on this puzzle, it might help to rephrase Sarah's and Bill's statements. Sarah's statement that only a knave would say that Bill is knave is really saying that it is FALSE that Bill is a knave (since knaves lie). Another way to say it's false that Bill is a knave is to say that Bill is a knight. Similarly, we can rewrite Bill's statemnet to say that Mae is a knight.
 

@@ -37,11 +37,11 @@ Consider the following three statements:
 We translate each sentence to propositional logic:
 
 - *I get cold except possibly if it is summer.*
-    - `p -> !q`
+    - `p →  ¬q`
     - Meaning: I promise that if I get cold, then it must not be summer...because I am always cold when it's not summer.
 
 - *If it's not summer, then I get cold.*
-    - `!q -> p`
+    - ` ¬q → p`
     - Meaning: I promise that anytime it isn't summer, then I will get cold.
 
 - *I get cold or it is summer.*
@@ -67,14 +67,14 @@ Consider the following two statements:
 We translate each sentence to propositional logic:
 
 - *I don't eat both chips and fries.*
-    - `!(p ^ q)`
+    - ` ¬(p ∧ q)`
 
 - *I don't eat chips and/or I don't eat fries.*
-    - `!p V !q`
+    - ` ¬p V  ¬q`
 
 These statements are clearly expressing the same idea -- if it's not the case that I eat both, then it's also true that there is at least one of the foods that I don't eat. This is an application of one of DeMorgan's laws: that `¬ (p ∧ q)` is equivalent to `( ¬ p ∨ ¬ q)`.
 
-If we were to create truth tables for both `!(p ^ q)` and `!p V !q`, we would see that they are *logically equivalent* (that the same truth assignments make each statement true).
+If we were to create truth tables for both ` ¬(p ∧ q)` and ` ¬p V  ¬q`, we would see that they are *logically equivalent* (that the same truth assignments make each statement true).
 
 ## Equivalence example 3
 
@@ -86,9 +86,9 @@ Using the same propositional atoms as example 2, we consider two more statements
 We translate each sentence to propositional logic:
 
 - *I don't eat chips or fries.*
-    - `!(p V q)`
+    - ` ¬(p V q)`
 
 - *I don't eat chips and I don't eat fries.*
-    - `!p ^ !q`
+    - ` ¬p ∧  ¬q`
 
 These statements are clearly expressing the same idea -- I have two foods (chips and fries), and I don't eat either one. This demonstrates another of DeMorgan's laws: that `¬ (p ∨ q)` is equivalent to `( ¬ p ∧ ¬ q)`. If we were to create truth tables for each statement, we would see that they are logically equivalent as well.

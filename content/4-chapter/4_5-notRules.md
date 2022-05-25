@@ -74,7 +74,7 @@ Note that the not introduction rule involves a subproof -- if we wish to prove `
 
 ## Bottom elimination
 
-There is a special law for reasoning forwards from an impossible situation — the ⊥e law — which says, in the case of a contradiction, everything becomes a fact. (That is, "if False is a fact, so is everything else!".) This rule is called "bottom elimination", and is written as `⊥e`. Here is a formalization of the rule:
+There is a special law for reasoning forwards from an impossible situation — the ⊥e law — which says, in the case of a contradiction, everything becomes a fact. (That is, "if False is a fact, so is everything else ¬".) This rule is called "bottom elimination", and is written as `⊥e`. Here is a formalization of the rule:
 
 ```text
          ⊥
@@ -357,7 +357,7 @@ It is not immediately clear how to prove either `p` or `q`. We will discuss proo
 }
 ```
 
-In subproof 2, we know we need to end with a contradiction. The only statements we have to work with are `¬(¬p ∨ ¬q)` and `¬p`. But if we use `∨i1` with `¬p`, then we could have `¬p ∨ ¬q` -- and then we could claim a contradiction! We complete the proof as shown (using the same strategy to prove `q`):
+In subproof 2, we know we need to end with a contradiction. The only statements we have to work with are `¬(¬p ∨ ¬q)` and `¬p`. But if we use `∨i1` with `¬p`, then we could have `¬p ∨ ¬q` -- and then we could claim a contradiction ¬ We complete the proof as shown (using the same strategy to prove `q`):
 
 ```text
 ¬(¬p ∨ ¬q) ⊢ p ∧ q

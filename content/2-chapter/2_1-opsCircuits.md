@@ -12,10 +12,10 @@ There are four basic logic gates, with corresponding logical operators:
 
 | Meaning | Logical Operator | Logic Gate |
 | --- | --- | --- |
-| p AND q | `p ∧ q` | ![AND gate](/images/AND.png) |
-| p OR q | `p ∨ q` | ![OR gate](/images/OR.png) |
-| NOT p | `¬p`| ![NOT gate](/images/NOT.png) |
-| p IMPLIES q | `p → q` | ![IMPLIES gate](/images/IMPLIES.png) |
+| p AND q | `p ∧ q` |  ![AND gate](/images/AND.png) |
+| p OR q | `p ∨ q` |  ![OR gate](/images/OR.png) |
+| NOT p | `¬p`|  ![NOT gate](/images/NOT.png) |
+| p IMPLIES q | `p → q` |  ![IMPLIES gate](/images/IMPLIES.png) |
 
 In the above drawings, the input wires are labelled with the names P and Q. The output that is computed is emitted from the rightmost wire which exits the gate. For these simple gates, it is possible to exhaustively test every permutation of potential inputs and summarize results in a table, called a truth table.
 
@@ -99,7 +99,7 @@ We can also compose the gates to define new operations.
 
 For example, this circuit:
 
-![circuit combo](/images/circuit1.png)
+ ![circuit combo](/images/circuit1.png)
 
 Written `¬(P ∧ Q)`, defines this computation of outputs:
 

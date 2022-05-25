@@ -13,16 +13,16 @@ For example, consider the following truth tables:
 ```text
           *
 -----------------------
-p q r | p -> q V !r ^ p
+p q r | p → q V ¬r ∧ p
 -----------------------
-T T T |   T    T F  F
-T T F |   T    T T  T
-T F T |   F    F F  F
-T F F |   T    T T  T
-F T T |   T    T F  F
-F T F |   T    T T  F
-F F T |   T    F F  F
-F F F |   T    F T  F
+T T T |   T   T F  F
+T T F |   T   T T  T
+T F T |   F   F F  F
+T F F |   T   T T  T
+F T T |   T   T F  F
+F T F |   T   T T  F
+F F T |   T   F F  F
+F F F |   T   F T  F
 ------------------------
 
 Contingent
@@ -36,7 +36,7 @@ And
 ```text
       *
 ------------
-p | p V !p 
+p | p V ¬p 
 ------------
 T |   T F
 F |   T T

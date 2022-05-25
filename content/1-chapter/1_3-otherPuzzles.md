@@ -24,7 +24,7 @@ Here is one example:
 > What day is it?
 
 <details>
-    <summary> <b> --> Click for solution </b></summary>
+    <summary> <b> -→ Click for solution </b></summary>
 
 To solve this puzzle, we consider what Lion's and Unicorn's statements would mean on each different day of the week.
 
@@ -62,7 +62,7 @@ Consider this puzzle:
 Which is which?  What day is it?
 
 <details>
-    <summary> <b> --> Click for solution </b></summary>
+    <summary> <b> -→ Click for solution </b></summary>
 
 Answer: Since the two creatures gave different answers, we can conclude that they must both be lying or both telling the truth. (Otherwise, both creatures would give you the same name.) Sunday is the only such day.
 
@@ -78,12 +78,12 @@ Consider a second puzzle, with the same setup as to which days each twin lies an
 <br><br>
 > The first one says:  "Tweedledee owns the rattle."
 <br><br>
-> The second one says: "I'm Tweedledee!"
+> The second one says: "I'm Tweedledee ¬"
 <br><br>
 > Who gets the rattle?
 
 <details>
-    <summary> <b> --> Click for solution </b></summary>
+    <summary> <b> -→ Click for solution </b></summary>
 
 To solve this puzzle, we can explore the possibilities for each twin lying or telling the truth.
 
@@ -110,7 +110,7 @@ Here is one such puzzle:
 > Where is the portrait?
 
 <details>
-    <summary> <b> --> Click for solution </b></summary>
+    <summary> <b> -→ Click for solution </b></summary>
 
 To solve this puzzle, we recognize that there are only three possibilities -- the portrait must be in either the gold casket, the silver casket, or the lead casket. We consider the implications of each:
 

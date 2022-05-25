@@ -168,7 +168,7 @@ p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)
 {
     1. p ∧ q ∧ r            premise
     2. p ∧ (t ∨ s)          premise
-    3. p                    ∧e1 1   //NO! Won't work.
+    3. p                    ∧e1 1   //NO ¬ Won't work.
     ...
 }
 ```
