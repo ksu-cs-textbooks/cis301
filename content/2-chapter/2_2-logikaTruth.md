@@ -27,7 +27,7 @@ For example, in the statement `(p ∨ q) ∧ ¬p`, we would evaluate the operato
 Sometimes we have more than one of the same operator in a single statement. For example: `p ∨ q ∨ r`. Different operators have different rules for resolving multiple occurrences:
 
 1) Multiple parentheses - the innermost parentheses are resolved first, working from inside out.
-2) Multiple not ( `¬` ) operators -- the rightmost `¬` is resolved first, working from right to left. For example: `¬¬p` is equivalent to `¬(¬p)`.
+2) Multiple not ( `¬` ) operators -- the rightmost `¬` is resolved first, working from right to left. For example, `¬¬p` is equivalent to `¬(¬p)`.
 3) Multiple and ( `∧` ) operators -- the leftmost `∧` is resolved first, working from left to right. For example, `p ∧ q ∧ r` is equivalent to `(p ∧ q) ∧ r`.
 4) Multiple or ( `∨` ) operators -- the leftmost `∨` is resolved first, working from left to right. For example, `p ∨ q ∨ r` is equivalent to `(p ∨ q) ∨ r`.
 5) Multiple implies ( `→` ) operators -- the rightmost `→` is resolved first, working from right to left. For example, `p → q → r` is equivalent to `p → (q → r)`.

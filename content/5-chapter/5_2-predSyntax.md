@@ -46,9 +46,35 @@ Using our individuals above, we would have that:
 
 We will introduce two **quantifiers** in predicate logic, which help us make statements about a domain of individuals.
 
-The `∀` quantifier, called the **universal quantifier** and read as *for all*, lets us make statements that pertain to ALL individuals in a domain. `∀ n P(n)` means: for every individual `n` (in some domain), `P(n)` is true.
+### Universal quantifier
 
-The `∃` quantifier, called the **existential quantifier** and read as *there exists*, lets us make statement that pertain to AT LEAST ONE individual in a domain. `∃ n P(n)` means: there exists at least one individual `n` (in some domain) where `P(n)` is true.
+The `∀` quantifier, called the **universal quantifier** and read as *for all*, lets us make statements that pertain to ALL individuals in a domain.
+
+ `∀ n P(n)` means: for every individual `n` (in some domain), `P(n)` is true. Here, `n` is a variable that stands for a particular individual in the domain. You can think of it like a foreach loop in C#:
+
+ ```text
+ foreach(type n in domain)
+ {
+     //P(n) is true every time
+ }
+ ```
+
+ where `n` is initially the first individual in the domain, then `n` is the second individual in the domain, etc. 
+
+### Existential quantifier
+
+ The `∃` quantifier, called the **existential quantifier** and read as *there exists*, lets us make statement that pertain to AT LEAST ONE individual in a domain. 
+
+`∃ n P(n)` means: there exists at least one individual `n` (in some domain) where `P(n)` is true. You can again think of it as a foreach loop:
+
+ ```text
+ foreach(type n in domain)
+ {
+     //we can find at least one time where P(n) is true
+ }
+ ```
+
+### Universal quantifier example
 
 For example, suppose our domain is all candy bars, and that we have the predicate `isSweet(bar)`, which returns whether `bar` is sweet. We might write:
 
@@ -56,7 +82,9 @@ For example, suppose our domain is all candy bars, and that we have the predicat
 ∀ x isSweet(x)
 ```
 
-Which we would read as: "for all candy bars x, x is sweet", or, more compactly, as: "all candy bars are sweet".
+Which we would read as: *for all candy bars x, x is sweet*, or, more compactly, as: *all candy bars are sweet*.
+
+### Existential quantifier example
 
 If instead we wrote:
 
@@ -64,7 +92,7 @@ If instead we wrote:
 ∃ x isSweet(x)
 ```
 
-We would read it as: "there exists at least one candy bar x where x is sweet", or, more compactly, as "there exists at least one sweet candy bar".
+We would read it as: *there exists at least one candy bar x where x is sweet*, or, more compactly, as *there exists at least one sweet candy bar*.
 
 ## Early examples
 
@@ -112,3 +140,9 @@ We likely only meant to include the first case. In that case, we would want to s
 ```
 
 We will usually want to use the `∧` operator instead of the `→` operator when making a statement about one/some individuals.
+
+## Quantifier symbols
+
+The official symbol for the universal quantifier ("for all") is an upside-down A, like this: `∀`. You are welcome to substitute either a capital `A`, or with the word `all` or `forall`. This will be especially handy when we reach Chapter 6 on writing proofs in predicate logic.
+
+The official symbol for the existential quantifier ("there exists") is a backwards E, like this: `∃`. You are welcome to substitute either a capital `E`, or with the word `some` or `exists`.
