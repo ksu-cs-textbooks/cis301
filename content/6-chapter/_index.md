@@ -9,4 +9,4 @@ pre = "<b>6. </b>"
 
 # Predicate Logic Proofs
 
-Chapter X tagline.
+Now that we have seen how to translate statements to predicate logic, we will learn new deduction rules for working with universal and existential quantifiers. We will be able to add those rules to our propositional logic deduction rules and show that a set of premises proves a conclusion in predicate logic.
