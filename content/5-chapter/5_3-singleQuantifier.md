@@ -16,7 +16,7 @@ Suppose our domain is animals and that we have the following two predicates:
 
 Suppose we also have that `Squeaky` is an individual in our domain.
 
-We will practice translating from predicate logic to English. Think about what the following statements mean, and click to reveal each answer:
+We will practice translating from predicate logic to English. Think about what the following propositions mean, and click to reveal each answer:
 
 - `isMouse(Squeaky) ∧ ¬inHouse(Squeaky)`
 
@@ -175,7 +175,7 @@ Suppose our domain is people and that we have the following two predicates:
 - `K(x)`: whether person `x` is a kid
 - `M(x)`: whether person `x` likes marshmallows
 
-We will practice translating from English to predicate logic. Think about what the following statements mean, and click to reveal each answer:
+We will practice translating from English to predicate logic. Think about what the following sentences mean, and click to reveal each answer:
 
 - *No kids like marshmallows.*
     - <details>
@@ -242,63 +242,63 @@ Now suppose that we have the following predicates for individuals in our domain:
 - `Sib(x)`: whether person `x` has siblings
 - `Red(x)`: whether person `x` has red hair
 
-We will practice evaluating predicate logic statements on our domain of people. Think about whether the following statements would be true or false over our domain, and then click to reveal each answer:
+We will practice evaluating predicate logic statements on our domain of people. Think about whether the following propositions would be true or false over our domain, and then click to reveal each answer:
 
 - `∀ x Ad(x)`
     - <details>
         <summary> <b> Click here for solution </b></summary>
-            This statement translates as, "All people are adults". This is false for our domain, as we have one person (Bob) who is not an adult.
+            This proposition translates as, "All people are adults". This is false for our domain, as we have one person (Bob) who is not an adult.
         </details>
         <br>
 
  - `∀ x ¬Ad(x)`
     - <details>
         <summary> <b> Click here for solution </b></summary>
-            This statement translates as, "All people are not adults". This is false for our domain, as we have three people (Jane, Alice, and Joe) are are adults.
+            This proposition translates as, "All people are not adults". This is false for our domain, as we have three people (Jane, Alice, and Joe) are are adults.
         </details>
         <br>       
 
  - `¬(∀ x Ad(x))`
     - <details>
         <summary> <b> Click here for solution </b></summary>
-            This statement translates as, "Not all people are adults". This is true for our domain, as we can find a person (Bob) who is not an adult.
+            This proposition translates as, "Not all people are adults". This is true for our domain, as we can find a person (Bob) who is not an adult.
         </details>
         <br>       
 
  - `∀ x (KS(x) → Sib(x))`
     - <details>
         <summary> <b> Click here for solution </b></summary>
-            This statement translates as, "Everyone who lives in Kansas has siblings". This is true for our domain, as we have two people who live in Kansas (Bob and Alice), and both of them have siblings.
+            This proposition translates as, "Everyone who lives in Kansas has siblings". This is true for our domain, as we have two people who live in Kansas (Bob and Alice), and both of them have siblings.
         </details>
         <br>
 
  - `∃ x (¬KS(x) ∧ Sib(x))`
     - <details>
         <summary> <b> Click here for solution </b></summary>
-            This statement translates as, "There is a person who doesn't live in Kansas and has siblings". This is true for our domain, as Joe lives in Nebraska and has siblings.
+            This proposition translates as, "There is a person who doesn't live in Kansas and has siblings". This is true for our domain, as Joe lives in Nebraska and has siblings.
         </details>
         <br>  
 
  - `¬(∃ x (KS(x) ∧ ¬Ad(x))`
     - <details>
         <summary> <b> Click here for solution </b></summary>
-            This statement translates as, "There does not exist a person who lives in Kansas and is not an adult". This is false for our domain, as Bob lives in Kansas and is not an adult.
+            This proposition translates as, "There does not exist a person who lives in Kansas and is not an adult". This is false for our domain, as Bob lives in Kansas and is not an adult.
         <br> 
 
  - `¬(∃ x (Sib(x) ∧ Red(x))`
     - <details>
         <summary> <b> Click here for solution </b></summary>
-            This statement translates as, "There does not exist a person with siblings who has red hair". This is true for our domain, as no one with siblings (Bob, Alice, or Joe) has red hair.
+            This proposition translates as, "There does not exist a person with siblings who has red hair". This is true for our domain, as no one with siblings (Bob, Alice, or Joe) has red hair.
         <br>
 
  - `∀ x (Red(x) → Sib(x))`
     - <details>
         <summary> <b> Click here for solution </b></summary>
-            This statement translates as, "All people with red hair have siblings". This is true for our domain, as no one has red hair. This means that the implies statement is vacuously true for every person (since `Red(x)` is false for each person), which makes the overall statement true.
+            This proposition translates as, "All people with red hair have siblings". This is true for our domain, as no one has red hair. This means that the implies statement is vacuously true for every person (since `Red(x)` is false for each person), which makes the overall proposition true.
         <br> 
 
  - `∀ x (KS(x) ∨ Sib(x))`
     - <details>
         <summary> <b> Click here for solution </b></summary>
-            This statement translates as, "Everyone lives in Kansas and/or has siblings". This is false for our domain -- there is one person, Jane, who doesn't live in Kansas and also doesn't have siblings.
+            This proposition translates as, "Everyone lives in Kansas and/or has siblings". This is false for our domain -- there is one person, Jane, who doesn't live in Kansas and also doesn't have siblings.
         <br> 

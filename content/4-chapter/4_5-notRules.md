@@ -168,7 +168,7 @@ We start by listing our premise, and extracting the two sides of the AND stateme
 }
 ```
 
-Next, we see that our conclusion has the form NOT (something), so this tells us that we will need to introduce a NOT (using the `¬ i` rule). In fact, ANY time we wish to prove a statement of the form NOT (something), we will always use the `¬ i` rule. (We will discuss proof strategies in detail in the next section.) Since we want to prove `¬ (p ∨ q)`, then we open a subproof where we assume `p ∨ q`. If we can end that subproof with a contradiction, then we can use `¬ i` afterwards to conclude `¬(p ∨ q)`.
+Next, we see that our conclusion has the form NOT (something), so this tells us that we will need to introduce a NOT (using the `¬ i` rule). In fact, ANY time we wish to prove a proposition of the form NOT (something), we will always use the `¬ i` rule. (We will discuss proof strategies in detail in the next section.) Since we want to prove `¬ (p ∨ q)`, then we open a subproof where we assume `p ∨ q`. If we can end that subproof with a contradiction, then we can use `¬ i` afterwards to conclude `¬(p ∨ q)`.
 
 We know that we want this proof structure:
 
@@ -357,7 +357,7 @@ It is not immediately clear how to prove either `p` or `q`. We will discuss proo
 }
 ```
 
-In subproof 2, we know we need to end with a contradiction. The only statements we have to work with are `¬(¬p ∨ ¬q)` and `¬p`. But if we use `∨i1` with `¬p`, then we could have `¬p ∨ ¬q` -- and then we could claim a contradiction ¬ We complete the proof as shown (using the same strategy to prove `q`):
+In subproof 2, we know we need to end with a contradiction. The only propositions we have to work with are `¬(¬p ∨ ¬q)` and `¬p`. But if we use `∨i1` with `¬p`, then we could have `¬p ∨ ¬q` -- and then we could claim a contradiction ¬ We complete the proof as shown (using the same strategy to prove `q`):
 
 ```text
 ¬(¬p ∨ ¬q) ⊢ p ∧ q

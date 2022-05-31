@@ -91,4 +91,4 @@ We translate each sentence to propositional logic:
 - *I don't eat chips and I don't eat fries.*
     - ` ¬p ∧  ¬q`
 
-These statements are clearly expressing the same idea -- I have two foods (chips and fries), and I don't eat either one. This demonstrates another of DeMorgan's laws: that `¬ (p ∨ q)` is equivalent to `( ¬ p ∧ ¬ q)`. If we were to create truth tables for each statement, we would see that they are logically equivalent as well.
+These propositions are clearly expressing the same idea -- I have two foods (chips and fries), and I don't eat either one. This demonstrates another of DeMorgan's laws: that `¬ (p ∨ q)` is equivalent to `( ¬ p ∧ ¬ q)`. If we were to create truth tables for each proposition, we would see that they are logically equivalent as well.

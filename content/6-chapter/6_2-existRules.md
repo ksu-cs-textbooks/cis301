@@ -9,7 +9,7 @@ In this section, we will see the two inference rules for the existential (∃) q
 
 ## Exists introduction
 
-We can use the exists introduction rule, `∃i`, when we have a statement of the form `P(a)` for an arbitrary member `a` of a domain. Since we found one individual where a statement held, then we can also say that there exists an individual for which the statement is true. We can formalize the rule as follows:
+We can use the exists introduction rule, `∃i`, when we have a proposition of the form `P(a)` for an arbitrary member `a` of a domain. Since we found one individual where a proposition held, then we can also say that there exists an individual for which the proposition is true. We can formalize the rule as follows:
 
 ```text
        P(d)         where  d  is an individual
@@ -27,7 +27,7 @@ isHuman(Socrates) ⊢  ∃ x isHuman(x)
 }
 ```
 
-When we use the `∃i` rule to justify a claim like `∃ x P(x)`, we include the line number of where the statement held for a particular individual, as well as the name of the individual. In the proof above, we claim `∃ x isHuman(x)` with justification `∃i 1 Socrates` -- line 1 corresponds to `isHuman(Socrates)`, where our `∃ x isHuman(x)` statement held for a particular individual. The `Socrates` part of the justification is the name of the individual.
+When we use the `∃i` rule to justify a claim like `∃ x P(x)`, we include the line number of where the proposition held for a particular individual, as well as the name of the individual. In the proof above, we claim `∃ x isHuman(x)` with justification `∃i 1 Socrates` -- line 1 corresponds to `isHuman(Socrates)`, where our `∃ x isHuman(x)` proposition held for a particular individual. The `Socrates` part of the justification is the name of the individual.
 
 Note that we can use the `∃i` rule to introduce any variable, not just `x`. You can choose which variable to introduce based on the variables used in the conclusion. For example, the following proof is also valid:
 
@@ -41,7 +41,7 @@ isHuman(Socrates) ⊢  ∃ z isHuman(z)
 
 ## Exists elimination
 
-Since the `∃i`-rule constructs statements that begin with `∃`, the `∃e`-rule (exists elimination) disassembles statements that begin with `∃`.
+Since the `∃i`-rule constructs propositions that begin with `∃`, the `∃e`-rule (exists elimination) disassembles propositions that begin with `∃`.
 
 Here is a quick example (where our domain is living things):
 
@@ -97,9 +97,9 @@ We make up the name, `jane`, for the human whose name we do not know:
 
 Line 4 proposes the name `jane` and the assumption that `isHuman(jane)`. The subproof leads to Line 7, which says that someone is mortal. (We never learned the individual's name!) Since Line 7 does not explicitly mention the made-up name, `jane`, we use Line 8 to repeat Line 7 – without knowing the name of the individual "hiding" inside Line 2, we made a subproof that proves the result, anyway. This is how `∃e` works.
 
-Note that when we us the `∃e` rule as a justification we include first the line number of the there exists statement that we processed (by naming the hidden individual) in the prrevious subproof, and then the line number of that subproof. In the example above, we say `∃e 2 3` because line 2 includes the there exists statement we processed (`∃ x isHuman(x)`) in the previous subproof and line 3 is the subproof.
+Note that when we us the `∃e` rule as a justification we include first the line number of the there-exists statement that we processed (by naming the hidden individual) in the prrevious subproof, and then the line number of that subproof. In the example above, we say `∃e 2 3` because line 2 includes the there-exists statement we processed (`∃ x isHuman(x)`) in the previous subproof and line 3 is the subproof.
 
-When using `∃e`, the previous subproof must begin with introducting a name for a hidden individual in a there exists statement and then immediately substituting that name into the there exists statement. The justification on the first line is always `assume`. The last line in the subproof should contain NO mention of the chosen name. Whatever we claim on the last line in the subproof, we must claim EXACTLY the same thing immediately afterwards when we use the `∃e` rule.
+When using `∃e`, the previous subproof must begin with introducting a name for a hidden individual in a there-exists statement and then immediately substituting that name into the there-exists statement. The justification on the first line is always `assume`. The last line in the subproof should contain NO mention of the chosen name. Whatever we claim on the last line in the subproof, we must claim EXACTLY the same thing immediately afterwards when we use the `∃e` rule.
 
 You are welcome to use any name for the hidden individual -- not just `jane` or `a`. The only restriction is that you cannot have used the name anywhere else in the proof.
 
@@ -228,7 +228,7 @@ We can translate our premises and desired conclusion to predicate logic, and wri
 ∀ x (Bunny(x) → Fluffy(x)), ∃ x (Fast(x) ∧ Bunny(x)) ⊢ ∃ x (Fast(x) ∧ Fluffy(x))
 ```
 
-Since we are trying to prove a statement about some individual, it makes sense that we would start the process of an `∃e` subproof where we introduce an alias (`thumper`) for the fast bunny. We will try to reach the conclusion by the end of that subproof. Here is the setup:
+Since we are trying to prove a claim about some individual, it makes sense that we would start the process of an `∃e` subproof where we introduce an alias (`thumper`) for the fast bunny. We will try to reach the conclusion by the end of that subproof. Here is the setup:
 
 ```text
 ∀ x (Bunny(x) → Fluffy(x)), ∃ x (Fast(x) ∧ Bunny(x)) ⊢ ∃ x (Fast(x) ∧ Fluffy(x))
@@ -247,7 +247,7 @@ Since we are trying to prove a statement about some individual, it makes sense t
 }
 ```
 
-To finish our subproof, we see that we have a statement about all creatures (`∀ x (Bunny(x) → Fluffy(x))`) and that we are working with an individual creature (`thumper`). We can use `∀e` to prove `Bunny(thumper) → Fluffy(thumper)`. After that, we have a few more manipulations using propositional logic rules, our `∃i` rule to transition our claim from being about our alias `thumper` to being about an unnamed individual, and then our `∃e` rule to pull our final claim out of the subproof. Here is the completed proof:
+To finish our subproof, we see that we have a proposition about all creatures (`∀ x (Bunny(x) → Fluffy(x))`) and that we are working with an individual creature (`thumper`). We can use `∀e` to prove `Bunny(thumper) → Fluffy(thumper)`. After that, we have a few more manipulations using propositional logic rules, our `∃i` rule to transition our claim from being about our alias `thumper` to being about an unnamed individual, and then our `∃e` rule to pull our final claim out of the subproof. Here is the completed proof:
 
 ```text
 ∀ x (Bunny(x) → Fluffy(x)), ∃ x (Fast(x) ∧ Bunny(x)) ⊢ ∃ x (Fast(x) ∧ Fluffy(x))

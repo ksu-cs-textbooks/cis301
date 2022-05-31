@@ -191,10 +191,10 @@ Logika syntax:
 
     - Are you trying to prove something of the form `p ∨ q`?
         - See if you have either `p` or `q` by itself -- if you do, use either `∨i1` or `∨i2` to conclude `p ∨ q`.
-3. You'll need to nest the approaches from step 2. Once you are in a subproof, think about what you are *trying to prove by the end of that subproof*. Follow the strategy in step 2 to prove your current goal, nesting subproofs as needed. As you work, stop and scan the statements that you have available. See if you can extract anything from them as you did for the premises in step 1.
+3. You'll need to nest the approaches from step 2. Once you are in a subproof, think about what you are *trying to prove by the end of that subproof*. Follow the strategy in step 2 to prove your current goal, nesting subproofs as needed. As you work, stop and scan the propositions that you have available. See if you can extract anything from them as you did for the premises in step 1.
 4. No match, or still stuck?
     - Do you have an OR statement available? Try using OR elimination to prove your goal conclusion.
-    - Do your statements have NOT operators, but don't fit the form for using `¬i`? Try using `pbc`. If you are trying to prove something of the form `p`, open a subproof, assume `¬p`, and try to reach a contradiction by the end of the subproof. Afterward, use `pbc` to conclude `p`.
+    - Do your propositions have NOT operators, but don't fit the form for using `¬i`? Try using `pbc`. If you are trying to prove something of the form `p`, open a subproof, assume `¬p`, and try to reach a contradiction by the end of the subproof. Afterward, use `pbc` to conclude `p`.
     - As a last resort, try pasting in the proof for the law of the excluded middle (see section 4.5). Then use OR elimination on `p ∨ ¬p`.
 
 

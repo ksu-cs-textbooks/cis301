@@ -24,7 +24,7 @@ We will use the format above when introducing each of our natural deduction rule
 - On the top of the right side we see what we already need to have established as facts in order to use this rule (in this case, `P` and also `Q` ). These facts can appear anywhere in our scope of the proof, in whatever order. (For now, all previous lines in the proof will be within our scope, but this will change when we get to more complex rules that involve subproofs).
 - On the bottom of the right side, we see what we can claim by using that proof rule.
 
-Here is a simple example of a Logika proof that uses `∧i`. It proves that if propositions `p`, `q`, and `r` are all true, then the statement `r ∧ (q ∧ p)` is also true:
+Here is a simple example of a Logika proof that uses `∧i`. It proves that if propositional atoms `p`, `q`, and `r` are all true, then the proposition `r ∧ (q ∧ p)` is also true:
 
 ```text
 p, q, r ⊢ r ∧ (q ∧ p)
@@ -69,7 +69,7 @@ Then line 4 would not have been accepted. The line numbers cited after the `∧i
 
 ## AND elimination
 
-The idea of the AND elimination rules is that if we have a statement `p ⋀ q` as a fact, then we can separately claim both `p` and `q` as individual facts. After all, the only time `p ⋀ q` is true in a truth table is when both `p` and `q` are individually true. There are two AND elimination rules -- `∧e1` and `∧e2`. `∧e1` allows us to claim that the left (first) side of an AND statement is individually true, and `∧e2` allows us to do the same with the right (second) side. Here is the formalization of each rule: 
+The idea of the AND elimination rules is that if we have a proposition `p ⋀ q` as a fact, then we can separately claim both `p` and `q` as individual facts. After all, the only time `p ⋀ q` is true in a truth table is when both `p` and `q` are individually true. There are two AND elimination rules -- `∧e1` and `∧e2`. `∧e1` allows us to claim that the left (first) side of an AND statement is individually true, and `∧e2` allows us to do the same with the right (second) side. Here is the formalization of each rule: 
 
 ```text
         P ∧ Q              P ∧ Q

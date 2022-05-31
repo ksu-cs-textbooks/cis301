@@ -102,7 +102,7 @@ Inside subproof 1, we are trying to prove `(¬p → q) → q`. The top-level ope
 }
 ```
 
-Now we must prove `q` in subproof 3. We have available statements `p → q` and `¬p → q` -- we can see that if we had LEM (`p ∨ ¬p`) available, then we could use OR elimination to get our `q` in both cases. We insert the LEM proof into subproof 3:
+Now we must prove `q` in subproof 3. We have available propositions `p → q` and `¬p → q` -- we can see that if we had LEM (`p ∨ ¬p`) available, then we could use OR elimination to get our `q` in both cases. We insert the LEM proof into subproof 3:
 
 ```text
 ⊢ (p → q) → ((¬p → q) → q)

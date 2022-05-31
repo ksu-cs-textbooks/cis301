@@ -136,6 +136,6 @@ p, q,  ¬r |- p ∧ q
 
 ## Deduction rules
 
-The logical operators (AND, OR, NOT, IMPLIES) are a kind of language for building statements from basic, primitive propositions. For this reason, we must have laws for constructing statements and for disassembling them. These laws are called *inference* rules or *deduction* rules. A *natural deduction system* is a set of inference rules, such that for each logical operator, there is a rule for constructing a statement with that operator (this is called an *introduction rule*) and there is a rule for disassembling a statement with that operator (this is called an *elimination rule*).
+The logical operators (AND, OR, NOT, IMPLIES) are a kind of language for building propositions from basic, primitive propositional atoms. For this reason, we must have laws for constructing propositions and for disassembling them. These laws are called *inference* rules or *deduction* rules. A *natural deduction system* is a set of inference rules, such that for each logical operator, there is a rule for constructing a proposition with that operator (this is called an *introduction rule*) and there is a rule for disassembling a proposition with that operator (this is called an *elimination rule*).
 
 For the sections that follow, we will see the introduction and elimination rules for each logical operator. We will then learn how to use these deduction rules to write a formal proof showing that a sequent is valid. 

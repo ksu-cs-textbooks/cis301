@@ -38,7 +38,7 @@ Which reads as:
 If I am a knight, then Bob is a knight and Carly is a knave. Also, if Bob is a knight and Carly is a knave, then I am a knight.
 ```
 
-We repeat this process for each statement in the puzzle. Finally, since we solve a Knights and Knaves puzzle by finding a truth assignment (i.e., assignment of who is a knight and who is a knave) that works for ALL statements, then we finish by AND-ing together our translations for each speaker. When we fill in the truth table for our final combined statement, then a valid solution to the puzzle is any truth assignment that makes the overall statement true. If it was a well-made puzzle, then there should only be one such truth assignment.
+We repeat this process for each statement in the puzzle. Finally, since we solve a Knights and Knaves puzzle by finding a truth assignment (i.e., assignment of who is a knight and who is a knave) that works for ALL statements, then we finish by AND-ing together our translations for each speaker. When we fill in the truth table for our final combined proposition, then a valid solution to the puzzle is any truth assignment that makes the overall proposition true. If it was a well-made puzzle, then there should only be one such truth assignment.
 
 ## Full example
 
@@ -71,7 +71,7 @@ We combine our translations for Ava and Bob and end up with the following propos
 (a → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → a) ∧ (b → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → b)`
 ```
 
-We then complete the truth table for that statement:
+We then complete the truth table for that proposition:
 
 ```text
                                                                                   *
@@ -90,7 +90,7 @@ Contingent
 - F: [T T] [T F] [F T]
 ```
 
-And we see that there is only one truth assignment that satisfies the statement -- `[F F]`, which corresponds to Ava being a knave and Bob being a knave.
+And we see that there is only one truth assignment that satisfies the proposition -- `[F F]`, which corresponds to Ava being a knave and Bob being a knave.
 
 ## Conclusion
 

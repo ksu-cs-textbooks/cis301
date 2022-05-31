@@ -93,13 +93,13 @@ Now, we will turn to examples that mix universal and existential quantifiers. We
 
 ### Systematic translation
 
-Suppose we wish to translate, *Every circle is bigger than at least one square*. We see that we are first making a statement about all circles. Without worrying about the rest of the statement, we know that for all circles, we are saying *something*. So we write:
+Suppose we wish to translate, *Every circle is bigger than at least one square*. We see that we are first making a claim about all circles. Without worrying about the rest of the statement, we know that for all circles, we are saying *something*. So we write:
 
 ```text
 For all circles, SOMETHING
 ```
 
-Trying to formalize a bit more, we assign a variable to the current circle we are describing (`x`). For each circle x, we are saying *something* about that circle. So we express SOMETHING(x) as some statement about our current circle, and write:
+Trying to formalize a bit more, we assign a variable to the current circle we are describing (`x`). For each circle x, we are saying *something* about that circle. So we express SOMETHING(x) as some claim about our current circle, and write:
 
 ```text
 For each circle x, SOMETHING(x)
@@ -143,7 +143,7 @@ In these examples, suppose our domain is animals and that we have the following 
 - `Hi(x)`: whether animal x is a hippo
 - `W(x, y)`: whether animal x weighs more than animal y
 
-Suppose we wish to translate: *There is exactly one hippo.* We might first try saying: `∃ x Hi(x)`. But this statement would be true even if we had 100 hippos, so we need something more restricted. What we are really trying to say is:
+Suppose we wish to translate: *There is exactly one hippo.* We might first try saying: `∃ x Hi(x)`. But this proposition would be true even if we had 100 hippos, so we need something more restricted. What we are really trying to say is:
 
 - There exists a hippo
 - AND, any other hippo is the same one
@@ -153,7 +153,7 @@ Let's use our systematic approach, streamlining a few of the steps:
 - There exists an animal x that is a hippo, and SOMETHING(x)
 - `∃ x (Hi(x) ∧ SOMETHING(x))`
 
-To translate SOMETHING(x), the statement we are making about our hippo x:
+To translate SOMETHING(x), the claim we are making about our hippo x:
 
 - `SOMETHING(x)`: any other hippo is the same as x
 - `SOMETHING(x)`: for each hippo y, x is the same as y
@@ -206,14 +206,14 @@ likes(x, y): whether person x likes person y
 
 Further suppose that liking a person is not necessarily symmetric: that just because person x likes person y does not mean that person y necessarily likes person x. 
 
-Consider these pairs of statements:
+Consider these pairs of propositions:
 
 ```text 
 ∀ x ∀ y likes(x, y)     vs.     ∀ y ∀ x likes(x, y)  
 ∃ x ∃ y likes(x, y)     vs.     ∃ y ∃ x likes(x, y)
 ```
 
-Is there any difference between each one? No! The two versions of the first statement both say that every person likes every other person, and the two versions of the second statement both say that there is a person who likes another person.
+Is there any difference between each one? No! The two versions of the first proposition both say that every person likes every other person, and the two versions of the second proposition both say that there is a person who likes another person.
 
 But what about:
 
@@ -229,11 +229,11 @@ Alice: likes Bob
 James: likes Alice
 ```
 
-The first statement, `∀ x ∃ y likes(x, y)`, says that all people have some person (not necessarily the same person) that they like. This would certainly be true for our domain, as every person has at least one person that they like. The second statement, `∃ y ∀ x likes(x, y)` is saying that there is a person (the SAME person) that everyone likes. This statement would be false for our domain, as there is no one person that is liked by everyone.
+The first proposition, `∀ x ∃ y likes(x, y)`, says that all people have some person (not necessarily the same person) that they like. This would certainly be true for our domain, as every person has at least one person that they like. The second proposition, `∃ y ∀ x likes(x, y)` is saying that there is a person (the SAME person) that everyone likes. This proposition would be false for our domain, as there is no one person that is liked by everyone.
 
 ## Precedence with quantifiers
 
-In section 2.2, we discussed operator precedence for propositional logic statements. The same operator precedence holds for predicate logic statements, except that our two quantifiers (`∀` and `∃`) have the same precedence as the NOT operator. If we have a statement with multiple quantifiers, then the quantifiers are resolved from right to left. For example, `∃ y ∀ x likes(x, y)` should be interpreted as `∃ y (∀ x likes(x, y))`.
+In section 2.2, we discussed operator precedence for propositional logic statements. The same operator precedence holds for predicate logic statements, except that our two quantifiers (`∀` and `∃`) have the same precedence as the NOT operator. If we have a proposition with multiple quantifiers, then the quantifiers are resolved from right to left. For example, `∃ y ∀ x likes(x, y)` should be interpreted as `∃ y (∀ x likes(x, y))`.
 
 Here is an updated list of operator precedence, from most important (do first) to least important (do last):
 
@@ -252,6 +252,6 @@ And here is our updated list of how to resolve multiple operators with the same 
 5) Multiple implies ( `→` ) operators -- the rightmost `→` is resolved first, working from right to left. For example, `p → q → r` is equivalent to `p → (q → r)`.
 6) Multiple quantifiers -- the rightmost quantifier is resolved first, working from right to left. For example, `∃ y ∀ x likes(x, y)` should be interpreted as `∃ y (∀ x likes(x, y))`.
 
-When we get to predicate logic proofs in Chapter 6, we will see that Logika uses a different precedence for quantifiers -- there, quantifiers have the LOWEST precedence (done last) of any operator. This ends up being more forgiving than confusing, as it will accept statements as correct that are really missing parentheses. For example, Logika will accept: `∃ x isMouse(x) ∧ inHouse(x)`. Technically, this statement *should* be incorrect -- if we correctly treat quantifiers as having a higher precedence than `∧`, then `inHouse(x)` would no longer know about the variable `x` or its quantifier. 
+When we get to predicate logic proofs in Chapter 6, we will see that Logika uses a different precedence for quantifiers -- there, quantifiers have the LOWEST precedence (done last) of any operator. This ends up being more forgiving than confusing, as it will accept propositions as correct that are really missing parentheses. For example, Logika will accept: `∃ x isMouse(x) ∧ inHouse(x)`. Technically, this proposition *should* be incorrect -- if we correctly treat quantifiers as having a higher precedence than `∧`, then `inHouse(x)` would no longer know about the variable `x` or its quantifier. 
 
 We *should* use parentheses with quantifiers to express our intended meaning, and so we should write `∃ x (isMouse(x) ∧ inHouse(x))` instead. But if we forget the parentheses, then Logika will forgive us.

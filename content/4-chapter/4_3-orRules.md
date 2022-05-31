@@ -155,7 +155,7 @@ p ∧ (q ∨ r) ⊢ (p ∧ q) ∨ (p ∧ r)
 }
 ```
 
-Next, we look at what we are trying to prove, and see that its top-level operator is an OR. If we already had either side of our goal OR statement (i.e., either `p ∧ q` or `p ∧ r`), then we could use `∧i` to create the desired statement. This isn't the case for us, though, so we need to use a different strategy.
+Next, we look at what we are trying to prove, and see that its top-level operator is an OR. If we already had either side of our goal OR statement (i.e., either `p ∧ q` or `p ∧ r`), then we could use `∧i` to create the desired proposition. This isn't the case for us, though, so we need to use a different strategy.
 
 The next consideration when we want to prove an OR statement is whether we have another OR statement, either as a premise or a fact we have already established. If we do, then we can attempt to use OR elimination with that OR statement to build our goal conclusion (`(p ∧ q) ∨ (p ∧ r)`). We have the OR statement `q ∨ r` available, so we'll try to use OR elimination -- we'll have a subproof where we assume `q` and try to reach `(p ∧ q) ∨ (p ∧ r)`, and then a subproof where we assume `r` and try to reach `(p ∧ q) ∨ (p ∧ r)`:
 

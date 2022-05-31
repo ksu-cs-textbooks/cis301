@@ -23,11 +23,11 @@ S2 ⊨ S1
 
 As a reminder, the `S1 ⊨ S2` means *`S1` semantically entails `S2`*, which means that every truth assignment that satisfies `S1` also satisfies `S2`. 
 
-Semantic equivalence between `S1` and `S2` means that each statement semantically entails the other -- that `S1` and `S2` have the same truth value for every truth assignment; i.e., their truth tables evaluate exactly the same. 
+Semantic equivalence between `S1` and `S2` means that each proposition semantically entails the other -- that `S1` and `S2` have the same truth value for every truth assignment; i.e., their truth tables evaluate exactly the same. 
 
 ### Showing semantic equivalence with two truth tables
 
-For example, if we wished to show that the statements `p → ¬ q` and `¬ (p ∧ q)` were semantically equivalent, then we could create truth tables for each statement:
+For example, if we wished to show that the propositions `p → ¬ q` and `¬ (p ∧ q)` were semantically equivalent, then we could create truth tables for each proposition:
 
 ```text
         *
@@ -65,7 +65,7 @@ We see that the same set of truth assignments, `[T F] [F T] [F F]`, satisfies bo
 
 ### Showing semantic equivalence with one truth table
 
-To show that statements `S1` and `S2` are semantically equivalent, we need to show that if `S1` is true, then so is `S2`, and that if `S2` is true, then so is `S1`. Instead of comparing the truth tables of both `S1` and `S2`, we could instead express our requirements as a bi-implication: `S1 ↔ S2`. Logika doesn't have a bi-implication operator, so we can instead express our requirements as a conjunction of two implications: `(S1 → S2) ∧ (S2 → S1)`. If this statement is a tautology, then it tells that if one statement is true, then the other one is too -- that `S1` and `S2` are semantically equivalent.
+To show that propositions `S1` and `S2` are semantically equivalent, we need to show that if `S1` is true, then so is `S2`, and that if `S2` is true, then so is `S1`. Instead of comparing the truth tables of both `S1` and `S2`, we could instead express our requirements as a bi-implication: `S1 ↔ S2`. Logika doesn't have a bi-implication operator, so we can instead express our requirements as a conjunction of two implications: `(S1 → S2) ∧ (S2 → S1)`. If this proposition is a tautology, then it tells us that if one proposition is true, then the other one is too -- that `S1` and `S2` are semantically equivalent.
 
 Below, we show that `p → ¬ q` and `¬ (p ∧ q)` are semantically equivalent using one truth table:
 
@@ -102,7 +102,7 @@ We can also write:
 S2 ⟛ S1
 ```
 
-For example, suppose we wish to show that the statements `p → ¬ q` and `¬ (p ∧ q)` are provably equivalent. We must prove the following sequents:
+For example, suppose we wish to show that the propositions `p → ¬ q` and `¬ (p ∧ q)` are provably equivalent. We must prove the following sequents:
 
 ```text
 p → ¬ q ⊢ ¬ (p ∧ q)

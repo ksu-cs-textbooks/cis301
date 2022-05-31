@@ -5,11 +5,11 @@ weight: 61
 date: 2018-08-24T10:53:26-05:00
 ---
 
-In this section, we will examine the syntax for translating English sentences to predicate logic. Instead of using propositions, we will break statements into:
+In this section, we will examine the syntax for translating English sentences to predicate logic. We will still create propositions (statements that are either true or false) using logical connectives (`∧`, `∨`, `→`, and `¬`), but now we will identify the following from our English sentences
 
 ```text
-predicates: these will be the verbs in the statements
-individuals: these will be the nouns in the statements
+predicates: these will be the verbs in the sentences
+individuals: these will be the nouns in the sentences
 quantifiers: these will help us specify if we mean all individuals or at least one individual
 ```
 
@@ -44,11 +44,11 @@ Using our individuals above, we would have that:
 
 ## Quantifiers
 
-We will introduce two **quantifiers** in predicate logic, which help us make statements about a domain of individuals.
+We will introduce two **quantifiers** in predicate logic, which help us make claims about a domain of individuals.
 
 ### Universal quantifier
 
-The `∀` quantifier, called the **universal quantifier** and read as *for all*, lets us make statements that pertain to ALL individuals in a domain.
+The `∀` quantifier, called the **universal quantifier** and read as *for all*, lets us write propositions that pertain to ALL individuals in a domain.
 
  `∀ n P(n)` means: for every individual `n` (in some domain), `P(n)` is true. Here, `n` is a variable that stands for a particular individual in the domain. You can think of it like a foreach loop in C#:
 
@@ -63,7 +63,7 @@ The `∀` quantifier, called the **universal quantifier** and read as *for all*,
 
 ### Existential quantifier
 
- The `∃` quantifier, called the **existential quantifier** and read as *there exists*, lets us make statement that pertain to AT LEAST ONE individual in a domain. 
+ The `∃` quantifier, called the **existential quantifier** and read as *there exists*, lets us write propositions that pertain to AT LEAST ONE individual in a domain. 
 
 `∃ n P(n)` means: there exists at least one individual `n` (in some domain) where `P(n)` is true. You can again think of it as a foreach loop:
 
@@ -106,7 +106,7 @@ Let's consider what several predicate logic statements would mean in words:
 - `∀ x isDog(x)` - translates to: *All animals are dogs*. This means that EVERY SINGLE ANIMAL in my domain is a dog (which is probably unlikely).
 - `∃ x hasFourLegs(x)` - translates to: *There exists at least one animal that has four legs.*
 
-Next, consider the following statement:
+Next, consider the following proposition:
 
 ```text
 ∀ x (isDog(x) ∧ hasFourLegs(x))
@@ -120,15 +120,15 @@ Perhaps instead we intended to say: *All dogs have four legs.* Another way to ph
 ∀ x (isDog(x) → hasFourLegs(x))
 ```
 
-We will usually want to use the `→` operator instead of the `∧` operator when making a statement about ALL individuals.
+We will usually want to use the `→` operator instead of the `∧` operator when making a claim about ALL individuals.
 
-Finally, consider this statement: 
+Finally, consider this proposition: 
 
 ```text
 ∃ x (isDog(x) → hasFourLegs(x))
 ```
 
-This translates to: *There exists an animal x, and if that animal is a dog, then it has four legs.* Recall that an implies statement `p→q` is true whenever `p` and `q` are both true AND whenever `p` is false. So this statement is true in two cases:
+This translates to: *There exists an animal x, and if that animal is a dog, then it has four legs.* Recall that an implies statement `p→q` is true whenever `p` and `q` are both true AND whenever `p` is false. So this claim is true in two cases:
 
 - If our domain includes a dog that has four legs
 - If our domain includes an animal that is not a dog
@@ -139,7 +139,27 @@ We likely only meant to include the first case. In that case, we would want to s
 ∃ x (isDog(x) ∧ hasFourLegs(x))
 ```
 
-We will usually want to use the `∧` operator instead of the `→` operator when making a statement about one/some individuals.
+We will usually want to use the `∧` operator instead of the `→` operator when writing a proposition about one/some individuals.
+
+## Predicates from math
+
+All of our examples in this section involved predicates over domains like people, animals, or living things. A different domain that we are used to working with is some set of numbers: the integers, the positive numbers, the rational numbers, etc. 
+
+Perhaps our domain is the set of all integers. Then `>` is a predicate with two parameters -- `x > y` is defined as whether `x` is bigger than `y`, for two integers `x` and `y`. We might write:
+
+```text
+∀ x (x + 1 > x)
+```
+
+Because for all integers, `x + 1` is bigger than `x`. We might also write:
+
+```text
+∃ x (x > x * x)
+```
+
+Because for -4 (or any negative number), -4 > -4 * -4.
+
+Other common predicates in math are: `<`, `<=`, `>=`, `==`, and `!=`.
 
 ## Quantifier symbols
 

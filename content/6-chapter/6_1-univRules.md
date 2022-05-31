@@ -31,7 +31,7 @@ Here is a simple example showing the syntax of the `∀e` rule in Logika. It sho
 }
 ```
 
-We can read the justification `∀e 1 Socrates` as: "for all elimination of the for all statement on line 1, plugging in the individual Socrates".
+We can read the justification `∀e 1 Socrates` as: "for all elimination of the for-all statement on line 1, plugging in the individual Socrates".
 
 ## For all introduction
 
@@ -63,19 +63,19 @@ Here is a simple example showing the syntax of the `∀i` rule in Logika: "Every
 }
 ```
 
-If we wish to introduce a for all statement, the pattern is:
+If we wish to introduce a for-all statement, the pattern is:
 
 - Open a subproof and introduce an arbitrary/fresh individual in the domain (in the example above, we used `a`). It MUST be a name that we have not used elsewhere in the proof. The idea is that your individual could have been anyone/anything in the domain.
 
 - When you introduce your individual, you do NOT include a justification on that line
 
-- If you have other for all statements available within the scope of the subproof, then it is often useful to use `∀e` to plug your fresh individual into them. After all, if those statements are true for ALL individuals, then they are also true for your fresh individual.
+- If you have other for-all statements available within the scope of the subproof, then it is often useful to use `∀e` to plug your fresh individual into them. After all, if those statements are true for ALL individuals, then they are also true for your fresh individual.
 
-- If you are trying to prove something of the form `∀ x P(x)`, then you need to reach `P(a)` by the end of the subproof. You need to show that your goal for all statement holds for your fresh individual. In our case, we wished to prove `∀ z (isHealthy(z) ∧ isHappy(z))`, so we reached `isHealthy(a) ∧ isHappy(a)` by the end of the subproof. 
+- If you are trying to prove something of the form `∀ x P(x)`, then you need to reach `P(a)` by the end of the subproof. You need to show that your goal for-all statement holds for your fresh individual. In our case, we wished to prove `∀ z (isHealthy(z) ∧ isHappy(z))`, so we reached `isHealthy(a) ∧ isHappy(a)` by the end of the subproof. 
 
-- After the subproof, you can use `∀i` to introduce a for all statement for your last claim in the subproof -- that since the individual could have been anyone, then the statement holds for ALL individuals. The `∀i` justification needs the line number of the subproof.
+- After the subproof, you can use `∀i` to introduce a for-all statement for your last claim in the subproof -- that since the individual could have been anyone, then the proposition holds for ALL individuals. The `∀i` justification needs the line number of the subproof.
 
-- When you use `∀i`, it does not matter what variable you introduce into the for all statement. In the example above, we introduced `∀ z` -- but that was only to match the goal conclusion in the proof. We could have instead introduced `∀ x`, `∀ y`, `∀ people`, etc. We would use whatever variable we chose in the rest of that statement -- i.e., `∀ z (isHealthy(z) ∧ isHappy(z))`, or `∀ people (isHealthy(people) ∧ isHappy(people))`, etc.
+- When you use `∀i`, it does not matter what variable you introduce into the for-all statement. In the example above, we introduced `∀ z` -- but that was only to match the goal conclusion in the proof. We could have instead introduced `∀ x`, `∀ y`, `∀ people`, etc. We would use whatever variable we chose in the rest of that proposition -- i.e., `∀ z (isHealthy(z) ∧ isHappy(z))`, or `∀ people (isHealthy(people) ∧ isHappy(people))`, etc.
 
 ## Examples
 
@@ -91,7 +91,7 @@ Suppose we wish to prove the following sequent:
 
 This will let us show that it doesn't matter what variable we use with a universal quantifier -- both `∀ x P(x)` and `∀ y P(y)` are saying the same thing: *for all individuals, P holds for that individual*.
 
-Since the top-level operator of our conclusion is a for all statement, we see that we will need to use for all introduction. Following the pattern above, we open a subproof and introduce a fresh individual, `a`. Since we wish to introduce the for all statement `∀ y P(y)`, then we know we need to reach `P(a)` by the end of our subproof:
+Since the top-level operator of our conclusion is a for-all statement, we see that we will need to use for all introduction. Following the pattern above, we open a subproof and introduce a fresh individual, `a`. Since we wish to introduce the for-all statement `∀ y P(y)`, then we know we need to reach `P(a)` by the end of our subproof:
 
 ```text
 ∀ x P(x) ⊢ ∀ y P(y)
@@ -106,7 +106,7 @@ Since the top-level operator of our conclusion is a for all statement, we see th
 }
 ```
 
-Since we have an available for all statement in our subproof (`∀ x P(x)`, from line 1), then we use `∀e` to plug `a` into it:
+Since we have an available for-all statement in our subproof (`∀ x P(x)`, from line 1), then we use `∀e` to plug `a` into it:
 
 ```text
 ∀ x P(x) ⊢ ∀ y P(y)
@@ -121,7 +121,7 @@ Since we have an available for all statement in our subproof (`∀ x P(x)`, from
 }
 ```
 
-At that point, we see that we have exactly the statement we wanted to end our subproof -- `P(a)`. All that remains is to use `∀i` to state that since `a` could have been anyone, that the statement we reached at the end of subproof 2 must hold for all individuals. Here is the completed proof:
+At that point, we see that we have exactly the proposition we wanted to end our subproof -- `P(a)`. All that remains is to use `∀i` to state that since `a` could have been anyone, that the proposition we reached at the end of subproof 2 must hold for all individuals. Here is the completed proof:
 
 ```text
 ∀ x P(x) ⊢ ∀ y P(y)
@@ -166,7 +166,7 @@ We need to prove the following sequent:
 ∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)), ∀ x isStudent(x) ⊢ ∀ x (hasPhone(x) ∨ hasLaptop(x))
 ```
 
-As with our previous example, we see that we are trying to prove a for all statement (`∀ x (hasPhone(x) ∨ hasLaptop(x))`). This means we will need to open a subproof and introduce a fresh individual -- perhaps `bob`. By the end of the subproof, we must show that our goal for all statement holds for that individual -- that `hasPhone(bob) ∨ hasLaptop(bob)`. We start the proof as follows:
+As with our previous example, we see that we are trying to prove a for-all statement (`∀ x (hasPhone(x) ∨ hasLaptop(x))`). This means we will need to open a subproof and introduce a fresh individual -- perhaps `bob`. By the end of the subproof, we must show that our goal for-all statement holds for that individual -- that `hasPhone(bob) ∨ hasLaptop(bob)`. We start the proof as follows:
 
 ```text
 ∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)), ∀ x isStudent(x) ⊢ ∀ x (hasPhone(x) ∨ hasLaptop(x))
@@ -182,7 +182,7 @@ As with our previous example, we see that we are trying to prove a for all state
 }
 ```
 
-We have two available for all statements within the subproof -- `∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))` and `∀ x isStudent(x)`. Since those statements hold for all individuals, they also hold for `bob`. We use `Ae` to plug in `bob` to those two statements:
+We have two available for-all statements within the subproof -- `∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))` and `∀ x isStudent(x)`. Since those propositions hold for all individuals, they also hold for `bob`. We use `Ae` to plug in `bob` to those two propositions:
 
 ```text
 ∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)), ∀ x isStudent(x) ⊢ ∀ x (hasPhone(x) ∨ hasLaptop(x))
@@ -199,7 +199,7 @@ We have two available for all statements within the subproof -- `∀ x (isStuden
 }
 ```
 
-Line 5 is a propositional logic statement of the form `p → q`, and line 6 is a statement of the form `p`. Thus we can use `→e` to conclude `hasPhone(bob) ∨ hasLaptop(bob)` (the "q" in that statement) -- which is exactly what we needed to end the subproof. All that remains is to apply our `∀i` rule after the subproof. Here is the completed proof:
+Line 5 is an implies statement the form `p → q`, and line 6 is a statement of the form `p`. Thus we can use `→e` to conclude `hasPhone(bob) ∨ hasLaptop(bob)` (the "q" in that statement) -- which is exactly what we needed to end the subproof. All that remains is to apply our `∀i` rule after the subproof. Here is the completed proof:
 
 ```text
 ∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)), ∀ x isStudent(x) ⊢ ∀ x (hasPhone(x) ∨ hasLaptop(x))
@@ -226,7 +226,7 @@ Next, suppose we wish to prove the following sequent:
 ∀ x (S(x) → Pz(x)), ∀ x (Pz(x) → D(x)), ∀ x ¬D(x) ⊢ ∀ x ¬S(x)
 ```
 
-We again see that the top-level operator of what we are trying to prove is a universal quantifier. We use our strategy to open a subproof, introduce a fresh individual (maybe `a`), and plug that individual into any available for all statements. Since we wish to prove `∀ x ¬S(x)`, then we will want to reach `¬S(a)` by the end of the subproof. Here is a sketch:
+We again see that the top-level operator of what we are trying to prove is a universal quantifier. We use our strategy to open a subproof, introduce a fresh individual (maybe `a`), and plug that individual into any available for-all statements. Since we wish to prove `∀ x ¬S(x)`, then we will want to reach `¬S(a)` by the end of the subproof. Here is a sketch:
 
 ```text
 ∀ x (S(x) → Pz(x)), ∀ x (Pz(x) → D(x)), ∀ x ¬D(x) ⊢ ∀ x ¬S(x)
