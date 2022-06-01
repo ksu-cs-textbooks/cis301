@@ -8,5 +8,3 @@ pre = "<b>7. </b>"
 ### Chapter 7
 
 # Mathematical Induction
-
-Chapter X tagline.
