@@ -9,4 +9,4 @@ pre = "<b>8. </b>"
 
 # Intro to Programming Logic: Assignments and Conditionals
 
-Chapter X tagline.
+For the rest of the course, we will switch gears back to something more familiar for most -- computer programs. We will apply the deductive reasoning from the previous chapters in order to prove the correctness of basic programs. This chapter will focus on programs with variable operations, assignments, and conditional statements.
