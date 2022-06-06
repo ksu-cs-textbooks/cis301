@@ -121,3 +121,90 @@ A few things of note here:
 - There is an `=` after the function header but before the opening `{` of the function
 
 - Functions in Logika are not part of a class - they are more similar to the structure in Python. We can include as many functions as we want in a file. At the bottom of the file (marked below the optional `////// Calling code ////////////`) is the *calling code*. When a Logika program runs, those calling code lines (which may call different functions) are executed. When the calling code lines are done, the program is done.
+
+## Logika program proof syntax
+
+In order to prove correctness of Logika programs, we will add *Logika proof blocks* to process what we have learned at different points in the program. In general, every time there is an assignment statement, there will be a following Logika proof block updating all relevant facts.
+
+### Proof block
+
+Here is the syntax for a proof block:
+
+```text
+l"""{
+    lineNumber. claim               justification
+    ...
+}"""
+```
+
+Just as with our propositional and predicate logic proofs, we will number the lines in our proof blocks. Each line will contain a *claim* and a corresponding *justification* for that claim. We will still be able to use all of our propositional and predicate logic deduction rules, but we will learn new justifications for processing program statements. Each program may have multiple of these proof blocks to process each assignment statement.
+
+### Premise justification
+
+Our first justification in programming logic is *premise*. In a Logika proof block, we use premise as a justification in the following cases:
+
+- To express an assignment statement (or other program statement)
+
+- To pull a claim established in a previous proof block into a later proof block
+
+In both cases, the claim must capture the current value of the involved variables.
+
+For example, consider the following program:
+
+```text
+import org.sireum.logika._
+
+val x: Z = 6
+x = x + 1
+```
+
+We could insert a proof block between the two lines to express that `x` currently has the value 6:
+
+```text
+import org.sireum.logika._
+
+val x: Z = 6
+
+l"""{
+    1. x == 6               premise
+}"""
+
+x = x + 1
+```
+
+But we could NOT have the same proof block after incrementing `x`, since `x`'s value has changed since that claim was established:
+
+```text
+import org.sireum.logika._
+
+val x: Z = 6
+
+//this proof block is correct -- it captures the current value of x
+l"""{
+    1. x == 6               premise
+}"""
+
+x = x + 1
+
+//NO! This statement no longer captures the current value of x
+l"""{
+    1. x == 6               premise
+}"""
+```
+
+### Using previous deduction rules
+
+We can use any of our previous deduction rules in a Logika proof block. For example:
+
+```text
+import org.sireum.logika._
+
+val x: Z = 6
+val y: Z = 7
+
+l"""{
+    1. x == 6               premise
+    2. y == 7               premise
+    3. (x == 6) ∧ (y == 7)  ∧i 1 2
+}"""
+```
