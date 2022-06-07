@@ -59,9 +59,15 @@ F F |    T     |  T   | T
 
 Examining each row in the above truth table, we see that only the truth assignment [F F] makes both premises (`p → q` and ` ¬q`) true. We look right to see that the same truth assignment also makes the conclusion (` ¬p`) true, which means that the sequent is valid.
 
+## Using Logika for proof verification
+
+Each Logika proof should be written in a separate file with a .logika extension. Logika verification knows each of the deduction rules we will see in the next few chapters, and will automatically check to ensure that your steps obey these deduction rules as you type your proof. If a proof is correct, you will see a purple checkmark in the lower right corner that says "Logika verified". If you have logic errors, you will see them highlighted in red.
+
+Sometimes, the Logika verification needs to be run manually. If you don't see either red errors or a purple checkmark, right-click in the text area that contains the proof and select "Logika Check".
+
 ## Logika proof syntax
 
-Each Logika proof should be written in a separate file with a .logika extension. Sequents in Logika have the following form:
+Sequents in Logika have the following form:
 
 ```text
 < 0 or more premises, separated by commas > ⊢ < 1 conclusion >

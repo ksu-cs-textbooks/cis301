@@ -17,7 +17,7 @@ As we study program logic, we will use a toy language within Logika. These Logik
 
 ## Running Logika programs
 
-Logika program should be saved with a .logika extension. To run a Logika program, right-click in the text area that contains the code and select "Run Logika Program".
+Logika programs should be saved with a .logika extension. To run a Logika program, right-click in the text area that contains the code and select "Run Logika Program".
 
 ## Verifying Logika programs
 
@@ -26,6 +26,10 @@ There are two modes in Logika -- manual and SymExe. In chapters 8 and 9, we will
 For manual mode, uncheck "Auto mode" and mark the Checker kind as "Forward." 
 
 For SymExe mode, check "Auto mode" and mark the Checker kind as "Summarizing SymExe".
+
+Logika verification *should* run automatically as you edit Logika programs and their proofs. If a program is verified, you will see a purple checkmark in the lower right corner just as you did in propositional and predicate logic proofs. If there are syntax or logic errors, you will see them highlighted in red.
+
+Sometimes, the Logika verification needs to be run manually. If you don't see either red errors or a purple checkmark, right-click in the text area that contains the code and select "Logika Check".
 
 ## Example programs
 
