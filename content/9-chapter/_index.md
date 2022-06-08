@@ -9,4 +9,4 @@ pre = "<b>9. </b>"
 
 # Programming Logic: Functions and Loops
 
-Chapter X tagline.
+In this chapter, we will continue our unit on programming logic and will learn how to prove the correctness of programs involving functions, loops, and recursion.
