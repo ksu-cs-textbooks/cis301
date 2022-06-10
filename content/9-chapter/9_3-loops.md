@@ -524,8 +524,8 @@ Suppose `n` has already been declared and initialized, and that we have this loo
 
 ```text
 var prod: Z = 1
-var i: Z = 0
-while (i < n) {
+var i: Z = 1
+while (i != n) {
     i = i + 1
     prod = prod * i
 }
@@ -533,9 +533,9 @@ while (i < n) {
 
 As before, let's make a table showing the values of different variables at different points in the loop:
 
-| Variable | Before loop | After iteration 1 | After iteration 2 | After iteration 3 | ... | After iteration n | 
-| --- | --- | --- | --- | --- | --- | --- |
-| `i` | 0 | 1 | 2 | 3 | ... | n |
-|  `prod` | $1 $ | $1 $ | $1 * 2$ |$1 * 2 * 3$ | ... | $1 * 2 * 3 * ... * n$ |
+| Variable | Before loop | After iteration 1 | After iteration 2 | ... | After iteration n | 
+| --- | --- | --- |  --- | --- | --- |
+| `i` | 1 | 2 | 3 | ... | n |
+|  `prod` | $1 $ | $1 * 2$ | $1 * 2 * 3$ | ... | $1 * 2 * 3 * ... * n$ |
 
 From this table, we can clearly see that after $i$ iterations, $prod == i!$ (i factorial). This *should* be our loop invariant...but as with many other languages, Logika does not recognize `!` as a factorial operator (instead, it is a negation operator). In the next section, we will see how to create a *Logika fact* to help define the factorial operation. We will then be able to use that Logika fact in place of `!` to let our invariant be a formalization of: *prod equals i factorial*.
