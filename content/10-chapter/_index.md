@@ -9,4 +9,4 @@ pre = "<b>10. </b>"
 
 # Programming Logic: Sequences, Global Variables, and Termination
 
-Chapter X tagline.
+In our conclusion of programming logic, we'll examines programs with sequences and global variables. We'll also learn the idea of *termination* in programs, and why this is a much more difficult thing to demonstrate for a general program that it might seem.
