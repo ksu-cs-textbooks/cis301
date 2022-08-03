@@ -5,8 +5,8 @@ date = 2021-05-24T01:01:01-05:00
 
 # CIS 301 Textbook
 
-Julie Thornton  
-Department of Computer Science
+Julie Thornton <br>
+Department of Computer Science <br>
 Kansas State University  
 
 Email: juliet@ksu.edu
