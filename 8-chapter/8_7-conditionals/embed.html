@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>Conditional Statements :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/" rel="canonical" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/index.xml" rel="alternate" type="application/rss+xml" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/_print/8-chapter/8_7-conditionals/" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/tele.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549438" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549438" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549438" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1659549438" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1659549438" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1659549438"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis301/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1659549438" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/jquery.min.js?1659549438" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/embed.html">
+    
+    <div class="embed">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<p>To deduce the knowledge generated by a conditional (if/else) statement, we must analyze both branches. This is because some executions will follow the if-branch and some will follow the else-branch. Recall that Logika does not have an if/else if statement. However, you can simulate more than two branches by nesting another if/else inside the outer else.</p>
+<h2 id="motivation">Motivation</h2>
+<p>Before we formalize the details of verifying a program with a conditional statement, let&rsquo;s motivate the topic with an example.</p>
+<h3 id="max-program">Max program</h3>
+<p>Suppose we have a Logika program that finds finds the maximum (<code>max</code>) between two user input numbers (<code>x</code> and <code>y</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>val x: Z = readInt()
+</span></span><span style="display:flex;"><span>val y: Z = readInt()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var max: Z = 0  //give max a dummy starting value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>if (x &gt; y) {
+</span></span><span style="display:flex;"><span>    max = x
+</span></span><span style="display:flex;"><span>} else {
+</span></span><span style="display:flex;"><span>    max = y
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="max-assert">Max assert</h3>
+<p>Before worrying about how to do the verification, let&rsquo;s consider what we should assert at the end in order to be sure that <code>max</code> really does hold the biggest of the two inputs. Clearly, <code>max</code> should be greater than or equal to both inputs. So should our assert be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//Not quite all we want to say
+</span></span><span style="display:flex;"><span>assert(max &gt;= x &amp; max &gt;= y)
+</span></span></code></pre></div><p>Suppose <code>x</code> was 10, <code>y</code> was 15&hellip;and that <code>max</code> was 20. (Clearly this isn&rsquo;t what our code would do, but you can imagine writing something else for the max code that came up with such a calculation). In this case, <code>max</code> is indeed greater than or equal to both inputs&hellip;but it is just as clearly not the max. We know see that we also need to claim that <code>max</code> equals one of the two inputs. This makes our assert:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//Now we are sure we are describing the max between x and y
+</span></span><span style="display:flex;"><span>assert(max &gt;= x &amp; max &gt;= y &amp; (max == x | max == y))
+</span></span></code></pre></div><h3 id="analyzing-max">Analyzing max</h3>
+<p>Now, we need to prove that our assert holds no matter which branch we follow in the conditional statement. First, when we analyze the code in the if-branch, we have:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>max = x
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. max == x         premise
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span></code></pre></div><p>and when we analyze the code in the else-branch, we have:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>max = y
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. max == y         premise
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span></code></pre></div><p>These two deductions imply that, when the if/else statements finishes, one or the other property holds true:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (x &gt; y) {
+</span></span><span style="display:flex;"><span>    max = x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        1. max == x         premise
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>} else {
+</span></span><span style="display:flex;"><span>    max = y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        1. max == y         premise
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    //max == x in the IF, max == y in the ELSE
+</span></span><span style="display:flex;"><span>    1 . max == x  v  max == y premise 
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span></code></pre></div><p>This illustrates the first principle of conditional commands: the knowledge produced by the command is the disjunction (or) of the knowledge produced by each branch. In the section on propositional logic, we covered how to apply cases analyses on disjunctive assertions to extract useful knowledge.</p>
+<p>Recall that the intent of the if/else statement was to set <code>max</code> so that it holds the larger of <code>x</code> and <code>y</code>, so that our assert would hold:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>assert(max &gt;= x &amp; max &gt;= y &amp; (max == x | max == y))
+</span></span></code></pre></div><p>The claim we proved so far satisifies the second part of our assert statement, but not the first part. This is because we ignored a critical feature of an if/else statement: By asking a question — the condition — the if/else statement generates new knowledge.</p>
+<p>For the if-branch, we have the new knowledge that <code>x &gt; y</code>; for the else-branch, we have that <code>¬(x &gt; y)</code>, that is, <code>y &gt;= x</code>. We can embed these assertions into the analysis of the conditional command, like this, and conclude that, in both cases, <code>max</code> is greater than or equal to both inputs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var x: Z = readInt()
+</span></span><span style="display:flex;"><span>var y: Z = readInt()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var max: Z = 0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>if (x &gt; y) {
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        2. x &gt; y            premise     //the condition is true
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    max = x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        1. max == x         premise     //from the &#34;max = x&#34; assignment
+</span></span><span style="display:flex;"><span>        2. max &gt;= x         algebra 1
+</span></span><span style="display:flex;"><span>        3. x &gt; y            premise     //condition is still true (x and y are unchanged)
+</span></span><span style="display:flex;"><span>        4. max &gt;= y         algebra 1 3
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} else {
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        2. ¬(x &gt; y)         premise     //the condition is NOT true
+</span></span><span style="display:flex;"><span>        3. x &lt;= y           algebra 2
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    max = y
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        1. max == y         premise     //from the &#34;max = y&#34; assignment
+</span></span><span style="display:flex;"><span>        2. x &lt;= y           premise     //pulled down from previous logic block (x and y are unchanged)
+</span></span><span style="display:flex;"><span>        3. max &gt;= x         algebra 1 2
+</span></span><span style="display:flex;"><span>        4. max &gt;= y         algebra 1
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//summary of what just happened
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    //max == x in the IF, max == y in the ELSE
+</span></span><span style="display:flex;"><span>    1. max == x ∨ max == y      premise
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    2. max &gt;= x                 premise     //true in BOTH branches
+</span></span><span style="display:flex;"><span>    3. max &gt;= y                 premise     //true in BOTH branches
+</span></span><span style="display:flex;"><span>    4. max &gt;= x ∧ max &gt;= y      ^i 2 3
+</span></span><span style="display:flex;"><span>    5. (max &gt;= x ∧ max &gt;= y) ∧ (max == x ∨ max == y)    ^i 4 1
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>assert((max &gt;= x &amp; max &gt;= y) &amp; (max == x | max == y))
+</span></span></code></pre></div><h2 id="rules-for-analyzing-programs-with-conditionals">Rules for analyzing programs with conditionals</h2>
+<p>In this section, we will summarize how to analyze programs with conditional statements.</p>
+<h3 id="declaring-condition-and-condition-as-premises">Declaring condition and ¬(condition) as premises</h3>
+<p>If we have a program such as this with an if/else statement:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (C) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} else {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Then we can claim <code>C</code> as a premise immediately inside the if-branch and <code>¬(C)</code> as a premise immediately inside the else branch:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (C) {
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        1. C            premise
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>} else {
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        1. ¬(C)         premise
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Be careful with the <code>else</code> case &ndash; you must claim exactly <code>¬(C)</code>, and not some claim you know to be equivalent. In our max example, <code>C</code> was <code>x &lt; y</code>, and we needed to claim exactly <code>¬(x &lt; y)</code> in the else &ndash; NOT <code>x &gt;= y</code>. After you have pulled in the initial claim using the form <code>¬(C)</code>, you can use <code>algebra</code> to manipulate it into a different form.</p>
+<h3 id="each-branch-reaches-a-different-conclusion">Each branch reaches a different conclusion</h3>
+<p>If the if-branch reaches conclusion <code>Q1</code> and the else branch reaches conclusion <code>Q2</code>, then afterwards we can list as a premise that one of those conclusions is true (since we know that one of the branches in an if/else will ALWAYS execute):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (C) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        1. Q1           (some justification)    //conclusion in if-branch
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>} else {
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        1. Q2           (some justification)    //conclusion in else-branch
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. Q1 ∨ Q2          premise     //Q1 from if, Q2 from else
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span></code></pre></div><p>Note that order matters, and that we must claim <code>(if conclusion) ∨ (else conclusion)</code> &ndash; in the example above, we could not claim <code>Q2 ∨ Q1</code> afterwards.</p>
+<h3 id="each-branch-reaches-the-same-conclusion">Each branch reaches the same conclusion</h3>
+<p>If the if-branch and the else-branch both reach the SAME conclusion <code>Q</code>, then afterwards we can list <code>Q</code> as a premise. Here, we know that one of the branches in an if/else will ALWAYS execute &ndash; so if we get to the same conclusion in both cases, then we must always reach that conclusion:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (C) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        1. Q            (some justification)    //common conclusion reached in IF
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>} else {
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        1. Q            (some justification)    //common conclusion reached in ELSE
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. Q                premise     //Q was true in both the IF and the ELSE
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span></code></pre></div><h2 id="example-programs-with-no-else">Example: programs with no &ldquo;else&rdquo;</h2>
+<p>Suppose we have an if-statement with no &ldquo;else&rdquo;. Afterwards, we know that either the if-branch was executed (which happens when the condition is true), or that the condition was false. If we reach some conclusion <code>Q</code> in the if-branch, then afterwards we know that either <code>Q</code> is true or that the if-statemention condition is not true. Similarly, if some claim <code>old</code> was true before an if-statement without an else, then afterwards we know that we either reached <code>Q</code> in the if-branch or that our <code>old</code> statement is still true.</p>
+<p>We can pull in these claims as premises after an if-statement as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. old              (some justification)
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>if (C) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        1. Q            (some justification)    //conclusion in if-branch
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. Q ∨ ¬(C)          premise    //either we reached Q in the if, or the condition was false
+</span></span><span style="display:flex;"><span>    2. Q ∨ old           premise    //either we reached Q in the if, or &#34;old&#34; is still true
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span></code></pre></div><p>For example, suppose we have a program that finds the absolute value of an input number:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var num: Z = readInt()
+</span></span><span style="display:flex;"><span>var orig: Z = num
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>if (num &lt; 0) {
+</span></span><span style="display:flex;"><span>    num = num * -1
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//num is now the absolute value of the original input
+</span></span></code></pre></div><p>Afterwards, we want to assert that <code>num</code> is the absolute value of the original input &ndash; that <code>num</code> is nonnegative and either equals <code>orig</code> (the original input) or <code>-1*orig</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>assert(num &gt;= 0 &amp; (num == -1*orig | num == orig))
+</span></span></code></pre></div><p>We start our verification as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var num: Z = readInt()
+</span></span><span style="display:flex;"><span>val orig: Z = num
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. orig == num                  premise         //from &#34;orig = num&#34; assignment
+</span></span><span style="display:flex;"><span>    2. num == orig                  algebra 1       //switch order to match assert
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>if (num &lt; 0) {
+</span></span><span style="display:flex;"><span>    num = num * -1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        1. num_old &lt; 0              premise         //if condition (num just changed)
+</span></span><span style="display:flex;"><span>        2. num == num_old * -1      premise         //from &#34;num = num * -1&#34; assignment
+</span></span><span style="display:flex;"><span>        3. orig == num_old          premise         //orig did equal num (num just changed)
+</span></span><span style="display:flex;"><span>        4. num &gt;= 0                 algebra 1 2     //a negative number times -1 is nonnegative
+</span></span><span style="display:flex;"><span>        5. num == -1*orig           algebra 2 3     //needed for last part of assert
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. num &gt;= 0 ∨ ¬(num &lt; 0)            premise         //conclusion from if OR !(condition)
+</span></span><span style="display:flex;"><span>    2. num == -1*orig ∨ num == orig     premise         //conclusion from if OR num still equals orig
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    //incomplete    
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//num is now nonnegative
+</span></span><span style="display:flex;"><span>assert(num &gt;= 0 &amp; (num == orig | num == -1*orig))
+</span></span></code></pre></div><p>In our final logic block, we need to reach the claim <code>num &gt;= 0</code> so we can combine it with <code>num == -1*orig ∨ num == orig</code> to match our assert. We can do this with OR elimination on <code>num &gt;= 0 ∨ ¬(num &lt; 0)</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var num: Z = readInt()
+</span></span><span style="display:flex;"><span>val orig: Z = num
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. orig == num                  premise         //from &#34;orig = num&#34; assignment
+</span></span><span style="display:flex;"><span>    2. num == orig                  algebra 1       //switch order to match assert
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>if (num &lt; 0) {
+</span></span><span style="display:flex;"><span>    num = num * -1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        1. num_old &lt; 0              premise         //if condition (num just changed)
+</span></span><span style="display:flex;"><span>        2. num == num_old * -1      premise         //from &#34;num = num * -1&#34; assignment
+</span></span><span style="display:flex;"><span>        3. orig == num_old          premise         //orig did equal num (num just changed)
+</span></span><span style="display:flex;"><span>        4. num &gt;= 0                 algebra 1 2     //a negative number times -1 is nonnegative
+</span></span><span style="display:flex;"><span>        5. num == -1*orig           algebra 2 3     //needed for last part of assert
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. num &gt;= 0 ∨ ¬(num &lt; 0)            premise     //conclusion from if OR !(condition)
+</span></span><span style="display:flex;"><span>    2. num == -1*orig ∨ num == orig     premise     //conclusion from if OR num still equals orig
+</span></span><span style="display:flex;"><span>    3. {
+</span></span><span style="display:flex;"><span>        4. num &gt;= 0                     assume
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    5. {
+</span></span><span style="display:flex;"><span>        6. ¬(num &lt; 0)                   assume
+</span></span><span style="display:flex;"><span>        7. num &gt;= 0                     algebra 6
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    8. num &gt;= 0                         ∨e 1 3 5
+</span></span><span style="display:flex;"><span>    9. num &gt;= 0 ∧ (num == -1*orig ∨ num == orig)    ∧i 8 2  //match assert
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//num is now nonnegative
+</span></span><span style="display:flex;"><span>assert(num &gt;= 0 &amp; (num == -1*orig | num == orig))
+</span></span></code></pre></div><h2 id="nested-conditionals">Nested conditionals</h2>
+<p>We employ the same rules when analyzing programs with nested conditional statements. If we reach a common conclusion in both the if and else branches of an inner if/else statement, for example, then we can claim the common conclusion as a premise after that inner if/else statement (but still inside the outer if/else). The outline below summarizes what we can claim at various places in nested if/else statement:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (C1) {
+</span></span><span style="display:flex;"><span>    if (C2) {
+</span></span><span style="display:flex;"><span>        l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>            1. C1       premise     //outer if condition is true
+</span></span><span style="display:flex;"><span>            2. C2       premise     //inner if condition is true
+</span></span><span style="display:flex;"><span>        }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>            1. common   (some justification)
+</span></span><span style="display:flex;"><span>            2. Q1       (some justification)
+</span></span><span style="display:flex;"><span>        }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    else {
+</span></span><span style="display:flex;"><span>        l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>            1. C1       premise     //outer if condition is true
+</span></span><span style="display:flex;"><span>            2. ¬(C2)    premise     //inner if condition is false
+</span></span><span style="display:flex;"><span>        }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>            1. common   (some justification)
+</span></span><span style="display:flex;"><span>            2. Q2       (some justification)
+</span></span><span style="display:flex;"><span>        }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        1. common       premise     //common conclusion in inner if/else
+</span></span><span style="display:flex;"><span>        2. Q1 ∨ Q2      premise     //Q1 from inner if, Q2 from inner else
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>} else {
+</span></span><span style="display:flex;"><span>    if (C3) {
+</span></span><span style="display:flex;"><span>        l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>            1. ¬(C1)    premise     //outer if condition is false
+</span></span><span style="display:flex;"><span>            2. C3       premise     //inner if condition is true
+</span></span><span style="display:flex;"><span>        }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>            1. common   (some justification)
+</span></span><span style="display:flex;"><span>            2. Q3       (some justification)
+</span></span><span style="display:flex;"><span>        }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    else {
+</span></span><span style="display:flex;"><span>        l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>            1. ¬(C1)    premise     //outer if condition is false
+</span></span><span style="display:flex;"><span>            2. ¬(C3)    premise     //inner if condition is false
+</span></span><span style="display:flex;"><span>        }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>            1. common   (some justification)
+</span></span><span style="display:flex;"><span>            2. Q4       (some justification)
+</span></span><span style="display:flex;"><span>        }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        1. common       premise     //common conclusion in inner if/else
+</span></span><span style="display:flex;"><span>        2. Q3 ∨ Q4      premise     //Q1 from inner if, Q2 from inner else
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. common                   premise     //&#34;common&#34; was true in both the outer IF and the outer ELSE 
+</span></span><span style="display:flex;"><span>    2. (Q1 ∨ Q2) ∨ (Q3 ∨ Q4)    premise     //(Q1 ∨ Q2) from outer if, (Q3 ∨ Q4) from else
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/featherlight.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1659549438" defer></script>
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/embed-iframe.js?1659549438 defer"></script>
+    
+    
+    
+  </body>
+</html>

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intro to Programming Logic on CIS 301 Textbook</title>
+    <link>https://ksu-cs-textbooks.github.io/cis301/8-chapter/</link>
+    <description>Recent content in Intro to Programming Logic on CIS 301 Textbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Aug 2018 10:53:05 -0500</lastBuildDate><atom:link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Programming Logic Goal</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/</guid>
+      <description>In the next three chapters, we will learn how to reason about different kinds of program structures &amp;ndash; assignments, conditional statements, loops, function calls, recursion, lists of elements, and global variables. By the end of chapter 10, we will be able to prove the correctness of simple programs in a toy language within Logika.
+We will see that the process for formally proving correctness is rather tedious, even for relatively simple programs.</description>
+    </item>
+    <item>
+      <title>Logika Programs</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/</guid>
+      <description>As we study program logic, we will use a toy language within Logika. These Logika programs use a subset of the Scala language, and include the following features:
+Variables (booleans, ints, and sequences [which are like arrays/lists]) Printing and user input Math operations Conditional operations If and if/else statements While loops Functions Running Logika programs Logika programs should be saved with a .logika extension. To run a Logika program, right-click in the text area that contains the code and select &amp;ldquo;Run Logika Program&amp;rdquo;.</description>
+    </item>
+    <item>
+      <title>Assert and Assume</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_3-assertassume/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_3-assertassume/</guid>
+      <description>Assert statements An assert statement in Logika uses the syntax assert(expression), where expression is of type bool. The assert passes if the expression is true, and throws an error if the expression is false.
+Logika assert statements are different than assert statements in languages like Java and C# &amp;ndash; in those languages, the code in the assert statement (which often includes test method calls) is actually run, and the assert statement checks whether those methods are returning the expected values.</description>
+    </item>
+    <item>
+      <title>Algebra and subst Rules</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_4-algebrasubst/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_4-algebrasubst/</guid>
+      <description>In this section, we will learn our first two proof rules for programming logic &amp;ndash; algebra and subst.
+Verifying simple programs Before we delve into our new proof rules, let&amp;rsquo;s look at the process for verifying simple Logika programs (ones that include user input, variable initialization, and assignment statements using different operations). Here, the // --&amp;gt; lines are pieces of the verification process that you must add (or consider) in order to prove correctness of your program, and the other lines are the code of the program.</description>
+    </item>
+    <item>
+      <title>Assignment Statements</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_5-assignment/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_5-assignment/</guid>
+      <description>Assignment statements in a program come in two forms &amp;ndash; with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.
+For example, an increment statement like x = x + 1 MUTATES the value of x by updating its value to be one bigger than it was before.</description>
+    </item>
+    <item>
+      <title>Integer Division and Modulo</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_6-divmod/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_6-divmod/</guid>
+      <description>Working with division and modulo requires extra care, as Logika is finicky about both.
+Division Recall that Z (int) is the only numeric type in Logika, so any division is integer division. This means something like 9/2 evaluates to 4, just as it would in Java or C#.
+Check for division by zero Before doing division of the form numerator/denominator, either in a line of code or in a logic block, you must have a line in a previous logic block that states: denominator !</description>
+    </item>
+    <item>
+      <title>Conditional Statements</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/</guid>
+      <description>To deduce the knowledge generated by a conditional (if/else) statement, we must analyze both branches. This is because some executions will follow the if-branch and some will follow the else-branch. Recall that Logika does not have an if/else if statement. However, you can simulate more than two branches by nesting another if/else inside the outer else.
+Motivation Before we formalize the details of verifying a program with a conditional statement, let&amp;rsquo;s motivate the topic with an example.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>Nested Quantifiers :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/" rel="canonical" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/index.xml" rel="alternate" type="application/rss+xml" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/_print/6-chapter/6_3-nested/" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/embed.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549439" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549439" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549439" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1659549439" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1659549439" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1659549439"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis301/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1659549439" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/jquery.min.js?1659549439" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/">
+    
+    <div id="tele" class="tele mirror">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<h1>Nested Quantifiers</h1>
+    
+    
+<p>Our examples so far have included propositions with single quantifiers. This section will discuss how to prove sequents that use nested quantifers. We will see that the approach is the same as before, but that we must take caution to process the quantifiers in the correct order. Recall that quantifier precedence is from right to left (i.e., from the outside in), so that <code>∀ x ∀ y P(x, y)</code> is equivalent to <code>∀ x (∀ y P(x, y))</code>.</p>
+<h2 id="example-1">Example 1</h2>
+<p>Suppose we wish to prove the following sequent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ∀ y P(x, y) ⊢ ∀ y ∀ x P(y, x)
+</span></span></code></pre></div><p>Since we wish to prove a for-all statement of the form <code>∀ y (SOMETHING)</code>, then we know we must start with our for all introduction template:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ∀ y P(x, y) ⊢ ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x ∀ y P(x, y)              premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a 
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        //need: ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //want to use ∀i to conclude ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>But now we see that we want to prove ANOTHER for-all statement, <code>∀ x P(a, x)</code>. So we again use our for all introduction strategy in a nested subproof:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ∀ y P(x, y) ⊢ ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x ∀ y P(x, y)              premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a 
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //need: P(a, b)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        //want to use ∀i to conclude ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //need: ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //want to use ∀i to conclude ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now, in subproof 4, we see that we must use <code>∀e</code> on our premise (<code>∀ x ∀ y P(x, y)</code>) to work towards our goal of <code>P(a, b)</code>. We have two available individuals &ndash; <code>a</code> and <code>b</code>. When we use <code>∀e</code>, we must eliminate the OUTER (top-level) quantifier and its variable. In the case of <code>∀ x ∀ y P(x, y)</code>, we see that we must eliminate the <code>∀ x</code>. Since the <code>x</code> is the first parameter in <code>P(x, y)</code>, and since we are hoping to reach <code>P(a, b)</code> by the end of subproof 4, we can see that we need to plug in the <code>a</code> for the <code>x</code> so that it will be in the desired position:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ∀ y P(x, y) ⊢ ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x ∀ y P(x, y)              premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a 
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. b
+</span></span><span style="display:flex;"><span>            6. ∀ y P(a, y)          ∀e 1 a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //need: P(a, b)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        //want to use ∀i to conclude ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //need: ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //want to use ∀i to conclude ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Note that on line 6, we could NOT have used <code>∀e</code> to eliminate the <code>∀ y</code> in <code>∀ x ∀ y P(x, y)</code>, as it was not the top-level operator.</p>
+<p>Next, we apply <code>∀e</code> again to <code>∀ y P(a, y)</code> to leave us with <code>P(a, b)</code>. All that remains at that point is to use <code>∀i</code> twice as planned to wrap up the two subproofs. Here is the completed proof:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ∀ y P(x, y) ⊢ ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x ∀ y P(x, y)              premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a 
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. b
+</span></span><span style="display:flex;"><span>            6. ∀ y P(a, y)          ∀e 1 a
+</span></span><span style="display:flex;"><span>            7. P(a, b)              ∀e 6 b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //need: P(a, b)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        //want to use ∀i to conclude ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        8. ∀ x P(a, x)              ∀i 4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //need: ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //want to use ∀i to conclude ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    9. ∀ y ∀ x P(y, x)              ∀i 2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="example-2">Example 2</h2>
+<p>Suppose we have the predicate <code>IsBossof(x, y)</code> in the domain of people, which describes whether person <code>x</code> is the boss of person <code>y</code>. We wish to prove the following sequent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∃ x ∀ y IsBossOf(x, y) ⊢ ∀ y ∃ x IsBossOf(x, y)
+</span></span></code></pre></div><p>You can read the premise as &ldquo;There is a person that is everyone&rsquo;s boss&rdquo;. From this statement, we are trying to prove the conclusion: &ldquo;All people have a boss&rdquo;. Here is the completed proof:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∃ x ∀ y IsBossOf(x, y) ⊢ ∀ y ∃ x IsBossOf(x, y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  1. ∃ x ∀ y IsBossOf(x, y)             premise
+</span></span><span style="display:flex;"><span>  2. {
+</span></span><span style="display:flex;"><span>       3. a ∀ y IsBossOf(a, y)          assume
+</span></span><span style="display:flex;"><span>       4. {
+</span></span><span style="display:flex;"><span>            5. b
+</span></span><span style="display:flex;"><span>            6. IsBossOf(a, b)           ∀e 3 b
+</span></span><span style="display:flex;"><span>            7. ∃ x IsBossOf(x, b)       ∃i 6 a
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>       8. ∀ y ∃ x IsBossOf(x, y))       ∀i 4
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  9. ∀ y ∃ x IsBossOf(x, y)             ∃e 1 2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In the above proof, we let <code>a</code> be our made-up name for the boss-of-everyone. So, we have the assumption that <code>∀ y IsBossOf(a, y)</code>. Next, we let <code>b</code> be &ldquo;anybody at all&rdquo; who we might examine in the domain of people. The proof exposes that the boss of &ldquo;anybody at all&rdquo; in the domain must always be <code>a</code>. <code>∀i</code> and then <code>∃e</code> finish the proof.</p>
+<p>Here is the proof worked again, with the subproofs swapped:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∃ x ∀ y IsBossOf(x, y) ⊢ ∀ y ∃ x IsBossOf(x, y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  1. ∃ x ∀ y IsBossOf(x, y)             premise
+</span></span><span style="display:flex;"><span>  2. {
+</span></span><span style="display:flex;"><span>       3. b
+</span></span><span style="display:flex;"><span>       4. {
+</span></span><span style="display:flex;"><span>            5. a ∀ y IsBossOf(a, y)     assume
+</span></span><span style="display:flex;"><span>            6. IsBossOf(a, b)           ∀e 5 b
+</span></span><span style="display:flex;"><span>            7. ∃ x IsBossOf(x, b)       ∃i 6 a
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>       8. ∃ x IsBossOf(x, y))           ∃e 1 4
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  9. ∀ y ∃ x IsBossOf(x, y)             ∀i 2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Can we prove the converse? That is, if everyone has a boss, then there is one boss who is the boss of everyone?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ y ∃ x IsBossOf(x, y) ⊢ ∃ x ∀ y IsBossOf(x, y)
+</span></span></code></pre></div><p>NO. We can try, but we get stuck:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ y ∃ x IsBossOf(x, y) ⊢ ∃ x ∀ y IsBossOf(x, y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ y ∃ x IsBossOf(x, y)           premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a
+</span></span><span style="display:flex;"><span>        4. ∃ x IsBossOf(x, a)           ∀e 1 a
+</span></span><span style="display:flex;"><span>        5. {
+</span></span><span style="display:flex;"><span>            6. b IsBossOf(b, a)         assume
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        6. ∀ y isBoss(b, y)             ∀i 2  NO--THIS PROOF IS TRYING TO FINISH
+</span></span><span style="display:flex;"><span>                                          THE OUTER SUBPROOF WITHOUT FINISHING
+</span></span><span style="display:flex;"><span>                                          THE INNER ONE FIRST.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...can&#39;t finish
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We see that the &ldquo;block structure&rdquo; of the proofs warns us when we are making invalid deductions.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1659549439" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1659549439" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/featherlight.min.js?1659549439" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1659549439" defer></script>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/tele-scroll.js?1659549439 defer"></script>
+    
+  </body>
+</html>

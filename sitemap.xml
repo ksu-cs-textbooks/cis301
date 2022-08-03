@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/0-chapter/</loc>
+    <lastmod>2022-05-17T12:22:34-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/1-chapter/</loc>
+    <lastmod>2022-05-17T12:22:34-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/2-chapter/</loc>
+    <lastmod>2022-05-17T18:32:09-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/3-chapter/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/4-chapter/</loc>
+    <lastmod>2022-05-23T16:08:55-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/5-chapter/</loc>
+    <lastmod>2022-05-25T15:39:43-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/6-chapter/</loc>
+    <lastmod>2022-05-27T15:13:35-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/7-chapter/</loc>
+    <lastmod>2022-06-01T14:25:28-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/8-chapter/</loc>
+    <lastmod>2022-06-02T15:02:25-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/9-chapter/</loc>
+    <lastmod>2022-06-08T14:29:53-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/0-chapter/0_1-toolsguide/</loc>
+    <lastmod>2022-05-25T11:58:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/10-chapter/</loc>
+    <lastmod>2022-06-15T12:19:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_1-logicbasics/</loc>
+    <lastmod>2022-05-25T11:58:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_2-knightsknaves/</loc>
+    <lastmod>2022-05-25T11:58:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_3-otherpuzzles/</loc>
+    <lastmod>2022-05-25T11:58:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_1-opscircuits/</loc>
+    <lastmod>2022-05-25T11:58:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/</loc>
+    <lastmod>2022-05-26T14:38:25-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_3-satis/</loc>
+    <lastmod>2022-05-25T11:58:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_4-logicalequiv/</loc>
+    <lastmod>2022-05-20T11:21:36-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_5-sementail/</loc>
+    <lastmod>2022-05-25T11:58:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_1-propatom/</loc>
+    <lastmod>2022-05-19T16:20:20-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_2-notandor/</loc>
+    <lastmod>2022-05-25T11:58:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_3-implies/</loc>
+    <lastmod>2022-05-25T11:58:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_4-equiv/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_5-knightsknavestt/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/</loc>
+    <lastmod>2022-06-07T12:00:40-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/</loc>
+    <lastmod>2022-05-23T16:08:55-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_7-theorems/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_8-equivalence/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_9-soundcomplete/</loc>
+    <lastmod>2022-05-25T11:58:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_1-motivation/</loc>
+    <lastmod>2022-05-25T15:39:43-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_2-predsyntax/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_3-singlequantifier/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_4-multquant/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_5-strategies/</loc>
+    <lastmod>2022-05-31T15:34:29-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_6-soundcomplete/</loc>
+    <lastmod>2022-06-01T14:25:28-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_1-process/</loc>
+    <lastmod>2022-06-01T14:25:28-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_2-algebraex/</loc>
+    <lastmod>2022-06-01T14:25:28-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_3-divex/</loc>
+    <lastmod>2022-06-01T14:25:28-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/</loc>
+    <lastmod>2022-06-01T14:25:28-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/</loc>
+    <lastmod>2022-06-02T15:02:25-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/</loc>
+    <lastmod>2022-06-07T12:00:40-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_3-assertassume/</loc>
+    <lastmod>2022-06-06T14:13:44-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_4-algebrasubst/</loc>
+    <lastmod>2022-06-06T14:13:44-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_5-assignment/</loc>
+    <lastmod>2022-06-06T14:13:44-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_6-divmod/</loc>
+    <lastmod>2022-06-06T14:13:44-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/</loc>
+    <lastmod>2022-06-07T12:00:40-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_1-functions/</loc>
+    <lastmod>2022-06-08T14:29:53-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/</loc>
+    <lastmod>2022-06-08T14:29:53-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_3-loops/</loc>
+    <lastmod>2022-06-10T14:01:43-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_4-logikafacts/</loc>
+    <lastmod>2022-06-10T14:01:43-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_5-summary/</loc>
+    <lastmod>2022-06-10T14:01:43-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_1-modes/</loc>
+    <lastmod>2022-06-15T12:19:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_2-intosequences/</loc>
+    <lastmod>2022-06-15T12:19:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/</loc>
+    <lastmod>2022-06-15T12:19:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_4-seqloop/</loc>
+    <lastmod>2022-06-15T12:19:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5_seqlogfact/</loc>
+    <lastmod>2022-06-15T12:19:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_6-globals/</loc>
+    <lastmod>2022-06-15T12:19:38-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_7-termination/</loc>
+    <lastmod>2022-08-03T11:12:56-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/</loc>
+    <lastmod>2022-05-17T12:22:34-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/categories/</loc>
+  </url>
+  <url>
+    <loc>https://ksu-cs-textbooks.github.io/cis301/tags/</loc>
+  </url>
+</urlset>

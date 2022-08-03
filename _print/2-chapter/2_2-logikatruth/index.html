@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>Truth Tables in Logika :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/" rel="canonical" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/index.xml" rel="alternate" type="application/rss+xml" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/tele.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/embed.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549438" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549438" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549438" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1659549438" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1659549438" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1659549438"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis301/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1659549438" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/jquery.min.js?1659549438" defer></script>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/">
+    
+    
+    <div id="body" class="default-animation">
+      
+      
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div class="navigation">
+             <a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_3-satis/" title="Satisfiability (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+          </div>
+          <div class="navigation">
+             <a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_1-opscircuits/" title="Operators and Circuits (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+          </div>
+          <div id="top-print-link">
+            <a class="print-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis301/_print/2-chapter/2_2-logikatruth/">
+              <i class="fas fa-print fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit (CTRL+ALT+e)' href="https://gitlab.cs.ksu.edu/-/ide/project/cs-textbooks/cis301-textbook/edit/master/-/content/2-chapter/2_2-logikaTruth.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/"><span itemprop="name">Homepage</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/"><span itemprop="name">Truth Tables</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/" aria-disabled="true"><span itemprop="name">Truth Tables in Logika</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#operator-precedence">Operator precedence</a></li>
+    <li><a href="#top-level-operator">Top-level operator</a></li>
+    <li><a href="#classifying-truth-tables">Classifying truth tables</a></li>
+    <li><a href="#logika-syntax">Logika syntax</a></li>
+    <li><a href="#alternative-logical-operators">Alternative logical operators</a></li>
+    <li><a href="#example">Example</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+          <article class="default">
+    
+    
+<h1>Truth Tables in Logika</h1>
+    
+    
+<p>Now that we&rsquo;ve seen the four basic logic gates and truth tables, we can put them together to build bigger truth tables for longer logical formulae.</p>
+<h2 id="operator-precedence">Operator precedence</h2>
+<p>Logical operators have a defined precedence (order of operations) just as arithmetic operators do. In arithmetic, parentheses have the highest precedence, followed by exponents, then multiplication and division, and finally addition and subtraction.</p>
+<p>Here is the precedence of the logical operators, from most important (do first) to least important (do last):</p>
+<ol>
+<li>Parentheses</li>
+<li>Not operator, <code>¬</code></li>
+<li>And operator, <code>∧</code></li>
+<li>Or operator, <code>∨</code></li>
+<li>Implies operator, <code>→</code></li>
+</ol>
+<p>For example, in the statement <code>(p ∨ q) ∧ ¬p</code>, we would evaluate the operators in the following order:</p>
+<ol>
+<li>The parentheses (which would resolve the <code>(p ∨ q)</code> expression)</li>
+<li>The not, <code>¬</code></li>
+<li>The and, <code>∧</code></li>
+</ol>
+<p>Sometimes we have more than one of the same operator in a single statement. For example: <code>p ∨ q ∨ r</code>. Different operators have different rules for resolving multiple occurrences:</p>
+<ol>
+<li>Multiple parentheses - the innermost parentheses are resolved first, working from inside out.</li>
+<li>Multiple not ( <code>¬</code> ) operators &ndash; the rightmost <code>¬</code> is resolved first, working from right to left. For example, <code>¬¬p</code> is equivalent to <code>¬(¬p)</code>.</li>
+<li>Multiple and ( <code>∧</code> ) operators &ndash; the leftmost <code>∧</code> is resolved first, working from left to right. For example, <code>p ∧ q ∧ r</code> is equivalent to <code>(p ∧ q) ∧ r</code>.</li>
+<li>Multiple or ( <code>∨</code> ) operators &ndash; the leftmost <code>∨</code> is resolved first, working from left to right. For example, <code>p ∨ q ∨ r</code> is equivalent to <code>(p ∨ q) ∨ r</code>.</li>
+<li>Multiple implies ( <code>→</code> ) operators &ndash; the rightmost <code>→</code> is resolved first, working from right to left. For example, <code>p → q → r</code> is equivalent to <code>p → (q → r)</code>.</li>
+</ol>
+<h2 id="top-level-operator">Top-level operator</h2>
+<p>In a logical statement, the <em>top-level operator</em> is the operator that is applied last (after following the precedence rules above).</p>
+<p>For example, in the statement:</p>
+<p><code>p ∨ q → ¬p ∧ r</code></p>
+<p>We would evaluate first the <code>¬</code>, then the <code>∧</code>, then the <code>∨</code>, and lastly the <code>→</code>. Thus the <code>→</code> is the top-level operator.</p>
+<h2 id="classifying-truth-tables">Classifying truth tables</h2>
+<p>In our study of logic, it will be convenient to characterize logical formula with a description of their truth tables. We will classify each logical formula in one of three ways:</p>
+<ul>
+<li><em>Tautology</em> - when all truth assignments for a logical formula are true</li>
+<li><em>Contradictory</em> - when all truth assignments for a logical formula are false</li>
+<li><em>Contingent</em> - when some truth assignments for a logical formula are true and some are false.</li>
+</ul>
+<p>For example, <code>p ∨ ¬ p</code> is a <em>tautology</em>. Whether <code>p</code> is true or false, <code>p ∨ ¬ p</code> is always true.</p>
+<p>On the other hand, <code>p ∧ ¬ p</code> is <em>contradictory</em>. Whether <code>p</code> is true or false, <code>p ∧ ¬ p</code> is always false.</p>
+<p>Finally, something like <code>p ∨ q</code> is <em>contingent</em>. When <code>p</code> and <code>q</code> are both false, then <code>p ∨ q</code> is false. However, <code>p ∨ q</code> is true in every other case.</p>
+<p>If all truth assignments for a logical formula are True, the formula is said to be a tautology.</p>
+<h2 id="logika-syntax">Logika syntax</h2>
+<p>From this point forward, the course will expect you to use Logika formatted truth tables. The Logika truth table for the formula <code>¬(p ∧ q)</code> is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>      *
+</span></span><span style="display:flex;"><span>-----------------
+</span></span><span style="display:flex;"><span>p q | ¬(p ∧ q)
+</span></span><span style="display:flex;"><span>-----------------
+</span></span><span style="display:flex;"><span>T T | F T T T
+</span></span><span style="display:flex;"><span>T F | T T F F
+</span></span><span style="display:flex;"><span>F T | T F F T
+</span></span><span style="display:flex;"><span>F F | T F F F
+</span></span><span style="display:flex;"><span>-----------------
+</span></span><span style="display:flex;"><span>Contingent
+</span></span><span style="display:flex;"><span>- T: [T F] [F T] [F F]
+</span></span><span style="display:flex;"><span>- F: [T T]
+</span></span></code></pre></div><p>Logika truth tables have standard format (syntax) and semantic meanings. All elements of the truth table must be included to be considered correct.</p>
+<p><img src="https://ksu-cs-textbooks.github.io/cis301/images/LogikaTTexplain.png" alt="truth table syntax"></p>
+<ol>
+<li>
+<p>The first line should have a single asterisk (*) over the top-level operator in the formula.</p>
+</li>
+<li>
+<p>Next is a line of - (minus sign) characters, which must be at least as long as the third line to avoid getting errors.</p>
+</li>
+<li>
+<p>The third line contains <code>variables | formula</code>. As Logika uses some capital letters as reserved words, you should use lower-case letters as variable names. Additionally, variables should be listed alphabetically.</p>
+</li>
+<li>
+<p>The fourth line is another row of -, which is the same length as the second line.</p>
+</li>
+<li>
+<p>Next come the truth assignments. Under the variables, list all possible combinations of T and F. Start with all T and progress linearly to all F. (T and F must be capitalized.)
+After the Truth assignments is another row of -. Using each truth assignment, fill in truth assignments (T or F) under each operator in the formula in order of precedence (with the top-level operator applied last). Optionally, you can fill in the values for each variable under the forumla (as in the example above). However, it is only required that you fill in the truth assignments under each operator. Be careful to line up the truth assignments DIRECTLY below each operator, as Logika will reject truth tables that aren&rsquo;t carefully lined up.</p>
+</li>
+<li>
+<p>Under the truth assignments, put another line of - (minus sign) characters, which should be the same length as the second line.</p>
+</li>
+<li>
+<p>Finally, classify the formula as either <code>Tautology</code> (if everything under the top-level operator is T), <code>Contradictory</code> (if everything under the top-level operator is F), or <code>Contingent</code> (if there is a mix of T and F under the top-level operator). If the formula is contingent, you must also list which truth assignments made the formula true (i.e., which truth assignments made the top-level operator T) and which truth assignments made the formula false. Follow the image above for the syntax of how to list the truth assignments for contingent examples.</p>
+</li>
+</ol>
+<h2 id="alternative-logical-operators">Alternative logical operators</h2>
+<p>In order to type each traditional logical operator in Logika, you must insert a special Unicode symbol. You can do this by typing: <code>Shift-Command-Ctrl-Semicolon</code> and then a letter corresponding to a specific symbol. Here is how to insert each operator:</p>
+<ul>
+<li>NOT, <code>¬</code>. <code>Shift-Command-Ctrl-Semicolon-N</code></li>
+<li>OR, <code>∨</code>. <code>Shift-Command-Ctrl-Semicolon-V</code></li>
+<li>AND, <code>∧</code>, <code>Shift-Command-Ctrl-Semicolon-∧</code></li>
+<li>IMPLIES, <code>→</code>, <code>Shift Command Ctrl -</code> (the last symbol is a dash, -)</li>
+</ul>
+<p>This can be tedious. While you can create 
+
+<a href="https://www.jetbrains.com/help/idea/settings-keymap.html#decda373" target="_blank" rel="noopener">keyboard shortcuts</a> in IntelliJ for certain keystrokes, it is easier to use one of the available ASCII replacements instead. Here are alternatives for each operator:</p>
+<ul>
+<li>NOT: <code>!</code>, <code>~</code>, <code>not</code></li>
+<li>OR: <code>V</code> (a capital V), <code>|</code>, <code>or</code></li>
+<li>AND: <code>∧</code>, <code>&amp;</code>, <code>and</code></li>
+<li>IMPLIES: <code>→</code>, <code>implies</code></li>
+</ul>
+<p>In the remainder of this book, I will often use these ASCII replacement characters because they are easier to type.</p>
+<h2 id="example">Example</h2>
+<p>Suppose we want to write a Logika truth table for:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∧ q) →  ¬r
+</span></span></code></pre></div><p>First, we make sure we have a new file in Sireum with the <code>.logika</code> extension. Then, we construct this truth table shell:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                *
+</span></span><span style="display:flex;"><span>----------------------
+</span></span><span style="display:flex;"><span>p q r | (p ∧ q) →  ¬r
+</span></span><span style="display:flex;"><span>----------------------
+</span></span><span style="display:flex;"><span>T T T |
+</span></span><span style="display:flex;"><span>T T F |
+</span></span><span style="display:flex;"><span>T F T |
+</span></span><span style="display:flex;"><span>T F F |
+</span></span><span style="display:flex;"><span>F T T |
+</span></span><span style="display:flex;"><span>F T F |
+</span></span><span style="display:flex;"><span>F F T |
+</span></span><span style="display:flex;"><span>F F F |
+</span></span><span style="display:flex;"><span>----------------------
+</span></span></code></pre></div><p>In the table above, we noticed that the <code>→</code> operator was the top-level operator according to our operator precedence rules.</p>
+<p>Next, we fill in the output for the corresponding truth assignment under each operator, from highest precedence to lowest precedence. First, we evaluate the parentheses, which have the highest precedence. For example, we put a <code>T</code> under the <code>∧</code> in the first row, as <code>p</code> and <code>q</code> are both <code>T</code> in that row, and <code>T ∧ T</code> is <code>T</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                *
+</span></span><span style="display:flex;"><span>----------------------
+</span></span><span style="display:flex;"><span>p q r | (p ∧ q) →  ¬r
+</span></span><span style="display:flex;"><span>----------------------
+</span></span><span style="display:flex;"><span>T T T |    T
+</span></span><span style="display:flex;"><span>T T F |    T
+</span></span><span style="display:flex;"><span>T F T |    F
+</span></span><span style="display:flex;"><span>T F F |    F
+</span></span><span style="display:flex;"><span>F T T |    F
+</span></span><span style="display:flex;"><span>F T F |    F
+</span></span><span style="display:flex;"><span>F F T |    F
+</span></span><span style="display:flex;"><span>F F F |    F
+</span></span><span style="display:flex;"><span>----------------------
+</span></span></code></pre></div><p>In this example, we are only filling in under each operator (instead of also transcribing over each variable value), but either approach is acceptable.</p>
+<p>Next, we fill in under the  ¬ operator, which has the next-highest precedence:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                *
+</span></span><span style="display:flex;"><span>----------------------
+</span></span><span style="display:flex;"><span>p q r | (p ∧ q) →  ¬r
+</span></span><span style="display:flex;"><span>----------------------
+</span></span><span style="display:flex;"><span>T T T |    T       F
+</span></span><span style="display:flex;"><span>T T F |    T       T
+</span></span><span style="display:flex;"><span>T F T |    F       F
+</span></span><span style="display:flex;"><span>T F F |    F       T
+</span></span><span style="display:flex;"><span>F T T |    F       F
+</span></span><span style="display:flex;"><span>F T F |    F       T
+</span></span><span style="display:flex;"><span>F F T |    F       F
+</span></span><span style="display:flex;"><span>F F F |    F       T
+</span></span><span style="display:flex;"><span>----------------------
+</span></span></code></pre></div><p>Then, we fill in under our top-level operator, the <code>→</code>. Notice that we must line up the <code>T/F</code> values under the <code>-</code> in the <code>→</code> symbol. For example, we put a <code>F</code> under the <code>→</code> on the first row, as <code>(p ∧ q)</code> is <code>T</code> there and <code> ¬r</code> is <code>F</code>, and we know that <code>T→F</code> is <code>F</code> because it describes a broken promise.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                *
+</span></span><span style="display:flex;"><span>----------------------
+</span></span><span style="display:flex;"><span>p q r | (p ∧ q) →  ¬r
+</span></span><span style="display:flex;"><span>----------------------
+</span></span><span style="display:flex;"><span>T T T |    T    F  F
+</span></span><span style="display:flex;"><span>T T F |    T    T  T
+</span></span><span style="display:flex;"><span>T F T |    F    T  F
+</span></span><span style="display:flex;"><span>T F F |    F    T  T
+</span></span><span style="display:flex;"><span>F T T |    F    T  F
+</span></span><span style="display:flex;"><span>F T F |    F    T  T
+</span></span><span style="display:flex;"><span>F F T |    F    T  F
+</span></span><span style="display:flex;"><span>F F F |    F    T  T
+</span></span><span style="display:flex;"><span>----------------------
+</span></span></code></pre></div><p>Lastly, we examine the list of outputs under the top-level operator. We see that some truth assignments made the formula true, and that others (one) made the formula false. Thus, the formula is contingent. We label it as such, and list which truth assignments made the formula true and which made it false:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                *
+</span></span><span style="display:flex;"><span>----------------------
+</span></span><span style="display:flex;"><span>p q r | (p ∧ q) → ¬r
+</span></span><span style="display:flex;"><span>----------------------
+</span></span><span style="display:flex;"><span>T T T |    T    F F
+</span></span><span style="display:flex;"><span>T T F |    T    T T
+</span></span><span style="display:flex;"><span>T F T |    F    T F
+</span></span><span style="display:flex;"><span>T F F |    F    T T
+</span></span><span style="display:flex;"><span>F T T |    F    T F
+</span></span><span style="display:flex;"><span>F T F |    F    T T
+</span></span><span style="display:flex;"><span>F F T |    F    T F
+</span></span><span style="display:flex;"><span>F F F |    F    T T
+</span></span><span style="display:flex;"><span>----------------------
+</span></span><span style="display:flex;"><span>Contingent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- T: [T T F] [T F T] [T F F] [F T T] [F T F] [F F T] [F F F]
+</span></span><span style="display:flex;"><span>- F: [T T T]
+</span></span></code></pre></div><p>If you typed everything correctly, you should see a popup in Sireum logika that says: &ldquo;Logika Verified&rdquo; with a purple checkmark:</p>
+<p><img src="https://ksu-cs-textbooks.github.io/cis301/images/ttVerified.png" alt="truth table verified"></p>
+<p>If you instead see red error markings, hover over them and read the explanations &ndash; it means there are errors in your truth table.</p>
+<p>If you see no errors and no purple check, you will need to manually run Logika. Right-click in the text area that contains your truth table, and select &ldquo;Logika check&rdquo;.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        </div>
+      </main>
+    
+<div class="git-footer">
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Julie Thornton
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/25891461390ecb114a5c1b1726bac1e3f39beb0e">May 26, 2022</a>
+</p>
+</div>
+
+    
+    </div>
+    
+    
+    
+    
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+
+<a id="logo" href="https://ksu-cs-textbooks.github.io/cis301/">
+  CIS 301: Logical Foundations of Programming
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/auto-complete.js?1659549438" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.min.js?1659549438" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.stemmer.support.min.js?1659549438" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.multi.min.js?1659549438" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.en.min.js?1659549438" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/search.js?1659549438" defer></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics collapsible-menu">
+          <li data-nav-id="/0-chapter/" title="Getting Started" class="dd-item"><input type="checkbox" id="section-c55c9f751a28ecc9415234375cddd395" class="toggle"/><label for="section-c55c9f751a28ecc9415234375cddd395" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/"><b>0. </b>Getting Started</a><ul>
+          <li data-nav-id="/0-chapter/0_1-toolsguide/" title="Tools Guide" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/0_1-toolsguide/">0.1. Tools Guide</a></li></ul></li>
+          <li data-nav-id="/1-chapter/" title="Basics and Logic Puzzles" class="dd-item"><input type="checkbox" id="section-7a71fe25dd66b523fca4004b7c4d01d0" class="toggle"/><label for="section-7a71fe25dd66b523fca4004b7c4d01d0" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/"><b>1. </b>Basics and Logic Puzzles</a><ul>
+          <li data-nav-id="/1-chapter/1_1-logicbasics/" title="Basic Logical Reasoning" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_1-logicbasics/">1.1. Basic Logical Reasoning</a></li>
+          <li data-nav-id="/1-chapter/1_2-knightsknaves/" title="Knights and Knaves" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_2-knightsknaves/">1.2. Knights and Knaves</a></li>
+          <li data-nav-id="/1-chapter/1_3-otherpuzzles/" title="Other Puzzles" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_3-otherpuzzles/">1.3. Other Puzzles</a></li></ul></li>
+          <li data-nav-id="/2-chapter/" title="Truth Tables" class="dd-item parent"><input type="checkbox" id="section-c23f766dd7728aa0e1cff094001eac05" class="toggle" checked/><label for="section-c23f766dd7728aa0e1cff094001eac05" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/"><b>2. </b>Truth Tables</a><ul>
+          <li data-nav-id="/2-chapter/2_1-opscircuits/" title="Operators and Circuits" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_1-opscircuits/">2.1. Operators and Circuits</a></li>
+          <li data-nav-id="/2-chapter/2_2-logikatruth/" title="Truth Tables in Logika" class="dd-item active"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/">2.2. Truth Tables in Logika</a></li>
+          <li data-nav-id="/2-chapter/2_3-satis/" title="Satisfiability" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_3-satis/">2.3. Satisfiability</a></li>
+          <li data-nav-id="/2-chapter/2_4-logicalequiv/" title="Logical Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_4-logicalequiv/">2.4. Logical Equivalence</a></li>
+          <li data-nav-id="/2-chapter/2_5-sementail/" title="Semantic Entailment" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_5-sementail/">2.5. Semantic Entailment</a></li></ul></li>
+          <li data-nav-id="/3-chapter/" title="Propositional Logic Translations" class="dd-item"><input type="checkbox" id="section-ccb531d159d5247057d21618514721b6" class="toggle"/><label for="section-ccb531d159d5247057d21618514721b6" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/"><b>3. </b>Propositional Logic Translations</a><ul>
+          <li data-nav-id="/3-chapter/3_1-propatom/" title="Propositional Atoms" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_1-propatom/">3.1. Propositional Atoms</a></li>
+          <li data-nav-id="/3-chapter/3_2-notandor/" title="NOT, AND, OR Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_2-notandor/">3.2. NOT, AND, OR Translations</a></li>
+          <li data-nav-id="/3-chapter/3_3-implies/" title="Implies Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_3-implies/">3.3. Implies Translations</a></li>
+          <li data-nav-id="/3-chapter/3_4-equiv/" title="Equivalent Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_4-equiv/">3.4. Equivalent Translations</a></li>
+          <li data-nav-id="/3-chapter/3_5-knightsknavestt/" title="Knights and Knaves, revisited" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_5-knightsknavestt/">3.5. Knights and Knaves, revisited</a></li></ul></li>
+          <li data-nav-id="/4-chapter/" title="Propositional Logic Proofs" class="dd-item"><input type="checkbox" id="section-8ebf970484325d93d52075c7c72ba517" class="toggle"/><label for="section-8ebf970484325d93d52075c7c72ba517" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/"><b>4. </b>Propositional Logic Proofs</a><ul>
+          <li data-nav-id="/4-chapter/4_1-intro/" title="Introduction" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/">4.1. Introduction</a></li>
+          <li data-nav-id="/4-chapter/4_2-andrules/" title="AND Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/">4.2. AND Rules</a></li>
+          <li data-nav-id="/4-chapter/4_3-orrules/" title="OR Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/">4.3. OR Rules</a></li>
+          <li data-nav-id="/4-chapter/4_4-impliesrules/" title="Implies Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/">4.4. Implies Rules</a></li>
+          <li data-nav-id="/4-chapter/4_5-notrules/" title="Negation Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/">4.5. Negation Rules</a></li>
+          <li data-nav-id="/4-chapter/4_6-strategies/" title="Summary and Strategies" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/">4.6. Summary and Strategies</a></li>
+          <li data-nav-id="/4-chapter/4_7-theorems/" title="Theorems" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_7-theorems/">4.7. Theorems</a></li>
+          <li data-nav-id="/4-chapter/4_8-equivalence/" title="Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_8-equivalence/">4.8. Equivalence</a></li>
+          <li data-nav-id="/4-chapter/4_9-soundcomplete/" title="Soundness and Completeness" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_9-soundcomplete/">4.9. Soundness and Completeness</a></li></ul></li>
+          <li data-nav-id="/5-chapter/" title="Predicate Logic Translations" class="dd-item"><input type="checkbox" id="section-b69c30f957b0ff55c1e9673979ceb29d" class="toggle"/><label for="section-b69c30f957b0ff55c1e9673979ceb29d" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/"><b>5. </b>Predicate Logic Translations</a><ul>
+          <li data-nav-id="/5-chapter/5_1-motivation/" title="Motivation" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_1-motivation/">5.1. Motivation</a></li>
+          <li data-nav-id="/5-chapter/5_2-predsyntax/" title="Syntax" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_2-predsyntax/">5.2. Syntax</a></li>
+          <li data-nav-id="/5-chapter/5_3-singlequantifier/" title="Single Quantifier" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_3-singlequantifier/">5.3. Single Quantifier</a></li>
+          <li data-nav-id="/5-chapter/5_4-multquant/" title="Multiple Quantifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_4-multquant/">5.4. Multiple Quantifiers</a></li></ul></li>
+          <li data-nav-id="/6-chapter/" title="Predicate Logic Proofs" class="dd-item"><input type="checkbox" id="section-482218cb3a05b9572157ed70ed9a5c02" class="toggle"/><label for="section-482218cb3a05b9572157ed70ed9a5c02" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/"><b>6. </b>Predicate Logic Proofs</a><ul>
+          <li data-nav-id="/6-chapter/6_1-univrules/" title="Rules with ∀" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/">6.1. Rules with ∀</a></li>
+          <li data-nav-id="/6-chapter/6_2-existrules/" title="Rules with ∃" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/">6.2. Rules with ∃</a></li>
+          <li data-nav-id="/6-chapter/6_3-nested/" title="Nested Quantifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/">6.3. Nested Quantifiers</a></li>
+          <li data-nav-id="/6-chapter/6_4-equiv/" title="Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/">6.4. Equivalence</a></li>
+          <li data-nav-id="/6-chapter/6_5-strategies/" title="Summary and Strategies" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_5-strategies/">6.5. Summary and Strategies</a></li>
+          <li data-nav-id="/6-chapter/6_6-soundcomplete/" title="Soundness and Completeness" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_6-soundcomplete/">6.6. Soundness and Completeness</a></li></ul></li>
+          <li data-nav-id="/7-chapter/" title="Mathematical Induction" class="dd-item"><input type="checkbox" id="section-fc25ecfcb3d8e929949e8db759e88bab" class="toggle"/><label for="section-fc25ecfcb3d8e929949e8db759e88bab" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/"><b>7. </b>Mathematical Induction</a><ul>
+          <li data-nav-id="/7-chapter/7_1-process/" title="Induction Process" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_1-process/">7.1. Induction Process</a></li>
+          <li data-nav-id="/7-chapter/7_2-algebraex/" title="Algebra example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_2-algebraex/">7.2. Algebra example</a></li>
+          <li data-nav-id="/7-chapter/7_3-divex/" title="Divisibility example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_3-divex/">7.3. Divisibility example</a></li>
+          <li data-nav-id="/7-chapter/7_4-setex/" title="Set example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/">7.4. Set example</a></li></ul></li>
+          <li data-nav-id="/8-chapter/" title="Intro to Programming Logic" class="dd-item"><input type="checkbox" id="section-bd411d4b09a07aa69f5152043fa837ed" class="toggle"/><label for="section-bd411d4b09a07aa69f5152043fa837ed" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/"><b>8. </b>Intro to Programming Logic</a><ul>
+          <li data-nav-id="/8-chapter/8_1-goal/" title="Programming Logic Goal" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/">8.1. Programming Logic Goal</a></li>
+          <li data-nav-id="/8-chapter/8_2-logikaprograms/" title="Logika Programs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/">8.2. Logika Programs</a></li>
+          <li data-nav-id="/8-chapter/8_3-assertassume/" title="Assert and Assume" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_3-assertassume/">8.3. Assert and Assume</a></li>
+          <li data-nav-id="/8-chapter/8_4-algebrasubst/" title="Algebra and subst Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_4-algebrasubst/">8.4. Algebra and subst Rules</a></li>
+          <li data-nav-id="/8-chapter/8_5-assignment/" title="Assignment Statements" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_5-assignment/">8.5. Assignment Statements</a></li>
+          <li data-nav-id="/8-chapter/8_6-divmod/" title="Integer Division and Modulo" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_6-divmod/">8.6. Integer Division and Modulo</a></li>
+          <li data-nav-id="/8-chapter/8_7-conditionals/" title="Conditional Statements" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/">8.7. Conditional Statements</a></li></ul></li>
+          <li data-nav-id="/9-chapter/" title="Functions and Loops" class="dd-item"><input type="checkbox" id="section-708a4026c5b157dd8da0a277e359073f" class="toggle"/><label for="section-708a4026c5b157dd8da0a277e359073f" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/"><b>9. </b>Functions and Loops</a><ul>
+          <li data-nav-id="/9-chapter/9_1-functions/" title="Functions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_1-functions/">9.1. Functions</a></li>
+          <li data-nav-id="/9-chapter/9_2-recursion/" title="Recursion" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/">9.2. Recursion</a></li>
+          <li data-nav-id="/9-chapter/9_3-loops/" title="Loops" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_3-loops/">9.3. Loops</a></li>
+          <li data-nav-id="/9-chapter/9_4-logikafacts/" title="Logika Facts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_4-logikafacts/">9.4. Logika Facts</a></li>
+          <li data-nav-id="/9-chapter/9_5-summary/" title="Summary" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_5-summary/">9.5. Summary</a></li></ul></li>
+          <li data-nav-id="/10-chapter/" title="Sequences, Globals, and Termination" class="dd-item"><input type="checkbox" id="section-83e8e84779c32ba319a378089810947b" class="toggle"/><label for="section-83e8e84779c32ba319a378089810947b" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/"><b>10. </b>Sequences, Globals, and Termination</a><ul>
+          <li data-nav-id="/10-chapter/10_1-modes/" title="Logika Modes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_1-modes/">10.1 Logika Modes</a></li>
+          <li data-nav-id="/10-chapter/10_2-intosequences/" title="Intro to Sequences" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_2-intosequences/">10.2 Intro to Sequences</a></li>
+          <li data-nav-id="/10-chapter/10_3-seqfn/" title="Sequences in Functions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/">10.3 Sequences in Functions</a></li>
+          <li data-nav-id="/10-chapter/10_4-seqloop/" title="Sequences in Loops" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_4-seqloop/">10.4 Sequences in Loops</a></li>
+          <li data-nav-id="/10-chapter/10_5_seqlogfact/" title="Logika Facts, revisited" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5_seqlogfact/">10.5 Logika Facts, revisited</a></li>
+          <li data-nav-id="/10-chapter/10_6-globals/" title="Global Variables" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_6-globals/">10.6 Global Variables</a></li>
+          <li data-nav-id="/10-chapter/10_7-termination/" title="Termination" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_7-termination/">10.7 Termination</a></li></ul></li>
+        </ul>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="light-theme" value="light-theme" selected>Light Theme</option>
+                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter"><style>
+  #footer {
+      font-size: 13px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem 1rem;
+      min-width: 230px;
+      max-width: 300px;
+  }
+  #footer p {
+      margin: 0;
+  }
+</style>
+  
+<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/K-State-Computational-Core/hugo-theme-relearn/tree/main">Hugo Relearn Theme</a>.</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: .5rem auto" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        </div>
+      </div>
+    </aside>
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/featherlight.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1659549438" defer></script>
+    
+    
+    
+    
+  </body>
+</html>

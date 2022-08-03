@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>Rules with ∀ :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/" rel="canonical" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/index.xml" rel="alternate" type="application/rss+xml" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/_print/6-chapter/6_1-univrules/" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/embed.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549439" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549439" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549439" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1659549439" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1659549439" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1659549439"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis301/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1659549439" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/jquery.min.js?1659549439" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/">
+    
+    <div id="tele" class="tele mirror">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<h1>Rules with ∀</h1>
+    
+    
+<p>Just as with our propositional logic operators, there will be two inference rules for each of our predicate logic quanitifiers &ndash; an &ldquo;introduction rule and an &ldquo;elimination&rdquo; rule.</p>
+<p>In this section, we will see the two inference rules for the universal (∀) quantifier.</p>
+<h2 id="for-all-elimination">For all elimination</h2>
+<p>For all elimination allows us to take a claim that uses a universal quantifier &ndash; a statement about ALL individuals in a domain &ndash; and make the same statement about a specific individual in the domain. After all, if the statement is true for ALL individuals, then it follows that it should be true for a particular individual. We can formalize the rule as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>     ∀ x P(x)
+</span></span><span style="display:flex;"><span>∀e: ----------- 
+</span></span><span style="display:flex;"><span>       P(v)     where v is a particular individual in the domain
+</span></span></code></pre></div><p>Here is a simple example showing the syntax of the <code>∀e</code> rule in Logika. It shows that given the premises: <em>All humans are mortal</em> and <em>Socrates is a human</em>, that we can prove that <em>Socrates is mortal</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x (isHuman(x) → isMortal(x)),  isHuman(Socrates) ⊢ isMortal(Socrates)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x (isHuman(x) → isMortal(x))               premise
+</span></span><span style="display:flex;"><span>    2. isHuman(Socrates)                            premise
+</span></span><span style="display:flex;"><span>    3. isHuman(Socrates) → isMortal(Socrates)       ∀e 1 Socrates
+</span></span><span style="display:flex;"><span>    4. isMortal(Socrates)                           →e 3 2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We can read the justification <code>∀e 1 Socrates</code> as: &ldquo;for all elimination of the for-all statement on line 1, plugging in the individual Socrates&rdquo;.</p>
+<h2 id="for-all-introduction">For all introduction</h2>
+<p>If we can show that a property of the form <code>P(a)</code> holds for an arbitrary member <code>a</code> of a domain, then we can use for all introduction to conclude that the property must hold for ALL individuals in the domain &ndash; i.e., that <code>∀ x P(x)</code>. We can formalize the fule as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>     { a              (a is fresh)
+</span></span><span style="display:flex;"><span>       ... P(a) }
+</span></span><span style="display:flex;"><span>∀i: ---------------
+</span></span><span style="display:flex;"><span>      ∀ x P(x) 
+</span></span></code></pre></div><p>Here is a simple example showing the syntax of the <code>∀i</code> rule in Logika: &ldquo;Everyone is healthy; everyone is happ. Therefore, everyone is both healthy and happy.&rdquo;:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x isHealthy(x), ∀ y isHappy(y)  |-  ∀ z(isHealthy(z) ∧ isHappy(z))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  1. ∀ x isHealthy(x)                   premise
+</span></span><span style="display:flex;"><span>  2. ∀ y isHappy(y)                     premise
+</span></span><span style="display:flex;"><span>  3. {
+</span></span><span style="display:flex;"><span>       4. a
+</span></span><span style="display:flex;"><span>       5. isHealthy(a)                  ∀e 1 a
+</span></span><span style="display:flex;"><span>       6. isHappy(a)                    ∀e 2 a
+</span></span><span style="display:flex;"><span>       7. isHealthy(a) ∧ isHappy(a)     ∧i 5 6
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  8. ∀ z (isHealthy(z) ∧ isHappy(z))    ∀i 3
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If we wish to introduce a for-all statement, the pattern is:</p>
+<ul>
+<li>
+<p>Open a subproof and introduce an arbitrary/fresh individual in the domain (in the example above, we used <code>a</code>). It MUST be a name that we have not used elsewhere in the proof. The idea is that your individual could have been anyone/anything in the domain.</p>
+</li>
+<li>
+<p>When you introduce your individual, you do NOT include a justification on that line</p>
+</li>
+<li>
+<p>If you have other for-all statements available within the scope of the subproof, then it is often useful to use <code>∀e</code> to plug your fresh individual into them. After all, if those statements are true for ALL individuals, then they are also true for your fresh individual.</p>
+</li>
+<li>
+<p>If you are trying to prove something of the form <code>∀ x P(x)</code>, then you need to reach <code>P(a)</code> by the end of the subproof. You need to show that your goal for-all statement holds for your fresh individual. In our case, we wished to prove <code>∀ z (isHealthy(z) ∧ isHappy(z))</code>, so we reached <code>isHealthy(a) ∧ isHappy(a)</code> by the end of the subproof.</p>
+</li>
+<li>
+<p>After the subproof, you can use <code>∀i</code> to introduce a for-all statement for your last claim in the subproof &ndash; that since the individual could have been anyone, then the proposition holds for ALL individuals. The <code>∀i</code> justification needs the line number of the subproof.</p>
+</li>
+<li>
+<p>When you use <code>∀i</code>, it does not matter what variable you introduce into the for-all statement. In the example above, we introduced <code>∀ z</code> &ndash; but that was only to match the goal conclusion in the proof. We could have instead introduced <code>∀ x</code>, <code>∀ y</code>, <code>∀ people</code>, etc. We would use whatever variable we chose in the rest of that proposition &ndash; i.e., <code>∀ z (isHealthy(z) ∧ isHappy(z))</code>, or <code>∀ people (isHealthy(people) ∧ isHappy(people))</code>, etc.</p>
+</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<p>In this section, we will look at several proofs involving the universal quantifier.</p>
+<h3 id="example-1">Example 1</h3>
+<p>Suppose we wish to prove the following sequent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x P(x) ⊢ ∀ y P(y)
+</span></span></code></pre></div><p>This will let us show that it doesn&rsquo;t matter what variable we use with a universal quantifier &ndash; both <code>∀ x P(x)</code> and <code>∀ y P(y)</code> are saying the same thing: <em>for all individuals, P holds for that individual</em>.</p>
+<p>Since the top-level operator of our conclusion is a for-all statement, we see that we will need to use for all introduction. Following the pattern above, we open a subproof and introduce a fresh individual, <code>a</code>. Since we wish to introduce the for-all statement <code>∀ y P(y)</code>, then we know we need to reach <code>P(a)</code> by the end of our subproof:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x P(x) ⊢ ∀ y P(y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x P(x)         premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a            //our fresh individual
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //need: P(a)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //want to use ∀i to conclude ∀ y P(y)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Since we have an available for-all statement in our subproof (<code>∀ x P(x)</code>, from line 1), then we use <code>∀e</code> to plug <code>a</code> into it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x P(x) ⊢ ∀ y P(y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x P(x)         premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a            //our fresh individual
+</span></span><span style="display:flex;"><span>        4. P(a)         ∀e 1 a
+</span></span><span style="display:flex;"><span>        //need: P(a)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //want to use ∀i to conclude ∀ y P(y)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>At that point, we see that we have exactly the proposition we wanted to end our subproof &ndash; <code>P(a)</code>. All that remains is to use <code>∀i</code> to state that since <code>a</code> could have been anyone, that the proposition we reached at the end of subproof 2 must hold for all individuals. Here is the completed proof:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x P(x) ⊢ ∀ y P(y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x P(x)         premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a            //our fresh individual
+</span></span><span style="display:flex;"><span>        4. P(a)         ∀e 1 a
+</span></span><span style="display:flex;"><span>        //need: P(a)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //want to use ∀i to conclude ∀ y P(y)
+</span></span><span style="display:flex;"><span>    5. ∀ y P(y)         ∀i 2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="example-2">Example 2</h3>
+<p>Suppose we wish to prove that, given the following premises in the domain of people:</p>
+<ul>
+<li>All students have a phone and/or a laptop</li>
+<li>Everyone is a student</li>
+</ul>
+<p>Then we can conclude:</p>
+<ul>
+<li>Everyone has a phone and/or a laptop</li>
+</ul>
+<p>First, we identify the following predicates:</p>
+<ul>
+<li><code>isStudent(x)</code> - whether person x is a student</li>
+<li><code>hasPhone(x)</code> - whether person x has a phone</li>
+<li><code>hasLaptop(x)</code> = whether person x has a laptop</li>
+</ul>
+<p>Then, we can translate our premises and goal conclusion to predicate logic:</p>
+<ul>
+<li><em>All students have a phone and/or a laptop</em> translates to: <code>∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))</code></li>
+<li><em>Everyone is a student</em> translates to: <code>∀ x isStudent(x)</code></li>
+<li><em>Everyone has a phone and/or a laptop</em> translates to: <code>∀ x (hasPhone(x) ∨ hasLaptop(x))</code></li>
+</ul>
+<p>We need to prove the following sequent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)), ∀ x isStudent(x) ⊢ ∀ x (hasPhone(x) ∨ hasLaptop(x))
+</span></span></code></pre></div><p>As with our previous example, we see that we are trying to prove a for-all statement (<code>∀ x (hasPhone(x) ∨ hasLaptop(x))</code>). This means we will need to open a subproof and introduce a fresh individual &ndash; perhaps <code>bob</code>. By the end of the subproof, we must show that our goal for-all statement holds for that individual &ndash; that <code>hasPhone(bob) ∨ hasLaptop(bob)</code>. We start the proof as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)), ∀ x isStudent(x) ⊢ ∀ x (hasPhone(x) ∨ hasLaptop(x))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))          premise
+</span></span><span style="display:flex;"><span>    2. ∀ x isStudent(x)                                         premise
+</span></span><span style="display:flex;"><span>    3. {
+</span></span><span style="display:flex;"><span>        4. bob
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        //goal: hasPhone(bob) ∨ hasLaptop(bob)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use ∀i to conclude ∀ x (hasPhone(x) ∨ hasLaptop(x))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We have two available for-all statements within the subproof &ndash; <code>∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))</code> and <code>∀ x isStudent(x)</code>. Since those propositions hold for all individuals, they also hold for <code>bob</code>. We use <code>Ae</code> to plug in <code>bob</code> to those two propositions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)), ∀ x isStudent(x) ⊢ ∀ x (hasPhone(x) ∨ hasLaptop(x))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))          premise
+</span></span><span style="display:flex;"><span>    2. ∀ x isStudent(x)                                         premise
+</span></span><span style="display:flex;"><span>    3. {
+</span></span><span style="display:flex;"><span>        4. bob
+</span></span><span style="display:flex;"><span>        5. isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)      ∀e 1 a
+</span></span><span style="display:flex;"><span>        6. isStudent(bob)                                       ∀e 2 a   
+</span></span><span style="display:flex;"><span>        //goal: hasPhone(bob) ∨ hasLaptop(bob)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use ∀i to conclude ∀ x (hasPhone(x) ∨ hasLaptop(x))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Line 5 is an implies statement the form <code>p → q</code>, and line 6 is a statement of the form <code>p</code>. Thus we can use <code>→e</code> to conclude <code>hasPhone(bob) ∨ hasLaptop(bob)</code> (the &ldquo;q&rdquo; in that statement) &ndash; which is exactly what we needed to end the subproof. All that remains is to apply our <code>∀i</code> rule after the subproof. Here is the completed proof:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)), ∀ x isStudent(x) ⊢ ∀ x (hasPhone(x) ∨ hasLaptop(x))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))          premise
+</span></span><span style="display:flex;"><span>    2. ∀ x isStudent(x)                                         premise
+</span></span><span style="display:flex;"><span>    3. {
+</span></span><span style="display:flex;"><span>        4. bob
+</span></span><span style="display:flex;"><span>        5. isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)      ∀e 1 a
+</span></span><span style="display:flex;"><span>        6. isStudent(bob)                                       ∀e 2 a   
+</span></span><span style="display:flex;"><span>        7. hasPhone(bob) ∨ hasLaptop(bob)                       →e 5 6
+</span></span><span style="display:flex;"><span>        //goal: hasPhone(bob) ∨ hasLaptop(bob)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use ∀i to conclude ∀ x (hasPhone(x) ∨ hasLaptop(x))
+</span></span><span style="display:flex;"><span>    8. ∀ x (hasPhone(x) ∨ hasLaptop(x))                         ∀i 3
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="example-3">Example 3</h3>
+<p>Next, suppose we wish to prove the following sequent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x (S(x) → Pz(x)), ∀ x (Pz(x) → D(x)), ∀ x ¬D(x) ⊢ ∀ x ¬S(x)
+</span></span></code></pre></div><p>We again see that the top-level operator of what we are trying to prove is a universal quantifier. We use our strategy to open a subproof, introduce a fresh individual (maybe <code>a</code>), and plug that individual into any available for-all statements. Since we wish to prove <code>∀ x ¬S(x)</code>, then we will want to reach <code>¬S(a)</code> by the end of the subproof. Here is a sketch:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x (S(x) → Pz(x)), ∀ x (Pz(x) → D(x)), ∀ x ¬D(x) ⊢ ∀ x ¬S(x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x (S(x) → Pz(x))               premise
+</span></span><span style="display:flex;"><span>    2. ∀ x (Pz(x) → D(x))               premise
+</span></span><span style="display:flex;"><span>    3. ∀ x ¬D(x)                        premise
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. a
+</span></span><span style="display:flex;"><span>        6. S(a) → Pz(a)                 ∀e 1 a
+</span></span><span style="display:flex;"><span>        7. Pz(a) → D(a)                 ∀e 2 a
+</span></span><span style="display:flex;"><span>        8. ¬D(a)                        ∀e 3 a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: ¬S(a)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use ∀i to conclude ∀ x ¬S(x)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now, we see that our goal is to reach <code>¬S(a)</code> by the end of the subproof &ndash; so we need to prove something whose top-level operator is a NOT. We recall that we have a strategy to prove NOT(something) from propositional logic &ndash; we open a subproof, assuming <em>something</em> (<code>S(a)</code>, in our case), try to get a contradiction, and use NOT introduction after the subproof to conclude NOT (something) (<code>¬S(a)</code> for us). Here is the strategy:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x (S(x) → Pz(x)), ∀ x (Pz(x) → D(x)), ∀ x ¬D(x) ⊢ ∀ x ¬S(x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x (S(x) → Pz(x))               premise
+</span></span><span style="display:flex;"><span>    2. ∀ x (Pz(x) → D(x))               premise
+</span></span><span style="display:flex;"><span>    3. ∀ x ¬D(x)                        premise
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. a
+</span></span><span style="display:flex;"><span>        6. S(a) → Pz(a)                 ∀e 1 a
+</span></span><span style="display:flex;"><span>        7. Pz(a) → D(a)                 ∀e 2 a
+</span></span><span style="display:flex;"><span>        8. ¬D(a)                        ∀e 3 a
+</span></span><span style="display:flex;"><span>        9. {
+</span></span><span style="display:flex;"><span>            10. S(a)                    assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //goal: contradiction
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        //use ¬i to conclude ¬S(a)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: ¬S(a)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use ∀i to conclude ∀ x ¬S(x)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We can complete the proof as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x (S(x) → Pz(x)), ∀ x (Pz(x) → D(x)), ∀ x ¬D(x) ⊢ ∀ x ¬S(x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x (S(x) → Pz(x))               premise
+</span></span><span style="display:flex;"><span>    2. ∀ x (Pz(x) → D(x))               premise
+</span></span><span style="display:flex;"><span>    3. ∀ x ¬D(x)                        premise
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. a
+</span></span><span style="display:flex;"><span>        6. S(a) → Pz(a)                 ∀e 1 a
+</span></span><span style="display:flex;"><span>        7. Pz(a) → D(a)                 ∀e 2 a
+</span></span><span style="display:flex;"><span>        8. ¬D(a)                        ∀e 3 a
+</span></span><span style="display:flex;"><span>        9. {
+</span></span><span style="display:flex;"><span>            10. S(a)                    assume
+</span></span><span style="display:flex;"><span>            11. Pz(a)                   →e 6 10
+</span></span><span style="display:flex;"><span>            12. D(a)                    →e 7 11
+</span></span><span style="display:flex;"><span>            13. ⊥                       ¬e 12 8
+</span></span><span style="display:flex;"><span>            //goal: contradiction
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        //use ¬i to conclude ¬S(a)
+</span></span><span style="display:flex;"><span>        14. ¬S(a)                       ¬i 9
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: ¬S(a)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use ∀i to conclude ∀ x ¬S(x)
+</span></span><span style="display:flex;"><span>    15. ∀ x ¬S(x)                       ∀i 4
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1659549439" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1659549439" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/featherlight.min.js?1659549439" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1659549439" defer></script>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/tele-scroll.js?1659549439 defer"></script>
+    
+  </body>
+</html>

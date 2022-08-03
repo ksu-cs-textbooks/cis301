@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>OR Rules :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/" rel="canonical" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/index.xml" rel="alternate" type="application/rss+xml" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/tele.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/embed.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549438" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549438" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549438" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1659549438" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1659549438" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1659549438"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis301/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1659549438" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/jquery.min.js?1659549438" defer></script>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/">
+    
+    
+    <div id="body" class="default-animation">
+      
+      
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div class="navigation">
+             <a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/" title="Implies Rules (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+          </div>
+          <div class="navigation">
+             <a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/" title="AND Rules (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+          </div>
+          <div id="top-print-link">
+            <a class="print-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis301/_print/4-chapter/4_3-orrules/">
+              <i class="fas fa-print fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit (CTRL+ALT+e)' href="https://gitlab.cs.ksu.edu/-/ide/project/cs-textbooks/cis301-textbook/edit/master/-/content/4-chapter/4_3-orRules.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/"><span itemprop="name">Homepage</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/"><span itemprop="name">Propositional Logic Proofs</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/" aria-disabled="true"><span itemprop="name">OR Rules</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#or-introduction">OR introduction</a></li>
+    <li><a href="#or-elimination">OR elimination</a>
+      <ul>
+        <li><a href="#subproofs">Subproofs</a></li>
+        <li><a href="#syntax">Syntax</a></li>
+      </ul>
+    </li>
+    <li><a href="#example-1">Example 1</a></li>
+    <li><a href="#example-2">Example 2</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+          <article class="default">
+    
+    
+<h1>OR Rules</h1>
+    
+    
+<p>In this section, we will see the deduction rules for the OR operator.</p>
+<h2 id="or-introduction">OR introduction</h2>
+<p>If we know that a proposition <code>P</code> is true, then it will also be the case that both <code>P ∨ Q</code> and <code>Q ∨ P</code> are also true. It doesn&rsquo;t matter what <code>Q</code> is &ndash; it might even be something that is know to be false. Because <code>P</code> is true, it will make the overall OR statement true as well.</p>
+<p>There are two OR introduction rules &ndash; <code>∨i1</code> and <code>∨i2</code>. <code>∨i1</code> allows us to claim an OR statement with some previous fact on the left (first) side, and <code>∨i2</code> allows us to do the same with the right (second) side. Here is the formalization of each rule:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>         P                  Q     
+</span></span><span style="display:flex;"><span>∨i1 : --------    ∨i2 :  -------- 
+</span></span><span style="display:flex;"><span>       P ∨ Q              P ∨ Q 
+</span></span></code></pre></div><p>Here is a simple example showing the syntax of the <code>∨i1</code> rule in Logika:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ⊢ p ∨ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p                premise
+</span></span><span style="display:flex;"><span>    2. p ∨ q            ∨i1 1
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We can read the justification <code>∨i1 1</code> as: OR introduction 1 from line 1, or &ldquo;create a OR statement that puts the claim from line 1 on the first (left) side, and puts something new on the second side&rdquo;.</p>
+<p>Here is a simple example showing the syntax of the <code>∨i2</code> rule in Logika:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ⊢ q ∨ p
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p                premise
+</span></span><span style="display:flex;"><span>    2. q ∨ p            ∨i2 1
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We can read the justification <code>∨i2 1</code> as: OR introduction 2 from line 1, or &ldquo;create a OR statement that puts the claim from line 1 on the second (right) side, and puts something new on the first side&rdquo;.</p>
+<h2 id="or-elimination">OR elimination</h2>
+<p>The OR elimination rule is used when we have an OR statement of the form <code>P ∨ Q</code>, and we wish to use it to extract new information. In real life, we call the rule &ldquo;case analysis&rdquo;. For example, say that you have either 12 quarters in your pocket or 30 dimes in your pocket. In either case, you can buy a $3.00 coffee. Why? You do a case analysis:</p>
+<ul>
+<li>In the case you have 12 quarters, that totals $3.00, and you can buy the coffee;</li>
+<li>In the case you have 30 dimes, that totals $3.00, and you can buy the coffee.</li>
+</ul>
+<p>So, in both cases, you can buy the coffee.</p>
+<p>We can formalize the idea behind the OR elimination rule as follows:</p>
+<ul>
+<li>In order to the OR statement <code>P ∨ Q</code> to be true, at least one of <code>P</code> and <code>Q</code> must be individually true</li>
+<li>If we are able to reach some conclusion <code>R</code> if we assume <code>P</code> is true, and we are able to reach the SAME conclusion <code>R</code> if we assume <code>Q</code> is true&hellip;</li>
+<li>&hellip;Then no matter what, <code>R</code> will be true.</li>
+</ul>
+<h3 id="subproofs">Subproofs</h3>
+<p>OR elimination will be our first proof rule that uses subproofs. Subproofs are tools for case analysis or what-if excursions, used to support justification for later claims. In propositional logic, they will always contain one assumption. This assumption is a proposition whose scope is limited to the subproof. The syntax of a subproof in Logika looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>premises ⊢ consequent
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. fact_A       justification_1
+</span></span><span style="display:flex;"><span>    ...             ...
+</span></span><span style="display:flex;"><span>    17. {
+</span></span><span style="display:flex;"><span>        18. fact_ D     assume
+</span></span><span style="display:flex;"><span>        ...             ...
+</span></span><span style="display:flex;"><span>        25. fact_G      some_rule  using claim 1 // this is ok
+</span></span><span style="display:flex;"><span>        ...             ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...             ...
+</span></span><span style="display:flex;"><span>    45. fact_R      some_rule using claim 25   // this is NOT ok
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Opening and closing braces, <code>{...}</code>,  define the scope of claims. Other than the first <code>{</code> which goes directly under the sequent, the opening brace is given a claim number, but no justification. Closing braces are not given claim numbers. The use of braces is analogous to their use to define scope in Java, C# and C.</p>
+<p>In the example above, the subproof starting on line 17 creates an environment where fact_D is true. The justification used on claim number 25, which uses claim 1, is valid. The scope of claim 1 includes subproof 17.</p>
+<p>However, the justification for line number 45 is invalid. Fact_G on line number 25 was proven true in an environment where fact_D is true (ie subproof 17).  That environment ends (falls out of scope) when the closing brace for the subproof is reached. This happens before line 45.</p>
+<p>Only specific deduction rules allow you to close a scope and create a new claim based on that subproof in the enclosing (outer) scope. These rules always take a subproof (i.e &ldquo;17&rdquo;) as part of the justification.</p>
+<h3 id="syntax">Syntax</h3>
+<p>Here is the OR elimination rule:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                 { P assume       { Q assume
+</span></span><span style="display:flex;"><span>      P ∨ Q        ... R    }      ... R     }
+</span></span><span style="display:flex;"><span>∨e : -------------------------------------------
+</span></span><span style="display:flex;"><span>                         R
+</span></span></code></pre></div><p>In order to use the <code>∨e</code> rule, we must have three things:</p>
+<ul>
+<li>An OR statement of the form <code>P ∨ Q</code></li>
+<li>A subproof that begins by assuming the left side of the OR statement (<code>P</code>) and ends with some claim <code>R</code></li>
+<li>A subproof that begins by assuming the right side of the OR statement (<code>Q</code>) and ends with the same claim <code>R</code></li>
+</ul>
+<p>If we have all three parts, we can use the <code>∨e</code> and cite the OR statement and both subproofs to claim that <code>R</code> is true no matter what.</p>
+<p>Here is a simple example showing the syntax of the <code>∨e</code> rule in Logika:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∨ q ⊢ q ∨ p 
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∨ q            premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. p            assume
+</span></span><span style="display:flex;"><span>        4. q ∨ p        ∨i2 3
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    5. {
+</span></span><span style="display:flex;"><span>        6. q            assume
+</span></span><span style="display:flex;"><span>        7. q ∨ p        ∨i1 6
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    8. q ∨ p            ∨e 1 2 5
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Here, we have the OR statement <code>p ∨ q</code>. We then have two subproofs where we separately assume that the two sides or the OR are true. The first subproof on line 2 starts by assuming the left side of the OR, <code>p</code>. It then uses OR introduction to reach the goal conclusion, <code>q ∨ p</code>. After reaching our goal, we end the first subproof and immediately start a second subproof. In the second subproof, we assume that the the right side of our OR statement is true, <code>q</code>. We then use the other form of OR introduction to reach the SAME conclusion as we did in the first subproof &ndash; <code>q ∨ p</code>. We end the second subproof and can now use <code>∨e</code> to state that our conclusion <code>q ∨ p</code> must be true no matter what. After all, we knew that at least one of <code>p</code> or <code>q</code> was true, and we were able to reach the conclusion <code>q ∨ p</code> in both cases.</p>
+<p>When using the justification:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∨e 1 2 5
+</span></span></code></pre></div><p>The first line number corresponds to our original OR statement (line 1 with <code>p ∨ q</code> for us), the second line number corresponds to the subproof where we assumed the first (left) side of that OR statement (line 2 for us, which starts the subproof where we assumed <code>p</code>), and the third line number corresponds to the subproof where we assumed the second (right) side of that OR statement (line 5 for us, which starts the subproof where we assumed <code>q</code>)</p>
+<p>This proof shows that the OR operator is commutative.</p>
+<h2 id="example-1">Example 1</h2>
+<p>Suppose we want to prove the following sequent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ (q ∨ r) ⊢ (p ∧ q) ∨ (p ∧ r)
+</span></span></code></pre></div><p>As we have done before, we start by extracting whatever we can from our premises:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ (q ∨ r) ⊢ (p ∧ q) ∨ (p ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ (q ∨ r)                  premise
+</span></span><span style="display:flex;"><span>    2. p                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. q ∨ r                        ∧e2 1
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Next, we look at what we are trying to prove, and see that its top-level operator is an OR. If we already had either side of our goal OR statement (i.e., either <code>p ∧ q</code> or <code>p ∧ r</code>), then we could use <code>∧i</code> to create the desired proposition. This isn&rsquo;t the case for us, though, so we need to use a different strategy.</p>
+<p>The next consideration when we want to prove an OR statement is whether we have another OR statement, either as a premise or a fact we have already established. If we do, then we can attempt to use OR elimination with that OR statement to build our goal conclusion (<code>(p ∧ q) ∨ (p ∧ r)</code>). We have the OR statement <code>q ∨ r</code> available, so we&rsquo;ll try to use OR elimination &ndash; we&rsquo;ll have a subproof where we assume <code>q</code> and try to reach <code>(p ∧ q) ∨ (p ∧ r)</code>, and then a subproof where we assume <code>r</code> and try to reach <code>(p ∧ q) ∨ (p ∧ r)</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ (q ∨ r) ⊢ (p ∧ q) ∨ (p ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ (q ∨ r)                  premise
+</span></span><span style="display:flex;"><span>    2. p                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. q ∨ r                        ∧e2 1
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. q                        assume
+</span></span><span style="display:flex;"><span>        6. p ∧ q                    ∧i2 5
+</span></span><span style="display:flex;"><span>        7. (p ∧ q) ∨ (p ∧ r)        ∨i1 6
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    8. {
+</span></span><span style="display:flex;"><span>        9. r                        assume
+</span></span><span style="display:flex;"><span>        10. p ∧ r                   ∧i2 9
+</span></span><span style="display:flex;"><span>        11. (p ∧ q) ∨ (p ∧ r)       ∨i2 10
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    12. (p ∧ q) ∨ (p ∧ r)           ∨e 3 4 8
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We can make our final claim:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>12. (p ∧ q) ∨ (p ∧ r)           ∨e 3 4 8
+</span></span></code></pre></div><p>Because we had an OR statement on line 3 (<code>q ∨ r</code>), assumed the left side of that OR (<code>q</code>) in subproof 4 and reached the conclusion of <code>(p ∧ q) ∨ (p ∧ r)</code>, and then assumed the right side of our OR (<code>r</code>) in subproof 8 and reached the SAME conclusion of <code>(p ∧ q) ∨ (p ∧ r)</code>.</p>
+<h2 id="example-2">Example 2</h2>
+<p>Suppose we want to prove the following sequent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∨ q) ∧ (p ∨ r) ⊢ p ∨ (q ∧ r)
+</span></span></code></pre></div><p>Note that this is the same as the previous example, but the premises are switched with the conclusion. If we prove this direction too, we will have shown that <code>(p ∨ q) ∧ (p ∨ r)</code> is equivalent to <code>p ∨ (q ∧ r)</code>. We&rsquo;ll learn more about this process in section 4.8.</p>
+<p>We start by pulling in our premises and extracting whatever information we can:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∨ q) ∧ (p ∨ r) ⊢ p ∨ (q ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. (p ∨ q) ∧ (p ∨ r)                premise
+</span></span><span style="display:flex;"><span>    2. p ∨ q                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. p ∨ r                            ∧e2 1
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We see that the top-level operator of our conclusion (<code>p ∨ (q ∧ r)</code>) is an OR, so we apply the same strategy we did in the previous example &ndash; we see if we have an OR statement already available as a claim, and then try to use OR elimination on it to build to our conclusion in both subproofs. In this case, though, we have TWO or statements &ndash; <code>p ∨ q</code> and <code>p ∨ r</code>. We will see that it doesn&rsquo;t matter which of these we choose, so let&rsquo;s pick the first one &ndash; <code>p ∨ q</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∨ q) ∧ (p ∨ r) ⊢ p ∨ (q ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. (p ∨ q) ∧ (p ∨ r)                premise
+</span></span><span style="display:flex;"><span>    2. p ∨ q                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. p ∨ r                            ∧e2 1
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. p                            assume
+</span></span><span style="display:flex;"><span>        6. p ∨ (q ∧ r)                  ∨i1 5
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    7. {
+</span></span><span style="display:flex;"><span>        8. q                            assume
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        //what do we do now?
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We are able to finish the first subproof, but it&rsquo;s not clear what to do in the second subproof. We assume <code>q</code>, and know we have the goal of reaching the same conclusion as we did in the first subproof, <code>p ∨ (q ∧ r)</code>&hellip;but we don&rsquo;t have enough information yet to get there. The only piece of information that we haven&rsquo;t used that might help us is our second OR statement &ndash; <code>p ∨ r</code>. We are already inside a subproof, but we can still nest other subproofs &ndash; just as we can nest conditional statements in computer programs.</p>
+<p>We start on a nested OR elimination approach with <code>p ∨ r</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∨ q) ∧ (p ∨ r) ⊢ p ∨ (q ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. (p ∨ q) ∧ (p ∨ r)                premise
+</span></span><span style="display:flex;"><span>    2. p ∨ q                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. p ∨ r                            ∧e2 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    //OR elimination for p ∨ q
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. p                            assume
+</span></span><span style="display:flex;"><span>        6. p ∨ (q ∧ r)                  ∨i1 5
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    7. {
+</span></span><span style="display:flex;"><span>        8. q                            assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //start on OR elimination with p ∨ r
+</span></span><span style="display:flex;"><span>        9. {
+</span></span><span style="display:flex;"><span>            10. p                       assume
+</span></span><span style="display:flex;"><span>            11. p ∨ (q ∧ r)             ∨i1 10
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        12. {
+</span></span><span style="display:flex;"><span>            13. r                       assume
+</span></span><span style="display:flex;"><span>            14. q ∧ r                   ∧i 8 13
+</span></span><span style="display:flex;"><span>            15. p ∨ (q ∧ r)             ∨i2 14
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        16. p ∨ (q ∧ r)                 ∨e 3 9 12
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    17. p ∨ (q ∧ r)                     ∨e 2 4 7
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Note that we use the ∨e rule twice &ndash; on line 16 to tie together subproofs 9 and 12 (where we processed the OR statement <code>p ∨ r</code>), and on line 17 to tie together subproofs 4 and 7 (where we processed the OR statement <code>p ∨ q</code>).</p>
+<p>When we first started this problem, we mentioned that it didn&rsquo;t matter which OR statement we chose to work with &ndash; <code>p ∨ q</code> or <code>p ∨ r</code>. Indeed, we could have chosen <code>p ∨ r</code> instead &ndash; but we would end up nesting another OR elimination for <code>p ∨ q</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∨ q) ∧ (p ∨ r) ⊢ p ∨ (q ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. (p ∨ q) ∧ (p ∨ r)                premise
+</span></span><span style="display:flex;"><span>    2. p ∨ q                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. p ∨ r                            ∧e2 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    //OR elimination for p ∨ r
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. p                            assume
+</span></span><span style="display:flex;"><span>        6. p ∨ (q ∧ r)                  ∨i1 5
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    7. {
+</span></span><span style="display:flex;"><span>        8. r                            assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //start on OR elimination with p ∨ q
+</span></span><span style="display:flex;"><span>        9. {
+</span></span><span style="display:flex;"><span>            10. p                       assume
+</span></span><span style="display:flex;"><span>            11. p ∨ (q ∧ r)             ∨i1 10
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        12. {
+</span></span><span style="display:flex;"><span>            13. q                       assume
+</span></span><span style="display:flex;"><span>            14. q ∧ r                   ∧i 13 8
+</span></span><span style="display:flex;"><span>            15. p ∨ (q ∧ r)             ∨i2 14
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        16. p ∨ (q ∧ r)                 ∨e 2 9 12
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    17. p ∨ (q ∧ r)                     ∨e 3 4 7
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        </div>
+      </main>
+    
+<div class="git-footer">
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Julie Thornton
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/42ecefe52661ea25c3e20b5ae4a05972a2f6c23b">May 31, 2022</a>
+</p>
+</div>
+
+    
+    </div>
+    
+    
+    
+    
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+
+<a id="logo" href="https://ksu-cs-textbooks.github.io/cis301/">
+  CIS 301: Logical Foundations of Programming
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/auto-complete.js?1659549438" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.min.js?1659549438" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.stemmer.support.min.js?1659549438" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.multi.min.js?1659549438" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.en.min.js?1659549438" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/search.js?1659549438" defer></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics collapsible-menu">
+          <li data-nav-id="/0-chapter/" title="Getting Started" class="dd-item"><input type="checkbox" id="section-c55c9f751a28ecc9415234375cddd395" class="toggle"/><label for="section-c55c9f751a28ecc9415234375cddd395" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/"><b>0. </b>Getting Started</a><ul>
+          <li data-nav-id="/0-chapter/0_1-toolsguide/" title="Tools Guide" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/0_1-toolsguide/">0.1. Tools Guide</a></li></ul></li>
+          <li data-nav-id="/1-chapter/" title="Basics and Logic Puzzles" class="dd-item"><input type="checkbox" id="section-7a71fe25dd66b523fca4004b7c4d01d0" class="toggle"/><label for="section-7a71fe25dd66b523fca4004b7c4d01d0" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/"><b>1. </b>Basics and Logic Puzzles</a><ul>
+          <li data-nav-id="/1-chapter/1_1-logicbasics/" title="Basic Logical Reasoning" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_1-logicbasics/">1.1. Basic Logical Reasoning</a></li>
+          <li data-nav-id="/1-chapter/1_2-knightsknaves/" title="Knights and Knaves" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_2-knightsknaves/">1.2. Knights and Knaves</a></li>
+          <li data-nav-id="/1-chapter/1_3-otherpuzzles/" title="Other Puzzles" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_3-otherpuzzles/">1.3. Other Puzzles</a></li></ul></li>
+          <li data-nav-id="/2-chapter/" title="Truth Tables" class="dd-item"><input type="checkbox" id="section-c23f766dd7728aa0e1cff094001eac05" class="toggle"/><label for="section-c23f766dd7728aa0e1cff094001eac05" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/"><b>2. </b>Truth Tables</a><ul>
+          <li data-nav-id="/2-chapter/2_1-opscircuits/" title="Operators and Circuits" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_1-opscircuits/">2.1. Operators and Circuits</a></li>
+          <li data-nav-id="/2-chapter/2_2-logikatruth/" title="Truth Tables in Logika" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/">2.2. Truth Tables in Logika</a></li>
+          <li data-nav-id="/2-chapter/2_3-satis/" title="Satisfiability" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_3-satis/">2.3. Satisfiability</a></li>
+          <li data-nav-id="/2-chapter/2_4-logicalequiv/" title="Logical Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_4-logicalequiv/">2.4. Logical Equivalence</a></li>
+          <li data-nav-id="/2-chapter/2_5-sementail/" title="Semantic Entailment" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_5-sementail/">2.5. Semantic Entailment</a></li></ul></li>
+          <li data-nav-id="/3-chapter/" title="Propositional Logic Translations" class="dd-item"><input type="checkbox" id="section-ccb531d159d5247057d21618514721b6" class="toggle"/><label for="section-ccb531d159d5247057d21618514721b6" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/"><b>3. </b>Propositional Logic Translations</a><ul>
+          <li data-nav-id="/3-chapter/3_1-propatom/" title="Propositional Atoms" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_1-propatom/">3.1. Propositional Atoms</a></li>
+          <li data-nav-id="/3-chapter/3_2-notandor/" title="NOT, AND, OR Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_2-notandor/">3.2. NOT, AND, OR Translations</a></li>
+          <li data-nav-id="/3-chapter/3_3-implies/" title="Implies Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_3-implies/">3.3. Implies Translations</a></li>
+          <li data-nav-id="/3-chapter/3_4-equiv/" title="Equivalent Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_4-equiv/">3.4. Equivalent Translations</a></li>
+          <li data-nav-id="/3-chapter/3_5-knightsknavestt/" title="Knights and Knaves, revisited" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_5-knightsknavestt/">3.5. Knights and Knaves, revisited</a></li></ul></li>
+          <li data-nav-id="/4-chapter/" title="Propositional Logic Proofs" class="dd-item parent"><input type="checkbox" id="section-8ebf970484325d93d52075c7c72ba517" class="toggle" checked/><label for="section-8ebf970484325d93d52075c7c72ba517" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/"><b>4. </b>Propositional Logic Proofs</a><ul>
+          <li data-nav-id="/4-chapter/4_1-intro/" title="Introduction" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/">4.1. Introduction</a></li>
+          <li data-nav-id="/4-chapter/4_2-andrules/" title="AND Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/">4.2. AND Rules</a></li>
+          <li data-nav-id="/4-chapter/4_3-orrules/" title="OR Rules" class="dd-item active"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/">4.3. OR Rules</a></li>
+          <li data-nav-id="/4-chapter/4_4-impliesrules/" title="Implies Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/">4.4. Implies Rules</a></li>
+          <li data-nav-id="/4-chapter/4_5-notrules/" title="Negation Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/">4.5. Negation Rules</a></li>
+          <li data-nav-id="/4-chapter/4_6-strategies/" title="Summary and Strategies" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/">4.6. Summary and Strategies</a></li>
+          <li data-nav-id="/4-chapter/4_7-theorems/" title="Theorems" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_7-theorems/">4.7. Theorems</a></li>
+          <li data-nav-id="/4-chapter/4_8-equivalence/" title="Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_8-equivalence/">4.8. Equivalence</a></li>
+          <li data-nav-id="/4-chapter/4_9-soundcomplete/" title="Soundness and Completeness" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_9-soundcomplete/">4.9. Soundness and Completeness</a></li></ul></li>
+          <li data-nav-id="/5-chapter/" title="Predicate Logic Translations" class="dd-item"><input type="checkbox" id="section-b69c30f957b0ff55c1e9673979ceb29d" class="toggle"/><label for="section-b69c30f957b0ff55c1e9673979ceb29d" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/"><b>5. </b>Predicate Logic Translations</a><ul>
+          <li data-nav-id="/5-chapter/5_1-motivation/" title="Motivation" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_1-motivation/">5.1. Motivation</a></li>
+          <li data-nav-id="/5-chapter/5_2-predsyntax/" title="Syntax" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_2-predsyntax/">5.2. Syntax</a></li>
+          <li data-nav-id="/5-chapter/5_3-singlequantifier/" title="Single Quantifier" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_3-singlequantifier/">5.3. Single Quantifier</a></li>
+          <li data-nav-id="/5-chapter/5_4-multquant/" title="Multiple Quantifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_4-multquant/">5.4. Multiple Quantifiers</a></li></ul></li>
+          <li data-nav-id="/6-chapter/" title="Predicate Logic Proofs" class="dd-item"><input type="checkbox" id="section-482218cb3a05b9572157ed70ed9a5c02" class="toggle"/><label for="section-482218cb3a05b9572157ed70ed9a5c02" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/"><b>6. </b>Predicate Logic Proofs</a><ul>
+          <li data-nav-id="/6-chapter/6_1-univrules/" title="Rules with ∀" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/">6.1. Rules with ∀</a></li>
+          <li data-nav-id="/6-chapter/6_2-existrules/" title="Rules with ∃" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/">6.2. Rules with ∃</a></li>
+          <li data-nav-id="/6-chapter/6_3-nested/" title="Nested Quantifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/">6.3. Nested Quantifiers</a></li>
+          <li data-nav-id="/6-chapter/6_4-equiv/" title="Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/">6.4. Equivalence</a></li>
+          <li data-nav-id="/6-chapter/6_5-strategies/" title="Summary and Strategies" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_5-strategies/">6.5. Summary and Strategies</a></li>
+          <li data-nav-id="/6-chapter/6_6-soundcomplete/" title="Soundness and Completeness" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_6-soundcomplete/">6.6. Soundness and Completeness</a></li></ul></li>
+          <li data-nav-id="/7-chapter/" title="Mathematical Induction" class="dd-item"><input type="checkbox" id="section-fc25ecfcb3d8e929949e8db759e88bab" class="toggle"/><label for="section-fc25ecfcb3d8e929949e8db759e88bab" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/"><b>7. </b>Mathematical Induction</a><ul>
+          <li data-nav-id="/7-chapter/7_1-process/" title="Induction Process" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_1-process/">7.1. Induction Process</a></li>
+          <li data-nav-id="/7-chapter/7_2-algebraex/" title="Algebra example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_2-algebraex/">7.2. Algebra example</a></li>
+          <li data-nav-id="/7-chapter/7_3-divex/" title="Divisibility example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_3-divex/">7.3. Divisibility example</a></li>
+          <li data-nav-id="/7-chapter/7_4-setex/" title="Set example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/">7.4. Set example</a></li></ul></li>
+          <li data-nav-id="/8-chapter/" title="Intro to Programming Logic" class="dd-item"><input type="checkbox" id="section-bd411d4b09a07aa69f5152043fa837ed" class="toggle"/><label for="section-bd411d4b09a07aa69f5152043fa837ed" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/"><b>8. </b>Intro to Programming Logic</a><ul>
+          <li data-nav-id="/8-chapter/8_1-goal/" title="Programming Logic Goal" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/">8.1. Programming Logic Goal</a></li>
+          <li data-nav-id="/8-chapter/8_2-logikaprograms/" title="Logika Programs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/">8.2. Logika Programs</a></li>
+          <li data-nav-id="/8-chapter/8_3-assertassume/" title="Assert and Assume" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_3-assertassume/">8.3. Assert and Assume</a></li>
+          <li data-nav-id="/8-chapter/8_4-algebrasubst/" title="Algebra and subst Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_4-algebrasubst/">8.4. Algebra and subst Rules</a></li>
+          <li data-nav-id="/8-chapter/8_5-assignment/" title="Assignment Statements" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_5-assignment/">8.5. Assignment Statements</a></li>
+          <li data-nav-id="/8-chapter/8_6-divmod/" title="Integer Division and Modulo" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_6-divmod/">8.6. Integer Division and Modulo</a></li>
+          <li data-nav-id="/8-chapter/8_7-conditionals/" title="Conditional Statements" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/">8.7. Conditional Statements</a></li></ul></li>
+          <li data-nav-id="/9-chapter/" title="Functions and Loops" class="dd-item"><input type="checkbox" id="section-708a4026c5b157dd8da0a277e359073f" class="toggle"/><label for="section-708a4026c5b157dd8da0a277e359073f" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/"><b>9. </b>Functions and Loops</a><ul>
+          <li data-nav-id="/9-chapter/9_1-functions/" title="Functions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_1-functions/">9.1. Functions</a></li>
+          <li data-nav-id="/9-chapter/9_2-recursion/" title="Recursion" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/">9.2. Recursion</a></li>
+          <li data-nav-id="/9-chapter/9_3-loops/" title="Loops" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_3-loops/">9.3. Loops</a></li>
+          <li data-nav-id="/9-chapter/9_4-logikafacts/" title="Logika Facts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_4-logikafacts/">9.4. Logika Facts</a></li>
+          <li data-nav-id="/9-chapter/9_5-summary/" title="Summary" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_5-summary/">9.5. Summary</a></li></ul></li>
+          <li data-nav-id="/10-chapter/" title="Sequences, Globals, and Termination" class="dd-item"><input type="checkbox" id="section-83e8e84779c32ba319a378089810947b" class="toggle"/><label for="section-83e8e84779c32ba319a378089810947b" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/"><b>10. </b>Sequences, Globals, and Termination</a><ul>
+          <li data-nav-id="/10-chapter/10_1-modes/" title="Logika Modes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_1-modes/">10.1 Logika Modes</a></li>
+          <li data-nav-id="/10-chapter/10_2-intosequences/" title="Intro to Sequences" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_2-intosequences/">10.2 Intro to Sequences</a></li>
+          <li data-nav-id="/10-chapter/10_3-seqfn/" title="Sequences in Functions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/">10.3 Sequences in Functions</a></li>
+          <li data-nav-id="/10-chapter/10_4-seqloop/" title="Sequences in Loops" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_4-seqloop/">10.4 Sequences in Loops</a></li>
+          <li data-nav-id="/10-chapter/10_5_seqlogfact/" title="Logika Facts, revisited" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5_seqlogfact/">10.5 Logika Facts, revisited</a></li>
+          <li data-nav-id="/10-chapter/10_6-globals/" title="Global Variables" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_6-globals/">10.6 Global Variables</a></li>
+          <li data-nav-id="/10-chapter/10_7-termination/" title="Termination" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_7-termination/">10.7 Termination</a></li></ul></li>
+        </ul>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="light-theme" value="light-theme" selected>Light Theme</option>
+                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter"><style>
+  #footer {
+      font-size: 13px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem 1rem;
+      min-width: 230px;
+      max-width: 300px;
+  }
+  #footer p {
+      margin: 0;
+  }
+</style>
+  
+<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/K-State-Computational-Core/hugo-theme-relearn/tree/main">Hugo Relearn Theme</a>.</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: .5rem auto" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        </div>
+      </div>
+    </aside>
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/featherlight.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1659549438" defer></script>
+    
+    
+    
+    
+  </body>
+</html>

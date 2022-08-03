@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>Sequences in Loops :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_4-seqloop/" rel="canonical" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_4-seqloop/index.xml" rel="alternate" type="application/rss+xml" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/_print/10-chapter/10_4-seqloop/" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_4-seqloop/tele.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549438" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549438" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549438" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1659549438" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1659549438" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1659549438" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1659549438" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1659549438"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis301/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1659549438" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/jquery.min.js?1659549438" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_4-seqloop/embed.html">
+    
+    <div class="embed">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<p>We also must consider sequences when writing loop invariants. Typically, we must include the following in our invariant:</p>
+<ul>
+<li>If the sequence changes in the loop
+<ul>
+<li>Describe what sequence elements have already changed in the loop (and what their new values are)</li>
+<li>Describe what sequence elements still have their original value</li>
+<li>State that the sequence size does not change</li>
+<li>Prove lower and upper bounds for whatever variable is being used as a sequence position (so we can be certain we will not go past the bounds of the sequence)</li>
+<li>List the sequence along with other changing variables in the loop invariant block&rsquo;s <code>modifies</code> clause</li>
+</ul>
+</li>
+<li>If the sequence does not change in the loop
+<ul>
+<li>Consider what we are doing with each sequence element as we look at them. Usually we have another variable that is storing our progress (and often, this variable is returned from the function after the loop). Express how the variable&rsquo;s value relates to the part of the sequence we&rsquo;ve looked at so far &ndash; this statement should look very similar to your postcondition, but should only describe part of the sequence.</li>
+<li>Prove lower and upper bounds for whatever variable is being used as a sequence position (so we can be certain we will not go past the bounds of the sequence)</li>
+</ul>
+</li>
+</ul>
+<h2 id="example-add-one-to-all-program">Example: add one to all program</h2>
+<p>Suppose we have the following program, which adds one to every element in a sequence parameter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>def addOne(list: ZS): Unit = {
+</span></span><span style="display:flex;"><span>    var i: Z = 0
+</span></span><span style="display:flex;"><span>    while (i &lt; list.size) {
+</span></span><span style="display:flex;"><span>        list(i) = list(i) + 1
+</span></span><span style="display:flex;"><span>        i = i + 1
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>////////////// Calling code ///////////////////
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var test: ZS = ZS(1,2,3,4)
+</span></span><span style="display:flex;"><span>addOne(test)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>assert(test == ZS(2,3,4,5))
+</span></span></code></pre></div><p>We would like to write an appropriate function contract and loop invariant block so the assert statement in the test code holds (which asserts that the sequence <code>ZS(1,2,3,4)</code> becomes the sequence <code>ZS(2,3,4,5)</code> after calling the function).</p>
+<p>For the function contract, we must consider:</p>
+<ul>
+<li><em>Precondition</em>: this function will work correctly on all sequences &ndash; even empty ones. We can leave the <code>requires</code> clause off.</li>
+<li><code>modifies</code> clause: this function is changing the <code>list</code> sequence parameter, so we must list it in a <code>modifies</code> clause`</li>
+<li><em>Postcondition</em>: the function is not returning anything, but we must describe that all sequence parameters will be one bigger than their original values. Since the function modifies the sequence, the postcondition must also state that the sequence size does not change.</li>
+</ul>
+<p>For the loop invariant block, we notice that the loop is changing the sequence. We must include:</p>
+<ul>
+<li><em>Which elements have already changed</em>. Since <code>i</code> is tracking our position in the sequence, we know that at the end of each iteration, all elements from position 0 up to but not including position <code>i</code> have been changed to be one bigger than their original values.</li>
+<li><em>Which elements have not changed</em>. All other elements in the sequence &ndash; from position <code>i</code> to the end of the sequence &ndash; still have their original values</li>
+<li><em>State that the sequence size does not change</em>.</li>
+<li><em>Upper and lower bounds for position variables</em>. Since <code>i</code> is tracking our position, we must state that i is always a valid sequence index. Here, we need to claim that <code>i</code> will always be greater than or equal to 0 and less than or equal to the sequence size. (While the sequence size itself is not a valid sequence index, we see from looking at the loop that <code>i</code> is incrementing as the very last step in the loop. On the last iteration, <code>i</code> will start off at <code>list.size-1</code>, and we will correctly access and modify the last element in <code>list</code>. Then we will increment <code>i</code>, making it EQUAL <code>list.size</code> &ndash; at that point, the loop ends. If we made part of our invariant be <code>i &lt; list.size</code>, it would be incorrect because of that last iteration.)</li>
+</ul>
+<p>We can now complete the function contract and loop invariant for <code>addOne</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>def addOne(list: ZS): Unit = {
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        //function contract
+</span></span><span style="display:flex;"><span>        modifies list
+</span></span><span style="display:flex;"><span>        ensures
+</span></span><span style="display:flex;"><span>            list.size == list_in.size
+</span></span><span style="display:flex;"><span>            A x: (0..&lt;list.size) list(x) == list_in(x) + 1
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    var i: Z = 0
+</span></span><span style="display:flex;"><span>    while (i &lt; list.size) {
+</span></span><span style="display:flex;"><span>        l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>            invariant
+</span></span><span style="display:flex;"><span>                i &gt;= 0
+</span></span><span style="display:flex;"><span>                i &lt;= list.size
+</span></span><span style="display:flex;"><span>                list.size == list_in.size
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                //what I HAVE changed
+</span></span><span style="display:flex;"><span>                A x:(0..&lt;i) list(x) == list_in(x) + 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                //what I haven&#39;t changed
+</span></span><span style="display:flex;"><span>                A x: (i..&lt;list.size) list(x) == list_in(x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            modifies list, i
+</span></span><span style="display:flex;"><span>        }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        list(i) = list(i) + 1
+</span></span><span style="display:flex;"><span>        i = i + 1
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>////////////// Calling code ///////////////////
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var test: ZS = ZS(1,2,3,4)
+</span></span><span style="display:flex;"><span>addOne(test)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>assert(test == ZS(2,3,4,5))
+</span></span></code></pre></div><p>If we test this program in Logika&rsquo;s symexe mode, the final assert will hold &ndash; we have enough information to know what the sequence will look like after calling <code>addOne</code>.</p>
+<h2 id="example-min-program">Example: min program</h2>
+<p>In our next example, we examine a function that does <em>not</em> modify its sequence parameter, and that <em>does</em> return a value. Consider the following <code>min</code> function and test code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//return the smallest element in list
+</span></span><span style="display:flex;"><span>def min(list: ZS): Z = {
+</span></span><span style="display:flex;"><span>    var small: Z = list(0)
+</span></span><span style="display:flex;"><span>    var i: Z = 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    while (i &lt; list.size) {
+</span></span><span style="display:flex;"><span>        if (list(i) &lt; small) {
+</span></span><span style="display:flex;"><span>            small = list(i)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        i = i + 1
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    return small
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>////////////// Calling code ///////////////////
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var test: ZS = ZS(8,1,0,10,9,2,0)
+</span></span><span style="display:flex;"><span>var testMin: Z = min(test)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>assert(testMin == 0)
+</span></span></code></pre></div><p>Here, our <code>min</code> function is supposed to find and return the smallest value in an integer sequence. We can see that our test code passes <code>min</code> the sequence (<code>ZS(8,1,0,10,9,2,0)</code>), and that we are trying to assert that <code>min</code> correctly returns <code>0</code> as the smallest value in the sequence. We need to add an appropriate function contract and loop invariant block to make this assert hold.</p>
+<p>For the function contract, we must consider:</p>
+<ul>
+<li><em>Precondition</em>: this function starts by saving out the element at position 0. If the sequence was empty, the function would crash. We need to require that the sequence size be at least 1.</li>
+<li><code>modifies</code> clause: this function is NOT modifying its sequence parameter, so we can omit this clause</li>
+<li><em>Postcondition</em>: the function is not changing the sequence, so we do not need to describe the final values of each sequence element. We <em>do</em> need to describe what value we are returning, and how it relates to the sequence. We want to describe that <code>result</code> (our return value) is the smallest element in <code>list</code>, so that:
+<ul>
+<li><code>result</code> is less than or equal to every element in <code>list</code></li>
+<li>There is an element in <code>list</code> that equals <code>result</code> (i.e., we really are returning one of our sequence values)</li>
+</ul>
+</li>
+</ul>
+<p>For the loop invariant block, we notice that the loop is NOT changing the sequence. We must include:</p>
+<ul>
+<li><em>What we are doing with each sequence element, and how that relates to another variable</em>. We can see that <code>small</code> tracks the smallest element we&rsquo;ve seen in the sequence so far &ndash; up to but not including position <code>i</code>. Similar to the postcondition, we want to claim that:
+<ul>
+<li><code>small</code> is less than or equal to every element in <code>list</code> <em>that we have seen so far</em></li>
+<li>There is an element <em>we have already seen</em> in <code>list</code> that equals small</li>
+</ul>
+</li>
+<li><em>Upper and lower bounds for position variables</em>. Here, <code>i</code> is our position variable. We see that it is initialized to 1, so we will claim that it is always greater than or equal to 1 and less than or equal to the list size.</li>
+</ul>
+<p>We can now complete the function contract and loop invariant for <code>min</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//return the smallest element in list
+</span></span><span style="display:flex;"><span>def min(list: ZS): Z = {
+</span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>        requires list.size &gt; 0
+</span></span><span style="display:flex;"><span>        ensures
+</span></span><span style="display:flex;"><span>            //result is &lt;= every element in list
+</span></span><span style="display:flex;"><span>            A x: (0..&lt;list.size) result &lt;= list(x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //there exists a list element that matches my result
+</span></span><span style="display:flex;"><span>            E x: (0..&lt;list.size) result == list(x)
+</span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    var small: Z = list(0)
+</span></span><span style="display:flex;"><span>    var i: Z = 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    while (i &lt; list.size) {
+</span></span><span style="display:flex;"><span>        l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>            invariant
+</span></span><span style="display:flex;"><span>                i &lt;= list.size
+</span></span><span style="display:flex;"><span>                i &gt;= 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                //small is the smallest up to position i
+</span></span><span style="display:flex;"><span>                A x: (0..&lt;i) small &lt;= list(x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                //small is one of the elements up to position i
+</span></span><span style="display:flex;"><span>                E x: (0..&lt;i) small == list(x)
+</span></span><span style="display:flex;"><span>            modifies small, i
+</span></span><span style="display:flex;"><span>        }&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        if (list(i) &lt; small) {
+</span></span><span style="display:flex;"><span>            small = list(i)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        i = i + 1
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    return small
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>////////////// Calling code ///////////////////
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var test: ZS = ZS(8,1,0,10,9,2,0)
+</span></span><span style="display:flex;"><span>var testMin: Z = min(test)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>assert(testMin == 0)
+</span></span></code></pre></div><p>If we test this program in Logika&rsquo;s symexe mode, the final assert will hold &ndash; we have enough information to know what the sequence will look like after calling <code>addOne</code>.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/featherlight.min.js?1659549438" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1659549438" defer></script>
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/embed-iframe.js?1659549438 defer"></script>
+    
+    
+    
+  </body>
+</html>

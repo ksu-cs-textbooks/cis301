@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>Logika Programs :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/index.xml" rel="alternate" type="application/rss+xml" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/_print/8-chapter/8_2-logikaprograms/" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/tele.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/embed.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549437" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549437" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549437" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549437" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549437" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549437" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1659549437" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1659549437" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1659549437" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1659549437" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1659549437" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1659549437" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1659549437" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1659549437" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1659549437"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis301/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1659549437" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/jquery.min.js?1659549437" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/">
+    
+    
+    <div id="body" class="default-animation">
+      
+      
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div class="navigation">
+             <a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_3-assertassume/" title="Assert and Assume (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+          </div>
+          <div class="navigation">
+             <a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/" title="Programming Logic Goal (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+          </div>
+          <div id="top-print-link">
+            <a class="print-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis301/_print/8-chapter/8_2-logikaprograms/">
+              <i class="fas fa-print fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit (CTRL+ALT+e)' href="https://gitlab.cs.ksu.edu/-/ide/project/cs-textbooks/cis301-textbook/edit/master/-/content/8-chapter/8_2-logikaPrograms.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/"><span itemprop="name">Homepage</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/"><span itemprop="name">Intro to Programming Logic</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/" aria-disabled="true"><span itemprop="name">Logika Programs</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#running-logika-programs">Running Logika programs</a></li>
+    <li><a href="#verifying-logika-programs">Verifying Logika programs</a></li>
+    <li><a href="#example-programs">Example programs</a>
+      <ul>
+        <li><a href="#example-1-user-input-printing-operations">Example 1: User input, printing, operations</a></li>
+        <li><a href="#example-2-ifelse-statements">Example 2: If/else statements</a></li>
+        <li><a href="#example-3-while-loops">Example 3: While loops</a></li>
+        <li><a href="#example-4-sequences-and-functions">Example 4: Sequences and functions</a></li>
+      </ul>
+    </li>
+    <li><a href="#logika-program-proof-syntax">Logika program proof syntax</a>
+      <ul>
+        <li><a href="#proof-block">Proof block</a></li>
+        <li><a href="#premise-justification">Premise justification</a></li>
+        <li><a href="#using-previous-deduction-rules">Using previous deduction rules</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<h1>Logika Programs</h1>
+    
+    
+<p>As we study program logic, we will use a toy language within Logika. These Logika programs use a subset of the Scala language, and include the following features:</p>
+<ul>
+<li>Variables (booleans, ints, and sequences [which are like arrays/lists])</li>
+<li>Printing and user input</li>
+<li>Math operations</li>
+<li>Conditional operations</li>
+<li>If and if/else statements</li>
+<li>While loops</li>
+<li>Functions</li>
+</ul>
+<h2 id="running-logika-programs">Running Logika programs</h2>
+<p>Logika programs should be saved with a .logika extension. To run a Logika program, right-click in the text area that contains the code and select &ldquo;Run Logika Program&rdquo;.</p>
+<h2 id="verifying-logika-programs">Verifying Logika programs</h2>
+<p>There are two modes in Logika &ndash; manual and SymExe. In chapters 8 and 9, we will use manual mode. In chapter 10, we will use SymExe mode. You can change the mode in Logika by going to File-&gt;Settings-&gt;Tools-&gt;Sireum-&gt;Logika.</p>
+<p>For manual mode, uncheck &ldquo;Auto mode&rdquo; and mark the Checker kind as &ldquo;Forward.&rdquo;</p>
+<p>For SymExe mode, check &ldquo;Auto mode&rdquo; and mark the Checker kind as &ldquo;Summarizing SymExe&rdquo;.</p>
+<p>Logika verification <em>should</em> run automatically as you edit Logika programs and their proofs. If a program is verified, you will see a purple checkmark in the lower right corner just as you did in propositional and predicate logic proofs. If there are syntax or logic errors, you will see them highlighted in red.</p>
+<p>Sometimes, the Logika verification needs to be run manually. If you don&rsquo;t see either red errors or a purple checkmark, right-click in the text area that contains the code and select &ldquo;Logika Check&rdquo;.</p>
+<h2 id="example-programs">Example programs</h2>
+<p>This section contains four sample Logika programs that highlight the different language features.</p>
+<h3 id="example-1-user-input-printing-operations">Example 1: User input, printing, operations</h3>
+<p>This first example gets a number as input from the user, adds one to it, and prints the result:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var x: Z = readInt(&#34;Enter a number: &#34;)
+</span></span><span style="display:flex;"><span>x = x + 1
+</span></span><span style="display:flex;"><span>println(&#34;One more is &#34;, x)
+</span></span></code></pre></div><p>A few things to note:</p>
+<ul>
+<li>Each Logika program begins with an import statement: <code>import org.sireum.logika._</code></li>
+<li>The <code>var</code> keyword stands for variable, which is something that can be changed. Logika also has a <code>val</code> keyword, which creates a constant value that cannot be changed.</li>
+<li>Lines do not end in semi-colons</li>
+<li>The parameter to the <code>readInt(...)</code> function call is a prompt telling the user what to type. This parameter is optional.</li>
+<li>The code <code>var x: Z</code> creates a variable called <code>x</code> of type <code>Z</code> &ndash; the <code>Z</code> means <em>integer</em></li>
+</ul>
+<h3 id="example-2-ifelse-statements">Example 2: If/else statements</h3>
+<p>Here is a Logika program that gets a number from the user, and uses an if/else statement to print whether the number is positive or negative/zero:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>val num: Z = readInt(&#34;Enter a number: &#34;)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>if (num &gt; 0) {
+</span></span><span style="display:flex;"><span>    println(num, &#34; is positive&#34;)
+</span></span><span style="display:flex;"><span>} else {
+</span></span><span style="display:flex;"><span>    println(num, &#34; is negative (or zero)&#34;)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>A couple of things to note here:</p>
+<ul>
+<li>The <code>else</code> statement MUST appear on the same line as the closing <code>}</code> of the previous if-statement</li>
+<li>As mentioned above, the <code>val</code> keyword in this program means that <code>x</code> cannot be changed after being initialized</li>
+</ul>
+<h3 id="example-3-while-loops">Example 3: While loops</h3>
+<p>Our next Logika program uses a while loop to print the numbers from 10 down to 1. This program can&rsquo;t be run the way it appears below, as Logika wants you to do some verification work first. However, this program demonstrates what a while loop will look like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>var cur: Z = 10
+</span></span><span style="display:flex;"><span>while (cur &gt;= 1) {
+</span></span><span style="display:flex;"><span>    println(&#34;Next number: &#34;, cur)
+</span></span><span style="display:flex;"><span>    cur = cur - 1
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="example-4-sequences-and-functions">Example 4: Sequences and functions</h3>
+<p>Our final sample Logika program demonstrates <em>sequences</em> (Logika&rsquo;s version of an array or list) and functions. It contains a function, <code>sumSequence</code>, which takes a sequence of integers as a parameter and returns the sum of the numbers in the sequence. At the bottom, we can see our test code that creates a sample sequence and tries calling <code>sumSequence</code>. As in our third example, this code cannot be run without some verification work:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>def sumSequence(seq: ZS) : Z = {
+</span></span><span style="display:flex;"><span>    var sum: Z = 0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    var i: Z = 0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    while (i &lt; seq.size) {
+</span></span><span style="display:flex;"><span>        sum = sum + seq(i)
+</span></span><span style="display:flex;"><span>        i = i + 1
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    return sum
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>////// Calling code ////////////
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>val list: ZS = ZS(1,2,3,4)
+</span></span><span style="display:flex;"><span>val total: Z = sumSequence(list)
+</span></span><span style="display:flex;"><span>println(&#34;Sum of elements:&#34;, total)
+</span></span></code></pre></div><p>A few things of note here:</p>
+<ul>
+<li>
+<p>The definition <code>def sumSequence(seq: ZS) : Z</code> means that a function named <code>sumSequence</code> takes a parameter of type <code>ZS</code> (sequence of integers, <code>Z</code> = int and <code>S</code> = sequence) and returns something of type <code>Z</code> (int)</p>
+</li>
+<li>
+<p>There is an <code>=</code> after the function header but before the opening <code>{</code> of the function</p>
+</li>
+<li>
+<p>Functions in Logika are not part of a class - they are more similar to the structure in Python. We can include as many functions as we want in a file. At the bottom of the file (marked below the optional <code>////// Calling code ////////////</code>) is the <em>calling code</em>. When a Logika program runs, those calling code lines (which may call different functions) are executed. When the calling code lines are done, the program is done.</p>
+</li>
+</ul>
+<h2 id="logika-program-proof-syntax">Logika program proof syntax</h2>
+<p>In order to prove correctness of Logika programs, we will add <em>Logika proof blocks</em> to process what we have learned at different points in the program. In general, every time there is an assignment statement, there will be a following Logika proof block updating all relevant facts.</p>
+<h3 id="proof-block">Proof block</h3>
+<p>Here is the syntax for a proof block:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    lineNumber. claim               justification
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span></code></pre></div><p>Just as with our propositional and predicate logic proofs, we will number the lines in our proof blocks. Each line will contain a <em>claim</em> and a corresponding <em>justification</em> for that claim. We will still be able to use all of our propositional and predicate logic deduction rules, but we will learn new justifications for processing program statements. Each program may have multiple of these proof blocks to process each assignment statement.</p>
+<h3 id="premise-justification">Premise justification</h3>
+<p>Our first justification in programming logic is <em>premise</em>. In a Logika proof block, we use premise as a justification in the following cases:</p>
+<ul>
+<li>
+<p>To express an assignment statement (or other program statement)</p>
+</li>
+<li>
+<p>To pull a claim established in a previous proof block into a later proof block</p>
+</li>
+</ul>
+<p>In both cases, the claim must capture the current value of the involved variables.</p>
+<p>For example, consider the following program:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>val x: Z = 6
+</span></span><span style="display:flex;"><span>x = x + 1
+</span></span></code></pre></div><p>We could insert a proof block between the two lines to express that <code>x</code> currently has the value 6:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>val x: Z = 6
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. x == 6               premise
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x = x + 1
+</span></span></code></pre></div><p>But we could NOT have the same proof block after incrementing <code>x</code>, since <code>x</code>&rsquo;s value has changed since that claim was established:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>val x: Z = 6
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//this proof block is correct -- it captures the current value of x
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. x == 6               premise
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x = x + 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//NO! This statement no longer captures the current value of x
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. x == 6               premise
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span></code></pre></div><h3 id="using-previous-deduction-rules">Using previous deduction rules</h3>
+<p>We can use any of our previous deduction rules in a Logika proof block. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>val x: Z = 6
+</span></span><span style="display:flex;"><span>val y: Z = 7
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
+</span></span><span style="display:flex;"><span>    1. x == 6               premise
+</span></span><span style="display:flex;"><span>    2. y == 7               premise
+</span></span><span style="display:flex;"><span>    3. (x == 6) ∧ (y == 7)  ∧i 1 2
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+<div class="git-footer">
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Julie Thornton
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/6bf410c536bc8aec27558c28e6fac64dce2a441c">Jun 7, 2022</a>
+</p>
+</div>
+
+    
+    </div>
+    
+    
+    
+    
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+
+<a id="logo" href="https://ksu-cs-textbooks.github.io/cis301/">
+  CIS 301: Logical Foundations of Programming
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/auto-complete.js?1659549437" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.min.js?1659549437" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.stemmer.support.min.js?1659549437" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.multi.min.js?1659549437" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.en.min.js?1659549437" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/search.js?1659549437" defer></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics collapsible-menu">
+          <li data-nav-id="/0-chapter/" title="Getting Started" class="dd-item"><input type="checkbox" id="section-c55c9f751a28ecc9415234375cddd395" class="toggle"/><label for="section-c55c9f751a28ecc9415234375cddd395" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/"><b>0. </b>Getting Started</a><ul>
+          <li data-nav-id="/0-chapter/0_1-toolsguide/" title="Tools Guide" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/0_1-toolsguide/">0.1. Tools Guide</a></li></ul></li>
+          <li data-nav-id="/1-chapter/" title="Basics and Logic Puzzles" class="dd-item"><input type="checkbox" id="section-7a71fe25dd66b523fca4004b7c4d01d0" class="toggle"/><label for="section-7a71fe25dd66b523fca4004b7c4d01d0" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/"><b>1. </b>Basics and Logic Puzzles</a><ul>
+          <li data-nav-id="/1-chapter/1_1-logicbasics/" title="Basic Logical Reasoning" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_1-logicbasics/">1.1. Basic Logical Reasoning</a></li>
+          <li data-nav-id="/1-chapter/1_2-knightsknaves/" title="Knights and Knaves" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_2-knightsknaves/">1.2. Knights and Knaves</a></li>
+          <li data-nav-id="/1-chapter/1_3-otherpuzzles/" title="Other Puzzles" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_3-otherpuzzles/">1.3. Other Puzzles</a></li></ul></li>
+          <li data-nav-id="/2-chapter/" title="Truth Tables" class="dd-item"><input type="checkbox" id="section-c23f766dd7728aa0e1cff094001eac05" class="toggle"/><label for="section-c23f766dd7728aa0e1cff094001eac05" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/"><b>2. </b>Truth Tables</a><ul>
+          <li data-nav-id="/2-chapter/2_1-opscircuits/" title="Operators and Circuits" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_1-opscircuits/">2.1. Operators and Circuits</a></li>
+          <li data-nav-id="/2-chapter/2_2-logikatruth/" title="Truth Tables in Logika" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/">2.2. Truth Tables in Logika</a></li>
+          <li data-nav-id="/2-chapter/2_3-satis/" title="Satisfiability" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_3-satis/">2.3. Satisfiability</a></li>
+          <li data-nav-id="/2-chapter/2_4-logicalequiv/" title="Logical Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_4-logicalequiv/">2.4. Logical Equivalence</a></li>
+          <li data-nav-id="/2-chapter/2_5-sementail/" title="Semantic Entailment" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_5-sementail/">2.5. Semantic Entailment</a></li></ul></li>
+          <li data-nav-id="/3-chapter/" title="Propositional Logic Translations" class="dd-item"><input type="checkbox" id="section-ccb531d159d5247057d21618514721b6" class="toggle"/><label for="section-ccb531d159d5247057d21618514721b6" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/"><b>3. </b>Propositional Logic Translations</a><ul>
+          <li data-nav-id="/3-chapter/3_1-propatom/" title="Propositional Atoms" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_1-propatom/">3.1. Propositional Atoms</a></li>
+          <li data-nav-id="/3-chapter/3_2-notandor/" title="NOT, AND, OR Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_2-notandor/">3.2. NOT, AND, OR Translations</a></li>
+          <li data-nav-id="/3-chapter/3_3-implies/" title="Implies Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_3-implies/">3.3. Implies Translations</a></li>
+          <li data-nav-id="/3-chapter/3_4-equiv/" title="Equivalent Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_4-equiv/">3.4. Equivalent Translations</a></li>
+          <li data-nav-id="/3-chapter/3_5-knightsknavestt/" title="Knights and Knaves, revisited" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_5-knightsknavestt/">3.5. Knights and Knaves, revisited</a></li></ul></li>
+          <li data-nav-id="/4-chapter/" title="Propositional Logic Proofs" class="dd-item"><input type="checkbox" id="section-8ebf970484325d93d52075c7c72ba517" class="toggle"/><label for="section-8ebf970484325d93d52075c7c72ba517" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/"><b>4. </b>Propositional Logic Proofs</a><ul>
+          <li data-nav-id="/4-chapter/4_1-intro/" title="Introduction" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/">4.1. Introduction</a></li>
+          <li data-nav-id="/4-chapter/4_2-andrules/" title="AND Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/">4.2. AND Rules</a></li>
+          <li data-nav-id="/4-chapter/4_3-orrules/" title="OR Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/">4.3. OR Rules</a></li>
+          <li data-nav-id="/4-chapter/4_4-impliesrules/" title="Implies Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/">4.4. Implies Rules</a></li>
+          <li data-nav-id="/4-chapter/4_5-notrules/" title="Negation Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/">4.5. Negation Rules</a></li>
+          <li data-nav-id="/4-chapter/4_6-strategies/" title="Summary and Strategies" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/">4.6. Summary and Strategies</a></li>
+          <li data-nav-id="/4-chapter/4_7-theorems/" title="Theorems" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_7-theorems/">4.7. Theorems</a></li>
+          <li data-nav-id="/4-chapter/4_8-equivalence/" title="Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_8-equivalence/">4.8. Equivalence</a></li>
+          <li data-nav-id="/4-chapter/4_9-soundcomplete/" title="Soundness and Completeness" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_9-soundcomplete/">4.9. Soundness and Completeness</a></li></ul></li>
+          <li data-nav-id="/5-chapter/" title="Predicate Logic Translations" class="dd-item"><input type="checkbox" id="section-b69c30f957b0ff55c1e9673979ceb29d" class="toggle"/><label for="section-b69c30f957b0ff55c1e9673979ceb29d" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/"><b>5. </b>Predicate Logic Translations</a><ul>
+          <li data-nav-id="/5-chapter/5_1-motivation/" title="Motivation" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_1-motivation/">5.1. Motivation</a></li>
+          <li data-nav-id="/5-chapter/5_2-predsyntax/" title="Syntax" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_2-predsyntax/">5.2. Syntax</a></li>
+          <li data-nav-id="/5-chapter/5_3-singlequantifier/" title="Single Quantifier" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_3-singlequantifier/">5.3. Single Quantifier</a></li>
+          <li data-nav-id="/5-chapter/5_4-multquant/" title="Multiple Quantifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_4-multquant/">5.4. Multiple Quantifiers</a></li></ul></li>
+          <li data-nav-id="/6-chapter/" title="Predicate Logic Proofs" class="dd-item"><input type="checkbox" id="section-482218cb3a05b9572157ed70ed9a5c02" class="toggle"/><label for="section-482218cb3a05b9572157ed70ed9a5c02" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/"><b>6. </b>Predicate Logic Proofs</a><ul>
+          <li data-nav-id="/6-chapter/6_1-univrules/" title="Rules with ∀" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/">6.1. Rules with ∀</a></li>
+          <li data-nav-id="/6-chapter/6_2-existrules/" title="Rules with ∃" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/">6.2. Rules with ∃</a></li>
+          <li data-nav-id="/6-chapter/6_3-nested/" title="Nested Quantifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/">6.3. Nested Quantifiers</a></li>
+          <li data-nav-id="/6-chapter/6_4-equiv/" title="Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/">6.4. Equivalence</a></li>
+          <li data-nav-id="/6-chapter/6_5-strategies/" title="Summary and Strategies" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_5-strategies/">6.5. Summary and Strategies</a></li>
+          <li data-nav-id="/6-chapter/6_6-soundcomplete/" title="Soundness and Completeness" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_6-soundcomplete/">6.6. Soundness and Completeness</a></li></ul></li>
+          <li data-nav-id="/7-chapter/" title="Mathematical Induction" class="dd-item"><input type="checkbox" id="section-fc25ecfcb3d8e929949e8db759e88bab" class="toggle"/><label for="section-fc25ecfcb3d8e929949e8db759e88bab" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/"><b>7. </b>Mathematical Induction</a><ul>
+          <li data-nav-id="/7-chapter/7_1-process/" title="Induction Process" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_1-process/">7.1. Induction Process</a></li>
+          <li data-nav-id="/7-chapter/7_2-algebraex/" title="Algebra example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_2-algebraex/">7.2. Algebra example</a></li>
+          <li data-nav-id="/7-chapter/7_3-divex/" title="Divisibility example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_3-divex/">7.3. Divisibility example</a></li>
+          <li data-nav-id="/7-chapter/7_4-setex/" title="Set example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/">7.4. Set example</a></li></ul></li>
+          <li data-nav-id="/8-chapter/" title="Intro to Programming Logic" class="dd-item parent"><input type="checkbox" id="section-bd411d4b09a07aa69f5152043fa837ed" class="toggle" checked/><label for="section-bd411d4b09a07aa69f5152043fa837ed" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/"><b>8. </b>Intro to Programming Logic</a><ul>
+          <li data-nav-id="/8-chapter/8_1-goal/" title="Programming Logic Goal" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/">8.1. Programming Logic Goal</a></li>
+          <li data-nav-id="/8-chapter/8_2-logikaprograms/" title="Logika Programs" class="dd-item active"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/">8.2. Logika Programs</a></li>
+          <li data-nav-id="/8-chapter/8_3-assertassume/" title="Assert and Assume" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_3-assertassume/">8.3. Assert and Assume</a></li>
+          <li data-nav-id="/8-chapter/8_4-algebrasubst/" title="Algebra and subst Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_4-algebrasubst/">8.4. Algebra and subst Rules</a></li>
+          <li data-nav-id="/8-chapter/8_5-assignment/" title="Assignment Statements" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_5-assignment/">8.5. Assignment Statements</a></li>
+          <li data-nav-id="/8-chapter/8_6-divmod/" title="Integer Division and Modulo" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_6-divmod/">8.6. Integer Division and Modulo</a></li>
+          <li data-nav-id="/8-chapter/8_7-conditionals/" title="Conditional Statements" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/">8.7. Conditional Statements</a></li></ul></li>
+          <li data-nav-id="/9-chapter/" title="Functions and Loops" class="dd-item"><input type="checkbox" id="section-708a4026c5b157dd8da0a277e359073f" class="toggle"/><label for="section-708a4026c5b157dd8da0a277e359073f" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/"><b>9. </b>Functions and Loops</a><ul>
+          <li data-nav-id="/9-chapter/9_1-functions/" title="Functions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_1-functions/">9.1. Functions</a></li>
+          <li data-nav-id="/9-chapter/9_2-recursion/" title="Recursion" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/">9.2. Recursion</a></li>
+          <li data-nav-id="/9-chapter/9_3-loops/" title="Loops" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_3-loops/">9.3. Loops</a></li>
+          <li data-nav-id="/9-chapter/9_4-logikafacts/" title="Logika Facts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_4-logikafacts/">9.4. Logika Facts</a></li>
+          <li data-nav-id="/9-chapter/9_5-summary/" title="Summary" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_5-summary/">9.5. Summary</a></li></ul></li>
+          <li data-nav-id="/10-chapter/" title="Sequences, Globals, and Termination" class="dd-item"><input type="checkbox" id="section-83e8e84779c32ba319a378089810947b" class="toggle"/><label for="section-83e8e84779c32ba319a378089810947b" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/"><b>10. </b>Sequences, Globals, and Termination</a><ul>
+          <li data-nav-id="/10-chapter/10_1-modes/" title="Logika Modes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_1-modes/">10.1 Logika Modes</a></li>
+          <li data-nav-id="/10-chapter/10_2-intosequences/" title="Intro to Sequences" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_2-intosequences/">10.2 Intro to Sequences</a></li>
+          <li data-nav-id="/10-chapter/10_3-seqfn/" title="Sequences in Functions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/">10.3 Sequences in Functions</a></li>
+          <li data-nav-id="/10-chapter/10_4-seqloop/" title="Sequences in Loops" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_4-seqloop/">10.4 Sequences in Loops</a></li>
+          <li data-nav-id="/10-chapter/10_5_seqlogfact/" title="Logika Facts, revisited" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5_seqlogfact/">10.5 Logika Facts, revisited</a></li>
+          <li data-nav-id="/10-chapter/10_6-globals/" title="Global Variables" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_6-globals/">10.6 Global Variables</a></li>
+          <li data-nav-id="/10-chapter/10_7-termination/" title="Termination" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_7-termination/">10.7 Termination</a></li></ul></li>
+        </ul>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="light-theme" value="light-theme" selected>Light Theme</option>
+                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter"><style>
+  #footer {
+      font-size: 13px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem 1rem;
+      min-width: 230px;
+      max-width: 300px;
+  }
+  #footer p {
+      margin: 0;
+  }
+</style>
+  
+<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/K-State-Computational-Core/hugo-theme-relearn/tree/main">Hugo Relearn Theme</a>.</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: .5rem auto" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        </div>
+      </div>
+    </aside>
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1659549437" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1659549437" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/featherlight.min.js?1659549437" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1659549437" defer></script>
+    
+    
+    
+    
+  </body>
+</html>

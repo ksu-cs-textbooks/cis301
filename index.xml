@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homepage on CIS 301 Textbook</title>
+    <link>https://ksu-cs-textbooks.github.io/cis301/</link>
+    <description>Recent content in Homepage on CIS 301 Textbook</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 May 2021 01:01:01 -0500</lastBuildDate><atom:link href="https://ksu-cs-textbooks.github.io/cis301/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Getting Started</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/0-chapter/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/0-chapter/</guid>
+      <description>Getting Started </description>
+    </item>
+    <item>
+      <title>Basics and Logic Puzzles</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/1-chapter/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/1-chapter/</guid>
+      <description>Chapter 1 Basics and Logic Puzzles </description>
+    </item>
+    <item>
+      <title>Truth Tables</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/2-chapter/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/2-chapter/</guid>
+      <description>Chapter 2 Truth Tables </description>
+    </item>
+    <item>
+      <title>Propositional Logic Translations</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/3-chapter/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/3-chapter/</guid>
+      <description>Chapter 3 Propositional Logic Translations A propositional logic statement is a set of propositional atoms (statements with no logical connectives that can be true or false) connected by logical operators.
+In this chapter, we will see how to translate English sentences into such propositional logic statements, which will resemble the logical statements (like p ∧ q → r) we saw when working with truth tables. These statements are also called propositions.</description>
+    </item>
+    <item>
+      <title>Propositional Logic Proofs</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/</guid>
+      <description>Chapter 4 Propositional Logic Proofs </description>
+    </item>
+    <item>
+      <title>Predicate Logic Translations</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/5-chapter/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/5-chapter/</guid>
+      <description>Chapter 5 Predicate Logic Translations </description>
+    </item>
+    <item>
+      <title>Predicate Logic Proofs</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/6-chapter/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/6-chapter/</guid>
+      <description>Chapter 6 Predicate Logic Proofs Now that we have seen how to translate statements to predicate logic, we will learn new deduction rules for working with universal and existential quantifiers. We will be able to add those rules to our propositional logic deduction rules and show that a set of premises proves a conclusion in predicate logic.</description>
+    </item>
+    <item>
+      <title>Mathematical Induction</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/7-chapter/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/7-chapter/</guid>
+      <description>Chapter 7 Mathematical Induction </description>
+    </item>
+    <item>
+      <title>Intro to Programming Logic</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/8-chapter/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/8-chapter/</guid>
+      <description>Chapter 8 Intro to Programming Logic: Assignments and Conditionals For the rest of the course, we will switch gears back to something more familiar for most &amp;ndash; computer programs. We will apply the deductive reasoning from the previous chapters in order to prove the correctness of basic programs. This chapter will focus on programs with variable operations, assignments, and conditional statements.</description>
+    </item>
+    <item>
+      <title>Functions and Loops</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/9-chapter/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/9-chapter/</guid>
+      <description>Chapter 9 Programming Logic: Functions and Loops In this chapter, we will continue our unit on programming logic and will learn how to prove the correctness of programs involving functions, loops, and recursion.</description>
+    </item>
+    <item>
+      <title>Sequences, Globals, and Termination</title>
+      <link>https://ksu-cs-textbooks.github.io/cis301/10-chapter/</link>
+      <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/10-chapter/</guid>
+      <description>Chapter 10 Programming Logic: Sequences, Global Variables, and Termination In our conclusion of programming logic, we&amp;rsquo;ll examines programs with sequences and global variables. We&amp;rsquo;ll also learn the idea of termination in programs, and why this is a much more difficult thing to demonstrate for a general program that it might seem.</description>
+    </item>
+  </channel>
+</rss>

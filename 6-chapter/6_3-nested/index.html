@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>Nested Quantifiers :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/index.xml" rel="alternate" type="application/rss+xml" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/_print/6-chapter/6_3-nested/" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/tele.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/embed.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549437" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549437" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549437" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549437" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549437" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549437" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1659549437" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1659549437" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1659549437" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1659549437" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1659549437" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1659549437" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1659549437" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1659549437" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1659549437"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis301/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1659549437" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/jquery.min.js?1659549437" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/">
+    
+    
+    <div id="body" class="default-animation">
+      
+      
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div class="navigation">
+             <a class="nav nav-next" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/" title="Equivalence (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
+          </div>
+          <div class="navigation">
+             <a class="nav nav-prev" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/" title="Rules with ∃ (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
+          </div>
+          <div id="top-print-link">
+            <a class="print-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis301/_print/6-chapter/6_3-nested/">
+              <i class="fas fa-print fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit (CTRL+ALT+e)' href="https://gitlab.cs.ksu.edu/-/ide/project/cs-textbooks/cis301-textbook/edit/master/-/content/6-chapter/6_3-nested.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/"><span itemprop="name">Homepage</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/"><span itemprop="name">Predicate Logic Proofs</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/" aria-disabled="true"><span itemprop="name">Nested Quantifiers</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#example-1">Example 1</a></li>
+    <li><a href="#example-2">Example 2</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<h1>Nested Quantifiers</h1>
+    
+    
+<p>Our examples so far have included propositions with single quantifiers. This section will discuss how to prove sequents that use nested quantifers. We will see that the approach is the same as before, but that we must take caution to process the quantifiers in the correct order. Recall that quantifier precedence is from right to left (i.e., from the outside in), so that <code>∀ x ∀ y P(x, y)</code> is equivalent to <code>∀ x (∀ y P(x, y))</code>.</p>
+<h2 id="example-1">Example 1</h2>
+<p>Suppose we wish to prove the following sequent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ∀ y P(x, y) ⊢ ∀ y ∀ x P(y, x)
+</span></span></code></pre></div><p>Since we wish to prove a for-all statement of the form <code>∀ y (SOMETHING)</code>, then we know we must start with our for all introduction template:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ∀ y P(x, y) ⊢ ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x ∀ y P(x, y)              premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a 
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        //need: ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //want to use ∀i to conclude ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>But now we see that we want to prove ANOTHER for-all statement, <code>∀ x P(a, x)</code>. So we again use our for all introduction strategy in a nested subproof:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ∀ y P(x, y) ⊢ ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x ∀ y P(x, y)              premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a 
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //need: P(a, b)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        //want to use ∀i to conclude ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //need: ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //want to use ∀i to conclude ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now, in subproof 4, we see that we must use <code>∀e</code> on our premise (<code>∀ x ∀ y P(x, y)</code>) to work towards our goal of <code>P(a, b)</code>. We have two available individuals &ndash; <code>a</code> and <code>b</code>. When we use <code>∀e</code>, we must eliminate the OUTER (top-level) quantifier and its variable. In the case of <code>∀ x ∀ y P(x, y)</code>, we see that we must eliminate the <code>∀ x</code>. Since the <code>x</code> is the first parameter in <code>P(x, y)</code>, and since we are hoping to reach <code>P(a, b)</code> by the end of subproof 4, we can see that we need to plug in the <code>a</code> for the <code>x</code> so that it will be in the desired position:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ∀ y P(x, y) ⊢ ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x ∀ y P(x, y)              premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a 
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. b
+</span></span><span style="display:flex;"><span>            6. ∀ y P(a, y)          ∀e 1 a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //need: P(a, b)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        //want to use ∀i to conclude ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //need: ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //want to use ∀i to conclude ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Note that on line 6, we could NOT have used <code>∀e</code> to eliminate the <code>∀ y</code> in <code>∀ x ∀ y P(x, y)</code>, as it was not the top-level operator.</p>
+<p>Next, we apply <code>∀e</code> again to <code>∀ y P(a, y)</code> to leave us with <code>P(a, b)</code>. All that remains at that point is to use <code>∀i</code> twice as planned to wrap up the two subproofs. Here is the completed proof:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ∀ y P(x, y) ⊢ ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x ∀ y P(x, y)              premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a 
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. b
+</span></span><span style="display:flex;"><span>            6. ∀ y P(a, y)          ∀e 1 a
+</span></span><span style="display:flex;"><span>            7. P(a, b)              ∀e 6 b
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //need: P(a, b)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        //want to use ∀i to conclude ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        8. ∀ x P(a, x)              ∀i 4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //need: ∀ x P(a, x)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //want to use ∀i to conclude ∀ y ∀ x P(y, x)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    9. ∀ y ∀ x P(y, x)              ∀i 2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="example-2">Example 2</h2>
+<p>Suppose we have the predicate <code>IsBossof(x, y)</code> in the domain of people, which describes whether person <code>x</code> is the boss of person <code>y</code>. We wish to prove the following sequent:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∃ x ∀ y IsBossOf(x, y) ⊢ ∀ y ∃ x IsBossOf(x, y)
+</span></span></code></pre></div><p>You can read the premise as &ldquo;There is a person that is everyone&rsquo;s boss&rdquo;. From this statement, we are trying to prove the conclusion: &ldquo;All people have a boss&rdquo;. Here is the completed proof:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∃ x ∀ y IsBossOf(x, y) ⊢ ∀ y ∃ x IsBossOf(x, y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  1. ∃ x ∀ y IsBossOf(x, y)             premise
+</span></span><span style="display:flex;"><span>  2. {
+</span></span><span style="display:flex;"><span>       3. a ∀ y IsBossOf(a, y)          assume
+</span></span><span style="display:flex;"><span>       4. {
+</span></span><span style="display:flex;"><span>            5. b
+</span></span><span style="display:flex;"><span>            6. IsBossOf(a, b)           ∀e 3 b
+</span></span><span style="display:flex;"><span>            7. ∃ x IsBossOf(x, b)       ∃i 6 a
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>       8. ∀ y ∃ x IsBossOf(x, y))       ∀i 4
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  9. ∀ y ∃ x IsBossOf(x, y)             ∃e 1 2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In the above proof, we let <code>a</code> be our made-up name for the boss-of-everyone. So, we have the assumption that <code>∀ y IsBossOf(a, y)</code>. Next, we let <code>b</code> be &ldquo;anybody at all&rdquo; who we might examine in the domain of people. The proof exposes that the boss of &ldquo;anybody at all&rdquo; in the domain must always be <code>a</code>. <code>∀i</code> and then <code>∃e</code> finish the proof.</p>
+<p>Here is the proof worked again, with the subproofs swapped:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∃ x ∀ y IsBossOf(x, y) ⊢ ∀ y ∃ x IsBossOf(x, y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  1. ∃ x ∀ y IsBossOf(x, y)             premise
+</span></span><span style="display:flex;"><span>  2. {
+</span></span><span style="display:flex;"><span>       3. b
+</span></span><span style="display:flex;"><span>       4. {
+</span></span><span style="display:flex;"><span>            5. a ∀ y IsBossOf(a, y)     assume
+</span></span><span style="display:flex;"><span>            6. IsBossOf(a, b)           ∀e 5 b
+</span></span><span style="display:flex;"><span>            7. ∃ x IsBossOf(x, b)       ∃i 6 a
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>       8. ∃ x IsBossOf(x, y))           ∃e 1 4
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  9. ∀ y ∃ x IsBossOf(x, y)             ∀i 2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Can we prove the converse? That is, if everyone has a boss, then there is one boss who is the boss of everyone?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ y ∃ x IsBossOf(x, y) ⊢ ∃ x ∀ y IsBossOf(x, y)
+</span></span></code></pre></div><p>NO. We can try, but we get stuck:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ y ∃ x IsBossOf(x, y) ⊢ ∃ x ∀ y IsBossOf(x, y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ y ∃ x IsBossOf(x, y)           premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a
+</span></span><span style="display:flex;"><span>        4. ∃ x IsBossOf(x, a)           ∀e 1 a
+</span></span><span style="display:flex;"><span>        5. {
+</span></span><span style="display:flex;"><span>            6. b IsBossOf(b, a)         assume
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        6. ∀ y isBoss(b, y)             ∀i 2  NO--THIS PROOF IS TRYING TO FINISH
+</span></span><span style="display:flex;"><span>                                          THE OUTER SUBPROOF WITHOUT FINISHING
+</span></span><span style="display:flex;"><span>                                          THE INNER ONE FIRST.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...can&#39;t finish
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We see that the &ldquo;block structure&rdquo; of the proofs warns us when we are making invalid deductions.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+<div class="git-footer">
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Julie Thornton
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/42ecefe52661ea25c3e20b5ae4a05972a2f6c23b">May 31, 2022</a>
+</p>
+</div>
+
+    
+    </div>
+    
+    
+    
+    
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+
+<a id="logo" href="https://ksu-cs-textbooks.github.io/cis301/">
+  CIS 301: Logical Foundations of Programming
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/auto-complete.js?1659549437" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.min.js?1659549437" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.stemmer.support.min.js?1659549437" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.multi.min.js?1659549437" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr.en.min.js?1659549437" defer></script>
+        <script src="https://ksu-cs-textbooks.github.io/cis301/js/search.js?1659549437" defer></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics collapsible-menu">
+          <li data-nav-id="/0-chapter/" title="Getting Started" class="dd-item"><input type="checkbox" id="section-c55c9f751a28ecc9415234375cddd395" class="toggle"/><label for="section-c55c9f751a28ecc9415234375cddd395" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/"><b>0. </b>Getting Started</a><ul>
+          <li data-nav-id="/0-chapter/0_1-toolsguide/" title="Tools Guide" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/0_1-toolsguide/">0.1. Tools Guide</a></li></ul></li>
+          <li data-nav-id="/1-chapter/" title="Basics and Logic Puzzles" class="dd-item"><input type="checkbox" id="section-7a71fe25dd66b523fca4004b7c4d01d0" class="toggle"/><label for="section-7a71fe25dd66b523fca4004b7c4d01d0" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/"><b>1. </b>Basics and Logic Puzzles</a><ul>
+          <li data-nav-id="/1-chapter/1_1-logicbasics/" title="Basic Logical Reasoning" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_1-logicbasics/">1.1. Basic Logical Reasoning</a></li>
+          <li data-nav-id="/1-chapter/1_2-knightsknaves/" title="Knights and Knaves" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_2-knightsknaves/">1.2. Knights and Knaves</a></li>
+          <li data-nav-id="/1-chapter/1_3-otherpuzzles/" title="Other Puzzles" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_3-otherpuzzles/">1.3. Other Puzzles</a></li></ul></li>
+          <li data-nav-id="/2-chapter/" title="Truth Tables" class="dd-item"><input type="checkbox" id="section-c23f766dd7728aa0e1cff094001eac05" class="toggle"/><label for="section-c23f766dd7728aa0e1cff094001eac05" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/"><b>2. </b>Truth Tables</a><ul>
+          <li data-nav-id="/2-chapter/2_1-opscircuits/" title="Operators and Circuits" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_1-opscircuits/">2.1. Operators and Circuits</a></li>
+          <li data-nav-id="/2-chapter/2_2-logikatruth/" title="Truth Tables in Logika" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/">2.2. Truth Tables in Logika</a></li>
+          <li data-nav-id="/2-chapter/2_3-satis/" title="Satisfiability" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_3-satis/">2.3. Satisfiability</a></li>
+          <li data-nav-id="/2-chapter/2_4-logicalequiv/" title="Logical Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_4-logicalequiv/">2.4. Logical Equivalence</a></li>
+          <li data-nav-id="/2-chapter/2_5-sementail/" title="Semantic Entailment" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_5-sementail/">2.5. Semantic Entailment</a></li></ul></li>
+          <li data-nav-id="/3-chapter/" title="Propositional Logic Translations" class="dd-item"><input type="checkbox" id="section-ccb531d159d5247057d21618514721b6" class="toggle"/><label for="section-ccb531d159d5247057d21618514721b6" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/"><b>3. </b>Propositional Logic Translations</a><ul>
+          <li data-nav-id="/3-chapter/3_1-propatom/" title="Propositional Atoms" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_1-propatom/">3.1. Propositional Atoms</a></li>
+          <li data-nav-id="/3-chapter/3_2-notandor/" title="NOT, AND, OR Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_2-notandor/">3.2. NOT, AND, OR Translations</a></li>
+          <li data-nav-id="/3-chapter/3_3-implies/" title="Implies Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_3-implies/">3.3. Implies Translations</a></li>
+          <li data-nav-id="/3-chapter/3_4-equiv/" title="Equivalent Translations" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_4-equiv/">3.4. Equivalent Translations</a></li>
+          <li data-nav-id="/3-chapter/3_5-knightsknavestt/" title="Knights and Knaves, revisited" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_5-knightsknavestt/">3.5. Knights and Knaves, revisited</a></li></ul></li>
+          <li data-nav-id="/4-chapter/" title="Propositional Logic Proofs" class="dd-item"><input type="checkbox" id="section-8ebf970484325d93d52075c7c72ba517" class="toggle"/><label for="section-8ebf970484325d93d52075c7c72ba517" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/"><b>4. </b>Propositional Logic Proofs</a><ul>
+          <li data-nav-id="/4-chapter/4_1-intro/" title="Introduction" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/">4.1. Introduction</a></li>
+          <li data-nav-id="/4-chapter/4_2-andrules/" title="AND Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/">4.2. AND Rules</a></li>
+          <li data-nav-id="/4-chapter/4_3-orrules/" title="OR Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/">4.3. OR Rules</a></li>
+          <li data-nav-id="/4-chapter/4_4-impliesrules/" title="Implies Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/">4.4. Implies Rules</a></li>
+          <li data-nav-id="/4-chapter/4_5-notrules/" title="Negation Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/">4.5. Negation Rules</a></li>
+          <li data-nav-id="/4-chapter/4_6-strategies/" title="Summary and Strategies" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/">4.6. Summary and Strategies</a></li>
+          <li data-nav-id="/4-chapter/4_7-theorems/" title="Theorems" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_7-theorems/">4.7. Theorems</a></li>
+          <li data-nav-id="/4-chapter/4_8-equivalence/" title="Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_8-equivalence/">4.8. Equivalence</a></li>
+          <li data-nav-id="/4-chapter/4_9-soundcomplete/" title="Soundness and Completeness" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_9-soundcomplete/">4.9. Soundness and Completeness</a></li></ul></li>
+          <li data-nav-id="/5-chapter/" title="Predicate Logic Translations" class="dd-item"><input type="checkbox" id="section-b69c30f957b0ff55c1e9673979ceb29d" class="toggle"/><label for="section-b69c30f957b0ff55c1e9673979ceb29d" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/"><b>5. </b>Predicate Logic Translations</a><ul>
+          <li data-nav-id="/5-chapter/5_1-motivation/" title="Motivation" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_1-motivation/">5.1. Motivation</a></li>
+          <li data-nav-id="/5-chapter/5_2-predsyntax/" title="Syntax" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_2-predsyntax/">5.2. Syntax</a></li>
+          <li data-nav-id="/5-chapter/5_3-singlequantifier/" title="Single Quantifier" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_3-singlequantifier/">5.3. Single Quantifier</a></li>
+          <li data-nav-id="/5-chapter/5_4-multquant/" title="Multiple Quantifiers" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_4-multquant/">5.4. Multiple Quantifiers</a></li></ul></li>
+          <li data-nav-id="/6-chapter/" title="Predicate Logic Proofs" class="dd-item parent"><input type="checkbox" id="section-482218cb3a05b9572157ed70ed9a5c02" class="toggle" checked/><label for="section-482218cb3a05b9572157ed70ed9a5c02" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/"><b>6. </b>Predicate Logic Proofs</a><ul>
+          <li data-nav-id="/6-chapter/6_1-univrules/" title="Rules with ∀" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/">6.1. Rules with ∀</a></li>
+          <li data-nav-id="/6-chapter/6_2-existrules/" title="Rules with ∃" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/">6.2. Rules with ∃</a></li>
+          <li data-nav-id="/6-chapter/6_3-nested/" title="Nested Quantifiers" class="dd-item active"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/">6.3. Nested Quantifiers</a></li>
+          <li data-nav-id="/6-chapter/6_4-equiv/" title="Equivalence" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/">6.4. Equivalence</a></li>
+          <li data-nav-id="/6-chapter/6_5-strategies/" title="Summary and Strategies" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_5-strategies/">6.5. Summary and Strategies</a></li>
+          <li data-nav-id="/6-chapter/6_6-soundcomplete/" title="Soundness and Completeness" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_6-soundcomplete/">6.6. Soundness and Completeness</a></li></ul></li>
+          <li data-nav-id="/7-chapter/" title="Mathematical Induction" class="dd-item"><input type="checkbox" id="section-fc25ecfcb3d8e929949e8db759e88bab" class="toggle"/><label for="section-fc25ecfcb3d8e929949e8db759e88bab" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/"><b>7. </b>Mathematical Induction</a><ul>
+          <li data-nav-id="/7-chapter/7_1-process/" title="Induction Process" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_1-process/">7.1. Induction Process</a></li>
+          <li data-nav-id="/7-chapter/7_2-algebraex/" title="Algebra example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_2-algebraex/">7.2. Algebra example</a></li>
+          <li data-nav-id="/7-chapter/7_3-divex/" title="Divisibility example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_3-divex/">7.3. Divisibility example</a></li>
+          <li data-nav-id="/7-chapter/7_4-setex/" title="Set example" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/">7.4. Set example</a></li></ul></li>
+          <li data-nav-id="/8-chapter/" title="Intro to Programming Logic" class="dd-item"><input type="checkbox" id="section-bd411d4b09a07aa69f5152043fa837ed" class="toggle"/><label for="section-bd411d4b09a07aa69f5152043fa837ed" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/"><b>8. </b>Intro to Programming Logic</a><ul>
+          <li data-nav-id="/8-chapter/8_1-goal/" title="Programming Logic Goal" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/">8.1. Programming Logic Goal</a></li>
+          <li data-nav-id="/8-chapter/8_2-logikaprograms/" title="Logika Programs" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/">8.2. Logika Programs</a></li>
+          <li data-nav-id="/8-chapter/8_3-assertassume/" title="Assert and Assume" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_3-assertassume/">8.3. Assert and Assume</a></li>
+          <li data-nav-id="/8-chapter/8_4-algebrasubst/" title="Algebra and subst Rules" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_4-algebrasubst/">8.4. Algebra and subst Rules</a></li>
+          <li data-nav-id="/8-chapter/8_5-assignment/" title="Assignment Statements" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_5-assignment/">8.5. Assignment Statements</a></li>
+          <li data-nav-id="/8-chapter/8_6-divmod/" title="Integer Division and Modulo" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_6-divmod/">8.6. Integer Division and Modulo</a></li>
+          <li data-nav-id="/8-chapter/8_7-conditionals/" title="Conditional Statements" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/">8.7. Conditional Statements</a></li></ul></li>
+          <li data-nav-id="/9-chapter/" title="Functions and Loops" class="dd-item"><input type="checkbox" id="section-708a4026c5b157dd8da0a277e359073f" class="toggle"/><label for="section-708a4026c5b157dd8da0a277e359073f" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/"><b>9. </b>Functions and Loops</a><ul>
+          <li data-nav-id="/9-chapter/9_1-functions/" title="Functions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_1-functions/">9.1. Functions</a></li>
+          <li data-nav-id="/9-chapter/9_2-recursion/" title="Recursion" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/">9.2. Recursion</a></li>
+          <li data-nav-id="/9-chapter/9_3-loops/" title="Loops" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_3-loops/">9.3. Loops</a></li>
+          <li data-nav-id="/9-chapter/9_4-logikafacts/" title="Logika Facts" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_4-logikafacts/">9.4. Logika Facts</a></li>
+          <li data-nav-id="/9-chapter/9_5-summary/" title="Summary" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_5-summary/">9.5. Summary</a></li></ul></li>
+          <li data-nav-id="/10-chapter/" title="Sequences, Globals, and Termination" class="dd-item"><input type="checkbox" id="section-83e8e84779c32ba319a378089810947b" class="toggle"/><label for="section-83e8e84779c32ba319a378089810947b" ></label><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/"><b>10. </b>Sequences, Globals, and Termination</a><ul>
+          <li data-nav-id="/10-chapter/10_1-modes/" title="Logika Modes" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_1-modes/">10.1 Logika Modes</a></li>
+          <li data-nav-id="/10-chapter/10_2-intosequences/" title="Intro to Sequences" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_2-intosequences/">10.2 Intro to Sequences</a></li>
+          <li data-nav-id="/10-chapter/10_3-seqfn/" title="Sequences in Functions" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/">10.3 Sequences in Functions</a></li>
+          <li data-nav-id="/10-chapter/10_4-seqloop/" title="Sequences in Loops" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_4-seqloop/">10.4 Sequences in Loops</a></li>
+          <li data-nav-id="/10-chapter/10_5_seqlogfact/" title="Logika Facts, revisited" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5_seqlogfact/">10.5 Logika Facts, revisited</a></li>
+          <li data-nav-id="/10-chapter/10_6-globals/" title="Global Variables" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_6-globals/">10.6 Global Variables</a></li>
+          <li data-nav-id="/10-chapter/10_7-termination/" title="Termination" class="dd-item"><a href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_7-termination/">10.7 Termination</a></li></ul></li>
+        </ul>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="light-theme" value="light-theme" selected>Light Theme</option>
+                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" onclick="clearHistory();"><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter"><style>
+  #footer {
+      font-size: 13px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem 1rem;
+      min-width: 230px;
+      max-width: 300px;
+  }
+  #footer p {
+      margin: 0;
+  }
+</style>
+  
+<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/K-State-Computational-Core/hugo-theme-relearn/tree/main">Hugo Relearn Theme</a>.</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: .5rem auto" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
+
+        </div>
+      </div>
+    </aside>
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1659549437" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1659549437" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/featherlight.min.js?1659549437" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1659549437" defer></script>
+    
+    
+    
+    
+  </body>
+</html>

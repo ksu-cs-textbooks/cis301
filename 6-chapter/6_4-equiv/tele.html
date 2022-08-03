@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0">
+    <meta name="generator" content="Relearn 5.0.3+tip">
+
+
+
+
+	
+	
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+			
+
+	
+	
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+	
+	
+			
+			
+
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>Equivalence :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/" rel="canonical" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/index.xml" rel="alternate" type="application/rss+xml" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/_print/6-chapter/6_4-equiv/" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/embed.html" rel="alternate" type="text/html" title="CIS 301 Textbook">
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <noscript>
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1659549439" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/featherlight.min.css?1659549439" rel="stylesheet">
+      <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1659549439" rel="stylesheet">
+    </noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1659549439" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1659549439" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1659549439" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1659549439" rel="stylesheet" media="print">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1659549439"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="https://ksu-cs-textbooks.github.io/cis301/index.json";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      variants.init( [ 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1659549439" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/jquery.min.js?1659549439" defer></script>
+
+  </head>
+  <body class="mobile-support disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/">
+    
+    <div id="tele" class="tele mirror">
+    
+    <div id="body" class="default-animation">
+      
+      
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article class="default">
+    
+    
+<h1>Equivalence</h1>
+    
+    
+<p>In Chapter 5, we saw DeMorgan&rsquo;s laws for quantifiers &ndash; that if we have some domain, and if <code>P(x)</code> is a predicate for individuals in that domain, then the following statements are equivalent:</p>
+<ul>
+<li><code>¬(∃ x P(x))</code> is equivalent to <code>∀ x ¬P(x)</code></li>
+<li><code>¬(∀ x P(x))</code> is equivalent to <code>∃ x ¬P(x)</code></li>
+</ul>
+<p>The process of proving that two predicate logic statements are equivalent is the same as it was in propositional logic &ndash; we must prove the second proposition using the first as a premise, and we must prove the first given the second as a premise.</p>
+<h2 id="example---how-to-prove-equivalence">Example - how to prove equivalence</h2>
+<p>For example, to prove that <code>¬(∃ x P(x))</code> is equivalent to <code>∀ x ¬P(x)</code>, we must prove the sequents:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬(∃ x P(x)) ⊢ ∀ x ¬P(x)
+</span></span></code></pre></div><p>and</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ¬P(x) ⊢ ¬(∃ x P(x))
+</span></span></code></pre></div><p>We prove both directions below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬(∃ x P(x)) ⊢ ∀ x ¬P(x)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ¬(∃ x P(x))              premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. a
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. P(a)             assume
+</span></span><span style="display:flex;"><span>            6. ∃ x P(x)         ∃i 5 a
+</span></span><span style="display:flex;"><span>            7. ⊥                ¬e 6 1
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        8. ¬P(a)                ¬i 4
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    9. ∀ x ¬P(x)                ∀i 2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>and</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ x ¬P(x) ⊢ ¬(∃ x P(x))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ∀ x ¬P(x)                premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. ∃ x P(x)             assume
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. a P(a)           assume
+</span></span><span style="display:flex;"><span>            6. ¬P(a)            ∀i 1 a
+</span></span><span style="display:flex;"><span>            7. ⊥                ¬e 5 6
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        8. ⊥                    ∃e 3 4
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    9. ¬(∃ x P(x))              ¬i 2
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="more-extensive-list-of-equivalences">More extensive list of equivalences</h2>
+<p>Here is a more extensive list of equivalences in predicate logic. The remaining proofs are left as exercises for the reader:</p>
+<ul>
+<li><code>¬(∃ x P(x))</code> is equivalent to <code>∀ x ¬P(x)</code></li>
+<li><code>¬(∀ x P(x))</code> is equivalent to <code>∃ x ¬P(x)</code></li>
+<li><code>A x (P(x) → ¬Q(x))</code> is equivalent to <code>¬(E x P(x) ∧ Q(x))</code></li>
+<li><code>∀ x ∀ y P(x, y)</code> is equivalent to <code>∀ y ∀ x P(x, y)</code></li>
+<li><code>∃ x ∃ y P(x, y)</code> is equivalent to <code>∃ y ∃ x P(x, y)</code></li>
+<li><code>Q ∧ (∀ x P(x))</code> is equivalent to <code>∀ x (Q ∧ P(x))</code> (where <code>x</code> does not appear in <code>Q</code>)</li>
+<li><code>Q v (∀ x P(x))</code> is equivalent to <code>∀ x (Q V P(x))</code> (where <code>x</code> does not appear in <code>Q</code>)</li>
+<li><code>Q ∧ (∃ x P(x))</code> is equivalent to <code>∃ x (Q ∧ P(x))</code> (where <code>x</code> does not appear in <code>Q</code>)</li>
+<li><code>Q V (∃ x P(x))</code> is equivalent to <code>∃ x (Q V P(x))</code> (where <code>x</code> does not appear in <code>Q</code>)</li>
+</ul>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    
+    
+    </div>
+    
+  </div>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1659549439" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1659549439" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/featherlight.min.js?1659549439" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1659549439" defer></script>
+    
+    
+    
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/tele-scroll.js?1659549439 defer"></script>
+    
+  </body>
+</html>
