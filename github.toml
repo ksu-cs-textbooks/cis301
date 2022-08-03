@@ -1,5 +1,5 @@
 # Base URL where the site will be hosted
-baseURL = "https://textbooks.cs.ksu.edu/cis301"
+baseURL = "https://ksu-cs-textbooks.github.io/cis301/"
 # Default language for the site
 languageCode = "en-us"
 # Site Title
