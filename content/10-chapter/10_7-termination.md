@@ -218,4 +218,4 @@ Suppose we compute `collatz(17)`. We can track the value of `n` as follows: 17, 
 
 ## Decidability and the Halting problem
 
-It is an obvious question whether we could write a program to check whether another program always terminates. Unfortunately, this (the famous *Halting problem*) turns out to be impossible, as was demonstrated by Alan Turing. The Halting problem is an example of an *undecidable* problem in computer science -- a decision problem (a problem with a yes/no answer) that we can't correctly answer one way or another on all inputs, even if we have unlimited resources.
+It is an obvious question whether we could write a program to check whether another program always terminates. Unfortunately, this (the *Halting problem*) turns out to be impossible, as was demonstrated by Alan Turing. The Halting problem is an example of an *undecidable* problem in computer science -- a decision problem (a problem with a yes/no answer) that we can't correctly answer one way or another on all inputs, even if we have unlimited resources.
