@@ -5,7 +5,7 @@ weight: 103
 date: 2018-08-24T10:53:26-05:00
 ---
 
-We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that $n! = n * (n-1) * (n-2) * ... * 2 * 1$, but we don't have a way to describe the "..." portion using our current tools.
+We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that {{< math >}}$n! = n * (n-1) * (n-2) * ... * 2 * 1${{< /math >}}, but we don't have a way to describe the "..." portion using our current tools.
 
 In this section, we introduce *Logika facts*, which will let us create our own recursive proof functions that we can use in invariants and postconditions. We will usually want to use a Logika fact anytime our invariant or postcondition needs to express something that has a "..." to demonstrate a pattern.
 
@@ -33,10 +33,19 @@ Logika facts are defined at the top of the Logika file, below the `import` but b
 
 It is much easier to see how Logika facts work by using an example. Suppose we want to define the factorial operation. The first step is to come up with a *recursive definition*, which has us defining the operation the same way we would in a recursive function -- with one or more *base cases* where we can define the operation for the simplest case, and one or more *recursive cases* that express a general instance of the problem in terms of a smaller instance.
 
-For factorial, the simplest version is $1!$, which is just 1. In the general case, we have that $n! = n * (n-1) * (n-2) * ... * 2 * 1 = n * (n-1)!$. So we can write the following recursive definition:
+For factorial, the simplest version is {{< math >}}$1!${{< /math >}}, which is just 1. In the general case, we have that:
 
-- Base case: $1! = 1$
-- Recursive case: for values of $n$ greater than 1, $n! = n * (n-1)!$
+```math
+$$
+n! = n * (n-1) * (n-2) * ... * 2 * 1 = n * (n-1)!
+$$
+```
+<br>
+
+So we can write the following recursive definition:
+
+- Base case: {{< math >}}$1! = 1${{< /math >}}
+- Recursive case: for values of {{< math >}}$n${{< /math >}} greater than 1, {{< math >}}$n! = n * (n-1)!${{< /math >}}
 
 And we can then translate the recursive definition to a Logika fact:
 
@@ -55,7 +64,7 @@ Let's consider each portion of this proof function. Here, `factDef` is the name 
 fOne. factDef(1) == 1
 ```
 
-`fOne` defines `factDef(1)` as 1; i.e., `factDef(n)` is 1 if $n == 1$. This is the same as our base case in our recursive definition for factorial -- $1! = 1$.
+`fOne` defines `factDef(1)` as 1; i.e., `factDef(n)` is 1 if $n == 1$. This is the same as our base case in our recursive definition for factorial -- {{< math >}}$1! = 1${{< /math >}}.
 
 Next, consider the definition for `fBig`:
 
@@ -63,7 +72,7 @@ Next, consider the definition for `fBig`:
 fBig.  ∀x: Z  x > 1 → factDef(x) == x * factDef(x - 1)
 ```
 
-`fBig` states that for all integers `x` that are bigger than 1, we define `factDef(x) == x * factDef(x - 1)`. This is the same as our recursive case in our recursive definition for factorial -- for values of $n$ greater than 1, $n! = n * (n-1)!$.
+`fBig` states that for all integers `x` that are bigger than 1, we define `factDef(x) == x * factDef(x - 1)`. This is the same as our recursive case in our recursive definition for factorial -- for values of {{< math >}}$n${{< /math >}} greater than 1, {{< math >}}$n! = n * (n-1)!${{< /math >}}.
 
 ## Evaluating a Logika fact
 
@@ -335,7 +344,7 @@ assert(answer == 2)
 
 ## Logika fact for multiplication
 
-Suppose we wanted to create a Logika fact that recursively defined multiplication. We first recursively define how we would multiply $x * y$. We know that our base case will be when $y == 0$, because anything times 0 is 0. We also saw that multiplication can be defined as repeated addition, so that $x * y == x + x + ... x$ for a total of $y$ additions. We also see that $x * y == x + x * (y-1)$, since we can pull out one of the additions and then have $y-1$ additions left to do. 
+Suppose we wanted to create a Logika fact that recursively defined multiplication. We first recursively define how we would multiply {{< math >}}$x * y${{< /math >}}. We know that our base case will be when {{< math >}}$y == 0${{< /math >}}, because anything times 0 is 0. We also saw that multiplication can be defined as repeated addition, so that {{< math >}}$x * y == x + x + ... x${{< /math >}} for a total of {{< math >}}$y${{< /math >}} additions. We also see that {{< math >}}$x * y == x + x * (y-1)${{< /math >}}, since we can pull out one of the additions and then have {{< math >}}$y-1${{< /math >}} additions left to do. 
 
 Here is our recursive definition of the problem:
 
@@ -400,13 +409,15 @@ The example above does not include the verification steps to prove the loop inva
 
 The Fibonacci sequence is:
 
+```math
 $$
 1, 1, 2, 3, 5, 8, 13, ...
 $$
+```
 
 <br><br>
 
-The first two Fibonacci numbers are both 1, and subsequent Fibonacci numbers are found by adding the two previous values. In the sequence above, we see that the two latest numbers were 8 and 13, so the next number in the sequence will be $8 + 13 = 21$.
+The first two Fibonacci numbers are both 1, and subsequent Fibonacci numbers are found by adding the two previous values. In the sequence above, we see that the two latest numbers were 8 and 13, so the next number in the sequence will be {{< math >}}$8 + 13 = 21${{< /math >}}.
 
 We can recursively define the Fibonnaci sequence as follows:
 

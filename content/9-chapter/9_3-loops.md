@@ -30,7 +30,7 @@ Whatever we choose as the loop invariant, we must be able to do the following:
 
 The process of proving the correctness of loop invariants is very similar to a mathematical induction proof. We must prove the loop invariant is true before the loop begins, which is analogous to the *base case* in mathematical induction. The process of assuming the invariant is true at the beginning of an iteration and proving that it is still true at the end of an iteration is just like mathematical induction's *inductive step*.
 
-If we prove those two things about our invariant, we can be certain the invariant will still hold after the loop terminates. Why? For the same reason mathematical induction proves a property for a general $n$:
+If we prove those two things about our invariant, we can be certain the invariant will still hold after the loop terminates. Why? For the same reason mathematical induction proves a property for a general {{< math >}}$n${{< /math >}}:
 
 - We know the invariant holds before the loop begins
 - Because the invariant holds before the loop begins, we are sure it holds at the beginning of the first iteration
@@ -86,9 +86,9 @@ Before writing the loop invariant block, let's make a table showing the values o
 | Variable | Before loop | After iteration 1 | After iteration 2 | After iteration 3 | ... | After iteration y | 
 | --- | --- | --- | --- | --- | --- | --- |
 | `count` | 0 | 1 | 2 | 3 | ... | y |
-|  `sum` | $0 (= 0*x)$ | $x (= 1*x)$ | $x + x (= 2*x)$ | $x + x + x (= 3*x)$ | ... | $x + x + ... + x (= y*x)$ |
+|  `sum` | {{< math >}}$0 (= 0*x)${{< /math >}} | {{< math >}}$x (= 1*x)${{< /math >}} | {{< math >}}$x + x (= 2*x)${{< /math >}} | {{< math >}}$x + x + x (= 3*x)${{< /math >}} | ... | {{< math >}}$x + x + ... + x (= y*x)${{< /math >}} |
 
-Before the loop begins, we've added 0 $x$'s together, so the sum is 0. After the first iteration, we've added 1 $x$ together, so the sum is $x$. After the second iteration, we've added 2 $x$'s together, so the sum is $x + x$ which is really $2 * x$. This continues until after the y-th iteration, when we've added y $x$'s together (and the sum is $y*x$). 
+Before the loop begins, we've added 0 {{< math >}}$x${{< /math >}}'s together, so the sum is 0. After the first iteration, we've added 1 {{< math >}}$x${{< /math >}} together, so the sum is {{< math >}}$x${{< /math >}}. After the second iteration, we've added 2 {{< math >}}$x${{< /math >}}'s together, so the sum is {{< math >}}$x + x${{< /math >}} which is really {{< math >}}$2 * x${{< /math >}}. This continues until after the y-th iteration, when we've added y {{< math >}}$x${{< /math >}}'s together (and the sum is {{< math >}}$y*x${{< /math >}}). 
 
 Using this table, it is easy to see that at any point, `sum == count*x` (since `count` tracks the number of iterations). This is true both before the loop begins and at the end of each iteration, so it will be our loop invariant.
 
@@ -477,11 +477,11 @@ It might be difficult to tell what this code is doing before walking through a f
 | Variable | Before loop | After iteration 1 | After iteration 2 | After iteration 3 | ... | After iteration n | 
 | --- | --- | --- | --- | --- | --- | --- |
 | `i` | 0 | 1 | 2 | 3 | ... | n |
-|  `total` | $0 $ | $1 $ | $1 + 3 (= 4)$ | $1 + 3 + 5 (= 9)$ | ... | $1 + 3 + 5 + ... + (2*n-1) (=n^2)$ |
+|  `total` | {{< math >}}$0 ${{< /math >}}| {{< math >}}$1 ${{< /math >}} | {{< math >}}$1 + 3 (= 4)${{< /math >}} | {{< math >}}$1 + 3 + 5 (= 9)${{< /math >}} | ... | {{< math >}}$1 + 3 + 5 + ... + (2*n-1) (=n^2)${{< /math >}} |
 
-Now we can see the pattern -- we are adding up the first $n$ odd numbers. We can see that at the end of the i-th iteration we have added the first $i$ odd numbers, where $(2*i-1)$ is our most recent odd number. We also see that the sum of the first 1 odd number is 1, the sum of the first 2 odd numbers is $2^2 = 4$, ..., and the sum of the first $n$ odd numbers is $n^2$.
+Now we can see the pattern -- we are adding up the first {{< math >}}$n${{< /math >}} odd numbers. We can see that at the end of the i-th iteration we have added the first {{< math >}}$i${{< /math >}} odd numbers, where {{< math >}}$(2*i-1)${{< /math >}} is our most recent odd number. We also see that the sum of the first 1 odd number is 1, the sum of the first 2 odd numbers is {{< math >}}$2^2 = 4${{< /math >}}, ..., and the sum of the first {{< math >}}$n${{< /math >}} odd numbers is {{< math >}}$n^2${{< /math >}}.
 
-Since our loop invariant should describe what progress it has made towards its goal of adding the first $n$ odd numbers, we can see that the loop invariant should be that at any point (before the loop begins and at the end each iteration), $total$ holds the sum of the first $i$ numbers (whose value is $i^2$). We first try this as our loop invariant:
+Since our loop invariant should describe what progress it has made towards its goal of adding the first {{< math >}}$n${{< /math >}} odd numbers, we can see that the loop invariant should be that at any point (before the loop begins and at the end each iteration), {{< math >}}$total${{< /math >}} holds the sum of the first {{< math >}}$i${{< /math >}} numbers (whose value is {{< math >}}$i^2${{< /math >}}). We first try this as our loop invariant:
 
 ```text
 var total: Z = 0
@@ -536,6 +536,6 @@ As before, let's make a table showing the values of different variables at diffe
 | Variable | Before loop | After iteration 1 | After iteration 2 | ... | After iteration n | 
 | --- | --- | --- |  --- | --- | --- |
 | `i` | 1 | 2 | 3 | ... | n |
-|  `prod` | $1 $ | $1 * 2$ | $1 * 2 * 3$ | ... | $1 * 2 * 3 * ... * n$ |
+|  `prod` | {{< math >}}$1 ${{< /math >}} | {{< math >}}$1 * 2${{< /math >}} | {{< math >}}$1 * 2 * 3${{< /math >}} | ... | {{< math >}}$1 * 2 * 3 * ... * n${{< /math >}} |
 
-From this table, we can clearly see that after $i$ iterations, $prod == i!$ (i factorial). This *should* be our loop invariant...but as with many other languages, Logika does not recognize `!` as a factorial operator (instead, it is a negation operator). In the next section, we will see how to create a *Logika fact* to help define the factorial operation. We will then be able to use that Logika fact in place of `!` to let our invariant be a formalization of: *prod equals i factorial*.
+From this table, we can clearly see that after {{< math >}}$i${{< /math >}} iterations, {{< math >}}$prod == i!${{< /math >}} (i factorial). This *should* be our loop invariant...but as with many other languages, Logika does not recognize `!` as a factorial operator (instead, it is a negation operator). In the next section, we will see how to create a *Logika fact* to help define the factorial operation. We will then be able to use that Logika fact in place of `!` to let our invariant be a formalization of: *prod equals i factorial*.
