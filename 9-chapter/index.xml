@@ -377,7 +377,7 @@ We must prove a function&amp;rsquo;s preconditions before calling it (including 
       <link>https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_4-logikafacts/</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_4-logikafacts/</guid>
-      <description>We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that $n! = n * (n-1) * (n-2) * &amp;hellip; * 2 * 1$, but we don&amp;rsquo;t have a way to describe the &amp;ldquo;&amp;hellip;&amp;rdquo; portion using our current tools.
+      <description>We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that $n! = n * (n-1) * (n-2) * ... * 2 * 1$, but we don&amp;rsquo;t have a way to describe the &amp;ldquo;&amp;hellip;&amp;rdquo; portion using our current tools.
 In this section, we introduce Logika facts, which will let us create our own recursive proof functions that we can use in invariants and postconditions.</description>
     </item>
     <item>
