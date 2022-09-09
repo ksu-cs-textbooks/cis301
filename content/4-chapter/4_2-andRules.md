@@ -221,6 +221,7 @@ p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)
     7. p                    ∧e1 3
     8. q                    ∧e2 3
     9. q ∧ (t ∨ s)          ∧i 8 6
+}
 ```
 
 You might notice that lines 5 and 7 were not needed, as both `p` and `a` were not part of the conclusion. That's true -- we could have eliminated those steps. However, it's a good idea to extract as much information as possible while you are getting used to doing these proofs -- it doesn't hurt to have extra claims, and you may find that you end up needing them.
