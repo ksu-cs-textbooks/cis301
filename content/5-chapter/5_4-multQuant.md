@@ -36,7 +36,7 @@ Suppose we wished to translate, *Some circle is bigger than some square*. Here, 
 With that in mind, we can see that we will use two existential quantifiers. We can translate the statement as follows:
 
 ```text
-∃ x ∃ y (isCircle(x) ∧ isSquare(x) ∧ biggerThan(x, y))
+∃ x ∃ y (isCircle(x) ∧ isSquare(y) ∧ biggerThan(x, y))
 ```
 
 Which reads: *There are two shapes, x and y, where x is a circle, y is a square, and x (which is a circle) is bigger than y (which is a square).*
@@ -54,7 +54,7 @@ Which reads: *There are two shapes, x and y, where y is a circle, x is a square,
 Next, suppose we wished to translate: *Every circle is bigger than all rectangles*. Again, we are quantifying two things -- ALL circles and also ALL squares. We can see that we will need to use two universal quantifiers. We can translate the statement as follows:
 
 ```text
-∀ x ∀ y ((isCircle(x) ∧ isSquare(x)) → biggerThan(x, y))
+∀ x ∀ y ((isCircle(x) ∧ isSquare(y)) → biggerThan(x, y))
 ```
 
 Which reads: *For each combination (x, y) of shapes, if x is a circle and y is a square, then x (which is a circle) is bigger than y (which is a square).*
