@@ -19,7 +19,7 @@ There are two OR introduction rules -- `∨i1` and `∨i2`. `∨i1` allows us to
        P ∨ Q              P ∨ Q 
 ```
 
-Here is a simple example showing the syntax of the `∨i1` rule in Logika:
+Here is a simple example showing the syntax of the `∨i1` rule:
 
 ```text
 p ⊢ p ∨ q
@@ -31,7 +31,7 @@ p ⊢ p ∨ q
 
 We can read the justification `∨i1 1` as: OR introduction 1 from line 1, or "create a OR statement that puts the claim from line 1 on the first (left) side, and puts something new on the second side".
 
-Here is a simple example showing the syntax of the `∨i2` rule in Logika:
+Here is a simple example showing the syntax of the `∨i2` rule:
 
 ```text
 p ⊢ q ∨ p
@@ -105,7 +105,7 @@ In order to use the `∨e` rule, we must have three things:
 
 If we have all three parts, we can use the `∨e` and cite the OR statement and both subproofs to claim that `R` is true no matter what.
 
-Here is a simple example showing the syntax of the `∨e` rule in Logika:
+Here is a simple example showing the syntax of the `∨e` rule:
 
 ```text
 p ∨ q ⊢ q ∨ p 

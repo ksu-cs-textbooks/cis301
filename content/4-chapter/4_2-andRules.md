@@ -24,7 +24,7 @@ We will use the format above when introducing each of our natural deduction rule
 - On the top of the right side we see what we already need to have established as facts in order to use this rule (in this case, `P` and also `Q` ). These facts can appear anywhere in our scope of the proof, in whatever order. (For now, all previous lines in the proof will be within our scope, but this will change when we get to more complex rules that involve subproofs).
 - On the bottom of the right side, we see what we can claim by using that proof rule.
 
-Here is a simple example of a Logika proof that uses `∧i`. It proves that if propositional atoms `p`, `q`, and `r` are all true, then the proposition `r ∧ (q ∧ p)` is also true:
+Here is a simple example of a proof that uses `∧i`. It proves that if propositional atoms `p`, `q`, and `r` are all true, then the proposition `r ∧ (q ∧ p)` is also true:
 
 ```text
 p, q, r ⊢ r ∧ (q ∧ p)
@@ -77,7 +77,7 @@ The idea of the AND elimination rules is that if we have a proposition `p ⋀ q`
           P                  Q
 ```
 
-Here is a simple example showing the syntax of the `∧e1` rule in Logika:
+Here is a simple example showing the syntax of the `∧e1` rule:
 
 ```text
 p ∧ q ⊢ p
@@ -90,7 +90,7 @@ p ∧ q ⊢ p
 We can read the justification `∧e1 1` as: AND-elimination 1 from line 1, or "take the AND statement on line 1 and extract its first (left) side".
 
 
-Here is a simple example showing the syntax of the `∧e2` rule in Logika:
+Here is a simple example showing the syntax of the `∧e2` rule:
 
 ```text
 p ∧ q ⊢ q

@@ -25,7 +25,7 @@ Rule summaries:
 
 ```
 
-Logika syntax:
+Rule syntax summaries:
 
 ```text
 { 
@@ -65,7 +65,7 @@ Rule summaries:
                      Q
 ```
 
-Logika syntax:
+Rule syntax summaries:
 
 ```text
 {

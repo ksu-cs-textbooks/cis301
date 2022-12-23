@@ -19,7 +19,7 @@ For all elimination allows us to take a claim that uses a universal quantifier -
        P(v)     where v is a particular individual in the domain
 ```
 
-Here is a simple example showing the syntax of the `∀e` rule in Logika. It shows that given the premises: *All humans are mortal* and *Socrates is a human*, that we can prove that *Socrates is mortal*:
+Here is a simple example showing the syntax of the `∀e` rule. It shows that given the premises: *All humans are mortal* and *Socrates is a human*, that we can prove that *Socrates is mortal*:
 
 ```text
 ∀ x (isHuman(x) → isMortal(x)),  isHuman(Socrates) ⊢ isMortal(Socrates)
@@ -45,7 +45,7 @@ If we can show that a property of the form `P(a)` holds for an arbitrary member 
 
 ```
 
-Here is a simple example showing the syntax of the `∀i` rule in Logika: "Everyone is healthy; everyone is happ. Therefore, everyone is both healthy and happy.":
+Here is a simple example showing the syntax of the `∀i` rule: "Everyone is healthy; everyone is happ. Therefore, everyone is both healthy and happy.":
 
 ```text
 ∀ x isHealthy(x), ∀ y isHappy(y)  |-  ∀ z(isHealthy(z) ∧ isHappy(z))

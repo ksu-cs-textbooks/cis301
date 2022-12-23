@@ -17,7 +17,7 @@ Rule summaries:
         P ∧ Q                 P                      Q
 ```
 
-Logika syntax:
+Rule syntax summaries:
 
 ```text
 { 
@@ -50,7 +50,7 @@ Rule summaries:
         P ∨ Q               P ∨ Q                                R
 ```
 
-Logika syntax:
+Rule syntax summaries:
 
 ```text
 { 
@@ -100,7 +100,7 @@ Rule summaries:
            Q                  P → Q   
 ```
 
-Logika syntax:
+Rule syntax summaries:
 
 ```text
 { 
@@ -134,7 +134,7 @@ Rule summaries:
            ⊥                   ¬ P                 Q                    P
 ```
 
-Logika syntax:
+Rule syntax summaries:
 
 ```text
 {
@@ -198,4 +198,4 @@ Logika syntax:
     - As a last resort, try pasting in the proof for the law of the excluded middle (see section 4.5). Then use OR elimination on `p ∨ ¬p`.
 
 
-Proofs can be quite challenging. You might follow one approach, get stuck, and not be able to make progress. If this happens, backtrack and follow a different approach. As you are working, make sure Logika does not mark any lines in the proof in red – this means that you've made an invalid conclusion along the way, or that your justification for a particular line doesn't follow the expected format. Try to fix these errors before continuing on with the proof.
+Proofs can be quite challenging. You might follow one approach, get stuck, and not be able to make progress. If this happens, backtrack and follow a different approach. If you are using Logika to verify your work, make sure it does not mark any lines in the proof in red – this means that you've made an invalid conclusion along the way, or that your justification for a particular line doesn't follow the expected format. Try to fix these errors before continuing on with the proof.

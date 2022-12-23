@@ -17,7 +17,7 @@ We can use the exists introduction rule, `∃i`, when we have a proposition of t
       ∃ x P(x)
 ```
 
-Here is a simple example showing the syntax of the `∃i` rule in Logika:
+Here is a simple example showing the syntax of the `∃i` rule:
 
 ```text
 isHuman(Socrates) ⊢  ∃ x isHuman(x)

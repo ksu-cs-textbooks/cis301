@@ -5,9 +5,9 @@ weight: 90
 date: 2018-08-24T10:53:26-05:00
 ---
 
-In the next three chapters, we will learn how to reason about different kinds of program structures -- assignments, conditional statements, loops, function calls, recursion, lists of elements, and global variables. By the end of chapter 10, we will be able to prove the correctness of simple programs in a toy language within Logika.
+In the next three chapters, we will learn how to reason about different kinds of program structures -- assignments, conditional statements, loops, function calls, recursion, lists of elements, and global variables. By the end of chapter 10, we will be able to prove the correctness of simple programs using a toy language that is a subset of Scala. While our toy language is not used in practice, the ideas that we will see to prove program correctness -- preconditions, postconditions, loop invariants, and global invariants -- can be used to specify functions in ANY language.
 
-We will see that the process for formally proving correctness is rather tedious, even for relatively simple programs. And in practice, proving correctness of computer programs is rarely done. So why bother studying it?
+We will see that the process for formal specifications and prooofs of correctness is rather tedious, even for relatively simple programs. And in practice, proving correctness of computer programs is rarely done. So why bother studying it?
 
 ## Safety critical code
 

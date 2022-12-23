@@ -17,7 +17,7 @@ Remember that `→` is a kind of logical "if-then". Here, we understand `p → q
              Q
 ```
 
-Here is a simple example of a Logika proof that shows the syntax of the `→e` rule:
+Here is a simple example of a proof that shows the syntax of the `→e` rule:
 
 ```text
 a, a → b ⊢ b
@@ -41,7 +41,7 @@ The idea behind the next deduction rule, implies introduction, is that we would 
           P → Q 
 ```
 
-Here is a simple example of a Logika proof that shows the syntax of the `→i` rule:
+Here is a simple example of a proof that shows the syntax of the `→i` rule:
 
 ```text
 a → b, b → c ⊢ a → c

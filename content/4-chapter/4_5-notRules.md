@@ -17,7 +17,7 @@ The not elimination rule allows you to claim that you have reached a contradicti
           ⊥
 ```
 
-Here is a simple example of a Logika proof that shows the syntax of the `¬ e` rule:
+Here is a simple example of a proof that shows the syntax of the `¬ e` rule:
 
 ```text
 q, ¬ q ⊢ ⊥
@@ -54,7 +54,7 @@ The not introduction rule allows us to introduce a NOT operation. If assuming so
            ¬ P
 ```
 
-Here is a simple example of a Logika proof that shows the syntax of the `¬ i` rule:
+Here is a simple example of a proof that shows the syntax of the `¬ i` rule:
 
 ```text
 p,  q → ¬ p  ⊢  ¬ q
@@ -82,7 +82,7 @@ There is a special law for reasoning forwards from an impossible situation — t
          Q
 ```
 
-Here is a simple example of a Logika proof that shows the syntax of the `⊥e` rule:
+Here is a simple example of a proof that shows the syntax of the `⊥e` rule:
 
 ```text
 p, ¬ p  ⊢ q
@@ -132,7 +132,7 @@ pbc:   ---------------
              P
 ```
 
-And here is a Logika example that demonstrates the syntax of the rule:
+And here is an example that demonstrates the syntax of the rule:
 
 ```text
 ¬ ¬ p ⊢ p

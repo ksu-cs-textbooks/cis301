@@ -65,7 +65,7 @@ We see that the same set of truth assignments, `[T F] [F T] [F F]`, satisfies bo
 
 ### Showing semantic equivalence with one truth table
 
-To show that propositions `S1` and `S2` are semantically equivalent, we need to show that if `S1` is true, then so is `S2`, and that if `S2` is true, then so is `S1`. Instead of comparing the truth tables of both `S1` and `S2`, we could instead express our requirements as a bi-implication: `S1 ↔ S2`. Logika doesn't have a bi-implication operator, so we can instead express our requirements as a conjunction of two implications: `(S1 → S2) ∧ (S2 → S1)`. If this proposition is a tautology, then it tells us that if one proposition is true, then the other one is too -- that `S1` and `S2` are semantically equivalent.
+To show that propositions `S1` and `S2` are semantically equivalent, we need to show that if `S1` is true, then so is `S2`, and that if `S2` is true, then so is `S1`. Instead of comparing the truth tables of both `S1` and `S2`, we could instead express our requirements as a bi-implication: `S1 ↔ S2`. To express a bi-implication operator, we can use a conjunction of two implications: `(S1 → S2) ∧ (S2 → S1)`. If this conjunction is a tautology, then we know that if one proposition is true, then the other one is too -- that `S1` and `S2` are semantically equivalent.
 
 Below, we show that `p → ¬ q` and `¬ (p ∧ q)` are semantically equivalent using one truth table:
 
