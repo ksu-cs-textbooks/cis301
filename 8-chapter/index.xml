@@ -354,8 +354,7 @@
       <link>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/</guid>
-      <description>In the next three chapters, we will learn how to reason about different kinds of program structures &amp;ndash; assignments, conditional statements, loops, function calls, recursion, lists of elements, and global variables. By the end of chapter 10, we will be able to prove the correctness of simple programs in a toy language within Logika.
-We will see that the process for formally proving correctness is rather tedious, even for relatively simple programs.</description>
+      <description>In the next three chapters, we will learn how to reason about different kinds of program structures &amp;ndash; assignments, conditional statements, loops, function calls, recursion, lists of elements, and global variables. By the end of chapter 10, we will be able to prove the correctness of simple programs using a toy language that is a subset of Scala. While our toy language is not used in practice, the ideas that we will see to prove program correctness &amp;ndash; preconditions, postconditions, loop invariants, and global invariants &amp;ndash; can be used to specify functions in ANY language.</description>
     </item>
     <item>
       <title>Logika Programs</title>

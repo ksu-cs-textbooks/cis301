@@ -396,8 +396,8 @@ Implies elimination Remember that → is a kind of logical &amp;ldquo;if-then&am
       <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/</guid>
       <description>When examining more complex propositional logic sequents, it can be challenging to know where to start. In this section, we summarize all available rules in propositional logic, and discuss stratgies for approaching proofs.
 AND rules Rule summaries:
-P Q P ∧ Q P ∧ Q ∧i : --------- ∧e1 : ---------- ∧e2 : ---------- P ∧ Q P Q Logika syntax:
-{ ... x. p	(...) y. q	(...) z. p ∧ q ∧i x y .</description>
+P Q P ∧ Q P ∧ Q ∧i : --------- ∧e1 : ---------- ∧e2 : ---------- P ∧ Q P Q Rule syntax summaries:
+{ ... x. p	(...) y. q	(...) z.</description>
     </item>
     <item>
       <title>Theorems</title>
