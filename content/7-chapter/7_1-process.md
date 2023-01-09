@@ -11,11 +11,11 @@ header-includes:
 
 ## Domino effect
 
-To prove that a property is true for an arbitrary nonnegative integer {{< math >}}$n${{< /math >}} using mathematical induction, we must show two things:
+To prove that a property {{< math >}}$P(n)${{< /math >}} is true for an arbitrary nonnegative integer {{< math >}}$n${{< /math >}} using mathematical induction, we must show two things:
 
-1. **Base case**. We must prove that the property is true for the smallest possible value of {{< math >}}$n${{< /math >}}. Usually this is {{< math >}}$n = 0${{< /math >}} or {{< math >}}$n = 1${{< /math >}}, but occasionally we will define a property for all values greater than or equal to 2, or some bigger number. 
+1. **Base case**. We must prove that {{< math >}}$P(n)${{< /math >}} is true for the smallest possible value of {{< math >}}$n${{< /math >}}. Usually this is {{< math >}}$n = 0${{< /math >}} or {{< math >}}$n = 1${{< /math >}}, but occasionally we will define a property for all values greater than or equal to 2, or some bigger number. 
 
-2. **Inductive step**. We assume the property holds for some arbitrary nonnegative integer {{< math >}}$n${{< /math >}}. This assumption is called the *inductive hypothesis*. Then, we must show that the property still holds for {{< math >}}$n + 1${{< /math >}}.
+2. **Inductive step**. We assume the *inductive hypothesis* -- that {{< math >}}$P(n)${{< /math >}} holds for some arbitrary nonnegative integer {{< math >}}$n${{< /math >}}. Then, we must show that the property still holds for {{< math >}}$n + 1${{< /math >}}. In other words, we must prove that {{< math >}}$P(n) \rightarrow P(n + 1)${{< /math >}} -- that IF {{< math >}}$P(n)${{< /math >}} holds for some arbitrary nonnegative integer {{< math >}}$n${{< /math >}}, THEN {{< math >}}$P(n + 1)${{< /math >}} holds as well.
 
 How do these two steps prove anything at all? Suppose we are proving that a property holds for all positive integers {{< math >}}$n${{< /math >}}. In the base case, we prove that the property holds when {{< math >}}$n = 1${{< /math >}}. Proving the inductive step allows us to say that whenever the property holds for some number, then it also holds for the number right after that. Since we already know the the property holds when {{< math >}}$n = 1${{< /math >}}, then the inductive step allows us to infer that the property still holds when {{< math >}}$n = 2${{< /math >}}. And at that point we know the property holds for {{< math >}}$n = 2${{< /math >}}, so the inductive step again allows us to infer that the property holds for {{< math >}}$n = 3${{< /math >}}, etc.
 
@@ -42,7 +42,7 @@ Suppose instead that {{< math >}}$n = 7${{< /math >}}. We have that {{< math >}}
 
 ## First induction proof
 
-We wish to use mathematical induction to prove that, for all positive integers {{< math >}}$n${{< /math >}}, the sum of all integers from 1 to {{< math >}}$n${{< /math >}} is {{< math >}}$\dfrac{n(n+1)}{2}${{< /math >}}. That is, that:
+Let {{< math >}}$P(n)${{< /math >}} be the equation: 
 
 ```math
 $$
@@ -52,14 +52,16 @@ $$
 $$
 ```
 
+We wish to use mathematical induction to prove that {{< math >}}$P(n)${{< /math >}} holds for all positive integers {{< math >}}$n${{< /math >}}.
+
 <br>
 <br>
 
-We will refer to {{< math >}}$1 + 2 + ... + n${{< /math >}} as {{< math >}}$LHS_n${{< /math >}} and we will refer to {{< math >}}$\dfrac{n(n+1)}{2}${{< /math >}} as {{< math >}}$RHS_n${{< /math >}}. We must prove that {{< math >}}$LHS_n = RHS_n${{< /math >}} for all positive integers {{< math >}}$n${{< /math >}}.
+We will refer to {{< math >}}$1 + 2 + ... + n${{< /math >}} as {{< math >}}$LHS_n${{< /math >}} and we will refer to {{< math >}}$\dfrac{n(n+1)}{2}${{< /math >}} as {{< math >}}$RHS_n${{< /math >}}. To prove that {{< math >}}$P(n)${{< /math >}} holds for some positive integer {{< math >}}$n${{< /math >}}, we must prove that {{< math >}}$LHS_n = RHS_n${{< /math >}}.
 
 ### Base case
 
-We must prove that the property holds for the smallest positive integer, {{< math >}}$n = 1${{< /math >}}, that is, that {{< math >}}$LHS_1 = RHS_1${{< /math >}}. The sum of all integers from 1 to 1 is just 1, so we have that {{< math >}}$LHS_1 = 1${{< /math >}}. We have that:
+We must prove that {{< math >}}$P(n)${{< /math >}} holds for the smallest positive integer, {{< math >}}$n = 1${{< /math >}}, that is, that {{< math >}}$LHS_1 = RHS_1${{< /math >}}. The sum of all integers from 1 to 1 is just 1, so we have that {{< math >}}$LHS_1 = 1${{< /math >}}. We also have that:
 
 ```math
 $$
@@ -71,11 +73,11 @@ $$
 
 <br>
 
-Thus {{< math >}}$LHS_1 = RHS_1${{< /math >}}, so the base case holds.
+We have that {{< math >}}$LHS_1 = RHS_1${{< /math >}}. Thus {{< math >}}$P(1)${{< /math >}} is true, so the base case holds.
 
 ### Inductive step
 
-We assume the inductive hypothesis - that {{< math >}}$LHS_n = RHS_n${{< /math >}} for some positive integer {{< math >}}$n${{< /math >}}. We must prove that {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}. We have that:
+We assume the inductive hypothesis - that {{< math >}}$P(n)${{< /math >}} holds for some arbitrary positive integer {{< math >}}$n${{< /math >}}. In other words, we assume that {{< math >}}$LHS_n = RHS_n${{< /math >}} for our arbitrary {{< math >}}$n${{< /math >}}. We must prove that {{< math >}}$P(n+1)${{< /math >}} also holds -- i.e., that {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}. We have that:
 
 ```math
 $$
@@ -104,7 +106,7 @@ $$
 $$
 ```
 
-Thus {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}, so the inductive step holds.
+Thus {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}, so we have proved {{< math >}}$P(n+1)${{< /math >}}. The inductive step holds.
 
 ## Inductive step explanation
 

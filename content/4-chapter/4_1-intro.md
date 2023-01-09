@@ -5,7 +5,9 @@ weight: 50
 date: 2018-08-24T10:53:26-05:00
 ---
 
-In this chapter, we will learn the process of *natural deduction* in propositional logic. This will allow us to start with a set of known facts (*premises*) and apply a series of rules to see if we can reach some goal *conclusion*. Essentially, we will be able to see whether a given conclusion necessarily follows from a set of premises.
+While we can use truth tables to check whether a set of premises entail a conclusion, this requires testing all possible truth assignments -- of which there are exponentially many. In this chapter, we will learn the process of *natural deduction* in propositional logic. This will allow us to start with a set of known facts (*premises*) and apply a series of rules to see if we can reach some goal *conclusion*. Essentially, we will be able to see whether a given conclusion necessarily follows from a set of premises.
+
+We will use the Logika tool to check whether our proofs correctly follow our deduction rules. HOWEVER, these proofs can and do exist outside of Logika. Different settings use slightly different syntaxes for the deduction rules, but the rules and proof system are the same. We will merely use Logika to help check our work.
 
 ## Sequents, premises, and conclusions
 
@@ -60,6 +62,8 @@ F F |    T     |  T   | T
 Examining each row in the above truth table, we see that only the truth assignment [F F] makes both premises (`p → q` and ` ¬q`) true. We look right to see that the same truth assignment also makes the conclusion (` ¬p`) true, which means that the sequent is valid.
 
 ## Using Logika for proof verification
+
+We can use the Logika tool to help check the correctness of our proofs. (Again, Logika is just a tool to help check our work -- we could write the same argument in a different environment or on paper, and the meaning would be the same.)
 
 Each Logika proof should be written in a separate file with a .logika extension. Logika verification knows each of the deduction rules we will see in the next few chapters, and will automatically check to ensure that your steps obey these deduction rules as you type your proof. If a proof is correct, you will see a purple checkmark in the lower right corner that says "Logika verified". If you have logic errors, you will see them highlighted in red.
 

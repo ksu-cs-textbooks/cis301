@@ -5,11 +5,11 @@ weight: 81
 date: 2018-08-24T10:53:26-05:00
 ---
 
-Claim: The sum of the first {{< math >}}$n${{< /math >}} odd numbers is {{< math >}}$n^2${{< /math >}}.
+Claim: The sum of the first {{< math >}}$n${{< /math >}} odd numbers is {{< math >}}$n^2${{< /math >}}. We will refer to this claim as {{< math >}}$P(n)${{< /math >}}.
 
 ### Try it out
 
-Before proving this claim with mathematical induction, let's see if the property holds for some sample values. The sum of the first 3 odd numbers is {{< math >}}$1 + 3 + 5 = 9${{< /math >}}. We also have that {{< math >}}$3^2 = 9${{< /math >}}.
+Before proving {{< math >}}$P(n)${{< /math >}} with mathematical induction, let's see if the property holds for some sample values. The sum of the first 3 odd numbers is {{< math >}}$1 + 3 + 5 = 9${{< /math >}}. We also have that {{< math >}}$3^2 = 9${{< /math >}}.
 
 The sum of the first 7 odd numbers is {{< math >}}$1 + 3 + 5 + 7 + 9 + 11 + 13 = 49${{< /math >}}. We also have that {{< math >}}$7^2 = 49${{< /math >}}.
 
@@ -17,7 +17,7 @@ Another way to express the sum of the first {{< math >}}$n${{< /math >}} odd num
 
 ### Induction proof
 
-We wish to use mathematical induction to prove that, for all positive integers {{< math >}}$n${{< /math >}}, the sum of the first {{< math >}}$n${{< /math >}} odd numbers is {{< math >}}$n^2${{< /math >}}. That is, that:
+We wish to use mathematical induction to prove that {{< math >}}$P(n)${{< /math >}} holds for all positive integers {{< math >}}$n${{< /math >}} That is, that the sum of the first {{< math >}}$n${{< /math >}} odd numbers is {{< math >}}$n^2${{< /math >}}:
 
 ```math
 $$
@@ -30,15 +30,17 @@ $$
 <br>
 <br>
 
-We will refer to {{< math >}}$1 + 3 + ... + (2n - 1)${{< /math >}} as {{< math >}}$LHS_n${{< /math >}} and we will refer to {{< math >}}$n^2${{< /math >}} as {{< math >}}$RHS_n${{< /math >}}. We must prove that {{< math >}}LHS_n = RHS_n${{< /math >}} for all positive integers *n*.
+We will refer to {{< math >}}$1 + 3 + ... + (2n - 1)${{< /math >}} as {{< math >}}$LHS_n${{< /math >}} and we will refer to {{< math >}}$n^2${{< /math >}} as {{< math >}}$RHS_n${{< /math >}}. To prove that {{< math >}}$P(n)${{< /math >}} holds for some positive integer {{< math >}}$n${{< /math >}}, we must prove that {{< math >}}$LHS_n = RHS_n${{< /math >}}.
 
 #### Base case
 
-We must prove that the property holds for the smallest positive integer, {{< math >}}$n = 1${{< /math >}}, that is, that {{< math >}}$LHS_1 = RHS_1${{< /math >}}  The sum the first 1 odd integer is just 1, so we have that {{< math >}}$LHS_1 = 1${{< /math >}}. We also have that {{< math >}}$RHS_1 = 1^2 = 1${{< /math >}}. Thus {{< math >}}$LHS_1 = RHS_1${{< /math >}}, so the base case holds.
+We must prove that {{< math >}}$P(n)${{< /math >}} holds for the smallest positive integer, {{< math >}}$n = 1${{< /math >}}, that is, that {{< math >}}$LHS_1 = RHS_1${{< /math >}}  The sum the first 1 odd integer is just 1, so we have that {{< math >}}$LHS_1 = 1${{< /math >}}. We also have that {{< math >}}$RHS_1 = 1^2 = 1${{< /math >}}.
+
+We have that {{< math >}}$LHS_1 = RHS_1${{< /math >}}. Thus {{< math >}}$P(1)${{< /math >}} is true, so the base case holds.
 
 #### Inductive step
 
-We assume the inductive hypothesis - that {{< math >}}$LHS_n = RHS_n${{< /math >}} for some positive integer {{< math >}}$n${{< /math >}}. We must prove that {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}. We have that:
+We assume the inductive hypothesis - that {{< math >}}$P(n)${{< /math >}} holds for some arbitrary positive integer {{< math >}}$n${{< /math >}}. In other words, we assume that {{< math >}}$LHS_n = RHS_n${{< /math >}} for our arbitrary {{< math >}}$n${{< /math >}}. We must prove that {{< math >}}$P(n+1)${{< /math >}} also holds -- i.e., that {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}. We have that:
 
 ```math
 $$
@@ -67,4 +69,4 @@ $$
 $$
 ```
 
-Thus {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}, so the inductive step holds.
+Thus {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}, so we have proved {{< math >}}$P(n+1)${{< /math >}}. The inductive step holds.
