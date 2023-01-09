@@ -354,8 +354,7 @@
       <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/</guid>
-      <description>In this chapter, we will learn the process of natural deduction in propositional logic. This will allow us to start with a set of known facts (premises) and apply a series of rules to see if we can reach some goal conclusion. Essentially, we will be able to see whether a given conclusion necessarily follows from a set of premises.
-Sequents, premises, and conclusions A sequent is a mathematical term for an assertion.</description>
+      <description>While we can use truth tables to check whether a set of premises entail a conclusion, this requires testing all possible truth assignments &amp;ndash; of which there are exponentially many. In this chapter, we will learn the process of natural deduction in propositional logic. This will allow us to start with a set of known facts (premises) and apply a series of rules to see if we can reach some goal conclusion.</description>
     </item>
     <item>
       <title>AND Rules</title>
