@@ -14,20 +14,31 @@ Your GitHub account will need to be set up to use two-factor authentication (a n
 
 In CIS 301, we will use a tool called Logika, which is a verifier and a proof checker for propositional, predicate, and programming logic. You will need to install the IntelliJ-based Sireum IVE (Integrated Verification Environment), which contains Logika.
 
-First, watch [this video](http://files.sireum.org/media/sireum-ive-win64.mp4) on the installation process.
+Go [here](http://logika.v3.sireum.org/doc/01-getting-started/index.html) to install Logika. 
 
-Next, go [here](http://logika.v3.sireum.org/doc/01-getting-started/index.html) to install Logika. 
-
-Under 1.1.1 Installation, with the Release tab selected, choose either IVE for Windows or IVE for macOS. The instructions below should update based on your selection. For Windows, you will see:
+Under 1.1.1 Installation, with the Release tab selected, choose either "IVE for Window"s" or "IVE for macOS". The instructions below should update based on your selection. For Windows, you will see:
 
  ![download Sireum](/images/downloadSireum.png)
 
-Follow the instructions to download and run Logika. For Windows, uncompress the download DIRECTLY on the C:\ drive (not in any subfolders). For Mac, put the Sireum application into the Applications folder.
+Follow the instructions to download and run Logika. 
 
-For Windows users, I recommend pinning the Sireum IVE to your taskbar. After you run the exe file, you can right-click the icon in the taskbar and select "pin to taskbar".
+### Windows Users
 
-Most Windows users will want to run *idea64.exe*. If you get a "Windows protected your PC" message, click "More info" and then "Run anyway".
+For Windows, right-click the download (sireum-v3-ive-win64.zip) and select "Extract All...". This should bring up the "Extract Compressed (Zipped) Folders" dialog. Type C:\ as the destination, so that the dialog looks like:
 
+ ![download Sireum](/images/extractOnC.png)
+
+There should be NO subfolders -- you want to extract directly on the C:\ drive. Click "Extract". It will take a few minutes to extract the files, and then you should see the folder "C:\Sireum" with no subfolders. Navigate to "C:\Sireum\apps\idea\bin" and find the "idea64.exe" file:
+
+ ![download Sireum](/images/idea64loc.png)
+
+Double-click the "idea64.exe" file to launch the Sireum IVE within IntelliJ. If you get a "Windows pretected your PC" popup, click "More info" and then "Run anyway". I recommend pinning the Sireum IVE to your taskbar -- after you run the exe file, you can right-click the icon in the taskbar and select "pin to taskbar".
+
+### MacOS Users
+
+For Mac users, start by opening the Terminal. Copy the command listed on the download page and execute that command in the terminal. That command should download Sireum IVE and avoid being blocked by GateKeeper. You should see a popup with the Sireum icon, and you can drag that icon into the Applications folder.
+
+To run Sireum, double-click the Sireum icon within the "Applications" folder.
 
 ## Using GitHub to start homework assignments
 
@@ -42,7 +53,7 @@ Click the Green *Code* button, so that you see something like this:
 
 ![GitHub clone](/images/gitHubClone.png)
 
-Click the clipboard icon nest to the listed URL to copy it to your clipboard.
+Click the clipboard icon next to the listed URL to copy it to your clipboard.
 Next, open Sireum IVE. You should see:
 
 ![Open Sireum](/images/openSireum.png)
