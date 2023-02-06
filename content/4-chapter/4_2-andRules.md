@@ -167,7 +167,7 @@ We again try to use AND-elimination to extract what we can from our premises. We
 p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)
 {
     1. p ∧ q ∧ r            premise
-    2. p ∧ (t ∨ s)          premise
+    2. a ∧ (t ∨ s)          premise
     3. p                    ∧e1 1   //NO ¬ Won't work.
     ...
 }
@@ -181,7 +181,7 @@ We try again to extract what we can from our premises:
 p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)
 {
     1. p ∧ q ∧ r            premise
-    2. p ∧ (t ∨ s)          premise
+    2. a ∧ (t ∨ s)          premise
     3. p ∧ q                ∧e1 1 
     4. r                    ∧e2 1                     
     5. a                    ∧e1 2 
@@ -196,7 +196,7 @@ As before, we look at our resulting claims -- we see a `p ∧ q`, and we know th
 p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)
 {
     1. p ∧ q ∧ r            premise
-    2. p ∧ (t ∨ s)          premise
+    2. a ∧ (t ∨ s)          premise
     3. p ∧ q                ∧e1 1 
     4. r                    ∧e2 1                     
     5. a                    ∧e1 2 
@@ -213,7 +213,7 @@ Now, we look at what we are trying to prove -- `q ∧ (t ∨ s)`. Since its top-
 p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)
 {
     1. p ∧ q ∧ r            premise
-    2. p ∧ (t ∨ s)          premise
+    2. a ∧ (t ∨ s)          premise
     3. p ∧ q                ∧e1 1 
     4. r                    ∧e2 1                     
     5. a                    ∧e1 2 
