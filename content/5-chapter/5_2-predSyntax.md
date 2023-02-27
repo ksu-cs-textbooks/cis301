@@ -39,7 +39,7 @@ Using our individuals above, we would have that:
 - `isAdult(Alice)` is true, since `Alice` is 35 years old
 - `isAdult(Bob)` is false, since `Bob` is 10 years old
 - `isMotherOf(Alice, Bob)` is true, since `Alice` is `Bob`'s mother
-- `isMotherOf(Alice, Bob)` is false, since `Carla` is not `Bob`'s mother
+- `isMotherOf(Carla, Bob)` is false, since `Carla` is not `Bob`'s mother
 - `isTallerThan(Carla, Alice)` is true, since `Carla` is 5'10 and `Alice` is 5'5.
 
 ## Quantifiers
