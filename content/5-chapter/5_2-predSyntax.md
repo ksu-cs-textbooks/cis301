@@ -114,7 +114,7 @@ Next, consider the following proposition:
 
 This translates to: *All animals are dogs and have four legs*. This means that EVERY SINGLE ANIMAL in my domain is a dog and also has four legs. While it is possible that this is true depending on our domain, it is unlikely. What if our domain of animals included cats, chicken,, etc.?
 
-Perhaps instead we intended to say: *All dogs have four legs.* Another way to phrase this is, "For all animals, IF that animal is a dog, THEN it has for legs." We can see from the IF...THEN that we will need to use an implies statement. Here is the correct translation for *All dogs have four legs*:
+Perhaps instead we intended to say: *All dogs have four legs.* Another way to phrase this is, "For all animals, IF that animal is a dog, THEN it has four legs." We can see from the IF...THEN that we will need to use an implies statement. Here is the correct translation for *All dogs have four legs*:
 
 ```text
 ∀ x (isDog(x) → hasFourLegs(x))
@@ -154,10 +154,10 @@ Perhaps our domain is the set of all integers. Then `>` is a predicate with two 
 Because for all integers, `x + 1` is bigger than `x`. We might also write:
 
 ```text
-∃ x (x > x * x)
+∃ x (x > x * x * x)
 ```
 
-Because for -4 (or any negative number), -4 > -4 * -4.
+Because -4 > -4 * -4 * -4, i.e., -4 > -64. The same is true for any negative number.
 
 Other common predicates in math are: `<`, `<=`, `>=`, `==`, and `!=`.
 
