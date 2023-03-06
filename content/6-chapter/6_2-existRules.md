@@ -89,7 +89,7 @@ We make up the name, `jane`, for the human whose name we do not know:
         4. jane isHuman(jane)               assume
         5. isHuman(jane) → isMortal(jane)   ∀e 1 jane
         6. isMortal(jane)                   →e 5 4
-        7. ∃y isMortal(jane)                ∃i 6 ajane
+        7. ∃y isMortal(y)                   ∃i 6 jane
     }
     8. ∃y isMortal(y)                       ∃e 2 3
 }

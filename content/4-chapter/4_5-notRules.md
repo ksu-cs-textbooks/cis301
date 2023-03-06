@@ -201,11 +201,11 @@ We know we must reach a contradiction in our subproof. We see that we have claim
         //OR elimination subproofs on p ∨ q
         6. {
             7. p        assume
-            8. ⊥        ⊥e 7 2
+            8. ⊥        ¬e 7 2
         }
         9. {
             10. q       assume
-            11. ⊥       ⊥e 10 3
+            11. ⊥       ¬e 10 3
         }
 
         //use ∨e rule to tie together subproofs
@@ -230,11 +230,11 @@ We see that both OR elimination subproofs ended with a contradiction (`⊥`). Ju
         //OR elimination subproofs on p ∨ q
         6. {
             7. p        assume
-            8. ⊥        ⊥e 7 2
+            8. ⊥        ¬e 7 2
         }
         9. {
             10. q       assume
-            11. ⊥       ⊥e 10 3
+            11. ⊥       ¬e 10 3
         }
 
         //use ∨e rule to tie together subproofs
@@ -260,11 +260,11 @@ All that remains is the use the `¬ i` rule to finish subproof 4, as that subpro
         //OR elimination subproofs on p ∨ q
         6. {
             7. p        assume
-            8. ⊥        ⊥e 7 2
+            8. ⊥        ¬e 7 2
         }
         9. {
             10. q       assume
-            11. ⊥       ⊥e 10 3
+            11. ⊥       ¬e 10 3
         }
 
         //use ∨e rule to tie together subproofs
