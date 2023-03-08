@@ -70,7 +70,7 @@ Here is a more extensive list of equivalences in predicate logic. The remaining 
 
 - `¬(∃ x P(x))` is equivalent to `∀ x ¬P(x)`
 - `¬(∀ x P(x))` is equivalent to `∃ x ¬P(x)`
--  `A x (P(x) → ¬Q(x))` is equivalent to `¬(E x P(x) ∧ Q(x))`
+-  `∀ x (P(x) → ¬Q(x))` is equivalent to `¬(∃ x P(x) ∧ Q(x))`
 - `∀ x ∀ y P(x, y)` is equivalent to `∀ y ∀ x P(x, y)`
 - `∃ x ∃ y P(x, y)` is equivalent to `∃ y ∃ x P(x, y)`
 - `Q ∧ (∀ x P(x))` is equivalent to `∀ x (Q ∧ P(x))` (where `x` does not appear in `Q`)
