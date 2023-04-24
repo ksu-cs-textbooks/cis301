@@ -191,8 +191,8 @@ We have two available for-all statements within the subproof -- `∀ x (isStuden
     2. ∀ x isStudent(x)                                         premise
     3. {
         4. bob
-        5. isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)      ∀e 1 a
-        6. isStudent(bob)                                       ∀e 2 a   
+        5. isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)      ∀e 1 bob
+        6. isStudent(bob)                                       ∀e 2 bob 
         //goal: hasPhone(bob) ∨ hasLaptop(bob)
     }
     //use ∀i to conclude ∀ x (hasPhone(x) ∨ hasLaptop(x))
@@ -208,8 +208,8 @@ Line 5 is an implies statement the form `p → q`, and line 6 is a statement of 
     2. ∀ x isStudent(x)                                         premise
     3. {
         4. bob
-        5. isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)      ∀e 1 a
-        6. isStudent(bob)                                       ∀e 2 a   
+        5. isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)      ∀e 1 bob
+        6. isStudent(bob)                                       ∀e 2 bob   
         7. hasPhone(bob) ∨ hasLaptop(bob)                       →e 5 6
         //goal: hasPhone(bob) ∨ hasLaptop(bob)
     }
