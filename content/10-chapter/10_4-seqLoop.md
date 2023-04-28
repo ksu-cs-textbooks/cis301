@@ -45,7 +45,7 @@ We would like to write an appropriate function contract and loop invariant block
 For the function contract, we must consider:
 
 - *Precondition*: this function will work correctly on all sequences -- even empty ones. We can leave the `requires` clause off.
-- `modifies` clause: this function is changing the `list` sequence parameter, so we must list it in a `modifies` clause`
+- `modifies` clause: this function is changing the `list` sequence parameter, so we must list it in a `modifies` clause.
 - *Postcondition*: the function is not returning anything, but we must describe that all sequence parameters will be one bigger than their original values. Since the function modifies the sequence, the postcondition must also state that the sequence size does not change.
 
 For the loop invariant block, we notice that the loop is changing the sequence. We must include:

@@ -59,7 +59,7 @@ ensures ∀ x: (0..<nums.size) result <= nums(x)
     ∃ x: (0..<a.size) result == nums(x)
 ```
 
-Here, the first postcondition states that our return value will be less than or equal to every value in the sequence, and the second postcondition statees that our return value is one of the sequence elements. (The second postcondition prevents us from sneakily returning some large negative number and claiming that it was the smallest element in the sequence, when in fact it wasn't one of the sequence elements.)
+Here, the first postcondition states that our return value will be less than or equal to every value in the sequence, and the second postcondition states that our return value is one of the sequence elements. (The second postcondition prevents us from sneakily returning some large negative number and claiming that it was the smallest element in the sequence, when in fact it wasn't one of the sequence elements.)
 
 Sometimes, our postconditions will promise to return a particular value if some claim about the sequence is true. Suppose we have a function that returns whether or not (i.e., a bool) all elements in the sequence `a` are negative. Our postcondition would be:
 

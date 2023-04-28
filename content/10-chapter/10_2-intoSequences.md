@@ -40,7 +40,7 @@ Here is a table of the different sequence operations we will use in this course:
 
 ## Sample program with a sequence
 
-Here is a sample Logika program that uses a sequence. The `makeFirstZero` function sets the first element in a sequence to 0::
+Here is a sample Logika program that uses a sequence. The `makeFirstZero` function sets the first element in a sequence to 0:
 
 ```text
 import org.sireum.logika._
