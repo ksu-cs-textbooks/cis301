@@ -52,7 +52,7 @@ p, q, r ⊢ r ∧ (q ∧ p)
 }
 ```
 
-Then line 4 would not have been accepted. The line numbers cited after the `∧i` rule must match the order of the resulting AND statement. The left-hand side of our resulting AND statement must correspond to the first line number in `∧i` justification, and the right-hand side of our resulting AND statement must corresponding to the second line number in the justification:
+Then line 4 would not have been accepted. The line numbers cited after the `∧i` rule must match the order of the resulting AND statement. The left-hand side of our resulting AND statement must correspond to the first line number in `∧i` justification, and the right-hand side of our resulting AND statement must correspond to the second line number in the justification:
 
 ```text
 {

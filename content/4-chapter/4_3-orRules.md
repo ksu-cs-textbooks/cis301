@@ -54,7 +54,7 @@ So, in both cases, you can buy the coffee.
 
 We can formalize the idea behind the OR elimination rule as follows:
 
-- In order to the OR statement `P ∨ Q` to be true, at least one of `P` and `Q` must be individually true
+- In order for the OR statement `P ∨ Q` to be true, at least one of `P` and `Q` must be individually true
 - If we are able to reach some conclusion `R` if we assume `P` is true, and we are able to reach the SAME conclusion `R` if we assume `Q` is true...
 - ...Then no matter what, `R` will be true.
 

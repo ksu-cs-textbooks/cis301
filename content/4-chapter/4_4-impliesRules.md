@@ -82,7 +82,7 @@ p → (q → r) ⊢ (q ∧ p) → r
 }
 ```
 
-We can't extract any information from the premise, so we shift to examining our conclusion. The top-level operator of our conclusion is an implies statement, so this tells us that we will need to use the `→i` rule. We want to prove `(q ∧ p) → r`, so we need to show that whenever `q ∧ p` is true, then `r` is also rule. We open a subproof and assume the left side of our goal implies statement (`q ∧ p`). If we can reach `r` by the end of the subproof, then we can use `→i` to conclude `(q ∧ p) → r`:
+We can't extract any information from the premise, so we shift to examining our conclusion. The top-level operator of our conclusion is an implies statement, so this tells us that we will need to use the `→i` rule. We want to prove `(q ∧ p) → r`, so we need to show that whenever `q ∧ p` is true, then `r` is also true. We open a subproof and assume the left side of our goal implies statement (`q ∧ p`). If we can reach `r` by the end of the subproof, then we can use `→i` to conclude `(q ∧ p) → r`:
 
 ```text
 p → (q → r) ⊢ (q ∧ p) → r

@@ -52,7 +52,7 @@ s: It is snowing
 t: It snowed today
 ```
 
-Notice that the first sentence, "My jacke is red and green", contained the logical connective "and". Thus, we broke that idea into its components, and got propositions `p` and `q`. The second sentence, "I only wear my jacket when it is snowing", contained if/then information about when I would wear my jacket. We broke that sentence into two parts as well, and got propositions `r` and `s`. Finally, the last sentence, "It did not snow today", contained the logical connective "not" -- so we removed it and kept the remaining information for proposition `t`. 
+Notice that the first sentence, "My jacket is red and green", contained the logical connective "and". Thus, we broke that idea into its components, and got propositions `p` and `q`. The second sentence, "I only wear my jacket when it is snowing", contained if/then information about when I would wear my jacket. We broke that sentence into two parts as well, and got propositions `r` and `s`. Finally, the last sentence, "It did not snow today", contained the logical connective "not" -- so we removed it and kept the remaining information for proposition `t`. 
 
 Each propositional atom is a true/false statement, just as is required.
 

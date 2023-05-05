@@ -19,7 +19,7 @@ In many of the sections, we will using the predicates below (which are over the 
 
 ## Several of the same quantifier
 
-First, we consider translations that involve several of the same quantifier. There are two ways we can translates such statements -- either using prenex form (quantifiers out front) or Aristotlian form (quantifiers nested).
+First, we consider translations that involve several of the same quantifier. There are two ways we can translate such statements -- either using prenex form (quantifiers out front) or Aristotlian form (quantifiers nested).
 
 ### Prenex form
 
@@ -51,7 +51,7 @@ Which reads: *There are two shapes, x and y, where y is a circle, x is a square,
 
 #### Prenex example 2
 
-Next, suppose we wished to translate: *Every circle is bigger than all rectangles*. Again, we are quantifying two things -- ALL circles and also ALL squares. We can see that we will need to use two universal quantifiers. We can translate the statement as follows:
+Next, suppose we wished to translate: *Every circle is bigger than all squares*. Again, we are quantifying two things -- ALL circles and also ALL squares. We can see that we will need to use two universal quantifiers. We can translate the statement as follows:
 
 ```text
 ∀ x ∀ y ((isCircle(x) ∧ isSquare(y)) → biggerThan(x, y))
@@ -89,7 +89,7 @@ Which reads as: *For every shape x, if x is a circle, then for every shape y, if
 
 ## Mixed quantifiers
 
-Now, we will turn to examples that mix universal and existential quantifiers. We will see below that quantifier order matters in this case, so it is safest to translate such statements using embedded quantifiiers. The embedded form can be tricky to write, so we will see a way to systematically translated any statement that needs multiple quantifiers into predicate logic (using Aristotlian form).
+Now, we will turn to examples that mix universal and existential quantifiers. We will see below that quantifier order matters in this case, so it is safest to translate such statements using embedded quantifiiers. The embedded form can be tricky to write, so we will see a way to systematically translate any statement that needs multiple quantifiers into predicate logic (using Aristotlian form).
 
 ### Systematic translation
 

@@ -29,7 +29,7 @@ P ∧ Q ⊨ P
 
 I.e., that any time `P ∧ Q` is true in a truth table, then `P` is also true. And of course, we can examine the truth table for `P ∧ Q`, and see that it is only true in the cases that `P` is also true.
 
-Consider the `∧i` deduction ule next. It allows us to directly prove:
+Consider the `∧i` deduction rule next. It allows us to directly prove:
 
 ```text
 P, Q ⊢ P ∧ Q

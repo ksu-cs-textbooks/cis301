@@ -32,7 +32,7 @@ There should be NO subfolders -- you want to extract directly on the C:\ drive. 
 
  ![download Sireum](/images/idea64loc.png)
 
-Double-click the "idea64.exe" file to launch the Sireum IVE within IntelliJ. If you get a "Windows pretected your PC" popup, click "More info" and then "Run anyway". I recommend pinning the Sireum IVE to your taskbar -- after you run the exe file, you can right-click the icon in the taskbar and select "pin to taskbar".
+Double-click the "idea64.exe" file to launch the Sireum IVE within IntelliJ. If you get a "Windows protected your PC" popup, click "More info" and then "Run anyway". I recommend pinning the Sireum IVE to your taskbar -- after you run the exe file, you can right-click the icon in the taskbar and select "pin to taskbar".
 
 ### MacOS Users
 

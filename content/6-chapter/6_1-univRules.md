@@ -45,7 +45,7 @@ If we can show that a property of the form `P(a)` holds for an arbitrary member 
 
 ```
 
-Here is a simple example showing the syntax of the `∀i` rule: "Everyone is healthy; everyone is happ. Therefore, everyone is both healthy and happy.":
+Here is a simple example showing the syntax of the `∀i` rule: "Everyone is healthy; everyone is happy. Therefore, everyone is both healthy and happy.":
 
 ```text
 ∀ x isHealthy(x), ∀ y isHappy(y)  |-  ∀ z(isHealthy(z) ∧ isHappy(z))

@@ -64,7 +64,7 @@ Let's consider each portion of this proof function. Here, `factDef` is the name 
 fOne. factDef(1) == 1
 ```
 
-`fOne` defines `factDef(1)` as 1; i.e., `factDef(n)` is 1 if $n == 1$. This is the same as our base case in our recursive definition for factorial -- {{< math >}}$1! = 1${{< /math >}}.
+`fOne` defines `factDef(1)` as 1; i.e., `factDef(n)` is 1 if {{< math >}}$n == 1${{< /math >}}. This is the same as our base case in our recursive definition for factorial -- {{< math >}}$1! = 1${{< /math >}}.
 
 Next, consider the definition for `fBig`:
 
@@ -231,7 +231,7 @@ def factorial(n: Z): Z = {
         //proves first loop invariant holds  
         4. product == factDef(i)        algebra 1 2 3   
 
-        //proves second loop invariant hols
+        //proves second loop invariant holds
         5. i >= 1                       algebra 1       
     }"""
 
