@@ -1,9 +1,7 @@
 +++
-title = "Homepage"
-date = 2021-05-24T01:01:01-05:00
+title = "CIS 301 Textbook"
+archetype = "home"
 +++
-
-# CIS 301 Textbook
 
 Julie Thornton <br>
 Department of Computer Science <br>
