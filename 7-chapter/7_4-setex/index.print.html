@@ -1,0 +1,534 @@
+
+
+
+
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.117.0">
+    <meta name="generator" content="Relearn 5.18.0">
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>Set example :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/index.html" rel="canonical" type="text/html" title="Set example :: CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/index.xml" rel="alternate" type="application/rss+xml" title="Set example :: CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/tele.html" rel="alternate" type="text/html" title="Set example :: CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/embed.html" rel="alternate" type="text/html" title="Set example :: CIS 301 Textbook">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1691697188" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1691697188" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1691697188" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1691697188" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1691697188" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1691697188" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1691697188" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1691697188" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/format-print.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1691697188" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1691697188"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1691697188"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1691697188" rel="stylesheet">
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/index.html"><span itemprop="name">CIS 301 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/index.html"><span itemprop="name">Mathematical Induction</span></a><meta itemprop="position" content="2"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Set example</span><meta itemprop="position" content="3"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="set-example">Set example</h1>
+
+<p>Claim: If 
+<span class="math align-center">$n$</span> is a positive integer greater than or equal to 2, then a set with 
+<span class="math align-center">$n$</span> elements has 
+<span class="math align-center">$\dfrac{n(n-1)}{2}$</span>possible subsets of size 2. We will refer to this claim as 
+<span class="math align-center">$P(n)$</span>.</p>
+<h3 id="try-it-out">Try it out</h3>
+<p>Suppose 
+<span class="math align-center">$n = 3$</span>, and our set contains the elements 
+<span class="math align-center">$(a, b, c)$</span>. There are 3 possible subsets of size 2: 
+<span class="math align-center">$(a, b)$</span>, 
+<span class="math align-center">$(a, c)$</span>, and 
+<span class="math align-center">$(b, c)$</span>. We also have that 
+<span class="math align-center">$\dfrac{3(3-1)}{2} = 3$</span>.</p>
+<h3 id="induction-proof">Induction proof</h3>
+<p>We wish to use mathematical induction to prove that 
+<span class="math align-center">$P(n)$</span> holds for all integers 
+<span class="math align-center">$n \geq 2$</span>. That is, that a set with 
+<span class="math align-center">$n$</span> elements has 
+<span class="math align-center">$\dfrac{n(n-1)}{2}$</span>possible subsets of size 2.</p>
+<h4 id="base-case">Base case</h4>
+<p>We must prove that 
+<span class="math align-center">$P(n)$</span> holds for the smallest such integer, 
+<span class="math align-center">$n = 2$</span>. We must show that a set with two elements contains 
+<span class="math align-center">$\dfrac{2(2-1)}{2} = 1$</span> possible subsets of size 2. If a set has just two elements, then there is only one possible subset of size 2 &ndash; the subset that contains both elements. This proves 
+<span class="math align-center">$P(2)$</span>, so the base case holds.</p>
+<h4 id="inductive-step">Inductive step</h4>
+<p>We assume the inductive hypothesis - that 
+<span class="math align-center">$P(n)$</span> holds for some arbitrary integer 
+<span class="math align-center">$n \geq 2$</span>. In other words, we assume that a set with 
+<span class="math align-center">$n$</span> elements has 
+<span class="math align-center">$\dfrac{n(n-1)}{2}$</span> possible subsets of size 2. We must prove that 
+<span class="math align-center">$P(n+1)$</span> also holds &ndash; i.e., that a set with 
+<span class="math align-center">$n + 1$</span> elements has 
+<span class="math align-center">$\dfrac{(n+1)((n+1)-1)}{2} = \dfrac{n(n+1)}{2}$</span> possible subsets of size 2.</p>
+<p>Introducing a new element to a set with 
+<span class="math align-center">$n$</span> elements yields 
+<span class="math align-center">$n$</span> additional 2-element subsets, as the new element could pair with each of the original elements.</p>
+<p>A set with 
+<span class="math align-center">$n+1$</span> elements contains all the original 
+<span class="math align-center">$\dfrac{n(n-1)}{2}$</span> size-2 elements from the size-
+<span class="math align-center">$n$</span> set, plus the 
+<span class="math align-center">$n$</span> new subsets described above.</p>
+<p>We have that:</p>
+
+<span class="math align-center">$$
+\dfrac{n(n-1)}{2} + n = \dfrac{n(n-1)+2n}{2}
+$$
+$$
+= \dfrac{n(n-1+2)}{2}
+$$
+$$
+= \dfrac{n(n+1)}{2}
+$$</span><p>We have proved 
+<span class="math align-center">$P(n+1)$</span>. Thus the inductive hypothesis holds.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+
+        </div>
+      </main>
+    
+<div class="git-footer">
+<p class="theme-version-footer">5.18.0</p>
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Julie Thornton
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/59a634c56dc7866a74c5f6bbd27b5fecf948ed1c">Jan 9, 2023</a>
+</p>
+</div>
+
+    
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1691697188" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1691697188" defer></script>
+    <script>
+      function useMathJax( config ){
+        if( !Object.assign ){
+          
+          return;
+        }
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          loader: {
+            load: ['[tex]/mhchem']
+          },
+          startup: {
+            elements: [
+              '.math'
+            ]
+          },
+          tex: {
+            inlineMath: [
+              ['$', '$'], 
+              ['\\(', '\\)']
+            ]
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis301/js/mathjax/tex-mml-chtml.js?1691697188"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1691697188" defer></script>
+  </body>
+</html>

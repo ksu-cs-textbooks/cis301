@@ -1,0 +1,788 @@
+
+
+
+
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.117.0">
+    <meta name="generator" content="Relearn 5.18.0">
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>Propositional Logic Translations :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/index.html" rel="canonical" type="text/html" title="Propositional Logic Translations :: CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/index.xml" rel="alternate" type="application/rss+xml" title="Propositional Logic Translations :: CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/tele.html" rel="alternate" type="text/html" title="Propositional Logic Translations :: CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/embed.html" rel="alternate" type="text/html" title="Propositional Logic Translations :: CIS 301 Textbook">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1691697188" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1691697188" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1691697188" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1691697188" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1691697188" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1691697188" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1691697188" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1691697188" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/format-print.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1691697188" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1691697188"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1691697188"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1691697188" rel="stylesheet">
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/3-chapter/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/index.html"><span itemprop="name">CIS 301 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Propositional Logic Translations</span><meta itemprop="position" content="2"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+            <header class="headline">
+            </header>
+
+
+<div class="article-subheading">Chapter 3</div>
+<h1 id="propositional-logic-translations">Propositional Logic Translations</h1>
+
+<p>A <em>propositional logic statement</em> is a set of <em>propositional atoms</em> (statements with no logical connectives that can be true or false) connected by logical operators.</p>
+<p>In this chapter, we will see how to translate English sentences into such propositional logic statements, which will resemble the logical statements (like <code>p ∧ q → r</code>) we saw when working with truth tables. These statements are also called <em>propositions</em>.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Propositional Logic Translations</h1>
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="propositional-atoms">Propositional Atoms</h1>
+
+<h2 id="definition">Definition</h2>
+<p>A <em>propositional atom</em> is statement that is either true or false, and that contains no logical connectives (like and, or, not, if/then).</p>
+<h2 id="examples-of-propositional-atoms">Examples of propositional atoms</h2>
+<p>For example, the following are propositional atoms:</p>
+<ul>
+<li>My shirt is red.</li>
+<li>It is sunny.</li>
+<li>Pigs can fly.</li>
+<li>I studied for the test.</li>
+</ul>
+<h2 id="examples-of-what-are-not-propositional-atoms">Examples of what are NOT propositional atoms</h2>
+<p>Propositional atoms should not contain any logical connectives. If they did, this would mean would could have further subdivided the statement into multiple propositional atoms that could be joined with logical operators. For example, the following are NOT propositional atoms:</p>
+<ul>
+<li>It is not summer. (<em>contains a not</em>)</li>
+<li>Bob has brown hair and brown eyes. (<em>contains an and</em>)</li>
+<li>I walk to school unless it rains. (<em>contains the word <code>unless</code>, which has if&hellip;then information</em>)</li>
+</ul>
+<p>Propositional atoms also must be either true or false &ndash; they cannot be questions, commands, or sentence fragments. For example, the following are NOT propositional atoms:</p>
+<ul>
+<li>What time is it? (<em>contains a question - not a true/false statement</em>)</li>
+<li>Go to the front of the line. (<em>contains a command - not a true/false statement</em>)</li>
+<li>Fluffy cats (<em>contains a sentence fragment - not a true/false statement</em>)</li>
+</ul>
+<h2 id="identifying-propositional-atoms">Identifying propositional atoms</h2>
+<p>If we are given several sentences, we identify its propositional atoms by finding the key statements that can be either true or false. We further ensure that these statements do not contain any logical connectives (and, or, not, if/then information) - if they do, we break the statement down further. We then assign letters to each proposition.</p>
+<p>For example, if we have the sentences:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>My jacket is red and green. I only wear my jacket when it is snowing. It did not snow today.</span></span></code></pre></div><p>Then we identify the following propositional atoms:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: My jacket is red
+</span></span><span style="display:flex;"><span>q: My jacket is green
+</span></span><span style="display:flex;"><span>r: I wear my jacket
+</span></span><span style="display:flex;"><span>s: It is snowing
+</span></span><span style="display:flex;"><span>t: It snowed today</span></span></code></pre></div><p>Notice that the first sentence, &ldquo;My jacket is red and green&rdquo;, contained the logical connective &ldquo;and&rdquo;. Thus, we broke that idea into its components, and got propositions <code>p</code> and <code>q</code>. The second sentence, &ldquo;I only wear my jacket when it is snowing&rdquo;, contained if/then information about when I would wear my jacket. We broke that sentence into two parts as well, and got propositions <code>r</code> and <code>s</code>. Finally, the last sentence, &ldquo;It did not snow today&rdquo;, contained the logical connective &ldquo;not&rdquo; &ndash; so we removed it and kept the remaining information for proposition <code>t</code>.</p>
+<p>Each propositional atom is a true/false statement, just as is required.</p>
+<p>In the next section, we will see how to complete our translation from English to propositional logic by connecting our propositional atoms with logical operators.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="not-and-or-translations">NOT, AND, OR Translations</h1>
+
+<p>Now that we have seen how to identify propositional atoms in English sentences, we will learn how to connect these propositions with logical operators in order to complete the process of translating from English to propositional logic.</p>
+<h2 id="not-translations">NOT translations</h2>
+<p>When you see the word &ldquo;not&rdquo; and the prefixes &ldquo;un-&rdquo; and &ldquo;ir-&rdquo;, those should be replaced with a NOT operator.</p>
+<h3 id="example-1">Example 1</h3>
+<p>For example, if we have the sentence:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>I am not going to work today.</span></span></code></pre></div><p>Then we would first identify the propositional atom:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: I am going to work today</span></span></code></pre></div><p>and would then use a NOT operator to express the negation. Our full translation to propositional logic would be: <code> ¬p</code></p>
+<h3 id="example-2">Example 2</h3>
+<p>As another example, suppose we have the sentence</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>My sweater is irreplaceable.</span></span></code></pre></div><p>We would identify the propositional atom:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: My sweater is replaceable.</span></span></code></pre></div><p>And again, our complete translation would be: <code> ¬p</code></p>
+<h2 id="and-translations">AND translations</h2>
+<p>When you see the words &ldquo;and&rdquo;, &ldquo;but&rdquo;, &ldquo;however&rdquo;, &ldquo;moreover&rdquo;, &ldquo;nevertheless&rdquo;, etc., then the English sentence is expressing a conjunction of ideas. When translating to propositional logic, all of these words should be replaced with a logical AND operator.</p>
+<p>It might seem strange that the sentences &ldquo;It is cold and it is sunny&rdquo; and &ldquo;It is cold but it is sunny&rdquo; should be translated the same way &ndash; but really, both sentences are expressing two facts:</p>
+<ol>
+<li>It is cold</li>
+<li>It is sunny</li>
+</ol>
+<p>Using &ldquo;but&rdquo; instead of &ldquo;and&rdquo; in English adds a subtle comparison of the first fact to the second fact, but such nuances are beyond the capabilities of propositional logic (and are somewhat ambiguous anyway).</p>
+<h3 id="example-1-1">Example 1</h3>
+<p>Suppose we want to translate the following sentence to propositional logic:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>I like cake but I don&#39;t like cupcakes.</span></span></code></pre></div><p>We would first identify two propositional atoms:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: I like cake
+</span></span><span style="display:flex;"><span>q: I like cupcakes</span></span></code></pre></div><p>We would then translate the clause &ldquo;I don&rsquo;t like cupcakes&rdquo; to <code> ¬q</code>, and then would translate the connective &ldquo;but&rdquo; to a logical AND operator. We would finish with the following translation:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧  ¬q</span></span></code></pre></div><h3 id="example-2-1">Example 2</h3>
+<p>Suppose we want to translate the following sentence to propositional logic:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>The school doesn&#39;t have both a pool and a track.</span></span></code></pre></div><p>We would first identify two propositional atoms:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: The school has a pool
+</span></span><span style="display:flex;"><span>q: The school has a track</span></span></code></pre></div><p>We would then see that we are really taking the sentence, &ldquo;The school has a pool and a track&rdquo; and negating it, which leaves us with the following translation:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span> ¬(p ∧ q)</span></span></code></pre></div><h2 id="or-translations">OR translations</h2>
+<p>When you see the word &ldquo;or&rdquo; in a sentence, or some other clear disjunction of statements, then you will translate it to a logical OR operator. Because the word &ldquo;or&rdquo; in English can be ambiguous, We first need to determine whether the &ldquo;or&rdquo; is <em>inclusive</em> (in which case we would replace it with a regular OR operator) or <em>exclusive</em> (in which case we need to add a clause to explicitly express that both statements cannot be true).</p>
+<p>As we saw in <a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_1-logicbasics/">section 1.1</a>
+, the word &ldquo;or&rdquo; in an English sentence is usually meant to be exclusive. However, because the logical OR is <em>INclusive</em>, and since the purpose of this class is not to have you wrestle with subtleties of the English language, then you can assume that an &ldquo;or&rdquo; in a sentence is <em>inclusive</em> unless clearly stated otherwise.</p>
+<h3 id="inclusive-or-statements">Inclusive OR statements</h3>
+<p>Suppose we want to translate the following sentence to propositional logic:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>You watch a movie and/or eat a snack.</span></span></code></pre></div><p>We would first identify two propositional atoms:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: You watch a movie
+</span></span><span style="display:flex;"><span>q: You eat a snack</span></span></code></pre></div><p>The &ldquo;and/or&rdquo; in our sentence makes it extremely clear that the intent is an inclusive or, since the sentence is true if you both watch a movie and eat a snack. This leaves us with the following translation:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p V q</span></span></code></pre></div><h3 id="exclusive-or-statements">Exclusive OR statements</h3>
+<p>In this class, if the meaning of &ldquo;or&rdquo; in a sentence is meant to be exclusive, then the sentence will clearly state that the two statements aren&rsquo;t both true.</p>
+<p>For example, suppose we want to translate the following sentence to propositional logic:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>On Saturday, Jane goes for a run or plays basketball, but not both.</span></span></code></pre></div><p>We would first identify two propositional atoms:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: Jane goes for a run on Saturday
+</span></span><span style="display:flex;"><span>q: Jane plays basketball on Saturday</span></span></code></pre></div><p>We then apply our equivalence for simulating an exclusive or operator, which we saw in <a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_4-logicalequiv/">section 2.4</a>
+. This leaves us with the following translation:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p V q) ∧  ¬(p ∧ q)</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="implies-translations">Implies Translations</h1>
+
+<p>In this section, we will learn when to use an implies (→) operator when translating from English to propositional logic. In general, you will want to use an implies operator any time a sentence is making a promise &ndash; if one thing happens, then we promise that another thing will happen. The trick is to figure out the direction of the promise &ndash; promising that if p happens, then q will happen is subtly different from promising that if q happens, then p will happen.</p>
+<p>Look for the words &ldquo;if&rdquo;, &ldquo;only if&rdquo;, &ldquo;unless&rdquo;, &ldquo;except&rdquo;, and &ldquo;provided&rdquo; as clues that the propositional logic translation will use an implies operator.</p>
+<h2 id="if-p-then-q-statements">IF p THEN q statements</h2>
+<p>An &ldquo;IF p THEN q&rdquo; statement is promising that if <code>p</code> is true, then we can infer that <code>q</code> is also true. (It is making NO claims about what we can infer if we know <code>q</code> is true.)</p>
+<p>For example, consider the following sentence:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>If it is hot today, then I&#39;ll get ice cream.</span></span></code></pre></div><p>We first identify the following propositional atoms:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: It is hot today
+</span></span><span style="display:flex;"><span>q: I&#39;ll get ice cream</span></span></code></pre></div><p>To determine the order of the implication, we think about what is being promised &ndash; if it is hot, then we can infer that ice cream will happen. But if we get ice cream, then we have no idea what the weather is like. It might be hot, but it might also be cold and I just decided to get ice cream anyway. Thus we finish with the following translation:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → q</span></span></code></pre></div><p>Alternatively, if we don&rsquo;t get ice cream, we can be certain that it wasn&rsquo;t hot &ndash; since we are promsied that if it is hot, then we will get ice cream. So an equivalent translation is:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span> ¬q →  ¬p</span></span></code></pre></div><p>(This form is called the <em>contrapositive</em>, which we learned about it in <a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_4-logicalequiv/">section 2.4</a>
+). We&rsquo;ll study it and other equivalent translations more in the next section.)</p>
+<h2 id="p-if-q-statements">p IF q statements</h2>
+<p>A &ldquo;p IF q&rdquo; statement is promising that if <code>q</code> is true, then we can infer that <code>p</code> is also true. (It is making NO claims about what we can infer if we know <code>p</code> is true.) Equivalent ways of expressing the same promise are &ldquo;p PROVIDED q&rdquo; and &ldquo;p WHEN q&rdquo;.</p>
+<p>For example, consider the following sentence:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>You can login to a CS lab computer if you have a CS account.</span></span></code></pre></div><p>We first identify the following propositional atoms:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: You can login to a CS lab computer
+</span></span><span style="display:flex;"><span>q: You have a CS account</span></span></code></pre></div><p>To determine the order of the implication, we think about what conditions need to be met in order for me to be promised that I can login. We see that if we have a CS account, then we are promised to be able to login. Thus we finish with the following translation:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>q → p</span></span></code></pre></div><p>In this example, if we knew we could login to a CS lab computer, we wouldn&rsquo;t be certain that we had a CS account. There might be other reasons we can login &ndash; maybe you can use your eID account instead, for example.</p>
+<p>Alternatively, if we can&rsquo;t login, we can be certain that we don&rsquo;t have a CS account. After all, we are guaranteed to be able to login if we do have a CS account. So another valid translation is:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span> ¬p →  ¬q</span></span></code></pre></div><h2 id="p-only-if-q">p ONLY IF q</h2>
+<p>A &ldquo;p ONLY IF q&rdquo; statement is promising that the only time <code>p</code> happens is when <code>q</code> also happens. So if <code>p</code> does happen, it must be the case that <code>q</code> did too (since <code>p</code> can&rsquo;t happen without <code>q</code> happening too).</p>
+<p>For example, consider the following sentence:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Wilma eats cookies only if Evelyn makes them.</span></span></code></pre></div><p>We first identify the following propositional atoms:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: Wilma eats cookies
+</span></span><span style="display:flex;"><span>q: Evelyn makes cookies</span></span></code></pre></div><p>What conditions need to be met for Wilma to eat cookies? If Wilma is eating cookies, Evelyn must have made cookies &ndash; after all, we know that Wilma only eats Evelyn&rsquo;s cookies. Thus we finish with the following translation:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → q</span></span></code></pre></div><p>Equivalently, we are certain that if Evelyn DOESN&rsquo;T make cookies, then Wilma won&rsquo;t eat them &ndash; since she only eats Evelyn&rsquo;s cookies. We can also write:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span> ¬q →  ¬p</span></span></code></pre></div><p>However, if we know that Evelyn makes cookies, we can&rsquo;t be sure that Wilma will eat them. We know she won&rsquo;t eat any other kind of cookie, but maybe Wilma is full today and won&rsquo;t even eat Evelyn&rsquo;s cookies&hellip;we can&rsquo;t be sure.</p>
+<h2 id="p-unless-b-p-except-if-q">p UNLESS b, p EXCEPT IF q</h2>
+<p>The statements &ldquo;p UNLESS q&rdquo; and &ldquo;p EXCEPT IF q&rdquo; are equivalent&hellip;and both can sometimes be ambiguous. For example, consider the following sentence:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>I will bike to work unless it is raining.</span></span></code></pre></div><p>We first identify the following propositional atoms:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: I will bike to work
+</span></span><span style="display:flex;"><span>q: It is raining</span></span></code></pre></div><p>Next, we consider what exactly is being promised:</p>
+<ul>
+<li><em>If it isn&rsquo;t raining, will I bike to work?</em>   YES ¬ I promise to bike to work whenever it isn&rsquo;t raining.</li>
+<li><em>If I don&rsquo;t bike to work, is it raining?</em>   YES ¬ I always bike when it&rsquo;s not raining, so if I don&rsquo;t bike, it must be raining.</li>
+<li><em>If it&rsquo;s raining, will I necessarily not bike to work?</em>   Well, maybe? Some people might interpret the sentence as saying I&rsquo;ll get to work in another way if it&rsquo;s raining, and others might think no promise has been made if it is raining.</li>
+<li><em>If I bike to work, is it necessarily not raining?</em>   Again, maybe? It&rsquo;s not clear if I&rsquo;m promising to only bike in non-rainy weather.</li>
+</ul>
+<p>As we did with ambiguous OR statements, we will establish a rule in this class for intrepeting &ldquo;unless&rdquo; statements that will let us resolve ambiguity.</p>
+<p><strong>If you see the word <em>unless</em> when you are doing a translation, replace it with the words <em>unless possibly if</em>.</strong></p>
+<p>If we rephrase the sentence as:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>I will bike to work *unless possibly if* it is raining.</span></span></code></pre></div><p>We see that there is clearly NO promise about whether I will bike in the rain. I might, or I might not &ndash; but the only thing that I am promising is that I <em>will</em> bike if it is <em>not</em> raining, or that IF it&rsquo;s not raining, THEN I will bike. With that in mind, we can complete our translation:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span> ¬q →  ¬p</span></span></code></pre></div><p>Equivalently, if we don&rsquo;t bike, then we are certain that it must be raining &ndash; since we have promised to ride our bike every other time. We can also write:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span> ¬p →  ¬q</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="equivalent-translations">Equivalent Translations</h1>
+
+<p>As we saw in <a href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_4-logicalequiv/">section 2.4</a>
+), two logical statements are said to be <em>logically equivalent</em> if and only if they have the same truth value for every truth assignment.</p>
+<p>We can extend this idea to our propositional logic translations &ndash; two (English) statements are said to be <em>equivalent</em> iff they have the same underlying meaning, and iff their translations to propositional logic are logically equivalent.</p>
+<h2 id="common-equivalences-revisited">Common equivalences, revisited</h2>
+<p>We previously identified the following common logical equivalences:</p>
+<ul>
+<li>Double negative: <code>¬ ¬ p</code> and <code>p</code></li>
+<li>Contrapositive: <code>p → q</code> and <code>¬ q → ¬ p</code></li>
+<li>Expressing an implies using an OR: <code>p → q</code> and <code>¬ p ∨ q</code></li>
+<li>One of DeMorgan&rsquo;s laws: <code>¬ (p ∧ q)</code> and <code>( ¬ p ∨ ¬ q)</code></li>
+<li>Another of DeMorgan&rsquo;s laws: <code>¬ (p ∨ q)</code> and <code>( ¬ p ∧ ¬ q)</code></li>
+</ul>
+<h2 id="equivalence-example-1">Equivalence example 1</h2>
+<p>Suppose we have the following propositional atoms:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: I get cold
+</span></span><span style="display:flex;"><span>q: It is summer</span></span></code></pre></div><p>Consider the following three statements:</p>
+<ul>
+<li><em>I get cold except possibly if it is summer.</em></li>
+<li><em>If it&rsquo;s not summer, then I get cold.</em></li>
+<li><em>I get cold or it is summer.</em></li>
+</ul>
+<p>We translate each sentence to propositional logic:</p>
+<ul>
+<li>
+<p><em>I get cold except possibly if it is summer.</em></p>
+<ul>
+<li><code>p →  ¬q</code></li>
+<li>Meaning: I promise that if I get cold, then it must not be summer&hellip;because I am always cold when it&rsquo;s not summer.</li>
+</ul>
+</li>
+<li>
+<p><em>If it&rsquo;s not summer, then I get cold.</em></p>
+<ul>
+<li><code> ¬q → p</code></li>
+<li>Meaning: I promise that anytime it isn&rsquo;t summer, then I will get cold.</li>
+</ul>
+</li>
+<li>
+<p><em>I get cold or it is summer.</em></p>
+<ul>
+<li><code>p V q</code></li>
+<li>Meaning: I&rsquo;m either cold or it&rsquo;s summer&hellip;because my being cold is true every time it isn&rsquo;t summer.</li>
+</ul>
+</li>
+</ul>
+<p>As we can see, each of these statements is expressing the same idea.</p>
+<h2 id="equivalence-example-2">Equivalence example 2</h2>
+<p>Suppose we have the following propositional atoms:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p: I eat chips
+</span></span><span style="display:flex;"><span>q: I eat fries</span></span></code></pre></div><p>Consider the following two statements:</p>
+<ul>
+<li><em>I don&rsquo;t eat both chips and fries.</em></li>
+<li><em>I don&rsquo;t eat chips and/or I don&rsquo;t eat fries.</em></li>
+</ul>
+<p>We translate each sentence to propositional logic:</p>
+<ul>
+<li>
+<p><em>I don&rsquo;t eat both chips and fries.</em></p>
+<ul>
+<li><code> ¬(p ∧ q)</code></li>
+</ul>
+</li>
+<li>
+<p><em>I don&rsquo;t eat chips and/or I don&rsquo;t eat fries.</em></p>
+<ul>
+<li><code> ¬p V  ¬q</code></li>
+</ul>
+</li>
+</ul>
+<p>These statements are clearly expressing the same idea &ndash; if it&rsquo;s not the case that I eat both, then it&rsquo;s also true that there is at least one of the foods that I don&rsquo;t eat. This is an application of one of DeMorgan&rsquo;s laws: that <code>¬ (p ∧ q)</code> is equivalent to <code>( ¬ p ∨ ¬ q)</code>.</p>
+<p>If we were to create truth tables for both <code> ¬(p ∧ q)</code> and <code> ¬p V  ¬q</code>, we would see that they are <em>logically equivalent</em> (that the same truth assignments make each statement true).</p>
+<h2 id="equivalence-example-3">Equivalence example 3</h2>
+<p>Using the same propositional atoms as example 2, we consider two more statements:</p>
+<ul>
+<li><em>I don&rsquo;t eat chips or fries.</em></li>
+<li><em>I don&rsquo;t eat chips and I don&rsquo;t eat fries.</em></li>
+</ul>
+<p>We translate each sentence to propositional logic:</p>
+<ul>
+<li>
+<p><em>I don&rsquo;t eat chips or fries.</em></p>
+<ul>
+<li><code> ¬(p V q)</code></li>
+</ul>
+</li>
+<li>
+<p><em>I don&rsquo;t eat chips and I don&rsquo;t eat fries.</em></p>
+<ul>
+<li><code> ¬p ∧  ¬q</code></li>
+</ul>
+</li>
+</ul>
+<p>These propositions are clearly expressing the same idea &ndash; I have two foods (chips and fries), and I don&rsquo;t eat either one. This demonstrates another of DeMorgan&rsquo;s laws: that <code>¬ (p ∨ q)</code> is equivalent to <code>( ¬ p ∧ ¬ q)</code>. If we were to create truth tables for each proposition, we would see that they are logically equivalent as well.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="knights-and-knaves-revisited">Knights and Knaves, revisited</h1>
+
+<p>Recall the Knights and Knaves puzzles from <a href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_2-knightsknaves/">section 1.2</a>
+. In addition to solving these puzzle by hand, we can devise a strategy to first translate a Knights and Knaves puzzle to propositional logic, and then solve the puzzle using a truth table.</p>
+<h2 id="identifying-propositional-atoms">Identifying propositional atoms</h2>
+<p>To translate a Knights and Knaves puzzle to propositional logic, we first create a propositional atom for each person that represented whether that person was a knight. For example, if our puzzle included the people &ldquo;Adam&rdquo;, &ldquo;Bob&rdquo;, and &ldquo;Carly&rdquo;, then we might create propositional atoms <code>a</code>, <code>b</code>, and <code>c</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>a: Adam is a knight
+</span></span><span style="display:flex;"><span>b: Bob is a knight
+</span></span><span style="display:flex;"><span>c: Carly is a knight</span></span></code></pre></div><h2 id="translating-statements">Translating statements</h2>
+<p>Once we have our propositional atoms, we can translate each statement in the puzzle to propositional logic. For each one, we want to capture that the statement is true IF AND ONLY IF the person speaking is a knight. (That way, the statement would be false whenever the person was not a knight &ndash; i.e., when they were a knave.) We recall that we can express <em>if and only if</em> using a conjunction of implications. So if we want to write <code>p if and only if q</code>, then we can say <code>(p → q) ∧ (q → p)</code>.</p>
+<p>As an example, suppose we have the following statement:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Adam says: Bob is a knight and Carly is a knave.</span></span></code></pre></div><p>Adam&rsquo;s statement should be true if and only if he is a knight, so we can translate it as follows:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(a → (b ∧  ¬c)) ∧ ((b ∧  ¬c) → a)</span></span></code></pre></div><p>Which reads as:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>If I am a knight, then Bob is a knight and Carly is a knave. Also, if Bob is a knight and Carly is a knave, then I am a knight.</span></span></code></pre></div><p>We repeat this process for each statement in the puzzle. Finally, since we solve a Knights and Knaves puzzle by finding a truth assignment (i.e., assignment of who is a knight and who is a knave) that works for ALL statements, then we finish by AND-ing together our translations for each speaker. When we fill in the truth table for our final combined proposition, then a valid solution to the puzzle is any truth assignment that makes the overall proposition true. If it was a well-made puzzle, then there should only be one such truth assignment.</p>
+<h2 id="full-example">Full example</h2>
+<p>Suppose we meet two people on the Island of Knights and Knaves &ndash; Ava and Bob.</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ava says, &#34;Bob and I are not the same&#34;.
+</span></span><span style="display:flex;"><span>Bob says, &#34;Of Ava and I, exactly one is a knight.&#34;</span></span></code></pre></div><p>We first create a propositional atom for each person:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>a: Ava is a knight
+</span></span><span style="display:flex;"><span>b: Bob is a knight</span></span></code></pre></div><p>Then, we translate each statement:</p>
+<ul>
+<li><em>Bob and I are not the same</em>
+<ul>
+<li>Translation: <code>(a → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → a)</code></li>
+<li>Meaning: If Ava is a knight, then either Ava is a knight and Bob is a knave, or Ava is a knave and Bob is a knight (so they aren&rsquo;t the same type). Also, if Ava and Bob aren&rsquo;t the same type, then Ava must be a knight (because her statement would be true).</li>
+</ul>
+</li>
+<li><em>Bob says, &ldquo;Of Ava and I, exactly one is a knight.</em>
+<ul>
+<li>Bob is really saying the same thing as Ava&hellip;if exactly one is a knight, then either Ava is a knight and Bob is a knave, or Ava is a knave and Bob is a knight.</li>
+<li>Translation: <code>(b → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → b)</code></li>
+</ul>
+</li>
+</ul>
+<p>We combine our translations for Ava and Bob and end up with the following propositional logic statement:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(a → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → a) ∧ (b → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → b)`</span></span></code></pre></div><p>We then complete the truth table for that proposition:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                                                                                  *
+</span></span><span style="display:flex;"><span>---------------------------------------------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>a b | (a → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → a) ∧ (b → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → b)
+</span></span><span style="display:flex;"><span>---------------------------------------------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>T T |    F    F F  F F  F     F     F F  F F  F    T    F    F    F F  F F  F     F     F F  F F  F    T
+</span></span><span style="display:flex;"><span>T F |    T    T T  T F  F     T     T T  T F  F    T    T    T    T T  T F  F     F     T T  T F  F    F
+</span></span><span style="display:flex;"><span>F T |    T    F F  T T  T     F     F F  T T  T    F    F    T    F F  T T  T     F     F F  T T  T    T
+</span></span><span style="display:flex;"><span>F F |    T    F T  F T  F     T     F T  F T  F    T    T    T    F T  F T  F     T     F T  F T  F    T
+</span></span><span style="display:flex;"><span>---------------------------------------------------------------------------------------------------------------
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Contingent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- T: [F F]
+</span></span><span style="display:flex;"><span>- F: [T T] [T F] [F T]</span></span></code></pre></div><p>And we see that there is only one truth assignment that satisfies the proposition &ndash; <code>[F F]</code>, which corresponds to Ava being a knave and Bob being a knave.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>As you can see, solving a Knights and Knaves problem by translating each statement to propositional logic is a tedious process. We ended up with a very involved final formula that made filling in the truth table somewhat arduous. Such problems are usually much simpler to solve by hand &ndash; but this process demonstrates that we <em>can</em> apply a systematic approach to solve Knights and Knaves problems with translations and truth tables.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          </section>
+
+        </div>
+      </main>
+    
+<div class="git-footer">
+<p class="theme-version-footer">5.18.0</p>
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Russell Feldhausen
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/dec4297d81df48b5e02e2640601321e923ab5f5b">Aug 10, 2023</a>
+</p>
+</div>
+
+    
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1691697188" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1691697188" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1691697188" defer></script>
+  </body>
+</html>

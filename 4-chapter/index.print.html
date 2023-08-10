@@ -1,0 +1,1784 @@
+
+
+
+
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.117.0">
+    <meta name="generator" content="Relearn 5.18.0">
+    <meta name="description" content="CIS 301: Logical Foundations of Programming">
+    <meta name="author" content="Julie Thornton">
+    <title>Propositional Logic Proofs :: CIS 301 Textbook</title>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/index.html" rel="canonical" type="text/html" title="Propositional Logic Proofs :: CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/index.xml" rel="alternate" type="application/rss+xml" title="Propositional Logic Proofs :: CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/tele.html" rel="alternate" type="text/html" title="Propositional Logic Proofs :: CIS 301 Textbook">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/embed.html" rel="alternate" type="text/html" title="Propositional Logic Proofs :: CIS 301 Textbook">
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1691697188" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1691697188" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1691697188" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1691697188" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1691697188" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1691697188" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1691697188" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1691697188" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/format-print.css?1691697188" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1691697188" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1691697188"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1691697188"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
+      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
+      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
+      // some further base stuff
+      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
+      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
+    </script>
+    
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1691697188" rel="stylesheet">
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/4-chapter/index.html">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-tele-link">
+            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/tele.html">
+              <i class="fas fa-tv fa-fw"></i>
+            </a>
+          </div>
+          <div id="top-embed-link">
+            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/embed.html">
+              <i class="fas fa-expand-arrows-alt fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/index.html"><span itemprop="name">CIS 301 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Propositional Logic Proofs</span><meta itemprop="position" content="2"></li>
+            </ol>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="chapter">
+            <header class="headline">
+            </header>
+
+
+<div class="article-subheading">Chapter 5</div>
+<h1 id="propositional-logic-proofs">Propositional Logic Proofs</h1>
+
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Propositional Logic Proofs</h1>
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="introduction">Introduction</h1>
+
+<p>While we can use truth tables to check whether a set of premises entail a conclusion, this requires testing all possible truth assignments &ndash; of which there are exponentially many. In this chapter, we will learn the process of <em>natural deduction</em> in propositional logic. This will allow us to start with a set of known facts (<em>premises</em>) and apply a series of rules to see if we can reach some goal <em>conclusion</em>. Essentially, we will be able to see whether a given conclusion necessarily follows from a set of premises.</p>
+<p>We will use the Logika tool to check whether our proofs correctly follow our deduction rules. HOWEVER, these proofs can and do exist outside of Logika. Different settings use slightly different syntaxes for the deduction rules, but the rules and proof system are the same. We will merely use Logika to help check our work.</p>
+<h2 id="sequents-premises-and-conclusions">Sequents, premises, and conclusions</h2>
+<p>A <em>sequent</em> is a mathematical term for an assertion. We use the notation:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p0, p1, ..., pm ⊢ c</span></span></code></pre></div><p>The <em>p0, p1, &hellip;, pm</em> are called <em>premises</em> and <em>c</em> is called the <em>conclusion</em>. The <code>⊢</code> is called the <em>turnstile operator</em>, and we read it as &ldquo;prove&rdquo;. The full sequent is read as:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Statements p0, p1, ..., pm PROVE c</span></span></code></pre></div><p>A sequent is saying that if we accept statements <em>p0, p1, &hellip;, pm</em> as facts, then we guarantee that <em>c</em> is a fact as well.</p>
+<p>For example, in the sequent:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → q , ¬ q  ⊢  ¬ p</span></span></code></pre></div><p>The premises are: <code>p → q</code> and <code> ¬q</code>, and the conclusion is <code> ¬p</code>.</p>
+<p>(Shortcut: we can use <code>|-</code> in place of the <code>⊢</code> turnstile operator.)</p>
+<h2 id="sequent-validity">Sequent validity</h2>
+<p>A sequent is said to be <em>valid</em> if, for every truth assignment which make the premises true, then the conclusion is also true.</p>
+<p>For example, consider the following sequent:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → q , ¬ q  ⊢  ¬ p</span></span></code></pre></div><p>To check if this sequent is valid, we must find all truth assignments for which both premises are true, and then ensure that those truth assignments also make the conclusion true.</p>
+<p>Here is a (non-Logika syntax) type of truth table that combines all three statements:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p q | (p → q) | ( ¬q) |  ¬p
+</span></span><span style="display:flex;"><span>---------------------------
+</span></span><span style="display:flex;"><span>T T |    T     |  F   | F
+</span></span><span style="display:flex;"><span>T F |    F     |  T   | F
+</span></span><span style="display:flex;"><span>F T |    T     |  F   | T
+</span></span><span style="display:flex;"><span>F F |    T     |  T   | T</span></span></code></pre></div><p>Examining each row in the above truth table, we see that only the truth assignment [F F] makes both premises (<code>p → q</code> and <code> ¬q</code>) true. We look right to see that the same truth assignment also makes the conclusion (<code> ¬p</code>) true, which means that the sequent is valid.</p>
+<h2 id="using-logika-for-proof-verification">Using Logika for proof verification</h2>
+<p>We can use the Logika tool to help check the correctness of our proofs. (Again, Logika is just a tool to help check our work &ndash; we could write the same argument in a different environment or on paper, and the meaning would be the same.)</p>
+<p>Each Logika proof should be written in a separate file with a .logika extension. Logika verification knows each of the deduction rules we will see in the next few chapters, and will automatically check to ensure that your steps obey these deduction rules as you type your proof. If a proof is correct, you will see a purple checkmark in the lower right corner that says &ldquo;Logika verified&rdquo;. If you have logic errors, you will see them highlighted in red.</p>
+<p>Sometimes, the Logika verification needs to be run manually. If you don&rsquo;t see either red errors or a purple checkmark, right-click in the text area that contains the proof and select &ldquo;Logika Check&rdquo;.</p>
+<h2 id="logika-proof-syntax">Logika proof syntax</h2>
+<p>Sequents in Logika have the following form:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt; 0 or more premises, separated by commas &gt; ⊢ &lt; 1 conclusion &gt;</span></span></code></pre></div><p>Proofs in Logika are structured in two columns, with claims on the left and their supporting justification on the right:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>premises ⊢ conclusion
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. claim_a          justification_a
+</span></span><span style="display:flex;"><span>    2. claim_b          justification_b
+</span></span><span style="display:flex;"><span>       ...              ...
+</span></span><span style="display:flex;"><span>    736. conclusion     justification_ef
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Each claim is given a number, and these numbers are generally in order. However, the only rule is that claim numbers be unique (they may be out of order and/or non-consecutive). Once we have justified a claim in a proof, we will refer to it as a <em>fact</em>.</p>
+<p>We will see more details of Logika proof syntax as we progress through chapter 4.</p>
+<h2 id="premise-justification">Premise justification</h2>
+<p>The most basic justification for a claim in a proof is &ldquo;premise&rdquo;. This justification is used when you pull in a premise from the sequent and introduce it into your proof. All, some or none of the premises can be introduced at any time in any order. Please note that only one premise may be entered per claim.</p>
+<p>For example, we might bring in the premises from our sequent like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p, q,  ¬r |- p ∧ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p            premise
+</span></span><span style="display:flex;"><span>    2. q            premise
+</span></span><span style="display:flex;"><span>    3.  ¬r           premise
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We could also bring in the same premise multiple times, if we wanted. We could also use non-sequential line numbers, as long as each line number was unique:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p, q,  ¬r |- p ∧ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    7. p            premise
+</span></span><span style="display:flex;"><span>    10. q           premise
+</span></span><span style="display:flex;"><span>    2.  ¬r           premise
+</span></span><span style="display:flex;"><span>    8. p            premise
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We could only bring in some portion of our premises, if we wanted:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p, q,  ¬r |- p ∧ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p            premise
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>But we can only list one premise in each claim. For example, the following is not allowed:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p, q,  ¬r |- p ∧ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    //THIS IS WRONG ¬
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    1. p, q,  ¬r         premise
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="deduction-rules">Deduction rules</h2>
+<p>The logical operators (AND, OR, NOT, IMPLIES) are a kind of language for building propositions from basic, primitive propositional atoms. For this reason, we must have laws for constructing propositions and for disassembling them. These laws are called <em>inference</em> rules or <em>deduction</em> rules. A <em>natural deduction system</em> is a set of inference rules, such that for each logical operator, there is a rule for constructing a proposition with that operator (this is called an <em>introduction rule</em>) and there is a rule for disassembling a proposition with that operator (this is called an <em>elimination rule</em>).</p>
+<p>For the sections that follow, we will see the introduction and elimination rules for each logical operator. We will then learn how to use these deduction rules to write a formal proof showing that a sequent is valid.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="and-rules">AND Rules</h1>
+
+<p>In this section, we will see the deduction rules for the AND operator.</p>
+<h2 id="and-introduction">AND introduction</h2>
+<p>Clearly, when both <code>p</code> and <code>q</code> are facts, then so is the proposition <code>p ∧ q</code>. This makes logical sense &ndash; if two propositions are independently true, then their conjunction (AND) must also be true. The AND introduction rule, <code>∧i</code>, formalizes this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        P   Q   
+</span></span><span style="display:flex;"><span>∧i :  ---------   
+</span></span><span style="display:flex;"><span>        P ∧ Q</span></span></code></pre></div><p>We will use the format above when introducing each of our natural deduction rules:</p>
+<ul>
+<li><code>P</code> and <code>Q</code> are not necessarily individual variables &ndash; they are placeholders for some propositional statement, which may itself involve several logical operators.</li>
+<li>On the left side is the rule name (in this case, <code>∧i</code>)</li>
+<li>On the top of the right side we see what we already need to have established as facts in order to use this rule (in this case, <code>P</code> and also <code>Q</code> ). These facts can appear anywhere in our scope of the proof, in whatever order. (For now, all previous lines in the proof will be within our scope, but this will change when we get to more complex rules that involve subproofs).</li>
+<li>On the bottom of the right side, we see what we can claim by using that proof rule.</li>
+</ul>
+<p>Here is a simple example of a proof that uses <code>∧i</code>. It proves that if propositional atoms <code>p</code>, <code>q</code>, and <code>r</code> are all true, then the proposition <code>r ∧ (q ∧ p)</code> is also true:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p, q, r ⊢ r ∧ (q ∧ p)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p                    premise
+</span></span><span style="display:flex;"><span>    2. q                    premise
+</span></span><span style="display:flex;"><span>    3. r                    premise
+</span></span><span style="display:flex;"><span>    4. q ∧ p                ∧i 2 1
+</span></span><span style="display:flex;"><span>    5. r ∧ (q ∧ p)          ∧i 3 4
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>You can read line 4 like this: &ldquo;from the fact <code>q</code> stated on line 2 and the fact <code>p</code> stated on line 1, we deduce <code>q ∧ p</code> by applying the <code>∧i</code> rule&rdquo;. Lines 4 and 5 construct new facts from the starting facts (premises) on lines 1-3.</p>
+<p>Note that if I had instead tried:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p, q, r ⊢ r ∧ (q ∧ p)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p                    premise
+</span></span><span style="display:flex;"><span>    2. q                    premise
+</span></span><span style="display:flex;"><span>    3. r                    premise
+</span></span><span style="display:flex;"><span>    4. q ∧ p                ∧i 1 2
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Then line 4 would not have been accepted. The line numbers cited after the <code>∧i</code> rule must match the order of the resulting AND statement. The left-hand side of our resulting AND statement must correspond to the first line number in <code>∧i</code> justification, and the right-hand side of our resulting AND statement must correspond to the second line number in the justification:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    4. p			        (some justification)
+</span></span><span style="display:flex;"><span>    5. q			        (some justification)
+</span></span><span style="display:flex;"><span>    6. p ⋀ q                ⋀i 5 6
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    9. q ⋀ p                ⋀i 6 5
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="and-elimination">AND elimination</h2>
+<p>The idea of the AND elimination rules is that if we have a proposition <code>p ⋀ q</code> as a fact, then we can separately claim both <code>p</code> and <code>q</code> as individual facts. After all, the only time <code>p ⋀ q</code> is true in a truth table is when both <code>p</code> and <code>q</code> are individually true. There are two AND elimination rules &ndash; <code>∧e1</code> and <code>∧e2</code>. <code>∧e1</code> allows us to claim that the left (first) side of an AND statement is individually true, and <code>∧e2</code> allows us to do the same with the right (second) side. Here is the formalization of each rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        P ∧ Q              P ∧ Q
+</span></span><span style="display:flex;"><span> ∧e1 : ---------    ∧e2 : ---------
+</span></span><span style="display:flex;"><span>          P                  Q</span></span></code></pre></div><p>Here is a simple example showing the syntax of the <code>∧e1</code> rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ q ⊢ p
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ q            premise
+</span></span><span style="display:flex;"><span>    2. p                ∧e1 1
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We can read the justification <code>∧e1 1</code> as: AND-elimination 1 from line 1, or &ldquo;take the AND statement on line 1 and extract its first (left) side&rdquo;.</p>
+<p>Here is a simple example showing the syntax of the <code>∧e2</code> rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ q ⊢ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ q            premise
+</span></span><span style="display:flex;"><span>    2. q                ∧e2 1
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We can read the justification <code>∧e2 1</code> as: AND-elimination 2 from line 1, or &ldquo;take the AND statement on line 1 and extract its second (right) side&rdquo;.</p>
+<h2 id="example-1">Example 1</h2>
+<p>Suppose we want to prove the following sequent:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ (q ∧ r) ⊢ r ∧ p</span></span></code></pre></div><p>Whenever we approach a proof, a good first strategy is to see what we can extract from the premises. If we have a premise that is an AND statement, then we can use <code>∧e1</code> and then <code>∧e2</code> to extract both its left and right side as separate claims. So we start our proof like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ (q ∧ r) ⊢ r ∧ p
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ (q ∧ r)          premise
+</span></span><span style="display:flex;"><span>    2. p                    ∧e1 1
+</span></span><span style="display:flex;"><span>    3. q ∧ r                ∧e2 1
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>But now we have a new AND statement as a claim &ndash; <code>q ∧ r</code>. We can again use both <code>∧e1</code> and <code>∧e2</code> to extract each side separately:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ (q ∧ r) ⊢ r ∧ p
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ (q ∧ r)          premise
+</span></span><span style="display:flex;"><span>    2. p                    ∧e1 1
+</span></span><span style="display:flex;"><span>    3. q ∧ r                ∧e2 1
+</span></span><span style="display:flex;"><span>    4. q                    ∧e1 3
+</span></span><span style="display:flex;"><span>    5. r                    ∧e2 3
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now that we have done all we can with our premises and the resulting statements, we examine our conclusion. Whenever our conclusion is a conjunction (AND statement), we know that we must separately show both the left side and the right side of that conclusion. Then, we can use <code>∧i</code> to put those sides together into our goal AND statement.</p>
+<p>In this example, we have already proved both sides of our goal AND statement &ndash; <code>r</code> (from line 5) and <code>p</code> (from line 2). All that remains is to use <code>∧i</code> to put them together:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ (q ∧ r) ⊢ r ∧ p
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ (q ∧ r)          premise
+</span></span><span style="display:flex;"><span>    2. p                    ∧e1 1
+</span></span><span style="display:flex;"><span>    3. q ∧ r                ∧e2 1
+</span></span><span style="display:flex;"><span>    4. q                    ∧e1 3
+</span></span><span style="display:flex;"><span>    5. r                    ∧e2 3
+</span></span><span style="display:flex;"><span>    6. r ∧ p                ∧i 5 2
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="example-2">Example 2</h2>
+<p>Suppose we want to prove the following sequent:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)</span></span></code></pre></div><p>We again try to use AND-elimination to extract what we can from our premises. We might try something like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ q ∧ r            premise
+</span></span><span style="display:flex;"><span>    2. a ∧ (t ∨ s)          premise
+</span></span><span style="display:flex;"><span>    3. p                    ∧e1 1   //NO ¬ Won&#39;t work.
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>However, we get into trouble when we try to use <code>∧e1</code> to extract the left side of the premise <code>p ∧ q ∧ r</code>. The problem has to do with operator precedence &ndash; we recall that <code>∧</code> operators are processed from left to right, which means that <code>p ∧ q ∧ r</code> is equivalent to <code>(p ∧ q) ∧ r</code>. By reminding ourselves of the &ldquo;hidden parentheses&rdquo;, we see that when we use <code>∧e1</code> on the premise <code>p ∧ q ∧ r</code>, we extract <code>p ∧ q</code>. Similarly, <code>∧e2</code> will extract <code>r</code>.</p>
+<p>We try again to extract what we can from our premises:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ q ∧ r            premise
+</span></span><span style="display:flex;"><span>    2. a ∧ (t ∨ s)          premise
+</span></span><span style="display:flex;"><span>    3. p ∧ q                ∧e1 1 
+</span></span><span style="display:flex;"><span>    4. r                    ∧e2 1                     
+</span></span><span style="display:flex;"><span>    5. a                    ∧e1 2 
+</span></span><span style="display:flex;"><span>    6. t ∨ s                ∧e2 2
+</span></span><span style="display:flex;"><span>    ...  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>As before, we look at our resulting claims &ndash; we see a <code>p ∧ q</code>, and we know that we can use AND elimination again to extract both sides. Now we have:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ q ∧ r            premise
+</span></span><span style="display:flex;"><span>    2. a ∧ (t ∨ s)          premise
+</span></span><span style="display:flex;"><span>    3. p ∧ q                ∧e1 1 
+</span></span><span style="display:flex;"><span>    4. r                    ∧e2 1                     
+</span></span><span style="display:flex;"><span>    5. a                    ∧e1 2 
+</span></span><span style="display:flex;"><span>    6. t ∨ s                ∧e2 2
+</span></span><span style="display:flex;"><span>    7. p                    ∧e1 3
+</span></span><span style="display:flex;"><span>    8. q                    ∧e2 3
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now, we look at what we are trying to prove &ndash; <code>q ∧ (t ∨ s)</code>. Since its top-level operator is the AND, we know that we must separately prove <code>q</code> and <code>t ∨ s</code>. Then, we can use AND introduction to put the two pieces together to match our conclusion. We see that we already have <code>q</code> on line 8 and <code>t ∨ s</code> on line 6, so we add our final line to finish the proof:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ q ∧ r, a ∧ (t ∨ s) ⊢ q ∧ (t ∨ s)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ q ∧ r            premise
+</span></span><span style="display:flex;"><span>    2. a ∧ (t ∨ s)          premise
+</span></span><span style="display:flex;"><span>    3. p ∧ q                ∧e1 1 
+</span></span><span style="display:flex;"><span>    4. r                    ∧e2 1                     
+</span></span><span style="display:flex;"><span>    5. a                    ∧e1 2 
+</span></span><span style="display:flex;"><span>    6. t ∨ s                ∧e2 2
+</span></span><span style="display:flex;"><span>    7. p                    ∧e1 3
+</span></span><span style="display:flex;"><span>    8. q                    ∧e2 3
+</span></span><span style="display:flex;"><span>    9. q ∧ (t ∨ s)          ∧i 8 6
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>You might notice that lines 5 and 7 were not needed, as both <code>p</code> and <code>a</code> were not part of the conclusion. That&rsquo;s true &ndash; we could have eliminated those steps. However, it&rsquo;s a good idea to extract as much information as possible while you are getting used to doing these proofs &ndash; it doesn&rsquo;t hurt to have extra claims, and you may find that you end up needing them.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="or-rules">OR Rules</h1>
+
+<p>In this section, we will see the deduction rules for the OR operator.</p>
+<h2 id="or-introduction">OR introduction</h2>
+<p>If we know that a proposition <code>P</code> is true, then it will also be the case that both <code>P ∨ Q</code> and <code>Q ∨ P</code> are also true. It doesn&rsquo;t matter what <code>Q</code> is &ndash; it might even be something that is know to be false. Because <code>P</code> is true, it will make the overall OR statement true as well.</p>
+<p>There are two OR introduction rules &ndash; <code>∨i1</code> and <code>∨i2</code>. <code>∨i1</code> allows us to claim an OR statement with some previous fact on the left (first) side, and <code>∨i2</code> allows us to do the same with the right (second) side. Here is the formalization of each rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>         P                  Q     
+</span></span><span style="display:flex;"><span>∨i1 : --------    ∨i2 :  -------- 
+</span></span><span style="display:flex;"><span>       P ∨ Q              P ∨ Q </span></span></code></pre></div><p>Here is a simple example showing the syntax of the <code>∨i1</code> rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ⊢ p ∨ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p                premise
+</span></span><span style="display:flex;"><span>    2. p ∨ q            ∨i1 1
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We can read the justification <code>∨i1 1</code> as: OR introduction 1 from line 1, or &ldquo;create a OR statement that puts the claim from line 1 on the first (left) side, and puts something new on the second side&rdquo;.</p>
+<p>Here is a simple example showing the syntax of the <code>∨i2</code> rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ⊢ q ∨ p
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p                premise
+</span></span><span style="display:flex;"><span>    2. q ∨ p            ∨i2 1
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We can read the justification <code>∨i2 1</code> as: OR introduction 2 from line 1, or &ldquo;create a OR statement that puts the claim from line 1 on the second (right) side, and puts something new on the first side&rdquo;.</p>
+<h2 id="or-elimination">OR elimination</h2>
+<p>The OR elimination rule is used when we have an OR statement of the form <code>P ∨ Q</code>, and we wish to use it to extract new information. In real life, we call the rule &ldquo;case analysis&rdquo;. For example, say that you have either 12 quarters in your pocket or 30 dimes in your pocket. In either case, you can buy a $3.00 coffee. Why? You do a case analysis:</p>
+<ul>
+<li>In the case you have 12 quarters, that totals $3.00, and you can buy the coffee;</li>
+<li>In the case you have 30 dimes, that totals $3.00, and you can buy the coffee.</li>
+</ul>
+<p>So, in both cases, you can buy the coffee.</p>
+<p>We can formalize the idea behind the OR elimination rule as follows:</p>
+<ul>
+<li>In order for the OR statement <code>P ∨ Q</code> to be true, at least one of <code>P</code> and <code>Q</code> must be individually true</li>
+<li>If we are able to reach some conclusion <code>R</code> if we assume <code>P</code> is true, and we are able to reach the SAME conclusion <code>R</code> if we assume <code>Q</code> is true&hellip;</li>
+<li>&hellip;Then no matter what, <code>R</code> will be true.</li>
+</ul>
+<h3 id="subproofs">Subproofs</h3>
+<p>OR elimination will be our first proof rule that uses subproofs. Subproofs are tools for case analysis or what-if excursions, used to support justification for later claims. In propositional logic, they will always contain one assumption. This assumption is a proposition whose scope is limited to the subproof. The syntax of a subproof in Logika looks like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>premises ⊢ consequent
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. fact_A       justification_1
+</span></span><span style="display:flex;"><span>    ...             ...
+</span></span><span style="display:flex;"><span>    17. {
+</span></span><span style="display:flex;"><span>        18. fact_ D     assume
+</span></span><span style="display:flex;"><span>        ...             ...
+</span></span><span style="display:flex;"><span>        25. fact_G      some_rule  using claim 1 // this is ok
+</span></span><span style="display:flex;"><span>        ...             ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...             ...
+</span></span><span style="display:flex;"><span>    45. fact_R      some_rule using claim 25   // this is NOT ok
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Opening and closing braces, <code>{...}</code>,  define the scope of claims. Other than the first <code>{</code> which goes directly under the sequent, the opening brace is given a claim number, but no justification. Closing braces are not given claim numbers. The use of braces is analogous to their use to define scope in Java, C# and C.</p>
+<p>In the example above, the subproof starting on line 17 creates an environment where fact_D is true. The justification used on claim number 25, which uses claim 1, is valid. The scope of claim 1 includes subproof 17.</p>
+<p>However, the justification for line number 45 is invalid. Fact_G on line number 25 was proven true in an environment where fact_D is true (ie subproof 17).  That environment ends (falls out of scope) when the closing brace for the subproof is reached. This happens before line 45.</p>
+<p>Only specific deduction rules allow you to close a scope and create a new claim based on that subproof in the enclosing (outer) scope. These rules always take a subproof (i.e &ldquo;17&rdquo;) as part of the justification.</p>
+<h3 id="syntax">Syntax</h3>
+<p>Here is the OR elimination rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                 { P assume       { Q assume
+</span></span><span style="display:flex;"><span>      P ∨ Q        ... R    }      ... R     }
+</span></span><span style="display:flex;"><span>∨e : -------------------------------------------
+</span></span><span style="display:flex;"><span>                         R</span></span></code></pre></div><p>In order to use the <code>∨e</code> rule, we must have three things:</p>
+<ul>
+<li>An OR statement of the form <code>P ∨ Q</code></li>
+<li>A subproof that begins by assuming the left side of the OR statement (<code>P</code>) and ends with some claim <code>R</code></li>
+<li>A subproof that begins by assuming the right side of the OR statement (<code>Q</code>) and ends with the same claim <code>R</code></li>
+</ul>
+<p>If we have all three parts, we can use the <code>∨e</code> and cite the OR statement and both subproofs to claim that <code>R</code> is true no matter what.</p>
+<p>Here is a simple example showing the syntax of the <code>∨e</code> rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∨ q ⊢ q ∨ p 
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∨ q            premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. p            assume
+</span></span><span style="display:flex;"><span>        4. q ∨ p        ∨i2 3
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    5. {
+</span></span><span style="display:flex;"><span>        6. q            assume
+</span></span><span style="display:flex;"><span>        7. q ∨ p        ∨i1 6
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    8. q ∨ p            ∨e 1 2 5
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here, we have the OR statement <code>p ∨ q</code>. We then have two subproofs where we separately assume that the two sides or the OR are true. The first subproof on line 2 starts by assuming the left side of the OR, <code>p</code>. It then uses OR introduction to reach the goal conclusion, <code>q ∨ p</code>. After reaching our goal, we end the first subproof and immediately start a second subproof. In the second subproof, we assume that the the right side of our OR statement is true, <code>q</code>. We then use the other form of OR introduction to reach the SAME conclusion as we did in the first subproof &ndash; <code>q ∨ p</code>. We end the second subproof and can now use <code>∨e</code> to state that our conclusion <code>q ∨ p</code> must be true no matter what. After all, we knew that at least one of <code>p</code> or <code>q</code> was true, and we were able to reach the conclusion <code>q ∨ p</code> in both cases.</p>
+<p>When using the justification:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∨e 1 2 5</span></span></code></pre></div><p>The first line number corresponds to our original OR statement (line 1 with <code>p ∨ q</code> for us), the second line number corresponds to the subproof where we assumed the first (left) side of that OR statement (line 2 for us, which starts the subproof where we assumed <code>p</code>), and the third line number corresponds to the subproof where we assumed the second (right) side of that OR statement (line 5 for us, which starts the subproof where we assumed <code>q</code>)</p>
+<p>This proof shows that the OR operator is commutative.</p>
+<h2 id="example-1">Example 1</h2>
+<p>Suppose we want to prove the following sequent:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ (q ∨ r) ⊢ (p ∧ q) ∨ (p ∧ r)</span></span></code></pre></div><p>As we have done before, we start by extracting whatever we can from our premises:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ (q ∨ r) ⊢ (p ∧ q) ∨ (p ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ (q ∨ r)                  premise
+</span></span><span style="display:flex;"><span>    2. p                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. q ∨ r                        ∧e2 1
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Next, we look at what we are trying to prove, and see that its top-level operator is an OR. If we already had either side of our goal OR statement (i.e., either <code>p ∧ q</code> or <code>p ∧ r</code>), then we could use <code>∧i</code> to create the desired proposition. This isn&rsquo;t the case for us, though, so we need to use a different strategy.</p>
+<p>The next consideration when we want to prove an OR statement is whether we have another OR statement, either as a premise or a fact we have already established. If we do, then we can attempt to use OR elimination with that OR statement to build our goal conclusion (<code>(p ∧ q) ∨ (p ∧ r)</code>). We have the OR statement <code>q ∨ r</code> available, so we&rsquo;ll try to use OR elimination &ndash; we&rsquo;ll have a subproof where we assume <code>q</code> and try to reach <code>(p ∧ q) ∨ (p ∧ r)</code>, and then a subproof where we assume <code>r</code> and try to reach <code>(p ∧ q) ∨ (p ∧ r)</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ (q ∨ r) ⊢ (p ∧ q) ∨ (p ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∧ (q ∨ r)                  premise
+</span></span><span style="display:flex;"><span>    2. p                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. q ∨ r                        ∧e2 1
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. q                        assume
+</span></span><span style="display:flex;"><span>        6. p ∧ q                    ∧i2 5
+</span></span><span style="display:flex;"><span>        7. (p ∧ q) ∨ (p ∧ r)        ∨i1 6
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    8. {
+</span></span><span style="display:flex;"><span>        9. r                        assume
+</span></span><span style="display:flex;"><span>        10. p ∧ r                   ∧i2 9
+</span></span><span style="display:flex;"><span>        11. (p ∧ q) ∨ (p ∧ r)       ∨i2 10
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    12. (p ∧ q) ∨ (p ∧ r)           ∨e 3 4 8
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We can make our final claim:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>12. (p ∧ q) ∨ (p ∧ r)           ∨e 3 4 8</span></span></code></pre></div><p>Because we had an OR statement on line 3 (<code>q ∨ r</code>), assumed the left side of that OR (<code>q</code>) in subproof 4 and reached the conclusion of <code>(p ∧ q) ∨ (p ∧ r)</code>, and then assumed the right side of our OR (<code>r</code>) in subproof 8 and reached the SAME conclusion of <code>(p ∧ q) ∨ (p ∧ r)</code>.</p>
+<h2 id="example-2">Example 2</h2>
+<p>Suppose we want to prove the following sequent:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∨ q) ∧ (p ∨ r) ⊢ p ∨ (q ∧ r)</span></span></code></pre></div><p>Note that this is the same as the previous example, but the premises are switched with the conclusion. If we prove this direction too, we will have shown that <code>(p ∨ q) ∧ (p ∨ r)</code> is equivalent to <code>p ∨ (q ∧ r)</code>. We&rsquo;ll learn more about this process in section 4.8.</p>
+<p>We start by pulling in our premises and extracting whatever information we can:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∨ q) ∧ (p ∨ r) ⊢ p ∨ (q ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. (p ∨ q) ∧ (p ∨ r)                premise
+</span></span><span style="display:flex;"><span>    2. p ∨ q                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. p ∨ r                            ∧e2 1
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We see that the top-level operator of our conclusion (<code>p ∨ (q ∧ r)</code>) is an OR, so we apply the same strategy we did in the previous example &ndash; we see if we have an OR statement already available as a claim, and then try to use OR elimination on it to build to our conclusion in both subproofs. In this case, though, we have TWO or statements &ndash; <code>p ∨ q</code> and <code>p ∨ r</code>. We will see that it doesn&rsquo;t matter which of these we choose, so let&rsquo;s pick the first one &ndash; <code>p ∨ q</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∨ q) ∧ (p ∨ r) ⊢ p ∨ (q ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. (p ∨ q) ∧ (p ∨ r)                premise
+</span></span><span style="display:flex;"><span>    2. p ∨ q                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. p ∨ r                            ∧e2 1
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. p                            assume
+</span></span><span style="display:flex;"><span>        6. p ∨ (q ∧ r)                  ∨i1 5
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    7. {
+</span></span><span style="display:flex;"><span>        8. q                            assume
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        //what do we do now?
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We are able to finish the first subproof, but it&rsquo;s not clear what to do in the second subproof. We assume <code>q</code>, and know we have the goal of reaching the same conclusion as we did in the first subproof, <code>p ∨ (q ∧ r)</code>&hellip;but we don&rsquo;t have enough information yet to get there. The only piece of information that we haven&rsquo;t used that might help us is our second OR statement &ndash; <code>p ∨ r</code>. We are already inside a subproof, but we can still nest other subproofs &ndash; just as we can nest conditional statements in computer programs.</p>
+<p>We start on a nested OR elimination approach with <code>p ∨ r</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∨ q) ∧ (p ∨ r) ⊢ p ∨ (q ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. (p ∨ q) ∧ (p ∨ r)                premise
+</span></span><span style="display:flex;"><span>    2. p ∨ q                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. p ∨ r                            ∧e2 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    //OR elimination for p ∨ q
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. p                            assume
+</span></span><span style="display:flex;"><span>        6. p ∨ (q ∧ r)                  ∨i1 5
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    7. {
+</span></span><span style="display:flex;"><span>        8. q                            assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //start on OR elimination with p ∨ r
+</span></span><span style="display:flex;"><span>        9. {
+</span></span><span style="display:flex;"><span>            10. p                       assume
+</span></span><span style="display:flex;"><span>            11. p ∨ (q ∧ r)             ∨i1 10
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        12. {
+</span></span><span style="display:flex;"><span>            13. r                       assume
+</span></span><span style="display:flex;"><span>            14. q ∧ r                   ∧i 8 13
+</span></span><span style="display:flex;"><span>            15. p ∨ (q ∧ r)             ∨i2 14
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        16. p ∨ (q ∧ r)                 ∨e 3 9 12
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    17. p ∨ (q ∧ r)                     ∨e 2 4 7
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Note that we use the ∨e rule twice &ndash; on line 16 to tie together subproofs 9 and 12 (where we processed the OR statement <code>p ∨ r</code>), and on line 17 to tie together subproofs 4 and 7 (where we processed the OR statement <code>p ∨ q</code>).</p>
+<p>When we first started this problem, we mentioned that it didn&rsquo;t matter which OR statement we chose to work with &ndash; <code>p ∨ q</code> or <code>p ∨ r</code>. Indeed, we could have chosen <code>p ∨ r</code> instead &ndash; but we would end up nesting another OR elimination for <code>p ∨ q</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∨ q) ∧ (p ∨ r) ⊢ p ∨ (q ∧ r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. (p ∨ q) ∧ (p ∨ r)                premise
+</span></span><span style="display:flex;"><span>    2. p ∨ q                            ∧e1 1
+</span></span><span style="display:flex;"><span>    3. p ∨ r                            ∧e2 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    //OR elimination for p ∨ r
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. p                            assume
+</span></span><span style="display:flex;"><span>        6. p ∨ (q ∧ r)                  ∨i1 5
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    7. {
+</span></span><span style="display:flex;"><span>        8. r                            assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //start on OR elimination with p ∨ q
+</span></span><span style="display:flex;"><span>        9. {
+</span></span><span style="display:flex;"><span>            10. p                       assume
+</span></span><span style="display:flex;"><span>            11. p ∨ (q ∧ r)             ∨i1 10
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        12. {
+</span></span><span style="display:flex;"><span>            13. q                       assume
+</span></span><span style="display:flex;"><span>            14. q ∧ r                   ∧i 13 8
+</span></span><span style="display:flex;"><span>            15. p ∨ (q ∧ r)             ∨i2 14
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        16. p ∨ (q ∧ r)                 ∨e 2 9 12
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    17. p ∨ (q ∧ r)                     ∨e 3 4 7
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="implies-rules">Implies Rules</h1>
+
+<p>In this section, we will see the deduction rules for the implies operator.</p>
+<h2 id="implies-elimination">Implies elimination</h2>
+<p>Remember that <code>→</code> is a kind of logical &ldquo;if-then&rdquo;. Here, we understand <code>p → q</code> to mean that <code>p</code> holds knowledge sufficient to deduce <code>q</code> – so, whenever <code>p</code> is proved to be a fact, then <code>p → q</code> enables <code>q</code> to be proved a fact, too. This is the implies elimination rule, <code>→e</code>, and we can formalize it like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>       P → Q    P
+</span></span><span style="display:flex;"><span> →e :  ------------
+</span></span><span style="display:flex;"><span>             Q</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>→e</code> rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>a, a → b ⊢ b
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. a                    premise
+</span></span><span style="display:flex;"><span>    2. a → b                premise
+</span></span><span style="display:flex;"><span>    3. b                    →e 2 1
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Note that when we use <code>→e</code>, we first list the line number of the implies statement, and then list the line number that contains the left side of that implies statement. The  <code>→e</code> allows us to claim the right side of that implies statement.</p>
+<h2 id="implies-introduction">Implies introduction</h2>
+<p>The idea behind the next deduction rule, implies introduction, is that we would be introducing a new implies statement of the form <code>P → Q</code>. In order to do this, we must be able to show our logical &ldquo;if-then&rdquo; &ndash; that IF <code>P</code> exists, THEN we promise that <code>Q</code> will also exist. We do this by way of a subproof where we assume <code>P</code>. If we can reach <code>Q</code> by the end of that subproof, we will have shown that anytime <code>P</code> is true, then <code>Q</code> is also true. We will be able to close the subproof by introducing <code>P → Q</code> with the <code>→i</code> rule. We can formalize the rule like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>       { P assume   
+</span></span><span style="display:flex;"><span>         ... Q    } 
+</span></span><span style="display:flex;"><span>→i : -------------- 
+</span></span><span style="display:flex;"><span>          P → Q </span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>→i</code> rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>a → b, b → c ⊢ a → c
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. a → b               premise
+</span></span><span style="display:flex;"><span>    2. b → c               premise
+</span></span><span style="display:flex;"><span>    3. {
+</span></span><span style="display:flex;"><span>        //we want to prove a → c, so we start by assuming a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        4. a                assume
+</span></span><span style="display:flex;"><span>        5. b                →e 1 4
+</span></span><span style="display:flex;"><span>        6. c                →e 2 5
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //...and try to end with c
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //then we can conclude that anytime a is true, then c is also true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    7. a → c                →i 3
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Note that when we use <code>→i</code>, we list the line number of the subproof we just finished. We must have started that subproof by assuming the left side of the implies statement we are introducing, and ended that subproof with the right side of the implies statement we are introducing.</p>
+<h2 id="example-1">Example 1</h2>
+<p>Suppose we want to prove the following sequent:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → (q → r) ⊢ (q ∧ p) → r</span></span></code></pre></div><p>We start by listing our premise:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → (q → r) ⊢ (q ∧ p) → r
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p → (q → r)          premise
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We can&rsquo;t extract any information from the premise, so we shift to examining our conclusion. The top-level operator of our conclusion is an implies statement, so this tells us that we will need to use the <code>→i</code> rule. We want to prove <code>(q ∧ p) → r</code>, so we need to show that whenever <code>q ∧ p</code> is true, then <code>r</code> is also true. We open a subproof and assume the left side of our goal implies statement (<code>q ∧ p</code>). If we can reach <code>r</code> by the end of the subproof, then we can use <code>→i</code> to conclude <code>(q ∧ p) → r</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → (q → r) ⊢ (q ∧ p) → r
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p → (q → r)          premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. q ∧ p            assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: get to r
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude (q ∧ p) → r
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now we can complete the proof:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → (q → r) ⊢ (q ∧ p) → r
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p → (q → r)          premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. q ∧ p            assume
+</span></span><span style="display:flex;"><span>        4. q                ∧e1 3
+</span></span><span style="display:flex;"><span>        5. p                ∧e2 3
+</span></span><span style="display:flex;"><span>        6. q → r            →e 1 5
+</span></span><span style="display:flex;"><span>        7. r                →e 6 4 
+</span></span><span style="display:flex;"><span>        //goal: get to r
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude (q ∧ p) → r
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    8. r                    →i 2
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="example-2">Example 2</h2>
+<p>Suppose we want to prove the following sequent:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → (q → r) ⊢ (p → q) → (p → r)</span></span></code></pre></div><p>We see that we will have no information to extract from the premises. The top-level operator is an implies statement, so we start a subproof to introduce that implies statement. In our subproof, we will assume the left side of our goal implies statement (<code>p → q</code>) and will try to reach the right side of our goal (<code>p → r</code>):</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → (q → r) ⊢ (p → q) → (p → r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p → (q → r)          premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. p → q            assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: get to p → r
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude (p → q) → (p → r)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We can see that our goal is to reach <code>p → r</code> in our subproof &ndash; so we see that we need to introduce another implies statement. This tells us that we need to nest another subproof &ndash; in this one, we&rsquo;ll assume the left side of our <em>current</em> goal implies statement (<code>p</code>), and then try to reach the right side of that current goal (<code>r</code>). Then, we&rsquo;d be able to finish that inner subproof by using <code>→i</code> to conclude <code>p → r</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → (q → r) ⊢ (p → q) → (p → r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p → (q → r)          premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. p → q            assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. p            assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //goal: get to r
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        //use →i to conclude p → r
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: get to p → r
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude (p → q) → (p → r)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now we can complete the proof:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → (q → r) ⊢ (p → q) → (p → r)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p → (q → r)          premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. p → q            assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. p            assume
+</span></span><span style="display:flex;"><span>            6. q            →e 3 5
+</span></span><span style="display:flex;"><span>            7. q → r        →e 1 5 
+</span></span><span style="display:flex;"><span>            8. r            →e 7 6  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //goal: get to r
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        //use →i to conclude p → r
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        9. p → r             →i 4   
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: get to p → r
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude (p → q) → (p → r)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    10. (p → q) → (p → r)   →i 2 
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="example-3">Example 3</h2>
+<p>Here is one more example, where we see we can nest a <code>→i</code> subproof and a <code>∨e</code> subproof:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → r, q → r ⊢ (p ∨ q) → r
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p → r                premise
+</span></span><span style="display:flex;"><span>    2. q → r                premise
+</span></span><span style="display:flex;"><span>    3. {
+</span></span><span style="display:flex;"><span>        //assume p ∨ q, try to get to r 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        4. p ∨ q             assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //nested subproof for OR elimination on p ∨ q
+</span></span><span style="display:flex;"><span>        //try to get to r in both cases
+</span></span><span style="display:flex;"><span>        5. {
+</span></span><span style="display:flex;"><span>            6. p            assume
+</span></span><span style="display:flex;"><span>            7. r            →e 1 6
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        8. {
+</span></span><span style="display:flex;"><span>            9.  q           assume
+</span></span><span style="display:flex;"><span>            10. r           →e 2 9
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        11. r                ∨e 4 5 8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: get to r
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude (p ∨ q) → r
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    12. (p ∨ q) → r         →i 3
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="negation-rules">Negation Rules</h1>
+
+<p>In this section, we will see the deduction rules for the NOT operator. In this section, we will introduce the contradiction symbol (<code>⊥</code>, or <code>_|_</code> in ASCII). This symbol is also referred to as the <em>bottom operator</em>. We will be able to claim that a <em>contradiction</em> occurs when, for some proposition <code>P</code>, we have proved both the facts <code>P</code> and <code>¬ P</code>. This indicates that we are in an impossible situation, and often means that we have made a bad previous assumption.</p>
+<h2 id="not-elimination">Not elimination</h2>
+<p>The not elimination rule allows you to claim that you have reached a contradiction. We can formalize the rule like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        P   ¬ P
+</span></span><span style="display:flex;"><span>¬ e : -----------
+</span></span><span style="display:flex;"><span>          ⊥</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>¬ e</code> rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>q, ¬ q ⊢ ⊥
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. q                premise
+</span></span><span style="display:flex;"><span>    2. ¬ q              premise
+</span></span><span style="display:flex;"><span>    3. ⊥                ¬ e 1 2
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We use the <code>¬ e</code> rule when we have facts for both <code>P</code> and <code>¬ P</code> for some proposition <code>P</code>. When we use the justification, we first list the line number of the claim for <code>P</code> (line 1, in our case) and then the line number of the claim for <code>¬ P</code> (line 2, in our case).</p>
+<p>Sometimes, the proposition <code>P</code> itself has a NOT operator. Consider this example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬ q, ¬ ¬ q ⊢ ⊥
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ¬ q              premise
+</span></span><span style="display:flex;"><span>    2. ¬ ¬ q            premise
+</span></span><span style="display:flex;"><span>    3. ⊥                ¬ e 1 2
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here, our proposition <code>P</code> is the claim <code>¬ q</code>, and our proposition that is of the form <code>¬ P</code> is the claim <code>¬ ¬ q</code>.</p>
+<h2 id="not-introduction">Not introduction</h2>
+<p>The not introduction rule allows us to introduce a NOT operation. If assuming some proposition <code>P</code> leads to a contradiction, then we must have made a bad assumption &ndash; <code>P</code> must NOT be true after all. We can then introduce the fact <code>¬ P</code>. We can formalize the not introduction rule like this:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>       { P assume
+</span></span><span style="display:flex;"><span>         ... ⊥  }
+</span></span><span style="display:flex;"><span>¬ i:   --------------
+</span></span><span style="display:flex;"><span>           ¬ P</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>¬ i</code> rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p,  q → ¬ p  ⊢  ¬ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p            premise
+</span></span><span style="display:flex;"><span>    2. q → ¬ p      premise
+</span></span><span style="display:flex;"><span>    3. {
+</span></span><span style="display:flex;"><span>        4. q        assume
+</span></span><span style="display:flex;"><span>        5. ¬ p      →e 2 4
+</span></span><span style="display:flex;"><span>        6. ⊥        ¬e 1 5
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    7. ¬ q          ¬i 3
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Note that the not introduction rule involves a subproof &ndash; if we wish to prove <code>¬ P</code> for some proposition <code>P</code>, then we start a subproof where we assume <code>P</code>. If we are able to reach a contradiciton on the last line of that subproof, then we can use the <code>¬ i</code> rule after the subproof ends to claim that our assumption was bad and that it is actually <code>¬ P</code> that is true. When we use <code>¬i</code> as a justification, we list the line number corresponding to this subproof.</p>
+<h2 id="bottom-elimination">Bottom elimination</h2>
+<p>There is a special law for reasoning forwards from an impossible situation — the ⊥e law — which says, in the case of a contradiction, everything becomes a fact. (That is, &ldquo;if False is a fact, so is everything else ¬&rdquo;.) This rule is called &ldquo;bottom elimination&rdquo;, and is written as <code>⊥e</code>. Here is a formalization of the rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>         ⊥
+</span></span><span style="display:flex;"><span>⊥e :  ------  for any proposition, Q, at all
+</span></span><span style="display:flex;"><span>         Q</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>⊥e</code> rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p, ¬ p  ⊢ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p            premise
+</span></span><span style="display:flex;"><span>    2. ¬ p          premise
+</span></span><span style="display:flex;"><span>    3. ⊥            ¬ e 1 2
+</span></span><span style="display:flex;"><span>    4. q            ⊥e 3
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Note that when we use <code>⊥e</code> as the justification, we list the line number of where we reached a contradiction (<code>⊥</code>).</p>
+<p>The bottom elimination rule works well with case analysis, where we discover that one case is impossible. Here is a classic example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∨ q, ¬ p ⊢ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p ∨ q        premise
+</span></span><span style="display:flex;"><span>    2. ¬ p          premise
+</span></span><span style="display:flex;"><span>    3. {
+</span></span><span style="display:flex;"><span>        4. p        assume
+</span></span><span style="display:flex;"><span>        5. ⊥        ¬e 4 2
+</span></span><span style="display:flex;"><span>        6. q        ⊥e 5
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    7. {
+</span></span><span style="display:flex;"><span>        8. q        assume
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    9. q            ∨e 1 3 7
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Considering the premise, <code>p ∨ q</code>, we analyze our two cases by starting OR elimination. The first case, where <code>p</code> holds true, is impossible, because it causes a contradiction. The <code>⊥e</code>-rule lets us gracefully prove <code>q</code> in this &ldquo;impossible case&rdquo;. (You can read lines 4-6 as saying, &ldquo;in the case when <code>p</code> might hold true, there is a contradiction, and in such an impossible situation, we can deduce whatever we like, so we deduce <code>q</code> to finish this impossible case&rdquo;.)</p>
+<p>The second case, that <code>q</code> holds true, is the only realistic case, and it immediately yields the conclusion. The proof finishes the two-case analysis with the <code>∨e</code> rule.</p>
+<h2 id="proof-by-contradiction">Proof by contradiction</h2>
+<p>The proof by contraction rule, <code>pbc</code>, says that when assuming <code>¬ P</code> leads to a contradiction for some proposition <code>P</code>, then we made a bad assumption and thus <code>P</code> must be true. It is very similar to the <code>¬ i</code> rule, except <code>pbc</code> has us assuming <code>¬ P</code> and eventually concluding <code>P</code>, while the <code>¬ i</code> rule has us assuming <code>P</code> and evntually concluding <code>¬ P</code>.</p>
+<p>Here is a formalization of <code>pbc</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        { ¬ P assume
+</span></span><span style="display:flex;"><span>          ... ⊥   }
+</span></span><span style="display:flex;"><span>pbc:   ---------------
+</span></span><span style="display:flex;"><span>             P</span></span></code></pre></div><p>And here is an example that demonstrates the syntax of the rule:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬ ¬ p ⊢ p
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ¬ ¬ p        premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. ¬ p      assume
+</span></span><span style="display:flex;"><span>        4. ⊥        ¬e 3 1
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    5. p            pbc 2
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>When we use the <code>pbc</code> rule as a justification for a claim <code>P</code>, we cite the line number of the subproof where we assumed <code>¬ P</code> and ended in a contradiction.</p>
+<h2 id="example-1">Example 1</h2>
+<p>Suppose we want to prove the following sequent:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬p ∧ ¬q |- ¬(p ∨ q)</span></span></code></pre></div><p>We start by listing our premise, and extracting the two sides of the AND statement:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬p ∧ ¬q ⊢ ¬(p ∨ q)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ¬p ∧ ¬q          premise
+</span></span><span style="display:flex;"><span>    2. ¬p               ∧e1 1
+</span></span><span style="display:flex;"><span>    3. ¬q               ∧e2 1
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Next, we see that our conclusion has the form NOT (something), so this tells us that we will need to introduce a NOT (using the <code>¬ i</code> rule). In fact, ANY time we wish to prove a proposition of the form NOT (something), we will always use the <code>¬ i</code> rule. (We will discuss proof strategies in detail in the next section.) Since we want to prove <code>¬ (p ∨ q)</code>, then we open a subproof where we assume <code>p ∨ q</code>. If we can end that subproof with a contradiction, then we can use <code>¬ i</code> afterwards to conclude <code>¬(p ∨ q)</code>.</p>
+<p>We know that we want this proof structure:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬p ∧ ¬q ⊢ ¬(p ∨ q)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ¬p ∧ ¬q          premise
+</span></span><span style="display:flex;"><span>    2. ¬p               ∧e1 1
+</span></span><span style="display:flex;"><span>    3. ¬q               ∧e2 1
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. p ∨ q        assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //want to reach a contradiction
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //will use ¬ i to conclude ¬(p ∨ q)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We know we must reach a contradiction in our subproof. We see that we have claims <code>¬p</code>, <code>¬q</code>, and <code>p ∨ q </code>. Since at least one of <code>p ∨ q </code> is true, and since either one would yield a contradiction with one of <code>¬p</code> or <code>¬q</code>, then we start on OR elimination:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬p ∧ ¬q ⊢ ¬(p ∨ q)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ¬p ∧ ¬q          premise
+</span></span><span style="display:flex;"><span>    2. ¬p               ∧e1 1
+</span></span><span style="display:flex;"><span>    3. ¬q               ∧e2 1
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. p ∨ q        assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //OR elimination subproofs on p ∨ q
+</span></span><span style="display:flex;"><span>        6. {
+</span></span><span style="display:flex;"><span>            7. p        assume
+</span></span><span style="display:flex;"><span>            8. ⊥        ¬e 7 2
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        9. {
+</span></span><span style="display:flex;"><span>            10. q       assume
+</span></span><span style="display:flex;"><span>            11. ⊥       ¬e 10 3
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //use ∨e rule to tie together subproofs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //want to reach a contradiction
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //will use ¬ i to conclude ¬(p ∨ q)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We see that both OR elimination subproofs ended with a contradiction (<code>⊥</code>). Just like any other use of <code>∨e</code>, we restate that common conclusion after the two subproofs. We knew at least one of <code>p</code> or <code>q</code> were true, and both ended in a contradiction &ndash; so the contradiction holds no matter what:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬p ∧ ¬q ⊢ ¬(p ∨ q)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ¬p ∧ ¬q          premise
+</span></span><span style="display:flex;"><span>    2. ¬p               ∧e1 1
+</span></span><span style="display:flex;"><span>    3. ¬q               ∧e2 1
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. p ∨ q        assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //OR elimination subproofs on p ∨ q
+</span></span><span style="display:flex;"><span>        6. {
+</span></span><span style="display:flex;"><span>            7. p        assume
+</span></span><span style="display:flex;"><span>            8. ⊥        ¬e 7 2
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        9. {
+</span></span><span style="display:flex;"><span>            10. q       assume
+</span></span><span style="display:flex;"><span>            11. ⊥       ¬e 10 3
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //use ∨e rule to tie together subproofs
+</span></span><span style="display:flex;"><span>        12. ⊥           ∨e 5 6 9
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //want to reach a contradiction
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //will use ¬ i to conclude ¬(p ∨ q)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>All that remains is the use the <code>¬ i</code> rule to finish subproof 4, as that subproof ended with a contradiction:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬p ∧ ¬q ⊢ ¬(p ∨ q)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ¬p ∧ ¬q          premise
+</span></span><span style="display:flex;"><span>    2. ¬p               ∧e1 1
+</span></span><span style="display:flex;"><span>    3. ¬q               ∧e2 1
+</span></span><span style="display:flex;"><span>    4. {
+</span></span><span style="display:flex;"><span>        5. p ∨ q        assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //OR elimination subproofs on p ∨ q
+</span></span><span style="display:flex;"><span>        6. {
+</span></span><span style="display:flex;"><span>            7. p        assume
+</span></span><span style="display:flex;"><span>            8. ⊥        ¬e 7 2
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        9. {
+</span></span><span style="display:flex;"><span>            10. q       assume
+</span></span><span style="display:flex;"><span>            11. ⊥       ¬e 10 3
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //use ∨e rule to tie together subproofs
+</span></span><span style="display:flex;"><span>        12. ⊥           ∨e 5 6 9
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //want to reach a contradiction
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //will use ¬ i to conclude ¬(p ∨ q)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    13. ¬(p ∨ q)        ¬ i 4
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="example-2">Example 2</h2>
+<p>When doing propositional logic translations, we learned that <code>p → q</code> is equivalent to its <em>contrapositive</em>, <code>¬q → ¬p</code>. We will prove one direction of this equivalence (to show two statements are <em>provably equivalent,</em> which we will see in section 4.8, we would need to prove both directions):</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → q ⊢ ¬q → ¬p</span></span></code></pre></div><p>We notice that the top-level operator of our conclusion is an IMPLIES operator, so we know that we need to introduce an implies operator. We saw in the previous section that the blueprint for introducing an implies operator is with a subproof: assume the left side of the goal implies statement, and try to reach the right side of the goal implies statement by the end of the subproof.</p>
+<p>We have this proof structure:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → q ⊢ ¬q → ¬p
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p → q                premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. ¬q               assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: reach ¬p
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude ¬q → ¬p
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We see that our goal in the subproof is the show ¬p &ndash; if we could do that, then we could tie together that subproof with the →i rule. Since our intermediate goal is to prove NOT (something), then we use our strategy for not introduction as an inner subproof. We finish the proof as shown:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → q ⊢ ¬q → ¬p
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p → q                premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. ¬q               assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //use ¬i strategy to prove ¬p
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. p            assume
+</span></span><span style="display:flex;"><span>            6. q            →e 1 5
+</span></span><span style="display:flex;"><span>            7. ⊥            ¬e 6 3
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        8. ¬p               ¬i 4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: reach ¬p
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude ¬q → ¬p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    9. ¬q → ¬p              →i 2
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="example-3">Example 3</h2>
+<p>Suppose we want to prove the sequent:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬(¬p ∨ ¬q) ⊢ p ∧ q</span></span></code></pre></div><p>We see that there is nothing to extract from our premise, and that the top-level operator of the conclusion (<code>p ∧ q</code>) is an AND. We see that we will need to introduce an AND statement &ndash; but the only way we can create <code>p ∧ q</code> is to separately prove both <code>p</code> and <code>q</code>.</p>
+<p>It is not immediately clear how to prove either <code>p</code> or <code>q</code>. We will discuss proof strategies in more detail in the next section, but <code>pbc</code> is a good fallback option if you don&rsquo;t have a clear path for how to prove something and some of the claims in the proof involve negation. Since we wish to prove <code>p</code>, then will will assume <code>¬p</code> in a subproof. If we can reach a contradiction, then we can use <code>pbc</code> to conclude <code>p</code>:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬(¬p ∨ ¬q) ⊢ p ∧ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ¬(¬p ∨ ¬q)           premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. ¬p               assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: contradiction
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use pbc to conclude p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    //similarly prove q
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    //use ∧i to conclude p ∧ q
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In subproof 2, we know we need to end with a contradiction. The only propositions we have to work with are <code>¬(¬p ∨ ¬q)</code> and <code>¬p</code>. But if we use <code>∨i1</code> with <code>¬p</code>, then we could have <code>¬p ∨ ¬q</code> &ndash; and then we could claim a contradiction ¬ We complete the proof as shown (using the same strategy to prove <code>q</code>):</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬(¬p ∨ ¬q) ⊢ p ∧ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ¬(¬p ∨ ¬q)           premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. ¬p               assume
+</span></span><span style="display:flex;"><span>        4. ¬p ∨ ¬q          ∨i1 3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: contradiction
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use pbc to conclude p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    5. p                    pbc 2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    //similarly prove q
+</span></span><span style="display:flex;"><span>    6. {
+</span></span><span style="display:flex;"><span>        7. ¬q               assume
+</span></span><span style="display:flex;"><span>        8. ¬p ∨ ¬q          ∨i2 7
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    9. q                    pbc 6
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    //use ∧i to conclude p ∧ q
+</span></span><span style="display:flex;"><span>    10. p ∧ q               ∧i 5 9
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="law-of-the-excluded-middle">Law of the excluded middle</h2>
+<p>The <em>law of the excluded middle (LEM)</em> is famous consequence of <code>pbc</code>: from no starting premises at all, we can prove <code>p ∨ ¬ p</code> for any proposition we can imagine:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>⊢ p ∨ ¬ p
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. {
+</span></span><span style="display:flex;"><span>        2. ¬ (p ∨ ¬ p)      assume
+</span></span><span style="display:flex;"><span>        3. {
+</span></span><span style="display:flex;"><span>            4. p            assume
+</span></span><span style="display:flex;"><span>            5. p ∨ ¬ p      ∨i1 4
+</span></span><span style="display:flex;"><span>            6. ⊥            ¬e 5 2
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        7.  ¬ p             ¬i 3
+</span></span><span style="display:flex;"><span>        8.  p ∨ ¬ p         ∨i2 7
+</span></span><span style="display:flex;"><span>        9.  ⊥               ¬e 8 2
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    10. p ∨ ¬ p             pbc 1
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In other proofs involving negation and no clear path forward, it is sometimes useful to first derive LEM (this is possible since no premises are needed). If we have the claim <code>p ∨ ¬ p</code> in a proof, then we can use OR elimination where we separately assume <code>p</code> and then <code>¬ p</code> to try to reach the same conclusion. Here is one such example:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → q ⊢ ¬ p ∨ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p → q                premise
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    2. {                             // start of previous p ∨ ¬ p proof
+</span></span><span style="display:flex;"><span>        3. ¬ (p ∨ ¬ p)      assume
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. p            assume
+</span></span><span style="display:flex;"><span>            6. p ∨ ¬ p      ∨i1 5
+</span></span><span style="display:flex;"><span>            7. ⊥            ¬e 6 3
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        8.  ¬ p             ¬i 4
+</span></span><span style="display:flex;"><span>        9.  p ∨ ¬ p         ∨i2 8
+</span></span><span style="display:flex;"><span>        10. ⊥               ¬e 9 3
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    11. p ∨ ¬ p             pbc 2    // conclusion of p ∨ ¬ p proof
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    12. {
+</span></span><span style="display:flex;"><span>        13. p               assume
+</span></span><span style="display:flex;"><span>        14. q               →e 1 13
+</span></span><span style="display:flex;"><span>        15. ¬ p ∨ q         ∨i2 14
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    16. {
+</span></span><span style="display:flex;"><span>        17. ¬ p             assume
+</span></span><span style="display:flex;"><span>        18. ¬ p ∨ q         ∨i1 17
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    19. ¬ p ∨ q             ∨e 11 12 16
+</span></span><span style="display:flex;"><span> }</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="summary-and-strategies">Summary and Strategies</h1>
+
+<p>When examining more complex propositional logic sequents, it can be challenging to know where to start. In this section, we summarize all available rules in propositional logic, and discuss stratgies for approaching proofs.</p>
+<h2 id="and-rules">AND rules</h2>
+<p>Rule summaries:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        P   Q               P ∧ Q                  P ∧ Q  
+</span></span><span style="display:flex;"><span>∧i :  ---------     ∧e1 : ----------      ∧e2 : ---------- 
+</span></span><span style="display:flex;"><span>        P ∧ Q                 P                      Q</span></span></code></pre></div><p>Rule syntax summaries:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{ 
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    x. p		    (...)
+</span></span><span style="display:flex;"><span>    y. q			(...)
+</span></span><span style="display:flex;"><span>    z. p ∧ q        ∧i x y
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{ 
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    x. p ∧ q	    (...)
+</span></span><span style="display:flex;"><span>    y. p            ∧e1 x
+</span></span><span style="display:flex;"><span>    z. q            ∧e2 x
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="or-rules">OR rules</h2>
+<p>Rule summaries:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                                                           { P assume     { Q assume
+</span></span><span style="display:flex;"><span>          P                   Q                  P ∨ Q       ... R   }      ... R   }
+</span></span><span style="display:flex;"><span>∨i1 : ---------     ∨i2 : ----------      ∨e : --------------------------------------- 
+</span></span><span style="display:flex;"><span>        P ∨ Q               P ∨ Q                                R</span></span></code></pre></div><p>Rule syntax summaries:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{ 
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    x. p		    (...)
+</span></span><span style="display:flex;"><span>    y. p ∨ q        ∨i1 x
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{ 
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    x. q		    (...)
+</span></span><span style="display:flex;"><span>    y. p ∨ q        ∨i2 x
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    a. p ∨ q        (...)
+</span></span><span style="display:flex;"><span>    b. {
+</span></span><span style="display:flex;"><span>        c. p        assume
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        d. r        (...)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    f. {
+</span></span><span style="display:flex;"><span>        g. q        assume
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        h. r        (...)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    i. r            ∨e a b f
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="implies-rules">Implies rules</h2>
+<p>Rule summaries:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                           { P assume 
+</span></span><span style="display:flex;"><span>      P → Q    P             ... Q   }
+</span></span><span style="display:flex;"><span> →e : -----------     →i : ------------    
+</span></span><span style="display:flex;"><span>           Q                  P → Q   </span></span></code></pre></div><p>Rule syntax summaries:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{ 
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    x. p → q	        (...)
+</span></span><span style="display:flex;"><span>    y. p                (...)
+</span></span><span style="display:flex;"><span>    z. q                →e x y
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{ 
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    a. {
+</span></span><span style="display:flex;"><span>        b. p            assume
+</span></span><span style="display:flex;"><span>        ///
+</span></span><span style="display:flex;"><span>        c. q            (...)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    d. p → q            →i a
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="negation-rules">Negation rules</h2>
+<p>Rule summaries:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                           { P assume                             { ¬ P assume
+</span></span><span style="display:flex;"><span>        P   ¬ P             ... ⊥   }             ⊥e                ... ⊥     }
+</span></span><span style="display:flex;"><span> ¬ e : ----------    ¬ i : -----------    ⊥e : --------     pbc:  --------------
+</span></span><span style="display:flex;"><span>           ⊥                   ¬ P                 Q                    P</span></span></code></pre></div><p>Rule syntax summaries:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    x. p            (...)
+</span></span><span style="display:flex;"><span>    y. ¬ p          (...)
+</span></span><span style="display:flex;"><span>    z. ⊥            ¬ e x y 
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    a. {
+</span></span><span style="display:flex;"><span>        b. p        assume
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        c. ⊥        (...)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    d. ¬ p          ¬ i a
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    x. ⊥            (...)
+</span></span><span style="display:flex;"><span>    z. q            ⊥e x
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    a. {
+</span></span><span style="display:flex;"><span>        b. ¬ p      assume
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>        c. ⊥        (...)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    d. p            pbc a
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="strategies">Strategies</h2>
+<ol>
+<li>Write down all premises first. Can you extract anything from the premises?
+<ul>
+<li>If you have <code>p∧q</code>, use <code>∧e1</code> to extract <code>p</code> by itself and then <code>∧e2</code> to extract <code>q</code> by itself.</li>
+<li>If you have <code>p→q</code> and <code>p</code>, use <code>→e</code> to get <code>q</code>.</li>
+<li>If you have <code>p</code> and <code>¬p</code>, use <code>¬e</code> to claim a contradiction, <code>⊥</code>.</li>
+</ul>
+</li>
+<li>Look at the top-level operator of what you are trying to prove.
+<ul>
+<li>
+<p>Are you trying to prove something of the form <code>p→q</code>?</p>
+<ul>
+<li>Use <code>→i</code>. Open a subproof, assume <code>p</code>, and get to <code>q</code> by the end of the subproof. After the subproof, use <code>→i</code> to conclude <code>p→q</code>.</li>
+</ul>
+</li>
+<li>
+<p>Are you trying to prove something of the form <code>¬p</code>?</p>
+<ul>
+<li>Use <code>¬i</code>. Open a subproof, assume <code>p</code>, and get a contradiction, <code>⊥</code>, by the end of the subproof. After the subproof, use <code>¬i</code> to conclude <code>¬p</code>.</li>
+</ul>
+</li>
+<li>
+<p>Are you trying to prove something of the form <code>p ∧ q</code>?</p>
+<ul>
+<li>Try to prove <code>p</code> by itself and then <code>q</code> by itself. Afterward, use <code>∧i</code> to conclude <code>p ∧ q</code>.</li>
+</ul>
+</li>
+<li>
+<p>Are you trying to prove something of the form <code>p ∨ q</code>?</p>
+<ul>
+<li>See if you have either <code>p</code> or <code>q</code> by itself &ndash; if you do, use either <code>∨i1</code> or <code>∨i2</code> to conclude <code>p ∨ q</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>You&rsquo;ll need to nest the approaches from step 2. Once you are in a subproof, think about what you are <em>trying to prove by the end of that subproof</em>. Follow the strategy in step 2 to prove your current goal, nesting subproofs as needed. As you work, stop and scan the propositions that you have available. See if you can extract anything from them as you did for the premises in step 1.</li>
+<li>No match, or still stuck?
+<ul>
+<li>Do you have an OR statement available? Try using OR elimination to prove your goal conclusion.</li>
+<li>Do your propositions have NOT operators, but don&rsquo;t fit the form for using <code>¬i</code>? Try using <code>pbc</code>. If you are trying to prove something of the form <code>p</code>, open a subproof, assume <code>¬p</code>, and try to reach a contradiction by the end of the subproof. Afterward, use <code>pbc</code> to conclude <code>p</code>.</li>
+<li>As a last resort, try pasting in the proof for the law of the excluded middle (see section 4.5). Then use OR elimination on <code>p ∨ ¬p</code>.</li>
+</ul>
+</li>
+</ol>
+<p>Proofs can be quite challenging. You might follow one approach, get stuck, and not be able to make progress. If this happens, backtrack and follow a different approach. If you are using Logika to verify your work, make sure it does not mark any lines in the proof in red – this means that you&rsquo;ve made an invalid conclusion along the way, or that your justification for a particular line doesn&rsquo;t follow the expected format. Try to fix these errors before continuing on with the proof.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="theorems">Theorems</h1>
+
+<h2 id="definition">Definition</h2>
+<p>A <em>theorem</em> in propositional logic is something that is always true with no need for premises. The truth table for a theorem is always a <em>tautology</em> &ndash; it is true for any truth assignment.</p>
+<p>To express a theorem as a sequent, we write:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>⊢ (theorem)</span></span></code></pre></div><p>This shows that we are trying to prove our theorem with NO premises. Such a proof will always immediately begin with a subproof, as there are no premises to process.</p>
+<h2 id="law-of-the-excluded-middle-revisited">Law of the excluded middle, revisited</h2>
+<p>For example, the law of the excluded middle (LEM), <code>p ∨ ¬p</code>, is a theorem. We proved in section 4.5 that <code>p ∨ ¬p</code> is always true with no premises:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>⊢ p ∨ ¬ p
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. {
+</span></span><span style="display:flex;"><span>        2. ¬ (p ∨ ¬ p)      assume
+</span></span><span style="display:flex;"><span>        3. {
+</span></span><span style="display:flex;"><span>            4. p            assume
+</span></span><span style="display:flex;"><span>            5. p ∨ ¬ p      ∨i1 4
+</span></span><span style="display:flex;"><span>            6. ⊥            ¬e 5 2
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        7.  ¬ p             ¬i 3
+</span></span><span style="display:flex;"><span>        8.  p ∨ ¬ p         ∨i2 7
+</span></span><span style="display:flex;"><span>        9.  ⊥               ¬e 8 2
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    10. p ∨ ¬ p             pbc 1
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We also see that the truth table for LEM is a tautology:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>      *
+</span></span><span style="display:flex;"><span>-------------
+</span></span><span style="display:flex;"><span>p | p ∨ ¬ p
+</span></span><span style="display:flex;"><span>-------------
+</span></span><span style="display:flex;"><span>T |   T F
+</span></span><span style="display:flex;"><span>F |   T T
+</span></span><span style="display:flex;"><span>-------------
+</span></span><span style="display:flex;"><span>Tautology</span></span></code></pre></div><h2 id="another-example">Another example</h2>
+<p>Suppose we wish to prove the following theorem of propositional logic:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → q) → ((¬p → q) → q)</span></span></code></pre></div><p>We would need to prove the sequent:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>⊢ (p → q) → ((¬p → q) → q)</span></span></code></pre></div><p>We see that the top-level operator of what we are trying to prove is an implies operator. So, we begin our proof using the strategy for implies introduction:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>⊢ (p → q) → ((¬p → q) → q)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. {
+</span></span><span style="display:flex;"><span>        2. p → q                assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: reach (¬p → q) → q
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude (p → q) → ((¬p → q) → q)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Inside subproof 1, we are trying to prove <code>(¬p → q) → q</code>. The top-level operator of that statement is an implies, so we nest another subproof with the goal of using implies introduction:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>⊢ (p → q) → ((¬p → q) → q)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. {
+</span></span><span style="display:flex;"><span>        2. p → q                assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        3. {
+</span></span><span style="display:flex;"><span>            4. ¬p → q           assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //goal: reach q
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //use →i to conclude (¬p → q) → q
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: reach (¬p → q) → q
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude (p → q) → ((¬p → q) → q)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Now we must prove <code>q</code> in subproof 3. We have available propositions <code>p → q</code> and <code>¬p → q</code> &ndash; we can see that if we had LEM (<code>p ∨ ¬p</code>) available, then we could use OR elimination to get our <code>q</code> in both cases. We insert the LEM proof into subproof 3:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>⊢ (p → q) → ((¬p → q) → q)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. {
+</span></span><span style="display:flex;"><span>        2. p → q                        assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        3. {
+</span></span><span style="display:flex;"><span>            4. ¬p → q                   assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //Begin LEM proof, p ∨ ¬p
+</span></span><span style="display:flex;"><span>            5. {
+</span></span><span style="display:flex;"><span>                6. ¬ (p ∨ ¬ p)          assume
+</span></span><span style="display:flex;"><span>                7. {
+</span></span><span style="display:flex;"><span>                    8. p                assume
+</span></span><span style="display:flex;"><span>                    9. p ∨ ¬ p          ∨i1 8
+</span></span><span style="display:flex;"><span>                    10. ⊥               ¬e 9 6
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                11.  ¬ p                ¬i 7
+</span></span><span style="display:flex;"><span>                12.  p ∨ ¬ p            ∨i2 11
+</span></span><span style="display:flex;"><span>                13.  ⊥                  ¬e 12 6
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            14. p ∨ ¬ p                 pbc 5
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //End LEM proof for p ∨ ¬p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //use OR elimination on p ∨ ¬p 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //goal: reach q
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //use →i to conclude (¬p → q) → q
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: reach (¬p → q) → q
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude (p → q) → ((¬p → q) → q)
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Finally, we do OR elimination with <code>p ∨ ¬p</code> and tie together the rest of the proof:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>⊢ (p → q) → ((¬p → q) → q)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. {
+</span></span><span style="display:flex;"><span>        2. p → q                        assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        3. {
+</span></span><span style="display:flex;"><span>            4. ¬p → q                   assume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //Begin LEM proof, p ∨ ¬p
+</span></span><span style="display:flex;"><span>            5. {
+</span></span><span style="display:flex;"><span>                6. ¬ (p ∨ ¬ p)          assume
+</span></span><span style="display:flex;"><span>                7. {
+</span></span><span style="display:flex;"><span>                    8. p                assume
+</span></span><span style="display:flex;"><span>                    9. p ∨ ¬ p          ∨i1 8
+</span></span><span style="display:flex;"><span>                    10. ⊥               ¬e 9 6
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                11.  ¬ p                ¬i 7
+</span></span><span style="display:flex;"><span>                12.  p ∨ ¬ p            ∨i2 11
+</span></span><span style="display:flex;"><span>                13.  ⊥                  ¬e 12 6
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            14. p ∨ ¬ p                 pbc 5
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //End LEM proof for p ∨ ¬p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //use OR elimination on p ∨ ¬p, try to reach q
+</span></span><span style="display:flex;"><span>            15. {
+</span></span><span style="display:flex;"><span>                16. p               assume
+</span></span><span style="display:flex;"><span>                17. q               →e 2 16
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            18. {
+</span></span><span style="display:flex;"><span>                19. ¬ p             assume
+</span></span><span style="display:flex;"><span>                20. q               →e 4 19
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            21. q                   ∨e 14 15 18
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            //goal: reach q
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //use →i to conclude (¬p → q) → q
+</span></span><span style="display:flex;"><span>        22. (¬p → q) → q            →i 3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        //goal: reach (¬p → q) → q
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    //use →i to conclude (p → q) → ((¬p → q) → q)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    23. (p → q) → ((¬p → q) → q)    →i 1
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>If we complete a truth table for <code>(p → q) → ((¬p → q) → q)</code>, we also see that it is a tautology:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>              *
+</span></span><span style="display:flex;"><span>-------------------------------
+</span></span><span style="display:flex;"><span>p q | (p → q) → ((¬p → q) → q)
+</span></span><span style="display:flex;"><span>-------------------------------
+</span></span><span style="display:flex;"><span>T T |    T    T   F  T    T
+</span></span><span style="display:flex;"><span>T F |    F    T   F  T    F
+</span></span><span style="display:flex;"><span>F T |    T    T   T  T    T
+</span></span><span style="display:flex;"><span>F F |    T    T   T  F    T
+</span></span><span style="display:flex;"><span>------------------------------
+</span></span><span style="display:flex;"><span>Tautology</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="equivalence">Equivalence</h1>
+
+<p>In this section, we will revisit the notion of equivalence. In chapter 2, we saw how we could use truth tables to show that two logical formulae are equivalent. Here, we will see that we can also show they are equivalent using our natural deduction proof rules.</p>
+<h2 id="semantic-equivalence">Semantic equivalence</h2>
+<p>We saw in section 2.4 that two (or more) logical statements <code>S1</code> and <code>S2</code> were said to be <em>semantically equivalent</em> if and only if:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>S1 ⊨ S2</span></span></code></pre></div><p>and</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>S2 ⊨ S1</span></span></code></pre></div><p>As a reminder, the <code>S1 ⊨ S2</code> means <em><code>S1</code> semantically entails <code>S2</code></em>, which means that every truth assignment that satisfies <code>S1</code> also satisfies <code>S2</code>.</p>
+<p>Semantic equivalence between <code>S1</code> and <code>S2</code> means that each proposition semantically entails the other &ndash; that <code>S1</code> and <code>S2</code> have the same truth value for every truth assignment; i.e., their truth tables evaluate exactly the same.</p>
+<h3 id="showing-semantic-equivalence-with-two-truth-tables">Showing semantic equivalence with two truth tables</h3>
+<p>For example, if we wished to show that the propositions <code>p → ¬ q</code> and <code>¬ (p ∧ q)</code> were semantically equivalent, then we could create truth tables for each proposition:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        *
+</span></span><span style="display:flex;"><span>--------------
+</span></span><span style="display:flex;"><span>p q | p → ¬ q
+</span></span><span style="display:flex;"><span>--------------
+</span></span><span style="display:flex;"><span>T T |  F  F
+</span></span><span style="display:flex;"><span>T F |  T  T
+</span></span><span style="display:flex;"><span>F T |  T  F
+</span></span><span style="display:flex;"><span>F F |  T  T
+</span></span><span style="display:flex;"><span>--------------
+</span></span><span style="display:flex;"><span>Contingent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- T: [T F] [F T] [F F]
+</span></span><span style="display:flex;"><span>- F: [T T]</span></span></code></pre></div><div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>      *
+</span></span><span style="display:flex;"><span>----------------
+</span></span><span style="display:flex;"><span>p q | ¬ (p ∧ q)
+</span></span><span style="display:flex;"><span>----------------
+</span></span><span style="display:flex;"><span>T T | F    T
+</span></span><span style="display:flex;"><span>T F | T    F
+</span></span><span style="display:flex;"><span>F T | T    F
+</span></span><span style="display:flex;"><span>F F | T    F
+</span></span><span style="display:flex;"><span>----------------
+</span></span><span style="display:flex;"><span>Contingent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- T: [T F] [F T] [F F]
+</span></span><span style="display:flex;"><span>- F: [T T]</span></span></code></pre></div><p>We see that the same set of truth assignments, <code>[T F] [F T] [F F]</code>, satisfies both <code>p → ¬ q</code> and <code>¬ (p ∧ q)</code>.</p>
+<h3 id="showing-semantic-equivalence-with-one-truth-table">Showing semantic equivalence with one truth table</h3>
+<p>To show that propositions <code>S1</code> and <code>S2</code> are semantically equivalent, we need to show that if <code>S1</code> is true, then so is <code>S2</code>, and that if <code>S2</code> is true, then so is <code>S1</code>. Instead of comparing the truth tables of both <code>S1</code> and <code>S2</code>, we could instead express our requirements as a bi-implication: <code>S1 ↔ S2</code>. To express a bi-implication operator, we can use a conjunction of two implications: <code>(S1 → S2) ∧ (S2 → S1)</code>. If this conjunction is a tautology, then we know that if one proposition is true, then the other one is too &ndash; that <code>S1</code> and <code>S2</code> are semantically equivalent.</p>
+<p>Below, we show that <code>p → ¬ q</code> and <code>¬ (p ∧ q)</code> are semantically equivalent using one truth table:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                              *
+</span></span><span style="display:flex;"><span>-------------------------------------------------------
+</span></span><span style="display:flex;"><span>p q | ((p → ¬ q) → ¬ (p ∧ q)) ∧ (¬ (p ∧ q) → (p → ¬ q))
+</span></span><span style="display:flex;"><span>-------------------------------------------------------
+</span></span><span style="display:flex;"><span>T T |     F F    T F    T     T  F    T    T    F F 
+</span></span><span style="display:flex;"><span>T F |     T T    T T    F     T  T    F    T    T T
+</span></span><span style="display:flex;"><span>F T |     T F    T T    F     T  T    F    T    T F
+</span></span><span style="display:flex;"><span>F F |     T T    T T    F     T  T    F    T    T T
+</span></span><span style="display:flex;"><span>-------------------------------------------------------
+</span></span><span style="display:flex;"><span>Tautology</span></span></code></pre></div><h2 id="provable-equivalence">Provable equivalence</h2>
+<p>Two propositional logic statements <code>S1</code> and <code>S2</code> are <em>provably equivalent</em> if and only if we can prove both of the following sequents:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>S1 ⊢ S2</span></span></code></pre></div><p>and</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>S2 ⊢ S1</span></span></code></pre></div><p>We can also write:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>S2 ⟛ S1</span></span></code></pre></div><p>For example, suppose we wish to show that the propositions <code>p → ¬ q</code> and <code>¬ (p ∧ q)</code> are provably equivalent. We must prove the following sequents:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → ¬ q ⊢ ¬ (p ∧ q)</span></span></code></pre></div><p>and</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬ (p ∧ q) ⊢ p → ¬ q</span></span></code></pre></div><p>We complete both proofs below:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p → ¬ q ⊢ ¬ (p ∧ q)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. p → ¬ q              premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. p ∧ q            assume
+</span></span><span style="display:flex;"><span>        4. p                ∧e1 3
+</span></span><span style="display:flex;"><span>        5. q                ∧e2 3
+</span></span><span style="display:flex;"><span>        6. ¬ q              →e 1 4
+</span></span><span style="display:flex;"><span>        7. ⊥                ¬ e 5 6  
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    8. ¬ (p ∧ q)            ¬ i 2
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>¬ (p ∧ q) ⊢ p → ¬ q
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    1. ¬ (p ∧ q)            premise
+</span></span><span style="display:flex;"><span>    2. {
+</span></span><span style="display:flex;"><span>        3. p                assume
+</span></span><span style="display:flex;"><span>        4. {
+</span></span><span style="display:flex;"><span>            5. q            assume
+</span></span><span style="display:flex;"><span>            6. p ∧ q        ∧i 3 5
+</span></span><span style="display:flex;"><span>            7. ⊥            ¬ e 6 1
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        8. ¬ q              ¬ i 4
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    9. p → ¬ q              →i 2
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+    
+    
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="soundness-and-completeness">Soundness and Completeness</h1>
+
+<p>Section 4.8 showed us that we can prove two statements are <em>semantically equivalent</em> with truth tables and <em>provably equivalent</em> with deduction proofs. Does it matter which approach we use? Will there ever be a time when two statements are semantically equivalent but not provably equivalent, or vice versa? Will there ever be a time when a set of premises semantically entails a conclusion, but that the premises do not prove (using our deduction proofs) the conclusion, or vice versa?</p>
+<p>These questions lead us to the notions of <em>soundness</em> and <em>completeness</em>. Formal treatment of both concepts is beyond the scope of this course, but we will introduce both definitions and a rough idea of the proofs of soundness and completeness in propositional logic.</p>
+<h2 id="soundness">Soundness</h2>
+<p>A proof system is <em>sound</em> if everything that is provable is actually true. Propositional logic is sound if when we use deduction rules to prove that <code>P1, P2, ..., Pn ⊢ C</code> (that a set of premises proves a conclusion) then we can also use a truth table to show that <code>P1, P2, ..., Pn ⊨ C</code> (that a set of premises semantically entails a conclusion).</p>
+<p><strong>Propositional logic is, in fact, sound.</strong></p>
+<p>To get an idea of the proof, consider the <code>∧e1</code> deduction rule. It allows us to directly prove:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>P ∧ Q ⊢ P</span></span></code></pre></div><p>I.e., if we have <code>P ∧ Q</code> as a premise or as a claim in part of a proof, then we can use <code>∧e1</code> to conclude <code>P</code>. We must also show that:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>P ∧ Q ⊨ P</span></span></code></pre></div><p>I.e., that any time <code>P ∧ Q</code> is true in a truth table, then <code>P</code> is also true. And of course, we can examine the truth table for <code>P ∧ Q</code>, and see that it is only true in the cases that <code>P</code> is also true.</p>
+<p>Consider the <code>∧i</code> deduction rule next. It allows us to directly prove:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>P, Q ⊢ P ∧ Q</span></span></code></pre></div><p>I.e., if we have both <code>P</code> and <code>Q</code> as premises or claims in part of a proof, then we can use <code>∧i</code> to conclude <code>P ∧ Q</code>. We must also show that:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>P, Q ⊢ P ⊨ Q</span></span></code></pre></div><p>I.e., that any time both <code>P</code> and <code>Q</code> are true in a truth table, then <code>P ∧ Q</code> is also true. And of course, we can examine the truth table for <code>P ∧ Q</code> and see that whenever <code>P</code> and <code>Q</code> are true, then <code>P ∧ Q</code> is also true.</p>
+<p>To complete the soundness proof, we would need to examine the rest of our deduction rules in a similar process. We would then use an approach called <em>mathematical induction</em> (which we will see for other applications in Chapter 7) to extend the idea to a proof that applies multiple deduction rules in a row.</p>
+<h2 id="completeness">Completeness</h2>
+<p>A proof system is <em>complete</em> if everything that is true can be proved. Propositional logic is complete if when we can use a truth table to show that <code>P1, P2, ..., Pn ⊨ C</code>, then we can also use deduction rules to prove that <code>P1, P2, ..., Pn ⊢ C</code>.</p>
+<p><strong>Propositional logic is also complete.</strong></p>
+<p>We assume that <code>P1, P2, ..., Pn ⊨ C</code>, and we consider the truth table for <code>(P1 ∧ P2 ∧ ... ∧ Pn) → C</code> (since that will be a tautology whenever <code>P1, P2, ..., Pn ⊨ C</code>). In order to show propositional logic is complete, we must show that we can use our deduction rules to prove <code>P1, P2, ..., Pn ⊢ C</code>.</p>
+<p>The idea is to use LEM for each propositional atom <code>A</code> to obtain <code>A ∨ ¬A</code> (corresponding to the truth assignments in the <code>(P1 ∧ P2 ∧ ... ∧ Pn) → C</code> truth table). We then use OR elimination on each combination of truth assignments, with separate cases for each logical operator being used.</p>
+
+            <footer class="footline">
+
+            </footer>
+          </article>
+
+          </section>
+
+        </div>
+      </main>
+    
+<div class="git-footer">
+<p class="theme-version-footer">5.18.0</p>
+<p>Last modified by: 
+            <i class='fas fa-user'></i> Russell Feldhausen
+            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/dec4297d81df48b5e02e2640601321e923ab5f5b">Aug 10, 2023</a>
+</p>
+</div>
+
+    
+    </div>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1691697188" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1691697188" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1691697188" defer></script>
+  </body>
+</html>

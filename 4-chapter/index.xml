@@ -1,425 +1,425 @@
+
+
+
+
+
+	
+	
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+		
+
+	
+	
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
+
+	
+	
+		
+		
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-
-
-
-
-	
-	
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-			
-
-	
-	
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
-	
-	
-			
-			
-
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Propositional Logic Proofs on CIS 301 Textbook</title>
-    <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/</link>
+    <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/index.html</link>
     <description>Recent content in Propositional Logic Proofs on CIS 301 Textbook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 24 Aug 2018 10:53:05 -0500</lastBuildDate><atom:link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction</title>
-      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/</guid>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/index.html</guid>
       <description>While we can use truth tables to check whether a set of premises entail a conclusion, this requires testing all possible truth assignments &amp;ndash; of which there are exponentially many. In this chapter, we will learn the process of natural deduction in propositional logic. This will allow us to start with a set of known facts (premises) and apply a series of rules to see if we can reach some goal conclusion.</description>
     </item>
     <item>
       <title>AND Rules</title>
-      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/</guid>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/index.html</guid>
       <description>In this section, we will see the deduction rules for the AND operator.
 AND introduction Clearly, when both p and q are facts, then so is the proposition p ∧ q. This makes logical sense &amp;ndash; if two propositions are independently true, then their conjunction (AND) must also be true. The AND introduction rule, ∧i, formalizes this:
-P Q ∧i : --------- P ∧ Q We will use the format above when introducing each of our natural deduction rules:</description>
+P Q ∧i : --------- P ∧ QWe will use the format above when introducing each of our natural deduction rules:</description>
     </item>
     <item>
       <title>OR Rules</title>
-      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/</guid>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/index.html</guid>
       <description>In this section, we will see the deduction rules for the OR operator.
 OR introduction If we know that a proposition P is true, then it will also be the case that both P ∨ Q and Q ∨ P are also true. It doesn&amp;rsquo;t matter what Q is &amp;ndash; it might even be something that is know to be false. Because P is true, it will make the overall OR statement true as well.</description>
     </item>
     <item>
       <title>Implies Rules</title>
-      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/</guid>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/index.html</guid>
       <description>In this section, we will see the deduction rules for the implies operator.
 Implies elimination Remember that → is a kind of logical &amp;ldquo;if-then&amp;rdquo;. Here, we understand p → q to mean that p holds knowledge sufficient to deduce q – so, whenever p is proved to be a fact, then p → q enables q to be proved a fact, too. This is the implies elimination rule, →e, and we can formalize it like this:</description>
     </item>
     <item>
       <title>Negation Rules</title>
-      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/</guid>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/index.html</guid>
       <description>In this section, we will see the deduction rules for the NOT operator. In this section, we will introduce the contradiction symbol (⊥, or _|_ in ASCII). This symbol is also referred to as the bottom operator. We will be able to claim that a contradiction occurs when, for some proposition P, we have proved both the facts P and ¬ P. This indicates that we are in an impossible situation, and often means that we have made a bad previous assumption.</description>
     </item>
     <item>
       <title>Summary and Strategies</title>
-      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/</guid>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/index.html</guid>
       <description>When examining more complex propositional logic sequents, it can be challenging to know where to start. In this section, we summarize all available rules in propositional logic, and discuss stratgies for approaching proofs.
 AND rules Rule summaries:
-P Q P ∧ Q P ∧ Q ∧i : --------- ∧e1 : ---------- ∧e2 : ---------- P ∧ Q P Q Rule syntax summaries:
-{ ... x. p	(...) y. q	(...) z.</description>
+P Q P ∧ Q P ∧ Q ∧i : --------- ∧e1 : ---------- ∧e2 : ---------- P ∧ Q P QRule syntax summaries:
+{ ... x. p	(...) y. q	(...) z. p ∧ q ∧i x y .</description>
     </item>
     <item>
       <title>Theorems</title>
-      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_7-theorems/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_7-theorems/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_7-theorems/</guid>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_7-theorems/index.html</guid>
       <description>Definition A theorem in propositional logic is something that is always true with no need for premises. The truth table for a theorem is always a tautology &amp;ndash; it is true for any truth assignment.
 To express a theorem as a sequent, we write:
-⊢ (theorem) This shows that we are trying to prove our theorem with NO premises. Such a proof will always immediately begin with a subproof, as there are no premises to process.</description>
+⊢ (theorem)This shows that we are trying to prove our theorem with NO premises. Such a proof will always immediately begin with a subproof, as there are no premises to process.</description>
     </item>
     <item>
       <title>Equivalence</title>
-      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_8-equivalence/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_8-equivalence/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_8-equivalence/</guid>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_8-equivalence/index.html</guid>
       <description>In this section, we will revisit the notion of equivalence. In chapter 2, we saw how we could use truth tables to show that two logical formulae are equivalent. Here, we will see that we can also show they are equivalent using our natural deduction proof rules.
 Semantic equivalence We saw in section 2.4 that two (or more) logical statements S1 and S2 were said to be semantically equivalent if and only if:</description>
     </item>
     <item>
       <title>Soundness and Completeness</title>
-      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_9-soundcomplete/</link>
+      <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_9-soundcomplete/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
-      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_9-soundcomplete/</guid>
+      <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_9-soundcomplete/index.html</guid>
       <description>Section 4.8 showed us that we can prove two statements are semantically equivalent with truth tables and provably equivalent with deduction proofs. Does it matter which approach we use? Will there ever be a time when two statements are semantically equivalent but not provably equivalent, or vice versa? Will there ever be a time when a set of premises semantically entails a conclusion, but that the premises do not prove (using our deduction proofs) the conclusion, or vice versa?</description>
     </item>
   </channel>
