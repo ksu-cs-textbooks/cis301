@@ -117,4 +117,13 @@ To clone a new project, select *File→New→Project* from *Version control*. Th
 
 ## Using Sireum IVE in the lab classrooms
 
-Sireum IVE(with Logika) is available in the CS computer lab classrooms (DUE 1114, 1116, and 1117). To find it, open a File Explorer, then open the C:\ drive. You will see a Sireum folder – double-click it (just plain *Sireum*, not with any v2 or v3). From there, you should see the file idea64.bat. Double-click it to run Sireum IVE.
+Sireum IVE (with Logika) is available in the CS computer lab classrooms (DUE 1114, 1116, and 1117). To find it, open a File Explorer, then open the C:\ drive. From there, navigate to "C:\Sireum\apps\idea\bin" and run the "idea64.exe" file. This will launch Sireum as usual.
+
+If you want to complete your assignment using multiple computers, you can:
+    - Clone the repo using the process above (if it is your first time working on the current assignment on this computer)
+    - Commit/push your changes when you are ready to leave this computer
+    - Do Git->Pull to get your latest changes if you come back to a different computer
+
+## Remote access
+
+If you have any problems installing Sireum on your own computer, you can access it remotely from the CS department. See [here](https://support.cs.ksu.edu/CISDocs/wiki/Remote_Access) for information on remote access. When you connect to the department Window's server, you can follow the instructions above to find Sireum as you would on a lab computer.
