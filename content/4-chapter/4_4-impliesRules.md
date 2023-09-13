@@ -113,7 +113,7 @@ p → (q → r) ⊢ (q ∧ p) → r
     }
     //use →i to conclude (q ∧ p) → r
 
-    8. r                    →i 2
+    8. (q ∧ p) → r          →i 2
 }
 ```
 
