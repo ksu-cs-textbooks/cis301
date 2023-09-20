@@ -59,9 +59,9 @@ Then line 4 would not have been accepted. The line numbers cited after the `∧i
     ...
     4. p			        (some justification)
     5. q			        (some justification)
-    6. p ⋀ q                ⋀i 5 6
+    6. p ⋀ q                ⋀i 4 5
     ...
-    9. q ⋀ p                ⋀i 6 5
+    9. q ⋀ p                ⋀i 5 4
     ...
 }
 ```
