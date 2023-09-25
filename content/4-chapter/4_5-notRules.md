@@ -368,20 +368,22 @@ In subproof 2, we know we need to end with a contradiction. The only proposition
         4. ¬p ∨ ¬q          ∨i1 3
 
         //goal: contradiction
+        5. ⊥                ¬e 4 1
     }
     //use pbc to conclude p
 
-    5. p                    pbc 2
+    6. p                    pbc 2
 
     //similarly prove q
-    6. {
-        7. ¬q               assume
-        8. ¬p ∨ ¬q          ∨i2 7
+    7. {
+        8. ¬q               assume
+        9. ¬p ∨ ¬q          ∨i2 8
+        10. ⊥               ¬e 9 1
     }
-    9. q                    pbc 6
+    11. q                   pbc 7
 
     //use ∧i to conclude p ∧ q
-    10. p ∧ q               ∧i 5 9
+    12. p ∧ q               ∧i 6 11
 }
 ```
 
