@@ -38,7 +38,7 @@ P, Q ⊢ P ∧ Q
 I.e., if we have both `P` and `Q` as premises or claims in part of a proof, then we can use `∧i` to conclude `P ∧ Q`. We must also show that:
 
 ```text
-P, Q ⊢ P ⊨ Q
+P, Q ⊨ P ∧ Q
 ```
 
 I.e., that any time both `P` and `Q` are true in a truth table, then `P ∧ Q` is also true. And of course, we can examine the truth table for `P ∧ Q` and see that whenever `P` and `Q` are true, then `P ∧ Q` is also true.
