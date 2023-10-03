@@ -77,7 +77,7 @@ Which reads as: *There exists a shape x that is a circle and there exists a shap
 
 #### Aristotlian form example 2
 
-Let's repeat our translation for, *Every circle is bigger than all rectangles* using Aristotlian form. We know that will will still need two existential quantifiers, but we will only introduce each quantifier just before the corresponding variable is needed in a predicate.
+Let's repeat our translation for, *Every circle is bigger than all rectangles* using Aristotlian form. We know that we will still need two existential quantifiers, but we will only introduce each quantifier just before the corresponding variable is needed in a predicate.
 
 We can translate the statement using Aristotlian form as follows:
 

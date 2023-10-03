@@ -112,7 +112,7 @@ Next, consider the following proposition:
 ∀ x (isDog(x) ∧ hasFourLegs(x))
 ```
 
-This translates to: *All animals are dogs and have four legs*. This means that EVERY SINGLE ANIMAL in my domain is a dog and also has four legs. While it is possible that this is true depending on our domain, it is unlikely. What if our domain of animals included cats, chicken,, etc.?
+This translates to: *All animals are dogs and have four legs*. This means that EVERY SINGLE ANIMAL in my domain is a dog and also has four legs. While it is possible that this is true depending on our domain, it is unlikely. What if our domain of animals included cats, chickens, etc.?
 
 Perhaps instead we intended to say: *All dogs have four legs.* Another way to phrase this is, "For all animals, IF that animal is a dog, THEN it has four legs." We can see from the IF...THEN that we will need to use an implies statement. Here is the correct translation for *All dogs have four legs*:
 
