@@ -356,20 +356,20 @@
     <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/tele.html" rel="alternate" type="text/html" title="Rules with ∃ :: CIS 301 Textbook">
     
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1696369553" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1696369553" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1696369553" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1696369553" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1696369553" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1696369553" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1696369553" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1696369553" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1696369553" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1696782476" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1696782476" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1696782476" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1696782476" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1696782476" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1696782476" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1696782476" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1696782476" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1696782476" rel="stylesheet">
     
     
     
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1696369553" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1696369553" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1696369553" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1696369553" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1696369553"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1696782476" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1696782476" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1696782476" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1696782476" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1696782476"></script>
     
     
     
@@ -391,7 +391,7 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1696369553" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1696782476" rel="stylesheet">
 
     
   </head>
@@ -465,7 +465,7 @@
 </span></span><span style="display:flex;"><span>    8. ∃y isMortal(y)                       ∃e 2 3
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Line 4 proposes the name <code>jane</code> and the assumption that <code>isHuman(jane)</code>. The subproof leads to Line 7, which says that someone is mortal. (We never learned the individual&rsquo;s name!) Since Line 7 does not explicitly mention the made-up name, <code>jane</code>, we use Line 8 to repeat Line 7 – without knowing the name of the individual &ldquo;hiding&rdquo; inside Line 2, we made a subproof that proves the result, anyway. This is how <code>∃e</code> works.</p>
 <p>Note that when we use the <code>∃e</code> rule as a justification we include first the line number of the there-exists statement that we processed (by naming the hidden individual) in the prrevious subproof, and then the line number of that subproof. In the example above, we say <code>∃e 2 3</code> because line 2 includes the there-exists statement we processed (<code>∃ x isHuman(x)</code>) in the previous subproof and line 3 is the subproof.</p>
-<p>When using <code>∃e</code>, the previous subproof must begin with introducting a name for a hidden individual in a there-exists statement and then immediately substituting that name into the there-exists statement. The justification on the first line is always <code>assume</code>. The last line in the subproof should contain NO mention of the chosen name. Whatever we claim on the last line in the subproof, we must claim EXACTLY the same thing immediately afterwards when we use the <code>∃e</code> rule.</p>
+<p>When using <code>∃e</code>, the previous subproof must begin with introducing a name for a hidden individual in a there-exists statement and then immediately substituting that name into the there-exists statement. The justification on the first line is always <code>assume</code>. The last line in the subproof should contain NO mention of the chosen name. Whatever we claim on the last line in the subproof, we must claim EXACTLY the same thing immediately afterwards when we use the <code>∃e</code> rule.</p>
 <p>You are welcome to use any name for the hidden individual &ndash; not just <code>jane</code> or <code>a</code>. The only restriction is that you cannot have used the name anywhere else in the proof.</p>
 <h2 id="examples">Examples</h2>
 <p>In this section, we will look at several proofs involving the existential quantifier.</p>
@@ -591,10 +591,10 @@
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1696369553" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1696369553" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1696369553" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1696782476" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1696782476" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1696782476" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/embed-iframe.js?1696369553 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/embed-iframe.js?1696782476 defer"></script>
   </body>
 </html>
