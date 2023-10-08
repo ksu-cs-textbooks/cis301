@@ -65,7 +65,7 @@ The *Aristotlian form* of a predicate logic translation embeds the quantifiers w
 
 #### Aristotlian form example 1
 
-Suppose we wished to translate, *Some circle is bigger than some square* using Aristotlian form. We know that will will still need two existential quantifiers, but we will only introduce each quantifier just before the corresponding variable is needed in a predicate.
+Suppose we wished to translate, *Some circle is bigger than some square* using Aristotlian form. We know that we will still need two existential quantifiers, but we will only introduce each quantifier just before the corresponding variable is needed in a predicate.
 
 We can translate the statement using Aristotlian form as follows:
 

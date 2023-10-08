@@ -153,9 +153,9 @@ When translating from English to predicate logic, you can look for particular wo
 
 - *All P-ish things are Q-ish things* is translated as: `∀ x (P(x) → Q(x))`
 
-- *No P-ish thing is a Q-ish thing* can be translated as either `¬(∃ x (P(x) ∧ Q(x)))` or `∀ x ¬(P(x) → Q(x))`
+- *No P-ish thing is a Q-ish thing* can be translated as either `¬(∃ x (P(x) ∧ Q(x)))` or `∀ x (P(x) → ¬Q(x))`
 
-- *Not all P-ish things are Q-ish things* can be translated as either `¬(∀ x (P(x) → Q(x)))` or `∃ x ¬(P(x) ∧ Q(x))`
+- *Not all P-ish things are Q-ish things* can be translated as either `¬(∀ x (P(x) → Q(x)))` or `∃ x (P(x) ∧ ¬Q(x))`
 
 ## DeMorgan's laws for quantifiers
 
@@ -181,7 +181,7 @@ We will practice translating from English to predicate logic. Think about what t
     - <details>
         <summary> <b> Click here for solution </b></summary>
 
-        `¬(∃ x (K(x) ∧ M(x))`, or equivalently, `∀ x ¬(K(x) → M(x))`
+        `¬(∃ x (K(x) ∧ M(x))`, or equivalently, `∀ x (K(x) → ¬M(x))`
 
         </details>
         <br>

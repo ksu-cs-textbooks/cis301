@@ -99,7 +99,7 @@ Line 4 proposes the name `jane` and the assumption that `isHuman(jane)`. The sub
 
 Note that when we use the `∃e` rule as a justification we include first the line number of the there-exists statement that we processed (by naming the hidden individual) in the prrevious subproof, and then the line number of that subproof. In the example above, we say `∃e 2 3` because line 2 includes the there-exists statement we processed (`∃ x isHuman(x)`) in the previous subproof and line 3 is the subproof.
 
-When using `∃e`, the previous subproof must begin with introducting a name for a hidden individual in a there-exists statement and then immediately substituting that name into the there-exists statement. The justification on the first line is always `assume`. The last line in the subproof should contain NO mention of the chosen name. Whatever we claim on the last line in the subproof, we must claim EXACTLY the same thing immediately afterwards when we use the `∃e` rule.
+When using `∃e`, the previous subproof must begin with introducing a name for a hidden individual in a there-exists statement and then immediately substituting that name into the there-exists statement. The justification on the first line is always `assume`. The last line in the subproof should contain NO mention of the chosen name. Whatever we claim on the last line in the subproof, we must claim EXACTLY the same thing immediately afterwards when we use the `∃e` rule.
 
 You are welcome to use any name for the hidden individual -- not just `jane` or `a`. The only restriction is that you cannot have used the name anywhere else in the proof.
 
