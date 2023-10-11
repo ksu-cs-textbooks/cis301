@@ -138,11 +138,11 @@ I will bike to work *unless possibly if* it is raining.
 We see that there is clearly NO promise about whether I will bike in the rain. I might, or I might not -- but the only thing that I am promising is that I *will* bike if it is *not* raining, or that IF it's not raining, THEN I will bike. With that in mind, we can complete our translation:
 
 ```text
- ¬q →  ¬p
+ ¬q → p
 ```
 
 Equivalently, if we don't bike, then we are certain that it must be raining -- since we have promised to ride our bike every other time. We can also write:
 
 ```text
- ¬p →  ¬q
+ ¬p → q
 ```
