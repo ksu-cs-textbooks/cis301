@@ -24,7 +24,7 @@ An **individual** is an element within a specified domain. For example, if our d
 
 ## Predicates
 
-A **predicate** is a function that returns a boolean. It can have one or many parameters, each of which are individuals in a particular domain. A predicate will describe a characteristic of an individual or a comparison betwen multiple individuals.
+A **predicate** is a function that returns a boolean. It can have one or many parameters, each of which are individuals in a particular domain. A predicate will describe a characteristic of an individual or a comparison between multiple individuals.
 
 For example, suppose our domain is the set of people. Suppose `Alice`, `Bob`, and `Carla` are individuals in our domain. `Alice` is `Bob`'s mother, and `Carla` is an unrelated individual. `Carla` is 5'10 and 20 years old, `Alice` is 5'5 and 35 years old, and `Bob` is 4'10 and 10 years old.
 
