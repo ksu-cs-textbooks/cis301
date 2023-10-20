@@ -50,7 +50,7 @@ $$
 = LHS_k + (2(k + 1) - 1) \tag{2}
 $$
 $$
-= RHS_k + (2(nk + 1) - 1) \tag{3}
+= RHS_k + (2(k + 1) - 1) \tag{3}
 $$
 $$
 = k^2 + (2(k + 1) - 1) \tag{4}
@@ -71,7 +71,9 @@ $$
 
 Thus {{< math >}}$LHS_{k+1} = RHS_{k+1}${{< /math >}}, so we have proved {{< math >}}$P(k+1)${{< /math >}}. The inductive step holds.
 
-We conclude that for all positive integers {{< math >}}n${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds  -- that is, that:
+<br><br>
+
+We conclude that for all positive integers {{< math >}}$n${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds  -- that is, that:
 
 ```math
 $$

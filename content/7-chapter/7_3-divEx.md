@@ -37,7 +37,9 @@ $$
 $$
 ```
 
-Since {{< math >}}$6^{k} - 1${{< /math >}} is divisible by 5 from our inductive hypothesis, any multiple of it is also divisible by 5. Thus, {{< math >}}$6(6^{k} - 1)${{< /math >}} is divisible by 5. Adding 5 to a number that is a multiple of 5 yields another multiple of 5. Thus {{< math >}}$6(6^{k} - 1) + 5${{< /math >}} is divisible by 5, we have proved {{< math >}}$P(nk+1)${{< /math >}}. The inductive step holds.
+Since {{< math >}}$6^{k} - 1${{< /math >}} is divisible by 5 from our inductive hypothesis, any multiple of it is also divisible by 5. Thus, {{< math >}}$6(6^{k} - 1)${{< /math >}} is divisible by 5. Adding 5 to a number that is a multiple of 5 yields another multiple of 5. Thus {{< math >}}$6(6^{k} - 1) + 5${{< /math >}} is divisible by 5, we have proved {{< math >}}$P(k+1)${{< /math >}}. The inductive step holds.
 
-We conclude that for all positive integers {{< math >}}n${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds -- that is, that {{< math >}}$6^{n} - 1${{< /math >}} is divisible by 5.
+<br><br>
+
+We conclude that for all positive integers {{< math >}}$n${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds -- that is, that {{< math >}}$6^{n} - 1${{< /math >}} is divisible by 5.
 

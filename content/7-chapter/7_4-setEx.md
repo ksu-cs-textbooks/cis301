@@ -21,7 +21,15 @@ We must prove that {{< math >}}$P(n)${{< /math >}} holds for the smallest such i
 
 #### Inductive step
 
-We assume the inductive hypothesis - that {{< math >}}$P(k)${{< /math >}} holds for some arbitrary integer {{< math >}}$k \geq 2${{< /math >}}. In other words, we assume that a set with {{< math >}}$k${{< /math >}} elements has {{< math >}}$\dfrac{k(k-1)}{2}${{< /math >}} possible subsets of size 2. We must prove that {{< math >}}$P(k+1)${{< /math >}} also holds -- i.e., that a set with {{< math >}}$k + 1${{< /math >}} elements has {{< math >}}$\dfrac{(k+1)((k+1)-1)}{2} = \dfrac{k(k+1)}{2}${{< /math >}} possible subsets of size 2.
+We assume the inductive hypothesis - that {{< math >}}$P(k)${{< /math >}} holds for some arbitrary integer {{< math >}}$k \geq 2${{< /math >}}. In other words, we assume that a set with {{< math >}}$k${{< /math >}} elements has {{< math >}}$\dfrac{k(k-1)}{2}${{< /math >}} possible subsets of size 2. We must prove that {{< math >}}$P(k+1)${{< /math >}} also holds -- i.e., that a set with {{< math >}}$k + 1${{< /math >}} elements has:
+
+```math
+$$
+\dfrac{(k+1)((k+1)-1)}{2} = \dfrac{k(k+1)}{2}
+$$
+```
+
+possible subsets of size 2.
 
 Introducing a new element to a set with {{< math >}}$k${{< /math >}} elements yields {{< math >}}$k${{< /math >}} additional 2-element subsets, as the new element could pair with each of the original elements.
 
@@ -31,7 +39,7 @@ We have that:
 
 ```math
 $$
-\dfrac{k(k-1)}{2} + n = \dfrac{k(k-1)+2k}{2}
+\dfrac{k(k-1)}{2} + k = \dfrac{k(k-1)+2k}{2}
 $$
 $$
 = \dfrac{k(k-1+2)}{2}
@@ -43,4 +51,4 @@ $$
 
 We have proved {{< math >}}$P(k+1)${{< /math >}}. Thus the inductive hypothesis holds. 
 
-We conclude that for all positive integers {{< math >}}n \geq 2${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds -- that is, that a set with {{< math >}}$n${{< /math >}} elements has {{< math >}}$\dfrac{n(n-1)}{2}${{< /math >}} possible subsets of size 2. 
+We conclude that for all positive integers {{< math >}}$n \geq 2${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds -- that is, that a set with {{< math >}}$n${{< /math >}} elements has {{< math >}}$\dfrac{n(n-1)}{2}${{< /math >}} possible subsets of size 2. 

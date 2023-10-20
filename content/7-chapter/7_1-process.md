@@ -77,7 +77,7 @@ We have that {{< math >}}$LHS_1 = RHS_1${{< /math >}}. Thus {{< math >}}$P(1)${{
 
 ### Inductive step
 
-We assume the inductive hypothesis - that {{< math >}}$P(k)${{< /math >}} holds for some arbitrary positive integer {{< math >}}$k${{< /math >}}. In other words, we assume that {{< math >}}$LHS_k = RHS_k${{< /math >}} for our arbitrary {{< math >}}$k${{< /math >}}. We must prove that {{< math >}}$P(n+1)${{< /math >}} also holds -- i.e., that {{< math >}}$LHS_{k+1} = RHS_{k+1}${{< /math >}}. We have that:
+We assume the inductive hypothesis - that {{< math >}}$P(k)${{< /math >}} holds for some arbitrary positive integer {{< math >}}$k${{< /math >}}. In other words, we assume that {{< math >}}$LHS_k = RHS_k${{< /math >}} for our arbitrary {{< math >}}$k${{< /math >}}. We must prove that {{< math >}}$P(k+1)${{< /math >}} also holds -- i.e., that {{< math >}}$LHS_{k+1} = RHS_{k+1}${{< /math >}}. We have that:
 
 ```math
 $$
@@ -90,7 +90,7 @@ $$
 = RHS_k + (k + 1) \tag{3}
 $$
 $$
-= \dfrac{k(k+1)}{2} + (nk + 1) \tag{4}
+= \dfrac{k(k+1)}{2} + (k + 1) \tag{4}
 $$
 $$
 = \dfrac{k(k+1)}{2} + \dfrac{2(k+1)}{2} \tag{5}
@@ -99,7 +99,7 @@ $$
 = \dfrac{(k+1)(nk + 2)}{2} \tag{6}
 $$
 $$
-= \dfrac{(nk+1)((k + 1) + 1)}{2} \tag{7}
+= \dfrac{(k+1)((k + 1) + 1)}{2} \tag{7}
 $$
 $$
 = RHS_{k+1} \tag{8}
@@ -107,8 +107,8 @@ $$
 ```
 
 Thus {{< math >}}$LHS_{k+1} = RHS_{k+1}${{< /math >}}, so we have proved {{< math >}}$P(k+1)${{< /math >}}. The inductive step holds.
-
-We conclude that for all positive integers {{< math >}}n${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds  -- that is, that:
+<br><br>
+We conclude that for all positive integers {{< math >}}$n${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds  -- that is, that:
 
 ```math
 $$
