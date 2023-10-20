@@ -96,7 +96,7 @@ $$
 = \dfrac{k(k+1)}{2} + \dfrac{2(k+1)}{2} \tag{5}
 $$
 $$
-= \dfrac{(k+1)(nk + 2)}{2} \tag{6}
+= \dfrac{(k+1)(k + 2)}{2} \tag{6}
 $$
 $$
 = \dfrac{(k+1)((k + 1) + 1)}{2} \tag{7}
@@ -107,7 +107,9 @@ $$
 ```
 
 Thus {{< math >}}$LHS_{k+1} = RHS_{k+1}${{< /math >}}, so we have proved {{< math >}}$P(k+1)${{< /math >}}. The inductive step holds.
+
 <br><br>
+
 We conclude that for all positive integers {{< math >}}$n${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds  -- that is, that:
 
 ```math
