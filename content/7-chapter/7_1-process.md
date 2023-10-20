@@ -122,6 +122,6 @@ $$
 
 ## Inductive step explanation
 
-In line 2 of the proof above we saw that {{< math >}}$1 + 2 + ... + k${{< /math >}} was really {{< math >}}$LHS_k${{< /math >}}, so we made that substitution. Then in line 3, we used our inductive hypothesis - that {{< math >}}$LHS_k = RHS_k${{< /math >}}, and substituted {{< math >}}$RHS_k${{< /math >}}for {{< math >}}$LHS_k${{< /math >}}. Since we had that {{< math >}}$RHS_k = \dfrac{k(k+1)}{2}${{< /math >}}, we made that substitution on line 4. 
+In line 2 of the proof above we saw that {{< math >}}$1 + 2 + ... + k${{< /math >}} was really {{< math >}}$LHS_k${{< /math >}}, so we made that substitution. Then in line 3, we used our inductive hypothesis - that {{< math >}}$LHS_k = RHS_k${{< /math >}}, and substituted {{< math >}}$RHS_k${{< /math >}} for {{< math >}}$LHS_k${{< /math >}}. Since we had that {{< math >}}$RHS_k = \dfrac{k(k+1)}{2}${{< /math >}}, we made that substitution on line 4. 
 
 From lines 5 to 7, we did algebraic manipulations to combine our terms and work towards the form of {{< math >}}$RHS_{k+1}${{< /math >}}. 
