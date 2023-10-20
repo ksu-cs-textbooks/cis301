@@ -40,33 +40,43 @@ We have that {{< math >}}$LHS_1 = RHS_1${{< /math >}}. Thus {{< math >}}$P(1)${{
 
 #### Inductive step
 
-We assume the inductive hypothesis - that {{< math >}}$P(n)${{< /math >}} holds for some arbitrary positive integer {{< math >}}$n${{< /math >}}. In other words, we assume that {{< math >}}$LHS_n = RHS_n${{< /math >}} for our arbitrary {{< math >}}$n${{< /math >}}. We must prove that {{< math >}}$P(n+1)${{< /math >}} also holds -- i.e., that {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}. We have that:
+We assume the inductive hypothesis - that {{< math >}}$P(k)${{< /math >}} holds for some arbitrary positive integer {{< math >}}$k${{< /math >}}. In other words, we assume that {{< math >}}$LHS_k = RHS_k${{< /math >}} for our arbitrary {{< math >}}$k${{< /math >}}. We must prove that {{< math >}}$P(k+1)${{< /math >}} also holds -- i.e., that {{< math >}}$LHS_{k+1} = RHS_{k+1}${{< /math >}}. We have that:
 
 ```math
 $$
-LHS_{n+1} = 1 + 3 + ... + (2n - 1) + (2(n + 1) - 1) \tag{1}
+LHS_{k+1} = 1 + 3 + ... + (2k - 1) + (2(k + 1) - 1) \tag{1}
 $$
 $$
-= LHS_n + (2(n + 1) - 1) \tag{2}
+= LHS_k + (2(k + 1) - 1) \tag{2}
 $$
 $$
-= RHS_n + (2(n + 1) - 1) \tag{3}
+= RHS_k + (2(nk + 1) - 1) \tag{3}
 $$
 $$
-= n^2 + (2(n + 1) - 1) \tag{4}
+= k^2 + (2(k + 1) - 1) \tag{4}
 $$
 $$
-= n^2 + 2n + 2 - 1 \tag{5}
+= k^2 + 2k + 2 - 1 \tag{5}
 $$
 $$
-= n^2 + 2n + 1 \tag{6}
+= k^2 + 2k + 1 \tag{6}
 $$
 $$
-= (n+1)^2 \tag{7}
+= (k+1)^2 \tag{7}
 $$
 $$
-= RHS_{n+1} \tag{8}
+= RHS_{k+1} \tag{8}
 $$
 ```
 
-Thus {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}, so we have proved {{< math >}}$P(n+1)${{< /math >}}. The inductive step holds.
+Thus {{< math >}}$LHS_{k+1} = RHS_{k+1}${{< /math >}}, so we have proved {{< math >}}$P(k+1)${{< /math >}}. The inductive step holds.
+
+We conclude that for all positive integers {{< math >}}n${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds  -- that is, that:
+
+```math
+$$
+\begin{aligned}
+1 + 3 + ... + (2n - 1) = n^2
+\end{aligned}
+$$
+```

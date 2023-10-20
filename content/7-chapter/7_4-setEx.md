@@ -5,7 +5,7 @@ weight: 83
 date: 2018-08-24T10:53:26-05:00
 ---
 
-Claim: If {{< math >}}$n${{< /math >}} is a positive integer greater than or equal to 2, then a set with {{< math >}}$n${{< /math >}} elements has {{< math >}}$\dfrac{n(n-1)}{2}${{< /math >}}possible subsets of size 2. We will refer to this claim as {{< math >}}$P(n)${{< /math >}}.
+Claim: If {{< math >}}$n${{< /math >}} is a positive integer greater than or equal to 2, then a set with {{< math >}}$n${{< /math >}} elements has {{< math >}}$\dfrac{n(n-1)}{2}${{< /math >}} possible subsets of size 2. We will refer to this claim as {{< math >}}$P(n)${{< /math >}}.
 
 ### Try it out
 
@@ -21,24 +21,26 @@ We must prove that {{< math >}}$P(n)${{< /math >}} holds for the smallest such i
 
 #### Inductive step
 
-We assume the inductive hypothesis - that {{< math >}}$P(n)${{< /math >}} holds for some arbitrary integer {{< math >}}$n \geq 2${{< /math >}}. In other words, we assume that a set with {{< math >}}$n${{< /math >}} elements has {{< math >}}$\dfrac{n(n-1)}{2}${{< /math >}} possible subsets of size 2. We must prove that {{< math >}}$P(n+1)${{< /math >}} also holds -- i.e., that a set with {{< math >}}$n + 1${{< /math >}} elements has {{< math >}}$\dfrac{(n+1)((n+1)-1)}{2} = \dfrac{n(n+1)}{2}${{< /math >}} possible subsets of size 2.
+We assume the inductive hypothesis - that {{< math >}}$P(k)${{< /math >}} holds for some arbitrary integer {{< math >}}$k \geq 2${{< /math >}}. In other words, we assume that a set with {{< math >}}$k${{< /math >}} elements has {{< math >}}$\dfrac{k(k-1)}{2}${{< /math >}} possible subsets of size 2. We must prove that {{< math >}}$P(k+1)${{< /math >}} also holds -- i.e., that a set with {{< math >}}$k + 1${{< /math >}} elements has {{< math >}}$\dfrac{(k+1)((k+1)-1)}{2} = \dfrac{k(k+1)}{2}${{< /math >}} possible subsets of size 2.
 
-Introducing a new element to a set with {{< math >}}$n${{< /math >}} elements yields {{< math >}}$n${{< /math >}} additional 2-element subsets, as the new element could pair with each of the original elements.
+Introducing a new element to a set with {{< math >}}$k${{< /math >}} elements yields {{< math >}}$k${{< /math >}} additional 2-element subsets, as the new element could pair with each of the original elements.
 
-A set with {{< math >}}$n+1${{< /math >}} elements contains all the original {{< math >}}$\dfrac{n(n-1)}{2}${{< /math >}} size-2 elements from the size-{{< math >}}$n${{< /math >}} set, plus the {{< math >}}$n${{< /math >}} new subsets described above. 
+A set with {{< math >}}$k+1${{< /math >}} elements contains all the original {{< math >}}$\dfrac{k(k-1)}{2}${{< /math >}} size-2 elements from the size-{{< math >}}$k${{< /math >}} set, plus the {{< math >}}$k${{< /math >}} new subsets described above. 
 
 We have that:
 
 ```math
 $$
-\dfrac{n(n-1)}{2} + n = \dfrac{n(n-1)+2n}{2}
+\dfrac{k(k-1)}{2} + n = \dfrac{k(k-1)+2k}{2}
 $$
 $$
-= \dfrac{n(n-1+2)}{2}
+= \dfrac{k(k-1+2)}{2}
 $$
 $$
-= \dfrac{n(n+1)}{2}
+= \dfrac{k(k+1)}{2}
 $$
 ```
 
-We have proved {{< math >}}$P(n+1)${{< /math >}}. Thus the inductive hypothesis holds.
+We have proved {{< math >}}$P(k+1)${{< /math >}}. Thus the inductive hypothesis holds. 
+
+We conclude that for all positive integers {{< math >}}n \geq 2${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds -- that is, that a set with {{< math >}}$n${{< /math >}} elements has {{< math >}}$\dfrac{n(n-1)}{2}${{< /math >}} possible subsets of size 2. 

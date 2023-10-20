@@ -15,7 +15,7 @@ To prove that a property {{< math >}}$P(n)${{< /math >}} is true for an arbitrar
 
 1. **Base case**. We must prove that {{< math >}}$P(n)${{< /math >}} is true for the smallest possible value of {{< math >}}$n${{< /math >}}. Usually this is {{< math >}}$n = 0${{< /math >}} or {{< math >}}$n = 1${{< /math >}}, but occasionally we will define a property for all values greater than or equal to 2, or some bigger number. 
 
-2. **Inductive step**. We assume the *inductive hypothesis* -- that {{< math >}}$P(n)${{< /math >}} holds for some arbitrary nonnegative integer {{< math >}}$n${{< /math >}}. Then, we must show that the property still holds for {{< math >}}$n + 1${{< /math >}}. In other words, we must prove that {{< math >}}$P(n) \rightarrow P(n + 1)${{< /math >}} -- that IF {{< math >}}$P(n)${{< /math >}} holds for some arbitrary nonnegative integer {{< math >}}$n${{< /math >}}, THEN {{< math >}}$P(n + 1)${{< /math >}} holds as well.
+2. **Inductive step**. We assume the *inductive hypothesis* -- that {{< math >}}$P(k)${{< /math >}} holds for some arbitrary nonnegative integer {{< math >}}$k${{< /math >}}. Then, we must show that the property still holds for {{< math >}}$k + 1${{< /math >}}. In other words, we must prove that {{< math >}}$P(k) \rightarrow P(k + 1)${{< /math >}} -- that IF {{< math >}}$P(k)${{< /math >}} holds for some arbitrary nonnegative integer {{< math >}}$k${{< /math >}}, THEN {{< math >}}$P(k + 1)${{< /math >}} holds as well.
 
 How do these two steps prove anything at all? Suppose we are proving that a property holds for all positive integers {{< math >}}$n${{< /math >}}. In the base case, we prove that the property holds when {{< math >}}$n = 1${{< /math >}}. Proving the inductive step allows us to say that whenever the property holds for some number, then it also holds for the number right after that. Since we already know the the property holds when {{< math >}}$n = 1${{< /math >}}, then the inductive step allows us to infer that the property still holds when {{< math >}}$n = 2${{< /math >}}. And at that point we know the property holds for {{< math >}}$n = 2${{< /math >}}, so the inductive step again allows us to infer that the property holds for {{< math >}}$n = 3${{< /math >}}, etc.
 
@@ -77,39 +77,49 @@ We have that {{< math >}}$LHS_1 = RHS_1${{< /math >}}. Thus {{< math >}}$P(1)${{
 
 ### Inductive step
 
-We assume the inductive hypothesis - that {{< math >}}$P(n)${{< /math >}} holds for some arbitrary positive integer {{< math >}}$n${{< /math >}}. In other words, we assume that {{< math >}}$LHS_n = RHS_n${{< /math >}} for our arbitrary {{< math >}}$n${{< /math >}}. We must prove that {{< math >}}$P(n+1)${{< /math >}} also holds -- i.e., that {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}. We have that:
+We assume the inductive hypothesis - that {{< math >}}$P(k)${{< /math >}} holds for some arbitrary positive integer {{< math >}}$k${{< /math >}}. In other words, we assume that {{< math >}}$LHS_k = RHS_k${{< /math >}} for our arbitrary {{< math >}}$k${{< /math >}}. We must prove that {{< math >}}$P(n+1)${{< /math >}} also holds -- i.e., that {{< math >}}$LHS_{k+1} = RHS_{k+1}${{< /math >}}. We have that:
 
 ```math
 $$
-LHS_{n+1} = 1 + 2 + ... + n + (n + 1) \tag{1}
+LHS_{k+1} = 1 + 2 + ... + k + (k + 1) \tag{1}
 $$
 $$
-= LHS_n + (n + 1) \tag{2} 
+= LHS_k + (k + 1) \tag{2} 
 $$
 $$
-= RHS_n + (n + 1) \tag{3}
+= RHS_k + (k + 1) \tag{3}
 $$
 $$
-= \dfrac{n(n+1)}{2} + (n + 1) \tag{4}
+= \dfrac{k(k+1)}{2} + (nk + 1) \tag{4}
 $$
 $$
-= \dfrac{n(n+1)}{2} + \dfrac{2(n+1)}{2} \tag{5}
+= \dfrac{k(k+1)}{2} + \dfrac{2(k+1)}{2} \tag{5}
 $$
 $$
-= \dfrac{(n+1)(n + 2)}{2} \tag{6}
+= \dfrac{(k+1)(nk + 2)}{2} \tag{6}
 $$
 $$
-= \dfrac{(n+1)((n + 1) + 1)}{2} \tag{7}
+= \dfrac{(nk+1)((k + 1) + 1)}{2} \tag{7}
 $$
 $$
-= RHS_{n+1} \tag{8}
+= RHS_{k+1} \tag{8}
 $$
 ```
 
-Thus {{< math >}}$LHS_{n+1} = RHS_{n+1}${{< /math >}}, so we have proved {{< math >}}$P(n+1)${{< /math >}}. The inductive step holds.
+Thus {{< math >}}$LHS_{k+1} = RHS_{k+1}${{< /math >}}, so we have proved {{< math >}}$P(k+1)${{< /math >}}. The inductive step holds.
+
+We conclude that for all positive integers {{< math >}}n${{< /math >}}, {{< math >}}$P(n)${{< /math >}} holds  -- that is, that:
+
+```math
+$$
+\begin{aligned}
+1 + 2 + ... + n = \dfrac{n(n+1)}{2}
+\end{aligned}
+$$
+```
 
 ## Inductive step explanation
 
-In line 2 of the proof above we saw that {{< math >}}$1 + 2 + ... + n${{< /math >}} was really {{< math >}}$LHS_n${{< /math >}}, so we made that substitution. Then in line 3, we used our inductive hypothesis - that {{< math >}}$LHS_n = RHS_n${{< /math >}}, and substituted {{< math >}}$RHS_n${{< /math >}}for {{< math >}}$LHS_n${{< /math >}}. Since we had that {{< math >}}$RHS_n = \dfrac{n(n+1)}{2}${{< /math >}}, we made that substitution on line 4. 
+In line 2 of the proof above we saw that {{< math >}}$1 + 2 + ... + k${{< /math >}} was really {{< math >}}$LHS_k${{< /math >}}, so we made that substitution. Then in line 3, we used our inductive hypothesis - that {{< math >}}$LHS_k = RHS_k${{< /math >}}, and substituted {{< math >}}$RHS_k${{< /math >}}for {{< math >}}$LHS_k${{< /math >}}. Since we had that {{< math >}}$RHS_k = \dfrac{k(k+1)}{2}${{< /math >}}, we made that substitution on line 4. 
 
-From lines 5 to 7, we did algebraic manipulations to combine our terms and work towards the form of {{< math >}}$RHS_{n+1}${{< /math >}}. 
+From lines 5 to 7, we did algebraic manipulations to combine our terms and work towards the form of {{< math >}}$RHS_{k+1}${{< /math >}}. 
