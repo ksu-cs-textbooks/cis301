@@ -167,7 +167,7 @@ NO. We can try, but we get stuck:
         5. {
             6. b IsBossOf(b, a)         assume
         }
-        6. ∀ y isBoss(b, y)             ∀i 2  NO--THIS PROOF IS TRYING TO FINISH
+        7. ∀ y isBoss(b, y)             ∀i 2  NO--THIS PROOF IS TRYING TO FINISH
                                           THE OUTER SUBPROOF WITHOUT FINISHING
                                           THE INNER ONE FIRST.
 
