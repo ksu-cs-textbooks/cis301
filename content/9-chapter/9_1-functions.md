@@ -303,7 +303,7 @@ l"""{
     2. added == x+1             premise     //plusOne postcondition 1
     3. added > 0                premise     //plusOne postcondition 2
     4. added == 6               algebra 1 2
-    5. added == 6 
+    5. added == 6 ∧ added > 0   ^i 4 3 
 }"""
 
 assert(added == 6 ∧ added > 0)
@@ -407,7 +407,7 @@ l"""{
     }
     12. {
         13. biggest == 2                    assume
-        14. ¬(biggest >= 3)                 algebra 6 13
+        14. ¬(biggest >= 3)                 algebra 13
         15. ⊥                               ¬e 6 14
         16. biggest == 3                    ⊥e 15
     }
