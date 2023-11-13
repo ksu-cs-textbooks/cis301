@@ -190,7 +190,7 @@ def mult(x: Z, y: Z): Z = {
 
         l"""{
             1. addRest == x*(y-1)   premise     //Postcondition from the recursive call
-            2. addRest == x*y - x   algebra 2
+            2. addRest == x*y - x   algebra 1
         }"""
 
         ans = x + addRest
