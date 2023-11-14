@@ -356,20 +356,20 @@
     <link href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_4-logikafacts/tele.html" rel="alternate" type="text/html" title="Logika Facts :: CIS 301 Textbook">
     
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1699895900" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1699895900" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1699895900" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1699895900" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1699895900" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1699895900" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1699895900" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1699895900" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1699895900" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1700000699" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1700000699" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1700000699" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1700000699" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1700000699" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1700000699" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1700000699" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1700000699" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1700000699" rel="stylesheet">
     
     
     
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1699895900" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1699895900" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1699895900" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1699895900" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1699895900"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1700000699" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1700000699" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1700000699" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1700000699" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1700000699"></script>
     
     
     
@@ -391,7 +391,7 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1699895900" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1700000699" rel="stylesheet">
 
     
   </head>
@@ -488,7 +488,7 @@ $$</span><br>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>assert(answer == 2)</span></span></code></pre></div><p>We want to add a function contract, loop invariant block, and supporting logic blocks to demonstrate that <code>factorial</code> is returning <code>n!</code> and to prove the assert in our text code.</p>
 <h3 id="writing-a-function-contract-using-a-logika-fact">Writing a function contract using a Logika fact</h3>
-<p>We our <code>factorial</code> function contract to say that it is returning <code>n!</code>, and that it is only defined for values of <code>n</code> that are greater than or equal to 0. We recall that our Logika fact, <code>factDef</code>, defines the factorial operation:</p>
+<p>We want our <code>factorial</code> function contract to say that it is returning <code>n!</code>, and that it is only defined for values of <code>n</code> that are greater than or equal to 0. We recall that our Logika fact, <code>factDef</code>, defines the factorial operation:</p>
 <div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>l&#34;&#34;&#34;{
 </span></span><span style="display:flex;"><span>    fact
 </span></span><span style="display:flex;"><span>        def factDef(n: Z): Z
@@ -499,7 +499,7 @@ $$</span><br>
 </span></span><span style="display:flex;"><span>    l&#34;&#34;&#34;{
 </span></span><span style="display:flex;"><span>        requires n &gt;= 1                 //factorial(n) is only defined when n &gt;= 1
 </span></span><span style="display:flex;"><span>        ensures result == factDef(n)    //we promise to return factDef(n),
-</span></span><span style="display:flex;"><span>                                    //where factDef(n) defines n!
+</span></span><span style="display:flex;"><span>                                        //where factDef(n) defines n!
 </span></span><span style="display:flex;"><span>    }&#34;&#34;&#34;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    //code for factorial function
@@ -681,12 +681,8 @@ $$</span><br>
 </span></span><span style="display:flex;"><span>            //anything multiplied by 0 is just 0
 </span></span><span style="display:flex;"><span>            mult0. ∀ x: Z multDef(x, 0) == 0
 </span></span><span style="display:flex;"><span>            multPos. ∀ x: Z (∀ y: Z y &gt; 0 → multDef(x, y) == x + multDef(x, y-1))
-</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>We could use this Logika fact in the postcondition and loop invariant block for a multiplication function as follows:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>```text
-</span></span><span style="display:flex;"><span>import org.sireum.logika._
+</span></span><span style="display:flex;"><span>}&#34;&#34;&#34;</span></span></code></pre></div><p>We could use this Logika fact in the postcondition and loop invariant block for a multiplication function as follows:</p>
+<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>import org.sireum.logika._
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
 </span></span><span style="display:flex;"><span>    fact
@@ -756,8 +752,8 @@ $$</span><p><br><br></p>
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1699895900" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1699895900" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1700000699" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1700000699" defer></script>
     <script>
       function useMathJax( config ){
         if( !Object.assign ){
@@ -786,9 +782,9 @@ $$</span><p><br><br></p>
       }
       useMathJax( JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis301/js/mathjax/tex-mml-chtml.js?1699895900"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1699895900" defer></script>
+    <script id="MathJax-script" async src="https://ksu-cs-textbooks.github.io/cis301/js/mathjax/tex-mml-chtml.js?1700000699"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1700000699" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/embed-iframe.js?1699895900 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/embed-iframe.js?1700000699 defer"></script>
   </body>
 </html>
