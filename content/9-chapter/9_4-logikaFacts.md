@@ -148,7 +148,7 @@ We want to add a function contract, loop invariant block, and supporting logic b
 
 ### Writing a function contract using a Logika fact
 
-We our `factorial` function contract to say that it is returning `n!`, and that it is only defined for values of `n` that are greater than or equal to 0. We recall that our Logika fact, `factDef`, defines the factorial operation:
+We want our `factorial` function contract to say that it is returning `n!`, and that it is only defined for values of `n` that are greater than or equal to 0. We recall that our Logika fact, `factDef`, defines the factorial operation:
 
 ```text
 l"""{
@@ -166,7 +166,7 @@ def factorial(n: Z): Z = {
     l"""{
         requires n >= 1                 //factorial(n) is only defined when n >= 1
         ensures result == factDef(n)    //we promise to return factDef(n),
-                                    //where factDef(n) defines n!
+                                        //where factDef(n) defines n!
     }"""
 
     //code for factorial function
@@ -362,6 +362,7 @@ l"""{
             mult0. ∀ x: Z multDef(x, 0) == 0
             multPos. ∀ x: Z (∀ y: Z y > 0 → multDef(x, y) == x + multDef(x, y-1))
 }"""
+```
 
 We could use this Logika fact in the postcondition and loop invariant block for a multiplication function as follows:
 
