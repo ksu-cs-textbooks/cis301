@@ -122,7 +122,7 @@ You can read the premise as "There is a person that is everyone's boss". From th
             6. IsBossOf(a, b)           ∀e 3 b
             7. ∃ x IsBossOf(x, b)       ∃i 6 a
        }
-       8. ∀ y ∃ x IsBossOf(x, y))       ∀i 4
+       8. ∀ y ∃ x IsBossOf(x, y)        ∀i 4
   }
   9. ∀ y ∃ x IsBossOf(x, y)             ∃e 1 2
 }
@@ -143,7 +143,7 @@ Here is the proof worked again, with the subproofs swapped:
             6. IsBossOf(a, b)           ∀e 5 b
             7. ∃ x IsBossOf(x, b)       ∃i 6 a
        }
-       8. ∃ x IsBossOf(x, y))           ∃e 1 4
+       8. ∃ x IsBossOf(x, b)            ∃e 1 4
   }
   9. ∀ y ∃ x IsBossOf(x, y)             ∀i 2
 }
