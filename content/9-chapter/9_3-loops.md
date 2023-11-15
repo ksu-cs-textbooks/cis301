@@ -457,7 +457,7 @@ assert(answer == 12)
 
 ## How to construct a loop invariant
 
-The most difficult part of the entire process of proving the correctness of a function with a loop is coming up with an appropriate loop invariant. In this section, we will look study two additional loops and learn techniques for deriving loop invariants. In general, we need to think about what the loop is doing as it iterates, and what progress it has made so far towards its goal. A good first approach is to trace through the values of variables for several iterations of the loop, as we did with `mult` above -- this helps us identify patterns that can then become the loop invariant.
+The most difficult part of the entire process of proving the correctness of a function with a loop is coming up with an appropriate loop invariant. In this section, we will study two additional loops and learn techniques for deriving loop invariants. In general, we need to think about what the loop is doing as it iterates, and what progress it has made so far towards its goal. A good first approach is to trace through the values of variables for several iterations of the loop, as we did with `mult` above -- this helps us identify patterns that can then become the loop invariant.
 
 ### Example 1: Sum of odds
 

@@ -31,7 +31,7 @@ l"""{
 }"""
 ```
 
-The *invariant* clause lists all loop invariants, which should describe the progress the loop has made toward its goal (the loop invariant will often greatly reasonable the postcondition for the enclosing function). Loop invariants occasionally need to specify the range of different variables, especially if the invariant uses Logika facts (which may only be defined for particular values) or if you need more information about the final value of a variable when a loop terminates. I recommend making a table of variable values for several iterations of your loop to get a sense of the relationship between variables -- this relationship is what will become the loop invariant.
+The *invariant* clause lists all loop invariants, which should describe the progress the loop has made toward its goal (the loop invariant will often greatly resemble the postcondition for the enclosing function). Loop invariants occasionally need to specify the range of different variables, especially if the invariant uses Logika facts (which may only be defined for particular values) or if you need more information about the final value of a variable when a loop terminates. I recommend making a table of variable values for several iterations of your loop to get a sense of the relationship between variables -- this relationship is what will become the loop invariant.
 
 The *modifies* clause lists all variables that are modified in the loop body.
 

@@ -9,7 +9,7 @@ Assignment statements in a program come in two forms -- with and without mutatio
 
 For example, an increment statement like `x = x + 1` MUTATES the value of `x` by updating its value to be one bigger than it was before. In order to make sense of such a statement, we need to know the previous value of `x`.
 
-In contrast, a statemnet like `y = x + 1` assigns to `y` one more than the value in `x`. We do not need to know the previous value of `y`, as we are not using it in the assignment statement. (We do need to know the value of `x`).
+In contrast, a statement like `y = x + 1` assigns to `y` one more than the value in `x`. We do not need to know the previous value of `y`, as we are not using it in the assignment statement. (We do need to know the value of `x`).
 
 ## Assignments without mutation
 
@@ -195,7 +195,7 @@ l"""{
 }"""
 y = temp
 l"""{
-    1. y == temp                premise     //from the assignment statemnet
+    1. y == temp                premise     //from the assignment statement
     2. temp == xOrig            premise     //from the previous logic block (temp and xOrig are unchanged since then)
     3. yOrig == y_old           premise     //yOrig equaled the OLD value of y
     4. y == xOrig               algebra 1 2
