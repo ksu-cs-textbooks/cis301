@@ -356,20 +356,20 @@
     <link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_5-assignment/tele.html" rel="alternate" type="text/html" title="Assignment Statements :: CIS 301 Textbook">
     
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1700000699" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1700000699" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1700000699" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1700000699" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1700000699" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1700000699" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1700000699" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1700000699" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1700000699" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1700064422" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1700064422" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1700064422" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1700064422" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1700064422" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1700064422" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1700064422" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1700064422" rel="stylesheet"></noscript>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1700064422" rel="stylesheet">
     
     
     
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1700000699" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1700000699" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1700000699" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1700000699" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1700000699"></script>
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-light-theme.css?1700064422" rel="stylesheet" id="variant-style">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1700064422" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1700064422" rel="stylesheet" media="print">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1700064422" rel="stylesheet">
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1700064422"></script>
     
     
     
@@ -391,7 +391,7 @@
       window.variants && variants.init( [ 'light-theme', 'dark-theme' ] );
     </script>
     
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1700000699" rel="stylesheet">
+    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1700064422" rel="stylesheet">
 
     
   </head>
@@ -408,7 +408,7 @@
     
 <p>Assignment statements in a program come in two forms &ndash; with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.</p>
 <p>For example, an increment statement like <code>x = x + 1</code> MUTATES the value of <code>x</code> by updating its value to be one bigger than it was before. In order to make sense of such a statement, we need to know the previous value of <code>x</code>.</p>
-<p>In contrast, a statemnet like <code>y = x + 1</code> assigns to <code>y</code> one more than the value in <code>x</code>. We do not need to know the previous value of <code>y</code>, as we are not using it in the assignment statement. (We do need to know the value of <code>x</code>).</p>
+<p>In contrast, a statement like <code>y = x + 1</code> assigns to <code>y</code> one more than the value in <code>x</code>. We do not need to know the previous value of <code>y</code>, as we are not using it in the assignment statement. (We do need to know the value of <code>x</code>).</p>
 <h2 id="assignments-without-mutation">Assignments without mutation</h2>
 <p>We have already seen the steps necessary to process assignment statements that do not involve variable mutation. Recall that we can declare as a <code>premise</code> any assignment statement or claim from a previous logic block involving variables that have not since changed.</p>
 <p>For example, suppose we want to verify the following program so the assert statement at the end will hold:</p>
@@ -548,7 +548,7 @@
 </span></span><span style="display:flex;"><span>}&#34;&#34;&#34;
 </span></span><span style="display:flex;"><span>y = temp
 </span></span><span style="display:flex;"><span>l&#34;&#34;&#34;{
-</span></span><span style="display:flex;"><span>    1. y == temp                premise     //from the assignment statemnet
+</span></span><span style="display:flex;"><span>    1. y == temp                premise     //from the assignment statement
 </span></span><span style="display:flex;"><span>    2. temp == xOrig            premise     //from the previous logic block (temp and xOrig are unchanged since then)
 </span></span><span style="display:flex;"><span>    3. yOrig == y_old           premise     //yOrig equaled the OLD value of y
 </span></span><span style="display:flex;"><span>    4. y == xOrig               algebra 1 2
@@ -570,10 +570,10 @@
     
     
     
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1700000699" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1700000699" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1700000699" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1700064422" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1700064422" defer></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1700064422" defer></script>
     
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/embed-iframe.js?1700000699 defer"></script>
+    <script src="https://ksu-cs-textbooks.github.io/cis301/js/embed-iframe.js?1700064422 defer"></script>
   </body>
 </html>
