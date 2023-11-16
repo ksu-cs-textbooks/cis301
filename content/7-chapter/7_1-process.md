@@ -7,7 +7,7 @@ header-includes:
     - \usepackage{amsmath}
 ---
 
-*Mathematical induction* allows us to prove that every nonnegative integer satisfies a certain property. In this chapter, we will use mathematical inductive to prove several mathematical claims. When we reach the next several chapters on programming logic, we will see that mathematical induction is very similar to the process of proving correctness for programs with loops.
+*Mathematical induction* allows us to prove that every nonnegative integer satisfies a certain property. In this chapter, we will use mathematical induction to prove several mathematical claims. When we reach the next several chapters on programming logic, we will see that mathematical induction is very similar to the process of proving correctness for programs with loops.
 
 ## Domino effect
 
