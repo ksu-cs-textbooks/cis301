@@ -382,7 +382,7 @@ We will practice translating from predicate logic to English.</description>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_4-multquant/index.html</guid>
       <description>Translations that involve more than one quantifier (which often happens when some of the predicates have more than one parameter) are more challenging. We will divide these translations into two categories:
-Translations that involve several of the same quantifier (multiple universal quantifiers or multiple existential quantifiiers) Translations that mix quantifiers In many of the sections, we will using the predicates below (which are over the domain of shapes):
+Translations that involve several of the same quantifier (multiple universal quantifiers or multiple existential quantifiers) Translations that mix quantifiers In many of the sections, we will using the predicates below (which are over the domain of shapes):
 isCircle(x) - whether shape x is a circle isSquare(x) - whether shape x is a square isRectangle(x) - whether shape x is a rectangle biggerThan(x, y) - whether shape x is bigger than shape y Several of the same quantifier First, we consider translations that involve several of the same quantifier.</description>
     </item>
   </channel>

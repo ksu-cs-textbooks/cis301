@@ -386,7 +386,7 @@ Exists introduction We can use the exists introduction rule, ∃i, when we have 
       <link>https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_5-strategies/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_5-strategies/index.html</guid>
-      <description>In this section, we summarize all available rules in propositional logic, and discuss stratgies for approaching proofs.
+      <description>In this section, we summarize all available rules in propositional logic, and discuss strategies for approaching proofs.
 Rules with universal quantifier (∀) Rule summaries:
 ∀ x P(x) ∀e: ----------- P(v) where v is a particular individual in the domain { a (a is fresh) ... P(a) } ∀i: --------------- ∀ x P(x) Rule syntax summaries:
 { ... r. ∀ x P(x) (...) s. P(v) ∀e r v ... }{ ... r.</description>
