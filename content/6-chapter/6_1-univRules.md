@@ -35,7 +35,7 @@ We can read the justification `∀e 1 Socrates` as: "for all elimination of the 
 
 ## For all introduction
 
-If we can show that a property of the form `P(a)` holds for an arbitrary member `a` of a domain, then we can use for all introduction to conclude that the property must hold for ALL individuals in the domain -- i.e., that `∀ x P(x)`. We can formalize the fule as follows:
+If we can show that a property of the form `P(a)` holds for an arbitrary member `a` of a domain, then we can use for all introduction to conclude that the property must hold for ALL individuals in the domain -- i.e., that `∀ x P(x)`. We can formalize the rule as follows:
 
 ```text
      { a              (a is fresh)
@@ -182,7 +182,7 @@ As with our previous example, we see that we are trying to prove a for-all state
 }
 ```
 
-We have two available for-all statements within the subproof -- `∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))` and `∀ x isStudent(x)`. Since those propositions hold for all individuals, they also hold for `bob`. We use `Ae` to plug in `bob` to those two propositions:
+We have two available for-all statements within the subproof -- ` x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))` and `∀ x isStudent(x)`. Since those propositions hold for all individuals, they also hold for `bob`. We use `∀e` to plug in `bob` to those two propositions:
 
 ```text
 ∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)), ∀ x isStudent(x) ⊢ ∀ x (hasPhone(x) ∨ hasLaptop(x))

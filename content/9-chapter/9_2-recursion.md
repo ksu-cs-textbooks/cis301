@@ -23,10 +23,10 @@ We *could* do this repeated addition with a loop (and we will when we introduce 
 
 In the case of the multiplication `x * y`, we have:
 
-- Base case: if `y` is 0, we have no work to do. Adding togther 0 `x`'s is just 0.
+- Base case: if `y` is 0, we have no work to do. Adding together 0 `x`'s is just 0.
 - Recursive case: if `y` is bigger than 0, we do ONE addition (`x + ...`) and recursively add the remaining `y - 1` numbers. (This will become our recursive call.)
 
-With those cases in mind, we can write a recursive `mult` functio:
+With those cases in mind, we can write a recursive `mult` function:
 
 ```text
 import org.sireum.logika._

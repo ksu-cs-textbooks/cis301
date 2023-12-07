@@ -114,7 +114,7 @@ def div(a: Z, b: Z) : Z =  {
 
     l"""{
         1. b != 0               premise     //precondition (needed for division)
-        2. ans == a/b           premise     //satisifies the postcondition
+        2. ans == a/b           premise     //satisfies the postcondition
                                             //(from the "ans = a/b" assignment)
     }"""
 
@@ -141,7 +141,7 @@ def div(a: Z, b: Z) : Z =  {
 
     l"""{
         1. b != 0               premise     //precondition (needed for division)
-        2. ans == a/b           premise     //satisifies the postcondition
+        2. ans == a/b           premise     //satisfies the postcondition
                                             //(from the "ans = a/b" assignment)
     }"""
 
@@ -171,7 +171,7 @@ val y: Z = 2
 l"""{
     1. x == 10              premise     //from the "x = 10" assignment
     2. y == 2               premise     //from the "y = 2" assignment
-    3. y != 0               algebra 2   //satisifies the precondition for div
+    3. y != 0               algebra 2   //satisfies the precondition for div
 }"""
 
 val num: Z = div(x, y)
@@ -186,7 +186,7 @@ val y: Z = 2
 l"""{
     1. x == 10              premise     //from the "x = 10" assignment
     2. y == 2               premise     //from the "y = 2" assignment
-    3. y != 0               algebra 2   //NO! precondition is not satisifed!
+    3. y != 0               algebra 2   //NO! precondition is not satisfied!
 }"""
 
 val num: Z = div(x-1, y+1)

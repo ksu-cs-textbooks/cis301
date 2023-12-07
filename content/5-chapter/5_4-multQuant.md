@@ -7,7 +7,7 @@ date: 2018-08-24T10:53:26-05:00
 
 Translations that involve more than one quantifier (which often happens when some of the predicates have more than one parameter) are more challenging. We will divide these translations into two categories:
 
-- Translations that involve several of the same quantifier (multiple universal quantifiers or multiple existential quantifiiers)
+- Translations that involve several of the same quantifier (multiple universal quantifiers or multiple existential quantifiers)
 - Translations that mix quantifiers
 
 In many of the sections, we will using the predicates below (which are over the domain of shapes):
@@ -19,7 +19,7 @@ In many of the sections, we will using the predicates below (which are over the 
 
 ## Several of the same quantifier
 
-First, we consider translations that involve several of the same quantifier. There are two ways we can translate such statements -- either using prenex form (quantifiers out front) or Aristotlian form (quantifiers nested).
+First, we consider translations that involve several of the same quantifier. There are two ways we can translate such statements -- either using prenex form (quantifiers out front) or Aristotelian form (quantifiers nested).
 
 ### Prenex form
 
@@ -59,15 +59,15 @@ Next, suppose we wished to translate: *Every circle is bigger than all squares*.
 
 Which reads: *For each combination (x, y) of shapes, if x is a circle and y is a square, then x (which is a circle) is bigger than y (which is a square).*
 
-### Aristotlian form
+### Aristotelian form
 
-The *Aristotlian form* of a predicate logic translation embeds the quantifiers within the translation. This format is possible for any kind of translation -- whether the quantifiers are all the same type or mixed types.
+The *Aristotelian form* of a predicate logic translation embeds the quantifiers within the translation. This format is possible for any kind of translation -- whether the quantifiers are all the same type or mixed types.
 
-#### Aristotlian form example 1
+#### Aristotelian form example 1
 
-Suppose we wished to translate, *Some circle is bigger than some square* using Aristotlian form. We know that we will still need two existential quantifiers, but we will only introduce each quantifier just before the corresponding variable is needed in a predicate.
+Suppose we wished to translate, *Some circle is bigger than some square* using Aristotelian form. We know that we will still need two existential quantifiers, but we will only introduce each quantifier just before the corresponding variable is needed in a predicate.
 
-We can translate the statement using Aristotlian form as follows:
+We can translate the statement using Aristotelian form as follows:
 
 ```text
 ∃ x (isCircle(x) ∧ (∃ y (isSquare(y) ∧ biggerThan(x, y)))
@@ -75,11 +75,11 @@ We can translate the statement using Aristotlian form as follows:
 
 Which reads as: *There exists a shape x that is a circle and there exists a shape y that is a square, and x (which is a circle) is bigger than y (which is a square)*.
 
-#### Aristotlian form example 2
+#### Aristotelian form example 2
 
-Let's repeat our translation for, *Every circle is bigger than all rectangles* using Aristotlian form. We know that we will still need two existential quantifiers, but we will only introduce each quantifier just before the corresponding variable is needed in a predicate.
+Let's repeat our translation for, *Every circle is bigger than all rectangles* using Aristotelian form. We know that we will still need two existential quantifiers, but we will only introduce each quantifier just before the corresponding variable is needed in a predicate.
 
-We can translate the statement using Aristotlian form as follows:
+We can translate the statement using Aristotelian form as follows:
 
 ```text
 ∀ x (isCircle(x) → (∀ y (isSquare(y) → biggerThan(x, y))))
@@ -89,7 +89,7 @@ Which reads as: *For every shape x, if x is a circle, then for every shape y, if
 
 ## Mixed quantifiers
 
-Now, we will turn to examples that mix universal and existential quantifiers. We will see below that quantifier order matters in this case, so it is safest to translate such statements using embedded quantifiiers. The embedded form can be tricky to write, so we will see a way to systematically translate any statement that needs multiple quantifiers into predicate logic (using Aristotlian form).
+Now, we will turn to examples that mix universal and existential quantifiers. We will see below that quantifier order matters in this case, so it is safest to translate such statements using embedded quantifiers. The embedded form can be tricky to write, so we will see a way to systematically translate any statement that needs multiple quantifiers into predicate logic (using Aristotelian form).
 
 ### Systematic translation
 

@@ -111,9 +111,9 @@ sumFact(seq, seq.size) = 2 + sumFact(seq, 2) = 2 + 9 = 11
 
 And we see that `sumFact` has correctly described that the sum of all elements in our `ZS(5,4,2)` sequence is 11.
 
-## Finishing the `sumSeq` example
+## Finishing the `seqSum`` example
 
-Now that we have a Logika fact to describe the sum of all the elements in a sequence, we have enough information to write the postcondition and loop invariant for our `sumSeq` function. 
+Now that we have a Logika fact to describe the sum of all the elements in a sequence, we have enough information to write the postcondition and loop invariant for our `seqSum` function. 
 
 For the function contract, we must consider:
 

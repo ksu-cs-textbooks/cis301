@@ -103,7 +103,7 @@ Next, we apply `∀e` again to `∀ y P(a, y)` to leave us with `P(a, b)`. All t
 
 ## Example 2
 
-Suppose we have the predicate `IsBossof(x, y)` in the domain of people, which describes whether person `x` is the boss of person `y`. We wish to prove the following sequent:
+Suppose we have the predicate `IsBossOf(x, y)` in the domain of people, which describes whether person `x` is the boss of person `y`. We wish to prove the following sequent:
 
 ```text
 ∃ x ∀ y IsBossOf(x, y) ⊢ ∀ y ∃ x IsBossOf(x, y)

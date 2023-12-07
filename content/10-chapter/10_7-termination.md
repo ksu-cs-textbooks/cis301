@@ -213,7 +213,7 @@ We see that we must pass `collatz` a positve parameter, and that it promises to 
 
 Suppose we compute `collatz(17)`. We can track the value of `n` as follows: 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1. We can see that `n` does eventually reach 1, and that the program terminates in that case. We can similarly try other parameters, and will again see that we always end up with 1 (sometimes after a surprising number of iterations). But in fact:
 
-- No one has proved that the Collatz function terminates for all postiive numbers; and
+- No one has proved that the Collatz function terminates for all positive numbers; and
 - No one has found a positive number on which the Collatz function does not terminate
 
 ## Decidability and the Halting problem

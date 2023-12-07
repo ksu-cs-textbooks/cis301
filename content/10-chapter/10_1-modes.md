@@ -15,17 +15,17 @@ Up to now, we have been running Logika in "manual mode", which uses these Logika
 
 We are now reaching the point where additional practice in manual mode may no longer be a learning activity, and where the proof-blocks after claim transformations can become dozens of lines long.
 
-## Logika's SymExe mode
+## Logika's symexe mode
 
 In Chapter 10, we will be switching to Logika's "symexe mode", which uses these Logika settings:
 
 ![symexe mode](/images/sireumSymexe.png)
 
-Symexe mode allows us to reason about our program by using ONLY invariants and function contracts. While the same work has to be done for a program to be verified (the precondition must be true before a function call, the loop invariant must be true before the loop begins, etc.), symexe mode does the work of analyzing your program statements to ensure that all parts of your loop invariant and function contract are satisified. When you use symexe mode, you will only need to include a function contract for each function and a loop invariant block for each loop, and it will do the grunt work.
+Symexe mode allows us to reason about our program by using ONLY invariants and function contracts. While the same work has to be done for a program to be verified (the precondition must be true before a function call, the loop invariant must be true before the loop begins, etc.), symexe mode does the work of analyzing your program statements to ensure that all parts of your loop invariant and function contract are satisfied. When you use symexe mode, you will only need to include a function contract for each function and a loop invariant block for each loop, and it will do the grunt work.
 
 ### Multiplication example
 
-In section 9.3, we did a verification of a multiplication a program using Logika's manual mode. Here is how we would write the verification of the same program using Logika's symexe mode:
+In section 9.3, we did a verification of a multiplication program using Logika's manual mode. Here is how we would write the verification of the same program using Logika's symexe mode:
 
 ```text
 import org.sireum.logika._
@@ -68,4 +68,4 @@ Note that the only logic blocks we needed to provide were the function contract 
 
 When using this more advanced mode, it is not always obvious why Logika will not verify. Sometimes semantic errors in the program keep it from verifying; i.e. Logika has found a corner or edge case for which the program does not account. Other times the invariants and conditions do not actually help prove the goal in an assert or postcondition. Inevitably, sometimes it will be both.
 
-In either case an option is to uncheck "auto" and begin typing each proof-block as if in manual mode (this can be done with Symexe enabled) until you find the logical or programming error.
+In either case an option is to uncheck "auto" and begin typing each proof-block as if in manual mode (this can be done with symexe enabled) until you find the logical or programming error.

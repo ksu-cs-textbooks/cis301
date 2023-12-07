@@ -420,7 +420,7 @@ $$
 
 The first two Fibonacci numbers are both 1, and subsequent Fibonacci numbers are found by adding the two previous values. In the sequence above, we see that the two latest numbers were 8 and 13, so the next number in the sequence will be {{< math >}}$8 + 13 = 21${{< /math >}}.
 
-We can recursively define the Fibonnaci sequence as follows:
+We can recursively define the Fibonacci sequence as follows:
 
 - Base case 1: the first Fibonacci number is 1
 - Base case 2: the second Fibonacci number is 1

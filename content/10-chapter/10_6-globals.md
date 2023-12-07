@@ -7,7 +7,7 @@ date: 2018-08-24T10:53:26-05:00
 
 ## Motivation
 
-We will now consider programs with multiple functions that modify a shared pool of *global variables*. (This is very similar to the concerns in general classes in Java or C#, where multiple methods might edit fields/property values for an object). We want to be sure that global variables will maintain desired ranges and and relationships between one another, even as multiple functions modify their values. 
+We will now consider programs with multiple functions that modify a shared pool of *global variables*. (This is very similar to the concerns in general classes in Java or C#, where multiple methods might edit fields/property values for an object). We want to be sure that global variables will maintain desired ranges and relationships between one another, even as multiple functions modify their values. 
 
 ## Global variables in Logika
 
@@ -311,10 +311,10 @@ assert(balance == 500000 & elite == false)
 
 will hold in Logika's symexe mode.
 
-The very next statement in the calling code is another call to `deposit`. Since we could assuem the global invariants held immediately after the last call to deposit, we can infer that they still hold before the next `deposit` call. We also see that the function's precondition is satisified, as we are depositing another nonnegative value. Just as before, we can use the `deposit` postcondition to see that `balance` will be 1000000 after the next function call (the postcondition tells us that `balance` is 500000 more than it was just before the function call). We also know that the global invariants hold, so we are sure `elite` has been updated to true. Thus our next assert holds as well:
+The very next statement in the calling code is another call to `deposit`. Since we could assume the global invariants held immediately after the last call to deposit, we can infer that they still hold before the next `deposit` call. We also see that the function's precondition is satisfied, as we are depositing another nonnegative value. Just as before, we can use the `deposit` postcondition to see that `balance` will be 1000000 after the next function call (the postcondition tells us that `balance` is 500000 more than it was just before the function call). We also know that the global invariants hold, so we are sure `elite` has been updated to true. Thus our next assert holds as well:
 
 ```text
 assert(balance == 1000000 & elite == true)
 ```
 
-Our final function call, `withdraw(2000000)`, will not be allowed. We are trying to withdraw $2,000,000, but our account balance at this point is $1,000,000. We will get an error saying that the `withdraw` precondition has not been satisified, as that function requires that our withdrawal amount be less than or equal to the account balance.
+Our final function call, `withdraw(2000000)`, will not be allowed. We are trying to withdraw $2,000,000, but our account balance at this point is $1,000,000. We will get an error saying that the `withdraw` precondition has not been satisfied, as that function requires that our withdrawal amount be less than or equal to the account balance.

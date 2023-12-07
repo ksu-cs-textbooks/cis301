@@ -5,7 +5,7 @@ weight: 74
 date: 2018-08-24T10:53:26-05:00
 ---
 
-In this section, we summarize all available rules in propositional logic, and discuss stratgies for approaching proofs.
+In this section, we summarize all available rules in propositional logic, and discuss strategies for approaching proofs.
 
 ## Rules with universal quantifier (`∀`)
 

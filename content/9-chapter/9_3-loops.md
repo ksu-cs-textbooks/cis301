@@ -42,7 +42,7 @@ If we prove those two things about our invariant, we can be certain the invarian
 
 ## Loop invariant block syntax
 
-In Logika, we will use a logic block to indiciate our loop invariant. This *loop invariant block* will go just inside the loop, before the loop body:
+In Logika, we will use a logic block to indicate our loop invariant. This *loop invariant block* will go just inside the loop, before the loop body:
 
 ```text
 while (condition) {
