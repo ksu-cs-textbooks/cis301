@@ -354,7 +354,7 @@
       <link>https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_1-logicbasics/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_1-logicbasics/index.html</guid>
-      <description>What is logical reasoning? Logical reasoning is an analysis of an argument according to a set of rules. In this course, we will be learning several sets of rules for more formal anlaysis, but for now we will informally analyze English sentences and logic puzzles. This will help us practice the careful and rigorous thinking that we will need in formal proofs and in computer science in general.
+      <description>What is logical reasoning? Logical reasoning is an analysis of an argument according to a set of rules. In this course, we will be learning several sets of rules for more formal analysis, but for now we will informally analyze English sentences and logic puzzles. This will help us practice the careful and rigorous thinking that we will need in formal proofs and in computer science in general.
 Premises and conclusions A premise is a piece of information that we are given in a logical argument.</description>
     </item>
     <item>
