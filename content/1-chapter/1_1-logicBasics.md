@@ -6,7 +6,7 @@ pre: "1.1. "
 
 ## What is logical reasoning?
 
-Logical reasoning is an analysis of an argument according to a set of rules. In this course, we will be learning several sets of rules for more formal anlaysis, but for now we will informally analyze English sentences and logic puzzles. This will help us practice the careful and rigorous thinking that we will need in formal proofs and in computer science in general.
+Logical reasoning is an analysis of an argument according to a set of rules. In this course, we will be learning several sets of rules for more formal analysis, but for now we will informally analyze English sentences and logic puzzles. This will help us practice the careful and rigorous thinking that we will need in formal proofs and in computer science in general.
 
 ## Premises and conclusions
 

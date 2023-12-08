@@ -20,7 +20,7 @@ For example, the following are propositional atoms:
 
 ## Examples of what are NOT propositional atoms
 
-Propositional atoms should not contain any logical connectives. If they did, this would mean would could have further subdivided the statement into multiple propositional atoms that could be joined with logical operators. For example, the following are NOT propositional atoms:
+Propositional atoms should not contain any logical connectives. If they did, this would mean we could have further subdivided the statement into multiple propositional atoms that could be joined with logical operators. For example, the following are NOT propositional atoms:
 
 - It is not summer. (*contains a not*)
 - Bob has brown hair and brown eyes. (*contains an and*)
