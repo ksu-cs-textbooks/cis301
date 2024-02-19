@@ -121,7 +121,7 @@ The second case, that `q` holds true, is the only realistic case, and it immedia
 
 ## Proof by contradiction
 
-The proof by contraction rule, `pbc`, says that when assuming `¬ P` leads to a contradiction for some proposition `P`, then we made a bad assumption and thus `P` must be true. It is very similar to the `¬ i` rule, except `pbc` has us assuming `¬ P` and eventually concluding `P`, while the `¬ i` rule has us assuming `P` and evntually concluding `¬ P`.
+The proof by contraction rule, `pbc`, says that when assuming `¬ P` leads to a contradiction for some proposition `P`, then we made a bad assumption and thus `P` must be true. It is very similar to the `¬ i` rule, except `pbc` has us assuming `¬ P` and eventually concluding `P`, while the `¬ i` rule has us assuming `P` and eventually concluding `¬ P`.
 
 Here is a formalization of `pbc`:
 
