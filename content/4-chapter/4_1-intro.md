@@ -11,7 +11,7 @@ We will use the Logika tool to check whether our proofs correctly follow our ded
 
 ## Sequents, premises, and conclusions
 
-A *sequent* is a mathematical term for an assertion. We use the notation:
+A *sequent* is a mathematical term for an assertion or an argument. We use the notation:
 
 ```text
 p0, p1, ..., pm ⊢ c
@@ -43,49 +43,82 @@ A sequent is said to be *valid* if, for every truth assignment which make the pr
 For example, consider the following sequent:
 
 ```text
-p → q , ¬ q  ⊢  ¬ p
+p → q , ¬q  ⊢  ¬p
 ```
 
 To check if this sequent is valid, we must find all truth assignments for which both premises are true, and then ensure that those truth assignments also make the conclusion true.
 
-Here is a (non-Logika syntax) type of truth table that combines all three statements:
+### Sequent validity in Logika using truth tables
+
+We can use a different kind of truth table to prove the validity of a sequent in Logika:
 
 ```text
-p q | (p → q) | ( ¬q) |  ¬p
+         *     *     *
 ---------------------------
-T T |    T     |  F   | F
-T F |    F     |  T   | F
-F T |    T     |  F   | T
-F F |    T     |  T   | T
+p q # (p →: q, ¬q) ⊢ ¬p
+---------------------------
+T T #    T     F     F
+T F #    F     T     F
+F T #    T     F     T
+F F #    T     T     T
+---------------------------
+Valid [F F]
 ```
+
+Notice that instead of putting just one logical formula, we put the entire sequent -- the premises are in a comma-separated list inside parentheses, then the turnstile operator (which we type using the keys `|-` in Logika), and then the conclusion. We mark the top-level operator of each premise and conclusion.
 
 Examining each row in the above truth table, we see that only the truth assignment [F F] makes both premises (`p → q` and ` ¬q`) true. We look right to see that the same truth assignment also makes the conclusion (` ¬p`) true, which means that the sequent is valid.
 
-## Using Logika for proof verification
+## Proving sequents using natural deduction
 
-We can use the Logika tool to help check the correctness of our proofs. (Again, Logika is just a tool to help check our work -- we could write the same argument in a different environment or on paper, and the meaning would be the same.)
+Now we will turn to the next section of the course -- using *natural deduction* to similarly prove the validity of sequents. Instead of filling out truth tables (which becomes cumbersome very quickly), we will apply a series of *deduction rules* to allow us to conclude new claims from our premises. In turn, we can use our deduction rules on these new claims to conclude more and more, until (hopefully) we are able to claim our conclusion. If we can do that, then our sequent was valid.
 
-Each Logika proof should be written in a separate file with a .logika extension. Logika verification knows each of the deduction rules we will see in the next few chapters, and will automatically check to ensure that your steps obey these deduction rules as you type your proof. If a proof is correct, you will see a purple checkmark in the lower right corner that says "Logika verified". If you have logic errors, you will see them highlighted in red.
+## Logika natural deduction proof syntax
 
-Sometimes, the Logika verification needs to be run manually. If you don't see either red errors or a purple checkmark, right-click in the text area that contains the proof and select "Logika Check".
-
-## Logika proof syntax
-
-Sequents in Logika have the following form:
+We will use the following format in Logika to start a natural deduction proof for propositional logic. Each proof will be saved in a new file with a `.sc` (Scala) extension:
 
 ```text
-< 0 or more premises, separated by commas > ⊢ < 1 conclusion >
+// #Sireum #Logika
+//@Logika: --manual --background type
+
+import org.sireum._
+import org.sireum.justification._
+import org.sireum.justification.natded.prop._
+
+@pure def ProofName(variable1: B, variable2: B, ...): Unit = {
+    Deduce(
+        //@formatter:off
+        (comma-separated list of premises with variable1, variable2, ...)  ⊢  (conclusion)
+            Proof(
+                //the actual proof steps go here
+            )
+        //@formatter:on
+    )
+}
 ```
 
-Proofs in Logika are structured in two columns, with claims on the left and their supporting justification on the right:
+Once we are inside the `Proof` element (where the above example says "the actual proof steps go here"), we complete a numbered series of steps. Each step includes a claim and corresponding justification, like this:
 
 ```text
-premises ⊢ conclusion
-{
-    1. claim_a          justification_a
-    2. claim_b          justification_b
-       ...              ...
-    736. conclusion     justification_ef
+// #Sireum #Logika
+//@Logika: --manual --background type
+
+import org.sireum._
+import org.sireum.justification._
+import org.sireum.justification.natded.prop._
+
+@pure def ProofName(variable1: B, variable2: B, ...): Unit = {
+    Deduce(
+        //@formatter:off
+        (comma-separated list of premises with variable1, variable2, ...)  ⊢  (conclusion)
+            Proof(
+                1 ( claim_a         )   by Justification_a,
+                2 ( claim_b         )   by Justification_b,
+                ...
+                736 ( conclusion    )   by Justification_conc
+            )
+        //@formatter:on
+    )
 }
 ```
 
@@ -97,51 +130,65 @@ We will see more details of Logika proof syntax as we progress through chapter 4
 
 The most basic justification for a claim in a proof is "premise". This justification is used when you pull in a premise from the sequent and introduce it into your proof. All, some or none of the premises can be introduced at any time in any order. Please note that only one premise may be entered per claim.
 
-For example, we might bring in the premises from our sequent like this:
+For example, we might bring in the premises from our sequent like this (the imports and proof function definition are omitted here for readability):
 
 ```text
-p, q,  ¬r |- p ∧ q
-{
-    1. p            premise
-    2. q            premise
-    3.  ¬r           premise
-    ...
-}
+Deduce(
+    //@formatter:off
+    (p, q, ¬r)  ⊢  (p ∧ q)
+        Proof(
+            1 ( p               )   by Premise,
+            2 ( q               )   by Premise,
+            3 ( ¬r              )   by Premise,
+            ...
+        )
+    //@formatter:on
+)
 ```
 
 We could also bring in the same premise multiple times, if we wanted. We could also use non-sequential line numbers, as long as each line number was unique:
 
 ```text
-p, q,  ¬r |- p ∧ q
-{
-    7. p            premise
-    10. q           premise
-    2.  ¬r           premise
-    8. p            premise
-    ...
-}
+Deduce(
+    //@formatter:off
+    (p, q, ¬r)  ⊢  (p ∧ q)
+        Proof(
+            7 ( p           )   by Premise,
+            10 ( q          )   by Premise,
+            2 ( ¬r          )   by Premise,
+            8 ( p           )   by Premise,
+            ...
+        )
+    //@formatter:on
+)
 ```
 
 We could only bring in some portion of our premises, if we wanted:
 
 ```text
-p, q,  ¬r |- p ∧ q
-{
-    1. p            premise
-    ...
-}
+Deduce(
+    //@formatter:off
+    (p, q, ¬r)  ⊢  (p ∧ q)
+        Proof(
+            1 ( p           )   by Premise,
+            ...
+        )
+    //@formatter:on
+)
 ```
 
 But we can only list one premise in each claim. For example, the following is not allowed:
 
 ```text
-p, q,  ¬r |- p ∧ q
-{
-    //THIS IS WRONG ¬
-
-    1. p, q,  ¬r         premise
-    ...
-}
+Deduce(
+    //@formatter:off
+    (p, q, ¬r)  ⊢  (p ∧ q)
+        Proof(
+            1 ( p, q, ¬r           )   by Premise,
+            ...
+        )
+    //@formatter:on
+)
 ```
 
 ## Deduction rules

@@ -28,7 +28,7 @@ and would then use a NOT operator to express the negation. Our full translation 
 
 ### Example 2
 
-As another example, suppose we have the sentence
+As another example, suppose we have the sentence:
 ```text
 My sweater is irreplaceable.
 ```
