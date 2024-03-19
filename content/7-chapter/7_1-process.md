@@ -57,34 +57,34 @@ We wish to use mathematical induction to prove that {{< math >}}$P(n)${{< /math 
 <br>
 <br>
 
-We will refer to {{< math >}}$1 + 2 + ... + n${{< /math >}} as {{< math >}}$LHS_n${{< /math >}} and we will refer to {{< math >}}$\dfrac{n(n+1)}{2}${{< /math >}} as {{< math >}}$RHS_n${{< /math >}}. To prove that {{< math >}}$P(n)${{< /math >}} holds for some positive integer {{< math >}}$n${{< /math >}}, we must prove that {{< math >}}$LHS_n = RHS_n${{< /math >}}.
+We will refer to {{< math >}}$1 + 2 + ... + n${{< /math >}} as {{< math >}}$LHS(n))${{< /math >}} and we will refer to {{< math >}}$\dfrac{n(n+1)}{2}${{< /math >}} as {{< math >}}$RHS(n))${{< /math >}}. To prove that {{< math >}}$P(n)${{< /math >}} holds for some positive integer {{< math >}}$n${{< /math >}}, we must prove that {{< math >}}$LHS(n)) = RHS(n))${{< /math >}}.
 
 ### Base case
 
-We must prove that {{< math >}}$P(n)${{< /math >}} holds for the smallest positive integer, {{< math >}}$n = 1${{< /math >}}, that is, that {{< math >}}$LHS_1 = RHS_1${{< /math >}}. The sum of all integers from 1 to 1 is just 1, so we have that {{< math >}}$LHS_1 = 1${{< /math >}}. We also have that:
+We must prove that {{< math >}}$P(n)${{< /math >}} holds for the smallest positive integer, {{< math >}}$n = 1${{< /math >}}, that is, that {{< math >}}$LHS(1) = RHS(1))${{< /math >}}. The sum of all integers from 1 to 1 is just 1, so we have that {{< math >}}$LHS(1) = 1${{< /math >}}. We also have that:
 
 ```math
 $$
 \begin{aligned}
-RHS_1 = \dfrac{1(1+1)}{2} = 1
+RHS(1) = \dfrac{1(1+1)}{2} = 1
 \end{aligned}
 $$
 ```
 
 <br>
 
-We have that {{< math >}}$LHS_1 = RHS_1${{< /math >}}. Thus {{< math >}}$P(1)${{< /math >}} is true, so the base case holds.
+We have that {{< math >}}$LHS(1) = RHS(1)${{< /math >}}. Thus {{< math >}}$P(1)${{< /math >}} is true, so the base case holds.
 
 ### Inductive step
 
-We assume the inductive hypothesis - that {{< math >}}$P(k)${{< /math >}} holds for some arbitrary positive integer {{< math >}}$k${{< /math >}}. In other words, we assume that {{< math >}}$LHS_k = RHS_k${{< /math >}} for our arbitrary {{< math >}}$k${{< /math >}}. We must prove that {{< math >}}$P(k+1)${{< /math >}} also holds -- i.e., that {{< math >}}$LHS_{k+1} = RHS_{k+1}${{< /math >}}. We have that:
+We assume the inductive hypothesis - that {{< math >}}$P(k)${{< /math >}} holds for some arbitrary positive integer {{< math >}}$k${{< /math >}}. In other words, we assume that {{< math >}}$LHS(k) = RHS(k)${{< /math >}} for our arbitrary {{< math >}}$k${{< /math >}}. We must prove that {{< math >}}$P(k+1)${{< /math >}} also holds -- i.e., that {{< math >}}$LHS(k+1) = RHS(k+1)${{< /math >}}. We have that:
 
 ```math
 $$
-LHS_{k+1} = 1 + 2 + ... + k + (k + 1) \tag{1}
+LHS(k+1) = 1 + 2 + ... + k + (k + 1) \tag{1}
 $$
 $$
-= LHS_k + (k + 1) \tag{2} 
+= LHS(k) + (k + 1) \tag{2} 
 $$
 $$
 = RHS_k + (k + 1) \tag{3}
@@ -102,11 +102,11 @@ $$
 = \dfrac{(k+1)((k + 1) + 1)}{2} \tag{7}
 $$
 $$
-= RHS_{k+1} \tag{8}
+= RHS(k+1) \tag{8}
 $$
 ```
 
-Thus {{< math >}}$LHS_{k+1} = RHS_{k+1}${{< /math >}}, so we have proved {{< math >}}$P(k+1)${{< /math >}}. The inductive step holds.
+Thus {{< math >}}$LHS(k+1) = RHS(k+1)${{< /math >}}, so we have proved {{< math >}}$P(k+1)${{< /math >}}. The inductive step holds.
 
 <br><br>
 
@@ -122,6 +122,6 @@ $$
 
 ## Inductive step explanation
 
-In line 2 of the proof above we saw that {{< math >}}$1 + 2 + ... + k${{< /math >}} was really {{< math >}}$LHS_k${{< /math >}}, so we made that substitution. Then in line 3, we used our inductive hypothesis - that {{< math >}}$LHS_k = RHS_k${{< /math >}}, and substituted {{< math >}}$RHS_k${{< /math >}} for {{< math >}}$LHS_k${{< /math >}}. Since we had that {{< math >}}$RHS_k = \dfrac{k(k+1)}{2}${{< /math >}}, we made that substitution on line 4. 
+In line 2 of the proof above we saw that {{< math >}}$1 + 2 + ... + k${{< /math >}} was really {{< math >}}$LHS(k)${{< /math >}}, so we made that substitution. Then in line 3, we used our inductive hypothesis - that {{< math >}}$LHS(k) = RHS(k)${{< /math >}}, and substituted {{< math >}}$RHS(k)${{< /math >}} for {{< math >}}$LHS(k)${{< /math >}}. Since we had that {{< math >}}$RHS(k) = \dfrac{k(k+1)}{2}${{< /math >}}, we made that substitution on line 4. 
 
-From lines 5 to 7, we did algebraic manipulations to combine our terms and work towards the form of {{< math >}}$RHS_{k+1}${{< /math >}}. 
+From lines 5 to 7, we did algebraic manipulations to combine our terms and work towards the form of {{< math >}}$RHS(k+1)${{< /math >}}. 
