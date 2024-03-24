@@ -34,7 +34,7 @@ We will refer to {{< math >}}$1 + 3 + ... + (2n - 1)${{< /math >}} as {{< math >
 
 #### Base case
 
-We must prove that {{< math >}}$P(n)${{< /math >}} holds for the smallest positive integer, {{< math >}}$n = 1${{< /math >}}, that is, that {{< math >}}$LHS(1) = RHS(1${{< /math >}}  The sum the first 1 odd integer is just 1, so we have that {{< math >}}$LHS(1) = 1${{< /math >}}. We also have that {{< math >}}$RHS(1) = 1^2 = 1${{< /math >}}.
+We must prove that {{< math >}}$P(n)${{< /math >}} holds for the smallest positive integer, {{< math >}}$n = 1${{< /math >}}, that is, that {{< math >}}$LHS(1) = RHS(1). ${{< /math >}}  The sum the first 1 odd integer is just 1, so we have that {{< math >}}$LHS(1) = 1${{< /math >}}. We also have that {{< math >}}$RHS(1) = 1^2 = 1${{< /math >}}.
 
 We have that {{< math >}}$LHS(1) = RHS(1)${{< /math >}}. Thus {{< math >}}$P(1)${{< /math >}} is true, so the base case holds.
 
