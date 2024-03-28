@@ -112,10 +112,10 @@ import org.sireum.justification.natded.prop._
         //@formatter:off
         (comma-separated list of premises with variable1, variable2, ...)  ⊢  (conclusion)
             Proof(
-                1 ( claim_a         )   by Justification_a,
-                2 ( claim_b         )   by Justification_b,
+                1 (     claim_a         )   by Justification_a,
+                2 (     claim_b         )   by Justification_b,
                 ...
-                736 ( conclusion    )   by Justification_conc
+                736 (   conclusion      )   by Justification_conc
             )
         //@formatter:on
     )
@@ -130,65 +130,49 @@ We will see more details of Logika proof syntax as we progress through chapter 4
 
 The most basic justification for a claim in a proof is "premise". This justification is used when you pull in a premise from the sequent and introduce it into your proof. All, some or none of the premises can be introduced at any time in any order. Please note that only one premise may be entered per claim.
 
-For example, we might bring in the premises from our sequent like this (the imports and proof function definition are omitted here for readability):
+For example, we might bring in the premises from our sequent like this (the imports, proof function definition, deduce call, and formatter changes are omitted here for readability):
 
 ```text
-Deduce(
-    //@formatter:off
-    (p, q, ¬r)  ⊢  (p ∧ q)
-        Proof(
-            1 ( p               )   by Premise,
-            2 ( q               )   by Premise,
-            3 ( ¬r              )   by Premise,
-            ...
-        )
-    //@formatter:on
-)
+(p, q, ¬r)  ⊢  (p ∧ q)
+    Proof(
+        1 (     p               )   by Premise,
+        2 (     q               )   by Premise,
+        3 (     ¬r              )   by Premise,
+        ...
+    )
 ```
 
 We could also bring in the same premise multiple times, if we wanted. We could also use non-sequential line numbers, as long as each line number was unique:
 
 ```text
-Deduce(
-    //@formatter:off
-    (p, q, ¬r)  ⊢  (p ∧ q)
-        Proof(
-            7 ( p           )   by Premise,
-            10 ( q          )   by Premise,
-            2 ( ¬r          )   by Premise,
-            8 ( p           )   by Premise,
-            ...
-        )
-    //@formatter:on
-)
+(p, q, ¬r)  ⊢  (p ∧ q)
+    Proof(
+        7 (     p           )   by Premise,
+        10 (    q           )   by Premise,
+        2 (     ¬r          )   by Premise,
+        8 (     p           )   by Premise,
+        ...
+    )
 ```
 
 We could only bring in some portion of our premises, if we wanted:
 
 ```text
-Deduce(
-    //@formatter:off
-    (p, q, ¬r)  ⊢  (p ∧ q)
-        Proof(
-            1 ( p           )   by Premise,
-            ...
-        )
-    //@formatter:on
-)
+(p, q, ¬r)  ⊢  (p ∧ q)
+    Proof(
+        1 (     p           )   by Premise,
+        ...
+    )
 ```
 
 But we can only list one premise in each claim. For example, the following is not allowed:
 
 ```text
-Deduce(
-    //@formatter:off
-    (p, q, ¬r)  ⊢  (p ∧ q)
-        Proof(
-            1 ( p, q, ¬r           )   by Premise,
-            ...
-        )
-    //@formatter:on
-)
+(p, q, ¬r)  ⊢  (p ∧ q)
+    Proof(
+        1 (     p, q, ¬r           )   by Premise,      //NO! Only one premise per line.
+        ...
+    )
 ```
 
 ## Deduction rules
