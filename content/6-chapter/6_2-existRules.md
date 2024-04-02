@@ -9,39 +9,58 @@ In this section, we will see the two inference rules for the existential (∃) q
 
 ## Exists introduction
 
-We can use the exists introduction rule, `∃i`, when we have a proposition of the form `P(a)` for an arbitrary member `a` of a domain. Since we found one individual where a proposition held, then we can also say that there exists an individual for which the proposition is true. We can formalize the rule as follows:
+We can use the exists introduction rule, `ExistsI[T]`, when we have a proposition of the form `P(a)` for an arbitrary member `a` of a domain. Since we found one individual where a proposition held, then we can also say that there exists an individual for which the proposition is true. We can formalize the rule as follows:
 
 ```text
-       P(d)         where  d  is an individual
-∃i: -----------
-      ∃ x P(x)
+                   P(d)         where  d  is an individual of type T
+ExistsI[T]: ---------------------
+              ∃((x: T) => P(x))
 ```
 
-Here is a simple example showing the syntax of the `∃i` rule:
+Here is a simple example showing the syntax of the `ExistsI[T]` rule (where *Socrates* is a parameter of type `T` to our proof function):
 
 ```text
-isHuman(Socrates) ⊢  ∃ x isHuman(x)
-{
-    1. isHuman(Socrates)            premise
-    2. ∃ x isHuman(x)               ∃i 1 Socrates
+(   isHuman(Socrates)   ) ⊢ (   ∃ x isHuman(x)  )
+    
+    Proof(
+        1 (     isHuman(Socrates)   )   by Premise,
+        2 (     ∃((x: T) => P(x))   )   by ExistsI[T](1)
+    )
+```
+
+When we use the `ExistsI[T]` rule to justify a claim like `∃((x: T) => P(x))`, we include the line number of where the proposition held for a particular individual. In the proof above, we claim `∃((x: T) => P(x))` with justification `ExistsI[T](1)` -- line 1 corresponds to `isHuman(Socrates)`, where our `∃ x isHuman(x)` proposition held for a particular individual. The full proof function, which shows how *Socrates* can be accepted as a parameter of type `T`, is here:
+
+```java
+@pure def ExistsExample[T](isHuman: T => B @pure, Socrates: T): Unit = {
+    Deduce(
+        //@formatter: off
+        (   isHuman(Socrates)   ) ⊢ (   ∃ x isHuman(x)  )
+    
+        Proof(
+            1 (     isHuman(Socrates)   )   by Premise,
+            2 (     ∃((x: T) => P(x))   )   by ExistsI[T](1)
+        )
+        //@formatter: on
+    )
 }
 ```
 
-When we use the `∃i` rule to justify a claim like `∃ x P(x)`, we include the line number of where the proposition held for a particular individual, as well as the name of the individual. In the proof above, we claim `∃ x isHuman(x)` with justification `∃i 1 Socrates` -- line 1 corresponds to `isHuman(Socrates)`, where our `∃ x isHuman(x)` proposition held for a particular individual. The `Socrates` part of the justification is the name of the individual.
 
-Note that we can use the `∃i` rule to introduce any variable, not just `x`. You can choose which variable to introduce based on the variables used in the conclusion. For example, the following proof is also valid:
+
+Note that we can use the `ExistsI[T]` rule to introduce any variable, not just `x`. You can choose which variable to introduce based on the variables used in the conclusion. For example, the following proof is also valid:
 
 ```text
-isHuman(Socrates) ⊢  ∃ z isHuman(z)
-{
-    1. isHuman(Socrates)            premise
-    2. ∃ z isHuman(z)               ∃i 1 Socrates
-}
+(   isHuman(Socrates)   ) ⊢ (   ∃ x isHuman(z)  )
+    
+    Proof(
+        1 (     isHuman(Socrates)   )   by Premise,
+        2 (     ∃((z: T) => P(z))   )   by ExistsI[T](1)
+    )
 ```
 
 ## Exists elimination
 
-Since the `∃i`-rule constructs propositions that begin with `∃`, the `∃e`-rule (exists elimination) disassembles propositions that begin with `∃`.
+Since the `ExistsI[T]`-rule constructs propositions that begin with `∃`, the `ExistsE[T]`-rule (exists elimination) disassembles propositions that begin with `∃`.
 
 Here is a quick example (where our domain is living things):
 
@@ -57,20 +76,23 @@ We don't know the name of the human, but it does not matter. Since ALL humans ar
 
 - Therefore, SOMEONE is mortal and their name does not matter.
 
-This approach is coded into the last logic law, `∃e` (exists elimination).
+This approach is coded into the last logic law, `ExistsE[T]` (exists elimination).
 
-Suppose we have a premise of the form `∃ x P(x)`. Since we do not know the name of the individual "hidden" behind the `∃ x`, we make up a name for it, say `a`, and discuss what must follow from the assumption that `P(a)` holds true. Here is the formalization of the `∃e` rule:
+Suppose we have a premise of the form `∃((x: T) => P(x))`. Since we do not know the name of the individual "hidden" behind the `∃(x: T)`, we make up a name for it, say `a`, and discuss what must follow from the assumption that `P(a)` holds true. Here is the formalization of the `ExistsE[T]` rule:
 
 ```text
-                  {a  P(a)   assume       // where  a  is a new, fresh name
-      ∃ x P(x)      ...  Q         }      // a  MUST NOT appear in  Q
-∃e: -----------------------------------
+                                        Let ((a: T) => SubProof(          // where  a  is a new, fresh name
+                                             Assume( P(a) ),              // a  MUST NOT appear in  Q
+                ∃((x: T) => P(x))            ...
+                                             Q         
+                                        )),             
+ExistsE[T]: ----------------------------------------------------
                      Q
 ```
 
-That is, if we can deduce `Q` from `P(a)`, and we do not mention `a` within `Q`, then it means `Q` can be deduced no matter what name the hidden individual has. So, `Q` follows from `∃  P(x)`.
+That is, if we can deduce `Q` from `P(a)`, and we do not mention `a` within `Q`, then it means `Q` can be deduced no matter what name the hidden individual has. So, `Q` follows from `∃((x: T) => P(x))`.
 
-We can work the previous example, with `∃e`:
+We can work the previous example, with `ExistsE[T]`:
 
 ```text
 All humans are mortal
@@ -81,140 +103,97 @@ Therefore, someone is mortal
 We make up the name, `jane`, for the human whose name we do not know:
 
 ```text
-∀ h(isHuman(h) → isMortal(h)), ∃ x isHuman(x) |- ∃ y isMortal(y)
-{
-    1. ∀ h(isHuman(h) → isMortal(h))        premise
-    2. ∃ x isHuman(x)                       premise
-    3. {
-        4. jane isHuman(jane)               assume
-        5. isHuman(jane) → isMortal(jane)   ∀e 1 jane
-        6. isMortal(jane)                   →e 5 4
-        7. ∃y isMortal(y)                   ∃i 6 jane
-    }
-    8. ∃y isMortal(y)                       ∃e 2 3
-}
+    (
+        ∀((h: T) => (isHuman(h) → isMortal(h))),
+        ∃((x: T) => isHuman(x))
+    )
+⊢
+    (
+        ∃((y: T) => (isMortal(y)))
+    )
+Proof(
+    1 (     ∀((h: T) => (isHuman(h) → isMortal(h)))     )   by Premise,
+    2 (     ∃((x: T) => isHuman(x))                     )   by Premise,
+
+    3 Let ( (jane: T) => SubProof (
+        4 Assume(   isHuman(jane)                       ),
+        5 (         isHuman(jane) → isMortal(jane)      )   by AllE[T](1),
+        6 (         isMortal(jane)                      )   by ImplyE(5, 4)
+    )),
+    7 (     ∃((y: T) => (isMortal(y)))                  )   by ExistsE[T](2, 3)
+)
 ```
 
-Line 4 proposes the name `jane` and the assumption that `isHuman(jane)`. The subproof leads to Line 7, which says that someone is mortal. (We never learned the individual's name!) Since Line 7 does not explicitly mention the made-up name, `jane`, we use Line 8 to repeat Line 7 – without knowing the name of the individual "hiding" inside Line 2, we made a subproof that proves the result, anyway. This is how `∃e` works.
+Line 3 proposes the name `jane` for our subproof and line 4 makes the assumption `isHuman(jane)` (based on the premise `∃((x: T) => isHuman(x))`). The subproof leads to Line 6, which says that someone is mortal. (We never learned the individual's name!) Since Line 6 does not explicitly mention the made-up name, `jane`, we use Line 7 to repeat Line 6 – without knowing the name of the individual "hiding" inside Line 2, we made a subproof that proves the result, anyway. This is how `ExistsE[T]` works.
 
-Note that when we use the `∃e` rule as a justification we include first the line number of the there-exists statement that we processed (by naming the hidden individual) in the previous subproof, and then the line number of that subproof. In the example above, we say `∃e 2 3` because line 2 includes the there-exists statement we processed (`∃ x isHuman(x)`) in the previous subproof and line 3 is the subproof.
+Note that when we use the `ExistsE[T]` rule as a justification we include first the line number of the there exists statement that we processed (by naming the hidden individual) in the previous subproof, and then the line number of that subproof. In the example above, we say `ExistsE[T](2, 3)` because line 2 includes the there-exists statement we processed (`∃ ∃((x: T) => isHuman(x))`) in the previous subproof and line 3 is the subproof.
 
-When using `∃e`, the previous subproof must begin with introducing a name for a hidden individual in a there-exists statement and then immediately substituting that name into the there-exists statement. The justification on the first line is always `assume`. The last line in the subproof should contain NO mention of the chosen name. Whatever we claim on the last line in the subproof, we must claim EXACTLY the same thing immediately afterwards when we use the `∃e` rule.
+When using `ExistsE[T]`, the previous subproof must begin with introducing a name for a hidden individual in a there-exists statement and then immediately make an assumption that substitutes the name into the there exists statement. The last line in the subproof should contain NO mention of the chosen name. Whatever we claim on the last line in the subproof, we must claim EXACTLY the same thing immediately afterwards when we use the `ExistsE[T]` rule.
 
 You are welcome to use any name for the hidden individual -- not just `jane` or `a`. The only restriction is that you cannot have used the name anywhere else in the proof.
 
 ## Examples
 
-In this section, we will look at several proofs involving the existential quantifier.
+In this section, we will look at other proofs involving the existential quantifier.
 
 ### Example 1
 
 Suppose we wish to prove the following sequent:
 
 ```text
-∃ x (Human(x)) ⊢ ∃ y (Human(y))
-```
-
-Following the same approach in the `∃e` example above, we know that there is SOME human. Let's introduce the alias `bob` for that human:
-
-```text
-∃ x (Human(x)) ⊢ ∃ y (Human(y))
-{
-    1. ∃ x (Human(x))               premise
-    2. {
-        3. bob Human(bob)           assume
-
-        //goal: get to our conclusion, ∃ y (Human(y))
-    }
-    //use ∃e to restate our conclusion, since we know SOME such human exists
-}
-```
-
-Since we have `Human(bob)` in our subproof, we can use `∃i` in our subproof to instead say that there exists some human. We will introduce the `y` variable, since that's what we want in our conclusion:
-
-```text
-∃ x (Human(x)) ⊢ ∃ y (Human(y))
-{
-    1. ∃ x (Human(x))               premise
-    2. {
-        3. bob Human(bob)           assume
-        4. ∃ y (Human(y))           ∃i 3 bob
-
-        //goal: get to our conclusion, ∃ y (Human(y))
-    }
-    //use ∃e to restate our conclusion, since we know SOME such human exists
-}
-```
-
-All that remains is to use `∃e` to restate our conclusion after the subproof. Since we knew someone was a human, and since we reached a claim that didn't use our alias, then we can restate the result outside the scope of the subproof:
-
-```text
-∃ x (Human(x)) ⊢ ∃ y (Human(y))
-{
-    1. ∃ x (Human(x))               premise
-    2. {
-        3. bob Human(bob)           assume
-        4. ∃ y (Human(y))           ∃i 3 bob
-
-        //goal: get to our conclusion, ∃ y (Human(y))
-    }
-    //use ∃e to restate our conclusion, since we know SOME such human exists
-    5. ∃ y (Human(y))               ∃e 1 2
-}
-```
-
-### Example 2
-
-Suppose we wish to prove the following sequent:
-
-```text
-∃ x (Adult(x) ∨ Kid(x)) ⊢ (∃ x Adult(x)) ∨ (∃ x Kid(x))
+(   ∃((x: T) => (Adult(x) ∨ Kid(x)))  ) ⊢ (   ∃((x: T) => Adult(x) )) ∨ ∃((x: T) => Kid(x)  )
 ```
 
 We will begin as we did previously: by introducing an alias for our person that is either an adult or a kid (say, `alice`):
 
 ```text
-∃ x (Adult(x) ∨ Kid(x)) ⊢ (∃ x Adult(x)) ∨ (∃ x Kid(x))
-{
-    1. ∃ x (Adult(x) ∨ Kid(x))              premise
-    2. {
-        3. alice Adult(alice) ∨ Kid(alice)  assume
+(   ∃((x: T) => (Adult(x) ∨ Kid(x)))  ) ⊢ (   ∃((x: T) => Adult(x) )) ∨ ∃((x: T) => Kid(x)  )
 
-        //goal: get to our conclusion, (∃ x Adult(x)) ∨ (∃ x Kid(x))
-    }
-    //use ∃e to restate our conclusion, since we know SOME such person is either an adult or kid
-}
+Proof(
+    1 (     ∃((x: T) => (Adult(x) ∨ Kid(x)) )       )   by Premise,
+
+    2 Let ( (alice: T) => SubProof(
+        3 Assume(   Adult(alice) ∨ Kid(alice)       ),
+        
+        //goal: get to our conclusion, ∃( (x: T) => Adult(x) )) ∨ ∃( (x: T) => Kid(x)
+    )),
+
+    //use ExistsE[T] to restate our conclusion, since we know SOME such person is either an adult or kid
+)
 ```
 
-To finish our proof, we can use OR elimination on `Adult(alice) ∨ Kid(alice)`, and then `∃e` afterwards to restate our conclusion. Here is the completed proof:
+To finish our proof, we can use OR elimination on `Adult(alice) ∨ Kid(alice)`, and then `ExistsE[T]` afterwards to restate our conclusion. Here is the completed proof:
 
 ```text
-∃ x (Adult(x) ∨ Kid(x)) ⊢ (∃ x Adult(x)) ∨ (∃ x Kid(x))
-{
-    1. ∃ x (Adult(x) ∨ Kid(x))                  premise
-    2. {
-        3. alice Adult(alice) ∨ Kid(alice)      assume
-        4. {
-            5. Adult(alice)                     assume
-            6. ∃ x Adult(x)                     ∃i 5 alice
-            7. (∃ x Adult(x)) ∨ (∃ x Kid(x))    ∨i1 6
-        }
-        8. {
-            9. Kid(alice)                       assume
-            10. ∃ x Kid(x)                      ∃i  9 alice
-            11. (∃ x Adult(x)) ∨ (∃ x Kid(x))   ∨i2 10
-        }
-        12. (∃ x Adult(x)) ∨ (∃ x Kid(x))       ∨e 3 4 8
+(   ∃((x: T) => (Adult(x) ∨ Kid(x)))  ) ⊢ (   ∃((x: T) => Adult(x) )) ∨ ∃((x: T) => Kid(x)  )
 
-        //goal: get to our conclusion, (∃ x Adult(x)) ∨ (∃ x Kid(x))
-    }
-    //use ∃e to restate our conclusion, since we know SOME such person is either an adult or kid
+Proof(
+    1 (     ∃((x: T) => (Adult(x) ∨ Kid(x)) )                   )   by Premise,
 
-    13. (∃ x Adult(x)) ∨ (∃ x Kid(x))           ∃e 1 2
-}
+    2 Let ( (alice: T) => SubProof(
+        3 Assume(   Adult(alice) ∨ Kid(alice)                   ),
+
+        4 SubProof(
+            5 Assume (  Adult(alice)                            ),
+            6 (     ∃((x: T) => Adult(x)                        )   by ExistsI[T](5),
+            7 (     ∃((x: T) => Adult(x) ∨ ∃((x: T) => Kid(x)   )   by OrI1(6)
+        ),
+        8 SubProof(
+            9 Assume (  Kid(alice)                              ),
+            10 (    ∃((x: T) => Kid(x)                          )   by ExistsI[T](9),
+            11 (    ∃((x: T) => Adult(x) ∨ ∃((x: T) => Kid(x)   )   by OrI2(10)
+        ),
+        12 (    ∃((x: T) => Adult(x) ∨ ∃((x: T) => Kid(x)       )   by OrE(3, 4, 8)
+        
+        //goal: get to our conclusion, ∃( (x: T) => Adult(x) )) ∨ ∃( (x: T) => Kid(x)
+    )),
+    //use ExistsE[T] to restate our conclusion, since we know SOME such person is either an adult or kid
+
+    13 (        ∃((x: T) => Adult(x) ∨ ∃((x: T) => Kid(x)       )   by ExistsE[T](1, 2)
+)
 ```
 
-### Example 3
+### Example 2
 
 Suppose we wish to prove the following (in the domain of living things):
 
@@ -225,48 +204,71 @@ Suppose we wish to prove the following (in the domain of living things):
 We can translate our premises and desired conclusion to predicate logic, and write the following sequent:
 
 ```text
-∀ x (Bunny(x) → Fluffy(x)), ∃ x (Fast(x) ∧ Bunny(x)) ⊢ ∃ x (Fast(x) ∧ Fluffy(x))
+    (
+        ∀((x: T) => (Bunny(x) → Fluffy(x))),
+        ∃((x: T) => (Fast(x) & Bunny(x))) 
+    )
+⊢
+    (
+        ∃((x: T) => (Fast(x) & Fluffy(x)))
+    )
 ```
 
-Since we are trying to prove a claim about some individual, it makes sense that we would start the process of an `∃e` subproof where we introduce an alias (`thumper`) for the fast bunny. We will try to reach the conclusion by the end of that subproof. Here is the setup:
+Since we are trying to prove a claim about some individual, it makes sense that we would start the process of an `ExistsE[T]` subproof where we introduce an alias (`thumper`) for the fast bunny. We will try to reach the conclusion by the end of that subproof. Here is the setup:
 
 ```text
-∀ x (Bunny(x) → Fluffy(x)), ∃ x (Fast(x) ∧ Bunny(x)) ⊢ ∃ x (Fast(x) ∧ Fluffy(x))
-{
-    1. ∀ x (Bunny(x) → Fluffy(x))                   premise
-    2. ∃ x (Fast(x) ∧ Bunny(x))                     premise
-    3. {
-        4. thumper Fast(thumper) ∧ Bunny(thumper)   assume
-        5. Fast(thumper)                            ∧e1 4
-        6. Bunny(thumper)                           ∧e2 4
+    (
+        ∀((x: T) => (Bunny(x) → Fluffy(x))),
+        ∃((x: T) => (Fast(x) & Bunny(x))) 
+    )
+⊢
+    (
+        ∃((x: T) => (Fast(x) & Fluffy(x)))
+    )
+Proof(
+    1 (     ∀((x: T) => (Bunny(x) → Fluffy(x)))     )   by Premise,
+    2 (     ∃((x: T) => (Fast(x) & Bunny(x)))       )   by Premise,
 
-        //goal: ∃ x (Fast(x) ∧ Fluffy(x))
-    }
+    3 Let ( (thumper: T) => SubProof(
+        4 Assume(   Fast(thumper) ∧ Bunny(thumper)  ),
+        5 (         Fast(thumper)                   )   by AndE1(4),
+        6 (         Bunny(thumper)                  )   by AndE2(4),
 
-    //use ∃e to restate ∃ x (Fast(x) ∧ Fluffy(x)), since we know there is SOME fast bunny
-}
+        //goal: ∃((x: T) => (Fast(x) & Fluffy(x)))
+    )),
+
+    //use ExistsE[T] to restate ∃((x: T) => (Fast(x) & Fluffy(x))), since we know there is SOME fast bunny
+)
 ```
 
-To finish our subproof, we see that we have a proposition about all creatures (`∀ x (Bunny(x) → Fluffy(x))`) and that we are working with an individual creature (`thumper`). We can use `∀e` to prove `Bunny(thumper) → Fluffy(thumper)`. After that, we have a few more manipulations using propositional logic rules, our `∃i` rule to transition our claim from being about our alias `thumper` to being about an unnamed individual, and then our `∃e` rule to pull our final claim out of the subproof. Here is the completed proof:
+To finish our subproof, we see that we have a proposition about all creatures (`∀((x: T) => (Bunny(x) → Fluffy(x)))`) and that we are working with an individual creature (`thumper`). We can use `AllE[T]` to prove `Bunny(thumper) → Fluffy(thumper)`. After that, we have a few more manipulations using propositional logic rules, our `ExistsI[T]` rule to transition our claim from being about our alias `thumper` to being about an unnamed individual, and then our `ExistsE[T]` rule to pull our final claim out of the subproof. Here is the completed proof:
 
 ```text
-∀ x (Bunny(x) → Fluffy(x)), ∃ x (Fast(x) ∧ Bunny(x)) ⊢ ∃ x (Fast(x) ∧ Fluffy(x))
-{
-    1. ∀ x (Bunny(x) → Fluffy(x))                   premise
-    2. ∃ x (Fast(x) ∧ Bunny(x))                     premise
-    3. {
-        4. thumper Fast(thumper) ∧ Bunny(thumper)   assume
-        5. Fast(thumper)                            ∧e1 4
-        6. Bunny(thumper)                           ∧e2 4
-        7. Bunny(thumper) → Fluffy(thumper)         ∀e 1 thumper
-        8. Fluffy(thumper)                          →e 7 6
-        9. Fast(thumper) ∧ Fluffy(thumper)          ∧i 5 8
-        10. ∃ x (Fast(x) ∧ Fluffy(x))               ∃i 9 thumper
+    (
+        ∀((x: T) => (Bunny(x) → Fluffy(x))),
+        ∃((x: T) => (Fast(x) & Bunny(x))) 
+    )
+⊢
+    (
+        ∃((x: T) => (Fast(x) & Fluffy(x)))
+    )
+Proof(
+    1 (     ∀((x: T) => (Bunny(x) → Fluffy(x)))         )   by Premise,
+    2 (     ∃((x: T) => (Fast(x) & Bunny(x)))           )   by Premise,
 
-        //goal: ∃ x (Fast(x) ∧ Fluffy(x))
-    }
-    //use ∃e to restate ∃ x (Fast(x) ∧ Fluffy(x)), since we know there is SOME fast bunny
+    3 Let ( (thumper: T) => SubProof(
+        4 Assume(   Fast(thumper) ∧ Bunny(thumper)      ),
+        5 (         Fast(thumper)                       )   by AndE1(4),
+        6 (         Bunny(thumper)                      )   by AndE2(4),
+        7 (         Bunny(thumper) → Fluffy(thumper)    )   by AllE[T](1),
+        8 (         Fluffy(thumper)                     )   by ImplyE(7, 6),
+        9 (         Fast(thumper) ∧ Fluffy(thumper)     )   by AndI(5, 8),
+        10 (        ∃((x: T) => (Fast(x) & Fluffy(x)))  )   by ExistsE[T](9)
 
-    11. ∃ x (Fast(x) ∧ Fluffy(x))                   ∃e 2 3
-}
+        //goal: ∃((x: T) => (Fast(x) & Fluffy(x)))
+    )),
+    //use ExistsE[T] to restate ∃((x: T) => (Fast(x) & Fluffy(x))), since we know there is SOME fast bunny
+
+    11 (    ∃((x: T) => (Fast(x) & Fluffy(x)))          )   by ExistsE[T](2, 3)
+)
 ```

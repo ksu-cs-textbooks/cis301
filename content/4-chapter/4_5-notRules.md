@@ -7,9 +7,9 @@ date: 2018-08-24T10:53:26-05:00
 
 In this section, we will see the deduction rules for the NOT operator. In this section, we will introduce the notion of a *contradiction*, which occurs when, for some proposition `P`, we have proved both the facts `P` and `¬ P`. This indicates that we are in an impossible situation, and often means that we have made a bad previous assumption. In Logika, we use an `F` ("false") as a claim to indiciate that we've reached a contradiction. In other texts, you sometime see the symbol `⊥` (which means "bottom operator") for a contradiction.
 
-## Not elimination
+## Negation elimination
 
-The not elimination rule allows you to claim that you have reached a contradiction. We can formalize the rule like this:
+The negation elimination rule allows you to claim that you have reached a contradiction. We can formalize the rule like this:
 
 ```text
         P   ¬P
@@ -43,9 +43,9 @@ Sometimes, the proposition `P` itself has a NOT operator. Consider this example:
 
 Here, our proposition `P` is the claim `¬q`, and our proposition that is of the form `¬P` is the claim `¬¬q`.
 
-## Not introduction
+## Negation introduction
 
-The not introduction rule allows us to introduce a NOT operation. If assuming some proposition `P` leads to a contradiction, then we must have made a bad assumption -- `P` must NOT be true after all. We can then introduce the fact `¬P`. We can formalize the not introduction rule like this:
+The negation introduction rule allows us to introduce a NOT operation. If assuming some proposition `P` leads to a contradiction, then we must have made a bad assumption -- `P` must NOT be true after all. We can then introduce the fact `¬P`. We can formalize the negation introduction rule like this:
 
 ```text
         SubProof(
@@ -74,7 +74,7 @@ Here is a simple example of a proof that shows the syntax of the `NotI` rule:
     )
 ```
 
-Note that the not introduction rule involves a subproof -- if we wish to prove `¬P` for some proposition `P`, then we start a subproof where we assume `P`. If we are able to reach a contradiciton on the last line of that subproof, then we can use the `NegI` rule after the subproof ends to claim that our assumption was bad and that it is actually `¬P` that is true. When we use `¬i` as a justification, we list the line number corresponding to this subproof.
+Note that the negation introduction rule involves a subproof -- if we wish to prove `¬P` for some proposition `P`, then we start a subproof where we assume `P`. If we are able to reach a contradiciton on the last line of that subproof, then we can use the `NegI` rule after the subproof ends to claim that our assumption was bad and that it is actually `¬P` that is true. When we use `¬i` as a justification, we list the line number corresponding to this subproof.
 
 ## Bottom elimination
 
@@ -316,7 +316,7 @@ We have this proof structure:
     )
 ```
 
-We see that our goal in the subproof is the show ¬p -- if we could do that, then we could tie together that subproof with the →i rule. Since our intermediate goal is to prove NOT (something), then we use our strategy for not introduction as an inner subproof. We finish the proof as shown:
+We see that our goal in the subproof is the show ¬p -- if we could do that, then we could tie together that subproof with the →i rule. Since our intermediate goal is to prove NOT (something), then we use our strategy for negation introduction as an inner subproof. We finish the proof as shown:
 
 ```text
 (p → q) ⊢ (¬q → ¬p)

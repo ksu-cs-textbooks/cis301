@@ -7,12 +7,14 @@ date: 2018-08-24T10:53:26-05:00
 
 Our examples so far have included propositions with single quantifiers. This section will discuss how to prove sequents that use nested quantifers. We will see that the approach is the same as before, but that we must take caution to process the quantifiers in the correct order. Recall that quantifier precedence is from right to left (i.e., from the outside in), so that `∀ x ∀ y P(x, y)` is equivalent to `∀ x (∀ y P(x, y))`.
 
+//<------------------COME UP WITH DIFFERENT EXAMPLE 1!!!!!------------------->
+
 ## Example 1
 
 Suppose we wish to prove the following sequent:
 
 ```text
-∀ x ∀ y P(x, y) ⊢ ∀ y ∀ x P(y, x)
+∀ x ∀ y P(x, y) ⊢ ∀ x ∀ y P(y, x)
 ```
 
 Since we wish to prove a for-all statement of the form `∀ y (SOMETHING)`, then we know we must start with our for all introduction template:
@@ -106,50 +108,74 @@ Next, we apply `∀e` again to `∀ y P(a, y)` to leave us with `P(a, b)`. All t
 Suppose we have the predicate `IsBossOf(x, y)` in the domain of people, which describes whether person `x` is the boss of person `y`. We wish to prove the following sequent:
 
 ```text
-∃ x ∀ y IsBossOf(x, y) ⊢ ∀ y ∃ x IsBossOf(x, y)
+    (
+        ∃((x: T) => ∀((y: T) => IsBossOf(x, y)))
+    )
+⊢
+    (
+        ∀((y: T) => ∃((x: T) => IsBossOf(x, y)))
+    )
 ```
 
 You can read the premise as "There is a person that is everyone's boss". From this statement, we are trying to prove the conclusion: "All people have a boss". Here is the completed proof:
 
 ```text
-∃ x ∀ y IsBossOf(x, y) ⊢ ∀ y ∃ x IsBossOf(x, y)
-{
-  1. ∃ x ∀ y IsBossOf(x, y)             premise
-  2. {
-       3. a ∀ y IsBossOf(a, y)          assume
-       4. {
-            5. b
-            6. IsBossOf(a, b)           ∀e 3 b
-            7. ∃ x IsBossOf(x, b)       ∃i 6 a
-       }
-       8. ∀ y ∃ x IsBossOf(x, y)        ∀i 4
-  }
-  9. ∀ y ∃ x IsBossOf(x, y)             ∃e 1 2
-}
+    (
+        ∃((x: T) => ∀((y: T) => IsBossOf(x, y)))
+    )
+⊢
+    (
+        ∀((y: T) => ∃((x: T) => IsBossOf(x, y)))
+    )
+
+Proof(
+    1 (     ∃((x: T) => ∀((y: T) => IsBossOf(x, y)))            )   by Premise,
+
+    2 Let ( (a: T) => SubProof(
+        3 Assume(   ∀((y: T) => IsBossOf(a, y)                  )
+
+        4 Let ( (b: T) => SubProof(
+            5 (         IsBossOf(a, b)                          )   by AllE[T](3),
+            6 (         ∃((x: T) => IsBossOf(x, b))             )   by ExistsI[T](5)
+        )),
+        7 (   ∀((y: T) => ∃((x: T) => IsBossOf(x, y)))          )   by AllI[T](4)
+    )),
+    8 (   ∀((y: T) => ∃((x: T) => IsBossOf(x, y)))              )  by ExistsE[T](1, 2)
+)
 ```
 
-In the above proof, we let `a` be our made-up name for the boss-of-everyone. So, we have the assumption that `∀ y IsBossOf(a, y)`. Next, we let `b` be "anybody at all" who we might examine in the domain of people. The proof exposes that the boss of "anybody at all" in the domain must always be `a`. `∀i` and then `∃e` finish the proof.
+In the above proof, we let `a` be our made-up name for the boss-of-everyone. So, we have the assumption that `∀((y: T) => IsBossOf(a, y))`. Next, we let `b` be "anybody at all" who we might examine in the domain of people. The proof exposes that the boss of "anybody at all" in the domain must always be `a`. `AllI[T]` and then `ExistsE[T]` finish the proof.
 
 Here is the proof worked again, with the subproofs swapped:
 
 ```text
-∃ x ∀ y IsBossOf(x, y) ⊢ ∀ y ∃ x IsBossOf(x, y)
-{
-  1. ∃ x ∀ y IsBossOf(x, y)             premise
-  2. {
-       3. b
-       4. {
-            5. a ∀ y IsBossOf(a, y)     assume
-            6. IsBossOf(a, b)           ∀e 5 b
-            7. ∃ x IsBossOf(x, b)       ∃i 6 a
-       }
-       8. ∃ x IsBossOf(x, b)            ∃e 1 4
-  }
-  9. ∀ y ∃ x IsBossOf(x, y)             ∀i 2
-}
+    (
+        ∃((x: T) => ∀((y: T) => IsBossOf(x, y)))
+    )
+⊢
+    (
+        ∀((y: T) => ∃((x: T) => IsBossOf(x, y)))
+    )
+
+Proof(
+    1 (     ∃((x: T) => ∀((y: T) => IsBossOf(x, y)))            )   by Premise,
+
+    2 Let ( (b: T) => SubProof(
+
+        3 Let ( (a: T) => SubProof(
+            4 Assume(   ∀((y: T) => IsBossOf(a, y))             ),
+            5 (         IsBossOf(a, b)                          )   by AllE[T](4),
+            6 (         ∃((x: T) => IsBossOf(x, b))             )   by ExistsI[T](5)
+        )),
+        7 (       ∃((x: T) => IsBossOf(x, b))                   )   by ExistsE[T](1, 3)
+    )),
+    8 (   ∀((y: T) => ∃((x: T) => IsBossOf(x, y)))              )  by AllI[T](2)
+)
 ```
 
 Can we prove the converse? That is, if everyone has a boss, then there is one boss who is the boss of everyone?
+
+//<------------------STILL NEED TO FIX BELOW!!!!!------------------->
 
 ```text
 ∀ y ∃ x IsBossOf(x, y) ⊢ ∃ x ∀ y IsBossOf(x, y)
