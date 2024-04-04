@@ -17,51 +17,81 @@ The process of proving that two predicate logic statements are equivalent is the
 For example, to prove that `¬(∃ x P(x))` is equivalent to `∀ x ¬P(x)`, we must prove the sequents:
 
 ```text
-¬(∃ x P(x)) ⊢ ∀ x ¬P(x)
+    (
+        ¬(∃((x: T) => P(x)))
+    )
+⊢
+    (
+        ∀((x: T) => ¬P(x))
+    )
 ```
 
 and
 
 ```text
-∀ x ¬P(x) ⊢ ¬(∃ x P(x))
+    (
+        ∀((x: T) => ¬P(x))
+    )
+⊢
+    (
+        ¬(∃((x: T) => P(x)))
+    )
 ```
 
 We prove both directions below:
 
 ```text
-¬(∃ x P(x)) ⊢ ∀ x ¬P(x)
-{
-    1. ¬(∃ x P(x))              premise
-    2. {
-        3. a
-        4. {
-            5. P(a)             assume
-            6. ∃ x P(x)         ∃i 5 a
-            7. ⊥                ¬e 6 1
-        }
-        8. ¬P(a)                ¬i 4
-    }
-    9. ∀ x ¬P(x)                ∀i 2
-}
+    (
+        ¬(∃((x: T) => P(x)))
+    )
+⊢
+    (
+        ∀((x: T) => ¬P(x))
+    )
+Proof(
+    1 (     ¬(∃((x: T) => P(x)))        ) by Premise,
+
+    2 Let ( (a: T) => SubProof(
+
+        3 SubProof(
+            4 Assume (  P(a)  ),
+            5 (     ∃((x: T) => P(x))   ) by ExistsI[T](3),
+            6 (     F                   ) by NegE(4, 1)
+        ),
+        7 (     ¬P(a)                   ) by NegI(3)
+
+    )),
+    8 (  ∀((x: T) => ¬P(x))             ) by AllI[T](2)
+)
+
 ```
 
-and
+And:
 
 ```text
-∀ x ¬P(x) ⊢ ¬(∃ x P(x))
-{
-    1. ∀ x ¬P(x)                premise
-    2. {
-        3. ∃ x P(x)             assume
-        4. {
-            5. a P(a)           assume
-            6. ¬P(a)            ∀i 1 a
-            7. ⊥                ¬e 5 6
-        }
-        8. ⊥                    ∃e 3 4
-    }
-    9. ¬(∃ x P(x))              ¬i 2
-}
+    (
+        ∀((x: T) => ¬P(x))
+    )
+⊢
+    (
+        ¬(∃((x: T) => P(x)))
+    )
+Proof(
+    1 (     ∀((x: T) => ¬P(x))          )   by Premise,
+
+    2 SubProof(
+        3 Assume (  ∃((x: T) => P(x))   ),
+
+        4 Let ( (a: T) => SubProof(
+            5 Assume (  P(a)  ),
+            6 (     ¬P(x)               )   by AllE[T](1),
+            7 (     F                   )   by NegE(5, 6),
+        )),
+        8 (     F                       )   By ExistsE[T](3, 4)
+    
+    ),
+    9 (     ¬(∃((x: T) => P(x)))        )   by NegI(2)
+)
 ```
 
 ## More extensive list of equivalences
