@@ -18,15 +18,15 @@ get user input / set initial variable values
 
 program statement
 
-    // --> add logic block to evaluate what has happened in the program
+    // --> add proof block to evaluate what has happened in the program
 
 program statement
 
-    // --> add logic block to evaluate what has happened in the program
+    // --> add proof block to evaluate what has happened in the program
 
 program statement
 
-    // --> add logic block to evaluate what has happened in the program
+    // --> add proof block to evaluate what has happened in the program
 
 (...more program statements)
 
@@ -35,29 +35,28 @@ program statement
 
 We see that if our program involves user input, then we must consider whether our program will only work correctly for certain input values. In that situation, we express our assumptions using `assume` statements.
 
-After each program statement, we must add a logic block to evaluate what changed on that line of code. We will see more details on these logic blocks throughout the rest of this chapter. Recall that the syntax for those logic blocks looks like:
+After each program statement, we must add a proof block to evaluate what changed on that line of code. We will see more details on these proof blocks throughout the rest of this chapter. Recall that the syntax for those proof blocks looks like:
 
 ```text
-l"""{
-    lineNumber. claim               justification
-
-    // ... (more claims/justifications)
-}"""
+Deduce(
+    //@formatter:off
+    1  (    claim       ) by Justification,
+    ...
+    //@formatter:on
+)
 ```
 
 Finally, we add one or more `assert` statements to express what our program did. These are usually placed at the end of a program, but sometimes we have assert statements throughout the program to describe the progress up to that point.
 
 ## Algebra justification
 
-The `algebra` justification can be used for ANY algebraic manipulation on previous claims. When using this justification, include all relevant proof line numbers in whatever order (you might use as few as zero line numbers or as many as 3+ line numbers).
+The `Algebra*` justification can be used for ANY algebraic manipulation on previous claims. When using this justification, include all relevant proof line numbers in whatever order (you might use as few as zero line numbers or as many as 3+ line numbers).
 
 ### Example
 
-Consider this example:
+Consider this example (which eliminates the Logika mode notation and the necessary import statements):
 
 ```text
-import org.sireum.logika._
-
 var x: Z = 6
 var y: Z = x
 
@@ -65,112 +64,133 @@ var y: Z = x
 assert (y == 6)
 ```
 
-Following our process from above, we add logic blocks after each program statement. In these logic blocks, we start by listing the previous program statement as a premise:
+Following our process from above, we add proof blocks after each program statement. In these proof blocks, we start by listing the previous program statement as a premise:
 
 ```text
-import org.sireum.logika._
-
 var x: Z = 6
 
-l"""{
-    1. x == 6               premise
-}"""
+Deduce(
+    //@formatter:off
+    1  (    x == 6      )   by Premise,
+    //@formatter:on
+)
 
 var y: Z = x
 
-l"""{
-    1. y == x               premise
+Deduce(
+    //@formatter:off
+    1  (    y == x      )   by Premise,
+
+    //@formatter:on
 
     //need claim "y == 6" for our assert to hold
-}"""
+)
 
 //this assert will not hold yet
 assert (y == 6)
 ```
 
-For our assert to hold, we must have EXACTLY that claim in a previous logic block -- so we know we want our second logic block to include the claim `y == 6`.
+For our assert to hold, we must have EXACTLY that claim in a previous proof block -- so we know we want our second proof block to include the claim `y == 6`.
 
-Here is the program with the second logic block completed -- the assert statement will now hold.
+Here is the program with the second proof block completed -- the assert statement will now hold.
 
 ```text
-import org.sireum.logika._
-
 var x: Z = 6
 
-l"""{
-    1. x == 6               premise
-}"""
+Deduce(
+    //@formatter:off
+    1  (    x == 6      )   by Premise,
+    //@formatter:on
+)
 
 var y: Z = x
 
-l"""{
-    1. y == x               premise
-    2. x == 6               premise     //established in a previous logic block, and x is unchanged since then
-    3. y == 6               algebra 1 2 //we know y is 6 using the claims from lines 1 and 2
-}"""
+Deduce(
+    //@formatter:off
+    1 (     y == x      )   by Premise,
+    2 (     x == 6      )   by Premise,         //established in a previous proof block, and x is unchanged since then
+    3 (     y == 6      )   by Algebra*(1, 2)   //we know y is 6 using the claims from lines 1 and 2
+    //@formatter:on
+)
 
-//this assert will hold
+//this assert will now hold yet
 assert (y == 6)
 ```
 
-We could have also deleted the first logic block in this example. We would still be able to claim `x == 6` as a premise in the last logic block, as `x` had not changed since being given that value.
+We could have also deleted the first proof block in this example. We would still be able to claim `x == 6` as a premise in the last proof block, as `x` had not changed since being given that value.
 
-## subst
+## Subst_< and Subst_>
 
-We have two deduction rules that involve substitution -- `subst1` and `subst2`. Both of these rules are similar to the find/replace feature in text editors. They preserve truth by replacing one proposition with an equivalent one.
+We have two deduction rules that involve substitution -- `Subst_<` and `Subst_>`. Both of these rules are similar to the find/replace feature in text editors. They preserve truth by replacing one proposition with an equivalent one.
 
-The `algebra` justification will work for most mathematical manipulation. However, it will not work for any claim involving `∧`, `∨`, `→`, `⊥`, `∀`, `∃` -- in those cases, we will be required to use substitution instead.
+The `Algebra*` justification will work for most mathematical manipulation. However, it will not work for any claim involving `∧`, `∨`, `→`, `F`, `∀`, `∃` -- in those cases, we will be required to use substitution instead.
 
-### subst1 justification
+### Subst_< justification
 
-Here is the syntax for the `subst1` rule. In the example below, line `m` must be an equivalence (something equals something else). Line `n` can be anything.
-
-```text
-l"""{
-    ...
-    m. LHS_M == RHS_M       (some justification)
-    ...
-    n. LINE_N               (some justification)
-    ...
-    p. (claim)              subst1 m n
-}"""
-```
-
-`(claim1)` rewrites `LINE_N` by substituting all ocurrences of `LHS_M` (the FIRST side of line `m`) with `RHS_M`. Here is an example:
+Here is the syntax for the `Subst_<` rule. In the example below, line `m` must be an equivalence (something equals something else). Line `n` can be anything.
 
 ```text
-l"""{
-    1. x + 1 == y - 4                       (some justification)
-    2. x*(x + 1) == (x + 1) + y             (some justification)
-    3. x*(y - 4) == (y - 4) + y             subst1 1 2
-}"""
+Deduce(
+    //@formatter:off
+
+    ...
+    m (     LHS_M == RHS_M  )   by SomeJustification,
+    ...
+    n (     LINE_N          )   by SomeJustification,
+    ...
+    p (     claim           )   by Subst_<(m, n),
+
+    //@formatter:on
+)
 ```
 
-We wrote line 2 by replacing each occurence of `x + 1` with `y - 4`.
-
-### subst2 justification
-
-Here is the syntax for the `subst2` rule. Just as with `subst1`, line `m` must be an equivalence (something equals something else). Line `n` can be anything.
+`(claim)` rewrites `LINE_N` by substituting all ocurrences of `RHS_M` with `LHS_M`. The `_<` part of the justification name indicates the direction of the find/replace. You can think of as `LHS_M < RHS_M` (showing that each `LHS_M` is becoming a `RHS_M`). Here is an example:
 
 ```text
-l"""{
-    ...
-    m. LHS_M == RHS_M       (some justification)
-    ...
-    n. LINE_N               (some justification)
-    ...
-    p. (claim)              subst2 m n
-}"""
+Deduce(
+    //@formatter:off
+
+    1 (     x + 1 == y - 4                          )   by SomeJustification,
+    2 (     x*(x + 1) == (x + 1) + y                )   by SomeJustification,
+    3 (     (x + 1)*(x + 1) == (x + 1) + (x + 1)    )   by Subst_<(1, 2)
+
+    //@formatter:on
+)
 ```
 
-`(claim1)` rewrites `LINE_N` by substituting all ocurrences of `RHS_M` (the SECOND side of line `m`) with `LHS_M`. Here is an example:
+We wrote line 3 by replacing each occurence of `x + 1` with `y - 4`.
+
+### Subst_> justification
+
+Here is the syntax for the `Subst_>` rule. Just as with `Subst_<`, line `m` must be an equivalence (something equals something else). Line `n` can be anything.
 
 ```text
-l"""{
-    1. x + 1 == y                               (some justification)
-    2. y*(x + 1) == (x + 1) + y                 (some justification)
-    3. (x + 1)*(x + 1) == (x + 1) + (x + 1)     subst2 1 2
-}"""
+Deduce(
+    //@formatter:off
+
+    ...
+    m (     LHS_M == RHS_M  )   by SomeJustification,
+    ...
+    n (     LINE_N          )   by SomeJustification,
+    ...
+    p (     claim           )   by Subst_>(m, n),
+
+    //@formatter:on
+)
 ```
 
-We wrote line 2 by replacing each occurence of `y` with `x + 1`. Note that we put parentheses around our first replacement to ensure a product equivalent to the original statement.
+Here, `(claim)` rewrites `LINE_N` by substituting all ocurrences of `LHS_M` with `LHS_M`. We can think of as indicating `LHS_M > RHS_M` (showing that each `RHS_M` is becoming a `LHS_M`). Here is an example:
+
+```text
+Deduce(
+    //@formatter:off
+
+    1 (     x + 1 == y                      )   by SomeJustification,
+    2 (     x*y == (x + 1) + y              )   by SomeJustification,
+    3 (     x*(x + 1) == (x + 1) + x + 1    )   by Subst_>(1, 2)
+
+    //@formatter:on
+)
+```
+
+We wrote line 3 by replacing each occurence of `y` with `x + 1`. Note that we put parentheses around our first replacement to ensure a product equivalent to the original statement.

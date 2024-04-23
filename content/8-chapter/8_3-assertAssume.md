@@ -103,7 +103,7 @@ Deduce(
 )
 ```
 
-Assume statements are almost always used to make assumptions about user input. Perhaps our program only works correctly for certain values of input. If we can assume that the user really did enter acceptable values, then we can use that information (by pulling it in as a premise in the next logic block) to prove the correctness of the program based on that assumption.
+Assume statements are almost always used to make assumptions about user input. Perhaps our program only works correctly for certain values of input. If we can assume that the user really did enter acceptable values, then we can use that information (by pulling it in as a premise in the next proof block) to prove the correctness of the program based on that assumption.
 
 ### Assumes vs. wrapping if-statements
 
