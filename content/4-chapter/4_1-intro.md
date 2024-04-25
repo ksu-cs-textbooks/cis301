@@ -87,12 +87,10 @@ import org.sireum.justification.natded.prop._
 
 @pure def ProofName(variable1: B, variable2: B, ...): Unit = {
     Deduce(
-        //@formatter:off
         (comma-separated list of premises with variable1, variable2, ...)  ⊢  (conclusion)
             Proof(
                 //the actual proof steps go here
             )
-        //@formatter:on
     )
 }
 ```
@@ -109,7 +107,6 @@ import org.sireum.justification.natded.prop._
 
 @pure def ProofName(variable1: B, variable2: B, ...): Unit = {
     Deduce(
-        //@formatter:off
         (comma-separated list of premises with variable1, variable2, ...)  ⊢  (conclusion)
             Proof(
                 1 (     claim_a         )   by Justification_a,
@@ -117,7 +114,6 @@ import org.sireum.justification.natded.prop._
                 ...
                 736 (   conclusion      )   by Justification_conc
             )
-        //@formatter:on
     )
 }
 ```

@@ -44,7 +44,6 @@ While our `AllE[T]` justification does not mention the particular individual tha
 ```text
 @pure def socMortal[T](isHuman: T => B @pure, isMortal: T => B @pure, Socrates: T): Unit = {
     Deduce (
-        //@formatter: off
         (   
             ∀ ((x: T) => (isHuman(x) → isMortal(x))),  
             isHuman(Socrates)    
@@ -59,7 +58,6 @@ While our `AllE[T]` justification does not mention the particular individual tha
             3 (     isHuman(Socrates) → isMortal(Socrates)        )   by AllE[T](1),
             4 (     isMortal(Socrates)                            )   by ImplyE(3, 2)
         )
-        //@formatter: on
     )
 }
 ```

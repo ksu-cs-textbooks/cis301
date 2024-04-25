@@ -71,10 +71,11 @@ A few things to note:
 Here is a Scala program that gets a number from the user, and uses an if/else statement to print whether the number is positive or negative/zero:
 
 ```text
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
 
-import org.sireum.logika._
-
-val num: Z = readInt("Enter a number: ")
+val num: Z = Z.prompt("Enter a number: ")
 
 if (num > 0) {
     println(num, " is positive")
@@ -165,10 +166,8 @@ Here is the syntax for a Deduce proof block:
 
 ```text
 Deduce(
-    //@formatter:off
     1  (    claim       ) by Justification,
     ...
-    //@formatter:on
 )
 ```
 

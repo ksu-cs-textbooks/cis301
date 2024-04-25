@@ -38,8 +38,6 @@ val y: Z = x + 2
 val z: Z = 10 - x
 
 Deduce(
-    //@formatter:off
-
     1 (     x == 4          )   by Premise,     //assignment of unchanged variable
     2 (     y == x + 2      )   by Premise,     //assignment of unchanged variable
     3 (     z == 10 - x     )   by Premise,     //assignment of unchanged variable
@@ -49,8 +47,6 @@ Deduce(
     7 (     z == 6          )   by Algebra*(5),
     8 (     y == z          )   by Subst_>(7, 6),
     9 (     y == z ∧ y == 6 )   by AndI(8, 6)
-
-    //@formatter:on
 )
 
 //now the assert will hold
@@ -78,22 +74,14 @@ Then we might try to add the following proof blocks:
 var x: Z = 4
 
 Deduce(
-    //@formatter:off
-
     1 (     x == 4      )   by Premise  //from previous variable assignment
-
-    //@formatter:on
 )
 
 x = x + 1
 
 Deduce(
-    //@formatter:off
-
     1 (     x == x + 1  )   by Premise, //NO! Need to distinguish between old x (right side) and new x (left side)
     2 (     x == 4      )   by Premise, //NO! x has changed since this claim
-
-    //@formatter:on
 )
 
 //this assert will not hold yet
@@ -108,24 +96,16 @@ To help reason about changing variables, Logika has a special `Old(varName)` fun
 var x: Z = 4
 
 Deduce(
-    //@formatter:off
-
     1 (     x == 4      )   by Premise  //from previous variable assignment
-
-    //@formatter:on
 )
 
 x = x + 1
 
 Deduce(
-    //@formatter:off
-
     1 (     x == Old(x) + 1     )   by Premise, //Yes! x equals its old value plus 1
     2 (     Old(x) == 4         )   by Premise, //Yes! The old value of x was 4
     3 (     x == 4 + 1          )   by Subst_<(2, 1),
     4 (     x == 5              )   by Algebra*(3)  //Could have skipped line 3 and used "Algebra*(1, 2)" instead
-
-    //@formatter:on
 )
 
 //now the assert will hold
@@ -139,8 +119,8 @@ By the end of the proof block following a variable mutation, we need to express 
 Suppose we have the following program:
 
 ```text
-var x: Z = readInt()
-var y: Z = readInt()
+var x: Z = Z.read()
+var y: Z = Z.read()
 
 val temp: Z = x
 x = y
@@ -154,8 +134,8 @@ We can see that this program gets two user input values, `x` and `y`, and then s
 We would like to be able to assert what we did -- that `x` now has the original value from `y`, and that `y` now has the original value from `x`. To do this, we might invent dummy constants called `xOrig` and `yOrig` that represent the original values of those variables. Then we can add our assert:
 
 ```text
-var x: Z = readInt()
-var y: Z = readInt()
+var x: Z = Z.read()
+var y: Z = Z.read()
 
 //the original values of both inputs
 val xOrig: Z = x
@@ -173,20 +153,16 @@ assert(x == yOrig ∧ y == xOrig)     //this assert will not yet hold
 We can complete the verification by adding proof blocks after assignment statements, being careful to update all we know (without using the `Old` value) by the end of each block:
 
 ```text
-var x: Z = readInt()
-var y: Z = readInt()
+var x: Z = Z.read()
+var y: Z = Z.read()
 
 //the original values of both inputs
 val xOrig: Z = x
 val yOrig: Z = y
 
 Deduce(
-    //@formatter:off
-
     1 (     xOrig == x  )   by Premise,
     2 (     yOrig == y  )   by Premise
-
-    //@formatter:on
 )
 
 //swap x and y
@@ -194,30 +170,23 @@ val temp: Z = x
 x = y
 
 Deduce(
-    //@formatter:off
-
     1 (     x == y              )   by Premise,     //from the assignment statement
     2 (     temp == Old(x)      )   by Premise,     //temp equaled the OLD value of x
     3 (     xOrig == Old(x)     )   by Premise,     //xOrig equaled the OLD value of x
     4 (     yOrig == y          )   by Premise,     //yOrig still equals y
     5 (     temp == xOrig       )   by Algebra*(2, 3),
     6 (     x == yOrig          )   by Algebra*(1, 4)
-    //@formatter:on
 )
 
 y = temp
 
 Deduce(
-    //@formatter:off
-
     1 (     y == temp           )   by Premise,     //from the assignment statement
     2 (     temp == xOrig       )   by Premise,     //from the previous proof block (temp and xOrig are unchanged since)
     3 (     yOrig == Old(y)     )   by Premise,     //yOrig equaled the OLD value of y
     4 (     x == xOrig          )   by Algebra*(1, 2),
     5 (     x == yOrig          )   by Premise,     //from the previous proof block (x and yOrig are unchanged since)  
     6 (     x == yOrig ∧ y == xOrig )   by AndI(5, 4)
-
-    //@formatter:on
 )
 
 //x and y have swapped

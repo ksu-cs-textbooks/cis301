@@ -49,14 +49,12 @@ val y: Z = 6
 val z: Z = 4
 
 Deduce(
-    //@formatter:off
     1  (x == 6) by Premise,
     2  (y == 6) by Premise,
     3  (z == 4) by Premise,
   
     //how to say that x and y are equal, and that y is bigger than z?
 
-    //@formatter:on
 )
 assert(x == y ∧ y > z)
 ```
@@ -119,9 +117,7 @@ var a : Z = Z.read()
 assume (a != 0)
 
 Deduce(
-  //@formatter:off
   1  (a != 0) by Premise
-  //@formatter:on
 )
 
 var b: Z = 20 / a

@@ -30,17 +30,15 @@ Here is a simple example showing the syntax of the `ExistsI[T]` rule (where *Soc
 
 When we use the `ExistsI[T]` rule to justify a claim like `∃((x: T) => P(x))`, we include the line number of where the proposition held for a particular individual. In the proof above, we claim `∃((x: T) => P(x))` with justification `ExistsI[T](1)` -- line 1 corresponds to `isHuman(Socrates)`, where our `∃ x isHuman(x)` proposition held for a particular individual. The full proof function, which shows how *Socrates* can be accepted as a parameter of type `T`, is here:
 
-```java
+```text
 @pure def ExistsExample[T](isHuman: T => B @pure, Socrates: T): Unit = {
     Deduce(
-        //@formatter: off
         (   isHuman(Socrates)   ) ⊢ (   ∃ x isHuman(x)  )
     
         Proof(
             1 (     isHuman(Socrates)   )   by Premise,
             2 (     ∃((x: T) => P(x))   )   by ExistsI[T](1)
         )
-        //@formatter: on
     )
 }
 ```

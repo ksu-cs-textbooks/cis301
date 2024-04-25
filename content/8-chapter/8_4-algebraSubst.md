@@ -70,18 +70,13 @@ Following our process from above, we add proof blocks after each program stateme
 var x: Z = 6
 
 Deduce(
-    //@formatter:off
     1  (    x == 6      )   by Premise,
-    //@formatter:on
 )
 
 var y: Z = x
 
 Deduce(
-    //@formatter:off
     1  (    y == x      )   by Premise,
-
-    //@formatter:on
 
     //need claim "y == 6" for our assert to hold
 )
@@ -98,19 +93,15 @@ Here is the program with the second proof block completed -- the assert statemen
 var x: Z = 6
 
 Deduce(
-    //@formatter:off
     1  (    x == 6      )   by Premise,
-    //@formatter:on
 )
 
 var y: Z = x
 
 Deduce(
-    //@formatter:off
     1 (     y == x      )   by Premise,
     2 (     x == 6      )   by Premise,         //established in a previous proof block, and x is unchanged since then
     3 (     y == 6      )   by Algebra*(1, 2)   //we know y is 6 using the claims from lines 1 and 2
-    //@formatter:on
 )
 
 //this assert will now hold yet
@@ -131,16 +122,13 @@ Here is the syntax for the `Subst_<` rule. In the example below, line `m` must b
 
 ```text
 Deduce(
-    //@formatter:off
-
     ...
     m (     LHS_M == RHS_M  )   by SomeJustification,
     ...
     n (     LINE_N          )   by SomeJustification,
     ...
     p (     claim           )   by Subst_<(m, n),
-
-    //@formatter:on
+    ...
 )
 ```
 
@@ -148,13 +136,9 @@ Deduce(
 
 ```text
 Deduce(
-    //@formatter:off
-
     1 (     x + 1 == y - 4                          )   by SomeJustification,
     2 (     x*(x + 1) == (x + 1) + y                )   by SomeJustification,
     3 (     (x + 1)*(x + 1) == (x + 1) + (x + 1)    )   by Subst_<(1, 2)
-
-    //@formatter:on
 )
 ```
 
@@ -166,16 +150,13 @@ Here is the syntax for the `Subst_>` rule. Just as with `Subst_<`, line `m` must
 
 ```text
 Deduce(
-    //@formatter:off
-
     ...
     m (     LHS_M == RHS_M  )   by SomeJustification,
     ...
     n (     LINE_N          )   by SomeJustification,
     ...
     p (     claim           )   by Subst_>(m, n),
-
-    //@formatter:on
+    ...
 )
 ```
 
@@ -183,13 +164,9 @@ Here, `(claim)` rewrites `LINE_N` by substituting all ocurrences of `LHS_M` with
 
 ```text
 Deduce(
-    //@formatter:off
-
     1 (     x + 1 == y                      )   by SomeJustification,
     2 (     x*y == (x + 1) + y              )   by SomeJustification,
     3 (     x*(x + 1) == (x + 1) + x + 1    )   by Subst_>(1, 2)
-
-    //@formatter:on
 )
 ```
 
