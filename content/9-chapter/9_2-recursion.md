@@ -29,15 +29,18 @@ In the case of the multiplication `x * y`, we have:
 With those cases in mind, we can write a recursive `mult` function:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
 
 def mult(x: Z, y: Z): Z = {
 
     var ans: Z = 0
 
     if (y > 0) {
-        var addRest: Z = mult(x, y-1)
-        ans = x + addRest
+        ans = mult(x, y-1)
+        ans = ans + x
     } else {
         //do nothing
     }
@@ -46,7 +49,7 @@ def mult(x: Z, y: Z): Z = {
 }
 ```
 
-Note that we separated the recursive call (`def addRest: Z = mult(x, y-1)`) from adding on the next piece (`ans = x + addRest`). In Logika, all function calls must go on a separate line by themselves -- we can't combine them with other operations. Also, we included a dummy "else" branch to make the verification simpler. 
+Note that we separated the recursive call (`ans = mult(x, y-1)`) from adding on the next piece (`ans = ans + x`). When using Logika, all function calls must go on a separate line by themselves -- we can't combine them with other operations. Also, we included a dummy "else" branch to make the verification simpler. 
 
 ## Walking through mult
 
@@ -61,10 +64,10 @@ We can trace the recursive calls:
 ```text
 times = mult(4, 2) 
             (x = 4, y = 2)
-            addRest = mult(4, 1)    => mult(4, 1)
-            ans = 4 + addRest               (x = 4, y = 1)
-            returns ans                     addRest = mult(4, 0)    =>  mult(4, 0)
-                                            ans = 4 + addRest               (x = 4, y = 0)
+            ans = mult(4, 1)    => mult(4, 1)
+            ans = ans + 4               (x = 4, y = 1)
+            returns ans                     ans = mult(4, 0)    =>  mult(4, 0)
+                                            ans = ans + 4               (x = 4, y = 0)
                                             returns ans                     ans = 0
                                                                             returns 0
 ```
@@ -74,8 +77,8 @@ We start with `mult(4, 2)`, and then immediately make the recursive call `mult(4
 ```text
 => mult(4, 1)
     (x = 4, y = 1)
-    addRest = mult(4, 0) = 0
-    ans = 4 + addRest = 4 
+    ans = mult(4, 0) = 0
+    ans = ans + 4 = 4
     returns ans (4)
 ```
 
@@ -84,8 +87,8 @@ This 4 returns back to the `mult(4, 2)` instance, which adds another 4 and retur
 ```text
 mult(4, 2) 
     (x = 4, y = 2)
-    addRest = mult(4, 1) = 4
-    ans = 4 + addRest = 8
+    ans = mult(4, 1) = 4
+    ans = ans + 4 = 8
     returns ans (8)
 ```
 
@@ -95,24 +98,27 @@ We have now backed our way up the chain -- the 8 is returned back from the origi
 
 Looking at our `mult` function, we see that the base case is when `y` is 0 and the recursive case is when `y > 0`. Clearly, the function is not intended to work for negative values of `y`. This will be our precondition -- that `y` must be greater than or equal to 0.
 
-Our postcondition should describe what `mult` is returning in terms of its parameters. In this case, we know that `mult` is performing a multiplication of `x` and `y` using repeated addition. So, our function should ensure that it returns `x*y` (that `result == x*y`). Here is the function with the function contract:
+Our postcondition should describe what `mult` is returning in terms of its parameters. In this case, we know that `mult` is performing a multiplication of `x` and `y` using repeated addition. So, our function should ensure that it returns `x*y` (that `Res[Z] == x*y`). Here is the function with the function contract:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
 
 def mult(x: Z, y: Z): Z = {
     //we still need to add the verification logic blocks
 
-    l"""{
-        requires y >= 0
-        ensures result == x*y
-    }"""
+    Contract(
+        Requires(   y >= 0          ),
+        Ensures(    Res[Z] == x * y )
+    )
 
     var ans: Z = 0
 
     if (y > 0) {
-        var addRest: Z = mult(x, y-1)
-        ans = x + addRest
+        ans = mult(x, y-1)
+        ans = ans + x
     } else {
         //do nothing
     }
@@ -131,32 +137,35 @@ Now that we have our function contract for `mult`, we must add logic blocks with
 Our recursive call looks like:
 
 ```text
-var addRest: Z = mult(x, y-1)
+ans = mult(x, y-1)
 ```
 
 Since our precondition is `y >= 0`, we see that we must prove that what we are passing as the second parameter (`y-1`, in the case of the recursive call) is greater than or equal to 0. This tells us that before our recursive call, we must have shown exactly: `y-1 >= 0`. We can finish proving the precondition as follows:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
 
 def mult(x: Z, y: Z): Z = {
     //we still need to prove the postcondition
 
-    l"""{
-        requires y >= 0
-        ensures result == x*y
-    }"""
+    Contract(
+        Requires(   y >= 0          ),
+        Ensures(    Res[Z] == x * y )
+    )
 
     var ans: Z = 0
 
     if (y > 0) {
-        l"""{
-            1. y > 0                premise     //IF condition is true
-            2. y-1 >= 0             algebra 1   //Proves the precondition for the recursive call
-        }"""
+        Deduce(
+            1 (     y > 0       )   by Premise,     //IF condition is true
+            2 (     y-1 >= 0    )   by Algebra*(1)  //Proves the precondition for the recursive call
+        )
 
-        var addRest: Z = mult(x, y-1)
-        ans = x + addRest
+        ans = mult(x, y-1)
+        ans = ans + x
     } else {
         //do nothing
     }
@@ -165,59 +174,62 @@ def mult(x: Z, y: Z): Z = {
 }
 ```
 
-All that remains is to prove the `mult` postcondition -- that we are returning `x*y`. Since we are returning the variable `ans`, then we must prove the claim `ans == x*y` just before our return statement. In order to help with this process, we will need to take advantage of the postcondition after our recursive call. The function promises to return the first parameter times the second parameter, so when we do `addRest: Z = mult(x, y-1)`, we know that `addRest == x*(y-1)` (the first parameter, `x`, times the second parameter, `y-1`). Here is the completed verification
+All that remains is to prove the `mult` postcondition -- that we are returning `x*y`. Since we are returning the variable `ans`, then we must prove the claim `ans == x*y` just before our return statement. In order to help with this process, we will need to take advantage of the postcondition after our recursive call. The function promises to return the first parameter times the second parameter, so when we do `ans = mult(x, y-1)`, we know that `ans == x*(y-1)` (the first parameter, `x`, times the second parameter, `y-1`). Here is the completed verification:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
 
 def mult(x: Z, y: Z): Z = {
     //verification complete!
 
-    l"""{
-        requires y >= 0
-        ensures result == x*y
-    }"""
+    Contract(
+        Requires(   y >= 0          ),
+        Ensures(    Res[Z] == x * y )
+    )
 
     var ans: Z = 0
 
     if (y > 0) {
-        l"""{
-            1. y > 0                premise     //IF condition is true
-            2. y-1 >= 0             algebra 1   //Proves the precondition for the recursive call
-        }"""
+        Deduce(
+            1 (     y > 0       )   by Premise,     //IF condition is true
+            2 (     y-1 >= 0    )   by Algebra*(1)  //Proves the precondition for the recursive call
+        )
 
-        var addRest: Z = mult(x, y-1)
+       ans = mult(x, y-1)
 
-        l"""{
-            1. addRest == x*(y-1)   premise     //Postcondition from the recursive call
-            2. addRest == x*y - x   algebra 1
-        }"""
+        Deduce(
+            1 (     ans == x * (y - 1)  )   by Premise, //Postcondition from the recursive call
+            2 (     ans == x * y - x    )   by Algebra*(1)
+        )
 
-        ans = x + addRest
+        ans = ans + x
 
-        l"""{
-            1. addRest == x*y - x   premise     //Pulled from previous block
-            2. ans == x + addRest   premise     //From the "ans = x + addRest" assignment statement
-            3. ans == x + x*y - x   algebra 1 2
-            4. ans == x*y           algebra 3   //Showed the postcondition for the IF branch
-        }"""
+        Deduce(
+            1 (     Old(ans) == x * y - x   )   by Premise,         //Pulled from previous block
+            2 (     ans == Old(ans) + x     )   by Premise,         //From the "ans = ans + x" assignment statement
+            3 (     ans == x + x * y - x    )   by Algebra*(1, 2),
+            4 (     ans == x * y            )   by Algebra*(3)      //Showed the postcondition for the IF branch
+        )
     } else {
         //do nothing in code - but we still do verification
         //need to show that postcondition will be correct even if we take this branch
 
-        l"""{
-            1. ¬(y > 0)             premise     //if condition is false
-            2. y >= 0               premise     //precondition
-            3. y == 0               algebra 1 2
-            4. ans == 0             premise     //ans is unchanged
-            5. ans == x*y           algebra 3 4 //Showed the postcondition for the ELSE branch
-        }"""
+        Deduce(
+            1 (     ¬(y > 0)        )   by Premise,         //if condition is false
+            2 (     y >= 0          )   by Premise,         //precondition
+            3 (     y == 0          )   by Algebra*(1, 2),
+            4 (     ans == 0        )   by Premise,         //ans is unchanged
+            5 (     ans == x * y    )   by Algebra*(3, 4)   //Showed the postcondition for the ELSE branch
+        )
     }
 
     //Tie together what we learned in both branches
-    l"""{
-        1. ans == x*y               premise     //shows the postcondition      
-    }"""
+    Deduce(
+        1 (     ans == x*y          )   by Premise          //shows the postcondition      
+    )
 
     return ans
 }
@@ -241,16 +253,16 @@ assert(times == 8)
 We could complete the verification by proving the precondition and then using the postcondition to help us prove the claim in the assert:
 
 ```text
-l"""{
-    1. 2 >= 0               algebra     //proves the precondition
-}"""
+Deduce(
+    1 (     2 >= 0      )   by Algebra*()    //proves the precondition
+)
 
 val times: Z = mult(4, 2)
 
-l"""{
-    1. times == 4*2         premise     //mult postcondition
-    2. times == 8           algebra 1   //needed for the assert
-}"""
+Deduce(
+    1 (     times == 4*2    )   by Premise,     //mult postcondition
+    2 (     times == 8      )   by Algebra*(1)  //needed for the assert
+)
 
 assert(times == 8)
 ```

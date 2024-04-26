@@ -231,8 +231,6 @@ assert(num == 3)
 
 Using a function contract and our deduction rules, we have PROVED that the `div` function will return 3 in our example (without needing to test the code at all).
 
-// NOTE! <--- stopped here with the revisions --->
-
 ## Examples
 
 In this section, we will see two completed examples of Logika programs with a function and calling code.
@@ -262,7 +260,7 @@ def plusOne(n: Z): Z = {
     Deduce(
         1  (    n >= 0          )   by Premise,
         2  (    answer == n + 1 )   by Premise,
-        3  (    answer > 0      )   y Algebra*(1, 2)
+        3  (    answer > 0      )   by Algebra*(1, 2)
     )
 
     return answer
@@ -283,27 +281,27 @@ Deduce(
     2  (    added == x + 1          ) by Premise,
     3  (    added > 0               ) by Premise,
     4  (    added == 6              ) by Algebra*(1, 2),
-    5  (    added == 6 & added > 0  ) by AndI(4, 3)
+    5  (    added == ∧ & added > 0  ) by AndI(4, 3)
 )
-assert(added == 6 & added > 0)
+assert(added == 6 ∧ added > 0)
 
 var x: Z = 5
 
-l"""{
-    1. x == 5                   premise     //from the "x=5" assignment
-    2. x >= 0                   algebra 1   //proves the plusOne precondition
-}"""
+Deduce(
+    1 (     x == 5      )   by Premise,     //from the "x=5" assignment
+    2 (     x >= 0      )   by Algebra*(1)  //proves the plusOne precondition
+)
 
 var added: Z = plusOne(x)
 
-l"""{
+Deduce(
     //I can list the postcondition (what is returned) as a premise
-    1. x == 5                   premise     //x is unchanged 
-    2. added == x+1             premise     //plusOne postcondition 1
-    3. added > 0                premise     //plusOne postcondition 2
-    4. added == 6               algebra 1 2
-    5. added == 6 ∧ added > 0   ^i 4 3 
-}"""
+    1 (     x == 5                  )   by Premise, //x is unchanged 
+    2 (     added == x+1            )   by Premise, //plusOne postcondition 1
+    3 (     added > 0               )   by Premise, //plusOne postcondition 2
+    4 (     added == 6              )   by Algebra*(1,2),
+    5 (     added == 6 ∧ added > 0  )   by AndI(4,3)
+)
 
 assert(added == 6 ∧ added > 0)
 ```
@@ -315,64 +313,56 @@ Note that when we have more than one postcondition, we must prove all postcondit
 In this example, we write a `findMax` function that returns the biggest between two integer parameters. This is very similar to an example from section 8.7, which used an if/else statement to find the max. In that example, our assert that we had indeed found the max was: `assert((max >= x & max >= y) & (max == x | max == y))`. We will see that our postconditions for `findMax` come directly from the different claims in that assert. In our calling code, we call `findMax` with `num1` (which has the value 3) and `num2` (which has the value 2). We are able to prove that `findMax` returns 2:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
+import org.sireum.justification.natded.prop._
 
 //find the max between x and y
 def findMax(x: Z, y: Z): Z = {
-    l"""{
+    Contract(
         //no precondition needed
-        ensures
-            result >= x                 //postcondition 1
-            result >= y                 //postcondition 2
-            result == x v result == y   //postcondition 3
-    }"""
+        Ensures(
+            Res[Z] >= x,                //postcondition 1
+            Res[Z] >= y,                //postcondition 2
+            Res[Z] == x v Res[Z] == y   //postcondition 3
+        )
+    )
 
     var max: Z = 0
 
-    l"""{
-        1. max == 0             premise
-    }"""
-
     if (x > y) {
-        l"""{
-            1. max == 0         premise
-            2. x > y            premise     //IF condition is true
-        }"""
-
         max = x
 
-        l"""{
-            1. max == x         premise
-            2. max >= x         algebra 1
-            3. x > y            premise
-            4. max >= y         algebra 1 3
-        }"""
+        Deduce(
+            1 (     max == x    )   by Premise,
+            2 (     max >= x    )   by Algebra*(1),     //build to postcondition 1
+            3 (     x > y       )   by Premise,         //IF condition is true
+            4 (     max >= y    )   by Algebra*(1,3)    //build to postcondition 2
+        )
 
     } else {
-        l"""{
-            1. max == 0         premise
-            2. ¬(x > y)         premise     //IF condition is not true
-            3. x <= y           algebra 2
-        }"""
-
         max = y
-        l"""{
-            1. max == y         premise
-            2. x <= y           premise
-            3. max >= x         algebra 1 2
-            4. max >= y         algebra 1
-        }"""
+
+        Deduce(
+            1 (     max == y    )   by Premise,
+            2 (     ¬(x > y)    )   by Premise,         //IF condition is false
+            3 (     x <= y      )   by Algebra*(2),
+            4 (     max >= x    )   by Algebra*(1, 2),  //build to postcondition 1
+            5 (     max >= y    )   by Algebra*(1)      //build to postcondition 2
+        )
     }
 
     //prove the postconditions
-    l"""{
+    Deduce(
         //true in both the if and the else
-        1. max >= x                 premise     //proves postcondition 1 
-        2. max >= y                 premise     //proves postcondition 2
+        1 (     max >= x            )   by Premise,     //proves postcondition 1 
+        2 (     max >= y            )   by Premise,     //proves postcondition 2
 
         //first was true in if, second true in else
-        3. max == x v max == y      premise     //proves postcondition 3
-    }"""
+        3 (     max == x v max == y )   by Premise     //proves postcondition 3
+    )
 
     return max
 }
@@ -386,32 +376,32 @@ val num2: Z = 2
 
 val biggest: Z = findMax(num1, num2)
 
-l"""{
-    1. biggest >= num1                      premise     //findMax postcondition 1
-    2. biggest >= num2                      premise     //findMax postcondition 2
-    3. biggest == num1 v biggest == num2    premise     //findMax postcondition 3
+Deduce(
+    1 (     biggest >= num1                     )   by Premise,     //findMax postcondition 1
+    2 (     biggest >= num2                     )   by Premise,     //findMax postcondition 2
+    3 (     biggest == num1 v biggest == num2   )   by Premise,     //findMax postcondition 3
 
     //pull in the initial values
-    4. num1 == 3                            premise
-    5. num2 == 2                            premise
+    4 (     num1 == 3                           )   by Premise,
+    5 (     num2 == 2                           )   by Premise,
 
-    6. biggest >= 3                         algebra 1 4
-    7. biggest >= 2                         algebra 2 5
-    8. biggest == 3 v biggest == num2       subst1 4 3
-    9. biggest == 3 v biggest == 2          subst1 5 8
+    6 (     biggest >= 3                        )   by Algebra*(1, 4),
+    7 (     biggest >= 2                        )   by Algebra*(2, 5),
+    8 (     biggest == 3 v biggest == num2      )   by Subst_<(4, 3),
+    9 (     biggest == 3 v biggest == 2         )   by Subst_<(5, 8),
 
     //OR-elimination
-    10. {
-        11. biggest == 3                    assume
-    }
-    12. {
-        13. biggest == 2                    assume
-        14. ¬(biggest >= 3)                 algebra 13
-        15. ⊥                               ¬e 6 14
-        16. biggest == 3                    ⊥e 15
-    }
-    17. biggest == 3                        ve 9 10 12  //needed for assert
-}"""
+    10 SubProof(
+        11  Assume( biggest == 3 ) 
+    ),
+    12 SubProof(
+        13  Assume( biggest == 2 ) 
+        14 (    ¬(biggest >= 3)                 )   by Algebra*(13),
+        15 (    F                               )   by NegE(6, 14),
+        16 (    biggest == 3                    )   by BottomE(15)
+    ),
+    17 (        biggest == 3                    )   by OrE(9,10,12) //needed for assert
+)
 
 assert(biggest == 3)
 ```
