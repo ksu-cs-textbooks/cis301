@@ -107,3 +107,22 @@ For example, the postcondition:
 ```
 
 Means that when the function ends, every value in the sequence `a` (so each element `a(i)`) will be one bigger than the initial value at the same position (`In(a)(i) + 1`).
+
+### Shortcut to describing sequence changes
+
+Occasionally we wish to claim that a sequence is unchanged except for a handful of positions. We can do this in a more pedantic way by describing which elements have changed and which elements have not changed, but there is also a cleaner sequence update notation we can use instead.
+
+For example, these postconditions state that a function sets the first element (position 0) in sequence a to 10, but leaves every other element unchanged:
+
+```text
+a(0) == 10,
+∀ (1 until a.size)(x => (a(x) == In(a)(x)))
+```
+
+We could have described the same set of changes using the sequence update notation as follows:
+
+```text
+a ≡ In(a)(0 ~> 10)
+```
+
+The statement above says that the resulting value of sequence `a` is equivalent to the initial value of sequence `a` (`In(a)`) except that position `0` now holds a `10`.
