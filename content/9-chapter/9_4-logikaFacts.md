@@ -14,20 +14,20 @@ In this section, we introduce *Logika facts*, which will let us create our own r
 Logika allows these proof functions to be written in multiple ways, but we will start with the most straightforward of these options:
 
 ```text
-l"""{
-    fact
-        def proofFunctionName(paramList) : returnType
-            factName1. //describe when proofFunctionName has its first possible value
-            ...
-            factNameN. //describe when proofFunctionName has its last possible value
-}"""
+@spec def proofFunction(paramList): returnType = $
+
+@spec def proofFacts = Fact(
+    proofFunction(baseCase) == baseValue,
+    ...
+    ∀( (x: Z) => (rangeOfX) → (proofFunction(x) == proofFunction(x - 1) * x) )
+)
 ```
 
-In the proof function definition, *proofFunctionName* is the name we give our proof function, *paramList* is the list of parameter names and types needed for this proof function (which are formatted exactly like a parameter list in a regular Logika function), and *returnType* is the return type of the proof function (usually either `Z` for integer or `B` for boolean).
+In the above definition, `proofFunction` is the name we give our proof function, `paramList` is the list of parameter names and types needed for this proof function (which are formatted exactly like a parameter list in a regular Logika function), and `returnType` is the return type of the proof function (usually either `Z` for integer or `B` for boolean). The `= $` at the end of the proof function is indicating that its definition will be provided later.
 
-Below the proof function definition, we include a line for each possible way to calculate its value. Usually, at least one of the lines includes a recursive defintion -- relating the value of something like `proofFunctionName(n)` to the proof function's definition for a smaller value, like `proofFunctionName(n-1)`. The label, such as `factNameN`, names the proof rule. We will be able to pull in a particular line of the definition into a logic block by using the justification `fact factNameN`.
+Below the proof function, we include the *proof facts*, which is a recursive definition of the values for our proof function. We include one or more base cases, which list the value of our proof function for its smallest possible input (or for the smallest several inputs). Finally, we include our recursive case as a quantified statement -- it lists the value of our proof function on all inputs bigger than our base cases. This recursive case uses the proof function's definition for a smaller value, like `proofFunction(x-1)`. 
 
-Logika facts are defined at the top of the Logika file, below the `import` but before any of the code.
+Logika facts are defined at the top of the Logika file, below the `import`s but before any of the code.
 
 ## Example: Logika fact to define factorial
 
@@ -50,83 +50,89 @@ So we can write the following recursive definition:
 And we can then translate the recursive definition to a Logika fact:
 
 ```text
-l"""{
-    fact
-        def factDef(n: Z): Z
-            fOne. factDef(1) == 1
-            fBig.  ∀x: Z  x > 1 → factDef(x) == x * factDef(x - 1)
-}"""
+@spec def factFunction(n: Z): Z = $
+
+@spec def factorialFacts = Fact(
+    factFunction(1) == 1,
+    ∀ ( (x: Z) => (x > 1) → (factFunction(x) == factFunction(x-1)*x) )
+)
 ```
 
-Let's consider each portion of this proof function. Here, `factDef` is the name given to the proof function. It takes one parameter, `n`, which is an integer, and it returns an integer. We have two possible ways of calculating the value for the proof function. First, we define `fOne`:
+Let's consider each portion of this proof function. Here, `factDef` is the name given to the proof function. It takes one parameter, `n`, which is an integer, and it returns an integer. We have two possible ways of calculating the value for the proof function, which we detail in `factorialFacts`. First, we define our base case:
 
 ```text
-fOne. factDef(1) == 1
+factFunction(1) == 1
 ```
 
-`fOne` defines `factDef(1)` as 1; i.e., `factDef(n)` is 1 if {{< math >}}$n == 1${{< /math >}}. This is the same as our base case in our recursive definition for factorial -- {{< math >}}$1! = 1${{< /math >}}.
+Which says that `factFunction(n)` is 1 if {{< math >}}$n == 1${{< /math >}}. This is the same as our base case in our recursive definition for factorial -- {{< math >}}$1! = 1${{< /math >}}.
 
-Next, consider the definition for `fBig`:
+Next, consider the recursive case of our proof function:
 
 ```text
-fBig.  ∀x: Z  x > 1 → factDef(x) == x * factDef(x - 1)
+∀ ( (x: Z) => (x > 1) → (factFunction(x) == factFunction(x-1)*x) )
 ```
 
-`fBig` states that for all integers `x` that are bigger than 1, we define `factDef(x) == x * factDef(x - 1)`. This is the same as our recursive case in our recursive definition for factorial -- for values of {{< math >}}$n${{< /math >}} greater than 1, {{< math >}}$n! = n * (n-1)!${{< /math >}}.
+This case states that for all integers `x` that are bigger than 1, we define `factFunction(x) == x * factFunction(x - 1)`. This is the same as our recursive case in our recursive definition for factorial -- for values of {{< math >}}$n${{< /math >}} greater than 1, {{< math >}}$n! = n * (n-1)!${{< /math >}}.
 
 ## Evaluating a Logika fact
 
-Suppose we used our `factDef` proof function to calculate `factDef(3)`. We would have:
+Suppose we used our `factorialFacts` proof function to calculate `factFunction(3)`. We would have:
 
 ```text
-factDef(3) == 3 * factDef(2)        //we use fBig, since 3 > 1
-factDef(2) == 2 * factDef(1)        //we use fBig, since 2 > 1
-factDef(1) == 1                     //we use fOne       
+factFunction(3) == 3 * factFunction(2)      //we use the recursive case, since 3 > 1
+factFunction(2) == 2 * factFunction(1)      //we use the recursive case, since 2 > 1
+factFunction(1) == 1                        //we use the base case       
 ```
 
 Once we work down to:
 
 ```text
-factDef(1) == 1
+factFunction(1) == 1
 ```
  
-We can plug `1` in for `factDef(1)` in `factDef(2) == 2 * factDef(1)`, which gives us:
+We can plug `1` in for `facfactFunctiontDef(1)` in `factFunction(2) == 2 * factFunction(1)`, which gives us:
 
 ```text
-factDef(2) == 2
+factFunction(2) == 2
 ```
 
-Similarly, we can plug `2` in for `factDef(2)` in `factDef(3) == 3 * factDef(2)`, and see that:
+Similarly, we can plug `2` in for `factFunction(2)` in `factFunction(3) == 3 * factFunction(2)`, and see that:
 
 ```text
-factDef(3) == 6
+factFunction(3) == 6
 ```
 
 ## Using Logika facts as justifications
 
-If we had our Logika fact, `factDef`, then we could pull its two definitions into a logic block like this:
+If we had our proof function, `factFunction`, then we could pull its two facts from its `factorialFacts` recursive definition into a proof block like this:
 
 ```text
-l"""{
-    1. factDef(1) == 1                                  fact fOne
-    2. ∀x: Z  x > 1 → factDef(x) == x * factDef(x - 1)  fact fBig
-}"""
+Deduce(
+    1 (     factFunction(1) == 1                                                )   by ClaimOf(factorialFacts _),                                             
+    2 (     ∀ ( (x: Z) => (x > 1) → (factFunction(x) == factFunction(x-1)*x) )  )   by ClaimOf(factorialFacts _)
+)
 ```
 
-Note that we must pull in the definitions EXACTLY as they are written in the proof function. The justification is always `fact` followed by the name of the corresponding definition.
+Note that we must pull in the definitions EXACTLY as they are written in the proof function. The justification is always `ClaimOf(proofFacts _)` where `proofFacts` is the name of the recursive definition.
 
 ## Using Logika facts in postconditions and invariants
 
 Consider the following full Logika program that includes a function to find and return a factorial, as well as test code that calls our factorial function:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
+import org.sireum.justification.natded.prop._
+import org.sireum.justification.natded.pred._
 
 // n! = n * (n-1) * (n-2) * .. * 1
 // 1! = 1
 def factorial(n: Z): Z = {
     var i: Z = 1        //how many multiplications we have done
     var product: Z = 1  //our current calculation
+
     while (i != n) {
         i = i + 1
         product = product * i
@@ -148,26 +154,25 @@ We want to add a function contract, loop invariant block, and supporting logic b
 
 ### Writing a function contract using a Logika fact
 
-We want our `factorial` function contract to say that it is returning `n!`, and that it is only defined for values of `n` that are greater than or equal to 0. We recall that our Logika fact, `factDef`, defines the factorial operation:
+We want our `factorial` function contract to say that it is returning `n!`, and that it is only defined for values of `n` that are greater than or equal to 0. We recall that our Logika fact, `factFunction`, defines the factorial operation:
 
 ```text
-l"""{
-    fact
-        def factDef(n: Z): Z
-            fOne. factDef(1) == 1
-            fBig.  ∀x: Z  x > 1 → factDef(x) == x * factDef(x - 1)
-}"""
+@spec def factFunction(n: Z): Z = $
+
+@spec def factorialFacts = Fact(
+    factFunction(1) == 1,
+    ∀ ( (x: Z) => (x > 1) → (factFunction(x) == factFunction(x-1)*x) )
+)
 ```
 
-And we will use `factDef` to define what we mean by "factorial" in our `factorial` function contract:
+And we will use `factFunction` to define what we mean by "factorial" in our `factorial` function contract:
 
 ```text
 def factorial(n: Z): Z = {
-    l"""{
-        requires n >= 1                 //factorial(n) is only defined when n >= 1
-        ensures result == factDef(n)    //we promise to return factDef(n),
-                                        //where factDef(n) defines n!
-    }"""
+    Contract(
+        Requires(   n >= 1                      ),  //factFunction(n) is only defined when n >= 1
+        Ensures(    Res[Z] == factFunction(n)   )   //we promise to return factFunction(n), where factFunction defines n!
+    )
 
     //code for factorial function
 }
@@ -175,15 +180,15 @@ def factorial(n: Z): Z = {
 
 ### Writing a loop invariant block using a Logika fact
 
-We can similarly use `factDef` in our loop invariant block. We noted at the end of section 9.3 that the invariant in our loop should be: *prod equals i factorial*. Now we have a way to express what we mean by "factorial", so our invariant will be: `prod == factDef(i)`. Since the `factDef` proof function is only defined for parameters greater than or equal to 1, we need to add a second piece to the invariant to guarantee that `i` will always be greater than or equal to 1. We now have the following loop invariant block:
+We can similarly use `factFunction` in our loop invariant block. We noted at the end of section 9.3 that the invariant in our loop should be: *prod equals i factorial*. Now we have a way to express what we mean by "factorial", so our invariant will be: `prod == factFunction(i)`. Since the `factFunction` proof function is only defined for parameters greater than or equal to 1, we need to add a second piece to the invariant to guarantee that `i` will always be greater than or equal to 1. We now have the following loop invariant block:
 
 ```text
 while (i != n) {
-    l"""{
-        invariant product == factDef(i)
-            i >= 1
-        modifies i, product
-    }"""
+    Invariant(
+        Modifies(i, product),
+        product == factFunction(i),
+        i >= 1
+    )
 
     //loop body
 }
@@ -202,103 +207,109 @@ All that remains is to:
 Here is the completed verification:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
+import org.sireum.justification.natded.prop._
+import org.sireum.justification.natded.pred._
 
-l"""{
-    fact
-        def factDef(n: Z): Z
-            fOne. factDef(1) == 1
-            fBig.  ∀x: Z  x > 1 → factDef(x) == factDef(x - 1) * x
-}"""
+@spec def factFunction(n: Z): Z = $
+
+@spec def factorialFacts = Fact(
+    factFunction(1) == 1,
+    ∀((x: Z) => (x > 1) → (factFunction(x) == factFunction(x-1)*x))
+)
+
 
 def factorial(n: Z): Z = {
-    l"""{
-        requires n >= 1
-        ensures result == factDef(n)
-    }"""
+    Contract(
+        Requires(   n >= 1                      ),  //factFunction(n) is only defined when n >= 1
+        Ensures(    Res[Z] == factFunction(n)   )   //we promise to return factFunction(n), where factFunction defines n!
+    )
 
-    var i: Z = 1 //how many multiplications we have done
+    var i: Z = 1        //how many multiplications we have done
     var product: Z = 1  //my current calculation
 
     //Prove invariant before loop begins
-    l"""{
-        1. i == 1                       premise
-        2. product == 1                 premise
+    Deduce(
+        1 (     i == 1                      ) by Premise,
+        2 (     product == 1                ) by Premise,
 
-        //pull in first Logika fact rule
-        3. factDef(1) == 1              fact fOne     
+         //pull in proof function base case
+        3 (     factFunction(1) == 1        ) by ClaimOf(factorialFacts _),
 
-        //proves first loop invariant holds  
-        4. product == factDef(i)        algebra 1 2 3   
+        //proves first loop invariant holds 
+        4 (     product == factFunction(i)  ) by Algebra*(1, 2, 3),
 
-        //proves second loop invariant holds
-        5. i >= 1                       algebra 1       
-    }"""
+        //proves second loop invariant holds 
+        5 (     i >= 1                      ) by Algebra*(1)
+    )
 
     while (i != n) {
-        l"""{
-            invariant product == factDef(i)
-                i >= 1
-            modifies i, product
-        }"""
+        Invariant(
+            Modifies(i, product),
+            product == factFunction(i),
+            i >= 1
+        )
 
         i = i + 1
 
-        l"""{
+        Deduce(
             //from "i = i + 1"
-            1. i == i_old + 1               premise     
+            1 (     i == Old(i) + 1                  ) by Premise,
 
             //loop invariant held before changing i
-            2. product == factDef(i_old)    premise     
+            2 (     product == factFunction(Old(i))  ) by Premise,
 
-            //rewrite invariant with no "_old"
-            3. product == factDef(i-1)      algebra 1 2 
+            //rewrite invariant with no "Old"
+            3 (     product == factFunction(i - 1)   ) by Algebra*(1, 2),
 
             //second loop invariant held before changing i
-            4. i_old >= 1                   premise     
+            4 (     Old(i) >= 1                      ) by Premise,
 
             //needed for the Logika fact
-            5. i > 1                        algebra 1 4 
-        }"""
+            5 (     i > 1                            ) by Algebra*(1, 4)
+        )
 
         product = product * i
 
         //Prove invariant still holds at end of iteration
-        l"""{
+        Deduce(
             //from "product = product * i"
-            1. product == product_old*i                         premise 
+            1 (  product == Old(product) * i                                        ) by Premise,
 
             //from previous logic block
-            2. product_old == factDef(i-1)                      premise 
+            2 (  Old(product) == factFunction(i - 1)                                ) by Premise,
 
-            //pull in Logika fact
-            3. ∀x: Z  x > 1 → factDef(x) == factDef(x - 1) * x  fact fBig
+             //pull in recursive case from proof function
+            3 (  ∀( (x: Z) => x > 1 → factFunction(x) == factFunction(x - 1) * x )  ) by ClaimOf(factorialFacts _),
 
-            //plug in "i" for "x"
-            4. i > 1 → factDef(i) == factDef(i - 1) * i         Ae 3 i
+            //plug in "i" for "x" (where i is of type Z)
+            4 (  i > 1 → factFunction(i) == factFunction(i - 1) * i                 ) by AllE[Z](3),
 
             //from previous logic block
-            5. i > 1                                            premise   
+            5 (  i > 1                                                              ) by Premise,
 
             //i > 1, so get right side of →
-            6. factDef(i) == factDef(i - 1) * i                 →e 4 5     
-            7. product == factDef(i-1)*i                        algebra 1 2
+            6 (  factFunction(i) == factFunction(i - 1) * i                         ) by ImplyE(4, 5),
+            7 (  product == factFunction(i - 1) * i                                 ) by Algebra*(1, 2),
 
             //proves first invariant still holds
-            8. product == factDef(i)                            algebra 6 7 
+            8 (  product == factFunction(i)                                         ) by Algebra*(6, 7),
 
-            //proves first invariant still holds
-            9. i >= 1                                           algebra 5
-        }"""
+            //proves second invariant still holds
+            9 (  i >= 1                                                             ) by Algebra*(5)
+        )
     }
 
     //Prove postcondition
-    l"""{
-        1. product == factDef(i)        premise //loop invariant
-        2. !(i != n)                    premise //loop condition false
-        3. i == n                       algebra 2
-        4. product == factDef(n)        algebra 1 3
-    }"""
+    Deduce(
+        1 (     product == factFunction(i)  ) by Premise,      //loop invariant
+        2 (     !(i != n)                   ) by Premise,      //loop condition false
+        3 (     i == n                      ) by Algebra*(2),
+        4 (     product == factFunction(n)  ) by Algebra*(1, 3)
+    )
 
     return product
 }
@@ -308,36 +319,36 @@ def factorial(n: Z): Z = {
 var num: Z = 2
 
 //Prove precondition
-l"""{
-    1. num == 2             premise
-    2. num >= 1             algebra 1   //proves factorial precondition
-}"""
+Deduce(
+    1 (     num == 2  ) by Premise,
+    2 (     num >= 1  ) by Algebra*(1)     //proves factorial precondition
+)
 
 var answer: Z = factorial(num)
 
-l"""{
-    1. answer == factDef(num)           premise     //factorial postcondition
-    2. num == 2                         premise
-    3. answer == factDef(2)             algebra 1 2
+Deduce(
+    1 (  answer == factFunction(num)                                        ) by Premise,       //factorial postcondition
+    2 (  num == 2                                                           ) by Premise,
+    3 (  answer == factFunction(2)                                          ) by Algebra*(1, 2),
 
-    //pull in Logika fact
-    4. ∀x: Z  x > 1 → factDef(x) == factDef(x - 1) * x  fact fBig
+    //pull in recursive case from proof function
+    4 (  ∀( (x: Z) => x > 1 → factFunction(x) == factFunction(x - 1) * x )  ) by ClaimOf(factorialFacts _),
 
-    //plug in "2" for "x"
-    5. 2 > 1 → factDef(2) == factDef(2 - 1) * 2         Ae 4 2 
-    6. 2 > 1                            algebra
+     //plug in "2" for "x" (where 2 is an integer of type Z)
+    5 (  2 > 1 → factFunction(2) == factFunction(2 - 1) * 2                 ) by AllE[Z](4),
+    6 (  2 > 1                                                              ) by Algebra*(),
 
     //2 > 1, so use →
-    7. factDef(2) == factDef(2 - 1) * 2  →e 5 6  
+    7 (  factFunction(2) == factFunction(2 - 1) * 2                         ) by ImplyE(5, 6),
 
-    //pull in Logika fact
-    8. factDef(1) == 1                  fact fOne       
-    9. factDef(2) == factDef(1) * 2     algebra 7
-    10. factDef(2) == 2                 algebra 8 9
+    //pull in base case from proof function
+    8 (  factFunction(1) == 1                                               ) by ClaimOf(factorialFacts _),
+    9 (  factFunction(2) == factFunction(1) * 2                             ) by Algebra*(7),
+    10 (  factFunction(2) == 2                                              ) by Algebra*(8, 9),
 
     //proves claim in assert
-    11. answer == 2                     algebra 1 2 10
-}"""
+    11 (  answer == 2                                                       ) by Algebra*(1, 2, 10)
+)
 
 assert(answer == 2)
 ```
@@ -351,51 +362,58 @@ Here is our recursive definition of the problem:
 - Base case: for all numbers x, x * 0 is 0
 - Recursive case: for all numbers x and all positive numbers y, x * y = x + x * (y-1)
 
-We can translate this directly to a Logika fact:
+We can translate this directly to a proof function:
 
 ```text
-l"""{
-    fact
-        //defines m * n = m + m + ... + m (n times)
-        def multDef(m: Z, n: Z): Z
-            //anything multiplied by 0 is just 0
-            mult0. ∀ x: Z multDef(x, 0) == 0
-            multPos. ∀ x: Z (∀ y: Z y > 0 → multDef(x, y) == x + multDef(x, y-1))
-}"""
+@spec def multFunction(m: Z, n: Z): Z = $
+
+@spec def multFacts = Fact(
+    //anything multiplied by 0 is just 0
+    ∀((x: Z) => multFunction(x, 0) == 0 ),
+
+    //defines m * n = m + m + ... + m (n times)
+    ∀( (x: Z) => ∀( (y: Z) => (y > 1) → (multFunction(x, y) == multFunction(x,y-1)) ) )
+)
 ```
 
 We could use this Logika fact in the postcondition and loop invariant block for a multiplication function as follows:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
+import org.sireum.justification.natded.prop._
+import org.sireum.justification.natded.pred._
 
-l"""{
-    fact
-        //defines m * n = m + m + ... + m (n times)
-        def multDef(m: Z, n: Z): Z
-            //anything multiplied by 0 is just 0
-            mult0. A x: Z multDef(x, 0) == 0
-            multPos. A x: Z (A y: Z y > 0 -> multDef(x, y) == multDef(x, y-1) + x)
-}"""
+@spec def multFunction(m: Z, n: Z): Z = $
+
+@spec def multFacts = Fact(
+    //anything multiplied by 0 is just 0
+    ∀((x: Z) => multFunction(x, 0) == 0 ),
+
+    //defines m * n = m + m + ... + m (n times)
+    ∀( (x: Z) => ∀( (y: Z) => (y > 1) → (multFunction(x, y) == multFunction(x,y-1)) ) )
+)
 
 
 //want to find: num1 + num1 + ... + num1 (a total of num2 times)
 def mult(num1: Z, num2: Z): Z = {
-    l"""{
-        requires num2 >= 0
-        ensures result == multDef(num1, num2)
-    }"""
-
+    Contract( 
+        Requires( num2 >= 1 ),
+        Ensures( Res[Z] == multFunction(num1, num2) )
+    )
+  
     var answer: Z = 0
     var cur: Z = 0
 
     while (cur != num2) {
-        l"""{
-            invariant
-                answer == multDef(num1, cur)
-                cur >= 0
-            modifies cur, answer
-        }"""
+        Invariant(
+            Modifies(cur, answer),
+            answer == multFunction(num1, cur),
+            cur >= 0
+        )
+
         cur = cur + 1
         answer = answer + num1
     }
@@ -429,15 +447,18 @@ We can recursively define the Fibonacci sequence as follows:
 We can translate this directly to a Logika fact:
 
 ```text
-l"""{
-    fact
-        //defines the nth number in the Fibonacci sequence
-        //1, 1, 2, 3, 5, 8, 13, ...
-        def fibDef(n: Z): Z
-            fib1. fibDef(1) == 1
-            fib2. fibDef(2) == 1
-            fibN. ∀ x: Z x > 2 → fibDef(x) == fibDef(x-1) + fibDef(x-2)
-}"""
+//defines the nth number in the Fibonacci sequence
+//1, 1, 2, 3, 5, 8, 13, ...
+@spec def fibFunction(n: Z): Z = $
+
+@spec def fibFacts = Fact(
+    fibFunction(1) == 1,
+    fibFunction(2) == 2,
+    ∀( (x: Z) => (x > 2) → fibFunction(x-1) + fibFunction(x-2) )
+
+    //defines m * n = m + m + ... + m (n times)
+    ∀( (x: Z) => ∀( (y: Z) => (y > 1) → (multFunction(x, y) == multFunction(x,y-1)) ) )
+)
 ```
 
 Which we could use in a postcondition and loop invariant if we wrote a function to compute the Fibonacci numbers.

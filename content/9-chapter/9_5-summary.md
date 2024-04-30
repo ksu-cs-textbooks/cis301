@@ -12,28 +12,30 @@ Chapter 9 showed us how to write function contracts to specify the requirements 
 Write a function contract for any function that doesn't already have one. Function contracts go just inside the function defintion, and look like:
 
 ```text
-l"""{
-    requires (preconditions)
-    ensures (postconditions)
-}"""
+Contract(
+    Requires( preconditions ),
+    Ensures( postconditions )
+)
 ```
 
-(The *modifies* clause is omitted, as we did not use it in this chapter. We will use the *modifies* clause in chapter 10.) The *preconditions* list any requirements your function has about the range of its parameters, and the *postconditions* describe the impact of calling the function (in this chapter, the postcondition always describes how the return value relates to the parameters.) If you're not sure what to write as the postcondition, try walking through your function with different parameters to get a sense for the pattern of what the function is doing in relation to the parameters. If you were given a Logika proof function, you will likely need to use it in the postcondition (and loop invariant) to describe the behavior.
+ Here, *preconditions* is a comma-separated list of any requirements your function has about the range of its parameters, and *postconditions* is a comma-separated list describing the impact of calling the function (in this chapter, the postcondition always describes how the return value relates to the parameters.) If you're not sure what to write as the postcondition, try walking through your function with different parameters to get a sense for the pattern of what the function is doing in relation to the parameters. If you were given a Logika proof function, you will likely need to use it in the postcondition (and loop invariant) to describe the behavior.
 
 ## Step 2: Write loop invariant blocks
 
 Write a loop invariant block for any loop that doesn't already have one. Loop invariant blocks go just inside the loop (before any code) and look like:
 
 ```text
-l"""{
-    invariant (loop invariants)
-    modifies (variable list)
-}"""
+Invariant(
+    Modifies(comma-separated list of variables),
+    Invariant_1,
+    Invariant_2,
+    ...
+)
 ```
 
-The *invariant* clause lists all loop invariants, which should describe the progress the loop has made toward its goal (the loop invariant will often greatly resemble the postcondition for the enclosing function). Loop invariants occasionally need to specify the range of different variables, especially if the invariant uses Logika facts (which may only be defined for particular values) or if you need more information about the final value of a variable when a loop terminates. I recommend making a table of variable values for several iterations of your loop to get a sense of the relationship between variables -- this relationship is what will become the loop invariant.
+Each *Invariant_i* describes an invariant for the loop, which should describe the progress the loop has made toward its goal (the loop invariant will often greatly resemble the postcondition for the enclosing function). Loop invariants occasionally need to specify the range of different variables, especially if the invariant uses Logika facts (which may only be defined for particular values) or if you need more information about the final value of a variable when a loop terminates. I recommend making a table of variable values for several iterations of your loop to get a sense of the relationship between variables -- this relationship is what will become the loop invariant.
 
-The *modifies* clause lists all variables that are modified in the loop body.
+The *Modifies* clause lists all variables that are modified in the loop body.
 
 ## Step 3: Prove invariant holds before loop begins
 
