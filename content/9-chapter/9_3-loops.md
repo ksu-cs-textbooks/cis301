@@ -9,7 +9,7 @@ date: 2018-08-24T10:53:26-05:00
 
  The only loop available in Logika is a *while* loop, which behaves in the same way as while loops in other languages. If the loop condition is initially false, then the body of the while loop is skipped entirely. If the loop condition is initially true, then we execute the loop body and then recheck the condition. This continues until the loop condition becomes false.
 
- Here is the syntax of a Logika while loop:
+ Here is the syntax of a Scala while loop:
 
  ```text
 while (condition) {
@@ -42,14 +42,16 @@ If we prove those two things about our invariant, we can be certain the invarian
 
 ## Loop invariant block syntax
 
-In Logika, we will use a logic block to indicate our loop invariant. This *loop invariant block* will go just inside the loop, before the loop body:
+In Logika, we will write a *loop invariant block* to describe our loop invariants. This block will go just inside the loop, before the loop body:
 
 ```text
 while (condition) {
-    l"""{
-        invariant (expression(s))
-        modifies (variable list)
-    }"""
+    Invariant(
+        Modifies(comma-separated list of variables),
+        Invariant_1,
+        Invariant_2,
+        ...
+    )
 
     //loop body
 }
@@ -57,15 +59,19 @@ while (condition) {
 
 Here is a summary of the different loop invariant clauses:
 
-- `invariant`: lists the invariant for the function. If we have multiple invariants, we can list them on separate lines (where subsequent lines are tabbed over under `invariant`).
-- `modifies`: lists the name of any variables that are modified in the loop body.
+- `Modifies`: uses a comma-separated list to name each variable whose value changes in the loop body
+- `Invariant_i`: lists an invariant for the function. If we have multiple invariants, we can list them on separate lines (`Invariant_1`, `Invariant_2`, etc.)
+
 
 ## Example: loop invariant block for a multiplication loop
 
 Suppose we have the following loop to multiply two numbers, `x` and `y`, using repeated addition. (This is very similar to our `mult` function from section 9.2, except it does the additions using a loop instead of using recursion):
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
 
 val x: Z = readInt()
 val y: Z = readInt()
@@ -95,7 +101,10 @@ Using this table, it is easy to see that at any point, `sum == count*x` (since `
 We now add a loop invariant block to our loop:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
 
 val x: Z = readInt()
 val y: Z = readInt()
@@ -105,10 +114,10 @@ var count: Z = 0
 
 while (count != y) {
     //loop invariant block (still needs to be proved)
-    l"""{
-        invariant sum == count*x
-        modifies sum, count
-    }"""
+    Invariant(
+        Modifies(sum, count),
+        sum == count * x
+    )
 
     sum = sum + x
     count = count + 1
@@ -117,7 +126,7 @@ while (count != y) {
 //now sum is x*y
 ```
 
-We list `sum` and `count` in the `modifies` clause because those are the two variables that change value inside the loop.
+We list `sum` and `count` in the `Modifies` clause because those are the two variables that change value inside the loop.
 
 ## Proving the loop invariant
 
@@ -131,7 +140,10 @@ In order to prove the correctness of a loop, we must do two things:
 In our multiplication loop above, let's start by proving the loop invariant before the loop begins. This means that just before the loop, we must prove exactly the claim `sum == count*x`. We can do this with algebra on the current variable values:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
 
 val x: Z = readInt()
 val y: Z = readInt()
@@ -140,17 +152,17 @@ var sum: Z = 0
 var count: Z = 0
 
 //prove the invariant before the loop begins
-l"""{
-    1. sum == 0             premise     //from the "sum = 0" assignment
-    2. count == 0           premise     //from the "count = 0" assignment
-    3. sum == count*x       algebra 1 2 //proved EXACTLY the loop invariant
-}"""
+Deduce(
+    1 (     sum == 0        )   by Premise,         //from the "sum = 0" assignment
+    2 (     count == 0      )   by Premise,         //from the "count = 0" assignment
+    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
+)
 
 while (count != y) {
-    l"""{
-        invariant sum == count*x
-        modifies sum, count
-    }"""
+    Invariant(
+        Modifies(sum, count),
+        sum == count * x
+    )
 
     sum = sum + x
     count = count + 1
@@ -167,15 +179,15 @@ To prove the loop invariant still holds at the end of an iteration, we must have
 
 ```text
 while (count != y) {
-    l"""{
-        invariant sum == count*x
-        modifies sum, count
-    }"""
+    Invariant(
+        Modifies(sum, count),
+        sum == count * x
+    )
 
-    l"""{
-        1. sum == count*x           premise     //the loop invariant holds
-                                                //at the beginning of an iteration
-    }"""
+    Deduce(
+        1 (     sum == count*x      )   by Premise,     //the loop invariant holds
+                                                        //at the beginning of an iteration
+    )
 
     sum = sum + x
     count = count + 1
@@ -188,7 +200,10 @@ while (count != y) {
 We can complete the loop invariant proof by using our tools for processing assignment statements with mutations. Here is the completed verification:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
 
 val x: Z = readInt()
 val y: Z = readInt()
@@ -197,41 +212,41 @@ var sum: Z = 0
 var count: Z = 0
 
 //prove the invariant before the loop begins
-l"""{
-    1. sum == 0             premise     //from the "sum = 0" assignment
-    2. count == 0           premise     //from the "count = 0" assignment
-    3. sum == count*x       algebra 1 2 //proved EXACTLY the loop invariant
-}"""
+Deduce(
+    1 (     sum == 0        )   by Premise,         //from the "sum = 0" assignment
+    2 (     count == 0      )   by Premise,         //from the "count = 0" assignment
+    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
+)
 
 while (count != y) {
-    l"""{
-        invariant sum == count*x
-        modifies sum, count
-    }"""
+    Invariant(
+        Modifies(sum, count),
+        sum == count * x
+    )
 
-    l"""{
-        1. sum == count*x           premise     //the loop invariant holds 
-                                                //at the beginning of an iteration
-    }"""
+    Deduce(
+        1 (     sum == count*x      )   by Premise,     //the loop invariant holds
+                                                        //at the beginning of an iteration
+    )
 
     sum = sum + x
 
-    l"""{
-        1. sum == sum_old + x           premise     //from "sum = sum + x" assignment
-        2. sum_old == count*x           premise     //loop invariant WAS true, but sum just changed
-        3. sum == count*x + x           algebra 1 2 //current knowledge without using _old
-    }"""
+    Deduce(
+        1 (     sum == Old(sum) + x     )   by Premise,         //from "sum = sum + x" assignment
+        2 (     Old(sum) == count*x     )   by Premise,         //loop invariant WAS true, but sum just changed
+        3 (     sum == count*x + x      )   by Algebra*(1,2)    //current knowledge without using Old
+    )
 
     count = count + 1
 
-    l"""{
-        1. count == count_old + 1       premise     //from "count = count + 1" assignment
-        2. sum == count_old*x + x       premise     //from previous "sum = count*x + x", 
-                                                    //but count has changed
-        3. sum == (count-1)*x + x       algebra 1 2
-        4. sum == count*x - x + x       algebra 3
-        5. sum == count*x               algebra 4   //loop invariant holds at end of iteration
-    }"""
+    Deduce(
+        1 (     count == Old(count)+ 1  )   by Premise,         //from "count = count + 1" assignment
+        2 (     sum == Old(count)*x + x )   by Premise,         //from previous "sum = count*x + x", 
+                                                                //but count has changed
+        3 (     sum == (count-1)*x + x  )   by Algebra*(1,2),
+        4 (     sum == count*x - x + x  )   by Algebra*(3),
+        5 (     sum == count*x          )   by Algebra*(4)      //loop invariant holds at end of iteration
+    )
 }
 
 //now sum is x*y
@@ -257,12 +272,12 @@ We can use those pieces of information to prove our assert statement:
 ```text
 //the multiplication loop example goes here
 
-l"""{
-    1. sum == count*x           premise     //the loop invariant holds
-    2. ¬(count != y)            premise     //the loop condition is not true
-    3. count == y               algebra 2
-    4. sum == x*y               algebra 1 3 //proves our assert statement
-}"""
+Deduce(
+    1 (     sum == count*x  )   by Premise,     //the loop invariant holds
+    2 (     ¬(count != y)   )   by Premise,     //the loop condition is not true
+    3 (     count == y      )   by Algebra*(2),
+    4 (     sum == x*y      )   by Algebra*1,3  //proves our assert statement
+)
 
 assert(sum == x*y)
 ```
@@ -278,7 +293,10 @@ If we have a function that includes a loop, we must do the following:
 For example, suppose our loop multiplication is inside a function which is tested by some calling code. We would like to add a function contract, our loop invariant proof, and necessary logic blocks to show that our assert holds at the end of the calling code. Here is just the code for the example:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
 
 def mult(x: Z, y: Z) : Z = {
     var sum: Z = 0
@@ -304,54 +322,57 @@ assert(answer == 12)
 We start by adding a function contract to `mult`, which will be the same as our function contract for the recursive version of this function in section 9.2 -- `y` needs to be nonnegative, and we promise to return `x*y`. Here is the code after adding the function contract and our previous loop verificaton:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
 
 def mult(x: Z, y: Z) : Z = {
     //function contract
-    l"""{
-        requires y >= 0         //precondition: y should be nonnegative
-        ensures result == x*y   //postcondition (we promise to return x*y)
-    }"""
+    Contract(
+        Requires(   y >= 0          ),  //precondition: y should be nonnegative
+        Ensures(    Res[Z] == x * y )   //postcondition (we promise to return x*y)
+    )
 
     var sum: Z = 0
     var count: Z = 0
 
     //prove the invariant before the loop begins
-    l"""{
-        1. sum == 0             premise     //from the "sum = 0" assignment
-        2. count == 0           premise     //from the "count = 0" assignment
-        3. sum == count*x       algebra 1 2 //proved EXACTLY the loop invariant
-    }"""
+    Deduce(
+    1 (     sum == 0        )   by Premise,         //from the "sum = 0" assignment
+    2 (     count == 0      )   by Premise,         //from the "count = 0" assignment
+    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
+)
 
     while (count != y) {
-        l"""{
-            invariant sum == count*x
-            modifies sum, count
-        }"""
+        Invariant(
+            Modifies(sum, count),
+            sum == count * x
+        )
 
-        l"""{
-            1. sum == count*x           premise     //the loop invariant holds 
-                                                    //at the beginning of an iteration
-        }"""
+        Deduce(
+            1 (     sum == count*x      )   by Premise,     //the loop invariant holds
+                                                            //at the beginning of an iteration
+        )
 
         sum = sum + x
 
-        l"""{
-            1. sum == sum_old + x           premise     //from "sum = sum + x" assignment
-            2. sum_old == count*x           premise     //loop invariant WAS true, but sum just changed
-            3. sum == count*x + x           algebra 1 2 //current knowledge without using _old
-        }"""
+        Deduce(
+            1 (     sum == Old(sum) + x     )   by Premise,         //from "sum = sum + x" assignment
+            2 (     Old(sum) == count*x     )   by Premise,         //loop invariant WAS true, but sum just changed
+            3 (     sum == count*x + x      )   by Algebra*(1,2)    //current knowledge without using Old
+        )
 
         count = count + 1
 
-        l"""{
-            1. count == count_old + 1       premise     //from "count = count + 1" assignment
-            2. sum == count_old*x + x       premise     //from previous "sum = count*x + x", 
-                                                        //but count has changed
-            3. sum == (count-1)*x + x       algebra 1 2
-            4. sum == count*x - x + x       algebra 3
-            5. sum == count*x               algebra 4   //loop invariant holds at end of iteration
-        }"""
+        Deduce(
+            1 (     count == Old(count)+ 1  )   by Premise,         //from "count = count + 1" assignment
+            2 (     sum == Old(count)*x + x )   by Premise,         //from previous "sum = count*x + x", 
+                                                                    //but count has changed
+            3 (     sum == (count-1)*x + x  )   by Algebra*(1,2),
+            4 (     sum == count*x - x + x  )   by Algebra*(3),
+            5 (     sum == count*x          )   by Algebra*(4)      //loop invariant holds at end of iteration
+        )
     }
 
     //STILL NEED TO PROVE POSTCONDITION
@@ -373,62 +394,65 @@ assert(answer == 12)
 We can use the negation of the loop condition (`¬(count != y)`) together with the loop invariant to prove the postcondition will hold before the function returns. We can also apply the same process as in sections 9.1 and 9.2 to prove the precondition in the calling code before calling the `mult` function, and to use the function's postcondition after the call to `mult` to prove our goal assert. Here is the completed example: 
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --manual --background save
+import org.sireum._
+import org.sireum.justification._
 
 def mult(x: Z, y: Z) : Z = {
     //function contract
-    l"""{
-        requires y >= 0         //precondition: y should be nonnegative
-        ensures result == x*y   //postcondition (we promise to return x*y)
-    }"""
+    Contract(
+        Requires(   y >= 0          ),  //precondition: y should be nonnegative
+        Ensures(    Res[Z] == x * y )   //postcondition (we promise to return x*y)
+    )
 
     var sum: Z = 0
     var count: Z = 0
 
     //prove the invariant before the loop begins
-    l"""{
-        1. sum == 0             premise     //from the "sum = 0" assignment
-        2. count == 0           premise     //from the "count = 0" assignment
-        3. sum == count*x       algebra 1 2 //proves EXACTLY the loop invariant
-    }"""
+    Deduce(
+    1 (     sum == 0        )   by Premise,         //from the "sum = 0" assignment
+    2 (     count == 0      )   by Premise,         //from the "count = 0" assignment
+    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
+)
 
     while (count != y) {
-        l"""{
-            invariant sum == count*x
-            modifies sum, count
-        }"""
+        Invariant(
+            Modifies(sum, count),
+            sum == count * x
+        )
 
-        l"""{
-            1. sum == count*x           premise     //the loop invariant holds 
-                                                    //at the beginning of an iteration
-        }"""
+        Deduce(
+            1 (     sum == count*x      )   by Premise,     //the loop invariant holds
+                                                            //at the beginning of an iteration
+        )
 
         sum = sum + x
 
-        l"""{
-            1. sum == sum_old + x           premise     //from "sum = sum + x" assignment
-            2. sum_old == count*x           premise     //loop invariant WAS true, but sum just changed
-            3. sum == count*x + x           algebra 1 2 //current knowledge without using _old
-        }"""
+        Deduce(
+            1 (     sum == Old(sum) + x     )   by Premise,         //from "sum = sum + x" assignment
+            2 (     Old(sum) == count*x     )   by Premise,         //loop invariant WAS true, but sum just changed
+            3 (     sum == count*x + x      )   by Algebra*(1,2)    //current knowledge without using Old
+        )
 
         count = count + 1
 
-        l"""{
-            1. count == count_old + 1       premise     //from "count = count + 1" assignment
-            2. sum == count_old*x + x       premise     //from previous "sum = count*x + x", 
-                                                        //but count has changed
-            3. sum == (count-1)*x + x       algebra 1 2
-            4. sum == count*x - x + x       algebra 3
-            5. sum == count*x               algebra 4   //proves loop invariant holds at end of iteration
-        }"""
+        Deduce(
+            1 (     count == Old(count)+ 1  )   by Premise,         //from "count = count + 1" assignment
+            2 (     sum == Old(count)*x + x )   by Premise,         //from previous "sum = count*x + x", 
+                                                                    //but count has changed
+            3 (     sum == (count-1)*x + x  )   by Algebra*(1,2),
+            4 (     sum == count*x - x + x  )   by Algebra*(3),
+            5 (     sum == count*x          )   by Algebra*(4)      //loop invariant holds at end of iteration
+        )
     }
 
-    l"""{
-        1. ¬(count != y)                    premise     //loop condition is now false
-        2. sum == count*x                   premise     //loop invariant holds after loop
-        3. count == y                       algebra 1
-        4. sum == x*y                       algebra 2 3 //proves the postcondition
-    }"""
+    Deduce(
+        1 (     ¬(count != y)       )   by Premise,         //loop condition is now false
+        2 (     sum == count*x      )   by Premise,         //loop invariant holds after loop
+        3 (     count == y          )   by Algebra*(1),
+        4 (     sum == x*y          )   by Algebra*(2,3)    //proves the postcondition
+    )
 
     return sum
 }
@@ -438,19 +462,19 @@ def mult(x: Z, y: Z) : Z = {
 var one: Z = 3
 var two: Z = 4
 
-l"""{
-    1. two == 4             premise     //from the "two = 4" assignment
-    2. two >= 0             algebra 1   //proves the mult precondition
-}"""
+Deduce(
+    1 (     two == 4        )   by Premise,     //from the "two = 4" assignment
+    2 (     two >= 0        )   by Algebra*(1)  //proves the mult precondition
+)
 
 var answer: Z = mult(one, two)
 
-l"""{
-    1. one == 3             premise
-    2. two == 4             premise
-    3. answer == one*two    premise         //from the mult postcondition
-    4. answer == 12         algebra 1 2 3   //proves the assert
-}"""
+Deduce(
+    1 (     one == 3            )   by Premise,
+    2 (     two == 4            )   by Premise,
+    3 (     answer == one*two   )   by Premise          //from the mult postcondition
+    4 (     answer == 12        )   by Algebra*(1,2,3)  //proves the assert 
+)
 
 assert(answer == 12)
 ```
@@ -487,10 +511,10 @@ Since our loop invariant should describe what progress it has made towards its g
 var total: Z = 0
 var i: Z = 0
 while (i < n) {
-    l"""{
-        invariant total == i*i
-        modifies i, n
-    }"""
+    Invariant(
+        Modifies(i, n),
+        total == i*i
+    )
 
     i = i + 1
     total = total + (2*i - 1)
@@ -505,12 +529,12 @@ The way it is written, we can't be certain. We do know that the loop condition m
 var total: Z = 0
 var i: Z = 0
 while (i < n) {
-    l"""{
-        invariant total == i*i
-            i <= n
-        modifies i, n
-    }"""
-
+    Invariant(
+        Modifies(i, n),
+        total == i*i,
+        i <= n
+    )
+    
     i = i + 1
     total = total + (2*i - 1)
 }
