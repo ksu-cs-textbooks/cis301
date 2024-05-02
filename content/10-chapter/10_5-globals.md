@@ -1,6 +1,6 @@
 ---
 title: "Global Variables"
-pre: "10.6 "
+pre: "10.5 "
 weight: 115
 date: 2018-08-24T10:53:26-05:00
 ---
@@ -11,14 +11,16 @@ We will now consider programs with multiple functions that modify a shared pool 
 
 ## Global variables in Logika
 
-A global variable in Logika exists before any function call, and still exists after any function ends. 
+A global variable exists before any function call, and still exists after any function ends. 
 
 ### Functions that access global variables
 
-Consider the following Logika program:
+Consider the following program:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --background save
+import org.sireum._
 
 //global variable
 var feetPerMile: Z = 5280  // feet in a mile mile
@@ -30,7 +32,7 @@ def convertToFeet(m : Z): Z = {
 
 /////////// Calling code ////////////////////
 
-var miles: Z = readInt()
+var miles: Z = Z.read()
 
 var totalFeet: Z = 0
 if (miles >= 0){
@@ -45,21 +47,24 @@ Here, `feetPerMile` is a global variable -- it exists before the `convertToFeet`
 In the example above, `convertToFeet` only accesses the `feetPerMile` global variable. A global variable that is read (but not updated) by a function body can be safely used in the functions precondition and postcondition -- it acts just like an extra parameter to the function. We might edit `convertToFeet` to have this function contract:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --background save
+import org.sireum._
 
 //global variable
 var feetPerMile: Z = 5280  // feet in a mile mile
 
 def convertToFeet(m : Z): Z = {
-    l"""{
-        //only do conversions on nonnegative distances
-        requires m >= 0    
-            //not needed, but demonstrates using global variables in preconditions     
-            feetPerMile > 5200  
+    Contract(
+        
+        Requires (
+            m >= 0,             //only do conversions on nonnegative distances
+            feetPerMile > 5200  //not needed, but demonstrates using global variables in preconditions
+        ),
 
-        //can use global variable in postcondition    
-        ensures result == m * feetPerMile
-    }"""
+        //can use global variable in postcondition
+        Ensures (Res[Z]== m * feetPerMile)
+    )
 
     val feet: Z = m * feetPerMile
     return feet
@@ -67,7 +72,7 @@ def convertToFeet(m : Z): Z = {
 
 /////////// Calling code ////////////////////
 
-var miles: Z = readInt()
+var miles: Z = Z.read()
 
 var totalFeet: Z = 0
 if (miles >= 0){
@@ -79,22 +84,24 @@ However, we cannot assign to a global variable the result of calling a function.
 
 ### Functions that modify global variables
 
-In the Logika language, every global variable that is modified by a function must be listed in that function's `modifies` clause. Such functions must also describe in their postconditions how these global variables will be changed by the function from their original (pre-function call) values. We will use the notation `globalVariableName_in` for the value of global variable `globalVariableName` at the start of the function, just as we did for sequences.
+Every global variable that is modified by a function must be listed in that function's `Modifies` clause. Such functions must also describe in their postconditions how these global variables will be changed by the function from their original (pre-function call) values. We will use the notation `In(globalVariableName)` for the value of global variable `globalVariableName` at the start of the function, just as we did for sequences.
 
 Here is an example:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --background save
+import org.sireum._
 
 //global variable
 var time: Z = 0
 
-def tick(): Z = {
-    l"""{
-        requires time > 0
-        modifies time
-        ensures time == time_in + 1
-    }"""
+def tick(): Unit = {
+    Contract(
+        Requires(time > 0),
+        Modifies (time),
+        Ensures (time == In(time) + 1)
+    )
 
     time = time + 1
 }
@@ -102,8 +109,8 @@ def tick(): Z = {
 
 Here, we have a global `time` variable and a `tick` function that increases the time by 1 with each function call. Since the `tick` function changes the `time` global variable, we must include two things in its function contract:
 
-- A `modifies` clause that lists `time` as one of the global variables modified by this function
-- A postcondition that describes how the value of `time` after the function call compares to the value of `time` just before the function call. The statement `time == time_in + 1` means: "the value of time after the function call equals the value of time just before the function call, plus one".
+- A `Modifies` clause that lists `time` as one of the global variables modified by this function
+- A postcondition that describes how the value of `time` after the function call compares to the value of `time` just before the function call. The statement `time == In(time) + 1` means: "the value of time after the function call equals the value of time just before the function call, plus one".
 
 ## Global invariants
 
@@ -114,7 +121,9 @@ When we have a program with global variables that are modified by multiple funct
 For example, consider the following partial program that represents a bank account:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --background save
+import org.sireum._
 
 //global variables
 var balance: Z = 0
@@ -122,19 +131,15 @@ var elite: B = false
 val eliteMin: Z = 1000000 //$1M is the minimum balance for elite status
 
 //global invariants
-l"""{
-    invariant
-        //balance should be non-negative
-        balance >= 0
-
-        //elite status should reflect if balance is at least a million
-        elite == (balance >= eliteMin)
-}"""
+@spec def inv = Invariant(  
+    balance >= 0,                   //balance should be non-negative
+    elite == (balance >= eliteMin)  //elite status should reflect if balance is at least a million
+)
 
 def deposit(amount: Z): Unit = {
-    l"""{
+    Contract(
         //We still need to complete the function contract
-    }"""
+    )
 
     balance = balance + amount
     if (balance >= eliteMin) {
@@ -145,9 +150,9 @@ def deposit(amount: Z): Unit = {
 }
 
 def withdraw(amount: Z): Unit = {
-    l"""{
+    Contract(
         //We still need to complete the function contract
-    }"""
+    )
 
     balance = balance - amount
     if (balance >= eliteMin) {
@@ -165,7 +170,7 @@ Here, we have three global variables: `balance` (the bank account balance), `eli
 
 ### Global invariants must hold before each function call
 
-In any program with global invariants, we either must prove (in manual mode) or their must be sufficient evidence (in symexe mode) that each global invariant holds immediately before any function call (including when the program first begins, before any function call). In our bank example, we see that the global variables are initialized as follows:
+In any program with global invariants, we either must prove (in manual mode) or there must be sufficient evidence (in auto mode) that each global invariant holds immediately before any function call (including when the program first begins, before any function call). In our bank example, we see that the global variables are initialized as follows:
 
 ```text
 var balance: Z = 0
@@ -173,21 +178,21 @@ var elite: B = false
 val eliteMin: Z = 1000000
 ```
 
-In symexe mode, there is clearly enough evidence that the global invariants all hold with those initial values -- the balance is nonnegative, and the customer correctly does not have elite status (because they do not have about the $1,000,000 threshold).
+In auto mode, there is clearly enough evidence that the global invariants all hold with those initial values -- the balance is nonnegative, and the customer correctly does not have elite status (because they do not have about the $1,000,000 threshold).
 
 ### Global invariants must still hold at the end of each function call
 
-Since we must demonstrate that global invariants hold before each function call, functions themselves can assume the global invariants are true at the beginning of the function. If we were using manual mode, we could list each global invariant as a `premise` at the beginning of the function -- much like we do with preconditions. Then, it is the job of each function to ensure that the global invariants STILL hold when the function ends. In manual mode, we would need to demonstrate that each global invariant claim `globalInvariant` still held in a logic block just before the end of the function:
+Since we must demonstrate that global invariants hold before each function call, functions themselves can assume the global invariants are true at the beginning of the function. If we were using manual mode, we could list each global invariant as a `Premise` at the beginning of the function -- much like we do with preconditions. Then, it is the job of each function to ensure that the global invariants STILL hold when the function ends. In manual mode, we would need to demonstrate that each global invariant claim `globalInvariant` still held in a logic block just before the end of the function:
 
 ```text
-l"""{
+Deduce(
     //each global invariant must still hold at the end of the function
 
-    1. globalInvariant              (some justification)
-}"""
+    1 ( globalInvariant )   by SomeJustification 
+)
 ```
 
-In symexe mode, we do not need to include such logic blocks, but there must be sufficient detail in the function contract to infer that each global invariant will hold no matter what at the end of the function.
+In auto mode, we do not need to include such logic blocks, but there must be sufficient detail in the function contract to infer that each global invariant will hold no matter what at the end of the function.
 
 ### Bank function contracts
 
@@ -195,9 +200,9 @@ Consider the `deposit` function in our bank example:
 
 ```text
 def deposit(amount: Z): Unit = {
-    l"""{
+    Contract(
         //We still need to complete the function contract
-    }"""
+    )
 
     balance = balance + amount
     if (balance >= eliteMin) {
@@ -210,8 +215,8 @@ def deposit(amount: Z): Unit = {
 
 Since `deposit` is modifying the global variables `balance` and `elite`, we know we must include two things in its function contract:
 
-- A `modifies` clause that lists `balance` and `elite` as global variables modified by this function
-- A postcondition that describes how the value of `balance` after the function call compares to the value of `balance` just before the function call. We want to say, `balance == balance_in + amount`, because the value of `balance` at the end of the function equals the value of `balance` at the beginning of the function, plus `amount`.
+- A `Modifies` clause that lists `balance` and `elite` as global variables modified by this function
+- A postcondition that describes how the value of `balance` after the function call compares to the value of `balance` just before the function call. We want to say, `balance == In(balance) + amount`, because the value of `balance` at the end of the function equals the value of `balance` at the beginning of the function, plus `amount`.
 
 We also must consider how the `elite` variable changes as a result of the function call. In the code, we use an if/else statement to ensure that `elite` gets correctly updated if the customer's new balance is above or below the threshold for elite status. If we were to write a postcondition that summarized how `elite` was updated by the function, we would write: `elite == (balance >= eliteMin)` to say that the value of elite after the function equaled whether the new balance was above the threshold. However, this claim is already a global invariant, which already must hold at the end of the function. We do not need to list it again as a postcondition.
 
@@ -219,12 +224,12 @@ Consider this potential function contract for `deposit`:
 
 ```text
 def deposit(amount: Z): Unit = {
-    l"""{
+    Contract(
         //this function contract is not quite correct
 
-        modifies balance, elite
-        ensures balance == balance_in + amount
-    }"""
+        Modifies (balance, elite ),
+        Ensures( balance == In(balance) + amount )
+    )
 
     balance = balance + amount
     if (balance >= eliteMin) {
@@ -241,11 +246,11 @@ Here is the corrected `deposit` function:
 
 ```text
 def deposit(amount: Z): Unit = {
-    l"""{
-        requires amount >= 0
-        modifies balance, elite
-        ensures balance == balance_in + amount
-    }"""
+    Contract(
+        Requires( amount >= 0 ),
+        Modifies( balance, elit e),
+        Ensures( In(balance) == balance - amount )
+    )
 
     balance = balance + amount
     if (balance >= eliteMin) {
@@ -260,13 +265,11 @@ We can similarly write the function contract for the `withdraw` function. Since 
 
 ```text
 def withdraw(amount: Z): Unit = {
-    l"""{
-        requires amount >= 0
-            amount <= balance
-        modifies balance, elite
-        ensures
-            balance == balance_in - amount
-    }"""
+    Contract(
+        Requires( balance >= amount ),
+        Modifies( balance, elite ),
+        Ensures( balance == In(balance) - amount )
+    )
 
     balance = balance - amount
     if (balance >= eliteMin) {
@@ -292,12 +295,12 @@ Suppose we had this test code at the end of our bank program:
 deposit(500000)
 
 //Assert will hold
-assert(balance == 500000 & elite == false)
+assert(balance == 500000 && elite == false)
 
 deposit(500000)
 
 //Assert will hold
-assert(balance == 1000000 & elite == true)
+assert(balance == 1000000 && elite == true)
 
 //Precondition will not hold
 withdraw(2000000)
@@ -306,15 +309,15 @@ withdraw(2000000)
 We already showed how our global invariants initially held for the starting values of the global variables (`balance = 0` and `elite = false`). When we consider the first function call, `deposit(500000)`, we can also see that the precondition holds (we are depositing a non-negative amount). The `deposit` postcondition tells us that the new value of `balance` is 500000 more than it was before the function call, so we know balance is now 500000. We can also assume that all global invariants hold after the `deposit` call, so we can infer that `elite` is still false (since the balance is not more than the threshold). Thus the next assert statement:
 
 ```text
-assert(balance == 500000 & elite == false)
+assert(balance == 500000 && elite == false)
 ```
 
-will hold in Logika's symexe mode.
+will hold in Logika's auto mode.
 
 The very next statement in the calling code is another call to `deposit`. Since we could assume the global invariants held immediately after the last call to deposit, we can infer that they still hold before the next `deposit` call. We also see that the function's precondition is satisfied, as we are depositing another nonnegative value. Just as before, we can use the `deposit` postcondition to see that `balance` will be 1000000 after the next function call (the postcondition tells us that `balance` is 500000 more than it was just before the function call). We also know that the global invariants hold, so we are sure `elite` has been updated to true. Thus our next assert holds as well:
 
 ```text
-assert(balance == 1000000 & elite == true)
+assert(balance == 1000000 && elite == true)
 ```
 
 Our final function call, `withdraw(2000000)`, will not be allowed. We are trying to withdraw $2,000,000, but our account balance at this point is $1,000,000. We will get an error saying that the `withdraw` precondition has not been satisfied, as that function requires that our withdrawal amount be less than or equal to the account balance.
