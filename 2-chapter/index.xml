@@ -335,11 +335,6 @@
 	
 		
 		
-
-	
-	
-		
-		
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -375,7 +370,7 @@ Here is the precedence of the logical operators, from most important (do first) 
       <description>We say that a logical statement is satisfiable when there exists at least one truth assignment that makes the overall statement true.
 In our Logika truth tables, this corresponds to statements that are either contingent or a tautology. (Contradictory statements are NOT satisfiable.)
 For example, consider the following truth tables:
-* ----------------------- p q r | p → q V ¬r ∧ p ----------------------- T T T | T T F F T T F | T T T T T F T | F F F F T F F | T T T T F T T | T T F F F T F | T T T F F F T | T F F F F F F | T F T F ------------------------ Contingent - T: [T T T] [T T F] [T F F] [F T T] [F T F] [F F T] [F F F] - F: [T F T]And</description>
+* ----------------------- p q r # p →: q V ¬r ∧ p ----------------------- T T T # T T F F T T F # T T T T T F T # F F F F T F F # T T T T F T T # T T F F F T F # T T T F F F T # T F F F F F F # T F T F ------------------------ Contingent T: [T T T] [T T F] [T F F] [F T T] [F T F] [F F T] [F F F] F: [T F T]And</description>
     </item>
     <item>
       <title>Logical Equivalence</title>
@@ -384,7 +379,7 @@ For example, consider the following truth tables:
       <guid>https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_4-logicalequiv/index.html</guid>
       <description>Two (or more) logical statements are said to be logically equivalent IFF (if and only if, ↔) they have the same truth value for every truth assignment; i.e., their truth tables evaluate exactly the same. (We sometimes refer to this as semantic equivalence.)
 An example of logically equivalent statements are q ∧ p and p ∧ (q ∧ p):
-* -------------- p q | (p ∧ q) -------------- T T | T T T T F | T F F F T | F F T F F | F F F --------------- Contingent - T : [T T] - F : [F F] [F T] [T F] * ------------------- p q | p ∧ (q ∧ p) ------------------- T T | T T T T T T F | T F F F T F T | F F T F F F F | F F F F F -------------------- Contingent - T : [T T] - F : [F F] [F T] [T F]In these examples, notice that exactly the same set of truth assignments makes both statements true, and that exactly the same set of truth assignments makes both statements false.</description>
+* -------------- p q # (p ∧ q) -------------- T T # T T F # F F T # F F F # F --------------- Contingent T: [T T] F: [F F] [F T] [T F] * ------------------- p q # p ∧ (q ∧ p) ------------------- T T # T T T F # F F F T # F F F F # F F -------------------- Contingent T : [T T] F : [F F] [F T] [T F]In these examples, notice that exactly the same set of truth assignments makes both statements true, and that exactly the same set of truth assignments makes both statements false.</description>
     </item>
     <item>
       <title>Semantic Entailment</title>

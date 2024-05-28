@@ -335,11 +335,6 @@
 	
 		
 		
-
-	
-	
-		
-		
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -425,7 +420,7 @@ As with propositional logic, we can use the Logika tool to help check the correc
       <link>https://ksu-cs-textbooks.github.io/cis301/10-chapter/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:05 -0500</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis301/10-chapter/index.html</guid>
-      <description>Programming Logic: Sequences, Global Variables, and Termination In our conclusion of programming logic, we&amp;rsquo;ll examines programs with sequences and global variables. We&amp;rsquo;ll also learn the idea of termination in programs, and why this is a much more difficult thing to demonstrate for a general program that it might seem.</description>
+      <description>In our conclusion of programming logic, we&amp;rsquo;ll examines programs with sequences and global variables. We&amp;rsquo;ll also learn the idea of termination in programs, and why this is a much more difficult thing to demonstrate for a general program that it might seem.</description>
     </item>
   </channel>
 </rss>

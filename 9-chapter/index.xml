@@ -335,11 +335,6 @@
 	
 		
 		
-
-	
-	
-		
-		
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -354,7 +349,7 @@
       <link>https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_1-functions/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_1-functions/index.html</guid>
-      <description>A function in Logika is analogous to a method in Java or C# &amp;ndash; it is a named body of commands that does significant work. It may take one or more parameters and/or return a value. Recall the syntax for a function in Logika:
+      <description>A function in Scala is analogous to a method in Java or C# &amp;ndash; it is a named body of commands that does significant work. It may take one or more parameters and/or return a value. Recall the syntax for a function in Scala:
 def functionName(paramList): returnType = { }We will use the keyword Unit (like void in other languages) for a function that does not return a value. If a function has a non-Unit return type, then all paths through the function must end in a return statement:</description>
     </item>
     <item>

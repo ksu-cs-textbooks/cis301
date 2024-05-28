@@ -335,11 +335,6 @@
 	
 		
 		
-
-	
-	
-		
-		
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -362,8 +357,8 @@
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/index.html</guid>
       <description>In this section, we will see the deduction rules for the AND operator.
-AND introduction Clearly, when both p and q are facts, then so is the proposition p ∧ q. This makes logical sense &amp;ndash; if two propositions are independently true, then their conjunction (AND) must also be true. The AND introduction rule, ∧i, formalizes this:
-P Q ∧i : --------- P ∧ QWe will use the format above when introducing each of our natural deduction rules:</description>
+AND introduction Clearly, when both p and q are facts, then so is the proposition p ∧ q. This makes logical sense &amp;ndash; if two propositions are independently true, then their conjunction (AND) must also be true. The AND introduction rule, AndI, formalizes this:
+P Q AndI : --------- P ∧ QWe will use the format above when introducing each of our natural deduction rules:</description>
     </item>
     <item>
       <title>OR Rules</title>
@@ -379,14 +374,14 @@ OR introduction If we know that a proposition P is true, then it will also be th
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/index.html</guid>
       <description>In this section, we will see the deduction rules for the implies operator.
-Implies elimination Remember that → is a kind of logical &amp;ldquo;if-then&amp;rdquo;. Here, we understand p → q to mean that p holds knowledge sufficient to deduce q – so, whenever p is proved to be a fact, then p → q enables q to be proved a fact, too. This is the implies elimination rule, →e, and we can formalize it like this:</description>
+Implies elimination Remember that → is a kind of logical &amp;ldquo;if-then&amp;rdquo;. Here, we understand p → q to mean that p holds knowledge sufficient to deduce q – so, whenever p is proved to be a fact, then p → q enables q to be proved a fact, too. This is the implies elimination rule, ImplyE, and we can formalize it like this:</description>
     </item>
     <item>
       <title>Negation Rules</title>
       <link>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/index.html</link>
       <pubDate>Fri, 24 Aug 2018 10:53:26 -0500</pubDate>
       <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/index.html</guid>
-      <description>In this section, we will see the deduction rules for the NOT operator. In this section, we will introduce the contradiction symbol (⊥, or _|_ in ASCII). This symbol is also referred to as the bottom operator. We will be able to claim that a contradiction occurs when, for some proposition P, we have proved both the facts P and ¬ P. This indicates that we are in an impossible situation, and often means that we have made a bad previous assumption.</description>
+      <description>In this section, we will see the deduction rules for the NOT operator. In this section, we will introduce the notion of a contradiction, which occurs when, for some proposition P, we have proved both the facts P and ¬ P. This indicates that we are in an impossible situation, and often means that we have made a bad previous assumption. In Logika, we use an F (&amp;ldquo;false&amp;rdquo;) as a claim to indiciate that we&amp;rsquo;ve reached a contradiction.</description>
     </item>
     <item>
       <title>Summary and Strategies</title>
@@ -395,8 +390,8 @@ Implies elimination Remember that → is a kind of logical &amp;ldquo;if-then&am
       <guid>https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/index.html</guid>
       <description>When examining more complex propositional logic sequents, it can be challenging to know where to start. In this section, we summarize all available rules in propositional logic, and discuss stratgies for approaching proofs.
 AND rules Rule summaries:
-P Q P ∧ Q P ∧ Q ∧i : --------- ∧e1 : ---------- ∧e2 : ---------- P ∧ Q P QRule syntax summaries:
-{ ... x. p	(...) y. q	(...) z. p ∧ q ∧i x y .</description>
+P Q P ∧ Q P ∧ Q AndI : --------- AndE1 : ---------- AndE2 : ---------- P ∧ Q P QRule syntax summaries:
+... x ( p )	by (...), y ( q	) by (.</description>
     </item>
     <item>
       <title>Theorems</title>
