@@ -73,8 +73,8 @@ Suppose we have the following loop to multiply two numbers, `x` and `y`, using r
 import org.sireum._
 import org.sireum.justification._
 
-val x: Z = readInt()
-val y: Z = readInt()
+val x: Z = Z.read()
+val y: Z = Z.read()
 
 var sum: Z = 0
 var count: Z = 0
@@ -106,8 +106,8 @@ We now add a loop invariant block to our loop:
 import org.sireum._
 import org.sireum.justification._
 
-val x: Z = readInt()
-val y: Z = readInt()
+val x: Z = Z.read()
+val y: Z = Z.read()
 
 var sum: Z = 0
 var count: Z = 0
@@ -145,8 +145,8 @@ In our multiplication loop above, let's start by proving the loop invariant befo
 import org.sireum._
 import org.sireum.justification._
 
-val x: Z = readInt()
-val y: Z = readInt()
+val x: Z = Z.read()
+val y: Z = Z.read()
 
 var sum: Z = 0
 var count: Z = 0
@@ -205,8 +205,8 @@ We can complete the loop invariant proof by using our tools for processing assig
 import org.sireum._
 import org.sireum.justification._
 
-val x: Z = readInt()
-val y: Z = readInt()
+val x: Z = Z.read()
+val y: Z = Z.read()
 
 var sum: Z = 0
 var count: Z = 0
