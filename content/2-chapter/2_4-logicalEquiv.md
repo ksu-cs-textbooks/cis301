@@ -11,31 +11,31 @@ An example of logically equivalent statements are `q ∧ p` and `p ∧ (q ∧ p)
 ```text
          *
 --------------
-p q | (p ∧ q)
+p q # (p ∧ q)
 --------------
-T T |  T T T
-T F |  T F F
-F T |  F F T
-F F |  F F F
+T T #    T 
+T F #    F 
+F T #    F 
+F F #    F 
 ---------------
 Contingent
-- T : [T T]
-- F : [F F] [F T] [T F]
+T: [T T]
+F: [F F] [F T] [T F]
 ```
 
 ```text
          *
 -------------------
-p q |  p ∧ (q ∧ p)
+p q #  p ∧ (q ∧ p)
 -------------------
-T T |  T T  T T T
-T F |  T F  F F T
-F T |  F F  T F F
-F F |  F F  F F F
+T T #    T    T 
+T F #    F    F 
+F T #    F    F 
+F F #    F    F 
 --------------------
 Contingent
-- T : [T T]
-- F : [F F] [F T] [T F]
+T : [T T]
+F : [F F] [F T] [T F]
 ```
 
 In these examples, notice that exactly the same set of truth assignments makes both statements true, and that exactly the same set of truth assignments makes both statements false.

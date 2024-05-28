@@ -11,17 +11,17 @@ These questions lead us to the notions of *soundness* and *completeness*. Formal
 
 ## Soundness
 
-A proof system is *sound* if everything that is provable is actually true. Propositional logic is sound if when we use deduction rules to prove that `P1, P2, ..., Pn ⊢ C` (that a set of premises proves a conclusion) then we can also use a truth table to show that `P1, P2, ..., Pn ⊨ C` (that a set of premises semantically entails a conclusion).
+A proof system is *sound* if everything that is provable is actually true. Propositional logic is sound if when we use deduction rules to prove that `(P1, P2, ..., Pn) ⊢ (C)` (that a set of premises proves a conclusion) then we can also use a truth table to show that `P1, P2, ..., Pn ⊨ C` (that a set of premises semantically entails a conclusion).
 
 **Propositional logic is, in fact, sound.** 
 
-To get an idea of the proof, consider the `∧e1` deduction rule. It allows us to directly prove:
+To get an idea of the proof, consider the `AndE1` deduction rule. It allows us to directly prove:
 
 ```text
-P ∧ Q ⊢ P
+(P ∧ Q) ⊢ (P)
 ```
 
-I.e., if we have `P ∧ Q` as a premise or as a claim in part of a proof, then we can use `∧e1` to conclude `P`. We must also show that:
+I.e., if we have `P ∧ Q` as a premise or as a claim in part of a proof, then we can use `AndE1` to conclude `P`. We must also show that:
 
 ```text
 P ∧ Q ⊨ P
@@ -29,13 +29,13 @@ P ∧ Q ⊨ P
 
 I.e., that any time `P ∧ Q` is true in a truth table, then `P` is also true. And of course, we can examine the truth table for `P ∧ Q`, and see that it is only true in the cases that `P` is also true.
 
-Consider the `∧i` deduction rule next. It allows us to directly prove:
+Consider the `AndI` deduction rule next. It allows us to directly prove:
 
 ```text
-P, Q ⊢ P ∧ Q
+(P, Q) ⊢ (P ∧ Q)
 ```
 
-I.e., if we have both `P` and `Q` as premises or claims in part of a proof, then we can use `∧i` to conclude `P ∧ Q`. We must also show that:
+I.e., if we have both `P` and `Q` as premises or claims in part of a proof, then we can use `AndI` to conclude `P ∧ Q`. We must also show that:
 
 ```text
 P, Q ⊨ P ∧ Q
@@ -47,10 +47,10 @@ To complete the soundness proof, we would need to examine the rest of our deduct
 
 ## Completeness
 
-A proof system is *complete* if everything that is true can be proved. Propositional logic is complete if when we can use a truth table to show that `P1, P2, ..., Pn ⊨ C`, then we can also use deduction rules to prove that `P1, P2, ..., Pn ⊢ C`.
+A proof system is *complete* if everything that is true can be proved. Propositional logic is complete if when we can use a truth table to show that `P1, P2, ..., Pn ⊨ C`, then we can also use deduction rules to prove that `(P1, P2, ..., Pn) ⊢ (C)`.
 
 **Propositional logic is also complete.**  
 
-We assume that `P1, P2, ..., Pn ⊨ C`, and we consider the truth table for `(P1 ∧ P2 ∧ ... ∧ Pn) → C` (since that will be a tautology whenever `P1, P2, ..., Pn ⊨ C`). In order to show propositional logic is complete, we must show that we can use our deduction rules to prove `P1, P2, ..., Pn ⊢ C`.
+We assume that `P1, P2, ..., Pn ⊨ C`, and we consider the truth table for `(P1 ∧ P2 ∧ ... ∧ Pn) → C` (since that will be a tautology whenever `P1, P2, ..., Pn ⊨ C`). In order to show propositional logic is complete, we must show that we can use our deduction rules to prove `(P1, P2, ..., Pn) ⊢ (C)`.
 
 The idea is to use LEM for each propositional atom `A` to obtain `A ∨ ¬A` (corresponding to the truth assignments in the `(P1 ∧ P2 ∧ ... ∧ Pn) → C` truth table). We then use OR elimination on each combination of truth assignments, with separate cases for each logical operator being used.

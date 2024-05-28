@@ -1,6 +1,6 @@
 ---
 title: "Termination"
-pre: "10.7 "
+pre: "10.6 "
 weight: 116
 date: 2018-08-24T10:53:26-05:00
 ---
@@ -18,29 +18,33 @@ Up to this point, we have proved *partial correctness* for functions -- IF the f
 Consider the following version of our `mult` function, which uses repeated addition to multiply two numbers:
 
 ```text
+// #Sireum #Logika
+//@Logika: --background save
+import org.sireum._
+
 def mult(m: Z, n: Z): Z = {
-    l"""{
-        ensures result == m*n
-    }"""
+    Contract(
+        Ensures(Res[Z] == m * n)
+    )
 
     var sum: Z = 0
     var count: Z = 0
 
     while (count != n) {
-        l"""{
-            invariant sum == m*count
-            modifies sum, count
-        }"""
+        Invariant(
+            Modifies(sum, count),
+            sum == m * count
+        )
 
-        sum = sum + m
-        count = count + 1
-    }
+    sum = sum + m
+    count = count + 1
+  }
 
-    return sum
+  return sum
 }
 ```
 
-This function will be verified in Logika's symexe mode, but in fact it has a subtle flaw. If we were to pass in `-1` for our second parameter (`n`), then we would get stuck in an infinite loop. `count` would be initially 0, and we would increment `count` each time in the loop, but of course it NEVER equal -1.
+This function will be verified in Logika's auto mode, but in fact it has a subtle flaw. If we were to pass in `-1` for our second parameter (`n`), then we would get stuck in an infinite loop. `count` would be initially 0, and we would increment `count` each time in the loop, but of course it NEVER equal -1.
 
 This is an example of partial correctness -- if our function DOES finish (which it would for nonnegative values of `n`), then we have shown it will return the correct value. We can see that we will need to require that the `n` parameter be nonnegative .
 
@@ -71,10 +75,10 @@ We can calculate this measure at the beginning of each iteration and again at th
 
 ```text
 while (count != n) {
-    l"""{
-        invariant sum == m*count
-        modifies sum, count
-    }"""
+    Invariant(
+        Modifies(sum, count),
+        sum == m * count
+    )
 
     //get measure value at beginning of iteration
     val measureBegin: Z = n-count
@@ -87,23 +91,23 @@ while (count != n) {
 }
 ```
 
-Next, we want to assert that `measureEnd < measureBegin` -- that the amount of work decreases with each iteration. We can also assert that `measureEnd > 0 | count == n` -- that either we have more work to do, or our loop condition is false (meaning that if we have no more work to do, then our loop condition must be false and thus terminate):
+Next, we want to assert that `measureEnd < measureBegin` -- that the amount of work decreases with each iteration. We can also assert that `measureEnd > 0 || count == n` -- that either we have more work to do, or our loop condition is false (meaning that if we have no more work to do, then our loop condition must be false and thus terminate):
 
 ```text
 def mult(m: Z, n: Z): Z = {
-    l"""{
-        requires n >= 0         //needed for termination
-        ensures result == m*n
-    }"""
+    Contract(
+        Requires (n >= 0),          //needed for termination
+        Ensures(Res[Z] == m * n)
+    )
 
     var sum: Z = 0
     var count: Z = 0
 
     while (count != n) {
-        l"""{
-            invariant sum == m*count
-            modifies sum, count
-        }"""
+        Invariant(
+            Modifies(sum, count),
+            sum == m * count
+        )
 
         //get measure value at beginning of iteration
         val measureBegin: Z = n-count
@@ -120,35 +124,34 @@ def mult(m: Z, n: Z): Z = {
 
         //we either have more work, or the loop will terminate
         //(if there is no work work to do, then the loop condition must be false)
-        assert(measureEnd > 0 | count == n)     //NOTE: will not hold!
+        assert(measureEnd > 0 || count == n)     //NOTE: will not hold!
     }
 
     return sum
 }
 ```
 
-If we try verifying this program in Logika, the second assert, `assert(measureEnd > 0 | count == n)` will not hold. To see why, let's suppose that `measureEnd <= 0`. For the assert to be true, we would need to be certain that `count == n` (since the left side of the OR would be false). Because `measureEnd = n-count`, we can infer that `count >= n` when `measureEnd <= 0`. However, Logika is unable to infer that `count == n` from the knowledge that `count >= n` unless it also knows that `count <= n` always holds. We can add this knowledge by strengthening our loop invariant to provide a range for the loop counter -- `count >= 0` and `count <= n`. Even if not required, it is a good habit anyway to include the loop counter range as part of the loop invariant.
+If we try verifying this program in Logika, the second assert, `assert(measureEnd > 0 || count == n)` will not hold. To see why, let's suppose that `measureEnd <= 0`. For the assert to be true, we would need to be certain that `count == n` (since the left side of the OR would be false). Because `measureEnd = n-count`, we can infer that `count >= n` when `measureEnd <= 0`. However, Logika is unable to infer that `count == n` from the knowledge that `count >= n` unless it also knows that `count <= n` always holds. We can add this knowledge by strengthening our loop invariant to provide a range for the loop counter -- `count >= 0` and `count <= n`. Even if not required, it is a good habit anyway to include the loop counter range as part of the loop invariant.
 
 We strengthen our loop invariant, and both asserts will hold -- thus demonstrating termination:
 
 ```text
 def mult(m: Z, n: Z): Z = {
-    l"""{
-        requires n >= 0         //needed for termination
-        ensures result == m*n
-    }"""
+    Contract(
+        Requires (n >= 0),          //needed for termination
+        Ensures(Res[Z] == m * n)
+    )
 
     var sum: Z = 0
     var count: Z = 0
 
     while (count != n) {
-        l"""{
-            invariant sum == m*count
-                count >= 0
-                count <= n      //bound loop counter
-                                //needed for assert to hold
-            modifies sum, count
-        }"""
+        Invariant(
+            Modifies(sum, count),
+            sum == m * count,
+            0 <= count,
+            count <= n
+        )
 
         //get measure value at beginning of iteration
         val measureBegin: Z = n-count
@@ -165,7 +168,7 @@ def mult(m: Z, n: Z): Z = {
 
         //we either have more work, or the loop will terminate
         //(if there is no work work to do, then the loop condition must be false)
-        assert(measureEnd > 0 | count == n) 
+        assert(measureEnd > 0 || count == n)     //This holds now!
     }
 
     return sum
@@ -181,19 +184,22 @@ While it is possible to prove termination for certain kinds of programs -- those
 Consider the `collatz` function below:
 
 ```text
-import org.sireum.logika._
+// #Sireum #Logika
+//@Logika: --background save
+import org.sireum._
+
 def collatz(m: Z): Z = {
-    l"""{
-        requires m > 0
-        ensures result == 1
-    }"""
+    Contract(
+        Requires( m > 0 ),
+        Ensures( Res[Z] == 1 )
+    )
 
     var n: Z = m
     while (n > 1) {
-        l"""{
-            invariant n >= 1
-            modifies n
-        }"""
+        Invariant(
+            Modifies( n ),
+            n >= 1
+        )
 
         if (n % 2 == 0) {
             n = n / 2
@@ -215,6 +221,8 @@ Suppose we compute `collatz(17)`. We can track the value of `n` as follows: 17, 
 
 - No one has proved that the Collatz function terminates for all positive numbers; and
 - No one has found a positive number on which the Collatz function does not terminate
+
+You may notice that part of the problem is that due to the nature of the problem, we cannot write a sufficient loop invariant describing what progress we have made towards our goal -- our only loop invariant is nearly identical to our loop condition. In cases where we *can* write a loop invariant that adequately describes our progress, we often have enough information to prove termination as well.
 
 ## Decidability and the Halting problem
 

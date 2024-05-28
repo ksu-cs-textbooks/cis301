@@ -63,21 +63,19 @@ From this point forward, the course will expect you to use Logika formatted trut
 ```text
       *
 -----------------
-p q | ¬(p ∧ q)
+p q # !(p & q)
 -----------------
-T T | F T T T
-T F | T T F F
-F T | T F F T
-F F | T F F F
+T T # F T T T
+T F # T T F F
+F T # T F F T
+F F # T F F F
 -----------------
 Contingent
-- T: [T F] [F T] [F F]
-- F: [T T]
+T: [T F] [F T] [F F]
+F: [T T]
 ```
 
 Logika truth tables have standard format (syntax) and semantic meanings. All elements of the truth table must be included to be considered correct.
-
- ![truth table syntax](/images/LogikaTTexplain.png)
 
 1) The first line should have a single asterisk (*) over the top-level operator in the formula. 
 
@@ -94,30 +92,42 @@ After the Truth assignments is another row of -. Using each truth assignment, fi
 
 7) Finally, classify the formula as either `Tautology` (if everything under the top-level operator is T), `Contradictory` (if everything under the top-level operator is F), or `Contingent` (if there is a mix of T and F under the top-level operator). If the formula is contingent, you must also list which truth assignments made the formula true (i.e., which truth assignments made the top-level operator T) and which truth assignments made the formula false. Follow the image above for the syntax of how to list the truth assignments for contingent examples.
 
-## Alternative logical operators
+## Logical operators in Logika
 
-In order to type each traditional logical operator in Logika, you must insert a special Unicode symbol. You can do this by typing: `Shift-Command-Ctrl-Semicolon` and then a letter corresponding to a specific symbol. Here is how to insert each operator:
+You may notice that the example above appears to use the `!` operator for NOT and the `&` operator for AND. However, what is shown above demonstrates what we TYPE into Logika, and not what is actually displayed. If we copy and paste the example into a new Logika file, it will look like:
 
-- NOT, `¬`. `Shift-Command-Ctrl-Semicolon-N`
-- OR, `∨`. `Shift-Command-Ctrl-Semicolon-V`
-- AND, `∧`, `Shift-Command-Ctrl-Semicolon-∧`
-- IMPLIES, `→`, `Shift Command Ctrl -` (the last symbol is a dash, -)
+```text
+      *
+-----------------
+p q # ¬(p ∧ q)
+-----------------
+T T # F T T T
+T F # T T F F
+F T # T F F T
+F F # T F F F
+-----------------
+Contingent
+T: [T F] [F T] [F F]
+F: [T T]
+```
 
-This can be tedious. While you can create [keyboard shortcuts](https://www.jetbrains.com/help/idea/settings-keymap.html#decda373) in IntelliJ for certain keystrokes, it is easier to use one of the available ASCII replacements instead. Here are alternatives for each operator:
+Here is a summary of what keys to type in Logika for each traditional logical operator:
 
-- NOT: `!`, `~`, `not`
-- OR: `V` (a capital V), `|`, `or`
-- AND: `∧`, `&`, `and`
-- IMPLIES: `→`, `implies`
+| Logical operator | What to TYPE in Logika | What you will SEE in Logika |
+| --- | --- | --- |
+| NOT | `!` | `¬` |
+| OR | `\|` | `∨` |
+| AND | `&` | `∧` |
+| IMPLIES | `->:` | `→:`|
 
-In the remainder of this book, I will often use these ASCII replacement characters because they are easier to type.
+In the remainder of this book, my examples will be of what you will SEE in Logika.
 
 ## Example
 
 Suppose we want to write a Logika truth table for:
 
 ```text
-(p ∧ q) →  ¬r
+(p ∧ q) → ¬r
 ```
 
 First, we make sure we have a new file in Sireum with the `.logika` extension. Then, we construct this truth table shell:
@@ -125,16 +135,16 @@ First, we make sure we have a new file in Sireum with the `.logika` extension. T
 ```text
                 *
 ----------------------
-p q r | (p ∧ q) →  ¬r
+p q r # (p ∧ q) →: ¬r
 ----------------------
-T T T |
-T T F |
-T F T |
-T F F |
-F T T |
-F T F |
-F F T |
-F F F |
+T T T #
+T T F #
+T F T #
+T F F #
+F T T #
+F T F #
+F F T #
+F F F #
 ----------------------
 ```
 
@@ -145,54 +155,54 @@ Next, we fill in the output for the corresponding truth assignment under each op
 ```text
                 *
 ----------------------
-p q r | (p ∧ q) →  ¬r
+p q r # (p ∧ q) →: ¬r
 ----------------------
-T T T |    T
-T T F |    T
-T F T |    F
-T F F |    F
-F T T |    F
-F T F |    F
-F F T |    F
-F F F |    F
+T T T #    T
+T T F #    T
+T F T #    F
+T F F #    F
+F T T #    F
+F T F #    F
+F F T #    F
+F F F #    F
 ----------------------
 ```
 
 In this example, we are only filling in under each operator (instead of also transcribing over each variable value), but either approach is acceptable.
 
-Next, we fill in under the  ¬ operator, which has the next-highest precedence:
+Next, we fill in under the ¬ operator, which has the next-highest precedence:
 
 ```text
                 *
 ----------------------
-p q r | (p ∧ q) →  ¬r
+p q r # (p ∧ q) →: ¬r
 ----------------------
-T T T |    T       F
-T T F |    T       T
-T F T |    F       F
-T F F |    F       T
-F T T |    F       F
-F T F |    F       T
-F F T |    F       F
-F F F |    F       T
+T T T #    T       F
+T T F #    T       T
+T F T #    F       F
+T F F #    F       T
+F T T #    F       F
+F T F #    F       T
+F F T #    F       F
+F F F #    F       T
 ----------------------
 ```
 
-Then, we fill in under our top-level operator, the `→`. Notice that we must line up the `T/F` values under the `-` in the `→` symbol. For example, we put a `F` under the `→` on the first row, as `(p ∧ q)` is `T` there and ` ¬r` is `F`, and we know that `T→F` is `F` because it describes a broken promise.
+Then, we fill in under our top-level operator, the `→`. Notice that we must line up the `T/F` values under the `→` in the `→:` symbol. For example, we put a `F` under the `→:` on the first row, as `(p ∧ q)` is `T` there and ` ¬r` is `F`, and we know that `T→F` is `F` because it describes a broken promise.
 
 ```text
                 *
 ----------------------
-p q r | (p ∧ q) →  ¬r
+p q r # (p ∧ q) →: ¬r
 ----------------------
-T T T |    T    F  F
-T T F |    T    T  T
-T F T |    F    T  F
-T F F |    F    T  T
-F T T |    F    T  F
-F T F |    F    T  T
-F F T |    F    T  F
-F F F |    F    T  T
+T T T #    T    F  F
+T T F #    T    T  T
+T F T #    F    T  F
+T F F #    F    T  T
+F T T #    F    T  F
+F T F #    F    T  T
+F F T #    F    T  F
+F F F #    F    T  T
 ----------------------
 ```
 
@@ -201,21 +211,20 @@ Lastly, we examine the list of outputs under the top-level operator. We see that
 ```text
                 *
 ----------------------
-p q r | (p ∧ q) → ¬r
+p q r # (p ∧ q) →: ¬r
 ----------------------
-T T T |    T    F F
-T T F |    T    T T
-T F T |    F    T F
-T F F |    F    T T
-F T T |    F    T F
-F T F |    F    T T
-F F T |    F    T F
-F F F |    F    T T
+T T T #    T    F  F
+T T F #    T    T  T
+T F T #    F    T  F
+T F F #    F    T  T
+F T T #    F    T  F
+F T F #    F    T  T
+F F T #    F    T  F
+F F F #    F    T  T
 ----------------------
 Contingent
-
-- T: [T T F] [T F T] [T F F] [F T T] [F T F] [F F T] [F F F]
-- F: [T T T]
+T: [T T F] [T F T] [T F F] [F T T] [F T F] [F F T] [F F F]
+F: [T T T]
 ```
 
 If you typed everything correctly, you should see a popup in Sireum logika that says: "Logika Verified" with a purple checkmark:
@@ -224,4 +233,4 @@ If you typed everything correctly, you should see a popup in Sireum logika that 
 
 If you instead see red error markings, hover over them and read the explanations -- it means there are errors in your truth table.
 
-If you see no errors and no purple check, you will need to manually run Logika. Right-click in the text area that contains your truth table, and select "Logika check".
+If you see no errors and no purple check, you will need to manually run Logika. Right-click in the text area that contains your truth table, and select "Logika Check (All in File)".

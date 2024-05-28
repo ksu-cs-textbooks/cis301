@@ -76,18 +76,16 @@ We then complete the truth table for that proposition:
 ```text
                                                                                   *
 ---------------------------------------------------------------------------------------------------------------
-a b | (a → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → a) ∧ (b → (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) → b)
+a b | (a →: (a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) →: a) ∧ (b →:(a ∧ ¬b V ¬a ∧ b)) ∧ ((a ∧ ¬b V ¬a ∧ b) →: b)
 ---------------------------------------------------------------------------------------------------------------
-T T |    F    F F  F F  F     F     F F  F F  F    T    F    F    F F  F F  F     F     F F  F F  F    T
-T F |    T    T T  T F  F     T     T T  T F  F    T    T    T    T T  T F  F     F     T T  T F  F    F
-F T |    T    F F  T T  T     F     F F  T T  T    F    F    T    F F  T T  T     F     F F  T T  T    T
-F F |    T    F T  F T  F     T     F T  F T  F    T    T    T    F T  F T  F     T     F T  F T  F    T
+T T |    F     F F  F F  F     F     F F  F F  F    T     F    F    F  F F F  F     F     F  F F  F  F   T
+T F |    T     T T  T F  F     T     T T  T F  F    T     T    T    T  T T F  F     F     T  T T  F  F   F
+F T |    T     F F  T T  T     F     F F  T T  T    F     F    T    F  F T T  T     F     F  F T  T  T   T
+F F |    T     F T  F T  F     T     F T  F T  F    T     T    T    F  T F T  F     T     F  T F  T  F   T
 ---------------------------------------------------------------------------------------------------------------
-
 Contingent
-
-- T: [F F]
-- F: [T T] [T F] [F T]
+T: [F F]
+F: [T T] [T F] [F T]
 ```
 
 And we see that there is only one truth assignment that satisfies the proposition -- `[F F]`, which corresponds to Ava being a knave and Bob being a knave.

@@ -27,21 +27,20 @@ First, we could make truth tables for each premise (being sure to list the varia
 
           *
 ----------------------
-p q r | p ∧ q
+p q r # p ∧ q
 ----------------------
-T T T |   T
-T T F |   T
-T F T |   F
-T F F |   F
-F T T |   F
-F T F |   F
-F F T |   F
-F F F |   F
+T T T #   T
+T T F #   T
+T F T #   F
+T F F #   F
+F T T #   F
+F T F #   F
+F F T #   F
+F F F #   F
 ----------------------
 Contingent
-
-- T: [T T T] [T T F]
-- F: [T F T] [T F F] [F T T] [F T F] [F F T] [F F F]
+T: [T T T] [T T F]
+F: [T F T] [T F F] [F T T] [F T F] [F F T] [F F F]
 ```
 
 ```text
@@ -49,21 +48,20 @@ Contingent
 
           *
 ----------------------
-p q r | p → r
+p q r # p →: r
 ----------------------
-T T T |   T
-T T F |   F
-T F T |   T
-T F F |   F
-F T T |   T
-F T F |   T
-F F T |   T
-F F F |   T
+T T T #   T
+T T F #   F
+T F T #   T
+T F F #   F
+F T T #   T
+F T F #   T
+F F T #   T
+F F F #   T
 ----------------------
 Contingent
-
-- T: [T T T] [T F T] [F T T] [F T F] [F F T] [F F F]
-- F: [T T F] [T F F]
+T: [T T T] [T F T] [F T T] [F T F] [F F T] [F F F]
+F: [T T F] [T F F]
 ```
 
 Now, we notice that the truth assignment `[T T T]` is the only one that makes both premises true. Next, we make a truth table for our potential conclusion, `r ∧ q` (again, being sure to include all variables used in the problem):
@@ -72,21 +70,20 @@ Now, we notice that the truth assignment `[T T T]` is the only one that makes bo
 //truth table for potential conclusion, r ∧ q
           *
 ----------------------
-p q r | r ∧ q
+p q r # r ∧ q
 ----------------------
-T T T |   T
-T T F |   F
-T F T |   F
-T F F |   F
-F T T |   T
-F T F |   F
-F F T |   F
-F F F |   F
+T T T #   T
+T T F #   F
+T F T #   F
+T F F #   F
+F T T #   T
+F T F #   F
+F F T #   F
+F F F #   F
 ----------------------
 Contingent
-
-- T: [T T T] [F T T]
-- F: [T T F] [T F T] [T F F] [F T F] [F F T] [F F F]
+T: [T T T] [F T T]
+F: [T T F] [T F T] [T F F] [F T F] [F F T] [F F F]
 ```
 
 Here, we notice that the truth assignment `[T T T]` makes the conclusion true as well. So we see that whenever there is a truth assignment that makes all of our premises true, then that same truth assignment also makes our conclusion true.
@@ -112,16 +109,16 @@ In our previous example, we create a truth table for the statement `(p ∧ q) �
 ```text
                            *
 --------------------------------------
-p q r | (p ∧ q) ∧ (p → r) → r ∧ q
+p q r # (p ∧ q) ∧ (p →: r) →: r ∧ q
 --------------------------------------
-T T T |    T    T    T     T    T
-T T F |    T    F    F     T    F
-T F T |    F    F    T     T    F
-T F F |    F    F    F     T    F
-F T T |    F    F    T     T    T 
-F T F |    F    F    T     T    F
-F F T |    F    F    T     T    F
-F F F |    F    F    T     T    F
+T T T #    T    T    T     T    T
+T T F #    T    F    F     T    F
+T F T #    F    F    T     T    F
+T F F #    F    F    F     T    F
+F T T #    F    F    T     T    T 
+F T F #    F    F    T     T    F
+F F T #    F    F    T     T    F
+F F F #    F    F    T     T    F
 ---------------------------------------
 Tautology
 ```
