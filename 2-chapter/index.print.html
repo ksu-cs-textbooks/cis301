@@ -1,1016 +1,246 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 301: Logical Foundations of Programming">
-    <meta name="author" content="Julie Thornton">
-    <title>Truth Tables :: CIS 301 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/index.html" rel="canonical" type="text/html" title="Truth Tables :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/index.xml" rel="alternate" type="application/rss+xml" title="Truth Tables :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/tele.html" rel="alternate" type="text/html" title="Truth Tables :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/embed.html" rel="alternate" type="text/html" title="Truth Tables :: CIS 301 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924209" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924209" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924209" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1716924209" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1716924209" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/format-print.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1716924209" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1716924209"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1716924209"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1716924209" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/2-chapter/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/index.html"><span itemprop="name">CIS 301 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Truth Tables</span><meta itemprop="position" content="2"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable chapter narrow" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="chapter">
-            <header class="headline">
-            </header>
-
-
-<div class="article-subheading">Chapter 2</div>
-<h1 id="truth-tables">Truth Tables</h1>
-
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          <section>
-            <h1 class="a11y-only">Subsections of Truth Tables</h1>
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="operators-and-circuits">Operators and Circuits</h1>
-
-<p>In this chapter, we review basic notions about gates and learn the relationship between circuits and assignment-based computer programs. This sets the stage for analyzing modern programs.</p>
-<h2 id="logical-operators">Logical operators</h2>
-<p>There are four basic logic gates, with corresponding logical operators:</p>
-<table>
-<thead>
-<tr>
-<th>Meaning</th>
-<th>Logical Operator</th>
-<th>Logic Gate</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>p AND q</td>
-<td><code>p ∧ q</code></td>
-<td>
-<a href="#image-95a44077b35f740727cd9e03c12151bc" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/AND.png" alt="AND gate" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-95a44077b35f740727cd9e03c12151bc">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/AND.png" alt="AND gate" class="lightbox-image" loading="lazy">
-</a></td>
-</tr>
-<tr>
-<td>p OR q</td>
-<td><code>p ∨ q</code></td>
-<td>
-<a href="#image-5d058fac848cfd28b14ee5ad38ade061" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/OR.png" alt="OR gate" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-5d058fac848cfd28b14ee5ad38ade061">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/OR.png" alt="OR gate" class="lightbox-image" loading="lazy">
-</a></td>
-</tr>
-<tr>
-<td>NOT p</td>
-<td><code>¬p</code></td>
-<td>
-<a href="#image-2965dff82c64d2c30d86d98d47b5e012" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/NOT.png" alt="NOT gate" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-2965dff82c64d2c30d86d98d47b5e012">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/NOT.png" alt="NOT gate" class="lightbox-image" loading="lazy">
-</a></td>
-</tr>
-<tr>
-<td>p IMPLIES q</td>
-<td><code>p → q</code></td>
-<td>
-<a href="#image-38cde1d1c9f52b12973d8f84ee54b9d2" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/IMPLIES.png" alt="IMPLIES gate" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-38cde1d1c9f52b12973d8f84ee54b9d2">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/IMPLIES.png" alt="IMPLIES gate" class="lightbox-image" loading="lazy">
-</a></td>
-</tr>
-</tbody>
-</table>
-<p>In the above drawings, the input wires are labelled with the names P and Q. The output that is computed is emitted from the rightmost wire which exits the gate. For these simple gates, it is possible to exhaustively test every permutation of potential inputs and summarize results in a table, called a truth table.</p>
-<p>Let&rsquo;s examine the AND gate. The AND gate emits a high voltage (1) exactly when high voltages are sensed at input wires P and Q; otherwise low voltage (0) is emitted. The gate&rsquo;s physical behavior is summarized by in the following table:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>AND: P Q |
-</span></span><span style="display:flex;"><span>-------------
-</span></span><span style="display:flex;"><span>     1 1 | 1
-</span></span><span style="display:flex;"><span>     1 0 | 0
-</span></span><span style="display:flex;"><span>     0 1 | 0
-</span></span><span style="display:flex;"><span>     0 0 | 0</span></span></code></pre></div><h2 id="truth-tables">Truth tables</h2>
-<p>For the remainder of this course, we will use T (read &ldquo;true&rdquo;) for 1 and F (read &ldquo;false&rdquo;) for 0. This is because we will examine applications that go far beyond circuit theory and base-two arithmetic. Here are the truth tables for the AND, OR, NOT and IMPLIES gates:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>AND: P Q |
-</span></span><span style="display:flex;"><span>-------------
-</span></span><span style="display:flex;"><span>     T T | T
-</span></span><span style="display:flex;"><span>     T F | F
-</span></span><span style="display:flex;"><span>     F T | F
-</span></span><span style="display:flex;"><span>     F F | F
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>OR: P Q |
-</span></span><span style="display:flex;"><span>-------------
-</span></span><span style="display:flex;"><span>     T T | T
-</span></span><span style="display:flex;"><span>     T F | T
-</span></span><span style="display:flex;"><span>     F T | T
-</span></span><span style="display:flex;"><span>     F F | F
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>NOT: P |
-</span></span><span style="display:flex;"><span>-------------
-</span></span><span style="display:flex;"><span>     T | F
-</span></span><span style="display:flex;"><span>     T | T
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>IMPLIES: P Q |
-</span></span><span style="display:flex;"><span>-----------------
-</span></span><span style="display:flex;"><span>         T T | T
-</span></span><span style="display:flex;"><span>         T F | F
-</span></span><span style="display:flex;"><span>         F T | T
-</span></span><span style="display:flex;"><span>         F F | T</span></span></code></pre></div><p>A few comments:</p>
-<ul>
-<li>
-<p>The OR gate is inclusive &ndash; as long as one of its inputs is true, then its output is true.</p>
-</li>
-<li>
-<p>You might be confused by the IMPLIES gate. We&rsquo;ll cover it in detail below.</p>
-</li>
-<li>
-<p>In the next section, we will learn to write our truth tables in a slightly different format so they can be automatically checked by Sireum Logika.</p>
-</li>
-</ul>
-<h2 id="implies-operator">Implies operator</h2>
-<p>The implies operator can be difficult to understand. It helps to think of it as a promise: we write <code>P → Q</code>, but we mean <em>If <code>P</code> is true, then I promise that <code>Q</code> will also be true.</em> If we BREAK our promise (i.e., if <code>P</code> is true but <code>Q</code> is false), then the output of an implies gate is false. In <em>every other situation</em>, the output of the implies gate is true.</p>
-<p>As a reminder, here is the truth table for the implies operator, → :</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>P Q | P → Q
-</span></span><span style="display:flex;"><span>-----------------
-</span></span><span style="display:flex;"><span>T T |   T
-</span></span><span style="display:flex;"><span>T F |   F
-</span></span><span style="display:flex;"><span>F T |   T
-</span></span><span style="display:flex;"><span>F F |   T</span></span></code></pre></div><p>It is likely clear why <code>P → Q</code> is true when both <code>P</code> and <code>Q</code> are true &ndash; in this situation, we have kept our promise.</p>
-<p>It is also easy to understand why <code>P → Q</code> is false when <code>P</code> is true and <code>Q</code> is false. Here, we have broken our promise &ndash; <code>P</code> happened, but <code>Q</code> did not.</p>
-<p>In the other two cases for <code>P → Q</code> we have that <code>P</code> is false (and <code>Q</code> is either true or false). Here, <code>P → Q</code> is true simply because we haven&rsquo;t broken our promise. In these cases, the implication is said to be <em>vacuously true</em> because we have no evidence to prove that it is false.</p>
-<h2 id="circuits">Circuits</h2>
-<p>We can also compose the gates to define new operations.</p>
-<p>For example, this circuit:</p>
-<p>
-<a href="#image-d76714b8750d8be39d4590d5a3959279" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/circuit1.png" alt="circuit combo" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-d76714b8750d8be39d4590d5a3959279">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/circuit1.png" alt="circuit combo" class="lightbox-image" loading="lazy">
-</a></p>
-<p>Written <code>¬(P ∧ Q)</code>, defines this computation of outputs:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>P Q | ¬(P ∧ Q)
-</span></span><span style="display:flex;"><span>-----------------
-</span></span><span style="display:flex;"><span>T T | F
-</span></span><span style="display:flex;"><span>T F | T
-</span></span><span style="display:flex;"><span>F T | T
-</span></span><span style="display:flex;"><span>F F | T</span></span></code></pre></div><p>We can work out the outputs in stages, like this:</p>
-<p>
-<a href="#image-b6c364954b874fbed7a785db2854ef87" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/NotLogikaTT.png" alt="circuit stages" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-b6c364954b874fbed7a785db2854ef87">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/NotLogikaTT.png" alt="circuit stages" class="lightbox-image" loading="lazy">
-</a></p>
-<p>We begin by writing the value of each set of inputs on the left, under their corresponding symbol on the right. Next we apply the operator (gate) with the highest precedence (covered in <em>Operator Precedence</em> in the next section). In our case the <code>()</code> make the AND ( <code>∧</code> ) symbol the highest.</p>
-<p>A truth assignment is a unique permutation of the possible inputs for a system. For the <code>∧</code>-gate, it is a 2-variable sequence. Considering the first row we see we have <code>T ∧ T</code>. Looking that up in the <code>∧</code>-gate truth table we see the result is also &ldquo;T&rdquo;, and we record that under the <code>∧</code> symbol. We do the same thing all the other truth assignments.</p>
-<p>After the initial transcribing of the truth values under their respective variables, we look up the truth-values in the gate tables, not the variables. Also observe that while <code>∧</code> is symmetric &ndash; i.e. <code>T ∧ F</code> and <code>F ∧ T</code> are both false &ndash; the IMPLIES gate is not.</p>
-<p>Now we look up the value under the <code>∧</code> symbol in the ¬ gate table. In the first row we see that the truth assignment for the first row, &ldquo;T&rdquo;, is &ldquo;F&rdquo; and record it under the <code>¬</code> symbol. Do this for every row and we are done.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="truth-tables-in-logika">Truth Tables in Logika</h1>
-
-<p>Now that we&rsquo;ve seen the four basic logic gates and truth tables, we can put them together to build bigger truth tables for longer logical formulae.</p>
-<h2 id="operator-precedence">Operator precedence</h2>
-<p>Logical operators have a defined precedence (order of operations) just as arithmetic operators do. In arithmetic, parentheses have the highest precedence, followed by exponents, then multiplication and division, and finally addition and subtraction.</p>
-<p>Here is the precedence of the logical operators, from most important (do first) to least important (do last):</p>
-<ol>
-<li>Parentheses</li>
-<li>Not operator, <code>¬</code></li>
-<li>And operator, <code>∧</code></li>
-<li>Or operator, <code>∨</code></li>
-<li>Implies operator, <code>→</code></li>
-</ol>
-<p>For example, in the statement <code>(p ∨ q) ∧ ¬p</code>, we would evaluate the operators in the following order:</p>
-<ol>
-<li>The parentheses (which would resolve the <code>(p ∨ q)</code> expression)</li>
-<li>The not, <code>¬</code></li>
-<li>The and, <code>∧</code></li>
-</ol>
-<p>Sometimes we have more than one of the same operator in a single statement. For example: <code>p ∨ q ∨ r</code>. Different operators have different rules for resolving multiple occurrences:</p>
-<ol>
-<li>Multiple parentheses - the innermost parentheses are resolved first, working from inside out.</li>
-<li>Multiple not ( <code>¬</code> ) operators &ndash; the rightmost <code>¬</code> is resolved first, working from right to left. For example, <code>¬¬p</code> is equivalent to <code>¬(¬p)</code>.</li>
-<li>Multiple and ( <code>∧</code> ) operators &ndash; the leftmost <code>∧</code> is resolved first, working from left to right. For example, <code>p ∧ q ∧ r</code> is equivalent to <code>(p ∧ q) ∧ r</code>.</li>
-<li>Multiple or ( <code>∨</code> ) operators &ndash; the leftmost <code>∨</code> is resolved first, working from left to right. For example, <code>p ∨ q ∨ r</code> is equivalent to <code>(p ∨ q) ∨ r</code>.</li>
-<li>Multiple implies ( <code>→</code> ) operators &ndash; the rightmost <code>→</code> is resolved first, working from right to left. For example, <code>p → q → r</code> is equivalent to <code>p → (q → r)</code>.</li>
-</ol>
-<h2 id="top-level-operator">Top-level operator</h2>
-<p>In a logical statement, the <em>top-level operator</em> is the operator that is applied last (after following the precedence rules above).</p>
-<p>For example, in the statement:</p>
-<p><code>p ∨ q → ¬p ∧ r</code></p>
-<p>We would evaluate first the <code>¬</code>, then the <code>∧</code>, then the <code>∨</code>, and lastly the <code>→</code>. Thus the <code>→</code> is the top-level operator.</p>
-<h2 id="classifying-truth-tables">Classifying truth tables</h2>
-<p>In our study of logic, it will be convenient to characterize logical formula with a description of their truth tables. We will classify each logical formula in one of three ways:</p>
-<ul>
-<li><em>Tautology</em> - when all truth assignments for a logical formula are true</li>
-<li><em>Contradictory</em> - when all truth assignments for a logical formula are false</li>
-<li><em>Contingent</em> - when some truth assignments for a logical formula are true and some are false.</li>
-</ul>
-<p>For example, <code>p ∨ ¬ p</code> is a <em>tautology</em>. Whether <code>p</code> is true or false, <code>p ∨ ¬ p</code> is always true.</p>
-<p>On the other hand, <code>p ∧ ¬ p</code> is <em>contradictory</em>. Whether <code>p</code> is true or false, <code>p ∧ ¬ p</code> is always false.</p>
-<p>Finally, something like <code>p ∨ q</code> is <em>contingent</em>. When <code>p</code> and <code>q</code> are both false, then <code>p ∨ q</code> is false. However, <code>p ∨ q</code> is true in every other case.</p>
-<p>If all truth assignments for a logical formula are True, the formula is said to be a tautology.</p>
-<h2 id="logika-syntax">Logika syntax</h2>
-<p>From this point forward, the course will expect you to use Logika formatted truth tables. The Logika truth table for the formula <code>¬(p ∧ q)</code> is:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>      *
-</span></span><span style="display:flex;"><span>-----------------
-</span></span><span style="display:flex;"><span>p q # !(p &amp; q)
-</span></span><span style="display:flex;"><span>-----------------
-</span></span><span style="display:flex;"><span>T T # F T T T
-</span></span><span style="display:flex;"><span>T F # T T F F
-</span></span><span style="display:flex;"><span>F T # T F F T
-</span></span><span style="display:flex;"><span>F F # T F F F
-</span></span><span style="display:flex;"><span>-----------------
-</span></span><span style="display:flex;"><span>Contingent
-</span></span><span style="display:flex;"><span>T: [T F] [F T] [F F]
-</span></span><span style="display:flex;"><span>F: [T T]</span></span></code></pre></div><p>Logika truth tables have standard format (syntax) and semantic meanings. All elements of the truth table must be included to be considered correct.</p>
-<ol>
-<li>
-<p>The first line should have a single asterisk (*) over the top-level operator in the formula.</p>
-</li>
-<li>
-<p>Next is a line of - (minus sign) characters, which must be at least as long as the third line to avoid getting errors.</p>
-</li>
-<li>
-<p>The third line contains <code>variables | formula</code>. As Logika uses some capital letters as reserved words, you should use lower-case letters as variable names. Additionally, variables should be listed alphabetically.</p>
-</li>
-<li>
-<p>The fourth line is another row of -, which is the same length as the second line.</p>
-</li>
-<li>
-<p>Next come the truth assignments. Under the variables, list all possible combinations of T and F. Start with all T and progress linearly to all F. (T and F must be capitalized.)
-After the Truth assignments is another row of -. Using each truth assignment, fill in truth assignments (T or F) under each operator in the formula in order of precedence (with the top-level operator applied last). Optionally, you can fill in the values for each variable under the forumla (as in the example above). However, it is only required that you fill in the truth assignments under each operator. Be careful to line up the truth assignments DIRECTLY below each operator, as Logika will reject truth tables that aren&rsquo;t carefully lined up.</p>
-</li>
-<li>
-<p>Under the truth assignments, put another line of - (minus sign) characters, which should be the same length as the second line.</p>
-</li>
-<li>
-<p>Finally, classify the formula as either <code>Tautology</code> (if everything under the top-level operator is T), <code>Contradictory</code> (if everything under the top-level operator is F), or <code>Contingent</code> (if there is a mix of T and F under the top-level operator). If the formula is contingent, you must also list which truth assignments made the formula true (i.e., which truth assignments made the top-level operator T) and which truth assignments made the formula false. Follow the image above for the syntax of how to list the truth assignments for contingent examples.</p>
-</li>
-</ol>
-<h2 id="logical-operators-in-logika">Logical operators in Logika</h2>
-<p>You may notice that the example above appears to use the <code>!</code> operator for NOT and the <code>&amp;</code> operator for AND. However, what is shown above demonstrates what we TYPE into Logika, and not what is actually displayed. If we copy and paste the example into a new Logika file, it will look like:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>      *
-</span></span><span style="display:flex;"><span>-----------------
-</span></span><span style="display:flex;"><span>p q # ¬(p ∧ q)
-</span></span><span style="display:flex;"><span>-----------------
-</span></span><span style="display:flex;"><span>T T # F T T T
-</span></span><span style="display:flex;"><span>T F # T T F F
-</span></span><span style="display:flex;"><span>F T # T F F T
-</span></span><span style="display:flex;"><span>F F # T F F F
-</span></span><span style="display:flex;"><span>-----------------
-</span></span><span style="display:flex;"><span>Contingent
-</span></span><span style="display:flex;"><span>T: [T F] [F T] [F F]
-</span></span><span style="display:flex;"><span>F: [T T]</span></span></code></pre></div><p>Here is a summary of what keys to type in Logika for each traditional logical operator:</p>
-<table>
-<thead>
-<tr>
-<th>Logical operator</th>
-<th>What to TYPE in Logika</th>
-<th>What you will SEE in Logika</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>NOT</td>
-<td><code>!</code></td>
-<td><code>¬</code></td>
-</tr>
-<tr>
-<td>OR</td>
-<td><code>|</code></td>
-<td><code>∨</code></td>
-</tr>
-<tr>
-<td>AND</td>
-<td><code>&amp;</code></td>
-<td><code>∧</code></td>
-</tr>
-<tr>
-<td>IMPLIES</td>
-<td><code>-&gt;:</code></td>
-<td><code>→:</code></td>
-</tr>
-</tbody>
-</table>
-<p>In the remainder of this book, my examples will be of what you will SEE in Logika.</p>
-<h2 id="example">Example</h2>
-<p>Suppose we want to write a Logika truth table for:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∧ q) → ¬r</span></span></code></pre></div><p>First, we make sure we have a new file in Sireum with the <code>.logika</code> extension. Then, we construct this truth table shell:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                *
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>p q r # (p ∧ q) →: ¬r
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>T T T #
-</span></span><span style="display:flex;"><span>T T F #
-</span></span><span style="display:flex;"><span>T F T #
-</span></span><span style="display:flex;"><span>T F F #
-</span></span><span style="display:flex;"><span>F T T #
-</span></span><span style="display:flex;"><span>F T F #
-</span></span><span style="display:flex;"><span>F F T #
-</span></span><span style="display:flex;"><span>F F F #
-</span></span><span style="display:flex;"><span>----------------------</span></span></code></pre></div><p>In the table above, we noticed that the <code>→</code> operator was the top-level operator according to our operator precedence rules.</p>
-<p>Next, we fill in the output for the corresponding truth assignment under each operator, from highest precedence to lowest precedence. First, we evaluate the parentheses, which have the highest precedence. For example, we put a <code>T</code> under the <code>∧</code> in the first row, as <code>p</code> and <code>q</code> are both <code>T</code> in that row, and <code>T ∧ T</code> is <code>T</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                *
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>p q r # (p ∧ q) →: ¬r
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>T T T #    T
-</span></span><span style="display:flex;"><span>T T F #    T
-</span></span><span style="display:flex;"><span>T F T #    F
-</span></span><span style="display:flex;"><span>T F F #    F
-</span></span><span style="display:flex;"><span>F T T #    F
-</span></span><span style="display:flex;"><span>F T F #    F
-</span></span><span style="display:flex;"><span>F F T #    F
-</span></span><span style="display:flex;"><span>F F F #    F
-</span></span><span style="display:flex;"><span>----------------------</span></span></code></pre></div><p>In this example, we are only filling in under each operator (instead of also transcribing over each variable value), but either approach is acceptable.</p>
-<p>Next, we fill in under the ¬ operator, which has the next-highest precedence:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                *
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>p q r # (p ∧ q) →: ¬r
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>T T T #    T       F
-</span></span><span style="display:flex;"><span>T T F #    T       T
-</span></span><span style="display:flex;"><span>T F T #    F       F
-</span></span><span style="display:flex;"><span>T F F #    F       T
-</span></span><span style="display:flex;"><span>F T T #    F       F
-</span></span><span style="display:flex;"><span>F T F #    F       T
-</span></span><span style="display:flex;"><span>F F T #    F       F
-</span></span><span style="display:flex;"><span>F F F #    F       T
-</span></span><span style="display:flex;"><span>----------------------</span></span></code></pre></div><p>Then, we fill in under our top-level operator, the <code>→</code>. Notice that we must line up the <code>T/F</code> values under the <code>→</code> in the <code>→:</code> symbol. For example, we put a <code>F</code> under the <code>→:</code> on the first row, as <code>(p ∧ q)</code> is <code>T</code> there and <code> ¬r</code> is <code>F</code>, and we know that <code>T→F</code> is <code>F</code> because it describes a broken promise.</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                *
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>p q r # (p ∧ q) →: ¬r
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>T T T #    T    F  F
-</span></span><span style="display:flex;"><span>T T F #    T    T  T
-</span></span><span style="display:flex;"><span>T F T #    F    T  F
-</span></span><span style="display:flex;"><span>T F F #    F    T  T
-</span></span><span style="display:flex;"><span>F T T #    F    T  F
-</span></span><span style="display:flex;"><span>F T F #    F    T  T
-</span></span><span style="display:flex;"><span>F F T #    F    T  F
-</span></span><span style="display:flex;"><span>F F F #    F    T  T
-</span></span><span style="display:flex;"><span>----------------------</span></span></code></pre></div><p>Lastly, we examine the list of outputs under the top-level operator. We see that some truth assignments made the formula true, and that others (one) made the formula false. Thus, the formula is contingent. We label it as such, and list which truth assignments made the formula true and which made it false:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                *
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>p q r # (p ∧ q) →: ¬r
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>T T T #    T    F  F
-</span></span><span style="display:flex;"><span>T T F #    T    T  T
-</span></span><span style="display:flex;"><span>T F T #    F    T  F
-</span></span><span style="display:flex;"><span>T F F #    F    T  T
-</span></span><span style="display:flex;"><span>F T T #    F    T  F
-</span></span><span style="display:flex;"><span>F T F #    F    T  T
-</span></span><span style="display:flex;"><span>F F T #    F    T  F
-</span></span><span style="display:flex;"><span>F F F #    F    T  T
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>Contingent
-</span></span><span style="display:flex;"><span>T: [T T F] [T F T] [T F F] [F T T] [F T F] [F F T] [F F F]
-</span></span><span style="display:flex;"><span>F: [T T T]</span></span></code></pre></div><p>If you typed everything correctly, you should see a popup in Sireum logika that says: &ldquo;Logika Verified&rdquo; with a purple checkmark:</p>
-<p>
-<a href="#image-267313e664c3267417496e1a04f6e23b" class="lightbox-link">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/ttVerified.png" alt="truth table verified" style="height: auto; width: auto;" loading="lazy">
-</a>
-<a href="javascript:history.back();" class="lightbox" id="image-267313e664c3267417496e1a04f6e23b">
-<img src="https://ksu-cs-textbooks.github.io/cis301/images/ttVerified.png" alt="truth table verified" class="lightbox-image" loading="lazy">
-</a></p>
-<p>If you instead see red error markings, hover over them and read the explanations &ndash; it means there are errors in your truth table.</p>
-<p>If you see no errors and no purple check, you will need to manually run Logika. Right-click in the text area that contains your truth table, and select &ldquo;Logika Check (All in File)&rdquo;.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="satisfiability">Satisfiability</h1>
-
-<p>We say that a logical statement is <em>satisfiable</em> when there exists at least one truth assignment that makes the overall statement true.</p>
-<p>In our Logika truth tables, this corresponds to statements that are either <em>contingent</em> or a <em>tautology</em>. (<em>Contradictory</em> statements are NOT satisfiable.)</p>
-<p>For example, consider the following truth tables:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>          *
-</span></span><span style="display:flex;"><span>-----------------------
-</span></span><span style="display:flex;"><span>p q r # p →: q V ¬r ∧ p
-</span></span><span style="display:flex;"><span>-----------------------
-</span></span><span style="display:flex;"><span>T T T #   T    T F  F
-</span></span><span style="display:flex;"><span>T T F #   T    T T  T
-</span></span><span style="display:flex;"><span>T F T #   F    F F  F
-</span></span><span style="display:flex;"><span>T F F #   T    T T  T
-</span></span><span style="display:flex;"><span>F T T #   T    T F  F
-</span></span><span style="display:flex;"><span>F T F #   T    T T  F
-</span></span><span style="display:flex;"><span>F F T #   T    F F  F
-</span></span><span style="display:flex;"><span>F F F #   T    F T  F
-</span></span><span style="display:flex;"><span>------------------------
-</span></span><span style="display:flex;"><span>Contingent
-</span></span><span style="display:flex;"><span>T: [T T T] [T T F] [T F F] [F T T] [F T F] [F F T] [F F F]
-</span></span><span style="display:flex;"><span>F: [T F T]</span></span></code></pre></div><p>And</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>      *
-</span></span><span style="display:flex;"><span>------------
-</span></span><span style="display:flex;"><span>p # p V ¬p 
-</span></span><span style="display:flex;"><span>------------
-</span></span><span style="display:flex;"><span>T #   T F
-</span></span><span style="display:flex;"><span>F #   T T
-</span></span><span style="display:flex;"><span>-------------
-</span></span><span style="display:flex;"><span>Tautology</span></span></code></pre></div><p>Both of these statements are satisfiable, as they have at least one (or more than one) truth assignment that makes the overall statement true.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="logical-equivalence">Logical Equivalence</h1>
-
-<p>Two (or more) logical statements are said to be <em>logically equivalent</em> IFF (if and only if, ↔) they have the same truth value for every truth assignment; i.e., their truth tables evaluate exactly the same. (We sometimes refer to this as <em>semantic equivalence</em>.)</p>
-<p>An example of logically equivalent statements are <code>q ∧ p</code> and <code>p ∧ (q ∧ p)</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>         *
-</span></span><span style="display:flex;"><span>--------------
-</span></span><span style="display:flex;"><span>p q # (p ∧ q)
-</span></span><span style="display:flex;"><span>--------------
-</span></span><span style="display:flex;"><span>T T #    T 
-</span></span><span style="display:flex;"><span>T F #    F 
-</span></span><span style="display:flex;"><span>F T #    F 
-</span></span><span style="display:flex;"><span>F F #    F 
-</span></span><span style="display:flex;"><span>---------------
-</span></span><span style="display:flex;"><span>Contingent
-</span></span><span style="display:flex;"><span>T: [T T]
-</span></span><span style="display:flex;"><span>F: [F F] [F T] [T F]</span></span></code></pre></div><div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>         *
-</span></span><span style="display:flex;"><span>-------------------
-</span></span><span style="display:flex;"><span>p q #  p ∧ (q ∧ p)
-</span></span><span style="display:flex;"><span>-------------------
-</span></span><span style="display:flex;"><span>T T #    T    T 
-</span></span><span style="display:flex;"><span>T F #    F    F 
-</span></span><span style="display:flex;"><span>F T #    F    F 
-</span></span><span style="display:flex;"><span>F F #    F    F 
-</span></span><span style="display:flex;"><span>--------------------
-</span></span><span style="display:flex;"><span>Contingent
-</span></span><span style="display:flex;"><span>T : [T T]
-</span></span><span style="display:flex;"><span>F : [F F] [F T] [T F]</span></span></code></pre></div><p>In these examples, notice that exactly the same set of truth assignments makes both statements true, and that exactly the same set of truth assignments makes both statements false.</p>
-<p>Finding equivalent logical statements of fewer gates (states) is important to several fields. In computer science, fewer states can lead to less memory, fewer operations and smaller programs. In computer engineering, fewer gates means fewer circuits less power and less heat.</p>
-<h2 id="common-equivalences">Common equivalences</h2>
-<p>We can similarly use truth tables to show the following common logical equivalences:</p>
-<ul>
-<li>Double negative: <code>¬ ¬ p</code> and <code>p</code></li>
-<li>Contrapositive: <code>p → q</code> and <code>¬ q → ¬ p</code></li>
-<li>Expressing an implies using an OR: <code>p → q</code> and <code>¬ p ∨ q</code></li>
-<li>One of DeMorgan&rsquo;s laws: <code>¬ (p ∧ q)</code> and <code>( ¬ p ∨ ¬ q)</code></li>
-<li>Another of DeMorgan&rsquo;s laws: <code>¬ (p ∨ q)</code> and <code>( ¬ p ∧ ¬ q)</code></li>
-</ul>
-<h2 id="expressing-additional-operators">Expressing additional operators</h2>
-<p>The bi-implication (<code>↔</code>) and exclusive or (<code>⊕</code>) operators are not directly used in this course. However, we can simulate both operators using a combination of <code>¬</code>, <code>∧</code>, <code>∨</code>, and <code>→</code>:</p>
-<ul>
-<li><code>p ↔ q</code>, which means &ldquo;p if and only if q&rdquo;, can be expressed as <code>(p → q) ∧ (q → p)</code></li>
-<li><code>p ⊕ q</code>, which means &ldquo;p exclusive or q&rdquo;, can be expressed as <code>(p ∨ q) ∧ ¬(p ∧ q)</code></li>
-</ul>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-    
-    
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="semantic-entailment">Semantic Entailment</h1>
-
-<h2 id="definition">Definition</h2>
-<p>We say a set of premises, <code>p1</code>, <code>p2</code>, &hellip;, <code>pn</code> semantically entail a conclusion <code>c</code>, and we write:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p1, p2, ..., pn ⊨ c</span></span></code></pre></div><p>if whenever we have a truth assignment that makes <code>p1</code>, <code>p2</code>, &hellip;, <code>pn</code> all true, then <code>c</code> is also true for that truth assignment.</p>
-<p>(Note: we can use the ASCII replacement <code>|=</code> instead of the Unicode <code>⊨</code>, if we want.)</p>
-<h2 id="showing-semantic-entailment">Showing semantic entailment</h2>
-<p>Suppose we have premises <code>p ∧ q</code> and <code>p → r</code>. We want to see if these premises necessarily entail the conclusion <code>r ∧ q</code>.</p>
-<p>First, we could make truth tables for each premise (being sure to list the variables <code>p</code>, <code>q</code> and <code>r</code> in each case, as that is the overall set of variables in the problem):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//truth table for premise, p ∧ q
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>          *
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>p q r # p ∧ q
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>T T T #   T
-</span></span><span style="display:flex;"><span>T T F #   T
-</span></span><span style="display:flex;"><span>T F T #   F
-</span></span><span style="display:flex;"><span>T F F #   F
-</span></span><span style="display:flex;"><span>F T T #   F
-</span></span><span style="display:flex;"><span>F T F #   F
-</span></span><span style="display:flex;"><span>F F T #   F
-</span></span><span style="display:flex;"><span>F F F #   F
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>Contingent
-</span></span><span style="display:flex;"><span>T: [T T T] [T T F]
-</span></span><span style="display:flex;"><span>F: [T F T] [T F F] [F T T] [F T F] [F F T] [F F F]</span></span></code></pre></div><div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//truth table for premise, p → r
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>          *
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>p q r # p →: r
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>T T T #   T
-</span></span><span style="display:flex;"><span>T T F #   F
-</span></span><span style="display:flex;"><span>T F T #   T
-</span></span><span style="display:flex;"><span>T F F #   F
-</span></span><span style="display:flex;"><span>F T T #   T
-</span></span><span style="display:flex;"><span>F T F #   T
-</span></span><span style="display:flex;"><span>F F T #   T
-</span></span><span style="display:flex;"><span>F F F #   T
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>Contingent
-</span></span><span style="display:flex;"><span>T: [T T T] [T F T] [F T T] [F T F] [F F T] [F F F]
-</span></span><span style="display:flex;"><span>F: [T T F] [T F F]</span></span></code></pre></div><p>Now, we notice that the truth assignment <code>[T T T]</code> is the only one that makes both premises true. Next, we make a truth table for our potential conclusion, <code>r ∧ q</code> (again, being sure to include all variables used in the problem):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//truth table for potential conclusion, r ∧ q
-</span></span><span style="display:flex;"><span>          *
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>p q r # r ∧ q
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>T T T #   T
-</span></span><span style="display:flex;"><span>T T F #   F
-</span></span><span style="display:flex;"><span>T F T #   F
-</span></span><span style="display:flex;"><span>T F F #   F
-</span></span><span style="display:flex;"><span>F T T #   T
-</span></span><span style="display:flex;"><span>F T F #   F
-</span></span><span style="display:flex;"><span>F F T #   F
-</span></span><span style="display:flex;"><span>F F F #   F
-</span></span><span style="display:flex;"><span>----------------------
-</span></span><span style="display:flex;"><span>Contingent
-</span></span><span style="display:flex;"><span>T: [T T T] [F T T]
-</span></span><span style="display:flex;"><span>F: [T T F] [T F T] [T F F] [F T F] [F F T] [F F F]</span></span></code></pre></div><p>Here, we notice that the truth assignment <code>[T T T]</code> makes the conclusion true as well. So we see that whenever there is a truth assignment that makes all of our premises true, then that same truth assignment also makes our conclusion true.</p>
-<p>Thus, <code>p ∧ q</code> and <code>p → r</code> semantically entail the conclusion <code>r ∧ q</code>, and we can write:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>p ∧ q, p → r ⊨ r ∧ q</span></span></code></pre></div><h2 id="semantic-entailment-with-one-truth-table">Semantic entailment with one truth table</h2>
-<p>The process of making separate truth tables for each premise and the conclusion, and then examining each one to see if any truth assignment that makes all the premises true also makes the conclusion true, is fairly tedious.</p>
-<p>We are trying to show that IF each premise is true, THEN we promise the conclusion is true. This sounds exactly like an IMPLIES statement, and in fact that is what we can use to simplify our process. If we are trying to show that  <code>p1</code>, <code>p2</code>, &hellip;, <code>pn</code> semantically entail a conclusion <code>c</code> (i.e., that <code>p1, p2, ..., pn ⊨ c</code>), then we can instead create ONE truth table for the statement:</p>
-<p><code>(p1 ∧ p2 ∧ ... ∧ pn) → c</code></p>
-<p>If this statement is a tautology (which would mean that anytime all the premises were true, then the conclusion was also true), then we would also have that the premises semantically entail the conclusion.</p>
-<p>In our previous example, we create a truth table for the statement <code>(p ∧ q) ∧ (p → r) → r ∧ q</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                           *
-</span></span><span style="display:flex;"><span>--------------------------------------
-</span></span><span style="display:flex;"><span>p q r # (p ∧ q) ∧ (p →: r) →: r ∧ q
-</span></span><span style="display:flex;"><span>--------------------------------------
-</span></span><span style="display:flex;"><span>T T T #    T    T    T     T    T
-</span></span><span style="display:flex;"><span>T T F #    T    F    F     T    F
-</span></span><span style="display:flex;"><span>T F T #    F    F    T     T    F
-</span></span><span style="display:flex;"><span>T F F #    F    F    F     T    F
-</span></span><span style="display:flex;"><span>F T T #    F    F    T     T    T 
-</span></span><span style="display:flex;"><span>F T F #    F    F    T     T    F
-</span></span><span style="display:flex;"><span>F F T #    F    F    T     T    F
-</span></span><span style="display:flex;"><span>F F F #    F    F    T     T    F
-</span></span><span style="display:flex;"><span>---------------------------------------
-</span></span><span style="display:flex;"><span>Tautology</span></span></code></pre></div><p>Then we see that it is indeed a tautology.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-          </section>
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Russell Feldhausen
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/dec4297d81df48b5e02e2640601321e923ab5f5b">Aug 10, 2023</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1716924209" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1716924209" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1716924209" defer></script>
-  </body>
-</html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Truth Tables :: CIS 301 Textbook"><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/2-chapter/"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Truth Tables :: CIS 301 Textbook"><meta property="og:locale" content="en-us"><meta property="og:type" content="website"><meta itemprop=name content="Truth Tables :: CIS 301 Textbook"><meta itemprop=datePublished content="2018-08-24T10:53:05-05:00"><meta itemprop=dateModified content="2023-08-10T14:52:41-05:00"><title>Truth Tables :: CIS 301 Textbook</title>
+<link href=https://textbooks.cs.ksu.edu/cis301/2-chapter/ rel=canonical type=text/html title="Truth Tables :: CIS 301 Textbook"><link href=/cis301/2-chapter/index.xml rel=alternate type=application/rss+xml title="Truth Tables :: CIS 301 Textbook"><link href=/cis301/2-chapter/tele.html rel=alternate type=text/html title="Truth Tables :: CIS 301 Textbook"><link href=/cis301/2-chapter/embed.html rel=alternate type=text/html title="Truth Tables :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1719515004 rel=stylesheet><link href=/cis301/css/auto-complete.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1719515004 rel=stylesheet><link href=/cis301/css/fonts.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1719515004 rel=stylesheet><link href=/cis301/css/theme-auto.css?1719515004 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-auto.css?1719515004 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1719515004 rel=stylesheet><link href=/cis301/css/print.css?1719515004 rel=stylesheet media=print><link href=/cis301/css/format-print.css?1719515004 rel=stylesheet><script src=/cis301/js/variant.js?1719515004></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="..",window.relearn.relBaseUri="../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1719515004 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis301/2-chapter/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Truth Tables</span><meta itemprop=position content="1"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/1-chapter/1_3-otherpuzzles/ title="Other Puzzles (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/2-chapter/2_1-opscircuits/ title="Operators and Circuits (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable chapter narrow" tabindex=-1><div class=flex-block-wrapper><article class=chapter><header class=headline></header><div class=article-subheading>Chapter 2</div><h1 id=truth-tables>Truth Tables</h1><footer class=footline></footer></article><section><h1 class=a11y-only>Subsections of Truth Tables</h1><article class=default><header class=headline></header><h1 id=operators-and-circuits>Operators and Circuits</h1><p>In this chapter, we review basic notions about gates and learn the relationship between circuits and assignment-based computer programs. This sets the stage for analyzing modern programs.</p><h2 id=logical-operators>Logical operators</h2><p>There are four basic logic gates, with corresponding logical operators:</p><table><thead><tr><th>Meaning</th><th>Logical Operator</th><th>Logic Gate</th></tr></thead><tbody><tr><td>p AND q</td><td><code>p ∧ q</code></td><td><a href=#R-image-e5ad0e9ab3aacfa769bc557a5138a144 class=lightbox-link><img alt="AND gate" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis301/images/AND.png style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-e5ad0e9ab3aacfa769bc557a5138a144><img alt="AND gate" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis301/images/AND.png></a></td></tr><tr><td>p OR q</td><td><code>p ∨ q</code></td><td><a href=#R-image-d697e262f1642443826a9e48daf50d87 class=lightbox-link><img alt="OR gate" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis301/images/OR.png style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-d697e262f1642443826a9e48daf50d87><img alt="OR gate" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis301/images/OR.png></a></td></tr><tr><td>NOT p</td><td><code>¬p</code></td><td><a href=#R-image-9c78e616809b02d84172d1670593fa8a class=lightbox-link><img alt="NOT gate" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis301/images/NOT.png style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-9c78e616809b02d84172d1670593fa8a><img alt="NOT gate" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis301/images/NOT.png></a></td></tr><tr><td>p IMPLIES q</td><td><code>p → q</code></td><td><a href=#R-image-373ffbffa02d77065997d5e3c5c664f5 class=lightbox-link><img alt="IMPLIES gate" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis301/images/IMPLIES.png style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-373ffbffa02d77065997d5e3c5c664f5><img alt="IMPLIES gate" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis301/images/IMPLIES.png></a></td></tr></tbody></table><p>In the above drawings, the input wires are labelled with the names P and Q. The output that is computed is emitted from the rightmost wire which exits the gate. For these simple gates, it is possible to exhaustively test every permutation of potential inputs and summarize results in a table, called a truth table.</p><p>Let&rsquo;s examine the AND gate. The AND gate emits a high voltage (1) exactly when high voltages are sensed at input wires P and Q; otherwise low voltage (0) is emitted. The gate&rsquo;s physical behavior is summarized by in the following table:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>AND: P Q |
+</span></span><span class=line><span class=cl>-------------
+</span></span><span class=line><span class=cl>     1 1 | 1
+</span></span><span class=line><span class=cl>     1 0 | 0
+</span></span><span class=line><span class=cl>     0 1 | 0
+</span></span><span class=line><span class=cl>     0 0 | 0</span></span></code></pre></div><h2 id=truth-tables>Truth tables</h2><p>For the remainder of this course, we will use T (read &ldquo;true&rdquo;) for 1 and F (read &ldquo;false&rdquo;) for 0. This is because we will examine applications that go far beyond circuit theory and base-two arithmetic. Here are the truth tables for the AND, OR, NOT and IMPLIES gates:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>AND: P Q |
+</span></span><span class=line><span class=cl>-------------
+</span></span><span class=line><span class=cl>     T T | T
+</span></span><span class=line><span class=cl>     T F | F
+</span></span><span class=line><span class=cl>     F T | F
+</span></span><span class=line><span class=cl>     F F | F
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>OR: P Q |
+</span></span><span class=line><span class=cl>-------------
+</span></span><span class=line><span class=cl>     T T | T
+</span></span><span class=line><span class=cl>     T F | T
+</span></span><span class=line><span class=cl>     F T | T
+</span></span><span class=line><span class=cl>     F F | F
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>NOT: P |
+</span></span><span class=line><span class=cl>-------------
+</span></span><span class=line><span class=cl>     T | F
+</span></span><span class=line><span class=cl>     T | T
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>IMPLIES: P Q |
+</span></span><span class=line><span class=cl>-----------------
+</span></span><span class=line><span class=cl>         T T | T
+</span></span><span class=line><span class=cl>         T F | F
+</span></span><span class=line><span class=cl>         F T | T
+</span></span><span class=line><span class=cl>         F F | T</span></span></code></pre></div><p>A few comments:</p><ul><li><p>The OR gate is inclusive &ndash; as long as one of its inputs is true, then its output is true.</p></li><li><p>You might be confused by the IMPLIES gate. We&rsquo;ll cover it in detail below.</p></li><li><p>In the next section, we will learn to write our truth tables in a slightly different format so they can be automatically checked by Sireum Logika.</p></li></ul><h2 id=implies-operator>Implies operator</h2><p>The implies operator can be difficult to understand. It helps to think of it as a promise: we write <code>P → Q</code>, but we mean <em>If <code>P</code> is true, then I promise that <code>Q</code> will also be true.</em> If we BREAK our promise (i.e., if <code>P</code> is true but <code>Q</code> is false), then the output of an implies gate is false. In <em>every other situation</em>, the output of the implies gate is true.</p><p>As a reminder, here is the truth table for the implies operator, → :</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>P Q | P → Q
+</span></span><span class=line><span class=cl>-----------------
+</span></span><span class=line><span class=cl>T T |   T
+</span></span><span class=line><span class=cl>T F |   F
+</span></span><span class=line><span class=cl>F T |   T
+</span></span><span class=line><span class=cl>F F |   T</span></span></code></pre></div><p>It is likely clear why <code>P → Q</code> is true when both <code>P</code> and <code>Q</code> are true &ndash; in this situation, we have kept our promise.</p><p>It is also easy to understand why <code>P → Q</code> is false when <code>P</code> is true and <code>Q</code> is false. Here, we have broken our promise &ndash; <code>P</code> happened, but <code>Q</code> did not.</p><p>In the other two cases for <code>P → Q</code> we have that <code>P</code> is false (and <code>Q</code> is either true or false). Here, <code>P → Q</code> is true simply because we haven&rsquo;t broken our promise. In these cases, the implication is said to be <em>vacuously true</em> because we have no evidence to prove that it is false.</p><h2 id=circuits>Circuits</h2><p>We can also compose the gates to define new operations.</p><p>For example, this circuit:</p><p><a href=#R-image-ec3a71e67aa643cf01b22317bc082ead class=lightbox-link><img alt="circuit combo" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis301/images/circuit1.png style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-ec3a71e67aa643cf01b22317bc082ead><img alt="circuit combo" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis301/images/circuit1.png></a></p><p>Written <code>¬(P ∧ Q)</code>, defines this computation of outputs:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>P Q | ¬(P ∧ Q)
+</span></span><span class=line><span class=cl>-----------------
+</span></span><span class=line><span class=cl>T T | F
+</span></span><span class=line><span class=cl>T F | T
+</span></span><span class=line><span class=cl>F T | T
+</span></span><span class=line><span class=cl>F F | T</span></span></code></pre></div><p>We can work out the outputs in stages, like this:</p><p><a href=#R-image-546cb27039558e9c81930fa5db037ae5 class=lightbox-link><img alt="circuit stages" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis301/images/NotLogikaTT.png style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-546cb27039558e9c81930fa5db037ae5><img alt="circuit stages" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis301/images/NotLogikaTT.png></a></p><p>We begin by writing the value of each set of inputs on the left, under their corresponding symbol on the right. Next we apply the operator (gate) with the highest precedence (covered in <em>Operator Precedence</em> in the next section). In our case the <code>()</code> make the AND ( <code>∧</code> ) symbol the highest.</p><p>A truth assignment is a unique permutation of the possible inputs for a system. For the <code>∧</code>-gate, it is a 2-variable sequence. Considering the first row we see we have <code>T ∧ T</code>. Looking that up in the <code>∧</code>-gate truth table we see the result is also &ldquo;T&rdquo;, and we record that under the <code>∧</code> symbol. We do the same thing all the other truth assignments.</p><p>After the initial transcribing of the truth values under their respective variables, we look up the truth-values in the gate tables, not the variables. Also observe that while <code>∧</code> is symmetric &ndash; i.e. <code>T ∧ F</code> and <code>F ∧ T</code> are both false &ndash; the IMPLIES gate is not.</p><p>Now we look up the value under the <code>∧</code> symbol in the ¬ gate table. In the first row we see that the truth assignment for the first row, &ldquo;T&rdquo;, is &ldquo;F&rdquo; and record it under the <code>¬</code> symbol. Do this for every row and we are done.</p><footer class=footline></footer></article><article class=default><header class=headline></header><h1 id=truth-tables-in-logika>Truth Tables in Logika</h1><p>Now that we&rsquo;ve seen the four basic logic gates and truth tables, we can put them together to build bigger truth tables for longer logical formulae.</p><h2 id=operator-precedence>Operator precedence</h2><p>Logical operators have a defined precedence (order of operations) just as arithmetic operators do. In arithmetic, parentheses have the highest precedence, followed by exponents, then multiplication and division, and finally addition and subtraction.</p><p>Here is the precedence of the logical operators, from most important (do first) to least important (do last):</p><ol><li>Parentheses</li><li>Not operator, <code>¬</code></li><li>And operator, <code>∧</code></li><li>Or operator, <code>∨</code></li><li>Implies operator, <code>→</code></li></ol><p>For example, in the statement <code>(p ∨ q) ∧ ¬p</code>, we would evaluate the operators in the following order:</p><ol><li>The parentheses (which would resolve the <code>(p ∨ q)</code> expression)</li><li>The not, <code>¬</code></li><li>The and, <code>∧</code></li></ol><p>Sometimes we have more than one of the same operator in a single statement. For example: <code>p ∨ q ∨ r</code>. Different operators have different rules for resolving multiple occurrences:</p><ol><li>Multiple parentheses - the innermost parentheses are resolved first, working from inside out.</li><li>Multiple not ( <code>¬</code> ) operators &ndash; the rightmost <code>¬</code> is resolved first, working from right to left. For example, <code>¬¬p</code> is equivalent to <code>¬(¬p)</code>.</li><li>Multiple and ( <code>∧</code> ) operators &ndash; the leftmost <code>∧</code> is resolved first, working from left to right. For example, <code>p ∧ q ∧ r</code> is equivalent to <code>(p ∧ q) ∧ r</code>.</li><li>Multiple or ( <code>∨</code> ) operators &ndash; the leftmost <code>∨</code> is resolved first, working from left to right. For example, <code>p ∨ q ∨ r</code> is equivalent to <code>(p ∨ q) ∨ r</code>.</li><li>Multiple implies ( <code>→</code> ) operators &ndash; the rightmost <code>→</code> is resolved first, working from right to left. For example, <code>p → q → r</code> is equivalent to <code>p → (q → r)</code>.</li></ol><h2 id=top-level-operator>Top-level operator</h2><p>In a logical statement, the <em>top-level operator</em> is the operator that is applied last (after following the precedence rules above).</p><p>For example, in the statement:</p><p><code>p ∨ q → ¬p ∧ r</code></p><p>We would evaluate first the <code>¬</code>, then the <code>∧</code>, then the <code>∨</code>, and lastly the <code>→</code>. Thus the <code>→</code> is the top-level operator.</p><h2 id=classifying-truth-tables>Classifying truth tables</h2><p>In our study of logic, it will be convenient to characterize logical formula with a description of their truth tables. We will classify each logical formula in one of three ways:</p><ul><li><em>Tautology</em> - when all truth assignments for a logical formula are true</li><li><em>Contradictory</em> - when all truth assignments for a logical formula are false</li><li><em>Contingent</em> - when some truth assignments for a logical formula are true and some are false.</li></ul><p>For example, <code>p ∨ ¬ p</code> is a <em>tautology</em>. Whether <code>p</code> is true or false, <code>p ∨ ¬ p</code> is always true.</p><p>On the other hand, <code>p ∧ ¬ p</code> is <em>contradictory</em>. Whether <code>p</code> is true or false, <code>p ∧ ¬ p</code> is always false.</p><p>Finally, something like <code>p ∨ q</code> is <em>contingent</em>. When <code>p</code> and <code>q</code> are both false, then <code>p ∨ q</code> is false. However, <code>p ∨ q</code> is true in every other case.</p><p>If all truth assignments for a logical formula are True, the formula is said to be a tautology.</p><h2 id=logika-syntax>Logika syntax</h2><p>From this point forward, the course will expect you to use Logika formatted truth tables. The Logika truth table for the formula <code>¬(p ∧ q)</code> is:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>      *
+</span></span><span class=line><span class=cl>-----------------
+</span></span><span class=line><span class=cl>p q # !(p &amp; q)
+</span></span><span class=line><span class=cl>-----------------
+</span></span><span class=line><span class=cl>T T # F T T T
+</span></span><span class=line><span class=cl>T F # T T F F
+</span></span><span class=line><span class=cl>F T # T F F T
+</span></span><span class=line><span class=cl>F F # T F F F
+</span></span><span class=line><span class=cl>-----------------
+</span></span><span class=line><span class=cl>Contingent
+</span></span><span class=line><span class=cl>T: [T F] [F T] [F F]
+</span></span><span class=line><span class=cl>F: [T T]</span></span></code></pre></div><p>Logika truth tables have standard format (syntax) and semantic meanings. All elements of the truth table must be included to be considered correct.</p><ol><li><p>The first line should have a single asterisk (*) over the top-level operator in the formula.</p></li><li><p>Next is a line of - (minus sign) characters, which must be at least as long as the third line to avoid getting errors.</p></li><li><p>The third line contains <code>variables | formula</code>. As Logika uses some capital letters as reserved words, you should use lower-case letters as variable names. Additionally, variables should be listed alphabetically.</p></li><li><p>The fourth line is another row of -, which is the same length as the second line.</p></li><li><p>Next come the truth assignments. Under the variables, list all possible combinations of T and F. Start with all T and progress linearly to all F. (T and F must be capitalized.)
+After the Truth assignments is another row of -. Using each truth assignment, fill in truth assignments (T or F) under each operator in the formula in order of precedence (with the top-level operator applied last). Optionally, you can fill in the values for each variable under the forumla (as in the example above). However, it is only required that you fill in the truth assignments under each operator. Be careful to line up the truth assignments DIRECTLY below each operator, as Logika will reject truth tables that aren&rsquo;t carefully lined up.</p></li><li><p>Under the truth assignments, put another line of - (minus sign) characters, which should be the same length as the second line.</p></li><li><p>Finally, classify the formula as either <code>Tautology</code> (if everything under the top-level operator is T), <code>Contradictory</code> (if everything under the top-level operator is F), or <code>Contingent</code> (if there is a mix of T and F under the top-level operator). If the formula is contingent, you must also list which truth assignments made the formula true (i.e., which truth assignments made the top-level operator T) and which truth assignments made the formula false. Follow the image above for the syntax of how to list the truth assignments for contingent examples.</p></li></ol><h2 id=logical-operators-in-logika>Logical operators in Logika</h2><p>You may notice that the example above appears to use the <code>!</code> operator for NOT and the <code>&</code> operator for AND. However, what is shown above demonstrates what we TYPE into Logika, and not what is actually displayed. If we copy and paste the example into a new Logika file, it will look like:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>      *
+</span></span><span class=line><span class=cl>-----------------
+</span></span><span class=line><span class=cl>p q # ¬(p ∧ q)
+</span></span><span class=line><span class=cl>-----------------
+</span></span><span class=line><span class=cl>T T # F T T T
+</span></span><span class=line><span class=cl>T F # T T F F
+</span></span><span class=line><span class=cl>F T # T F F T
+</span></span><span class=line><span class=cl>F F # T F F F
+</span></span><span class=line><span class=cl>-----------------
+</span></span><span class=line><span class=cl>Contingent
+</span></span><span class=line><span class=cl>T: [T F] [F T] [F F]
+</span></span><span class=line><span class=cl>F: [T T]</span></span></code></pre></div><p>Here is a summary of what keys to type in Logika for each traditional logical operator:</p><table><thead><tr><th>Logical operator</th><th>What to TYPE in Logika</th><th>What you will SEE in Logika</th></tr></thead><tbody><tr><td>NOT</td><td><code>!</code></td><td><code>¬</code></td></tr><tr><td>OR</td><td><code>|</code></td><td><code>∨</code></td></tr><tr><td>AND</td><td><code>&</code></td><td><code>∧</code></td></tr><tr><td>IMPLIES</td><td><code>->:</code></td><td><code>→:</code></td></tr></tbody></table><p>In the remainder of this book, my examples will be of what you will SEE in Logika.</p><h2 id=example>Example</h2><p>Suppose we want to write a Logika truth table for:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p ∧ q) → ¬r</span></span></code></pre></div><p>First, we make sure we have a new file in Sireum with the <code>.logika</code> extension. Then, we construct this truth table shell:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>                *
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>p q r # (p ∧ q) →: ¬r
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>T T T #
+</span></span><span class=line><span class=cl>T T F #
+</span></span><span class=line><span class=cl>T F T #
+</span></span><span class=line><span class=cl>T F F #
+</span></span><span class=line><span class=cl>F T T #
+</span></span><span class=line><span class=cl>F T F #
+</span></span><span class=line><span class=cl>F F T #
+</span></span><span class=line><span class=cl>F F F #
+</span></span><span class=line><span class=cl>----------------------</span></span></code></pre></div><p>In the table above, we noticed that the <code>→</code> operator was the top-level operator according to our operator precedence rules.</p><p>Next, we fill in the output for the corresponding truth assignment under each operator, from highest precedence to lowest precedence. First, we evaluate the parentheses, which have the highest precedence. For example, we put a <code>T</code> under the <code>∧</code> in the first row, as <code>p</code> and <code>q</code> are both <code>T</code> in that row, and <code>T ∧ T</code> is <code>T</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>                *
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>p q r # (p ∧ q) →: ¬r
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>T T T #    T
+</span></span><span class=line><span class=cl>T T F #    T
+</span></span><span class=line><span class=cl>T F T #    F
+</span></span><span class=line><span class=cl>T F F #    F
+</span></span><span class=line><span class=cl>F T T #    F
+</span></span><span class=line><span class=cl>F T F #    F
+</span></span><span class=line><span class=cl>F F T #    F
+</span></span><span class=line><span class=cl>F F F #    F
+</span></span><span class=line><span class=cl>----------------------</span></span></code></pre></div><p>In this example, we are only filling in under each operator (instead of also transcribing over each variable value), but either approach is acceptable.</p><p>Next, we fill in under the ¬ operator, which has the next-highest precedence:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>                *
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>p q r # (p ∧ q) →: ¬r
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>T T T #    T       F
+</span></span><span class=line><span class=cl>T T F #    T       T
+</span></span><span class=line><span class=cl>T F T #    F       F
+</span></span><span class=line><span class=cl>T F F #    F       T
+</span></span><span class=line><span class=cl>F T T #    F       F
+</span></span><span class=line><span class=cl>F T F #    F       T
+</span></span><span class=line><span class=cl>F F T #    F       F
+</span></span><span class=line><span class=cl>F F F #    F       T
+</span></span><span class=line><span class=cl>----------------------</span></span></code></pre></div><p>Then, we fill in under our top-level operator, the <code>→</code>. Notice that we must line up the <code>T/F</code> values under the <code>→</code> in the <code>→:</code> symbol. For example, we put a <code>F</code> under the <code>→:</code> on the first row, as <code>(p ∧ q)</code> is <code>T</code> there and <code>¬r</code> is <code>F</code>, and we know that <code>T→F</code> is <code>F</code> because it describes a broken promise.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>                *
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>p q r # (p ∧ q) →: ¬r
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>T T T #    T    F  F
+</span></span><span class=line><span class=cl>T T F #    T    T  T
+</span></span><span class=line><span class=cl>T F T #    F    T  F
+</span></span><span class=line><span class=cl>T F F #    F    T  T
+</span></span><span class=line><span class=cl>F T T #    F    T  F
+</span></span><span class=line><span class=cl>F T F #    F    T  T
+</span></span><span class=line><span class=cl>F F T #    F    T  F
+</span></span><span class=line><span class=cl>F F F #    F    T  T
+</span></span><span class=line><span class=cl>----------------------</span></span></code></pre></div><p>Lastly, we examine the list of outputs under the top-level operator. We see that some truth assignments made the formula true, and that others (one) made the formula false. Thus, the formula is contingent. We label it as such, and list which truth assignments made the formula true and which made it false:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>                *
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>p q r # (p ∧ q) →: ¬r
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>T T T #    T    F  F
+</span></span><span class=line><span class=cl>T T F #    T    T  T
+</span></span><span class=line><span class=cl>T F T #    F    T  F
+</span></span><span class=line><span class=cl>T F F #    F    T  T
+</span></span><span class=line><span class=cl>F T T #    F    T  F
+</span></span><span class=line><span class=cl>F T F #    F    T  T
+</span></span><span class=line><span class=cl>F F T #    F    T  F
+</span></span><span class=line><span class=cl>F F F #    F    T  T
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>Contingent
+</span></span><span class=line><span class=cl>T: [T T F] [T F T] [T F F] [F T T] [F T F] [F F T] [F F F]
+</span></span><span class=line><span class=cl>F: [T T T]</span></span></code></pre></div><p>If you typed everything correctly, you should see a popup in Sireum logika that says: &ldquo;Logika Verified&rdquo; with a purple checkmark:</p><p><a href=#R-image-89a5f979032cae4bba3fc921caf54a94 class=lightbox-link><img alt="truth table verified" class="border lazy lightbox noshadow figure-image" loading=lazy src=/cis301/images/ttVerified.png style=height:auto;width:auto></a>
+<a href=javascript:history.back(); class=lightbox-back id=R-image-89a5f979032cae4bba3fc921caf54a94><img alt="truth table verified" class="border lazy lightbox noshadow lightbox-image" loading=lazy src=/cis301/images/ttVerified.png></a></p><p>If you instead see red error markings, hover over them and read the explanations &ndash; it means there are errors in your truth table.</p><p>If you see no errors and no purple check, you will need to manually run Logika. Right-click in the text area that contains your truth table, and select &ldquo;Logika Check (All in File)&rdquo;.</p><footer class=footline></footer></article><article class=default><header class=headline></header><h1 id=satisfiability>Satisfiability</h1><p>We say that a logical statement is <em>satisfiable</em> when there exists at least one truth assignment that makes the overall statement true.</p><p>In our Logika truth tables, this corresponds to statements that are either <em>contingent</em> or a <em>tautology</em>. (<em>Contradictory</em> statements are NOT satisfiable.)</p><p>For example, consider the following truth tables:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>          *
+</span></span><span class=line><span class=cl>-----------------------
+</span></span><span class=line><span class=cl>p q r # p →: q V ¬r ∧ p
+</span></span><span class=line><span class=cl>-----------------------
+</span></span><span class=line><span class=cl>T T T #   T    T F  F
+</span></span><span class=line><span class=cl>T T F #   T    T T  T
+</span></span><span class=line><span class=cl>T F T #   F    F F  F
+</span></span><span class=line><span class=cl>T F F #   T    T T  T
+</span></span><span class=line><span class=cl>F T T #   T    T F  F
+</span></span><span class=line><span class=cl>F T F #   T    T T  F
+</span></span><span class=line><span class=cl>F F T #   T    F F  F
+</span></span><span class=line><span class=cl>F F F #   T    F T  F
+</span></span><span class=line><span class=cl>------------------------
+</span></span><span class=line><span class=cl>Contingent
+</span></span><span class=line><span class=cl>T: [T T T] [T T F] [T F F] [F T T] [F T F] [F F T] [F F F]
+</span></span><span class=line><span class=cl>F: [T F T]</span></span></code></pre></div><p>And</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>      *
+</span></span><span class=line><span class=cl>------------
+</span></span><span class=line><span class=cl>p # p V ¬p 
+</span></span><span class=line><span class=cl>------------
+</span></span><span class=line><span class=cl>T #   T F
+</span></span><span class=line><span class=cl>F #   T T
+</span></span><span class=line><span class=cl>-------------
+</span></span><span class=line><span class=cl>Tautology</span></span></code></pre></div><p>Both of these statements are satisfiable, as they have at least one (or more than one) truth assignment that makes the overall statement true.</p><footer class=footline></footer></article><article class=default><header class=headline></header><h1 id=logical-equivalence>Logical Equivalence</h1><p>Two (or more) logical statements are said to be <em>logically equivalent</em> IFF (if and only if, ↔) they have the same truth value for every truth assignment; i.e., their truth tables evaluate exactly the same. (We sometimes refer to this as <em>semantic equivalence</em>.)</p><p>An example of logically equivalent statements are <code>q ∧ p</code> and <code>p ∧ (q ∧ p)</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>         *
+</span></span><span class=line><span class=cl>--------------
+</span></span><span class=line><span class=cl>p q # (p ∧ q)
+</span></span><span class=line><span class=cl>--------------
+</span></span><span class=line><span class=cl>T T #    T 
+</span></span><span class=line><span class=cl>T F #    F 
+</span></span><span class=line><span class=cl>F T #    F 
+</span></span><span class=line><span class=cl>F F #    F 
+</span></span><span class=line><span class=cl>---------------
+</span></span><span class=line><span class=cl>Contingent
+</span></span><span class=line><span class=cl>T: [T T]
+</span></span><span class=line><span class=cl>F: [F F] [F T] [T F]</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>         *
+</span></span><span class=line><span class=cl>-------------------
+</span></span><span class=line><span class=cl>p q #  p ∧ (q ∧ p)
+</span></span><span class=line><span class=cl>-------------------
+</span></span><span class=line><span class=cl>T T #    T    T 
+</span></span><span class=line><span class=cl>T F #    F    F 
+</span></span><span class=line><span class=cl>F T #    F    F 
+</span></span><span class=line><span class=cl>F F #    F    F 
+</span></span><span class=line><span class=cl>--------------------
+</span></span><span class=line><span class=cl>Contingent
+</span></span><span class=line><span class=cl>T : [T T]
+</span></span><span class=line><span class=cl>F : [F F] [F T] [T F]</span></span></code></pre></div><p>In these examples, notice that exactly the same set of truth assignments makes both statements true, and that exactly the same set of truth assignments makes both statements false.</p><p>Finding equivalent logical statements of fewer gates (states) is important to several fields. In computer science, fewer states can lead to less memory, fewer operations and smaller programs. In computer engineering, fewer gates means fewer circuits less power and less heat.</p><h2 id=common-equivalences>Common equivalences</h2><p>We can similarly use truth tables to show the following common logical equivalences:</p><ul><li>Double negative: <code>¬ ¬ p</code> and <code>p</code></li><li>Contrapositive: <code>p → q</code> and <code>¬ q → ¬ p</code></li><li>Expressing an implies using an OR: <code>p → q</code> and <code>¬ p ∨ q</code></li><li>One of DeMorgan&rsquo;s laws: <code>¬ (p ∧ q)</code> and <code>( ¬ p ∨ ¬ q)</code></li><li>Another of DeMorgan&rsquo;s laws: <code>¬ (p ∨ q)</code> and <code>( ¬ p ∧ ¬ q)</code></li></ul><h2 id=expressing-additional-operators>Expressing additional operators</h2><p>The bi-implication (<code>↔</code>) and exclusive or (<code>⊕</code>) operators are not directly used in this course. However, we can simulate both operators using a combination of <code>¬</code>, <code>∧</code>, <code>∨</code>, and <code>→</code>:</p><ul><li><code>p ↔ q</code>, which means &ldquo;p if and only if q&rdquo;, can be expressed as <code>(p → q) ∧ (q → p)</code></li><li><code>p ⊕ q</code>, which means &ldquo;p exclusive or q&rdquo;, can be expressed as <code>(p ∨ q) ∧ ¬(p ∧ q)</code></li></ul><footer class=footline></footer></article><article class=default><header class=headline></header><h1 id=semantic-entailment>Semantic Entailment</h1><h2 id=definition>Definition</h2><p>We say a set of premises, <code>p1</code>, <code>p2</code>, &mldr;, <code>pn</code> semantically entail a conclusion <code>c</code>, and we write:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>p1, p2, ..., pn ⊨ c</span></span></code></pre></div><p>if whenever we have a truth assignment that makes <code>p1</code>, <code>p2</code>, &mldr;, <code>pn</code> all true, then <code>c</code> is also true for that truth assignment.</p><p>(Note: we can use the ASCII replacement <code>|=</code> instead of the Unicode <code>⊨</code>, if we want.)</p><h2 id=showing-semantic-entailment>Showing semantic entailment</h2><p>Suppose we have premises <code>p ∧ q</code> and <code>p → r</code>. We want to see if these premises necessarily entail the conclusion <code>r ∧ q</code>.</p><p>First, we could make truth tables for each premise (being sure to list the variables <code>p</code>, <code>q</code> and <code>r</code> in each case, as that is the overall set of variables in the problem):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>//truth table for premise, p ∧ q
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>          *
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>p q r # p ∧ q
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>T T T #   T
+</span></span><span class=line><span class=cl>T T F #   T
+</span></span><span class=line><span class=cl>T F T #   F
+</span></span><span class=line><span class=cl>T F F #   F
+</span></span><span class=line><span class=cl>F T T #   F
+</span></span><span class=line><span class=cl>F T F #   F
+</span></span><span class=line><span class=cl>F F T #   F
+</span></span><span class=line><span class=cl>F F F #   F
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>Contingent
+</span></span><span class=line><span class=cl>T: [T T T] [T T F]
+</span></span><span class=line><span class=cl>F: [T F T] [T F F] [F T T] [F T F] [F F T] [F F F]</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>//truth table for premise, p → r
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>          *
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>p q r # p →: r
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>T T T #   T
+</span></span><span class=line><span class=cl>T T F #   F
+</span></span><span class=line><span class=cl>T F T #   T
+</span></span><span class=line><span class=cl>T F F #   F
+</span></span><span class=line><span class=cl>F T T #   T
+</span></span><span class=line><span class=cl>F T F #   T
+</span></span><span class=line><span class=cl>F F T #   T
+</span></span><span class=line><span class=cl>F F F #   T
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>Contingent
+</span></span><span class=line><span class=cl>T: [T T T] [T F T] [F T T] [F T F] [F F T] [F F F]
+</span></span><span class=line><span class=cl>F: [T T F] [T F F]</span></span></code></pre></div><p>Now, we notice that the truth assignment <code>[T T T]</code> is the only one that makes both premises true. Next, we make a truth table for our potential conclusion, <code>r ∧ q</code> (again, being sure to include all variables used in the problem):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>//truth table for potential conclusion, r ∧ q
+</span></span><span class=line><span class=cl>          *
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>p q r # r ∧ q
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>T T T #   T
+</span></span><span class=line><span class=cl>T T F #   F
+</span></span><span class=line><span class=cl>T F T #   F
+</span></span><span class=line><span class=cl>T F F #   F
+</span></span><span class=line><span class=cl>F T T #   T
+</span></span><span class=line><span class=cl>F T F #   F
+</span></span><span class=line><span class=cl>F F T #   F
+</span></span><span class=line><span class=cl>F F F #   F
+</span></span><span class=line><span class=cl>----------------------
+</span></span><span class=line><span class=cl>Contingent
+</span></span><span class=line><span class=cl>T: [T T T] [F T T]
+</span></span><span class=line><span class=cl>F: [T T F] [T F T] [T F F] [F T F] [F F T] [F F F]</span></span></code></pre></div><p>Here, we notice that the truth assignment <code>[T T T]</code> makes the conclusion true as well. So we see that whenever there is a truth assignment that makes all of our premises true, then that same truth assignment also makes our conclusion true.</p><p>Thus, <code>p ∧ q</code> and <code>p → r</code> semantically entail the conclusion <code>r ∧ q</code>, and we can write:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>p ∧ q, p → r ⊨ r ∧ q</span></span></code></pre></div><h2 id=semantic-entailment-with-one-truth-table>Semantic entailment with one truth table</h2><p>The process of making separate truth tables for each premise and the conclusion, and then examining each one to see if any truth assignment that makes all the premises true also makes the conclusion true, is fairly tedious.</p><p>We are trying to show that IF each premise is true, THEN we promise the conclusion is true. This sounds exactly like an IMPLIES statement, and in fact that is what we can use to simplify our process. If we are trying to show that <code>p1</code>, <code>p2</code>, &mldr;, <code>pn</code> semantically entail a conclusion <code>c</code> (i.e., that <code>p1, p2, ..., pn ⊨ c</code>), then we can instead create ONE truth table for the statement:</p><p><code>(p1 ∧ p2 ∧ ... ∧ pn) → c</code></p><p>If this statement is a tautology (which would mean that anytime all the premises were true, then the conclusion was also true), then we would also have that the premises semantically entail the conclusion.</p><p>In our previous example, we create a truth table for the statement <code>(p ∧ q) ∧ (p → r) → r ∧ q</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>                           *
+</span></span><span class=line><span class=cl>--------------------------------------
+</span></span><span class=line><span class=cl>p q r # (p ∧ q) ∧ (p →: r) →: r ∧ q
+</span></span><span class=line><span class=cl>--------------------------------------
+</span></span><span class=line><span class=cl>T T T #    T    T    T     T    T
+</span></span><span class=line><span class=cl>T T F #    T    F    F     T    F
+</span></span><span class=line><span class=cl>T F T #    F    F    T     T    F
+</span></span><span class=line><span class=cl>T F F #    F    F    F     T    F
+</span></span><span class=line><span class=cl>F T T #    F    F    T     T    T 
+</span></span><span class=line><span class=cl>F T F #    F    F    T     T    F
+</span></span><span class=line><span class=cl>F F T #    F    F    T     T    F
+</span></span><span class=line><span class=cl>F F F #    F    F    T     T    F
+</span></span><span class=line><span class=cl>---------------------------------------
+</span></span><span class=line><span class=cl>Tautology</span></span></code></pre></div><p>Then we see that it is indeed a tautology.</p><footer class=footline></footer></article></section></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Russell Feldhausen
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis301/commit/dec4297d81df48b5e02e2640601321e923ab5f5b>Aug 10, 2023</a></p></div></div><script src=/cis301/js/clipboard.min.js?1719515004 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1719515004 defer></script><script src=/cis301/js/theme.js?1719515004 defer></script></body></html>

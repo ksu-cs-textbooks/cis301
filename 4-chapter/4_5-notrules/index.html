@@ -1,951 +1,286 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 301: Logical Foundations of Programming">
-    <meta name="author" content="Julie Thornton">
-    <title>Negation Rules :: CIS 301 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/index.xml" rel="alternate" type="application/rss+xml" title="Negation Rules :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/index.print.html" rel="alternate" type="text/html" title="Negation Rules :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/tele.html" rel="alternate" type="text/html" title="Negation Rules :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/embed.html" rel="alternate" type="text/html" title="Negation Rules :: CIS 301 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924206" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924206" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1716924206" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924206" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924206" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1716924206" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924206" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924206" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1716924206" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1716924206" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1716924206" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1716924206" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1716924206" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1716924206"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1716924206"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1716924206" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div class="navigation">
-            <a class="nav nav-next topbar-link" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/index.html" title="Summary and Strategies (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
-          </div>
-          <div class="navigation">
-            <a class="nav nav-prev topbar-link" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/index.html" title="Implies Rules (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
-          </div>
-          <div id="top-print-link">
-            <a class="print-link topbar-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/index.print.html">
-              <i class="fas fa-print fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-github-link">
-            <a class="github-link topbar-link" title='Edit (CTRL+ALT+w)' href="https://gitlab.cs.ksu.edu/-/ide/project/cs-textbooks/cis301-textbook/edit/master/-/content/4-chapter/4_5-notRules.md" target="_blank">
-              <i class="fas fa-pen fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/index.html"><span itemprop="name">CIS 301 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/index.html"><span itemprop="name">Propositional Logic Proofs</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Negation Rules</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-          <div class="default-animation progress">
-            <div class="toc-wrapper"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#negation-elimination">Negation elimination</a></li>
-    <li><a href="#negation-introduction">Negation introduction</a></li>
-    <li><a href="#bottom-elimination">Bottom elimination</a></li>
-    <li><a href="#proof-by-contradiction">Proof by contradiction</a></li>
-    <li><a href="#example-1">Example 1</a></li>
-    <li><a href="#example-2">Example 2</a></li>
-    <li><a href="#example-3">Example 3</a></li>
-    <li><a href="#law-of-the-excluded-middle">Law of the excluded middle</a></li>
-  </ul>
-</nav>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="negation-rules">Negation Rules</h1>
-
-<p>In this section, we will see the deduction rules for the NOT operator. In this section, we will introduce the notion of a <em>contradiction</em>, which occurs when, for some proposition <code>P</code>, we have proved both the facts <code>P</code> and <code>¬ P</code>. This indicates that we are in an impossible situation, and often means that we have made a bad previous assumption. In Logika, we use an <code>F</code> (&ldquo;false&rdquo;) as a claim to indiciate that we&rsquo;ve reached a contradiction. In other texts, you sometime see the symbol <code>⊥</code> (which means &ldquo;bottom operator&rdquo;) for a contradiction.</p>
-<h2 id="negation-elimination">Negation elimination</h2>
-<p>The negation elimination rule allows you to claim that you have reached a contradiction. We can formalize the rule like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        P   ¬P
-</span></span><span style="display:flex;"><span>NegE : -----------
-</span></span><span style="display:flex;"><span>           F</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the `NegE rule:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(q, ¬q) ⊢ (F)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     q       )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     ¬q      )   by Premise,
-</span></span><span style="display:flex;"><span>        3 (     F       )   by NegE(1, 2)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>We use the <code>NegE</code> rule when we have facts for both <code>P</code> and <code>¬P</code> for some proposition <code>P</code>. When we use the justification, we first list the line number of the claim for <code>P</code> (line 1, in our case) and then the line number of the claim for <code>¬P</code> (line 2, in our case).</p>
-<p>Sometimes, the proposition <code>P</code> itself has a NOT operator. Consider this example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(¬q, ¬¬q) ⊢ (F)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     ¬q      )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     ¬¬q     )   by Premise,
-</span></span><span style="display:flex;"><span>        3 (     F       )   by NegE(1, 2)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>Here, our proposition <code>P</code> is the claim <code>¬q</code>, and our proposition that is of the form <code>¬P</code> is the claim <code>¬¬q</code>.</p>
-<h2 id="negation-introduction">Negation introduction</h2>
-<p>The negation introduction rule allows us to introduce a NOT operation. If assuming some proposition <code>P</code> leads to a contradiction, then we must have made a bad assumption &ndash; <code>P</code> must NOT be true after all. We can then introduce the fact <code>¬P</code>. We can formalize the negation introduction rule like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        SubProof(
-</span></span><span style="display:flex;"><span>            Assume ( P ),
-</span></span><span style="display:flex;"><span>            ...
-</span></span><span style="display:flex;"><span>            F
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>NotI : --------------
-</span></span><span style="display:flex;"><span>           ¬P</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>NotI</code> rule:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p,  q → ¬p)  ⊢  (¬q)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p           )       by Premise,
-</span></span><span style="display:flex;"><span>        2 (     q → ¬p      )       by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        3 SubProof(
-</span></span><span style="display:flex;"><span>            4 Assume (  q  ) ,
-</span></span><span style="display:flex;"><span>            5 (     ¬p      )       by ImplyE(2, 4),
-</span></span><span style="display:flex;"><span>            6 (     F       )       by NegE(1, 5)
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        7 (     ¬q          )       by NegI(3)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>Note that the negation introduction rule involves a subproof &ndash; if we wish to prove <code>¬P</code> for some proposition <code>P</code>, then we start a subproof where we assume <code>P</code>. If we are able to reach a contradiciton on the last line of that subproof, then we can use the <code>NegI</code> rule after the subproof ends to claim that our assumption was bad and that it is actually <code>¬P</code> that is true. When we use <code>¬i</code> as a justification, we list the line number corresponding to this subproof.</p>
-<h2 id="bottom-elimination">Bottom elimination</h2>
-<p>There is a special law for reasoning forwards from an impossible situation — the ⊥e law — which says, in the case of a contradiction, everything becomes a fact. (That is, &ldquo;if False is a fact, so is everything else ¬&rdquo;.) This rule is called &ldquo;bottom elimination&rdquo;, and is written as <code>BottomE</code>. Here is a formalization of the rule:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>              F
-</span></span><span style="display:flex;"><span>BottomE :  ------  for any proposition, Q, at all
-</span></span><span style="display:flex;"><span>              Q</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>BottomE</code> rule:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p, ¬p)  ⊢ (q)
-</span></span><span style="display:flex;"><span>Proof(
-</span></span><span style="display:flex;"><span>    1 (     p       )       by Premise,
-</span></span><span style="display:flex;"><span>    2 (     ¬p      )       by Premise,
-</span></span><span style="display:flex;"><span>    3 (     F       )       by NegE(1, 2),
-</span></span><span style="display:flex;"><span>    4 (     q       )       by BottomE(3)
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>Note that when we use <code>BottomE</code> as the justification, we list the line number of where we reached a contradiction (<code>F</code>).</p>
-<p>The bottom elimination rule works well with case analysis, where we discover that one case is impossible. Here is a classic example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p ∨ q, ¬p) ⊢ (q)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p ∨ q       )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     ¬p          )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        3 SubProof(
-</span></span><span style="display:flex;"><span>            4 Assume(  p  ),
-</span></span><span style="display:flex;"><span>            5 (     F       )   by NegE(4, 2),
-</span></span><span style="display:flex;"><span>            6 (     q       )   by BottomE(5)
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        7 SubProof(
-</span></span><span style="display:flex;"><span>            8 Assume(  q  )
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        9 (     q           )   by OrE(1, 3, 7)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>Considering the premise, <code>p ∨ q</code>, we analyze our two cases by starting OR elimination. The first case, where <code>p</code> holds true, is impossible, because it causes a contradiction. The <code>BottomE</code>-rule lets us gracefully prove <code>q</code> in this &ldquo;impossible case&rdquo;. (You can read lines 4-6 as saying, &ldquo;in the case when <code>p</code> might hold true, there is a contradiction, and in such an impossible situation, we can deduce whatever we like, so we deduce <code>q</code> to finish this impossible case&rdquo;.)</p>
-<p>The second case, that <code>q</code> holds true, is the only realistic case, and it immediately yields the conclusion. The proof finishes the two-case analysis with the <code>OrE</code> rule.</p>
-<h2 id="proof-by-contradiction">Proof by contradiction</h2>
-<p>The proof by contraction rule, <code>PbC</code>, says that when assuming <code>¬P</code> leads to a contradiction for some proposition <code>P</code>, then we made a bad assumption and thus <code>P</code> must be true. It is very similar to the <code>NegI</code> rule, except <code>PbC</code> has us assuming <code>¬P</code> and eventually concluding <code>P</code>, while the <code>NegI</code> rule has us assuming <code>P</code> and eventually concluding <code>¬P</code>.</p>
-<p>Here is a formalization of <code>PbC</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>        SubProof(
-</span></span><span style="display:flex;"><span>             Assume( ¬P ),
-</span></span><span style="display:flex;"><span>             ...
-</span></span><span style="display:flex;"><span>             F   
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>PbC:   --------------------
-</span></span><span style="display:flex;"><span>               P</span></span></code></pre></div><p>And here is an example that demonstrates the syntax of the rule:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(¬¬p) ⊢ (p)
-</span></span><span style="display:flex;"><span>Proof(
-</span></span><span style="display:flex;"><span>    1 (     ¬¬p         )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    2 SubProof(
-</span></span><span style="display:flex;"><span>        3 Assume (  ¬p  ),
-</span></span><span style="display:flex;"><span>        4 (     F       )   by NegE(3, 1)
-</span></span><span style="display:flex;"><span>    ),
-</span></span><span style="display:flex;"><span>    5 (     p           )   by PbC(2)
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>When we use the <code>PbC</code> rule as a justification for a claim <code>P</code>, we cite the line number of the subproof where we assumed <code>¬P</code> and ended in a contradiction.</p>
-<h2 id="example-1">Example 1</h2>
-<p>Suppose we want to prove the following sequent:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))</span></span></code></pre></div><p>We start by listing our premise, and extracting the two sides of the AND statement:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     ¬p ∧ ¬q     )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     ¬p          )   by AndE1(1),
-</span></span><span style="display:flex;"><span>        3 (     ¬q          )   by AndE2(1),
-</span></span><span style="display:flex;"><span>        ...
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>Next, we see that our conclusion has the form NOT (something), so this tells us that we will need to introduce a NOT (using the <code>NegI</code> rule). In fact, ANY time we wish to prove a proposition of the form NOT (something), we will always use the <code>NegI</code> rule. (We will discuss proof strategies in detail in the next section.) Since we want to prove <code>¬(p ∨ q)</code>, then we open a subproof where we assume <code>p ∨ q</code>. If we can end that subproof with a contradiction, then we can use <code>NeEgI</code> afterwards to conclude <code>¬(p ∨ q)</code>.</p>
-<p>We know that we want this proof structure:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     ¬p ∧ ¬q     )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     ¬p          )   by AndE1(1),
-</span></span><span style="display:flex;"><span>        3 (     ¬q          )   by AndE2(1),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        4 SubProof(
-</span></span><span style="display:flex;"><span>            5 Assume (  p ∨ q  ),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //want to reach a contradiction
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //will use NegI to conclude ¬(p ∨ q)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>We know we must reach a contradiction in our subproof. We see that we have claims <code>¬p</code>, <code>¬q</code>, and <code>p ∨ q </code>. Since at least one of <code>p ∨ q </code> is true, and since either one would yield a contradiction with one of <code>¬p</code> or <code>¬q</code>, then we start on OR elimination:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     ¬p ∧ ¬q     )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     ¬p          )   by AndE1(1),
-</span></span><span style="display:flex;"><span>        3 (     ¬q          )   by AndE2(1),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        4 SubProof(
-</span></span><span style="display:flex;"><span>            5 Assume (  p ∨ q  ),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //OR elimination subproofs on p ∨ q
-</span></span><span style="display:flex;"><span>            6 SubProof(
-</span></span><span style="display:flex;"><span>                7 Assume(  p  ),
-</span></span><span style="display:flex;"><span>                8 (     F       )   by NegE(7, 2)
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            9 SubProof(
-</span></span><span style="display:flex;"><span>                10 Assume(  q  ),
-</span></span><span style="display:flex;"><span>                11 (    F       )   by NegE(10, 3)
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //use OrE rule to tie together subproofs
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //want to reach a contradiction
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //will use NegI to conclude ¬(p ∨ q)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>We see that both OR elimination subproofs ended with a contradiction (<code>F</code>). Just like any other use of <code>OrE</code>, we restate that common conclusion after the two subproofs. We knew at least one of <code>p</code> or <code>q</code> were true, and both ended in a contradiction &ndash; so the contradiction holds no matter what:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     ¬p ∧ ¬q     )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     ¬p          )   by AndE1(1),
-</span></span><span style="display:flex;"><span>        3 (     ¬q          )   by AndE2(1),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        4 SubProof(
-</span></span><span style="display:flex;"><span>            5 Assume (  p ∨ q  ),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //OR elimination subproofs on p ∨ q
-</span></span><span style="display:flex;"><span>            6 SubProof(
-</span></span><span style="display:flex;"><span>                7 Assume(  p  ),
-</span></span><span style="display:flex;"><span>                8 (     F       )   by NegE(7, 2)
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            9 SubProof(
-</span></span><span style="display:flex;"><span>                10 Assume(  q  ),
-</span></span><span style="display:flex;"><span>                11 (    F       )   by NegE(10, 3)
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //use OrE rule to tie together subproofs
-</span></span><span style="display:flex;"><span>            12 (        F       )   by OrE(5, 6 , 8)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //want to reach a contradiction
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //will use NegI to conclude ¬(p ∨ q)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>All that remains is the use the <code>NegI</code> rule to finish subproof 4, as that subproof ended with a contradiction:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     ¬p ∧ ¬q     )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     ¬p          )   by AndE1(1),
-</span></span><span style="display:flex;"><span>        3 (     ¬q          )   by AndE2(1),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        4 SubProof(
-</span></span><span style="display:flex;"><span>            5 Assume (  p ∨ q  ),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //OR elimination subproofs on p ∨ q
-</span></span><span style="display:flex;"><span>            6 SubProof(
-</span></span><span style="display:flex;"><span>                7 Assume(  p  ),
-</span></span><span style="display:flex;"><span>                8 (     F       )   by NegE(7, 2)
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            9 SubProof(
-</span></span><span style="display:flex;"><span>                10 Assume(  q  ),
-</span></span><span style="display:flex;"><span>                11 (    F       )   by NegE(10, 3)
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //use OrE rule to tie together subproofs
-</span></span><span style="display:flex;"><span>            12 (        F       )   by OrE(5, 6 , 8)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //want to reach a contradiction
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //will use NegI to conclude ¬(p ∨ q)
-</span></span><span style="display:flex;"><span>        13 (        ¬(p ∨ q)    )   by NegI(4)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><h2 id="example-2">Example 2</h2>
-<p>When doing propositional logic translations, we learned that <code>p → q</code> is equivalent to its <em>contrapositive</em>, <code>¬q → ¬p</code>. We will prove one direction of this equivalence (to show two statements are <em>provably equivalent,</em> which we will see in section 4.8, we would need to prove both directions):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → q) ⊢ (¬q → ¬p)</span></span></code></pre></div><p>We notice that the top-level operator of our conclusion is an IMPLIES operator, so we know that we need to introduce an implies operator. We saw in the previous section that the blueprint for introducing an implies operator is with a subproof: assume the left side of the goal implies statement, and try to reach the right side of the goal implies statement by the end of the subproof.</p>
-<p>We have this proof structure:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → q) ⊢ (¬q → ¬p)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p → q       )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        2 SubProof(
-</span></span><span style="display:flex;"><span>            3 Assume(  ¬q  ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //goal: reach ¬p
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //use →i to conclude ¬q → ¬p
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>We see that our goal in the subproof is the show ¬p &ndash; if we could do that, then we could tie together that subproof with the →i rule. Since our intermediate goal is to prove NOT (something), then we use our strategy for negation introduction as an inner subproof. We finish the proof as shown:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → q) ⊢ (¬q → ¬p)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p → q       )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        2 SubProof(
-</span></span><span style="display:flex;"><span>            3 Assume(  ¬q  ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //use ¬i strategy to prove ¬p
-</span></span><span style="display:flex;"><span>            4 SubProof(
-</span></span><span style="display:flex;"><span>                5 Assume(  p  ),
-</span></span><span style="display:flex;"><span>                6 (     q       )   by NegE(1, 5),
-</span></span><span style="display:flex;"><span>                7 (     F       )   by NegE(6, 3)
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            8 (     ¬p          )   by NegI(4)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //goal: reach ¬p
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //use →i to conclude ¬q → ¬p
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        9 (     ¬q → ¬p         )   by ImplyI(2)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><h2 id="example-3">Example 3</h2>
-<p>Suppose we want to prove the sequent:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(¬(¬p ∨ ¬q)) ⊢ (p ∧ q)</span></span></code></pre></div><p>We see that there is nothing to extract from our premise, and that the top-level operator of the conclusion (<code>p ∧ q</code>) is an AND. We see that we will need to introduce an AND statement &ndash; but the only way we can create <code>p ∧ q</code> is to separately prove both <code>p</code> and <code>q</code>.</p>
-<p>It is not immediately clear how to prove either <code>p</code> or <code>q</code>. We will discuss proof strategies in more detail in the next section, but <code>PbC</code> is a good fallback option if you don&rsquo;t have a clear path for how to prove something and some of the claims in the proof involve negation. Since we wish to prove <code>p</code>, then will will assume <code>¬p</code> in a subproof. If we can reach a contradiction, then we can use <code>PbC</code> to conclude <code>p</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(¬(¬p ∨ ¬q)) ⊢ (p ∧ q)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     ¬(¬p ∨ ¬q)      )       by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        2 SubProof(
-</span></span><span style="display:flex;"><span>            3 Assume(  ¬p  ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //goal: contradiction
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //use PbC to conclude p
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //similarly prove q
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //use AndI to conclude p ∧ q
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>In subproof 2, we know we need to end with a contradiction. The only propositions we have to work with are <code>¬(¬p ∨ ¬q)</code> and <code>¬p</code>. But if we use <code>OrI1</code> with <code>¬p</code>, then we could have <code>¬p ∨ ¬q</code> &ndash; and then we could claim a contradiction. We complete the proof as shown (using the same strategy to prove <code>q</code>):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(¬(¬p ∨ ¬q)) ⊢ (p ∧ q)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     ¬(¬p ∨ ¬q)      )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        2 SubProof(
-</span></span><span style="display:flex;"><span>            3 Assume(  ¬p  ),
-</span></span><span style="display:flex;"><span>            4 (     ¬p ∨ ¬q     )   by OrI1(3),
-</span></span><span style="display:flex;"><span>            5 (     F           )   by NegE(4, 1) 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //goal: contradiction
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //use PbC to conclude p
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        6 (     p               )   by PbC(2),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //similarly prove q
-</span></span><span style="display:flex;"><span>        7 SubProof(
-</span></span><span style="display:flex;"><span>            8 Assume(  ¬q  ),
-</span></span><span style="display:flex;"><span>            9 (     ¬p ∨ ¬q     )   by OrI2(8),
-</span></span><span style="display:flex;"><span>            10 (    F           )   by NegE(9, 1) 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //goal: contradiction
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        11 (        q           )   by PbC(7),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //use AndI to conclude p ∧ q
-</span></span><span style="display:flex;"><span>        12 (        p ∧ q       )   by AndI(6, 11)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><h2 id="law-of-the-excluded-middle">Law of the excluded middle</h2>
-<p>The <em>law of the excluded middle (LEM)</em> is famous consequence of <code>PbC</code>: from no starting premises at all, we can prove <code>p ∨ ¬ p</code> for any proposition we can imagine:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>⊢ (p ∨ ¬p)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 SubProof(
-</span></span><span style="display:flex;"><span>            2 Assume(  ¬(p ∨ ¬p)  ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            3 SubProof(
-</span></span><span style="display:flex;"><span>                4 Assume(  p  ),
-</span></span><span style="display:flex;"><span>                5 (     p ∨ ¬ p         )   by OrI1(4),
-</span></span><span style="display:flex;"><span>                6 (     F               )   by NegE(5, 2)
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            7 (     ¬p                  )   by NotI(3),
-</span></span><span style="display:flex;"><span>            8 (     p ∨ ¬p              )   by OrI2(7),
-</span></span><span style="display:flex;"><span>            9 (     F                   )   By NegE(8, 2)
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        10 (        p ∨ ¬p              )   By PbC(1)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>In other proofs involving negation and no clear path forward, it is sometimes useful to first derive LEM (this is possible since no premises are needed). If we have the claim <code>p ∨ ¬ p</code> in a proof, then we can use OR elimination where we separately assume <code>p</code> and then <code>¬ p</code> to try to reach the same conclusion. Here is one such example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → q) ⊢ (¬p ∨ q)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p → q       )   by Premise,
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        // start of previous p ∨ ¬ p proof
-</span></span><span style="display:flex;"><span>        2 SubProof(
-</span></span><span style="display:flex;"><span>            3 Assume(  ¬(p ∨ ¬p)  ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            4 SubProof(
-</span></span><span style="display:flex;"><span>                5 Assume(  p  ),
-</span></span><span style="display:flex;"><span>                6 (     p ∨ ¬ p         )   by OrI1(5),
-</span></span><span style="display:flex;"><span>                7 (     F               )   by NegE(6, 3)
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            8 (     ¬p                  )   by NotI(4),
-</span></span><span style="display:flex;"><span>            9 (     p ∨ ¬p              )   by OrI2(8),
-</span></span><span style="display:flex;"><span>            10 (    F                   )   By NegE(9, 3)
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        11 (        p ∨ ¬p              )   By PbC(2),  // conclusion of p ∨ ¬ p proof
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        12 SubProof(
-</span></span><span style="display:flex;"><span>            13 Assume(  p  ),
-</span></span><span style="display:flex;"><span>            14 (        q               )   By ImplyE(1, 13), 
-</span></span><span style="display:flex;"><span>            15 (        ¬p ∨ q          )   By OrI2(14)      
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        16 SubProof(
-</span></span><span style="display:flex;"><span>            17 Assume(  ¬p  ),
-</span></span><span style="display:flex;"><span>            18 (        ¬p ∨ q          )   By OrI1(17)
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        19 (        ¬p ∨ q              )   By OrE(11, 12, 16)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Julie Thornton
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/9def8608099562c038d3db8aa233aad420cd5232">Apr 2, 2024</a>
-</p>
-</div>
-
-    
-    </div>
-    <aside id="sidebar" class="default-animation">
-      <div id="header-wrapper" class="default-animation">
-        <div id="header" class="default-animation">
-
-<a id="logo" href="https://ksu-cs-textbooks.github.io/cis301/">
-  CIS 301: Logical Foundations of Programming
-</a>
-
-        </div>
-        <form action="https://ksu-cs-textbooks.github.io/cis301/search.html" method="get"><div class="searchbox default-animation">
-          <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
-          <label class="a11y-only" for="search-by">Search</label>
-          <input data-search-input id="search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div></form>
-        <script>
-          var contentLangs=['en'];
-        </script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/auto-complete.js?1716924207" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr/lunr.min.js?1716924207" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr/lunr.stemmer.support.min.js?1716924207" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr/lunr.multi.min.js?1716924207" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr/lunr.en.min.js?1716924207" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/search.js?1716924207" defer></script>
-      </div>
-      <div id="content-wrapper" class="highlightable">
-        <ul class="topics enlarge morespace collapsible-menu">
-          <li data-nav-id="/0-chapter/index.html" class=""><input type="checkbox" id="section-c55c9f751a28ecc9415234375cddd395" aria-controls="subsections-c55c9f751a28ecc9415234375cddd395"><label for="section-c55c9f751a28ecc9415234375cddd395"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Getting Started</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/index.html"><b>0. </b>Getting Started</a><ul id="subsections-c55c9f751a28ecc9415234375cddd395" class="morespace collapsible-menu">
-          <li data-nav-id="/0-chapter/0_1-toolsguide/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/0_1-toolsguide/index.html">0.1. Tools Guide</a></li></ul></li>
-          <li data-nav-id="/1-chapter/index.html" class=""><input type="checkbox" id="section-7a71fe25dd66b523fca4004b7c4d01d0" aria-controls="subsections-7a71fe25dd66b523fca4004b7c4d01d0"><label for="section-7a71fe25dd66b523fca4004b7c4d01d0"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics and Logic Puzzles</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/index.html"><b>1. </b>Basics and Logic Puzzles</a><ul id="subsections-7a71fe25dd66b523fca4004b7c4d01d0" class="morespace collapsible-menu">
-          <li data-nav-id="/1-chapter/1_1-logicbasics/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_1-logicbasics/index.html">1.1. Basic Logical Reasoning</a></li>
-          <li data-nav-id="/1-chapter/1_2-knightsknaves/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_2-knightsknaves/index.html">1.2. Knights and Knaves</a></li>
-          <li data-nav-id="/1-chapter/1_3-otherpuzzles/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_3-otherpuzzles/index.html">1.3. Other Puzzles</a></li></ul></li>
-          <li data-nav-id="/2-chapter/index.html" class=""><input type="checkbox" id="section-c23f766dd7728aa0e1cff094001eac05" aria-controls="subsections-c23f766dd7728aa0e1cff094001eac05"><label for="section-c23f766dd7728aa0e1cff094001eac05"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Truth Tables</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/index.html"><b>2. </b>Truth Tables</a><ul id="subsections-c23f766dd7728aa0e1cff094001eac05" class="morespace collapsible-menu">
-          <li data-nav-id="/2-chapter/2_1-opscircuits/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_1-opscircuits/index.html">2.1. Operators and Circuits</a></li>
-          <li data-nav-id="/2-chapter/2_2-logikatruth/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/index.html">2.2. Truth Tables in Logika</a></li>
-          <li data-nav-id="/2-chapter/2_3-satis/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_3-satis/index.html">2.3. Satisfiability</a></li>
-          <li data-nav-id="/2-chapter/2_4-logicalequiv/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_4-logicalequiv/index.html">2.4. Logical Equivalence</a></li>
-          <li data-nav-id="/2-chapter/2_5-sementail/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_5-sementail/index.html">2.5. Semantic Entailment</a></li></ul></li>
-          <li data-nav-id="/3-chapter/index.html" class=""><input type="checkbox" id="section-ccb531d159d5247057d21618514721b6" aria-controls="subsections-ccb531d159d5247057d21618514721b6"><label for="section-ccb531d159d5247057d21618514721b6"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Propositional Logic Translations</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/index.html"><b>3. </b>Propositional Logic Translations</a><ul id="subsections-ccb531d159d5247057d21618514721b6" class="morespace collapsible-menu">
-          <li data-nav-id="/3-chapter/3_1-propatom/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_1-propatom/index.html">3.1. Propositional Atoms</a></li>
-          <li data-nav-id="/3-chapter/3_2-notandor/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_2-notandor/index.html">3.2. NOT, AND, OR Translations</a></li>
-          <li data-nav-id="/3-chapter/3_3-implies/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_3-implies/index.html">3.3. Implies Translations</a></li>
-          <li data-nav-id="/3-chapter/3_4-equiv/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_4-equiv/index.html">3.4. Equivalent Translations</a></li>
-          <li data-nav-id="/3-chapter/3_5-knightsknavestt/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_5-knightsknavestt/index.html">3.5. Knights and Knaves, revisited</a></li></ul></li>
-          <li data-nav-id="/4-chapter/index.html" class="parent "><input type="checkbox" id="section-8ebf970484325d93d52075c7c72ba517" aria-controls="subsections-8ebf970484325d93d52075c7c72ba517" checked><label for="section-8ebf970484325d93d52075c7c72ba517"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Propositional Logic Proofs</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/index.html"><b>4. </b>Propositional Logic Proofs</a><ul id="subsections-8ebf970484325d93d52075c7c72ba517" class="morespace collapsible-menu">
-          <li data-nav-id="/4-chapter/4_1-intro/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/index.html">4.1. Introduction</a></li>
-          <li data-nav-id="/4-chapter/4_2-andrules/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/index.html">4.2. AND Rules</a></li>
-          <li data-nav-id="/4-chapter/4_3-orrules/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/index.html">4.3. OR Rules</a></li>
-          <li data-nav-id="/4-chapter/4_4-impliesrules/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/index.html">4.4. Implies Rules</a></li>
-          <li data-nav-id="/4-chapter/4_5-notrules/index.html" class="active"><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/index.html">4.5. Negation Rules</a></li>
-          <li data-nav-id="/4-chapter/4_6-strategies/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/index.html">4.6. Summary and Strategies</a></li>
-          <li data-nav-id="/4-chapter/4_7-theorems/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_7-theorems/index.html">4.7. Theorems</a></li>
-          <li data-nav-id="/4-chapter/4_8-equivalence/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_8-equivalence/index.html">4.8. Equivalence</a></li>
-          <li data-nav-id="/4-chapter/4_9-soundcomplete/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_9-soundcomplete/index.html">4.9. Soundness and Completeness</a></li></ul></li>
-          <li data-nav-id="/5-chapter/index.html" class=""><input type="checkbox" id="section-b69c30f957b0ff55c1e9673979ceb29d" aria-controls="subsections-b69c30f957b0ff55c1e9673979ceb29d"><label for="section-b69c30f957b0ff55c1e9673979ceb29d"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Predicate Logic Translations</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/index.html"><b>5. </b>Predicate Logic Translations</a><ul id="subsections-b69c30f957b0ff55c1e9673979ceb29d" class="morespace collapsible-menu">
-          <li data-nav-id="/5-chapter/5_1-motivation/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_1-motivation/index.html">5.1. Motivation</a></li>
-          <li data-nav-id="/5-chapter/5_2-predsyntax/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_2-predsyntax/index.html">5.2. Syntax</a></li>
-          <li data-nav-id="/5-chapter/5_3-singlequantifier/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_3-singlequantifier/index.html">5.3. Single Quantifier</a></li>
-          <li data-nav-id="/5-chapter/5_4-multquant/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_4-multquant/index.html">5.4. Multiple Quantifiers</a></li></ul></li>
-          <li data-nav-id="/6-chapter/index.html" class=""><input type="checkbox" id="section-482218cb3a05b9572157ed70ed9a5c02" aria-controls="subsections-482218cb3a05b9572157ed70ed9a5c02"><label for="section-482218cb3a05b9572157ed70ed9a5c02"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Predicate Logic Proofs</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/index.html"><b>6. </b>Predicate Logic Proofs</a><ul id="subsections-482218cb3a05b9572157ed70ed9a5c02" class="morespace collapsible-menu">
-          <li data-nav-id="/6-chapter/6_1-univrules/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/index.html">6.1. Rules with ∀</a></li>
-          <li data-nav-id="/6-chapter/6_2-existrules/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/index.html">6.2. Rules with ∃</a></li>
-          <li data-nav-id="/6-chapter/6_3-nested/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/index.html">6.3. Nested Quantifiers</a></li>
-          <li data-nav-id="/6-chapter/6_4-equiv/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/index.html">6.4. Equivalence</a></li>
-          <li data-nav-id="/6-chapter/6_5-strategies/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_5-strategies/index.html">6.5. Summary and Strategies</a></li>
-          <li data-nav-id="/6-chapter/6_6-soundcomplete/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_6-soundcomplete/index.html">6.6. Soundness and Completeness</a></li></ul></li>
-          <li data-nav-id="/7-chapter/index.html" class=""><input type="checkbox" id="section-fc25ecfcb3d8e929949e8db759e88bab" aria-controls="subsections-fc25ecfcb3d8e929949e8db759e88bab"><label for="section-fc25ecfcb3d8e929949e8db759e88bab"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Mathematical Induction</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/index.html"><b>7. </b>Mathematical Induction</a><ul id="subsections-fc25ecfcb3d8e929949e8db759e88bab" class="morespace collapsible-menu">
-          <li data-nav-id="/7-chapter/7_1-process/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_1-process/index.html">7.1. Induction Process</a></li>
-          <li data-nav-id="/7-chapter/7_2-algebraex/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_2-algebraex/index.html">7.2. Algebra example</a></li>
-          <li data-nav-id="/7-chapter/7_3-divex/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_3-divex/index.html">7.3. Divisibility example</a></li>
-          <li data-nav-id="/7-chapter/7_4-setex/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/index.html">7.4. Set example</a></li></ul></li>
-          <li data-nav-id="/8-chapter/index.html" class=""><input type="checkbox" id="section-bd411d4b09a07aa69f5152043fa837ed" aria-controls="subsections-bd411d4b09a07aa69f5152043fa837ed"><label for="section-bd411d4b09a07aa69f5152043fa837ed"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Intro to Programming Logic</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/index.html"><b>8. </b>Intro to Programming Logic</a><ul id="subsections-bd411d4b09a07aa69f5152043fa837ed" class="morespace collapsible-menu">
-          <li data-nav-id="/8-chapter/8_1-goal/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/index.html">8.1. Programming Logic Goal</a></li>
-          <li data-nav-id="/8-chapter/8_2-logikaprograms/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/index.html">8.2. Logika Programs</a></li>
-          <li data-nav-id="/8-chapter/8_3-assertassume/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_3-assertassume/index.html">8.3. Assert and Assume</a></li>
-          <li data-nav-id="/8-chapter/8_4-algebrasubst/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_4-algebrasubst/index.html">8.4. Algebra and subst Rules</a></li>
-          <li data-nav-id="/8-chapter/8_5-assignment/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_5-assignment/index.html">8.5. Assignment Statements</a></li>
-          <li data-nav-id="/8-chapter/8_6-divmod/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_6-divmod/index.html">8.6. Integer Division and Modulo</a></li>
-          <li data-nav-id="/8-chapter/8_7-conditionals/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/index.html">8.7. Conditional Statements</a></li></ul></li>
-          <li data-nav-id="/9-chapter/index.html" class=""><input type="checkbox" id="section-708a4026c5b157dd8da0a277e359073f" aria-controls="subsections-708a4026c5b157dd8da0a277e359073f"><label for="section-708a4026c5b157dd8da0a277e359073f"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Functions and Loops</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/index.html"><b>9. </b>Functions and Loops</a><ul id="subsections-708a4026c5b157dd8da0a277e359073f" class="morespace collapsible-menu">
-          <li data-nav-id="/9-chapter/9_1-functions/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_1-functions/index.html">9.1. Functions</a></li>
-          <li data-nav-id="/9-chapter/9_2-recursion/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/index.html">9.2. Recursion</a></li>
-          <li data-nav-id="/9-chapter/9_3-loops/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_3-loops/index.html">9.3. Loops</a></li>
-          <li data-nav-id="/9-chapter/9_4-logikafacts/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_4-logikafacts/index.html">9.4. Logika Facts</a></li>
-          <li data-nav-id="/9-chapter/9_5-summary/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_5-summary/index.html">9.5. Summary</a></li></ul></li>
-          <li data-nav-id="/10-chapter/index.html" class=""><input type="checkbox" id="section-83e8e84779c32ba319a378089810947b" aria-controls="subsections-83e8e84779c32ba319a378089810947b"><label for="section-83e8e84779c32ba319a378089810947b"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Sequences, Globals, and Termination</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/index.html"><b>10. </b>Sequences, Globals, and Termination</a><ul id="subsections-83e8e84779c32ba319a378089810947b" class="morespace collapsible-menu">
-          <li data-nav-id="/10-chapter/10_1-modes/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_1-modes/index.html">10.1 Logika Modes</a></li>
-          <li data-nav-id="/10-chapter/10_2-intosequences/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_2-intosequences/index.html">10.2 Intro to Sequences</a></li>
-          <li data-nav-id="/10-chapter/10_3-seqfn/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/index.html">10.3 Sequences in Functions</a></li>
-          <li data-nav-id="/10-chapter/10_4-seqloop/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_4-seqloop/index.html">10.4 Sequences in Loops</a></li>
-          <li data-nav-id="/10-chapter/10_5-globals/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5-globals/index.html">10.5 Global Variables</a></li>
-          <li data-nav-id="/10-chapter/10_6-termination/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_6-termination/index.html">10.6 Termination</a></li></ul></li>
-        </ul>
-        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
-        <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
-        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
-          <ul>
-            <li id="select-language-container" class="footerLangSwitch">
-              <div class="padding menu-control">
-                <i class="fas fa-language fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="control-style">
-                  <label class="a11y-only" for="select-language">Language</label>
-                  <select id="select-language" onchange="location = baseUri + this.value;">
-                  </select>
-                </div>
-                <div class="clear"></div>
-              </div>
-            </li>
-            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
-              <div class="padding menu-control">
-                <i class="fas fa-paint-brush fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="control-style">
-                  <label class="a11y-only" for="select-variant">Theme</label>
-                  <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                    <option id="auto" value="auto" selected>Auto</option>
-                    <option id="light-theme" value="light-theme">Light Theme</option>
-                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
-                  </select>
-                </div>
-                <div class="clear"></div>
-              </div>
-              <script>window.variants && variants.markSelectedVariant();</script>
-            </li>
-            <li class="footerVisitedLinks">
-              <div class="padding menu-control">
-                <i class="fas fa-history fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="control-style">
-                  <button onclick="clearHistory();">Clear History</button>
-                </div>
-                <div class="clear"></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div id="footer" class="footerFooter showFooter"><style>
-  #footer {
-      font-size: 13px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem 1rem;
-      min-width: 230px;
-      max-width: 300px;
-  }
-  #footer p {
-      margin: 0;
-  }
-</style>
-  
-<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/K-State-Computational-Core/hugo-theme-relearn/tree/main">Hugo Relearn Theme</a>.</p>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: .5rem auto" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
-
-        </div>
-      </div>
-    </aside>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1716924207" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1716924207" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1716924207" defer></script>
-  </body>
-</html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="In this section, we will see the deduction rules for the NOT operator. In this section, we will introduce the notion of a contradiction, which occurs when, for some proposition P, we have proved both the facts P and ¬ P. This indicates that we are in an impossible situation, and often means that we have made a bad previous assumption. In Logika, we use an F (“false”) as a claim to indiciate that we’ve reached a contradiction."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Negation Rules :: CIS 301 Textbook"><meta name=twitter:description content="In this section, we will see the deduction rules for the NOT operator. In this section, we will introduce the notion of a contradiction, which occurs when, for some proposition P, we have proved both the facts P and ¬ P. This indicates that we are in an impossible situation, and often means that we have made a bad previous assumption. In Logika, we use an F (“false”) as a claim to indiciate that we’ve reached a contradiction."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/4-chapter/4_5-notrules/"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Negation Rules :: CIS 301 Textbook"><meta property="og:description" content="In this section, we will see the deduction rules for the NOT operator. In this section, we will introduce the notion of a contradiction, which occurs when, for some proposition P, we have proved both the facts P and ¬ P. This indicates that we are in an impossible situation, and often means that we have made a bad previous assumption. In Logika, we use an F (“false”) as a claim to indiciate that we’ve reached a contradiction."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Propositional Logic Proofs"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2024-04-02T16:31:43-05:00"><meta itemprop=name content="Negation Rules :: CIS 301 Textbook"><meta itemprop=description content="In this section, we will see the deduction rules for the NOT operator. In this section, we will introduce the notion of a contradiction, which occurs when, for some proposition P, we have proved both the facts P and ¬ P. This indicates that we are in an impossible situation, and often means that we have made a bad previous assumption. In Logika, we use an F (“false”) as a claim to indiciate that we’ve reached a contradiction."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2024-04-02T16:31:43-05:00"><meta itemprop=wordCount content="2570"><title>Negation Rules :: CIS 301 Textbook</title>
+<link href=/cis301/4-chapter/4_5-notrules/index.xml rel=alternate type=application/rss+xml title="Negation Rules :: CIS 301 Textbook"><link href=/cis301/4-chapter/4_5-notrules/index.print.html rel=alternate type=text/html title="Negation Rules :: CIS 301 Textbook"><link href=/cis301/4-chapter/4_5-notrules/tele.html rel=alternate type=text/html title="Negation Rules :: CIS 301 Textbook"><link href=/cis301/4-chapter/4_5-notrules/embed.html rel=alternate type=text/html title="Negation Rules :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1719515002 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1719515002 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1719515002 rel=stylesheet><link href=/cis301/css/auto-complete.css?1719515002 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1719515002 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1719515002 rel=stylesheet><link href=/cis301/css/fonts.css?1719515002 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1719515002 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1719515002 rel=stylesheet><link href=/cis301/css/theme-auto.css?1719515002 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-auto.css?1719515002 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1719515002 rel=stylesheet><link href=/cis301/css/print.css?1719515002 rel=stylesheet media=print><script src=/cis301/js/variant.js?1719515002></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1719515002 rel=stylesheet></head><body class="mobile-support html disableInlineCopyToClipboard" data-url=/cis301/4-chapter/4_5-notrules/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div><div class="topbar-button topbar-button-toc" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="Table of Contents (CTRL+ALT+t)"><i class="fa-fw fas fa-list-alt"></i></button><div class=topbar-content><div class=topbar-content-wrapper><nav class=TableOfContents><ul><li><a href=#negation-elimination>Negation elimination</a></li><li><a href=#negation-introduction>Negation introduction</a></li><li><a href=#bottom-elimination>Bottom elimination</a></li><li><a href=#proof-by-contradiction>Proof by contradiction</a></li><li><a href=#example-1>Example 1</a></li><li><a href=#example-2>Example 2</a></li><li><a href=#example-3>Example 3</a></li><li><a href=#law-of-the-excluded-middle>Law of the excluded middle</a></li></ul></nav></div></div></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis301/4-chapter/><span itemprop=name>Propositional Logic Proofs</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Negation Rules</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-edit" data-content-empty=disable data-width-s=area-more data-width-m=show data-width-l=show><a class=topbar-control href=https://github.com/ksu-cs-textbooks/cis301/edit/main/content/4-chapter/4_5-notRules.md target=_blank title="Edit (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></div><div class="topbar-button topbar-button-print" data-content-empty=disable data-width-s=area-more data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/4-chapter/4_5-notrules/index.print.html title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a></div><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/4-chapter/4_4-impliesrules/ title="Implies Rules (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/4-chapter/4_6-strategies/ title="Summary and Strategies (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div><div class="topbar-button topbar-button-more" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title=More><i class="fa-fw fas fa-ellipsis-v"></i></button><div class=topbar-content><div class=topbar-content-wrapper><div class="topbar-area topbar-area-more" data-area=more><div class="topbar-button topbar-button-embed" data-content-empty=disable data-width-s=area-more data-width-m=area-more data-width-l=area-more><a class=topbar-control href=/cis301/4-chapter/4_5-notrules/embed.html title="Embeddable Version"><i class="fa-fw fas fa-expand-arrows-alt"></i></a></div><div class="topbar-button topbar-button-tele" data-content-empty=disable data-width-s=area-more data-width-m=area-more data-width-l=area-more><a class=topbar-control href=/cis301/4-chapter/4_5-notrules/tele.html title="Teleprompter View"><i class="fa-fw fas fa-tv"></i></a></div></div></div></div></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=negation-rules>Negation Rules</h1><p>In this section, we will see the deduction rules for the NOT operator. In this section, we will introduce the notion of a <em>contradiction</em>, which occurs when, for some proposition <code>P</code>, we have proved both the facts <code>P</code> and <code>¬ P</code>. This indicates that we are in an impossible situation, and often means that we have made a bad previous assumption. In Logika, we use an <code>F</code> (&ldquo;false&rdquo;) as a claim to indiciate that we&rsquo;ve reached a contradiction. In other texts, you sometime see the symbol <code>⊥</code> (which means &ldquo;bottom operator&rdquo;) for a contradiction.</p><h2 id=negation-elimination>Negation elimination</h2><p>The negation elimination rule allows you to claim that you have reached a contradiction. We can formalize the rule like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>        P   ¬P
+</span></span><span class=line><span class=cl>NegE : -----------
+</span></span><span class=line><span class=cl>           F</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the `NegE rule:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(q, ¬q) ⊢ (F)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     q       )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     ¬q      )   by Premise,
+</span></span><span class=line><span class=cl>        3 (     F       )   by NegE(1, 2)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>We use the <code>NegE</code> rule when we have facts for both <code>P</code> and <code>¬P</code> for some proposition <code>P</code>. When we use the justification, we first list the line number of the claim for <code>P</code> (line 1, in our case) and then the line number of the claim for <code>¬P</code> (line 2, in our case).</p><p>Sometimes, the proposition <code>P</code> itself has a NOT operator. Consider this example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(¬q, ¬¬q) ⊢ (F)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     ¬q      )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     ¬¬q     )   by Premise,
+</span></span><span class=line><span class=cl>        3 (     F       )   by NegE(1, 2)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>Here, our proposition <code>P</code> is the claim <code>¬q</code>, and our proposition that is of the form <code>¬P</code> is the claim <code>¬¬q</code>.</p><h2 id=negation-introduction>Negation introduction</h2><p>The negation introduction rule allows us to introduce a NOT operation. If assuming some proposition <code>P</code> leads to a contradiction, then we must have made a bad assumption &ndash; <code>P</code> must NOT be true after all. We can then introduce the fact <code>¬P</code>. We can formalize the negation introduction rule like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>        SubProof(
+</span></span><span class=line><span class=cl>            Assume ( P ),
+</span></span><span class=line><span class=cl>            ...
+</span></span><span class=line><span class=cl>            F
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>NotI : --------------
+</span></span><span class=line><span class=cl>           ¬P</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>NotI</code> rule:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p,  q → ¬p)  ⊢  (¬q)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p           )       by Premise,
+</span></span><span class=line><span class=cl>        2 (     q → ¬p      )       by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        3 SubProof(
+</span></span><span class=line><span class=cl>            4 Assume (  q  ) ,
+</span></span><span class=line><span class=cl>            5 (     ¬p      )       by ImplyE(2, 4),
+</span></span><span class=line><span class=cl>            6 (     F       )       by NegE(1, 5)
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        7 (     ¬q          )       by NegI(3)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>Note that the negation introduction rule involves a subproof &ndash; if we wish to prove <code>¬P</code> for some proposition <code>P</code>, then we start a subproof where we assume <code>P</code>. If we are able to reach a contradiciton on the last line of that subproof, then we can use the <code>NegI</code> rule after the subproof ends to claim that our assumption was bad and that it is actually <code>¬P</code> that is true. When we use <code>¬i</code> as a justification, we list the line number corresponding to this subproof.</p><h2 id=bottom-elimination>Bottom elimination</h2><p>There is a special law for reasoning forwards from an impossible situation — the ⊥e law — which says, in the case of a contradiction, everything becomes a fact. (That is, &ldquo;if False is a fact, so is everything else ¬&rdquo;.) This rule is called &ldquo;bottom elimination&rdquo;, and is written as <code>BottomE</code>. Here is a formalization of the rule:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>              F
+</span></span><span class=line><span class=cl>BottomE :  ------  for any proposition, Q, at all
+</span></span><span class=line><span class=cl>              Q</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>BottomE</code> rule:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p, ¬p)  ⊢ (q)
+</span></span><span class=line><span class=cl>Proof(
+</span></span><span class=line><span class=cl>    1 (     p       )       by Premise,
+</span></span><span class=line><span class=cl>    2 (     ¬p      )       by Premise,
+</span></span><span class=line><span class=cl>    3 (     F       )       by NegE(1, 2),
+</span></span><span class=line><span class=cl>    4 (     q       )       by BottomE(3)
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>Note that when we use <code>BottomE</code> as the justification, we list the line number of where we reached a contradiction (<code>F</code>).</p><p>The bottom elimination rule works well with case analysis, where we discover that one case is impossible. Here is a classic example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p ∨ q, ¬p) ⊢ (q)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p ∨ q       )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     ¬p          )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        3 SubProof(
+</span></span><span class=line><span class=cl>            4 Assume(  p  ),
+</span></span><span class=line><span class=cl>            5 (     F       )   by NegE(4, 2),
+</span></span><span class=line><span class=cl>            6 (     q       )   by BottomE(5)
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        7 SubProof(
+</span></span><span class=line><span class=cl>            8 Assume(  q  )
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        9 (     q           )   by OrE(1, 3, 7)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>Considering the premise, <code>p ∨ q</code>, we analyze our two cases by starting OR elimination. The first case, where <code>p</code> holds true, is impossible, because it causes a contradiction. The <code>BottomE</code>-rule lets us gracefully prove <code>q</code> in this &ldquo;impossible case&rdquo;. (You can read lines 4-6 as saying, &ldquo;in the case when <code>p</code> might hold true, there is a contradiction, and in such an impossible situation, we can deduce whatever we like, so we deduce <code>q</code> to finish this impossible case&rdquo;.)</p><p>The second case, that <code>q</code> holds true, is the only realistic case, and it immediately yields the conclusion. The proof finishes the two-case analysis with the <code>OrE</code> rule.</p><h2 id=proof-by-contradiction>Proof by contradiction</h2><p>The proof by contraction rule, <code>PbC</code>, says that when assuming <code>¬P</code> leads to a contradiction for some proposition <code>P</code>, then we made a bad assumption and thus <code>P</code> must be true. It is very similar to the <code>NegI</code> rule, except <code>PbC</code> has us assuming <code>¬P</code> and eventually concluding <code>P</code>, while the <code>NegI</code> rule has us assuming <code>P</code> and eventually concluding <code>¬P</code>.</p><p>Here is a formalization of <code>PbC</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>        SubProof(
+</span></span><span class=line><span class=cl>             Assume( ¬P ),
+</span></span><span class=line><span class=cl>             ...
+</span></span><span class=line><span class=cl>             F   
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>PbC:   --------------------
+</span></span><span class=line><span class=cl>               P</span></span></code></pre></div><p>And here is an example that demonstrates the syntax of the rule:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(¬¬p) ⊢ (p)
+</span></span><span class=line><span class=cl>Proof(
+</span></span><span class=line><span class=cl>    1 (     ¬¬p         )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    2 SubProof(
+</span></span><span class=line><span class=cl>        3 Assume (  ¬p  ),
+</span></span><span class=line><span class=cl>        4 (     F       )   by NegE(3, 1)
+</span></span><span class=line><span class=cl>    ),
+</span></span><span class=line><span class=cl>    5 (     p           )   by PbC(2)
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>When we use the <code>PbC</code> rule as a justification for a claim <code>P</code>, we cite the line number of the subproof where we assumed <code>¬P</code> and ended in a contradiction.</p><h2 id=example-1>Example 1</h2><p>Suppose we want to prove the following sequent:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))</span></span></code></pre></div><p>We start by listing our premise, and extracting the two sides of the AND statement:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     ¬p ∧ ¬q     )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     ¬p          )   by AndE1(1),
+</span></span><span class=line><span class=cl>        3 (     ¬q          )   by AndE2(1),
+</span></span><span class=line><span class=cl>        ...
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>Next, we see that our conclusion has the form NOT (something), so this tells us that we will need to introduce a NOT (using the <code>NegI</code> rule). In fact, ANY time we wish to prove a proposition of the form NOT (something), we will always use the <code>NegI</code> rule. (We will discuss proof strategies in detail in the next section.) Since we want to prove <code>¬(p ∨ q)</code>, then we open a subproof where we assume <code>p ∨ q</code>. If we can end that subproof with a contradiction, then we can use <code>NeEgI</code> afterwards to conclude <code>¬(p ∨ q)</code>.</p><p>We know that we want this proof structure:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     ¬p ∧ ¬q     )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     ¬p          )   by AndE1(1),
+</span></span><span class=line><span class=cl>        3 (     ¬q          )   by AndE2(1),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        4 SubProof(
+</span></span><span class=line><span class=cl>            5 Assume (  p ∨ q  ),
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //want to reach a contradiction
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //will use NegI to conclude ¬(p ∨ q)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>We know we must reach a contradiction in our subproof. We see that we have claims <code>¬p</code>, <code>¬q</code>, and <code>p ∨ q </code>. Since at least one of <code>p ∨ q </code>is true, and since either one would yield a contradiction with one of <code>¬p</code> or <code>¬q</code>, then we start on OR elimination:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     ¬p ∧ ¬q     )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     ¬p          )   by AndE1(1),
+</span></span><span class=line><span class=cl>        3 (     ¬q          )   by AndE2(1),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        4 SubProof(
+</span></span><span class=line><span class=cl>            5 Assume (  p ∨ q  ),
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //OR elimination subproofs on p ∨ q
+</span></span><span class=line><span class=cl>            6 SubProof(
+</span></span><span class=line><span class=cl>                7 Assume(  p  ),
+</span></span><span class=line><span class=cl>                8 (     F       )   by NegE(7, 2)
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            9 SubProof(
+</span></span><span class=line><span class=cl>                10 Assume(  q  ),
+</span></span><span class=line><span class=cl>                11 (    F       )   by NegE(10, 3)
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //use OrE rule to tie together subproofs
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //want to reach a contradiction
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //will use NegI to conclude ¬(p ∨ q)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>We see that both OR elimination subproofs ended with a contradiction (<code>F</code>). Just like any other use of <code>OrE</code>, we restate that common conclusion after the two subproofs. We knew at least one of <code>p</code> or <code>q</code> were true, and both ended in a contradiction &ndash; so the contradiction holds no matter what:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     ¬p ∧ ¬q     )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     ¬p          )   by AndE1(1),
+</span></span><span class=line><span class=cl>        3 (     ¬q          )   by AndE2(1),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        4 SubProof(
+</span></span><span class=line><span class=cl>            5 Assume (  p ∨ q  ),
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //OR elimination subproofs on p ∨ q
+</span></span><span class=line><span class=cl>            6 SubProof(
+</span></span><span class=line><span class=cl>                7 Assume(  p  ),
+</span></span><span class=line><span class=cl>                8 (     F       )   by NegE(7, 2)
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            9 SubProof(
+</span></span><span class=line><span class=cl>                10 Assume(  q  ),
+</span></span><span class=line><span class=cl>                11 (    F       )   by NegE(10, 3)
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //use OrE rule to tie together subproofs
+</span></span><span class=line><span class=cl>            12 (        F       )   by OrE(5, 6 , 8)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //want to reach a contradiction
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //will use NegI to conclude ¬(p ∨ q)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>All that remains is the use the <code>NegI</code> rule to finish subproof 4, as that subproof ended with a contradiction:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(¬p ∧ ¬q) ⊢ (¬(p ∨ q))
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     ¬p ∧ ¬q     )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     ¬p          )   by AndE1(1),
+</span></span><span class=line><span class=cl>        3 (     ¬q          )   by AndE2(1),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        4 SubProof(
+</span></span><span class=line><span class=cl>            5 Assume (  p ∨ q  ),
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //OR elimination subproofs on p ∨ q
+</span></span><span class=line><span class=cl>            6 SubProof(
+</span></span><span class=line><span class=cl>                7 Assume(  p  ),
+</span></span><span class=line><span class=cl>                8 (     F       )   by NegE(7, 2)
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            9 SubProof(
+</span></span><span class=line><span class=cl>                10 Assume(  q  ),
+</span></span><span class=line><span class=cl>                11 (    F       )   by NegE(10, 3)
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //use OrE rule to tie together subproofs
+</span></span><span class=line><span class=cl>            12 (        F       )   by OrE(5, 6 , 8)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //want to reach a contradiction
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //will use NegI to conclude ¬(p ∨ q)
+</span></span><span class=line><span class=cl>        13 (        ¬(p ∨ q)    )   by NegI(4)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><h2 id=example-2>Example 2</h2><p>When doing propositional logic translations, we learned that <code>p → q</code> is equivalent to its <em>contrapositive</em>, <code>¬q → ¬p</code>. We will prove one direction of this equivalence (to show two statements are <em>provably equivalent,</em> which we will see in section 4.8, we would need to prove both directions):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → q) ⊢ (¬q → ¬p)</span></span></code></pre></div><p>We notice that the top-level operator of our conclusion is an IMPLIES operator, so we know that we need to introduce an implies operator. We saw in the previous section that the blueprint for introducing an implies operator is with a subproof: assume the left side of the goal implies statement, and try to reach the right side of the goal implies statement by the end of the subproof.</p><p>We have this proof structure:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → q) ⊢ (¬q → ¬p)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p → q       )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        2 SubProof(
+</span></span><span class=line><span class=cl>            3 Assume(  ¬q  ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //goal: reach ¬p
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //use →i to conclude ¬q → ¬p
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>We see that our goal in the subproof is the show ¬p &ndash; if we could do that, then we could tie together that subproof with the →i rule. Since our intermediate goal is to prove NOT (something), then we use our strategy for negation introduction as an inner subproof. We finish the proof as shown:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → q) ⊢ (¬q → ¬p)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p → q       )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        2 SubProof(
+</span></span><span class=line><span class=cl>            3 Assume(  ¬q  ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //use ¬i strategy to prove ¬p
+</span></span><span class=line><span class=cl>            4 SubProof(
+</span></span><span class=line><span class=cl>                5 Assume(  p  ),
+</span></span><span class=line><span class=cl>                6 (     q       )   by NegE(1, 5),
+</span></span><span class=line><span class=cl>                7 (     F       )   by NegE(6, 3)
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            8 (     ¬p          )   by NegI(4)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //goal: reach ¬p
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //use →i to conclude ¬q → ¬p
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        9 (     ¬q → ¬p         )   by ImplyI(2)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><h2 id=example-3>Example 3</h2><p>Suppose we want to prove the sequent:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(¬(¬p ∨ ¬q)) ⊢ (p ∧ q)</span></span></code></pre></div><p>We see that there is nothing to extract from our premise, and that the top-level operator of the conclusion (<code>p ∧ q</code>) is an AND. We see that we will need to introduce an AND statement &ndash; but the only way we can create <code>p ∧ q</code> is to separately prove both <code>p</code> and <code>q</code>.</p><p>It is not immediately clear how to prove either <code>p</code> or <code>q</code>. We will discuss proof strategies in more detail in the next section, but <code>PbC</code> is a good fallback option if you don&rsquo;t have a clear path for how to prove something and some of the claims in the proof involve negation. Since we wish to prove <code>p</code>, then will will assume <code>¬p</code> in a subproof. If we can reach a contradiction, then we can use <code>PbC</code> to conclude <code>p</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(¬(¬p ∨ ¬q)) ⊢ (p ∧ q)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     ¬(¬p ∨ ¬q)      )       by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        2 SubProof(
+</span></span><span class=line><span class=cl>            3 Assume(  ¬p  ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //goal: contradiction
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //use PbC to conclude p
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //similarly prove q
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //use AndI to conclude p ∧ q
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>In subproof 2, we know we need to end with a contradiction. The only propositions we have to work with are <code>¬(¬p ∨ ¬q)</code> and <code>¬p</code>. But if we use <code>OrI1</code> with <code>¬p</code>, then we could have <code>¬p ∨ ¬q</code> &ndash; and then we could claim a contradiction. We complete the proof as shown (using the same strategy to prove <code>q</code>):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(¬(¬p ∨ ¬q)) ⊢ (p ∧ q)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     ¬(¬p ∨ ¬q)      )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        2 SubProof(
+</span></span><span class=line><span class=cl>            3 Assume(  ¬p  ),
+</span></span><span class=line><span class=cl>            4 (     ¬p ∨ ¬q     )   by OrI1(3),
+</span></span><span class=line><span class=cl>            5 (     F           )   by NegE(4, 1) 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //goal: contradiction
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //use PbC to conclude p
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        6 (     p               )   by PbC(2),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //similarly prove q
+</span></span><span class=line><span class=cl>        7 SubProof(
+</span></span><span class=line><span class=cl>            8 Assume(  ¬q  ),
+</span></span><span class=line><span class=cl>            9 (     ¬p ∨ ¬q     )   by OrI2(8),
+</span></span><span class=line><span class=cl>            10 (    F           )   by NegE(9, 1) 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //goal: contradiction
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        11 (        q           )   by PbC(7),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //use AndI to conclude p ∧ q
+</span></span><span class=line><span class=cl>        12 (        p ∧ q       )   by AndI(6, 11)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><h2 id=law-of-the-excluded-middle>Law of the excluded middle</h2><p>The <em>law of the excluded middle (LEM)</em> is famous consequence of <code>PbC</code>: from no starting premises at all, we can prove <code>p ∨ ¬ p</code> for any proposition we can imagine:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>⊢ (p ∨ ¬p)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 SubProof(
+</span></span><span class=line><span class=cl>            2 Assume(  ¬(p ∨ ¬p)  ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            3 SubProof(
+</span></span><span class=line><span class=cl>                4 Assume(  p  ),
+</span></span><span class=line><span class=cl>                5 (     p ∨ ¬ p         )   by OrI1(4),
+</span></span><span class=line><span class=cl>                6 (     F               )   by NegE(5, 2)
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            7 (     ¬p                  )   by NotI(3),
+</span></span><span class=line><span class=cl>            8 (     p ∨ ¬p              )   by OrI2(7),
+</span></span><span class=line><span class=cl>            9 (     F                   )   By NegE(8, 2)
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        10 (        p ∨ ¬p              )   By PbC(1)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>In other proofs involving negation and no clear path forward, it is sometimes useful to first derive LEM (this is possible since no premises are needed). If we have the claim <code>p ∨ ¬ p</code> in a proof, then we can use OR elimination where we separately assume <code>p</code> and then <code>¬ p</code> to try to reach the same conclusion. Here is one such example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → q) ⊢ (¬p ∨ q)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p → q       )   by Premise,
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        // start of previous p ∨ ¬ p proof
+</span></span><span class=line><span class=cl>        2 SubProof(
+</span></span><span class=line><span class=cl>            3 Assume(  ¬(p ∨ ¬p)  ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            4 SubProof(
+</span></span><span class=line><span class=cl>                5 Assume(  p  ),
+</span></span><span class=line><span class=cl>                6 (     p ∨ ¬ p         )   by OrI1(5),
+</span></span><span class=line><span class=cl>                7 (     F               )   by NegE(6, 3)
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            8 (     ¬p                  )   by NotI(4),
+</span></span><span class=line><span class=cl>            9 (     p ∨ ¬p              )   by OrI2(8),
+</span></span><span class=line><span class=cl>            10 (    F                   )   By NegE(9, 3)
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        11 (        p ∨ ¬p              )   By PbC(2),  // conclusion of p ∨ ¬ p proof
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        12 SubProof(
+</span></span><span class=line><span class=cl>            13 Assume(  p  ),
+</span></span><span class=line><span class=cl>            14 (        q               )   By ImplyE(1, 13), 
+</span></span><span class=line><span class=cl>            15 (        ¬p ∨ q          )   By OrI2(14)      
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        16 SubProof(
+</span></span><span class=line><span class=cl>            17 Assume(  ¬p  ),
+</span></span><span class=line><span class=cl>            18 (        ¬p ∨ q          )   By OrI1(17)
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        19 (        ¬p ∨ q              )   By OrE(11, 12, 16)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><footer class=footline></footer></article></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Julie Thornton
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis301/commit/9def8608099562c038d3db8aa233aad420cd5232>Apr 2, 2024</a></p></div></div><aside id=R-sidebar class=default-animation><div id=R-header-topbar class=default-animation></div><div id=R-header-wrapper class=default-animation><div id=R-header class=default-animation><a id=logo href=/cis301/>CIS 301: Logical Foundations of Programming</a></div><search><form action=/cis301/search.html method=get><div class="searchbox default-animation"><button class=search-detail type=submit title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+<label class=a11y-only for=R-search-by>Search</label>
+<input data-search-input id=R-search-by name=search-by class=search-by type=search placeholder=Search...>
+<button class=search-clear type=button data-search-clear title="Clear search"><i class="fas fa-times" title="Clear search"></i></button></div></form></search><script>var contentLangs=["en"]</script><script src=/cis301/js/auto-complete.js?1719515002 defer></script><script src=/cis301/js/lunr/lunr.min.js?1719515002 defer></script><script src=/cis301/js/lunr/lunr.stemmer.support.min.js?1719515002 defer></script><script src=/cis301/js/lunr/lunr.multi.min.js?1719515002 defer></script><script src=/cis301/js/lunr/lunr.en.min.js?1719515002 defer></script><script src=/cis301/js/search.js?1719515002 defer></script></div><div id=R-homelinks class=default-animation><hr class=padding></div><div id=R-content-wrapper class=highlightable><div id=R-topics><ul class="enlarge morespace collapsible-menu"><li data-nav-id=/cis301/0-chapter/><input type=checkbox id=R-section-4dd9ea2241609372e21522ad467bdbcf aria-controls=R-subsections-4dd9ea2241609372e21522ad467bdbcf><label for=R-section-4dd9ea2241609372e21522ad467bdbcf><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Getting Started</span></label><a class=padding href=/cis301/0-chapter/><b>0. </b>Getting Started</a><ul id=R-subsections-4dd9ea2241609372e21522ad467bdbcf class="morespace collapsible-menu"><li data-nav-id=/cis301/0-chapter/0_1-toolsguide/><a class=padding href=/cis301/0-chapter/0_1-toolsguide/>0.1. Tools Guide</a></li></ul></li><li data-nav-id=/cis301/1-chapter/><input type=checkbox id=R-section-17929730d34290b059d2edff1c690239 aria-controls=R-subsections-17929730d34290b059d2edff1c690239><label for=R-section-17929730d34290b059d2edff1c690239><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Basics and Logic Puzzles</span></label><a class=padding href=/cis301/1-chapter/><b>1. </b>Basics and Logic Puzzles</a><ul id=R-subsections-17929730d34290b059d2edff1c690239 class="morespace collapsible-menu"><li data-nav-id=/cis301/1-chapter/1_1-logicbasics/><a class=padding href=/cis301/1-chapter/1_1-logicbasics/>1.1. Basic Logical Reasoning</a></li><li data-nav-id=/cis301/1-chapter/1_2-knightsknaves/><a class=padding href=/cis301/1-chapter/1_2-knightsknaves/>1.2. Knights and Knaves</a></li><li data-nav-id=/cis301/1-chapter/1_3-otherpuzzles/><a class=padding href=/cis301/1-chapter/1_3-otherpuzzles/>1.3. Other Puzzles</a></li></ul></li><li data-nav-id=/cis301/2-chapter/><input type=checkbox id=R-section-97391a296e58f4aff54bb6b925a2776b aria-controls=R-subsections-97391a296e58f4aff54bb6b925a2776b><label for=R-section-97391a296e58f4aff54bb6b925a2776b><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Truth Tables</span></label><a class=padding href=/cis301/2-chapter/><b>2. </b>Truth Tables</a><ul id=R-subsections-97391a296e58f4aff54bb6b925a2776b class="morespace collapsible-menu"><li data-nav-id=/cis301/2-chapter/2_1-opscircuits/><a class=padding href=/cis301/2-chapter/2_1-opscircuits/>2.1. Operators and Circuits</a></li><li data-nav-id=/cis301/2-chapter/2_2-logikatruth/><a class=padding href=/cis301/2-chapter/2_2-logikatruth/>2.2. Truth Tables in Logika</a></li><li data-nav-id=/cis301/2-chapter/2_3-satis/><a class=padding href=/cis301/2-chapter/2_3-satis/>2.3. Satisfiability</a></li><li data-nav-id=/cis301/2-chapter/2_4-logicalequiv/><a class=padding href=/cis301/2-chapter/2_4-logicalequiv/>2.4. Logical Equivalence</a></li><li data-nav-id=/cis301/2-chapter/2_5-sementail/><a class=padding href=/cis301/2-chapter/2_5-sementail/>2.5. Semantic Entailment</a></li></ul></li><li data-nav-id=/cis301/3-chapter/><input type=checkbox id=R-section-b4e2df8934a6b804e9336da7e38d4126 aria-controls=R-subsections-b4e2df8934a6b804e9336da7e38d4126><label for=R-section-b4e2df8934a6b804e9336da7e38d4126><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Propositional Logic Translations</span></label><a class=padding href=/cis301/3-chapter/><b>3. </b>Propositional Logic Translations</a><ul id=R-subsections-b4e2df8934a6b804e9336da7e38d4126 class="morespace collapsible-menu"><li data-nav-id=/cis301/3-chapter/3_1-propatom/><a class=padding href=/cis301/3-chapter/3_1-propatom/>3.1. Propositional Atoms</a></li><li data-nav-id=/cis301/3-chapter/3_2-notandor/><a class=padding href=/cis301/3-chapter/3_2-notandor/>3.2. NOT, AND, OR Translations</a></li><li data-nav-id=/cis301/3-chapter/3_3-implies/><a class=padding href=/cis301/3-chapter/3_3-implies/>3.3. Implies Translations</a></li><li data-nav-id=/cis301/3-chapter/3_4-equiv/><a class=padding href=/cis301/3-chapter/3_4-equiv/>3.4. Equivalent Translations</a></li><li data-nav-id=/cis301/3-chapter/3_5-knightsknavestt/><a class=padding href=/cis301/3-chapter/3_5-knightsknavestt/>3.5. Knights and Knaves, revisited</a></li></ul></li><li data-nav-id=/cis301/4-chapter/ class=parent><input type=checkbox id=R-section-619d3749907cd3e1af90a59cf2fcd6bd aria-controls=R-subsections-619d3749907cd3e1af90a59cf2fcd6bd checked><label for=R-section-619d3749907cd3e1af90a59cf2fcd6bd><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Propositional Logic Proofs</span></label><a class=padding href=/cis301/4-chapter/><b>4. </b>Propositional Logic Proofs</a><ul id=R-subsections-619d3749907cd3e1af90a59cf2fcd6bd class="morespace collapsible-menu"><li data-nav-id=/cis301/4-chapter/4_1-intro/><a class=padding href=/cis301/4-chapter/4_1-intro/>4.1. Introduction</a></li><li data-nav-id=/cis301/4-chapter/4_2-andrules/><a class=padding href=/cis301/4-chapter/4_2-andrules/>4.2. AND Rules</a></li><li data-nav-id=/cis301/4-chapter/4_3-orrules/><a class=padding href=/cis301/4-chapter/4_3-orrules/>4.3. OR Rules</a></li><li data-nav-id=/cis301/4-chapter/4_4-impliesrules/><a class=padding href=/cis301/4-chapter/4_4-impliesrules/>4.4. Implies Rules</a></li><li data-nav-id=/cis301/4-chapter/4_5-notrules/ class=active><a class=padding href=/cis301/4-chapter/4_5-notrules/>4.5. Negation Rules</a></li><li data-nav-id=/cis301/4-chapter/4_6-strategies/><a class=padding href=/cis301/4-chapter/4_6-strategies/>4.6. Summary and Strategies</a></li><li data-nav-id=/cis301/4-chapter/4_7-theorems/><a class=padding href=/cis301/4-chapter/4_7-theorems/>4.7. Theorems</a></li><li data-nav-id=/cis301/4-chapter/4_8-equivalence/><a class=padding href=/cis301/4-chapter/4_8-equivalence/>4.8. Equivalence</a></li><li data-nav-id=/cis301/4-chapter/4_9-soundcomplete/><a class=padding href=/cis301/4-chapter/4_9-soundcomplete/>4.9. Soundness and Completeness</a></li></ul></li><li data-nav-id=/cis301/5-chapter/><input type=checkbox id=R-section-fbe0105598b5fc5de0d6a9a8eea1a2d7 aria-controls=R-subsections-fbe0105598b5fc5de0d6a9a8eea1a2d7><label for=R-section-fbe0105598b5fc5de0d6a9a8eea1a2d7><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Predicate Logic Translations</span></label><a class=padding href=/cis301/5-chapter/><b>5. </b>Predicate Logic Translations</a><ul id=R-subsections-fbe0105598b5fc5de0d6a9a8eea1a2d7 class="morespace collapsible-menu"><li data-nav-id=/cis301/5-chapter/5_1-motivation/><a class=padding href=/cis301/5-chapter/5_1-motivation/>5.1. Motivation</a></li><li data-nav-id=/cis301/5-chapter/5_2-predsyntax/><a class=padding href=/cis301/5-chapter/5_2-predsyntax/>5.2. Syntax</a></li><li data-nav-id=/cis301/5-chapter/5_3-singlequantifier/><a class=padding href=/cis301/5-chapter/5_3-singlequantifier/>5.3. Single Quantifier</a></li><li data-nav-id=/cis301/5-chapter/5_4-multquant/><a class=padding href=/cis301/5-chapter/5_4-multquant/>5.4. Multiple Quantifiers</a></li></ul></li><li data-nav-id=/cis301/6-chapter/><input type=checkbox id=R-section-1afc7d1d7b98dcc397b91690230bcb55 aria-controls=R-subsections-1afc7d1d7b98dcc397b91690230bcb55><label for=R-section-1afc7d1d7b98dcc397b91690230bcb55><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Predicate Logic Proofs</span></label><a class=padding href=/cis301/6-chapter/><b>6. </b>Predicate Logic Proofs</a><ul id=R-subsections-1afc7d1d7b98dcc397b91690230bcb55 class="morespace collapsible-menu"><li data-nav-id=/cis301/6-chapter/6_1-univrules/><a class=padding href=/cis301/6-chapter/6_1-univrules/>6.1. Rules with ∀</a></li><li data-nav-id=/cis301/6-chapter/6_2-existrules/><a class=padding href=/cis301/6-chapter/6_2-existrules/>6.2. Rules with ∃</a></li><li data-nav-id=/cis301/6-chapter/6_3-nested/><a class=padding href=/cis301/6-chapter/6_3-nested/>6.3. Nested Quantifiers</a></li><li data-nav-id=/cis301/6-chapter/6_4-equiv/><a class=padding href=/cis301/6-chapter/6_4-equiv/>6.4. Equivalence</a></li><li data-nav-id=/cis301/6-chapter/6_5-strategies/><a class=padding href=/cis301/6-chapter/6_5-strategies/>6.5. Summary and Strategies</a></li><li data-nav-id=/cis301/6-chapter/6_6-soundcomplete/><a class=padding href=/cis301/6-chapter/6_6-soundcomplete/>6.6. Soundness and Completeness</a></li></ul></li><li data-nav-id=/cis301/7-chapter/><input type=checkbox id=R-section-48461595e2f67d1468fbd78e51714428 aria-controls=R-subsections-48461595e2f67d1468fbd78e51714428><label for=R-section-48461595e2f67d1468fbd78e51714428><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Mathematical Induction</span></label><a class=padding href=/cis301/7-chapter/><b>7. </b>Mathematical Induction</a><ul id=R-subsections-48461595e2f67d1468fbd78e51714428 class="morespace collapsible-menu"><li data-nav-id=/cis301/7-chapter/7_1-process/><a class=padding href=/cis301/7-chapter/7_1-process/>7.1. Induction Process</a></li><li data-nav-id=/cis301/7-chapter/7_2-algebraex/><a class=padding href=/cis301/7-chapter/7_2-algebraex/>7.2. Algebra example</a></li><li data-nav-id=/cis301/7-chapter/7_3-divex/><a class=padding href=/cis301/7-chapter/7_3-divex/>7.3. Divisibility example</a></li><li data-nav-id=/cis301/7-chapter/7_4-setex/><a class=padding href=/cis301/7-chapter/7_4-setex/>7.4. Set example</a></li></ul></li><li data-nav-id=/cis301/8-chapter/><input type=checkbox id=R-section-77afa9c6b199f7330fa5eb8966814b35 aria-controls=R-subsections-77afa9c6b199f7330fa5eb8966814b35><label for=R-section-77afa9c6b199f7330fa5eb8966814b35><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Intro to Programming Logic</span></label><a class=padding href=/cis301/8-chapter/><b>8. </b>Intro to Programming Logic</a><ul id=R-subsections-77afa9c6b199f7330fa5eb8966814b35 class="morespace collapsible-menu"><li data-nav-id=/cis301/8-chapter/8_1-goal/><a class=padding href=/cis301/8-chapter/8_1-goal/>8.1. Programming Logic Goal</a></li><li data-nav-id=/cis301/8-chapter/8_2-logikaprograms/><a class=padding href=/cis301/8-chapter/8_2-logikaprograms/>8.2. Logika Programs</a></li><li data-nav-id=/cis301/8-chapter/8_3-assertassume/><a class=padding href=/cis301/8-chapter/8_3-assertassume/>8.3. Assert and Assume</a></li><li data-nav-id=/cis301/8-chapter/8_4-algebrasubst/><a class=padding href=/cis301/8-chapter/8_4-algebrasubst/>8.4. Algebra and subst Rules</a></li><li data-nav-id=/cis301/8-chapter/8_5-assignment/><a class=padding href=/cis301/8-chapter/8_5-assignment/>8.5. Assignment Statements</a></li><li data-nav-id=/cis301/8-chapter/8_6-divmod/><a class=padding href=/cis301/8-chapter/8_6-divmod/>8.6. Integer Division and Modulo</a></li><li data-nav-id=/cis301/8-chapter/8_7-conditionals/><a class=padding href=/cis301/8-chapter/8_7-conditionals/>8.7. Conditional Statements</a></li></ul></li><li data-nav-id=/cis301/9-chapter/><input type=checkbox id=R-section-ffb46ad61395302deae4c4fa734e982a aria-controls=R-subsections-ffb46ad61395302deae4c4fa734e982a><label for=R-section-ffb46ad61395302deae4c4fa734e982a><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Functions and Loops</span></label><a class=padding href=/cis301/9-chapter/><b>9. </b>Functions and Loops</a><ul id=R-subsections-ffb46ad61395302deae4c4fa734e982a class="morespace collapsible-menu"><li data-nav-id=/cis301/9-chapter/9_1-functions/><a class=padding href=/cis301/9-chapter/9_1-functions/>9.1. Functions</a></li><li data-nav-id=/cis301/9-chapter/9_2-recursion/><a class=padding href=/cis301/9-chapter/9_2-recursion/>9.2. Recursion</a></li><li data-nav-id=/cis301/9-chapter/9_3-loops/><a class=padding href=/cis301/9-chapter/9_3-loops/>9.3. Loops</a></li><li data-nav-id=/cis301/9-chapter/9_4-logikafacts/><a class=padding href=/cis301/9-chapter/9_4-logikafacts/>9.4. Logika Facts</a></li><li data-nav-id=/cis301/9-chapter/9_5-summary/><a class=padding href=/cis301/9-chapter/9_5-summary/>9.5. Summary</a></li></ul></li><li data-nav-id=/cis301/10-chapter/><input type=checkbox id=R-section-9e1e97bcf82568ce724d247ecac0ed85 aria-controls=R-subsections-9e1e97bcf82568ce724d247ecac0ed85><label for=R-section-9e1e97bcf82568ce724d247ecac0ed85><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Sequences, Globals, and Termination</span></label><a class=padding href=/cis301/10-chapter/><b>10. </b>Sequences, Globals, and Termination</a><ul id=R-subsections-9e1e97bcf82568ce724d247ecac0ed85 class="morespace collapsible-menu"><li data-nav-id=/cis301/10-chapter/10_1-modes/><a class=padding href=/cis301/10-chapter/10_1-modes/>10.1 Logika Modes</a></li><li data-nav-id=/cis301/10-chapter/10_2-intosequences/><a class=padding href=/cis301/10-chapter/10_2-intosequences/>10.2 Intro to Sequences</a></li><li data-nav-id=/cis301/10-chapter/10_3-seqfn/><a class=padding href=/cis301/10-chapter/10_3-seqfn/>10.3 Sequences in Functions</a></li><li data-nav-id=/cis301/10-chapter/10_4-seqloop/><a class=padding href=/cis301/10-chapter/10_4-seqloop/>10.4 Sequences in Loops</a></li><li data-nav-id=/cis301/10-chapter/10_5-globals/><a class=padding href=/cis301/10-chapter/10_5-globals/>10.5 Global Variables</a></li><li data-nav-id=/cis301/10-chapter/10_6-termination/><a class=padding href=/cis301/10-chapter/10_6-termination/>10.6 Termination</a></li></ul></li></ul></div><div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div><div id=R-menu-footer><hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"><div id=R-prefooter class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch"><ul><li id=R-select-language-container class=footerLangSwitch><div class="padding menu-control"><i class="fa-fw fas fa-language"></i>
+<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-language>Language</label>
+<select id=R-select-language onchange="location=this.querySelector(this.value).dataset.url"><option id=R-select-language-en value=#R-select-language-en data-url=/cis301/4-chapter/4_5-notrules/ lang=en-us selected></option></select></div><div class=clear></div></div></li><li id=R-select-variant-container class="footerVariantSwitch showVariantSwitch"><div class="padding menu-control"><i class="fa-fw fas fa-paint-brush"></i>
+<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-variant>Theme</label>
+<select id=R-select-variant onchange=window.variants&&variants.changeVariant(this.value)><option id=R-select-variant-auto value=auto selected>KSU Auto</option><option id=R-select-variant-light-theme value=light-theme>KSU Light</option><option id=R-select-variant-dark-theme value=dark-theme>KSU Dark</option></select></div><div class=clear></div></div><script>window.variants&&variants.markSelectedVariant()</script></li><li class=footerVisitedLinks><div class="padding menu-control"><i class="fa-fw fas fa-history"></i>
+<span>&nbsp;</span><div class=control-style><button onclick=clearHistory()>Clear History</button></div><div class=clear></div></div></li></ul></div><div id=R-footer class="footerFooter showFooter"><p>Built using <a href=http://gohugo.io/>Hugo</a> and <a href=https://github.com/ksu-cs-textbooks/hugo-theme-relearn>Hugo Relearn Theme</a>.</p><p><a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/><img alt="Creative Commons License" style="border-width:0;margin:.5rem auto" src=https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png></a><br>This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p></div></div></div></aside><script src=/cis301/js/clipboard.min.js?1719515002 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1719515002 defer></script><script src=/cis301/js/theme.js?1719515002 defer></script></body></html>

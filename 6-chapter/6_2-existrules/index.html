@@ -1,822 +1,154 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 301: Logical Foundations of Programming">
-    <meta name="author" content="Julie Thornton">
-    <title>Rules with ∃ :: CIS 301 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/index.xml" rel="alternate" type="application/rss+xml" title="Rules with ∃ :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/index.print.html" rel="alternate" type="text/html" title="Rules with ∃ :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/tele.html" rel="alternate" type="text/html" title="Rules with ∃ :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/embed.html" rel="alternate" type="text/html" title="Rules with ∃ :: CIS 301 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924206" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924206" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1716924206" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924206" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924206" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1716924206" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924206" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924206" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1716924206" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1716924206" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1716924206" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1716924206" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1716924206" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1716924206"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1716924206"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1716924206" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support html disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div class="navigation">
-            <a class="nav nav-next topbar-link" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/index.html" title="Nested Quantifiers (&#129106;)"><i class="fas fa-chevron-right fa-fw"></i></a>
-          </div>
-          <div class="navigation">
-            <a class="nav nav-prev topbar-link" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/index.html" title="Rules with ∀ (&#129104;)"><i class="fas fa-chevron-left fa-fw"></i></a>
-          </div>
-          <div id="top-print-link">
-            <a class="print-link topbar-link" title='Print whole chapter (CTRL+ALT+p)' href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/index.print.html">
-              <i class="fas fa-print fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-github-link">
-            <a class="github-link topbar-link" title='Edit (CTRL+ALT+w)' href="https://gitlab.cs.ksu.edu/-/ide/project/cs-textbooks/cis301-textbook/edit/master/-/content/6-chapter/6_2-existRules.md" target="_blank">
-              <i class="fas fa-pen fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/index.html"><span itemprop="name">CIS 301 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/index.html"><span itemprop="name">Predicate Logic Proofs</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Rules with ∃</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-          <div class="default-animation progress">
-            <div class="toc-wrapper"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#exists-introduction">Exists introduction</a></li>
-    <li><a href="#exists-elimination">Exists elimination</a></li>
-    <li><a href="#examples">Examples</a>
-      <ul>
-        <li><a href="#example-1">Example 1</a></li>
-        <li><a href="#example-2">Example 2</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="rules-with-">Rules with ∃</h1>
-
-<p>In this section, we will see the two inference rules for the existential (∃) quantifier.</p>
-<h2 id="exists-introduction">Exists introduction</h2>
-<p>We can use the exists introduction rule, <code>ExistsI[T]</code>, when we have a proposition of the form <code>P(a)</code> for an arbitrary member <code>a</code> of a domain. Since we found one individual where a proposition held, then we can also say that there exists an individual for which the proposition is true. We can formalize the rule as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                   P(d)         where  d  is an individual of type T
-</span></span><span style="display:flex;"><span>ExistsI[T]: ---------------------
-</span></span><span style="display:flex;"><span>              ∃((x: T) =&gt; P(x))</span></span></code></pre></div><p>Here is a simple example showing the syntax of the <code>ExistsI[T]</code> rule (where <em>Socrates</em> is a parameter of type <code>T</code> to our proof function):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(   isHuman(Socrates)   ) ⊢ (   ∃ x isHuman(x)  )
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     isHuman(Socrates)   )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     ∃((x: T) =&gt; P(x))   )   by ExistsI[T](1)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>When we use the <code>ExistsI[T]</code> rule to justify a claim like <code>∃((x: T) =&gt; P(x))</code>, we include the line number of where the proposition held for a particular individual. In the proof above, we claim <code>∃((x: T) =&gt; P(x))</code> with justification <code>ExistsI[T](1)</code> &ndash; line 1 corresponds to <code>isHuman(Socrates)</code>, where our <code>∃ x isHuman(x)</code> proposition held for a particular individual. The full proof function, which shows how <em>Socrates</em> can be accepted as a parameter of type <code>T</code>, is here:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>@pure def ExistsExample[T](isHuman: T =&gt; B @pure, Socrates: T): Unit = {
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        (   isHuman(Socrates)   ) ⊢ (   ∃ x isHuman(x)  )
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>        Proof(
-</span></span><span style="display:flex;"><span>            1 (     isHuman(Socrates)   )   by Premise,
-</span></span><span style="display:flex;"><span>            2 (     ∃((x: T) =&gt; P(x))   )   by ExistsI[T](1)
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Note that we can use the <code>ExistsI[T]</code> rule to introduce any variable, not just <code>x</code>. You can choose which variable to introduce based on the variables used in the conclusion. For example, the following proof is also valid:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(   isHuman(Socrates)   ) ⊢ (   ∃ x isHuman(z)  )
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     isHuman(Socrates)   )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     ∃((z: T) =&gt; P(z))   )   by ExistsI[T](1)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><h2 id="exists-elimination">Exists elimination</h2>
-<p>Since the <code>ExistsI[T]</code>-rule constructs propositions that begin with <code>∃</code>, the <code>ExistsE[T]</code>-rule (exists elimination) disassembles propositions that begin with <code>∃</code>.</p>
-<p>Here is a quick example (where our domain is living things):</p>
-<ul>
-<li>All humans are mortal</li>
-<li>Someone is human</li>
-<li>Therefore, someone is mortal</li>
-</ul>
-<p>We don&rsquo;t know the name of the human, but it does not matter. Since ALL humans are mortal and SOMEONE is human, then our anonymous human must be mortal. The steps will go like this:</p>
-<ul>
-<li>
-<p>Since &ldquo;someone is human&rdquo; and since we do not know his/her name, we will just make up our own name for them – &ldquo;Jane&rdquo;. So, we assume that &ldquo;Jane is human&rdquo;.</p>
-</li>
-<li>
-<p>We use the logic rules we already know to prove that &ldquo;Jane is mortal&rdquo;.</p>
-</li>
-<li>
-<p>Therefore, SOMEONE is mortal and their name does not matter.</p>
-</li>
-</ul>
-<p>This approach is coded into the last logic law, <code>ExistsE[T]</code> (exists elimination).</p>
-<p>Suppose we have a premise of the form <code>∃((x: T) =&gt; P(x))</code>. Since we do not know the name of the individual &ldquo;hidden&rdquo; behind the <code>∃(x: T)</code>, we make up a name for it, say <code>a</code>, and discuss what must follow from the assumption that <code>P(a)</code> holds true. Here is the formalization of the <code>ExistsE[T]</code> rule:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>                                        Let ((a: T) =&gt; SubProof(          // where  a  is a new, fresh name
-</span></span><span style="display:flex;"><span>                                             Assume( P(a) ),              // a  MUST NOT appear in  Q
-</span></span><span style="display:flex;"><span>                ∃((x: T) =&gt; P(x))            ...
-</span></span><span style="display:flex;"><span>                                             Q         
-</span></span><span style="display:flex;"><span>                                        )),             
-</span></span><span style="display:flex;"><span>ExistsE[T]: ----------------------------------------------------
-</span></span><span style="display:flex;"><span>                     Q</span></span></code></pre></div><p>That is, if we can deduce <code>Q</code> from <code>P(a)</code>, and we do not mention <code>a</code> within <code>Q</code>, then it means <code>Q</code> can be deduced no matter what name the hidden individual has. So, <code>Q</code> follows from <code>∃((x: T) =&gt; P(x))</code>.</p>
-<p>We can work the previous example, with <code>ExistsE[T]</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>All humans are mortal
-</span></span><span style="display:flex;"><span>Someone is human
-</span></span><span style="display:flex;"><span>Therefore, someone is mortal</span></span></code></pre></div><p>We make up the name, <code>jane</code>, for the human whose name we do not know:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((h: T) =&gt; (isHuman(h) → isMortal(h))),
-</span></span><span style="display:flex;"><span>        ∃((x: T) =&gt; isHuman(x))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>⊢
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∃((y: T) =&gt; (isMortal(y)))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>Proof(
-</span></span><span style="display:flex;"><span>    1 (     ∀((h: T) =&gt; (isHuman(h) → isMortal(h)))     )   by Premise,
-</span></span><span style="display:flex;"><span>    2 (     ∃((x: T) =&gt; isHuman(x))                     )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    3 Let ( (jane: T) =&gt; SubProof (
-</span></span><span style="display:flex;"><span>        4 Assume(   isHuman(jane)                       ),
-</span></span><span style="display:flex;"><span>        5 (         isHuman(jane) → isMortal(jane)      )   by AllE[T](1),
-</span></span><span style="display:flex;"><span>        6 (         isMortal(jane)                      )   by ImplyE(5, 4)
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>    7 (     ∃((y: T) =&gt; (isMortal(y)))                  )   by ExistsE[T](2, 3)
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>Line 3 proposes the name <code>jane</code> for our subproof and line 4 makes the assumption <code>isHuman(jane)</code> (based on the premise <code>∃((x: T) =&gt; isHuman(x))</code>). The subproof leads to Line 6, which says that someone is mortal. (We never learned the individual&rsquo;s name!) Since Line 6 does not explicitly mention the made-up name, <code>jane</code>, we use Line 7 to repeat Line 6 – without knowing the name of the individual &ldquo;hiding&rdquo; inside Line 2, we made a subproof that proves the result, anyway. This is how <code>ExistsE[T]</code> works.</p>
-<p>Note that when we use the <code>ExistsE[T]</code> rule as a justification we include first the line number of the there exists statement that we processed (by naming the hidden individual) in the previous subproof, and then the line number of that subproof. In the example above, we say <code>ExistsE[T](2, 3)</code> because line 2 includes the there-exists statement we processed (<code>∃ ∃((x: T) =&gt; isHuman(x))</code>) in the previous subproof and line 3 is the subproof.</p>
-<p>When using <code>ExistsE[T]</code>, the previous subproof must begin with introducing a name for a hidden individual in a there-exists statement and then immediately make an assumption that substitutes the name into the there exists statement. The last line in the subproof should contain NO mention of the chosen name. Whatever we claim on the last line in the subproof, we must claim EXACTLY the same thing immediately afterwards when we use the <code>ExistsE[T]</code> rule.</p>
-<p>You are welcome to use any name for the hidden individual &ndash; not just <code>jane</code> or <code>a</code>. The only restriction is that you cannot have used the name anywhere else in the proof.</p>
-<h2 id="examples">Examples</h2>
-<p>In this section, we will look at other proofs involving the existential quantifier.</p>
-<h3 id="example-1">Example 1</h3>
-<p>Suppose we wish to prove the following sequent:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(   ∃((x: T) =&gt; (Adult(x) ∨ Kid(x)))  ) ⊢ (   ∃((x: T) =&gt; Adult(x) )) ∨ ∃((x: T) =&gt; Kid(x)  )</span></span></code></pre></div><p>We will begin as we did previously: by introducing an alias for our person that is either an adult or a kid (say, <code>alice</code>):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(   ∃((x: T) =&gt; (Adult(x) ∨ Kid(x)))  ) ⊢ (   ∃((x: T) =&gt; Adult(x) )) ∨ ∃((x: T) =&gt; Kid(x)  )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Proof(
-</span></span><span style="display:flex;"><span>    1 (     ∃((x: T) =&gt; (Adult(x) ∨ Kid(x)) )       )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    2 Let ( (alice: T) =&gt; SubProof(
-</span></span><span style="display:flex;"><span>        3 Assume(   Adult(alice) ∨ Kid(alice)       ),
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        //goal: get to our conclusion, ∃( (x: T) =&gt; Adult(x) )) ∨ ∃( (x: T) =&gt; Kid(x)
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    //use ExistsE[T] to restate our conclusion, since we know SOME such person is either an adult or kid
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>To finish our proof, we can use OR elimination on <code>Adult(alice) ∨ Kid(alice)</code>, and then <code>ExistsE[T]</code> afterwards to restate our conclusion. Here is the completed proof:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(   ∃((x: T) =&gt; (Adult(x) ∨ Kid(x)))  ) ⊢ (   ∃((x: T) =&gt; Adult(x) )) ∨ ∃((x: T) =&gt; Kid(x)  )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Proof(
-</span></span><span style="display:flex;"><span>    1 (     ∃((x: T) =&gt; (Adult(x) ∨ Kid(x)) )                   )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    2 Let ( (alice: T) =&gt; SubProof(
-</span></span><span style="display:flex;"><span>        3 Assume(   Adult(alice) ∨ Kid(alice)                   ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        4 SubProof(
-</span></span><span style="display:flex;"><span>            5 Assume (  Adult(alice)                            ),
-</span></span><span style="display:flex;"><span>            6 (     ∃((x: T) =&gt; Adult(x)                        )   by ExistsI[T](5),
-</span></span><span style="display:flex;"><span>            7 (     ∃((x: T) =&gt; Adult(x) ∨ ∃((x: T) =&gt; Kid(x)   )   by OrI1(6)
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        8 SubProof(
-</span></span><span style="display:flex;"><span>            9 Assume (  Kid(alice)                              ),
-</span></span><span style="display:flex;"><span>            10 (    ∃((x: T) =&gt; Kid(x)                          )   by ExistsI[T](9),
-</span></span><span style="display:flex;"><span>            11 (    ∃((x: T) =&gt; Adult(x) ∨ ∃((x: T) =&gt; Kid(x)   )   by OrI2(10)
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        12 (    ∃((x: T) =&gt; Adult(x) ∨ ∃((x: T) =&gt; Kid(x)       )   by OrE(3, 4, 8)
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        //goal: get to our conclusion, ∃( (x: T) =&gt; Adult(x) )) ∨ ∃( (x: T) =&gt; Kid(x)
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>    //use ExistsE[T] to restate our conclusion, since we know SOME such person is either an adult or kid
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    13 (        ∃((x: T) =&gt; Adult(x) ∨ ∃((x: T) =&gt; Kid(x)       )   by ExistsE[T](1, 2)
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><h3 id="example-2">Example 2</h3>
-<p>Suppose we wish to prove the following (in the domain of living things):</p>
-<ul>
-<li>All bunnies are fluffy</li>
-<li>There is a fast bunny</li>
-<li>Therefore, there is a creature that is fast and fluffy</li>
-</ul>
-<p>We can translate our premises and desired conclusion to predicate logic, and write the following sequent:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (Bunny(x) → Fluffy(x))),
-</span></span><span style="display:flex;"><span>        ∃((x: T) =&gt; (Fast(x) &amp; Bunny(x))) 
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>⊢
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>Since we are trying to prove a claim about some individual, it makes sense that we would start the process of an <code>ExistsE[T]</code> subproof where we introduce an alias (<code>thumper</code>) for the fast bunny. We will try to reach the conclusion by the end of that subproof. Here is the setup:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (Bunny(x) → Fluffy(x))),
-</span></span><span style="display:flex;"><span>        ∃((x: T) =&gt; (Fast(x) &amp; Bunny(x))) 
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>⊢
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>Proof(
-</span></span><span style="display:flex;"><span>    1 (     ∀((x: T) =&gt; (Bunny(x) → Fluffy(x)))     )   by Premise,
-</span></span><span style="display:flex;"><span>    2 (     ∃((x: T) =&gt; (Fast(x) &amp; Bunny(x)))       )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    3 Let ( (thumper: T) =&gt; SubProof(
-</span></span><span style="display:flex;"><span>        4 Assume(   Fast(thumper) ∧ Bunny(thumper)  ),
-</span></span><span style="display:flex;"><span>        5 (         Fast(thumper)                   )   by AndE1(4),
-</span></span><span style="display:flex;"><span>        6 (         Bunny(thumper)                  )   by AndE2(4),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //goal: ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    //use ExistsE[T] to restate ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x))), since we know there is SOME fast bunny
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>To finish our subproof, we see that we have a proposition about all creatures (<code>∀((x: T) =&gt; (Bunny(x) → Fluffy(x)))</code>) and that we are working with an individual creature (<code>thumper</code>). We can use <code>AllE[T]</code> to prove <code>Bunny(thumper) → Fluffy(thumper)</code>. After that, we have a few more manipulations using propositional logic rules, our <code>ExistsI[T]</code> rule to transition our claim from being about our alias <code>thumper</code> to being about an unnamed individual, and then our <code>ExistsE[T]</code> rule to pull our final claim out of the subproof. Here is the completed proof:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (Bunny(x) → Fluffy(x))),
-</span></span><span style="display:flex;"><span>        ∃((x: T) =&gt; (Fast(x) &amp; Bunny(x))) 
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>⊢
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>Proof(
-</span></span><span style="display:flex;"><span>    1 (     ∀((x: T) =&gt; (Bunny(x) → Fluffy(x)))         )   by Premise,
-</span></span><span style="display:flex;"><span>    2 (     ∃((x: T) =&gt; (Fast(x) &amp; Bunny(x)))           )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    3 Let ( (thumper: T) =&gt; SubProof(
-</span></span><span style="display:flex;"><span>        4 Assume(   Fast(thumper) ∧ Bunny(thumper)      ),
-</span></span><span style="display:flex;"><span>        5 (         Fast(thumper)                       )   by AndE1(4),
-</span></span><span style="display:flex;"><span>        6 (         Bunny(thumper)                      )   by AndE2(4),
-</span></span><span style="display:flex;"><span>        7 (         Bunny(thumper) → Fluffy(thumper)    )   by AllE[T](1),
-</span></span><span style="display:flex;"><span>        8 (         Fluffy(thumper)                     )   by ImplyE(7, 6),
-</span></span><span style="display:flex;"><span>        9 (         Fast(thumper) ∧ Fluffy(thumper)     )   by AndI(5, 8),
-</span></span><span style="display:flex;"><span>        10 (        ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))  )   by ExistsE[T](9)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //goal: ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>    //use ExistsE[T] to restate ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x))), since we know there is SOME fast bunny
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    11 (    ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))          )   by ExistsE[T](2, 3)
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Julie Thornton
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/3ee7d6e929803e183bc58287cbf71613bf7528ae">Apr 25, 2024</a>
-</p>
-</div>
-
-    
-    </div>
-    <aside id="sidebar" class="default-animation">
-      <div id="header-wrapper" class="default-animation">
-        <div id="header" class="default-animation">
-
-<a id="logo" href="https://ksu-cs-textbooks.github.io/cis301/">
-  CIS 301: Logical Foundations of Programming
-</a>
-
-        </div>
-        <form action="https://ksu-cs-textbooks.github.io/cis301/search.html" method="get"><div class="searchbox default-animation">
-          <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
-          <label class="a11y-only" for="search-by">Search</label>
-          <input data-search-input id="search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-        </div></form>
-        <script>
-          var contentLangs=['en'];
-        </script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/auto-complete.js?1716924207" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr/lunr.min.js?1716924207" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr/lunr.stemmer.support.min.js?1716924207" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr/lunr.multi.min.js?1716924207" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/lunr/lunr.en.min.js?1716924207" defer></script>
-        <script src="https://ksu-cs-textbooks.github.io/cis301/js/search.js?1716924207" defer></script>
-      </div>
-      <div id="content-wrapper" class="highlightable">
-        <ul class="topics enlarge morespace collapsible-menu">
-          <li data-nav-id="/0-chapter/index.html" class=""><input type="checkbox" id="section-c55c9f751a28ecc9415234375cddd395" aria-controls="subsections-c55c9f751a28ecc9415234375cddd395"><label for="section-c55c9f751a28ecc9415234375cddd395"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Getting Started</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/index.html"><b>0. </b>Getting Started</a><ul id="subsections-c55c9f751a28ecc9415234375cddd395" class="morespace collapsible-menu">
-          <li data-nav-id="/0-chapter/0_1-toolsguide/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/0-chapter/0_1-toolsguide/index.html">0.1. Tools Guide</a></li></ul></li>
-          <li data-nav-id="/1-chapter/index.html" class=""><input type="checkbox" id="section-7a71fe25dd66b523fca4004b7c4d01d0" aria-controls="subsections-7a71fe25dd66b523fca4004b7c4d01d0"><label for="section-7a71fe25dd66b523fca4004b7c4d01d0"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Basics and Logic Puzzles</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/index.html"><b>1. </b>Basics and Logic Puzzles</a><ul id="subsections-7a71fe25dd66b523fca4004b7c4d01d0" class="morespace collapsible-menu">
-          <li data-nav-id="/1-chapter/1_1-logicbasics/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_1-logicbasics/index.html">1.1. Basic Logical Reasoning</a></li>
-          <li data-nav-id="/1-chapter/1_2-knightsknaves/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_2-knightsknaves/index.html">1.2. Knights and Knaves</a></li>
-          <li data-nav-id="/1-chapter/1_3-otherpuzzles/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/1-chapter/1_3-otherpuzzles/index.html">1.3. Other Puzzles</a></li></ul></li>
-          <li data-nav-id="/2-chapter/index.html" class=""><input type="checkbox" id="section-c23f766dd7728aa0e1cff094001eac05" aria-controls="subsections-c23f766dd7728aa0e1cff094001eac05"><label for="section-c23f766dd7728aa0e1cff094001eac05"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Truth Tables</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/index.html"><b>2. </b>Truth Tables</a><ul id="subsections-c23f766dd7728aa0e1cff094001eac05" class="morespace collapsible-menu">
-          <li data-nav-id="/2-chapter/2_1-opscircuits/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_1-opscircuits/index.html">2.1. Operators and Circuits</a></li>
-          <li data-nav-id="/2-chapter/2_2-logikatruth/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_2-logikatruth/index.html">2.2. Truth Tables in Logika</a></li>
-          <li data-nav-id="/2-chapter/2_3-satis/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_3-satis/index.html">2.3. Satisfiability</a></li>
-          <li data-nav-id="/2-chapter/2_4-logicalequiv/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_4-logicalequiv/index.html">2.4. Logical Equivalence</a></li>
-          <li data-nav-id="/2-chapter/2_5-sementail/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/2-chapter/2_5-sementail/index.html">2.5. Semantic Entailment</a></li></ul></li>
-          <li data-nav-id="/3-chapter/index.html" class=""><input type="checkbox" id="section-ccb531d159d5247057d21618514721b6" aria-controls="subsections-ccb531d159d5247057d21618514721b6"><label for="section-ccb531d159d5247057d21618514721b6"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Propositional Logic Translations</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/index.html"><b>3. </b>Propositional Logic Translations</a><ul id="subsections-ccb531d159d5247057d21618514721b6" class="morespace collapsible-menu">
-          <li data-nav-id="/3-chapter/3_1-propatom/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_1-propatom/index.html">3.1. Propositional Atoms</a></li>
-          <li data-nav-id="/3-chapter/3_2-notandor/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_2-notandor/index.html">3.2. NOT, AND, OR Translations</a></li>
-          <li data-nav-id="/3-chapter/3_3-implies/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_3-implies/index.html">3.3. Implies Translations</a></li>
-          <li data-nav-id="/3-chapter/3_4-equiv/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_4-equiv/index.html">3.4. Equivalent Translations</a></li>
-          <li data-nav-id="/3-chapter/3_5-knightsknavestt/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/3-chapter/3_5-knightsknavestt/index.html">3.5. Knights and Knaves, revisited</a></li></ul></li>
-          <li data-nav-id="/4-chapter/index.html" class=""><input type="checkbox" id="section-8ebf970484325d93d52075c7c72ba517" aria-controls="subsections-8ebf970484325d93d52075c7c72ba517"><label for="section-8ebf970484325d93d52075c7c72ba517"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Propositional Logic Proofs</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/index.html"><b>4. </b>Propositional Logic Proofs</a><ul id="subsections-8ebf970484325d93d52075c7c72ba517" class="morespace collapsible-menu">
-          <li data-nav-id="/4-chapter/4_1-intro/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_1-intro/index.html">4.1. Introduction</a></li>
-          <li data-nav-id="/4-chapter/4_2-andrules/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_2-andrules/index.html">4.2. AND Rules</a></li>
-          <li data-nav-id="/4-chapter/4_3-orrules/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_3-orrules/index.html">4.3. OR Rules</a></li>
-          <li data-nav-id="/4-chapter/4_4-impliesrules/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/index.html">4.4. Implies Rules</a></li>
-          <li data-nav-id="/4-chapter/4_5-notrules/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_5-notrules/index.html">4.5. Negation Rules</a></li>
-          <li data-nav-id="/4-chapter/4_6-strategies/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_6-strategies/index.html">4.6. Summary and Strategies</a></li>
-          <li data-nav-id="/4-chapter/4_7-theorems/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_7-theorems/index.html">4.7. Theorems</a></li>
-          <li data-nav-id="/4-chapter/4_8-equivalence/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_8-equivalence/index.html">4.8. Equivalence</a></li>
-          <li data-nav-id="/4-chapter/4_9-soundcomplete/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_9-soundcomplete/index.html">4.9. Soundness and Completeness</a></li></ul></li>
-          <li data-nav-id="/5-chapter/index.html" class=""><input type="checkbox" id="section-b69c30f957b0ff55c1e9673979ceb29d" aria-controls="subsections-b69c30f957b0ff55c1e9673979ceb29d"><label for="section-b69c30f957b0ff55c1e9673979ceb29d"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Predicate Logic Translations</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/index.html"><b>5. </b>Predicate Logic Translations</a><ul id="subsections-b69c30f957b0ff55c1e9673979ceb29d" class="morespace collapsible-menu">
-          <li data-nav-id="/5-chapter/5_1-motivation/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_1-motivation/index.html">5.1. Motivation</a></li>
-          <li data-nav-id="/5-chapter/5_2-predsyntax/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_2-predsyntax/index.html">5.2. Syntax</a></li>
-          <li data-nav-id="/5-chapter/5_3-singlequantifier/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_3-singlequantifier/index.html">5.3. Single Quantifier</a></li>
-          <li data-nav-id="/5-chapter/5_4-multquant/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/5-chapter/5_4-multquant/index.html">5.4. Multiple Quantifiers</a></li></ul></li>
-          <li data-nav-id="/6-chapter/index.html" class="parent "><input type="checkbox" id="section-482218cb3a05b9572157ed70ed9a5c02" aria-controls="subsections-482218cb3a05b9572157ed70ed9a5c02" checked><label for="section-482218cb3a05b9572157ed70ed9a5c02"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Predicate Logic Proofs</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/index.html"><b>6. </b>Predicate Logic Proofs</a><ul id="subsections-482218cb3a05b9572157ed70ed9a5c02" class="morespace collapsible-menu">
-          <li data-nav-id="/6-chapter/6_1-univrules/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/index.html">6.1. Rules with ∀</a></li>
-          <li data-nav-id="/6-chapter/6_2-existrules/index.html" class="active"><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_2-existrules/index.html">6.2. Rules with ∃</a></li>
-          <li data-nav-id="/6-chapter/6_3-nested/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_3-nested/index.html">6.3. Nested Quantifiers</a></li>
-          <li data-nav-id="/6-chapter/6_4-equiv/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_4-equiv/index.html">6.4. Equivalence</a></li>
-          <li data-nav-id="/6-chapter/6_5-strategies/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_5-strategies/index.html">6.5. Summary and Strategies</a></li>
-          <li data-nav-id="/6-chapter/6_6-soundcomplete/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_6-soundcomplete/index.html">6.6. Soundness and Completeness</a></li></ul></li>
-          <li data-nav-id="/7-chapter/index.html" class=""><input type="checkbox" id="section-fc25ecfcb3d8e929949e8db759e88bab" aria-controls="subsections-fc25ecfcb3d8e929949e8db759e88bab"><label for="section-fc25ecfcb3d8e929949e8db759e88bab"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Mathematical Induction</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/index.html"><b>7. </b>Mathematical Induction</a><ul id="subsections-fc25ecfcb3d8e929949e8db759e88bab" class="morespace collapsible-menu">
-          <li data-nav-id="/7-chapter/7_1-process/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_1-process/index.html">7.1. Induction Process</a></li>
-          <li data-nav-id="/7-chapter/7_2-algebraex/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_2-algebraex/index.html">7.2. Algebra example</a></li>
-          <li data-nav-id="/7-chapter/7_3-divex/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_3-divex/index.html">7.3. Divisibility example</a></li>
-          <li data-nav-id="/7-chapter/7_4-setex/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/7-chapter/7_4-setex/index.html">7.4. Set example</a></li></ul></li>
-          <li data-nav-id="/8-chapter/index.html" class=""><input type="checkbox" id="section-bd411d4b09a07aa69f5152043fa837ed" aria-controls="subsections-bd411d4b09a07aa69f5152043fa837ed"><label for="section-bd411d4b09a07aa69f5152043fa837ed"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Intro to Programming Logic</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/index.html"><b>8. </b>Intro to Programming Logic</a><ul id="subsections-bd411d4b09a07aa69f5152043fa837ed" class="morespace collapsible-menu">
-          <li data-nav-id="/8-chapter/8_1-goal/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_1-goal/index.html">8.1. Programming Logic Goal</a></li>
-          <li data-nav-id="/8-chapter/8_2-logikaprograms/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_2-logikaprograms/index.html">8.2. Logika Programs</a></li>
-          <li data-nav-id="/8-chapter/8_3-assertassume/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_3-assertassume/index.html">8.3. Assert and Assume</a></li>
-          <li data-nav-id="/8-chapter/8_4-algebrasubst/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_4-algebrasubst/index.html">8.4. Algebra and subst Rules</a></li>
-          <li data-nav-id="/8-chapter/8_5-assignment/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_5-assignment/index.html">8.5. Assignment Statements</a></li>
-          <li data-nav-id="/8-chapter/8_6-divmod/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_6-divmod/index.html">8.6. Integer Division and Modulo</a></li>
-          <li data-nav-id="/8-chapter/8_7-conditionals/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/index.html">8.7. Conditional Statements</a></li></ul></li>
-          <li data-nav-id="/9-chapter/index.html" class=""><input type="checkbox" id="section-708a4026c5b157dd8da0a277e359073f" aria-controls="subsections-708a4026c5b157dd8da0a277e359073f"><label for="section-708a4026c5b157dd8da0a277e359073f"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Functions and Loops</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/index.html"><b>9. </b>Functions and Loops</a><ul id="subsections-708a4026c5b157dd8da0a277e359073f" class="morespace collapsible-menu">
-          <li data-nav-id="/9-chapter/9_1-functions/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_1-functions/index.html">9.1. Functions</a></li>
-          <li data-nav-id="/9-chapter/9_2-recursion/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/index.html">9.2. Recursion</a></li>
-          <li data-nav-id="/9-chapter/9_3-loops/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_3-loops/index.html">9.3. Loops</a></li>
-          <li data-nav-id="/9-chapter/9_4-logikafacts/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_4-logikafacts/index.html">9.4. Logika Facts</a></li>
-          <li data-nav-id="/9-chapter/9_5-summary/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_5-summary/index.html">9.5. Summary</a></li></ul></li>
-          <li data-nav-id="/10-chapter/index.html" class=""><input type="checkbox" id="section-83e8e84779c32ba319a378089810947b" aria-controls="subsections-83e8e84779c32ba319a378089810947b"><label for="section-83e8e84779c32ba319a378089810947b"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-right"></i><span class="a11y-only">Submenu Sequences, Globals, and Termination</span></label><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/index.html"><b>10. </b>Sequences, Globals, and Termination</a><ul id="subsections-83e8e84779c32ba319a378089810947b" class="morespace collapsible-menu">
-          <li data-nav-id="/10-chapter/10_1-modes/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_1-modes/index.html">10.1 Logika Modes</a></li>
-          <li data-nav-id="/10-chapter/10_2-intosequences/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_2-intosequences/index.html">10.2 Intro to Sequences</a></li>
-          <li data-nav-id="/10-chapter/10_3-seqfn/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/index.html">10.3 Sequences in Functions</a></li>
-          <li data-nav-id="/10-chapter/10_4-seqloop/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_4-seqloop/index.html">10.4 Sequences in Loops</a></li>
-          <li data-nav-id="/10-chapter/10_5-globals/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5-globals/index.html">10.5 Global Variables</a></li>
-          <li data-nav-id="/10-chapter/10_6-termination/index.html" class=""><a class="padding" href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_6-termination/index.html">10.6 Termination</a></li></ul></li>
-        </ul>
-        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
-        <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
-        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
-          <ul>
-            <li id="select-language-container" class="footerLangSwitch">
-              <div class="padding menu-control">
-                <i class="fas fa-language fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="control-style">
-                  <label class="a11y-only" for="select-language">Language</label>
-                  <select id="select-language" onchange="location = baseUri + this.value;">
-                  </select>
-                </div>
-                <div class="clear"></div>
-              </div>
-            </li>
-            <li id="select-variant-container" class="footerVariantSwitch showVariantSwitch">
-              <div class="padding menu-control">
-                <i class="fas fa-paint-brush fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="control-style">
-                  <label class="a11y-only" for="select-variant">Theme</label>
-                  <select id="select-variant" onchange="window.variants && variants.changeVariant( this.value );">
-                    <option id="auto" value="auto" selected>Auto</option>
-                    <option id="light-theme" value="light-theme">Light Theme</option>
-                    <option id="dark-theme" value="dark-theme">Dark Theme</option>
-                  </select>
-                </div>
-                <div class="clear"></div>
-              </div>
-              <script>window.variants && variants.markSelectedVariant();</script>
-            </li>
-            <li class="footerVisitedLinks">
-              <div class="padding menu-control">
-                <i class="fas fa-history fa-fw"></i>
-                <span>&nbsp;</span>
-                <div class="control-style">
-                  <button onclick="clearHistory();">Clear History</button>
-                </div>
-                <div class="clear"></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div id="footer" class="footerFooter showFooter"><style>
-  #footer {
-      font-size: 13px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 2rem 1rem;
-      min-width: 230px;
-      max-width: 300px;
-  }
-  #footer p {
-      margin: 0;
-  }
-</style>
-  
-<p>Built using <a href="http://gohugo.io/">Hugo</a> and <a href="https://github.com/K-State-Computational-Core/hugo-theme-relearn/tree/main">Hugo Relearn Theme</a>.</p>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: .5rem auto" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p>
-
-        </div>
-      </div>
-    </aside>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1716924207" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1716924207" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1716924207" defer></script>
-  </body>
-</html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="In this section, we will see the two inference rules for the existential (∃) quantifier.
+Exists introduction We can use the exists introduction rule, ExistsI[T], when we have a proposition of the form P(a) for an arbitrary member a of a domain. Since we found one individual where a proposition held, then we can also say that there exists an individual for which the proposition is true. We can formalize the rule as follows:"><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Rules with ∃ :: CIS 301 Textbook"><meta name=twitter:description content="In this section, we will see the two inference rules for the existential (∃) quantifier.
+Exists introduction We can use the exists introduction rule, ExistsI[T], when we have a proposition of the form P(a) for an arbitrary member a of a domain. Since we found one individual where a proposition held, then we can also say that there exists an individual for which the proposition is true. We can formalize the rule as follows:"><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/6-chapter/6_2-existrules/"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Rules with ∃ :: CIS 301 Textbook"><meta property="og:description" content="In this section, we will see the two inference rules for the existential (∃) quantifier.
+Exists introduction We can use the exists introduction rule, ExistsI[T], when we have a proposition of the form P(a) for an arbitrary member a of a domain. Since we found one individual where a proposition held, then we can also say that there exists an individual for which the proposition is true. We can formalize the rule as follows:"><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Predicate Logic Proofs"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2024-04-25T17:02:46-05:00"><meta itemprop=name content="Rules with ∃ :: CIS 301 Textbook"><meta itemprop=description content="In this section, we will see the two inference rules for the existential (∃) quantifier.
+Exists introduction We can use the exists introduction rule, ExistsI[T], when we have a proposition of the form P(a) for an arbitrary member a of a domain. Since we found one individual where a proposition held, then we can also say that there exists an individual for which the proposition is true. We can formalize the rule as follows:"><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2024-04-25T17:02:46-05:00"><meta itemprop=wordCount content="1777"><title>Rules with ∃ :: CIS 301 Textbook</title>
+<link href=/cis301/6-chapter/6_2-existrules/index.xml rel=alternate type=application/rss+xml title="Rules with ∃ :: CIS 301 Textbook"><link href=/cis301/6-chapter/6_2-existrules/index.print.html rel=alternate type=text/html title="Rules with ∃ :: CIS 301 Textbook"><link href=/cis301/6-chapter/6_2-existrules/tele.html rel=alternate type=text/html title="Rules with ∃ :: CIS 301 Textbook"><link href=/cis301/6-chapter/6_2-existrules/embed.html rel=alternate type=text/html title="Rules with ∃ :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1719515002 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1719515002 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1719515002 rel=stylesheet><link href=/cis301/css/auto-complete.css?1719515002 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1719515002 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1719515002 rel=stylesheet><link href=/cis301/css/fonts.css?1719515002 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1719515002 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1719515002 rel=stylesheet><link href=/cis301/css/theme-auto.css?1719515002 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-auto.css?1719515002 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1719515002 rel=stylesheet><link href=/cis301/css/print.css?1719515002 rel=stylesheet media=print><script src=/cis301/js/variant.js?1719515002></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1719515002 rel=stylesheet></head><body class="mobile-support html disableInlineCopyToClipboard" data-url=/cis301/6-chapter/6_2-existrules/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div><div class="topbar-button topbar-button-toc" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title="Table of Contents (CTRL+ALT+t)"><i class="fa-fw fas fa-list-alt"></i></button><div class=topbar-content><div class=topbar-content-wrapper><nav class=TableOfContents><ul><li><a href=#exists-introduction>Exists introduction</a></li><li><a href=#exists-elimination>Exists elimination</a></li><li><a href=#examples>Examples</a><ul><li><a href=#example-1>Example 1</a></li><li><a href=#example-2>Example 2</a></li></ul></li></ul></nav></div></div></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis301/6-chapter/><span itemprop=name>Predicate Logic Proofs</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Rules with ∃</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-edit" data-content-empty=disable data-width-s=area-more data-width-m=show data-width-l=show><a class=topbar-control href=https://github.com/ksu-cs-textbooks/cis301/edit/main/content/6-chapter/6_2-existRules.md target=_blank title="Edit (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></div><div class="topbar-button topbar-button-print" data-content-empty=disable data-width-s=area-more data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/6-chapter/6_2-existrules/index.print.html title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a></div><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/6-chapter/6_1-univrules/ title="Rules with ∀ (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/6-chapter/6_3-nested/ title="Nested Quantifiers (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div><div class="topbar-button topbar-button-more" data-content-empty=hide data-width-s=show data-width-m=show data-width-l=show><button class=topbar-control onclick=toggleTopbarFlyout(this) type=button title=More><i class="fa-fw fas fa-ellipsis-v"></i></button><div class=topbar-content><div class=topbar-content-wrapper><div class="topbar-area topbar-area-more" data-area=more><div class="topbar-button topbar-button-embed" data-content-empty=disable data-width-s=area-more data-width-m=area-more data-width-l=area-more><a class=topbar-control href=/cis301/6-chapter/6_2-existrules/embed.html title="Embeddable Version"><i class="fa-fw fas fa-expand-arrows-alt"></i></a></div><div class="topbar-button topbar-button-tele" data-content-empty=disable data-width-s=area-more data-width-m=area-more data-width-l=area-more><a class=topbar-control href=/cis301/6-chapter/6_2-existrules/tele.html title="Teleprompter View"><i class="fa-fw fas fa-tv"></i></a></div></div></div></div></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=rules-with->Rules with ∃</h1><p>In this section, we will see the two inference rules for the existential (∃) quantifier.</p><h2 id=exists-introduction>Exists introduction</h2><p>We can use the exists introduction rule, <code>ExistsI[T]</code>, when we have a proposition of the form <code>P(a)</code> for an arbitrary member <code>a</code> of a domain. Since we found one individual where a proposition held, then we can also say that there exists an individual for which the proposition is true. We can formalize the rule as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>                   P(d)         where  d  is an individual of type T
+</span></span><span class=line><span class=cl>ExistsI[T]: ---------------------
+</span></span><span class=line><span class=cl>              ∃((x: T) =&gt; P(x))</span></span></code></pre></div><p>Here is a simple example showing the syntax of the <code>ExistsI[T]</code> rule (where <em>Socrates</em> is a parameter of type <code>T</code> to our proof function):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(   isHuman(Socrates)   ) ⊢ (   ∃ x isHuman(x)  )
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     isHuman(Socrates)   )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     ∃((x: T) =&gt; P(x))   )   by ExistsI[T](1)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>When we use the <code>ExistsI[T]</code> rule to justify a claim like <code>∃((x: T) => P(x))</code>, we include the line number of where the proposition held for a particular individual. In the proof above, we claim <code>∃((x: T) => P(x))</code> with justification <code>ExistsI[T](1)</code> &ndash; line 1 corresponds to <code>isHuman(Socrates)</code>, where our <code>∃ x isHuman(x)</code> proposition held for a particular individual. The full proof function, which shows how <em>Socrates</em> can be accepted as a parameter of type <code>T</code>, is here:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>@pure def ExistsExample[T](isHuman: T =&gt; B @pure, Socrates: T): Unit = {
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        (   isHuman(Socrates)   ) ⊢ (   ∃ x isHuman(x)  )
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>        Proof(
+</span></span><span class=line><span class=cl>            1 (     isHuman(Socrates)   )   by Premise,
+</span></span><span class=line><span class=cl>            2 (     ∃((x: T) =&gt; P(x))   )   by ExistsI[T](1)
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>Note that we can use the <code>ExistsI[T]</code> rule to introduce any variable, not just <code>x</code>. You can choose which variable to introduce based on the variables used in the conclusion. For example, the following proof is also valid:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(   isHuman(Socrates)   ) ⊢ (   ∃ x isHuman(z)  )
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     isHuman(Socrates)   )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     ∃((z: T) =&gt; P(z))   )   by ExistsI[T](1)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><h2 id=exists-elimination>Exists elimination</h2><p>Since the <code>ExistsI[T]</code>-rule constructs propositions that begin with <code>∃</code>, the <code>ExistsE[T]</code>-rule (exists elimination) disassembles propositions that begin with <code>∃</code>.</p><p>Here is a quick example (where our domain is living things):</p><ul><li>All humans are mortal</li><li>Someone is human</li><li>Therefore, someone is mortal</li></ul><p>We don&rsquo;t know the name of the human, but it does not matter. Since ALL humans are mortal and SOMEONE is human, then our anonymous human must be mortal. The steps will go like this:</p><ul><li><p>Since &ldquo;someone is human&rdquo; and since we do not know his/her name, we will just make up our own name for them – &ldquo;Jane&rdquo;. So, we assume that &ldquo;Jane is human&rdquo;.</p></li><li><p>We use the logic rules we already know to prove that &ldquo;Jane is mortal&rdquo;.</p></li><li><p>Therefore, SOMEONE is mortal and their name does not matter.</p></li></ul><p>This approach is coded into the last logic law, <code>ExistsE[T]</code> (exists elimination).</p><p>Suppose we have a premise of the form <code>∃((x: T) => P(x))</code>. Since we do not know the name of the individual &ldquo;hidden&rdquo; behind the <code>∃(x: T)</code>, we make up a name for it, say <code>a</code>, and discuss what must follow from the assumption that <code>P(a)</code> holds true. Here is the formalization of the <code>ExistsE[T]</code> rule:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>                                        Let ((a: T) =&gt; SubProof(          // where  a  is a new, fresh name
+</span></span><span class=line><span class=cl>                                             Assume( P(a) ),              // a  MUST NOT appear in  Q
+</span></span><span class=line><span class=cl>                ∃((x: T) =&gt; P(x))            ...
+</span></span><span class=line><span class=cl>                                             Q         
+</span></span><span class=line><span class=cl>                                        )),             
+</span></span><span class=line><span class=cl>ExistsE[T]: ----------------------------------------------------
+</span></span><span class=line><span class=cl>                     Q</span></span></code></pre></div><p>That is, if we can deduce <code>Q</code> from <code>P(a)</code>, and we do not mention <code>a</code> within <code>Q</code>, then it means <code>Q</code> can be deduced no matter what name the hidden individual has. So, <code>Q</code> follows from <code>∃((x: T) => P(x))</code>.</p><p>We can work the previous example, with <code>ExistsE[T]</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>All humans are mortal
+</span></span><span class=line><span class=cl>Someone is human
+</span></span><span class=line><span class=cl>Therefore, someone is mortal</span></span></code></pre></div><p>We make up the name, <code>jane</code>, for the human whose name we do not know:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((h: T) =&gt; (isHuman(h) → isMortal(h))),
+</span></span><span class=line><span class=cl>        ∃((x: T) =&gt; isHuman(x))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>⊢
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∃((y: T) =&gt; (isMortal(y)))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>Proof(
+</span></span><span class=line><span class=cl>    1 (     ∀((h: T) =&gt; (isHuman(h) → isMortal(h)))     )   by Premise,
+</span></span><span class=line><span class=cl>    2 (     ∃((x: T) =&gt; isHuman(x))                     )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    3 Let ( (jane: T) =&gt; SubProof (
+</span></span><span class=line><span class=cl>        4 Assume(   isHuman(jane)                       ),
+</span></span><span class=line><span class=cl>        5 (         isHuman(jane) → isMortal(jane)      )   by AllE[T](1),
+</span></span><span class=line><span class=cl>        6 (         isMortal(jane)                      )   by ImplyE(5, 4)
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>    7 (     ∃((y: T) =&gt; (isMortal(y)))                  )   by ExistsE[T](2, 3)
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>Line 3 proposes the name <code>jane</code> for our subproof and line 4 makes the assumption <code>isHuman(jane)</code> (based on the premise <code>∃((x: T) => isHuman(x))</code>). The subproof leads to Line 6, which says that someone is mortal. (We never learned the individual&rsquo;s name!) Since Line 6 does not explicitly mention the made-up name, <code>jane</code>, we use Line 7 to repeat Line 6 – without knowing the name of the individual &ldquo;hiding&rdquo; inside Line 2, we made a subproof that proves the result, anyway. This is how <code>ExistsE[T]</code> works.</p><p>Note that when we use the <code>ExistsE[T]</code> rule as a justification we include first the line number of the there exists statement that we processed (by naming the hidden individual) in the previous subproof, and then the line number of that subproof. In the example above, we say <code>ExistsE[T](2, 3)</code> because line 2 includes the there-exists statement we processed (<code>∃ ∃((x: T) => isHuman(x))</code>) in the previous subproof and line 3 is the subproof.</p><p>When using <code>ExistsE[T]</code>, the previous subproof must begin with introducing a name for a hidden individual in a there-exists statement and then immediately make an assumption that substitutes the name into the there exists statement. The last line in the subproof should contain NO mention of the chosen name. Whatever we claim on the last line in the subproof, we must claim EXACTLY the same thing immediately afterwards when we use the <code>ExistsE[T]</code> rule.</p><p>You are welcome to use any name for the hidden individual &ndash; not just <code>jane</code> or <code>a</code>. The only restriction is that you cannot have used the name anywhere else in the proof.</p><h2 id=examples>Examples</h2><p>In this section, we will look at other proofs involving the existential quantifier.</p><h3 id=example-1>Example 1</h3><p>Suppose we wish to prove the following sequent:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(   ∃((x: T) =&gt; (Adult(x) ∨ Kid(x)))  ) ⊢ (   ∃((x: T) =&gt; Adult(x) )) ∨ ∃((x: T) =&gt; Kid(x)  )</span></span></code></pre></div><p>We will begin as we did previously: by introducing an alias for our person that is either an adult or a kid (say, <code>alice</code>):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(   ∃((x: T) =&gt; (Adult(x) ∨ Kid(x)))  ) ⊢ (   ∃((x: T) =&gt; Adult(x) )) ∨ ∃((x: T) =&gt; Kid(x)  )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Proof(
+</span></span><span class=line><span class=cl>    1 (     ∃((x: T) =&gt; (Adult(x) ∨ Kid(x)) )       )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    2 Let ( (alice: T) =&gt; SubProof(
+</span></span><span class=line><span class=cl>        3 Assume(   Adult(alice) ∨ Kid(alice)       ),
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        //goal: get to our conclusion, ∃( (x: T) =&gt; Adult(x) )) ∨ ∃( (x: T) =&gt; Kid(x)
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    //use ExistsE[T] to restate our conclusion, since we know SOME such person is either an adult or kid
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>To finish our proof, we can use OR elimination on <code>Adult(alice) ∨ Kid(alice)</code>, and then <code>ExistsE[T]</code> afterwards to restate our conclusion. Here is the completed proof:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(   ∃((x: T) =&gt; (Adult(x) ∨ Kid(x)))  ) ⊢ (   ∃((x: T) =&gt; Adult(x) )) ∨ ∃((x: T) =&gt; Kid(x)  )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Proof(
+</span></span><span class=line><span class=cl>    1 (     ∃((x: T) =&gt; (Adult(x) ∨ Kid(x)) )                   )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    2 Let ( (alice: T) =&gt; SubProof(
+</span></span><span class=line><span class=cl>        3 Assume(   Adult(alice) ∨ Kid(alice)                   ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        4 SubProof(
+</span></span><span class=line><span class=cl>            5 Assume (  Adult(alice)                            ),
+</span></span><span class=line><span class=cl>            6 (     ∃((x: T) =&gt; Adult(x)                        )   by ExistsI[T](5),
+</span></span><span class=line><span class=cl>            7 (     ∃((x: T) =&gt; Adult(x) ∨ ∃((x: T) =&gt; Kid(x)   )   by OrI1(6)
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        8 SubProof(
+</span></span><span class=line><span class=cl>            9 Assume (  Kid(alice)                              ),
+</span></span><span class=line><span class=cl>            10 (    ∃((x: T) =&gt; Kid(x)                          )   by ExistsI[T](9),
+</span></span><span class=line><span class=cl>            11 (    ∃((x: T) =&gt; Adult(x) ∨ ∃((x: T) =&gt; Kid(x)   )   by OrI2(10)
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        12 (    ∃((x: T) =&gt; Adult(x) ∨ ∃((x: T) =&gt; Kid(x)       )   by OrE(3, 4, 8)
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        //goal: get to our conclusion, ∃( (x: T) =&gt; Adult(x) )) ∨ ∃( (x: T) =&gt; Kid(x)
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>    //use ExistsE[T] to restate our conclusion, since we know SOME such person is either an adult or kid
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    13 (        ∃((x: T) =&gt; Adult(x) ∨ ∃((x: T) =&gt; Kid(x)       )   by ExistsE[T](1, 2)
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><h3 id=example-2>Example 2</h3><p>Suppose we wish to prove the following (in the domain of living things):</p><ul><li>All bunnies are fluffy</li><li>There is a fast bunny</li><li>Therefore, there is a creature that is fast and fluffy</li></ul><p>We can translate our premises and desired conclusion to predicate logic, and write the following sequent:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (Bunny(x) → Fluffy(x))),
+</span></span><span class=line><span class=cl>        ∃((x: T) =&gt; (Fast(x) &amp; Bunny(x))) 
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>⊢
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>Since we are trying to prove a claim about some individual, it makes sense that we would start the process of an <code>ExistsE[T]</code> subproof where we introduce an alias (<code>thumper</code>) for the fast bunny. We will try to reach the conclusion by the end of that subproof. Here is the setup:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (Bunny(x) → Fluffy(x))),
+</span></span><span class=line><span class=cl>        ∃((x: T) =&gt; (Fast(x) &amp; Bunny(x))) 
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>⊢
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>Proof(
+</span></span><span class=line><span class=cl>    1 (     ∀((x: T) =&gt; (Bunny(x) → Fluffy(x)))     )   by Premise,
+</span></span><span class=line><span class=cl>    2 (     ∃((x: T) =&gt; (Fast(x) &amp; Bunny(x)))       )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    3 Let ( (thumper: T) =&gt; SubProof(
+</span></span><span class=line><span class=cl>        4 Assume(   Fast(thumper) ∧ Bunny(thumper)  ),
+</span></span><span class=line><span class=cl>        5 (         Fast(thumper)                   )   by AndE1(4),
+</span></span><span class=line><span class=cl>        6 (         Bunny(thumper)                  )   by AndE2(4),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //goal: ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    //use ExistsE[T] to restate ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x))), since we know there is SOME fast bunny
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>To finish our subproof, we see that we have a proposition about all creatures (<code>∀((x: T) => (Bunny(x) → Fluffy(x)))</code>) and that we are working with an individual creature (<code>thumper</code>). We can use <code>AllE[T]</code> to prove <code>Bunny(thumper) → Fluffy(thumper)</code>. After that, we have a few more manipulations using propositional logic rules, our <code>ExistsI[T]</code> rule to transition our claim from being about our alias <code>thumper</code> to being about an unnamed individual, and then our <code>ExistsE[T]</code> rule to pull our final claim out of the subproof. Here is the completed proof:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (Bunny(x) → Fluffy(x))),
+</span></span><span class=line><span class=cl>        ∃((x: T) =&gt; (Fast(x) &amp; Bunny(x))) 
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>⊢
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>Proof(
+</span></span><span class=line><span class=cl>    1 (     ∀((x: T) =&gt; (Bunny(x) → Fluffy(x)))         )   by Premise,
+</span></span><span class=line><span class=cl>    2 (     ∃((x: T) =&gt; (Fast(x) &amp; Bunny(x)))           )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    3 Let ( (thumper: T) =&gt; SubProof(
+</span></span><span class=line><span class=cl>        4 Assume(   Fast(thumper) ∧ Bunny(thumper)      ),
+</span></span><span class=line><span class=cl>        5 (         Fast(thumper)                       )   by AndE1(4),
+</span></span><span class=line><span class=cl>        6 (         Bunny(thumper)                      )   by AndE2(4),
+</span></span><span class=line><span class=cl>        7 (         Bunny(thumper) → Fluffy(thumper)    )   by AllE[T](1),
+</span></span><span class=line><span class=cl>        8 (         Fluffy(thumper)                     )   by ImplyE(7, 6),
+</span></span><span class=line><span class=cl>        9 (         Fast(thumper) ∧ Fluffy(thumper)     )   by AndI(5, 8),
+</span></span><span class=line><span class=cl>        10 (        ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))  )   by ExistsE[T](9)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //goal: ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>    //use ExistsE[T] to restate ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x))), since we know there is SOME fast bunny
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    11 (    ∃((x: T) =&gt; (Fast(x) &amp; Fluffy(x)))          )   by ExistsE[T](2, 3)
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><footer class=footline></footer></article></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Julie Thornton
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis301/commit/3ee7d6e929803e183bc58287cbf71613bf7528ae>Apr 25, 2024</a></p></div></div><aside id=R-sidebar class=default-animation><div id=R-header-topbar class=default-animation></div><div id=R-header-wrapper class=default-animation><div id=R-header class=default-animation><a id=logo href=/cis301/>CIS 301: Logical Foundations of Programming</a></div><search><form action=/cis301/search.html method=get><div class="searchbox default-animation"><button class=search-detail type=submit title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+<label class=a11y-only for=R-search-by>Search</label>
+<input data-search-input id=R-search-by name=search-by class=search-by type=search placeholder=Search...>
+<button class=search-clear type=button data-search-clear title="Clear search"><i class="fas fa-times" title="Clear search"></i></button></div></form></search><script>var contentLangs=["en"]</script><script src=/cis301/js/auto-complete.js?1719515002 defer></script><script src=/cis301/js/lunr/lunr.min.js?1719515002 defer></script><script src=/cis301/js/lunr/lunr.stemmer.support.min.js?1719515002 defer></script><script src=/cis301/js/lunr/lunr.multi.min.js?1719515002 defer></script><script src=/cis301/js/lunr/lunr.en.min.js?1719515002 defer></script><script src=/cis301/js/search.js?1719515002 defer></script></div><div id=R-homelinks class=default-animation><hr class=padding></div><div id=R-content-wrapper class=highlightable><div id=R-topics><ul class="enlarge morespace collapsible-menu"><li data-nav-id=/cis301/0-chapter/><input type=checkbox id=R-section-4dd9ea2241609372e21522ad467bdbcf aria-controls=R-subsections-4dd9ea2241609372e21522ad467bdbcf><label for=R-section-4dd9ea2241609372e21522ad467bdbcf><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Getting Started</span></label><a class=padding href=/cis301/0-chapter/><b>0. </b>Getting Started</a><ul id=R-subsections-4dd9ea2241609372e21522ad467bdbcf class="morespace collapsible-menu"><li data-nav-id=/cis301/0-chapter/0_1-toolsguide/><a class=padding href=/cis301/0-chapter/0_1-toolsguide/>0.1. Tools Guide</a></li></ul></li><li data-nav-id=/cis301/1-chapter/><input type=checkbox id=R-section-17929730d34290b059d2edff1c690239 aria-controls=R-subsections-17929730d34290b059d2edff1c690239><label for=R-section-17929730d34290b059d2edff1c690239><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Basics and Logic Puzzles</span></label><a class=padding href=/cis301/1-chapter/><b>1. </b>Basics and Logic Puzzles</a><ul id=R-subsections-17929730d34290b059d2edff1c690239 class="morespace collapsible-menu"><li data-nav-id=/cis301/1-chapter/1_1-logicbasics/><a class=padding href=/cis301/1-chapter/1_1-logicbasics/>1.1. Basic Logical Reasoning</a></li><li data-nav-id=/cis301/1-chapter/1_2-knightsknaves/><a class=padding href=/cis301/1-chapter/1_2-knightsknaves/>1.2. Knights and Knaves</a></li><li data-nav-id=/cis301/1-chapter/1_3-otherpuzzles/><a class=padding href=/cis301/1-chapter/1_3-otherpuzzles/>1.3. Other Puzzles</a></li></ul></li><li data-nav-id=/cis301/2-chapter/><input type=checkbox id=R-section-97391a296e58f4aff54bb6b925a2776b aria-controls=R-subsections-97391a296e58f4aff54bb6b925a2776b><label for=R-section-97391a296e58f4aff54bb6b925a2776b><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Truth Tables</span></label><a class=padding href=/cis301/2-chapter/><b>2. </b>Truth Tables</a><ul id=R-subsections-97391a296e58f4aff54bb6b925a2776b class="morespace collapsible-menu"><li data-nav-id=/cis301/2-chapter/2_1-opscircuits/><a class=padding href=/cis301/2-chapter/2_1-opscircuits/>2.1. Operators and Circuits</a></li><li data-nav-id=/cis301/2-chapter/2_2-logikatruth/><a class=padding href=/cis301/2-chapter/2_2-logikatruth/>2.2. Truth Tables in Logika</a></li><li data-nav-id=/cis301/2-chapter/2_3-satis/><a class=padding href=/cis301/2-chapter/2_3-satis/>2.3. Satisfiability</a></li><li data-nav-id=/cis301/2-chapter/2_4-logicalequiv/><a class=padding href=/cis301/2-chapter/2_4-logicalequiv/>2.4. Logical Equivalence</a></li><li data-nav-id=/cis301/2-chapter/2_5-sementail/><a class=padding href=/cis301/2-chapter/2_5-sementail/>2.5. Semantic Entailment</a></li></ul></li><li data-nav-id=/cis301/3-chapter/><input type=checkbox id=R-section-b4e2df8934a6b804e9336da7e38d4126 aria-controls=R-subsections-b4e2df8934a6b804e9336da7e38d4126><label for=R-section-b4e2df8934a6b804e9336da7e38d4126><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Propositional Logic Translations</span></label><a class=padding href=/cis301/3-chapter/><b>3. </b>Propositional Logic Translations</a><ul id=R-subsections-b4e2df8934a6b804e9336da7e38d4126 class="morespace collapsible-menu"><li data-nav-id=/cis301/3-chapter/3_1-propatom/><a class=padding href=/cis301/3-chapter/3_1-propatom/>3.1. Propositional Atoms</a></li><li data-nav-id=/cis301/3-chapter/3_2-notandor/><a class=padding href=/cis301/3-chapter/3_2-notandor/>3.2. NOT, AND, OR Translations</a></li><li data-nav-id=/cis301/3-chapter/3_3-implies/><a class=padding href=/cis301/3-chapter/3_3-implies/>3.3. Implies Translations</a></li><li data-nav-id=/cis301/3-chapter/3_4-equiv/><a class=padding href=/cis301/3-chapter/3_4-equiv/>3.4. Equivalent Translations</a></li><li data-nav-id=/cis301/3-chapter/3_5-knightsknavestt/><a class=padding href=/cis301/3-chapter/3_5-knightsknavestt/>3.5. Knights and Knaves, revisited</a></li></ul></li><li data-nav-id=/cis301/4-chapter/><input type=checkbox id=R-section-619d3749907cd3e1af90a59cf2fcd6bd aria-controls=R-subsections-619d3749907cd3e1af90a59cf2fcd6bd><label for=R-section-619d3749907cd3e1af90a59cf2fcd6bd><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Propositional Logic Proofs</span></label><a class=padding href=/cis301/4-chapter/><b>4. </b>Propositional Logic Proofs</a><ul id=R-subsections-619d3749907cd3e1af90a59cf2fcd6bd class="morespace collapsible-menu"><li data-nav-id=/cis301/4-chapter/4_1-intro/><a class=padding href=/cis301/4-chapter/4_1-intro/>4.1. Introduction</a></li><li data-nav-id=/cis301/4-chapter/4_2-andrules/><a class=padding href=/cis301/4-chapter/4_2-andrules/>4.2. AND Rules</a></li><li data-nav-id=/cis301/4-chapter/4_3-orrules/><a class=padding href=/cis301/4-chapter/4_3-orrules/>4.3. OR Rules</a></li><li data-nav-id=/cis301/4-chapter/4_4-impliesrules/><a class=padding href=/cis301/4-chapter/4_4-impliesrules/>4.4. Implies Rules</a></li><li data-nav-id=/cis301/4-chapter/4_5-notrules/><a class=padding href=/cis301/4-chapter/4_5-notrules/>4.5. Negation Rules</a></li><li data-nav-id=/cis301/4-chapter/4_6-strategies/><a class=padding href=/cis301/4-chapter/4_6-strategies/>4.6. Summary and Strategies</a></li><li data-nav-id=/cis301/4-chapter/4_7-theorems/><a class=padding href=/cis301/4-chapter/4_7-theorems/>4.7. Theorems</a></li><li data-nav-id=/cis301/4-chapter/4_8-equivalence/><a class=padding href=/cis301/4-chapter/4_8-equivalence/>4.8. Equivalence</a></li><li data-nav-id=/cis301/4-chapter/4_9-soundcomplete/><a class=padding href=/cis301/4-chapter/4_9-soundcomplete/>4.9. Soundness and Completeness</a></li></ul></li><li data-nav-id=/cis301/5-chapter/><input type=checkbox id=R-section-fbe0105598b5fc5de0d6a9a8eea1a2d7 aria-controls=R-subsections-fbe0105598b5fc5de0d6a9a8eea1a2d7><label for=R-section-fbe0105598b5fc5de0d6a9a8eea1a2d7><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Predicate Logic Translations</span></label><a class=padding href=/cis301/5-chapter/><b>5. </b>Predicate Logic Translations</a><ul id=R-subsections-fbe0105598b5fc5de0d6a9a8eea1a2d7 class="morespace collapsible-menu"><li data-nav-id=/cis301/5-chapter/5_1-motivation/><a class=padding href=/cis301/5-chapter/5_1-motivation/>5.1. Motivation</a></li><li data-nav-id=/cis301/5-chapter/5_2-predsyntax/><a class=padding href=/cis301/5-chapter/5_2-predsyntax/>5.2. Syntax</a></li><li data-nav-id=/cis301/5-chapter/5_3-singlequantifier/><a class=padding href=/cis301/5-chapter/5_3-singlequantifier/>5.3. Single Quantifier</a></li><li data-nav-id=/cis301/5-chapter/5_4-multquant/><a class=padding href=/cis301/5-chapter/5_4-multquant/>5.4. Multiple Quantifiers</a></li></ul></li><li data-nav-id=/cis301/6-chapter/ class=parent><input type=checkbox id=R-section-1afc7d1d7b98dcc397b91690230bcb55 aria-controls=R-subsections-1afc7d1d7b98dcc397b91690230bcb55 checked><label for=R-section-1afc7d1d7b98dcc397b91690230bcb55><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Predicate Logic Proofs</span></label><a class=padding href=/cis301/6-chapter/><b>6. </b>Predicate Logic Proofs</a><ul id=R-subsections-1afc7d1d7b98dcc397b91690230bcb55 class="morespace collapsible-menu"><li data-nav-id=/cis301/6-chapter/6_1-univrules/><a class=padding href=/cis301/6-chapter/6_1-univrules/>6.1. Rules with ∀</a></li><li data-nav-id=/cis301/6-chapter/6_2-existrules/ class=active><a class=padding href=/cis301/6-chapter/6_2-existrules/>6.2. Rules with ∃</a></li><li data-nav-id=/cis301/6-chapter/6_3-nested/><a class=padding href=/cis301/6-chapter/6_3-nested/>6.3. Nested Quantifiers</a></li><li data-nav-id=/cis301/6-chapter/6_4-equiv/><a class=padding href=/cis301/6-chapter/6_4-equiv/>6.4. Equivalence</a></li><li data-nav-id=/cis301/6-chapter/6_5-strategies/><a class=padding href=/cis301/6-chapter/6_5-strategies/>6.5. Summary and Strategies</a></li><li data-nav-id=/cis301/6-chapter/6_6-soundcomplete/><a class=padding href=/cis301/6-chapter/6_6-soundcomplete/>6.6. Soundness and Completeness</a></li></ul></li><li data-nav-id=/cis301/7-chapter/><input type=checkbox id=R-section-48461595e2f67d1468fbd78e51714428 aria-controls=R-subsections-48461595e2f67d1468fbd78e51714428><label for=R-section-48461595e2f67d1468fbd78e51714428><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Mathematical Induction</span></label><a class=padding href=/cis301/7-chapter/><b>7. </b>Mathematical Induction</a><ul id=R-subsections-48461595e2f67d1468fbd78e51714428 class="morespace collapsible-menu"><li data-nav-id=/cis301/7-chapter/7_1-process/><a class=padding href=/cis301/7-chapter/7_1-process/>7.1. Induction Process</a></li><li data-nav-id=/cis301/7-chapter/7_2-algebraex/><a class=padding href=/cis301/7-chapter/7_2-algebraex/>7.2. Algebra example</a></li><li data-nav-id=/cis301/7-chapter/7_3-divex/><a class=padding href=/cis301/7-chapter/7_3-divex/>7.3. Divisibility example</a></li><li data-nav-id=/cis301/7-chapter/7_4-setex/><a class=padding href=/cis301/7-chapter/7_4-setex/>7.4. Set example</a></li></ul></li><li data-nav-id=/cis301/8-chapter/><input type=checkbox id=R-section-77afa9c6b199f7330fa5eb8966814b35 aria-controls=R-subsections-77afa9c6b199f7330fa5eb8966814b35><label for=R-section-77afa9c6b199f7330fa5eb8966814b35><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Intro to Programming Logic</span></label><a class=padding href=/cis301/8-chapter/><b>8. </b>Intro to Programming Logic</a><ul id=R-subsections-77afa9c6b199f7330fa5eb8966814b35 class="morespace collapsible-menu"><li data-nav-id=/cis301/8-chapter/8_1-goal/><a class=padding href=/cis301/8-chapter/8_1-goal/>8.1. Programming Logic Goal</a></li><li data-nav-id=/cis301/8-chapter/8_2-logikaprograms/><a class=padding href=/cis301/8-chapter/8_2-logikaprograms/>8.2. Logika Programs</a></li><li data-nav-id=/cis301/8-chapter/8_3-assertassume/><a class=padding href=/cis301/8-chapter/8_3-assertassume/>8.3. Assert and Assume</a></li><li data-nav-id=/cis301/8-chapter/8_4-algebrasubst/><a class=padding href=/cis301/8-chapter/8_4-algebrasubst/>8.4. Algebra and subst Rules</a></li><li data-nav-id=/cis301/8-chapter/8_5-assignment/><a class=padding href=/cis301/8-chapter/8_5-assignment/>8.5. Assignment Statements</a></li><li data-nav-id=/cis301/8-chapter/8_6-divmod/><a class=padding href=/cis301/8-chapter/8_6-divmod/>8.6. Integer Division and Modulo</a></li><li data-nav-id=/cis301/8-chapter/8_7-conditionals/><a class=padding href=/cis301/8-chapter/8_7-conditionals/>8.7. Conditional Statements</a></li></ul></li><li data-nav-id=/cis301/9-chapter/><input type=checkbox id=R-section-ffb46ad61395302deae4c4fa734e982a aria-controls=R-subsections-ffb46ad61395302deae4c4fa734e982a><label for=R-section-ffb46ad61395302deae4c4fa734e982a><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Functions and Loops</span></label><a class=padding href=/cis301/9-chapter/><b>9. </b>Functions and Loops</a><ul id=R-subsections-ffb46ad61395302deae4c4fa734e982a class="morespace collapsible-menu"><li data-nav-id=/cis301/9-chapter/9_1-functions/><a class=padding href=/cis301/9-chapter/9_1-functions/>9.1. Functions</a></li><li data-nav-id=/cis301/9-chapter/9_2-recursion/><a class=padding href=/cis301/9-chapter/9_2-recursion/>9.2. Recursion</a></li><li data-nav-id=/cis301/9-chapter/9_3-loops/><a class=padding href=/cis301/9-chapter/9_3-loops/>9.3. Loops</a></li><li data-nav-id=/cis301/9-chapter/9_4-logikafacts/><a class=padding href=/cis301/9-chapter/9_4-logikafacts/>9.4. Logika Facts</a></li><li data-nav-id=/cis301/9-chapter/9_5-summary/><a class=padding href=/cis301/9-chapter/9_5-summary/>9.5. Summary</a></li></ul></li><li data-nav-id=/cis301/10-chapter/><input type=checkbox id=R-section-9e1e97bcf82568ce724d247ecac0ed85 aria-controls=R-subsections-9e1e97bcf82568ce724d247ecac0ed85><label for=R-section-9e1e97bcf82568ce724d247ecac0ed85><i class="fa-fw fas fa-chevron-down"></i><i class="fa-fw fas fa-chevron-right"></i><span class=a11y-only>Submenu Sequences, Globals, and Termination</span></label><a class=padding href=/cis301/10-chapter/><b>10. </b>Sequences, Globals, and Termination</a><ul id=R-subsections-9e1e97bcf82568ce724d247ecac0ed85 class="morespace collapsible-menu"><li data-nav-id=/cis301/10-chapter/10_1-modes/><a class=padding href=/cis301/10-chapter/10_1-modes/>10.1 Logika Modes</a></li><li data-nav-id=/cis301/10-chapter/10_2-intosequences/><a class=padding href=/cis301/10-chapter/10_2-intosequences/>10.2 Intro to Sequences</a></li><li data-nav-id=/cis301/10-chapter/10_3-seqfn/><a class=padding href=/cis301/10-chapter/10_3-seqfn/>10.3 Sequences in Functions</a></li><li data-nav-id=/cis301/10-chapter/10_4-seqloop/><a class=padding href=/cis301/10-chapter/10_4-seqloop/>10.4 Sequences in Loops</a></li><li data-nav-id=/cis301/10-chapter/10_5-globals/><a class=padding href=/cis301/10-chapter/10_5-globals/>10.5 Global Variables</a></li><li data-nav-id=/cis301/10-chapter/10_6-termination/><a class=padding href=/cis301/10-chapter/10_6-termination/>10.6 Termination</a></li></ul></li></ul></div><div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div><div id=R-menu-footer><hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"><div id=R-prefooter class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch"><ul><li id=R-select-language-container class=footerLangSwitch><div class="padding menu-control"><i class="fa-fw fas fa-language"></i>
+<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-language>Language</label>
+<select id=R-select-language onchange="location=this.querySelector(this.value).dataset.url"><option id=R-select-language-en value=#R-select-language-en data-url=/cis301/6-chapter/6_2-existrules/ lang=en-us selected></option></select></div><div class=clear></div></div></li><li id=R-select-variant-container class="footerVariantSwitch showVariantSwitch"><div class="padding menu-control"><i class="fa-fw fas fa-paint-brush"></i>
+<span>&nbsp;</span><div class=control-style><label class=a11y-only for=R-select-variant>Theme</label>
+<select id=R-select-variant onchange=window.variants&&variants.changeVariant(this.value)><option id=R-select-variant-auto value=auto selected>KSU Auto</option><option id=R-select-variant-light-theme value=light-theme>KSU Light</option><option id=R-select-variant-dark-theme value=dark-theme>KSU Dark</option></select></div><div class=clear></div></div><script>window.variants&&variants.markSelectedVariant()</script></li><li class=footerVisitedLinks><div class="padding menu-control"><i class="fa-fw fas fa-history"></i>
+<span>&nbsp;</span><div class=control-style><button onclick=clearHistory()>Clear History</button></div><div class=clear></div></div></li></ul></div><div id=R-footer class="footerFooter showFooter"><p>Built using <a href=http://gohugo.io/>Hugo</a> and <a href=https://github.com/ksu-cs-textbooks/hugo-theme-relearn>Hugo Relearn Theme</a>.</p><p><a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/><img alt="Creative Commons License" style="border-width:0;margin:.5rem auto" src=https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png></a><br>This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-sa/4.0/>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a></p></div></div></div></aside><script src=/cis301/js/clipboard.min.js?1719515002 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1719515002 defer></script><script src=/cis301/js/theme.js?1719515002 defer></script></body></html>

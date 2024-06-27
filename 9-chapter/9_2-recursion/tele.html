@@ -1,621 +1,157 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 301: Logical Foundations of Programming">
-    <meta name="author" content="Julie Thornton">
-    <title>Recursion :: CIS 301 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/index.html" rel="canonical" type="text/html" title="Recursion :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/index.xml" rel="alternate" type="application/rss+xml" title="Recursion :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/index.print.html" rel="alternate" type="text/html" title="Recursion :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/embed.html" rel="alternate" type="text/html" title="Recursion :: CIS 301 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924210" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924210" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1716924210" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924210" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924210" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1716924210" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924210" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924210" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1716924210" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1716924210" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1716924210" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1716924210" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1716924210" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1716924210"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1716924210"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1716924210" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/9-chapter/9_2-recursion/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="recursion">Recursion</h1>
-
-<p>In this section, we will see how to prove the correctness of programs that use recursive functions. We will see that verifying a recursive function is exactly the same as verifying a non-recursive function:</p>
-<ul>
-<li>We must prove a function&rsquo;s preconditions before calling it (including before making a recursive call)</li>
-<li>After calling a function, we can list the function&rsquo;s postconditions as premises (including after making a recursive call)</li>
-<li>The function can list its preconditions as premises</li>
-<li>The function must prove its postconditions just before it ends</li>
-</ul>
-<h2 id="writing-a-recursive-mult-function">Writing a recursive mult function</h2>
-<p>We know we can multiply two numbers, <code>x</code> and <code>y</code>, using the <code>*</code> operator &ndash; <code>x * y</code>. But what if we wanted to find the same result using only addition, not multiplication? Multiplication can be thought of as repeated addition &ndash; <code>x * y</code> is really <code>x + x + ... + x</code>, where we add together <code>y</code> total <code>x</code>&rsquo;s.</p>
-<p>We <em>could</em> do this repeated addition with a loop (and we will when we introduce loops in section 9.3), but we will use recursion instead. When we write a recursive function, we try to think of two things:</p>
-<ul>
-<li>The <em>base case</em>: the simplest version of the problem that we could immediately solve with no more work.</li>
-<li>The <em>recursive case</em>: bigger versions of the problem, where we solve a piece of the problem and then recursively solve a smaller piece</li>
-</ul>
-<p>In the case of the multiplication <code>x * y</code>, we have:</p>
-<ul>
-<li>Base case: if <code>y</code> is 0, we have no work to do. Adding together 0 <code>x</code>&rsquo;s is just 0.</li>
-<li>Recursive case: if <code>y</code> is bigger than 0, we do ONE addition (<code>x + ...</code>) and recursively add the remaining <code>y - 1</code> numbers. (This will become our recursive call.)</li>
-</ul>
-<p>With those cases in mind, we can write a recursive <code>mult</code> function:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --manual --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>import org.sireum.justification._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def mult(x: Z, y: Z): Z = {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    var ans: Z = 0
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    if (y &gt; 0) {
-</span></span><span style="display:flex;"><span>        ans = mult(x, y-1)
-</span></span><span style="display:flex;"><span>        ans = ans + x
-</span></span><span style="display:flex;"><span>    } else {
-</span></span><span style="display:flex;"><span>        //do nothing
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    return ans
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Note that we separated the recursive call (<code>ans = mult(x, y-1)</code>) from adding on the next piece (<code>ans = ans + x</code>). When using Logika, all function calls must go on a separate line by themselves &ndash; we can&rsquo;t combine them with other operations. Also, we included a dummy &ldquo;else&rdquo; branch to make the verification simpler.</p>
-<h2 id="walking-through-mult">Walking through mult</h2>
-<p>Suppose we call <code>mult</code> as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>var times: Z = mult(4, 2)</span></span></code></pre></div><p>We can trace the recursive calls:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>times = mult(4, 2) 
-</span></span><span style="display:flex;"><span>            (x = 4, y = 2)
-</span></span><span style="display:flex;"><span>            ans = mult(4, 1)    =&gt; mult(4, 1)
-</span></span><span style="display:flex;"><span>            ans = ans + 4               (x = 4, y = 1)
-</span></span><span style="display:flex;"><span>            returns ans                     ans = mult(4, 0)    =&gt;  mult(4, 0)
-</span></span><span style="display:flex;"><span>                                            ans = ans + 4               (x = 4, y = 0)
-</span></span><span style="display:flex;"><span>                                            returns ans                     ans = 0
-</span></span><span style="display:flex;"><span>                                                                            returns 0</span></span></code></pre></div><p>We start with <code>mult(4, 2)</code>, and then immediately make the recursive call <code>mult(4, 1)</code>, which immediately makes the recursive call <code>mult(4, 0)</code>. That function instance hits the base case and returns 0. We now return back up the chain of function calls &ndash; the 0 gets returned back to the <code>mult(4, 1)</code> instance, which adds 4 and then returns 4:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>=&gt; mult(4, 1)
-</span></span><span style="display:flex;"><span>    (x = 4, y = 1)
-</span></span><span style="display:flex;"><span>    ans = mult(4, 0) = 0
-</span></span><span style="display:flex;"><span>    ans = ans + 4 = 4
-</span></span><span style="display:flex;"><span>    returns ans (4)</span></span></code></pre></div><p>This 4 returns back to the <code>mult(4, 2)</code> instance, which adds another 4 and returns 8:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>mult(4, 2) 
-</span></span><span style="display:flex;"><span>    (x = 4, y = 2)
-</span></span><span style="display:flex;"><span>    ans = mult(4, 1) = 4
-</span></span><span style="display:flex;"><span>    ans = ans + 4 = 8
-</span></span><span style="display:flex;"><span>    returns ans (8)</span></span></code></pre></div><p>We have now backed our way up the chain &ndash; the 8 is returned back from the original function call, and <code>times</code> is set to 8.</p>
-<h2 id="mult-function-contract">mult function contract</h2>
-<p>Looking at our <code>mult</code> function, we see that the base case is when <code>y</code> is 0 and the recursive case is when <code>y &gt; 0</code>. Clearly, the function is not intended to work for negative values of <code>y</code>. This will be our precondition &ndash; that <code>y</code> must be greater than or equal to 0.</p>
-<p>Our postcondition should describe what <code>mult</code> is returning in terms of its parameters. In this case, we know that <code>mult</code> is performing a multiplication of <code>x</code> and <code>y</code> using repeated addition. So, our function should ensure that it returns <code>x*y</code> (that <code>Res[Z] == x*y</code>). Here is the function with the function contract:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --manual --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>import org.sireum.justification._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def mult(x: Z, y: Z): Z = {
-</span></span><span style="display:flex;"><span>    //we still need to add the verification logic blocks
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        Requires(   y &gt;= 0          ),
-</span></span><span style="display:flex;"><span>        Ensures(    Res[Z] == x * y )
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    var ans: Z = 0
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    if (y &gt; 0) {
-</span></span><span style="display:flex;"><span>        ans = mult(x, y-1)
-</span></span><span style="display:flex;"><span>        ans = ans + x
-</span></span><span style="display:flex;"><span>    } else {
-</span></span><span style="display:flex;"><span>        //do nothing
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    return ans
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="verification-in-mult">Verification in mult</h2>
-<p>Now that we have our function contract for <code>mult</code>, we must add logic blocks with two things in mind:</p>
-<ul>
-<li>Proving the precondition before a recursive call</li>
-<li>Proving the postcondition before we return from the function</li>
-</ul>
-<p>Our recursive call looks like:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ans = mult(x, y-1)</span></span></code></pre></div><p>Since our precondition is <code>y &gt;= 0</code>, we see that we must prove that what we are passing as the second parameter (<code>y-1</code>, in the case of the recursive call) is greater than or equal to 0. This tells us that before our recursive call, we must have shown exactly: <code>y-1 &gt;= 0</code>. We can finish proving the precondition as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --manual --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>import org.sireum.justification._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def mult(x: Z, y: Z): Z = {
-</span></span><span style="display:flex;"><span>    //we still need to prove the postcondition
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        Requires(   y &gt;= 0          ),
-</span></span><span style="display:flex;"><span>        Ensures(    Res[Z] == x * y )
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    var ans: Z = 0
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    if (y &gt; 0) {
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 (     y &gt; 0       )   by Premise,     //IF condition is true
-</span></span><span style="display:flex;"><span>            2 (     y-1 &gt;= 0    )   by Algebra*(1)  //Proves the precondition for the recursive call
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        ans = mult(x, y-1)
-</span></span><span style="display:flex;"><span>        ans = ans + x
-</span></span><span style="display:flex;"><span>    } else {
-</span></span><span style="display:flex;"><span>        //do nothing
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    return ans
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>All that remains is to prove the <code>mult</code> postcondition &ndash; that we are returning <code>x*y</code>. Since we are returning the variable <code>ans</code>, then we must prove the claim <code>ans == x*y</code> just before our return statement. In order to help with this process, we will need to take advantage of the postcondition after our recursive call. The function promises to return the first parameter times the second parameter, so when we do <code>ans = mult(x, y-1)</code>, we know that <code>ans == x*(y-1)</code> (the first parameter, <code>x</code>, times the second parameter, <code>y-1</code>). Here is the completed verification:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --manual --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>import org.sireum.justification._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def mult(x: Z, y: Z): Z = {
-</span></span><span style="display:flex;"><span>    //verification complete!
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        Requires(   y &gt;= 0          ),
-</span></span><span style="display:flex;"><span>        Ensures(    Res[Z] == x * y )
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    var ans: Z = 0
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    if (y &gt; 0) {
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 (     y &gt; 0       )   by Premise,     //IF condition is true
-</span></span><span style="display:flex;"><span>            2 (     y-1 &gt;= 0    )   by Algebra*(1)  //Proves the precondition for the recursive call
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>       ans = mult(x, y-1)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 (     ans == x * (y - 1)  )   by Premise, //Postcondition from the recursive call
-</span></span><span style="display:flex;"><span>            2 (     ans == x * y - x    )   by Algebra*(1)
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        ans = ans + x
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 (     Old(ans) == x * y - x   )   by Premise,         //Pulled from previous block
-</span></span><span style="display:flex;"><span>            2 (     ans == Old(ans) + x     )   by Premise,         //From the &#34;ans = ans + x&#34; assignment statement
-</span></span><span style="display:flex;"><span>            3 (     ans == x + x * y - x    )   by Algebra*(1, 2),
-</span></span><span style="display:flex;"><span>            4 (     ans == x * y            )   by Algebra*(3)      //Showed the postcondition for the IF branch
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>    } else {
-</span></span><span style="display:flex;"><span>        //do nothing in code - but we still do verification
-</span></span><span style="display:flex;"><span>        //need to show that postcondition will be correct even if we take this branch
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 (     ¬(y &gt; 0)        )   by Premise,         //if condition is false
-</span></span><span style="display:flex;"><span>            2 (     y &gt;= 0          )   by Premise,         //precondition
-</span></span><span style="display:flex;"><span>            3 (     y == 0          )   by Algebra*(1, 2),
-</span></span><span style="display:flex;"><span>            4 (     ans == 0        )   by Premise,         //ans is unchanged
-</span></span><span style="display:flex;"><span>            5 (     ans == x * y    )   by Algebra*(3, 4)   //Showed the postcondition for the ELSE branch
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    //Tie together what we learned in both branches
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     ans == x*y          )   by Premise          //shows the postcondition      
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    return ans
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="verification-of-calling-code">Verification of calling code</h2>
-<p>Verifying the test code that calls a recursive function works exactly the same way as it does for any other function:</p>
-<ul>
-<li>We must prove the precondition before calling the function</li>
-<li>We can list the postcondition as a premise after calling the function</li>
-</ul>
-<p>Suppose we want to test <code>mult</code> as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>val times: Z = mult(4, 2)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>assert(times == 8)</span></span></code></pre></div><p>We could complete the verification by proving the precondition and then using the postcondition to help us prove the claim in the assert:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    1 (     2 &gt;= 0      )   by Algebra*()    //proves the precondition
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>val times: Z = mult(4, 2)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    1 (     times == 4*2    )   by Premise,     //mult postcondition
-</span></span><span style="display:flex;"><span>    2 (     times == 8      )   by Algebra*(1)  //needed for the assert
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>assert(times == 8)</span></span></code></pre></div><p>Note that since our second parameter is <code>2</code>, that we must demonstrate exactly <code>2 &gt;= 0</code> to satisfy <code>mult</code>&rsquo;s precondition. Furthermore, since <code>mult</code> promises to return the first parameter times the second parameter, and since we are storing the result of the function call in the <code>times</code> variable, then we can claim <code>times == 4*2</code> as a premise.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1716924210" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1716924210" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1716924210" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/tele-scroll.js?1716924210 defer"></script>
-    
-  </body>
-</html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="In this section, we will see how to prove the correctness of programs that use recursive functions. We will see that verifying a recursive function is exactly the same as verifying a non-recursive function:
+We must prove a function’s preconditions before calling it (including before making a recursive call) After calling a function, we can list the function’s postconditions as premises (including after making a recursive call) The function can list its preconditions as premises The function must prove its postconditions just before it ends Writing a recursive mult function We know we can multiply two numbers, x and y, using the * operator – x * y."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Recursion :: CIS 301 Textbook"><meta name=twitter:description content="In this section, we will see how to prove the correctness of programs that use recursive functions. We will see that verifying a recursive function is exactly the same as verifying a non-recursive function:
+We must prove a function’s preconditions before calling it (including before making a recursive call) After calling a function, we can list the function’s postconditions as premises (including after making a recursive call) The function can list its preconditions as premises The function must prove its postconditions just before it ends Writing a recursive mult function We know we can multiply two numbers, x and y, using the * operator – x * y."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/9-chapter/9_2-recursion/"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Recursion :: CIS 301 Textbook"><meta property="og:description" content="In this section, we will see how to prove the correctness of programs that use recursive functions. We will see that verifying a recursive function is exactly the same as verifying a non-recursive function:
+We must prove a function’s preconditions before calling it (including before making a recursive call) After calling a function, we can list the function’s postconditions as premises (including after making a recursive call) The function can list its preconditions as premises The function must prove its postconditions just before it ends Writing a recursive mult function We know we can multiply two numbers, x and y, using the * operator – x * y."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Functions and Loops"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2024-04-26T12:21:24-05:00"><meta itemprop=name content="Recursion :: CIS 301 Textbook"><meta itemprop=description content="In this section, we will see how to prove the correctness of programs that use recursive functions. We will see that verifying a recursive function is exactly the same as verifying a non-recursive function:
+We must prove a function’s preconditions before calling it (including before making a recursive call) After calling a function, we can list the function’s postconditions as premises (including after making a recursive call) The function can list its preconditions as premises The function must prove its postconditions just before it ends Writing a recursive mult function We know we can multiply two numbers, x and y, using the * operator – x * y."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2024-04-26T12:21:24-05:00"><meta itemprop=wordCount content="1587"><title>Recursion :: CIS 301 Textbook</title>
+<link href=https://textbooks.cs.ksu.edu/cis301/9-chapter/9_2-recursion/ rel=canonical type=text/html title="Recursion :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_2-recursion/index.xml rel=alternate type=application/rss+xml title="Recursion :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_2-recursion/index.print.html rel=alternate type=text/html title="Recursion :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_2-recursion/embed.html rel=alternate type=text/html title="Recursion :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1719515004 rel=stylesheet><link href=/cis301/css/auto-complete.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1719515004 rel=stylesheet><link href=/cis301/css/fonts.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1719515004 rel=stylesheet><link href=/cis301/css/theme-auto.css?1719515004 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-auto.css?1719515004 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1719515004 rel=stylesheet><link href=/cis301/css/print.css?1719515004 rel=stylesheet media=print><script src=/cis301/js/variant.js?1719515004></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1719515004 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis301/9-chapter/9_2-recursion/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=recursion>Recursion</h1><p>In this section, we will see how to prove the correctness of programs that use recursive functions. We will see that verifying a recursive function is exactly the same as verifying a non-recursive function:</p><ul><li>We must prove a function&rsquo;s preconditions before calling it (including before making a recursive call)</li><li>After calling a function, we can list the function&rsquo;s postconditions as premises (including after making a recursive call)</li><li>The function can list its preconditions as premises</li><li>The function must prove its postconditions just before it ends</li></ul><h2 id=writing-a-recursive-mult-function>Writing a recursive mult function</h2><p>We know we can multiply two numbers, <code>x</code> and <code>y</code>, using the <code>*</code> operator &ndash; <code>x * y</code>. But what if we wanted to find the same result using only addition, not multiplication? Multiplication can be thought of as repeated addition &ndash; <code>x * y</code> is really <code>x + x + ... + x</code>, where we add together <code>y</code> total <code>x</code>&rsquo;s.</p><p>We <em>could</em> do this repeated addition with a loop (and we will when we introduce loops in section 9.3), but we will use recursion instead. When we write a recursive function, we try to think of two things:</p><ul><li>The <em>base case</em>: the simplest version of the problem that we could immediately solve with no more work.</li><li>The <em>recursive case</em>: bigger versions of the problem, where we solve a piece of the problem and then recursively solve a smaller piece</li></ul><p>In the case of the multiplication <code>x * y</code>, we have:</p><ul><li>Base case: if <code>y</code> is 0, we have no work to do. Adding together 0 <code>x</code>&rsquo;s is just 0.</li><li>Recursive case: if <code>y</code> is bigger than 0, we do ONE addition (<code>x + ...</code>) and recursively add the remaining <code>y - 1</code> numbers. (This will become our recursive call.)</li></ul><p>With those cases in mind, we can write a recursive <code>mult</code> function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --manual --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>import org.sireum.justification._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def mult(x: Z, y: Z): Z = {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    var ans: Z = 0
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    if (y &gt; 0) {
+</span></span><span class=line><span class=cl>        ans = mult(x, y-1)
+</span></span><span class=line><span class=cl>        ans = ans + x
+</span></span><span class=line><span class=cl>    } else {
+</span></span><span class=line><span class=cl>        //do nothing
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    return ans
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>Note that we separated the recursive call (<code>ans = mult(x, y-1)</code>) from adding on the next piece (<code>ans = ans + x</code>). When using Logika, all function calls must go on a separate line by themselves &ndash; we can&rsquo;t combine them with other operations. Also, we included a dummy &ldquo;else&rdquo; branch to make the verification simpler.</p><h2 id=walking-through-mult>Walking through mult</h2><p>Suppose we call <code>mult</code> as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var times: Z = mult(4, 2)</span></span></code></pre></div><p>We can trace the recursive calls:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>times = mult(4, 2) 
+</span></span><span class=line><span class=cl>            (x = 4, y = 2)
+</span></span><span class=line><span class=cl>            ans = mult(4, 1)    =&gt; mult(4, 1)
+</span></span><span class=line><span class=cl>            ans = ans + 4               (x = 4, y = 1)
+</span></span><span class=line><span class=cl>            returns ans                     ans = mult(4, 0)    =&gt;  mult(4, 0)
+</span></span><span class=line><span class=cl>                                            ans = ans + 4               (x = 4, y = 0)
+</span></span><span class=line><span class=cl>                                            returns ans                     ans = 0
+</span></span><span class=line><span class=cl>                                                                            returns 0</span></span></code></pre></div><p>We start with <code>mult(4, 2)</code>, and then immediately make the recursive call <code>mult(4, 1)</code>, which immediately makes the recursive call <code>mult(4, 0)</code>. That function instance hits the base case and returns 0. We now return back up the chain of function calls &ndash; the 0 gets returned back to the <code>mult(4, 1)</code> instance, which adds 4 and then returns 4:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>=&gt; mult(4, 1)
+</span></span><span class=line><span class=cl>    (x = 4, y = 1)
+</span></span><span class=line><span class=cl>    ans = mult(4, 0) = 0
+</span></span><span class=line><span class=cl>    ans = ans + 4 = 4
+</span></span><span class=line><span class=cl>    returns ans (4)</span></span></code></pre></div><p>This 4 returns back to the <code>mult(4, 2)</code> instance, which adds another 4 and returns 8:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>mult(4, 2) 
+</span></span><span class=line><span class=cl>    (x = 4, y = 2)
+</span></span><span class=line><span class=cl>    ans = mult(4, 1) = 4
+</span></span><span class=line><span class=cl>    ans = ans + 4 = 8
+</span></span><span class=line><span class=cl>    returns ans (8)</span></span></code></pre></div><p>We have now backed our way up the chain &ndash; the 8 is returned back from the original function call, and <code>times</code> is set to 8.</p><h2 id=mult-function-contract>mult function contract</h2><p>Looking at our <code>mult</code> function, we see that the base case is when <code>y</code> is 0 and the recursive case is when <code>y > 0</code>. Clearly, the function is not intended to work for negative values of <code>y</code>. This will be our precondition &ndash; that <code>y</code> must be greater than or equal to 0.</p><p>Our postcondition should describe what <code>mult</code> is returning in terms of its parameters. In this case, we know that <code>mult</code> is performing a multiplication of <code>x</code> and <code>y</code> using repeated addition. So, our function should ensure that it returns <code>x*y</code> (that <code>Res[Z] == x*y</code>). Here is the function with the function contract:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --manual --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>import org.sireum.justification._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def mult(x: Z, y: Z): Z = {
+</span></span><span class=line><span class=cl>    //we still need to add the verification logic blocks
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        Requires(   y &gt;= 0          ),
+</span></span><span class=line><span class=cl>        Ensures(    Res[Z] == x * y )
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    var ans: Z = 0
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    if (y &gt; 0) {
+</span></span><span class=line><span class=cl>        ans = mult(x, y-1)
+</span></span><span class=line><span class=cl>        ans = ans + x
+</span></span><span class=line><span class=cl>    } else {
+</span></span><span class=line><span class=cl>        //do nothing
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    return ans
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><h2 id=verification-in-mult>Verification in mult</h2><p>Now that we have our function contract for <code>mult</code>, we must add logic blocks with two things in mind:</p><ul><li>Proving the precondition before a recursive call</li><li>Proving the postcondition before we return from the function</li></ul><p>Our recursive call looks like:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>ans = mult(x, y-1)</span></span></code></pre></div><p>Since our precondition is <code>y >= 0</code>, we see that we must prove that what we are passing as the second parameter (<code>y-1</code>, in the case of the recursive call) is greater than or equal to 0. This tells us that before our recursive call, we must have shown exactly: <code>y-1 >= 0</code>. We can finish proving the precondition as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --manual --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>import org.sireum.justification._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def mult(x: Z, y: Z): Z = {
+</span></span><span class=line><span class=cl>    //we still need to prove the postcondition
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        Requires(   y &gt;= 0          ),
+</span></span><span class=line><span class=cl>        Ensures(    Res[Z] == x * y )
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    var ans: Z = 0
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    if (y &gt; 0) {
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 (     y &gt; 0       )   by Premise,     //IF condition is true
+</span></span><span class=line><span class=cl>            2 (     y-1 &gt;= 0    )   by Algebra*(1)  //Proves the precondition for the recursive call
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        ans = mult(x, y-1)
+</span></span><span class=line><span class=cl>        ans = ans + x
+</span></span><span class=line><span class=cl>    } else {
+</span></span><span class=line><span class=cl>        //do nothing
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    return ans
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>All that remains is to prove the <code>mult</code> postcondition &ndash; that we are returning <code>x*y</code>. Since we are returning the variable <code>ans</code>, then we must prove the claim <code>ans == x*y</code> just before our return statement. In order to help with this process, we will need to take advantage of the postcondition after our recursive call. The function promises to return the first parameter times the second parameter, so when we do <code>ans = mult(x, y-1)</code>, we know that <code>ans == x*(y-1)</code> (the first parameter, <code>x</code>, times the second parameter, <code>y-1</code>). Here is the completed verification:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --manual --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>import org.sireum.justification._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def mult(x: Z, y: Z): Z = {
+</span></span><span class=line><span class=cl>    //verification complete!
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        Requires(   y &gt;= 0          ),
+</span></span><span class=line><span class=cl>        Ensures(    Res[Z] == x * y )
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    var ans: Z = 0
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    if (y &gt; 0) {
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 (     y &gt; 0       )   by Premise,     //IF condition is true
+</span></span><span class=line><span class=cl>            2 (     y-1 &gt;= 0    )   by Algebra*(1)  //Proves the precondition for the recursive call
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>       ans = mult(x, y-1)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 (     ans == x * (y - 1)  )   by Premise, //Postcondition from the recursive call
+</span></span><span class=line><span class=cl>            2 (     ans == x * y - x    )   by Algebra*(1)
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        ans = ans + x
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 (     Old(ans) == x * y - x   )   by Premise,         //Pulled from previous block
+</span></span><span class=line><span class=cl>            2 (     ans == Old(ans) + x     )   by Premise,         //From the &#34;ans = ans + x&#34; assignment statement
+</span></span><span class=line><span class=cl>            3 (     ans == x + x * y - x    )   by Algebra*(1, 2),
+</span></span><span class=line><span class=cl>            4 (     ans == x * y            )   by Algebra*(3)      //Showed the postcondition for the IF branch
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>    } else {
+</span></span><span class=line><span class=cl>        //do nothing in code - but we still do verification
+</span></span><span class=line><span class=cl>        //need to show that postcondition will be correct even if we take this branch
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 (     ¬(y &gt; 0)        )   by Premise,         //if condition is false
+</span></span><span class=line><span class=cl>            2 (     y &gt;= 0          )   by Premise,         //precondition
+</span></span><span class=line><span class=cl>            3 (     y == 0          )   by Algebra*(1, 2),
+</span></span><span class=line><span class=cl>            4 (     ans == 0        )   by Premise,         //ans is unchanged
+</span></span><span class=line><span class=cl>            5 (     ans == x * y    )   by Algebra*(3, 4)   //Showed the postcondition for the ELSE branch
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    //Tie together what we learned in both branches
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     ans == x*y          )   by Premise          //shows the postcondition      
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    return ans
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><h2 id=verification-of-calling-code>Verification of calling code</h2><p>Verifying the test code that calls a recursive function works exactly the same way as it does for any other function:</p><ul><li>We must prove the precondition before calling the function</li><li>We can list the postcondition as a premise after calling the function</li></ul><p>Suppose we want to test <code>mult</code> as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>val times: Z = mult(4, 2)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>assert(times == 8)</span></span></code></pre></div><p>We could complete the verification by proving the precondition and then using the postcondition to help us prove the claim in the assert:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    1 (     2 &gt;= 0      )   by Algebra*()    //proves the precondition
+</span></span><span class=line><span class=cl>)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>val times: Z = mult(4, 2)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    1 (     times == 4*2    )   by Premise,     //mult postcondition
+</span></span><span class=line><span class=cl>    2 (     times == 8      )   by Algebra*(1)  //needed for the assert
+</span></span><span class=line><span class=cl>)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>assert(times == 8)</span></span></code></pre></div><p>Note that since our second parameter is <code>2</code>, that we must demonstrate exactly <code>2 >= 0</code> to satisfy <code>mult</code>&rsquo;s precondition. Furthermore, since <code>mult</code> promises to return the first parameter times the second parameter, and since we are storing the result of the function call in the <code>times</code> variable, then we can claim <code>times == 4*2</code> as a premise.</p><footer class=footline></footer></article></div></main></div></div><script src=/cis301/js/clipboard.min.js?1719515004 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1719515004 defer></script><script src=/cis301/js/theme.js?1719515004 defer></script><script src=/cis301/js/tele-scroll.js?1719515004 defer></script></body></html>

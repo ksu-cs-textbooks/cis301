@@ -1,707 +1,268 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 301: Logical Foundations of Programming">
-    <meta name="author" content="Julie Thornton">
-    <title>Conditional Statements :: CIS 301 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/index.html" rel="canonical" type="text/html" title="Conditional Statements :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/index.xml" rel="alternate" type="application/rss+xml" title="Conditional Statements :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/index.print.html" rel="alternate" type="text/html" title="Conditional Statements :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/tele.html" rel="alternate" type="text/html" title="Conditional Statements :: CIS 301 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924208" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924208" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1716924208" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924208" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924208" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1716924208" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924208" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924208" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1716924208" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1716924208" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1716924208" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1716924208" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1716924208" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1716924208"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1716924208"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1716924208" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/8-chapter/8_7-conditionals/embed.html">
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-    
-    
-    
-<p>To deduce the knowledge generated by a conditional (if/else) statement, we must analyze both branches. This is because some executions will follow the if-branch and some will follow the else-branch. We will only consider programs with an if/else as opposed to an if/else if. However, you can simulate more than two branches by nesting another if/else inside the outer else.</p>
-<h2 id="motivation">Motivation</h2>
-<p>Before we formalize the details of verifying a program with a conditional statement, let&rsquo;s motivate the topic with an example.</p>
-<h3 id="max-program">Max program</h3>
-<p>Suppose we have a program that finds finds the maximum (<code>max</code>) between two user input numbers (<code>x</code> and <code>y</code>):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --manual --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>import org.sireum.justification._
-</span></span><span style="display:flex;"><span>import org.sireum.justification.natded.prop._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var x: Z = Z.read()
-</span></span><span style="display:flex;"><span>var y: Z = Z.read()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var max: Z = 0  //give max a dummy starting value
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>if (x &gt; y) {
-</span></span><span style="display:flex;"><span>    max = x
-</span></span><span style="display:flex;"><span>} else {
-</span></span><span style="display:flex;"><span>    max = y
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="max-assert">Max assert</h3>
-<p>Before worrying about how to do the verification, let&rsquo;s consider what we should assert at the end in order to be sure that <code>max</code> really does hold the biggest of the two inputs. Clearly, <code>max</code> should be greater than or equal to both inputs. So should our assert be:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//Not quite all we want to say
-</span></span><span style="display:flex;"><span>assert(max &gt;= x ∧ max &gt;= y)</span></span></code></pre></div><p>Suppose <code>x</code> was 10, <code>y</code> was 15&hellip;and that <code>max</code> was 20. (Clearly this isn&rsquo;t what our code would do, but you can imagine writing something else for the max code that came up with such a calculation). In this case, <code>max</code> is indeed greater than or equal to both inputs&hellip;but it is just as clearly not the max. We know see that we also need to claim that <code>max</code> equals one of the two inputs. This makes our assert:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//Now we are sure we are describing the max between x and y
-</span></span><span style="display:flex;"><span>assert(max &gt;= x ∧ max &gt;= y ∧ (max == x ∨ max == y))</span></span></code></pre></div><h3 id="analyzing-max">Analyzing max</h3>
-<p>Now, we need to prove that our assert holds no matter which branch we follow in the conditional statement. First, when we analyze the code in the if-branch, we have:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>max = x
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    1 (     max == x    )   by Premise
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>and when we analyze the code in the else-branch, we have:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>max = y
-</span></span><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    1 (     max == y    )   by Premise
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>These two deductions imply that, when the if/else statements finishes, one or the other property holds true:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (x &gt; y) {
-</span></span><span style="display:flex;"><span>    max = x
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     max == x    )   by Premise
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>} else {
-</span></span><span style="display:flex;"><span>    max = y
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     max == y    )   by Premise
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    //max == x in the IF, max == y in the ELSE
-</span></span><span style="display:flex;"><span>    1 (     max == x  v  max == y   )   by Premise 
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>This illustrates the first principle of conditional commands: the knowledge produced by the command is the disjunction (or) of the knowledge produced by each branch. In the section on propositional logic, we covered how to apply cases analyses on disjunctive assertions to extract useful knowledge.</p>
-<p>Recall that the intent of the if/else statement was to set <code>max</code> so that it holds the larger of <code>x</code> and <code>y</code>, so that our assert would hold:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>assert(max &gt;= x ∧ max &gt;= y ∧ (max == x v max == y))</span></span></code></pre></div><p>The claim we proved so far satisifies the second part of our assert statement, but not the first part. This is because we ignored a critical feature of an if/else statement: By asking a question — the condition — the if/else statement generates new knowledge.</p>
-<p>For the if-branch, we have the new knowledge that <code>x &gt; y</code>; for the else-branch, we have that <code>¬(x &gt; y)</code>, that is, <code>y &gt;= x</code>. We can embed these assertions into the analysis of the conditional command, like this, and conclude that, in both cases, <code>max</code> is greater than or equal to both inputs:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --manual --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>import org.sireum.justification._
-</span></span><span style="display:flex;"><span>import org.sireum.justification.natded.prop._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var x: Z = Z.read()
-</span></span><span style="display:flex;"><span>var y: Z = Z.read()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var max: Z = 0
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>if (x &gt; y) {
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     x &gt; y       )   by Premise      //the condition is true
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    max = x
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     max == x    )   by Premise,    //from the &#34;max = x&#34; assignment
-</span></span><span style="display:flex;"><span>        2 (     max &gt;= x    )   by Algebra*(1),
-</span></span><span style="display:flex;"><span>        3 (     x &gt; y       )   by Premise,    //condition is still true (x and y are unchanged)
-</span></span><span style="display:flex;"><span>        4 (     max &gt;= y    )   by Algebra*(1,3)
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>} else {
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     ¬(x &gt; y)    )   by Premise,    //the condition is NOT true
-</span></span><span style="display:flex;"><span>        2 (     x &lt;= y      )   by Algebra*(2)
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    max = y
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     max == y    )   by Premise,    //from the &#34;max = y&#34; assignment
-</span></span><span style="display:flex;"><span>        2 (     x &lt;= y      )   by Premise,    //pulled down from previous proof block (x and y are unchanged)
-</span></span><span style="display:flex;"><span>        3 (     max &gt;= x    )   by Algebra*(1, 2),
-</span></span><span style="display:flex;"><span>        4 (     max &gt;= y    )   by Algebra*(1)
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//summary of what just happened
-</span></span><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    //max == x in the IF, max == y in the ELSE
-</span></span><span style="display:flex;"><span>    1 (     max == x ∨ max == y )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    2 (     max &gt;= x            )   by Premise,     //true in BOTH branches
-</span></span><span style="display:flex;"><span>    3 (     max &gt;= y            )   by Premise,     //true in BOTH branches
-</span></span><span style="display:flex;"><span>    4 (     max &gt;= x ∧ max &gt;= y )   by AndI(2, 3),
-</span></span><span style="display:flex;"><span>    5 (     max &gt;= x ∧ max &gt;= y) ∧ (max == x ∨ max == y )   by AndI(4, 1)
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>assert(max &gt;= x ∧ max &gt;= y ∧ (max == x v max == y))</span></span></code></pre></div><h2 id="rules-for-analyzing-programs-with-conditionals">Rules for analyzing programs with conditionals</h2>
-<p>In this section, we will summarize how to analyze programs with conditional statements.</p>
-<h3 id="declaring-condition-and-condition-as-premises">Declaring condition and ¬(condition) as premises</h3>
-<p>If we have a program such as this with an if/else statement:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (C) {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>} else {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Then we can claim <code>C</code> as a premise immediately inside the if-branch and <code>¬(C)</code> as a premise immediately inside the else branch:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (C) {
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     C       )   by Premise
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>} else {
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     ¬(C)    )   by Premise
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Be careful with the <code>else</code> case &ndash; you must claim exactly <code>¬(C)</code>, and not some claim you know to be equivalent. In our max example, <code>C</code> was <code>x &lt; y</code>, and we needed to claim exactly <code>¬(x &lt; y)</code> in the else &ndash; NOT <code>x &gt;= y</code>. After you have pulled in the initial claim using the form <code>¬(C)</code>, you can use <code>Algebra*</code> to manipulate it into a different form.</p>
-<h3 id="each-branch-reaches-a-different-conclusion">Each branch reaches a different conclusion</h3>
-<p>If the if-branch reaches conclusion <code>Q1</code> and the else branch reaches conclusion <code>Q2</code>, then afterwards we can list as a premise that one of those conclusions is true (since we know that one of the branches in an if/else will ALWAYS execute):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (C) {
-</span></span><span style="display:flex;"><span>    ...
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     Q1      )   by SomeJustification    //conclusion in if-branch
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>} else {
-</span></span><span style="display:flex;"><span>    ...
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     Q2      )   by SomeJustification   //conclusion in else-branch
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    1 (     Q1 ∨ Q2     )   by Premise     //Q1 from if, Q2 from else
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>Note that order matters, and that we must claim <code>(if conclusion) ∨ (else conclusion)</code> &ndash; in the example above, we could not claim <code>Q2 ∨ Q1</code> afterwards.</p>
-<h3 id="each-branch-reaches-the-same-conclusion">Each branch reaches the same conclusion</h3>
-<p>If the if-branch and the else-branch both reach the SAME conclusion <code>Q</code>, then afterwards we can list <code>Q</code> as a premise. Here, we know that one of the branches in an if/else will ALWAYS execute &ndash; so if we get to the same conclusion in both cases, then we must always reach that conclusion:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (C) {
-</span></span><span style="display:flex;"><span>    ...
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        ...
-</span></span><span style="display:flex;"><span>        1 (     Q       )   by SomeJustification    //common conclusion reached in IF
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>} else {
-</span></span><span style="display:flex;"><span>    ...
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     Q       )    by SomeJustification   //common conclusion reached in ELSE
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    1 (     Q           )   by Premise     //Q was true in both the IF and the ELSE
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><h2 id="example-programs-with-no-else">Example: programs with no &ldquo;else&rdquo;</h2>
-<p>Some programs have just an if statement with no else. For example, consider this program to find the absolute value of a number:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --manual --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>import org.sireum.justification._
-</span></span><span style="display:flex;"><span>import org.sireum.justification.natded.prop._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var num: Z = Z.read()
-</span></span><span style="display:flex;"><span>var orig: Z = num
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>if (num &lt; 0) {
-</span></span><span style="display:flex;"><span>    num = num * -1
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//num is now the absolute value of the original input
-</span></span><span style="display:flex;"><span>//(num is nonnegative and either equals `orig` [the original input] or -1*orig)
-</span></span><span style="display:flex;"><span>assert(num &gt;= 0 ∧ (num == -1*orig ∨ num == orig))</span></span></code></pre></div><p>Even though an &ldquo;else&rdquo; is unnecessary in the implementation, we want an else statement in order to ensure our program works in the case that num is NOT less than 0. Our solution is to add an else statement that is solely to hold a proof block for that branch.</p>
-<p>We add an else statement and complete our verification as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --manual --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>import org.sireum.justification._
-</span></span><span style="display:flex;"><span>import org.sireum.justification.natded.prop._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var num: Z = Z.read()
-</span></span><span style="display:flex;"><span>var orig: Z = num
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    1 (     orig == num     )   by Premise,     //from &#34;orig = num&#34; assignment
-</span></span><span style="display:flex;"><span>    2 (     num == orig     )   by Algebra*(1)  //switch order to match assert
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>if (num &lt; 0) {
-</span></span><span style="display:flex;"><span>    num = num * -1
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1  (    Old(num) &lt; 0            )   by Premise,         //if condition (num just changed)
-</span></span><span style="display:flex;"><span>        2  (    num == Old(num) * -1    )   by Premise,         //from &#34;num = num * -1&#34; assignment
-</span></span><span style="display:flex;"><span>        3  (    orig == Old(num)        )   by Premise,         //orig did equal num (num just changed)
-</span></span><span style="display:flex;"><span>        4  (    num &gt;= 0                )   by Algebra*(1, 2),  //a negative number times -1 is nonnegative
-</span></span><span style="display:flex;"><span>        5  (    num == -1 * orig        )   by Algebra*(2, 3)   //needed for last part of assert
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>} else {
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    //no code - just the proof block
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 (     ¬(num &lt; 0)              )   by Premise,         //negation of condition
-</span></span><span style="display:flex;"><span>        2 (     num == orig             )   by Premise,         //num is unchanged
-</span></span><span style="display:flex;"><span>        3 (     num &gt;= 0                )   by Algebra*(1)      //needed for assert
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    1 (     num &gt;= 0                        )   by Premise, //true in both branches
-</span></span><span style="display:flex;"><span>    2 (     num == -1*orig ∨ num == orig    )   by Premise  //LHS in if, RHS in else
-</span></span><span style="display:flex;"><span>    3 (     num &gt;= 0 ∧ (num == -1*orig ∨ num == orig)   )   by AndI(1, 2)   //match assert
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//num is now the absolute value of the original input
-</span></span><span style="display:flex;"><span>//(num is nonnegative and either equals `orig` [the original input] or -1*orig)
-</span></span><span style="display:flex;"><span>assert(num &gt;= 0 ∧ (num == -1*orig ∨ num == orig))</span></span></code></pre></div><h2 id="nested-conditionals">Nested conditionals</h2>
-<p>We employ the same rules when analyzing programs with nested conditional statements. If we reach a common conclusion in both the if and else branches of an inner if/else statement, for example, then we can claim the common conclusion as a premise after that inner if/else statement (but still inside the outer if/else). The outline below summarizes what we can claim at various places in nested if/else statement:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>if (C1) {
-</span></span><span style="display:flex;"><span>    if (C2) {
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 ( C1  )   by Premise,     //outer if condition is true
-</span></span><span style="display:flex;"><span>            2 ( C2  )   by Premise      //inner if condition is true
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        ...
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 ( common  )   by SomeJustification,
-</span></span><span style="display:flex;"><span>            2 ( Q1      )   by SomeJustification
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    else {
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 ( C1      )   by Premise,     //outer if condition is true
-</span></span><span style="display:flex;"><span>            2 ( ¬(C2)   )   by Premise      //inner if condition is false
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        ...
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 ( common  )   by SomeJustification,
-</span></span><span style="display:flex;"><span>            2 ( Q2      )   by SomeJustification
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 ( common  )   by Premise,    //common conclusion in inner if/else
-</span></span><span style="display:flex;"><span>        2 ( Q1 ∨ Q2 )   by Premise     //Q1 from inner if, Q2 from inner else
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>} else {
-</span></span><span style="display:flex;"><span>    if (C3) {
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 ( ¬(C1)   )   by Premise,     //outer if condition is false
-</span></span><span style="display:flex;"><span>            2 ( C3      )   by Premise      //inner if condition is true
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        ...
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 ( common  )   by SomeJustification,
-</span></span><span style="display:flex;"><span>            2 ( Q3      )   by SomeJustification
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    else {
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 ( ¬(C1)   )   by Premise,     //outer if condition is false
-</span></span><span style="display:flex;"><span>            2 ( ¬(C3)   )   by Premise      //inner if condition is false
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        ...
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        Deduce(
-</span></span><span style="display:flex;"><span>            1 ( common  )   by SomeJustification,
-</span></span><span style="display:flex;"><span>            2 ( Q4      )   by SomeJustification
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    Deduce(
-</span></span><span style="display:flex;"><span>        1 ( common  )   by Premise,    //common conclusion in inner if/else
-</span></span><span style="display:flex;"><span>        2 ( Q3 ∨ Q4 )   by Premise     //Q1 from inner if, Q2 from inner else
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    1 ( common                  )   by Premise,     //&#34;common&#34; was true in both the outer IF and the outer ELSE 
-</span></span><span style="display:flex;"><span>    2 ( (Q1 ∨ Q2) ∨ (Q3 ∨ Q4)   )   by Premise      //(Q1 ∨ Q2) from outer if, (Q3 ∨ Q4) from else
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1716924209" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1716924209" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1716924209" defer></script>
-  </body>
-</html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="To deduce the knowledge generated by a conditional (if/else) statement, we must analyze both branches. This is because some executions will follow the if-branch and some will follow the else-branch. We will only consider programs with an if/else as opposed to an if/else if. However, you can simulate more than two branches by nesting another if/else inside the outer else.
+Motivation Before we formalize the details of verifying a program with a conditional statement, let’s motivate the topic with an example."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Conditional Statements :: CIS 301 Textbook"><meta name=twitter:description content="To deduce the knowledge generated by a conditional (if/else) statement, we must analyze both branches. This is because some executions will follow the if-branch and some will follow the else-branch. We will only consider programs with an if/else as opposed to an if/else if. However, you can simulate more than two branches by nesting another if/else inside the outer else.
+Motivation Before we formalize the details of verifying a program with a conditional statement, let’s motivate the topic with an example."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/8-chapter/8_7-conditionals/embed.html"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Conditional Statements :: CIS 301 Textbook"><meta property="og:description" content="To deduce the knowledge generated by a conditional (if/else) statement, we must analyze both branches. This is because some executions will follow the if-branch and some will follow the else-branch. We will only consider programs with an if/else as opposed to an if/else if. However, you can simulate more than two branches by nesting another if/else inside the outer else.
+Motivation Before we formalize the details of verifying a program with a conditional statement, let’s motivate the topic with an example."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Intro to Programming Logic"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2024-04-25T17:02:46-05:00"><meta itemprop=name content="Conditional Statements :: CIS 301 Textbook"><meta itemprop=description content="To deduce the knowledge generated by a conditional (if/else) statement, we must analyze both branches. This is because some executions will follow the if-branch and some will follow the else-branch. We will only consider programs with an if/else as opposed to an if/else if. However, you can simulate more than two branches by nesting another if/else inside the outer else.
+Motivation Before we formalize the details of verifying a program with a conditional statement, let’s motivate the topic with an example."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2024-04-25T17:02:46-05:00"><meta itemprop=wordCount content="2099"><title>Conditional Statements :: CIS 301 Textbook</title>
+<link href=https://textbooks.cs.ksu.edu/cis301/8-chapter/8_7-conditionals/ rel=canonical type=text/html title="Conditional Statements :: CIS 301 Textbook"><link href=/cis301/8-chapter/8_7-conditionals/index.xml rel=alternate type=application/rss+xml title="Conditional Statements :: CIS 301 Textbook"><link href=/cis301/8-chapter/8_7-conditionals/index.print.html rel=alternate type=text/html title="Conditional Statements :: CIS 301 Textbook"><link href=/cis301/8-chapter/8_7-conditionals/tele.html rel=alternate type=text/html title="Conditional Statements :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1719515003 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1719515003 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1719515003 rel=stylesheet><link href=/cis301/css/auto-complete.css?1719515003 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1719515003 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1719515003 rel=stylesheet><link href=/cis301/css/fonts.css?1719515003 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1719515003 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1719515003 rel=stylesheet><link href=/cis301/css/theme-light-theme.css?1719515003 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-relearn-light.css?1719515003 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1719515003 rel=stylesheet><link href=/cis301/css/print.css?1719515003 rel=stylesheet media=print><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["light-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1719515003 rel=stylesheet></head><body class="mobile-support embed disableInlineCopyToClipboard" data-url=/cis301/8-chapter/8_7-conditionals/embed.html><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><p>To deduce the knowledge generated by a conditional (if/else) statement, we must analyze both branches. This is because some executions will follow the if-branch and some will follow the else-branch. We will only consider programs with an if/else as opposed to an if/else if. However, you can simulate more than two branches by nesting another if/else inside the outer else.</p><h2 id=motivation>Motivation</h2><p>Before we formalize the details of verifying a program with a conditional statement, let&rsquo;s motivate the topic with an example.</p><h3 id=max-program>Max program</h3><p>Suppose we have a program that finds finds the maximum (<code>max</code>) between two user input numbers (<code>x</code> and <code>y</code>):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --manual --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>import org.sireum.justification._
+</span></span><span class=line><span class=cl>import org.sireum.justification.natded.prop._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var x: Z = Z.read()
+</span></span><span class=line><span class=cl>var y: Z = Z.read()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var max: Z = 0  //give max a dummy starting value
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>if (x &gt; y) {
+</span></span><span class=line><span class=cl>    max = x
+</span></span><span class=line><span class=cl>} else {
+</span></span><span class=line><span class=cl>    max = y
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><h3 id=max-assert>Max assert</h3><p>Before worrying about how to do the verification, let&rsquo;s consider what we should assert at the end in order to be sure that <code>max</code> really does hold the biggest of the two inputs. Clearly, <code>max</code> should be greater than or equal to both inputs. So should our assert be:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>//Not quite all we want to say
+</span></span><span class=line><span class=cl>assert(max &gt;= x ∧ max &gt;= y)</span></span></code></pre></div><p>Suppose <code>x</code> was 10, <code>y</code> was 15&mldr;and that <code>max</code> was 20. (Clearly this isn&rsquo;t what our code would do, but you can imagine writing something else for the max code that came up with such a calculation). In this case, <code>max</code> is indeed greater than or equal to both inputs&mldr;but it is just as clearly not the max. We know see that we also need to claim that <code>max</code> equals one of the two inputs. This makes our assert:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>//Now we are sure we are describing the max between x and y
+</span></span><span class=line><span class=cl>assert(max &gt;= x ∧ max &gt;= y ∧ (max == x ∨ max == y))</span></span></code></pre></div><h3 id=analyzing-max>Analyzing max</h3><p>Now, we need to prove that our assert holds no matter which branch we follow in the conditional statement. First, when we analyze the code in the if-branch, we have:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>max = x
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    1 (     max == x    )   by Premise
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>and when we analyze the code in the else-branch, we have:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>max = y
+</span></span><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    1 (     max == y    )   by Premise
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>These two deductions imply that, when the if/else statements finishes, one or the other property holds true:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>if (x &gt; y) {
+</span></span><span class=line><span class=cl>    max = x
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     max == x    )   by Premise
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>} else {
+</span></span><span class=line><span class=cl>    max = y
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     max == y    )   by Premise
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    //max == x in the IF, max == y in the ELSE
+</span></span><span class=line><span class=cl>    1 (     max == x  v  max == y   )   by Premise 
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>This illustrates the first principle of conditional commands: the knowledge produced by the command is the disjunction (or) of the knowledge produced by each branch. In the section on propositional logic, we covered how to apply cases analyses on disjunctive assertions to extract useful knowledge.</p><p>Recall that the intent of the if/else statement was to set <code>max</code> so that it holds the larger of <code>x</code> and <code>y</code>, so that our assert would hold:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>assert(max &gt;= x ∧ max &gt;= y ∧ (max == x v max == y))</span></span></code></pre></div><p>The claim we proved so far satisifies the second part of our assert statement, but not the first part. This is because we ignored a critical feature of an if/else statement: By asking a question — the condition — the if/else statement generates new knowledge.</p><p>For the if-branch, we have the new knowledge that <code>x > y</code>; for the else-branch, we have that <code>¬(x > y)</code>, that is, <code>y >= x</code>. We can embed these assertions into the analysis of the conditional command, like this, and conclude that, in both cases, <code>max</code> is greater than or equal to both inputs:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --manual --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>import org.sireum.justification._
+</span></span><span class=line><span class=cl>import org.sireum.justification.natded.prop._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var x: Z = Z.read()
+</span></span><span class=line><span class=cl>var y: Z = Z.read()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var max: Z = 0
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>if (x &gt; y) {
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     x &gt; y       )   by Premise      //the condition is true
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    max = x
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     max == x    )   by Premise,    //from the &#34;max = x&#34; assignment
+</span></span><span class=line><span class=cl>        2 (     max &gt;= x    )   by Algebra*(1),
+</span></span><span class=line><span class=cl>        3 (     x &gt; y       )   by Premise,    //condition is still true (x and y are unchanged)
+</span></span><span class=line><span class=cl>        4 (     max &gt;= y    )   by Algebra*(1,3)
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>} else {
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     ¬(x &gt; y)    )   by Premise,    //the condition is NOT true
+</span></span><span class=line><span class=cl>        2 (     x &lt;= y      )   by Algebra*(2)
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    max = y
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     max == y    )   by Premise,    //from the &#34;max = y&#34; assignment
+</span></span><span class=line><span class=cl>        2 (     x &lt;= y      )   by Premise,    //pulled down from previous proof block (x and y are unchanged)
+</span></span><span class=line><span class=cl>        3 (     max &gt;= x    )   by Algebra*(1, 2),
+</span></span><span class=line><span class=cl>        4 (     max &gt;= y    )   by Algebra*(1)
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//summary of what just happened
+</span></span><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    //max == x in the IF, max == y in the ELSE
+</span></span><span class=line><span class=cl>    1 (     max == x ∨ max == y )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    2 (     max &gt;= x            )   by Premise,     //true in BOTH branches
+</span></span><span class=line><span class=cl>    3 (     max &gt;= y            )   by Premise,     //true in BOTH branches
+</span></span><span class=line><span class=cl>    4 (     max &gt;= x ∧ max &gt;= y )   by AndI(2, 3),
+</span></span><span class=line><span class=cl>    5 (     max &gt;= x ∧ max &gt;= y) ∧ (max == x ∨ max == y )   by AndI(4, 1)
+</span></span><span class=line><span class=cl>)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>assert(max &gt;= x ∧ max &gt;= y ∧ (max == x v max == y))</span></span></code></pre></div><h2 id=rules-for-analyzing-programs-with-conditionals>Rules for analyzing programs with conditionals</h2><p>In this section, we will summarize how to analyze programs with conditional statements.</p><h3 id=declaring-condition-and-condition-as-premises>Declaring condition and ¬(condition) as premises</h3><p>If we have a program such as this with an if/else statement:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>if (C) {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>} else {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>Then we can claim <code>C</code> as a premise immediately inside the if-branch and <code>¬(C)</code> as a premise immediately inside the else branch:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>if (C) {
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     C       )   by Premise
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>} else {
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     ¬(C)    )   by Premise
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>Be careful with the <code>else</code> case &ndash; you must claim exactly <code>¬(C)</code>, and not some claim you know to be equivalent. In our max example, <code>C</code> was <code>x &lt; y</code>, and we needed to claim exactly <code>¬(x &lt; y)</code> in the else &ndash; NOT <code>x >= y</code>. After you have pulled in the initial claim using the form <code>¬(C)</code>, you can use <code>Algebra*</code> to manipulate it into a different form.</p><h3 id=each-branch-reaches-a-different-conclusion>Each branch reaches a different conclusion</h3><p>If the if-branch reaches conclusion <code>Q1</code> and the else branch reaches conclusion <code>Q2</code>, then afterwards we can list as a premise that one of those conclusions is true (since we know that one of the branches in an if/else will ALWAYS execute):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>if (C) {
+</span></span><span class=line><span class=cl>    ...
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     Q1      )   by SomeJustification    //conclusion in if-branch
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>} else {
+</span></span><span class=line><span class=cl>    ...
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     Q2      )   by SomeJustification   //conclusion in else-branch
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    1 (     Q1 ∨ Q2     )   by Premise     //Q1 from if, Q2 from else
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>Note that order matters, and that we must claim <code>(if conclusion) ∨ (else conclusion)</code> &ndash; in the example above, we could not claim <code>Q2 ∨ Q1</code> afterwards.</p><h3 id=each-branch-reaches-the-same-conclusion>Each branch reaches the same conclusion</h3><p>If the if-branch and the else-branch both reach the SAME conclusion <code>Q</code>, then afterwards we can list <code>Q</code> as a premise. Here, we know that one of the branches in an if/else will ALWAYS execute &ndash; so if we get to the same conclusion in both cases, then we must always reach that conclusion:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>if (C) {
+</span></span><span class=line><span class=cl>    ...
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        ...
+</span></span><span class=line><span class=cl>        1 (     Q       )   by SomeJustification    //common conclusion reached in IF
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>} else {
+</span></span><span class=line><span class=cl>    ...
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     Q       )    by SomeJustification   //common conclusion reached in ELSE
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    1 (     Q           )   by Premise     //Q was true in both the IF and the ELSE
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><h2 id=example-programs-with-no-else>Example: programs with no &ldquo;else&rdquo;</h2><p>Some programs have just an if statement with no else. For example, consider this program to find the absolute value of a number:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --manual --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>import org.sireum.justification._
+</span></span><span class=line><span class=cl>import org.sireum.justification.natded.prop._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var num: Z = Z.read()
+</span></span><span class=line><span class=cl>var orig: Z = num
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>if (num &lt; 0) {
+</span></span><span class=line><span class=cl>    num = num * -1
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//num is now the absolute value of the original input
+</span></span><span class=line><span class=cl>//(num is nonnegative and either equals `orig` [the original input] or -1*orig)
+</span></span><span class=line><span class=cl>assert(num &gt;= 0 ∧ (num == -1*orig ∨ num == orig))</span></span></code></pre></div><p>Even though an &ldquo;else&rdquo; is unnecessary in the implementation, we want an else statement in order to ensure our program works in the case that num is NOT less than 0. Our solution is to add an else statement that is solely to hold a proof block for that branch.</p><p>We add an else statement and complete our verification as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --manual --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>import org.sireum.justification._
+</span></span><span class=line><span class=cl>import org.sireum.justification.natded.prop._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var num: Z = Z.read()
+</span></span><span class=line><span class=cl>var orig: Z = num
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    1 (     orig == num     )   by Premise,     //from &#34;orig = num&#34; assignment
+</span></span><span class=line><span class=cl>    2 (     num == orig     )   by Algebra*(1)  //switch order to match assert
+</span></span><span class=line><span class=cl>)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>if (num &lt; 0) {
+</span></span><span class=line><span class=cl>    num = num * -1
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1  (    Old(num) &lt; 0            )   by Premise,         //if condition (num just changed)
+</span></span><span class=line><span class=cl>        2  (    num == Old(num) * -1    )   by Premise,         //from &#34;num = num * -1&#34; assignment
+</span></span><span class=line><span class=cl>        3  (    orig == Old(num)        )   by Premise,         //orig did equal num (num just changed)
+</span></span><span class=line><span class=cl>        4  (    num &gt;= 0                )   by Algebra*(1, 2),  //a negative number times -1 is nonnegative
+</span></span><span class=line><span class=cl>        5  (    num == -1 * orig        )   by Algebra*(2, 3)   //needed for last part of assert
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>} else {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    //no code - just the proof block
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 (     ¬(num &lt; 0)              )   by Premise,         //negation of condition
+</span></span><span class=line><span class=cl>        2 (     num == orig             )   by Premise,         //num is unchanged
+</span></span><span class=line><span class=cl>        3 (     num &gt;= 0                )   by Algebra*(1)      //needed for assert
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    1 (     num &gt;= 0                        )   by Premise, //true in both branches
+</span></span><span class=line><span class=cl>    2 (     num == -1*orig ∨ num == orig    )   by Premise  //LHS in if, RHS in else
+</span></span><span class=line><span class=cl>    3 (     num &gt;= 0 ∧ (num == -1*orig ∨ num == orig)   )   by AndI(1, 2)   //match assert
+</span></span><span class=line><span class=cl>)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//num is now the absolute value of the original input
+</span></span><span class=line><span class=cl>//(num is nonnegative and either equals `orig` [the original input] or -1*orig)
+</span></span><span class=line><span class=cl>assert(num &gt;= 0 ∧ (num == -1*orig ∨ num == orig))</span></span></code></pre></div><h2 id=nested-conditionals>Nested conditionals</h2><p>We employ the same rules when analyzing programs with nested conditional statements. If we reach a common conclusion in both the if and else branches of an inner if/else statement, for example, then we can claim the common conclusion as a premise after that inner if/else statement (but still inside the outer if/else). The outline below summarizes what we can claim at various places in nested if/else statement:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>if (C1) {
+</span></span><span class=line><span class=cl>    if (C2) {
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 ( C1  )   by Premise,     //outer if condition is true
+</span></span><span class=line><span class=cl>            2 ( C2  )   by Premise      //inner if condition is true
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        ...
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 ( common  )   by SomeJustification,
+</span></span><span class=line><span class=cl>            2 ( Q1      )   by SomeJustification
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    else {
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 ( C1      )   by Premise,     //outer if condition is true
+</span></span><span class=line><span class=cl>            2 ( ¬(C2)   )   by Premise      //inner if condition is false
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        ...
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 ( common  )   by SomeJustification,
+</span></span><span class=line><span class=cl>            2 ( Q2      )   by SomeJustification
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 ( common  )   by Premise,    //common conclusion in inner if/else
+</span></span><span class=line><span class=cl>        2 ( Q1 ∨ Q2 )   by Premise     //Q1 from inner if, Q2 from inner else
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>} else {
+</span></span><span class=line><span class=cl>    if (C3) {
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 ( ¬(C1)   )   by Premise,     //outer if condition is false
+</span></span><span class=line><span class=cl>            2 ( C3      )   by Premise      //inner if condition is true
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        ...
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 ( common  )   by SomeJustification,
+</span></span><span class=line><span class=cl>            2 ( Q3      )   by SomeJustification
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    else {
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 ( ¬(C1)   )   by Premise,     //outer if condition is false
+</span></span><span class=line><span class=cl>            2 ( ¬(C3)   )   by Premise      //inner if condition is false
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        ...
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        Deduce(
+</span></span><span class=line><span class=cl>            1 ( common  )   by SomeJustification,
+</span></span><span class=line><span class=cl>            2 ( Q4      )   by SomeJustification
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Deduce(
+</span></span><span class=line><span class=cl>        1 ( common  )   by Premise,    //common conclusion in inner if/else
+</span></span><span class=line><span class=cl>        2 ( Q3 ∨ Q4 )   by Premise     //Q1 from inner if, Q2 from inner else
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    1 ( common                  )   by Premise,     //&#34;common&#34; was true in both the outer IF and the outer ELSE 
+</span></span><span class=line><span class=cl>    2 ( (Q1 ∨ Q2) ∨ (Q3 ∨ Q4)   )   by Premise      //(Q1 ∨ Q2) from outer if, (Q3 ∨ Q4) from else
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><footer class=footline></footer></article></div></main></div><script src=/cis301/js/clipboard.min.js?1719515003 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1719515003 defer></script><script src=/cis301/js/theme.js?1719515003 defer></script><script src=/cis301/js/embed-iframe.js?1719515003 defer></script></body></html>

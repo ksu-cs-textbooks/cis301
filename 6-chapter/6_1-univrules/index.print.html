@@ -1,723 +1,224 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 301: Logical Foundations of Programming">
-    <meta name="author" content="Julie Thornton">
-    <title>Rules with ∀ :: CIS 301 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/index.html" rel="canonical" type="text/html" title="Rules with ∀ :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/index.xml" rel="alternate" type="application/rss+xml" title="Rules with ∀ :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/tele.html" rel="alternate" type="text/html" title="Rules with ∀ :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/embed.html" rel="alternate" type="text/html" title="Rules with ∀ :: CIS 301 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924209" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924209" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924209" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1716924209" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1716924209" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/format-print.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1716924209" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1716924209"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1716924209"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1716924209" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/6_1-univrules/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/index.html"><span itemprop="name">CIS 301 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/6-chapter/index.html"><span itemprop="name">Predicate Logic Proofs</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Rules with ∀</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="rules-with-">Rules with ∀</h1>
-
-<p>Just as with our propositional logic operators, there will be two inference rules for each of our predicate logic quanitifiers &ndash; an &ldquo;introduction rule and an &ldquo;elimination&rdquo; rule.</p>
-<p>In this section, we will see the two inference rules for the universal (∀) quantifier.</p>
-<h2 id="for-all-elimination">For all elimination</h2>
-<p>For all elimination allows us to take a claim that uses a universal quantifier &ndash; a statement about ALL individuals in a domain &ndash; and make the same statement about a specific individual in the domain. After all, if the statement is true for ALL individuals, then it follows that it should be true for a particular individual. We can formalize the rule as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>           ∀ ((x: T) =&gt; P(x))
-</span></span><span style="display:flex;"><span>AllE[T]:  ---------------------
-</span></span><span style="display:flex;"><span>                   P(v)     where v is a particular individual in the domain (i.e, v has type T)</span></span></code></pre></div><p>Here is a simple example showing the syntax of the <code>AllE[T]</code> rule. It shows that given the premises: <em>All humans are mortal</em> and <em>Socrates is a human</em>, that we can prove that <em>Socrates is mortal</em>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (   ∀ ((x: T) =&gt; (isHuman(x) → isMortal(x))),  
-</span></span><span style="display:flex;"><span>        isHuman(Socrates)    
-</span></span><span style="display:flex;"><span>    ) 
-</span></span><span style="display:flex;"><span>⊢ 
-</span></span><span style="display:flex;"><span>    (   
-</span></span><span style="display:flex;"><span>        isMortal(Socrates) 
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>Proof(
-</span></span><span style="display:flex;"><span>    1 (     ∀ ((x: T) =&gt; (isHuman(x) → isMortal(x)))        )   by Premise,
-</span></span><span style="display:flex;"><span>    2 (     isHuman(Socrates)                               )   by Premise,
-</span></span><span style="display:flex;"><span>    3 (     isHuman(Socrates) → isMortal(Socrates)          )   by AllE[T](1),
-</span></span><span style="display:flex;"><span>    4 (     isMortal(Socrates)                              )   by ImplyE(3, 2)
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>We can read the justification <code>AllE[T](1)</code> as: &ldquo;for all elimination of the for all statement on line 1.</p>
-<p>While our <code>AllE[T]</code> justification does not mention the particular individual that was plugged in to the for all statement (<em>Socrates</em>, in this case), it is required that whatever individual we plug in has already been show to be of type <code>T</code>. This is done by accepting the individual as a parameter of type <code>T</code> to the proof function. The full proof function would look like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>@pure def socMortal[T](isHuman: T =&gt; B @pure, isMortal: T =&gt; B @pure, Socrates: T): Unit = {
-</span></span><span style="display:flex;"><span>    Deduce (
-</span></span><span style="display:flex;"><span>        (   
-</span></span><span style="display:flex;"><span>            ∀ ((x: T) =&gt; (isHuman(x) → isMortal(x))),  
-</span></span><span style="display:flex;"><span>            isHuman(Socrates)    
-</span></span><span style="display:flex;"><span>        ) 
-</span></span><span style="display:flex;"><span>        ⊢ 
-</span></span><span style="display:flex;"><span>        (   
-</span></span><span style="display:flex;"><span>            isMortal(Socrates) 
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>        Proof(
-</span></span><span style="display:flex;"><span>            1 (     ∀ ((x: T) =&gt; (isHuman(x) → isMortal(x)))      )   by Premise,
-</span></span><span style="display:flex;"><span>            2 (     isHuman(Socrates)                             )   by Premise,
-</span></span><span style="display:flex;"><span>            3 (     isHuman(Socrates) → isMortal(Socrates)        )   by AllE[T](1),
-</span></span><span style="display:flex;"><span>            4 (     isMortal(Socrates)                            )   by ImplyE(3, 2)
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In similar examples of <code>AllE[T]</code>, it is assumed that the named individual was accepted as a parameter of type <code>T</code> to the proof function.</p>
-<h2 id="for-all-introduction">For all introduction</h2>
-<p>If we can show that a property of the form <code>P(a)</code> holds for an arbitrary member <code>a</code> of a domain, then we can use for all introduction to conclude that the property must hold for ALL individuals in the domain &ndash; i.e., that <code>∀ x P(x)</code> (which we write in Logika as <code>∀ ((x: T) =&gt; P(x))</code>). We can formalize the rule as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>            Let (   (a: T) =&gt; SubProof(
-</span></span><span style="display:flex;"><span>                ... 
-</span></span><span style="display:flex;"><span>                P(a)  
-</span></span><span style="display:flex;"><span>            )),
-</span></span><span style="display:flex;"><span>AllI[T] : -------------------------------
-</span></span><span style="display:flex;"><span>                 ∀ ((x: T) =&gt; P(x)) </span></span></code></pre></div><p>Here is a simple example showing the syntax of the <code>AllI[T]</code> rule: &ldquo;Everyone is healthy; everyone is happy. Therefore, everyone is both healthy and happy.&rdquo;:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (   
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; isHealthy(x)), ∀((y: T) =&gt; isHappy(y))
-</span></span><span style="display:flex;"><span>    )  
-</span></span><span style="display:flex;"><span>⊢  
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((z: T) =&gt; isHealthy(z) ∧ isHappy(z))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>Proof (
-</span></span><span style="display:flex;"><span>    1 (     ∀((x: T) =&gt; isHealthy(x))               )   by Premise,
-</span></span><span style="display:flex;"><span>    2 (     ∀((y: T) =&gt; isHappy(y))                 )   by Premise,
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    3 Let ((a: T) =&gt; SubProof(
-</span></span><span style="display:flex;"><span>        4 (     isHealthy(a)                        )   by AllE[T](1),
-</span></span><span style="display:flex;"><span>        5 (     isHappy(a)                          )   by AllE[T](2),
-</span></span><span style="display:flex;"><span>        6 (     isHealthy(a) ∧ isHappy(a)           )   by AndI(4, 5)
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>    7 (     ∀((z: T) =&gt; isHealthy(z) ∧ isHappy(z))  )   by AllI[T](3)
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>If we wish to introduce a for all statement, the pattern is:</p>
-<ul>
-<li>
-<p>Open a subproof where you introduce an arbitrary/fresh individual in the domain with &ldquo;Let&rdquo; (in the example above, we used <code>a</code>). It MUST be a name that we have not used elsewhere in the proof. The idea is that your individual could have been anyone/anything in the domain.</p>
-</li>
-<li>
-<p>When you introduce the individual with &ldquo;Let&rdquo; and then open the subproof, you do NOT include a justification on that line</p>
-</li>
-<li>
-<p>If you have other for all statements available within the scope of the subproof, then it is often useful to use <code>AllE[T]</code> to plug your fresh individual into them. After all, if those statements are true for ALL individuals, then they are also true for your fresh individual.</p>
-</li>
-<li>
-<p>If you are trying to prove something of the form <code>∀ ((x: T) =&gt; P(x))</code>, then you need to reach <code>P(a)</code> by the end of the subproof. You need to show that your goal for all statement holds for your fresh individual. In our case, we wished to prove <code>∀((z: T) =&gt; isHealthy(z) ∧ isHappy(z))</code>, so we reached <code>isHealthy(a) ∧ isHappy(a)</code> by the end of the subproof.</p>
-</li>
-<li>
-<p>After the subproof, you can use <code>∀i</code> to introduce a for-all statement for your last claim in the subproof &ndash; that since the individual could have been anyone, then the proposition holds for ALL individuals. The <code>∀i</code> justification needs the line number of the subproof.</p>
-</li>
-<li>
-<p>When you use <code>AllI[T]</code>, it does not matter what variable you introduce into the for all statement. In the example above, we introduced <code>∀((z: T)</code> &ndash; but that was only to match the goal conclusion in the proof. We could have instead introduced <code>∀((x: T)</code>, <code>∀((y: T)</code>, <code>∀((people T)</code>, etc. We would use whatever variable we chose in the rest of that proposition &ndash; i.e., <code>∀((z: T) =&gt; isHealthy(z) ∧ isHappy(z))</code>, or <code>∀((people: T) =&gt; isHealthy(people) ∧ isHappy(people))</code>, etc.</p>
-</li>
-</ul>
-<h2 id="examples">Examples</h2>
-<p>In this section, we will look at additional proofs involving the universal quantifier.</p>
-<h3 id="example-1">Example 1</h3>
-<p>Suppose we wish to prove that, given the following premises in the domain of people:</p>
-<ul>
-<li>All students have a phone and/or a laptop</li>
-<li>Everyone is a student</li>
-</ul>
-<p>Then we can conclude:</p>
-<ul>
-<li>Everyone has a phone and/or a laptop</li>
-</ul>
-<p>First, we identify the following predicates:</p>
-<ul>
-<li><code>isStudent(x)</code> - whether person x is a student</li>
-<li><code>hasPhone(x)</code> - whether person x has a phone</li>
-<li><code>hasLaptop(x)</code> = whether person x has a laptop</li>
-</ul>
-<p>Then, we can translate our premises and goal conclusion to predicate logic:</p>
-<ul>
-<li><em>All students have a phone and/or a laptop</em> translates to: <code>∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))</code></li>
-<li><em>Everyone is a student</em> translates to: <code>∀ x isStudent(x)</code></li>
-<li><em>Everyone has a phone and/or a laptop</em> translates to: <code>∀ x (hasPhone(x) ∨ hasLaptop(x))</code></li>
-</ul>
-<p>We need to prove the following sequent (where we rewrite the above predicate logic statements in our Logika format):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))), 
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; isStudent(x))
-</span></span><span style="display:flex;"><span>    ) 
-</span></span><span style="display:flex;"><span>⊢ 
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>As with our previous example, we see that we are trying to prove a for-all statement (<code>∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))</code>). This means we will need to open a subproof and introduce a fresh individual &ndash; perhaps <code>bob</code>. By the end of the subproof, we must show that our goal for-all statement holds for that individual &ndash; that <code>hasPhone(bob) ∨ hasLaptop(bob)</code>. We start the proof as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))), 
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; isStudent(x))
-</span></span><span style="display:flex;"><span>    ) 
-</span></span><span style="display:flex;"><span>⊢ 
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>Proof (
-</span></span><span style="display:flex;"><span>    1 (     ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)))        )   by Premise,
-</span></span><span style="display:flex;"><span>    2 (     ∀((x: T) =&gt; isStudent(x))                                       )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    3 Let ( (bob: T) =&gt; SubProof(
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        //goal: hasPhone(bob) ∨ hasLaptop(bob)
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    //use AllI to conclude ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>We have two available for-all statements within the subproof &ndash; <code>∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)))</code> and <code>∀((x: T) =&gt; isStudent(x))</code>. Since those propositions hold for all individuals, they also hold for <code>bob</code>. We use <code>AllE[T]</code> to plug in <code>bob</code> to those two propositions:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))), 
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; isStudent(x))
-</span></span><span style="display:flex;"><span>    ) 
-</span></span><span style="display:flex;"><span>⊢ 
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>Proof (
-</span></span><span style="display:flex;"><span>    1 (     ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)))        )   by Premise,
-</span></span><span style="display:flex;"><span>    2 (     ∀((x: T) =&gt; isStudent(x))                                       )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    3 Let ( (bob: T) =&gt; SubProof(
-</span></span><span style="display:flex;"><span>        4 (     isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)             )   by AllET(1),
-</span></span><span style="display:flex;"><span>        5 (     isStudent(bob)                                              )   by AllE[T](2),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //goal: hasPhone(bob) ∨ hasLaptop(bob)
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    //use AllI to conclude ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>Line 5 is an implies statement the form <code>p → q</code>, and line 6 is a statement of the form <code>p</code>. Thus we can use <code>→e</code> to conclude <code>hasPhone(bob) ∨ hasLaptop(bob)</code> (the &ldquo;q&rdquo; in that statement) &ndash; which is exactly what we needed to end the subproof. All that remains is to apply our <code>AlI</code> rule after the subproof. Here is the completed proof:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))), 
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; isStudent(x))
-</span></span><span style="display:flex;"><span>    ) 
-</span></span><span style="display:flex;"><span>⊢ 
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>Proof (
-</span></span><span style="display:flex;"><span>    1 (     ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)))        )   by Premise,
-</span></span><span style="display:flex;"><span>    2 (     ∀((x: T) =&gt; isStudent(x))                                       )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    3 Let ( (bob: T) =&gt; SubProof(
-</span></span><span style="display:flex;"><span>        4 (     isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)             )   by AllET(1),
-</span></span><span style="display:flex;"><span>        5 (     isStudent(bob)                                              )   by AllE[T](2),
-</span></span><span style="display:flex;"><span>        6 (     hasPhone(bob) ∨ hasLaptop(bob)                              )   by ImplyE(4, 5)
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>    7 (     ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))                       )   by AllI[T](3)
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><h3 id="example-2">Example 2</h3>
-<p>Next, suppose we wish to prove the following sequent:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (S(x) → Pz(x))),
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (Pz(x) → D(x))),
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; ¬D(x))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>⊢
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; ¬S(x))
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>We again see that the top-level operator of what we are trying to prove is a universal quantifier. We use our strategy to open a subproof with a fresh individual (maybe <code>a</code>), and plug that individual into any available for-all statements. Since we wish to prove <code>∀((x: T) =&gt; ¬S(x))</code>, then we will want to reach <code>¬S(a)</code> by the end of the subproof. Here is a sketch:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (S(x) → Pz(x))),
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (Pz(x) → D(x))),
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; ¬D(x))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>⊢
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; ¬S(x))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Proof(
-</span></span><span style="display:flex;"><span>    1 (     ∀((x: T) =&gt; (S(x) → Pz(x)))     )   by Premise,
-</span></span><span style="display:flex;"><span>    2 (     ∀((x: T) =&gt; (Pz(x) → D(x))      )   by Premise,
-</span></span><span style="display:flex;"><span>    3 (     ∀((x: T) =&gt; ¬D(x))              )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    4 Let ((a: T) =&gt; SubProof (
-</span></span><span style="display:flex;"><span>        5 (     S(a) → Pz(a)                )   by AllE[T](1),
-</span></span><span style="display:flex;"><span>        6 (     Pz(a) → D(a)                )   by AllE[T](2),
-</span></span><span style="display:flex;"><span>        7 (     ¬D(a)                       )   by AllE[T](3),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //goal: ¬S(a)
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>    //use AllI[T] to conclude ∀((x: T) =&gt; ¬S(x))
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>Now, we see that our goal is to reach <code>¬S(a)</code> by the end of the subproof &ndash; so we need to prove something whose top-level operator is a NOT. We recall that we have a strategy to prove NOT(something) from propositional logic &ndash; we open a subproof, assuming <em>something</em> (<code>S(a)</code>, in our case), try to get a contradiction, and use negation introduction after the subproof to conclude NOT (something) (<code>¬S(a)</code> for us). Here is the strategy:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (S(x) → Pz(x))),
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (Pz(x) → D(x))),
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; ¬D(x))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>⊢
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; ¬S(x))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Proof(
-</span></span><span style="display:flex;"><span>    1 (     ∀((x: T) =&gt; (S(x) → Pz(x)))     )   by Premise,
-</span></span><span style="display:flex;"><span>    2 (     ∀((x: T) =&gt; (Pz(x) → D(x))      )   by Premise,
-</span></span><span style="display:flex;"><span>    3 (     ∀((x: T) =&gt; ¬D(x))              )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    4 Let ((a: T) =&gt; SubProof(
-</span></span><span style="display:flex;"><span>        5 (     S(a) → Pz(a)                )   by AllE[T](1),
-</span></span><span style="display:flex;"><span>        6 (     Pz(a) → D(a)                )   by AllE[T](2),
-</span></span><span style="display:flex;"><span>        7 (     ¬D(a)                       )   by AllE[T](3),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        8 SubProof(
-</span></span><span style="display:flex;"><span>            10 Assume( S(a) ),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //goal: contradiction
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //use NegI to conclude ¬S(a)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //goal: ¬S(a)
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>    //use AllI[T] to conclude ∀((x: T) =&gt; ¬S(x))
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>We can complete the proof as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (S(x) → Pz(x))),
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; (Pz(x) → D(x))),
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; ¬D(x))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>⊢
-</span></span><span style="display:flex;"><span>    (
-</span></span><span style="display:flex;"><span>        ∀((x: T) =&gt; ¬S(x))
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Proof(
-</span></span><span style="display:flex;"><span>    1 (     ∀((x: T) =&gt; (S(x) → Pz(x)))     )   by Premise,
-</span></span><span style="display:flex;"><span>    2 (     ∀((x: T) =&gt; (Pz(x) → D(x))      )   by Premise,
-</span></span><span style="display:flex;"><span>    3 (     ∀((x: T) =&gt; ¬D(x))              )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    4 Let ((a: T) =&gt; SubProof(
-</span></span><span style="display:flex;"><span>        5 (     S(a) → Pz(a)                )   by AllE[T](1),
-</span></span><span style="display:flex;"><span>        6 (     Pz(a) → D(a)                )   by AllE[T](2),
-</span></span><span style="display:flex;"><span>        7 (     ¬D(a)                       )   by AllE[T](3),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        8 SubProof(
-</span></span><span style="display:flex;"><span>            10 Assume( S(a) ),
-</span></span><span style="display:flex;"><span>            11 (    Pz(a)                   )   by ImplyE(5, 10),
-</span></span><span style="display:flex;"><span>            12 (    D(a)                    )   by ImplyE(6, 11),
-</span></span><span style="display:flex;"><span>            13 (    F                       )   by NegE(12, 7)
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //goal: contradiction
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //use ¬i to conclude ¬S(a)
-</span></span><span style="display:flex;"><span>        14 (    ¬S(a)                       )   by NegI(8)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //goal: ¬S(a)
-</span></span><span style="display:flex;"><span>    )),
-</span></span><span style="display:flex;"><span>    //use AllI[T] to conclude ∀((x: T) =&gt; ¬S(x))
-</span></span><span style="display:flex;"><span>    15 (    ∀((x: T) =&gt; ¬S(x))              )   by AllI[T](4)
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Julie Thornton
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/3ee7d6e929803e183bc58287cbf71613bf7528ae">Apr 25, 2024</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1716924209" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1716924209" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1716924209" defer></script>
-  </body>
-</html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="Just as with our propositional logic operators, there will be two inference rules for each of our predicate logic quanitifiers – an “introduction rule and an “elimination” rule.
+In this section, we will see the two inference rules for the universal (∀) quantifier.
+For all elimination For all elimination allows us to take a claim that uses a universal quantifier – a statement about ALL individuals in a domain – and make the same statement about a specific individual in the domain."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Rules with ∀ :: CIS 301 Textbook"><meta name=twitter:description content="Just as with our propositional logic operators, there will be two inference rules for each of our predicate logic quanitifiers – an “introduction rule and an “elimination” rule.
+In this section, we will see the two inference rules for the universal (∀) quantifier.
+For all elimination For all elimination allows us to take a claim that uses a universal quantifier – a statement about ALL individuals in a domain – and make the same statement about a specific individual in the domain."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/6-chapter/6_1-univrules/"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Rules with ∀ :: CIS 301 Textbook"><meta property="og:description" content="Just as with our propositional logic operators, there will be two inference rules for each of our predicate logic quanitifiers – an “introduction rule and an “elimination” rule.
+In this section, we will see the two inference rules for the universal (∀) quantifier.
+For all elimination For all elimination allows us to take a claim that uses a universal quantifier – a statement about ALL individuals in a domain – and make the same statement about a specific individual in the domain."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Predicate Logic Proofs"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2024-04-25T17:02:46-05:00"><meta itemprop=name content="Rules with ∀ :: CIS 301 Textbook"><meta itemprop=description content="Just as with our propositional logic operators, there will be two inference rules for each of our predicate logic quanitifiers – an “introduction rule and an “elimination” rule.
+In this section, we will see the two inference rules for the universal (∀) quantifier.
+For all elimination For all elimination allows us to take a claim that uses a universal quantifier – a statement about ALL individuals in a domain – and make the same statement about a specific individual in the domain."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2024-04-25T17:02:46-05:00"><meta itemprop=wordCount content="2038"><title>Rules with ∀ :: CIS 301 Textbook</title>
+<link href=https://textbooks.cs.ksu.edu/cis301/6-chapter/6_1-univrules/ rel=canonical type=text/html title="Rules with ∀ :: CIS 301 Textbook"><link href=/cis301/6-chapter/6_1-univrules/index.xml rel=alternate type=application/rss+xml title="Rules with ∀ :: CIS 301 Textbook"><link href=/cis301/6-chapter/6_1-univrules/tele.html rel=alternate type=text/html title="Rules with ∀ :: CIS 301 Textbook"><link href=/cis301/6-chapter/6_1-univrules/embed.html rel=alternate type=text/html title="Rules with ∀ :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1719515004 rel=stylesheet><link href=/cis301/css/auto-complete.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1719515004 rel=stylesheet><link href=/cis301/css/fonts.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1719515004 rel=stylesheet><link href=/cis301/css/theme-auto.css?1719515004 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-auto.css?1719515004 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1719515004 rel=stylesheet><link href=/cis301/css/print.css?1719515004 rel=stylesheet media=print><link href=/cis301/css/format-print.css?1719515004 rel=stylesheet><script src=/cis301/js/variant.js?1719515004></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1719515004 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis301/6-chapter/6_1-univrules/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis301/6-chapter/><span itemprop=name>Predicate Logic Proofs</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Rules with ∀</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/6-chapter/ title="Predicate Logic Proofs (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/6-chapter/6_2-existrules/ title="Rules with ∃ (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=rules-with->Rules with ∀</h1><p>Just as with our propositional logic operators, there will be two inference rules for each of our predicate logic quanitifiers &ndash; an &ldquo;introduction rule and an &ldquo;elimination&rdquo; rule.</p><p>In this section, we will see the two inference rules for the universal (∀) quantifier.</p><h2 id=for-all-elimination>For all elimination</h2><p>For all elimination allows us to take a claim that uses a universal quantifier &ndash; a statement about ALL individuals in a domain &ndash; and make the same statement about a specific individual in the domain. After all, if the statement is true for ALL individuals, then it follows that it should be true for a particular individual. We can formalize the rule as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>           ∀ ((x: T) =&gt; P(x))
+</span></span><span class=line><span class=cl>AllE[T]:  ---------------------
+</span></span><span class=line><span class=cl>                   P(v)     where v is a particular individual in the domain (i.e, v has type T)</span></span></code></pre></div><p>Here is a simple example showing the syntax of the <code>AllE[T]</code> rule. It shows that given the premises: <em>All humans are mortal</em> and <em>Socrates is a human</em>, that we can prove that <em>Socrates is mortal</em>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (   ∀ ((x: T) =&gt; (isHuman(x) → isMortal(x))),  
+</span></span><span class=line><span class=cl>        isHuman(Socrates)    
+</span></span><span class=line><span class=cl>    ) 
+</span></span><span class=line><span class=cl>⊢ 
+</span></span><span class=line><span class=cl>    (   
+</span></span><span class=line><span class=cl>        isMortal(Socrates) 
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>Proof(
+</span></span><span class=line><span class=cl>    1 (     ∀ ((x: T) =&gt; (isHuman(x) → isMortal(x)))        )   by Premise,
+</span></span><span class=line><span class=cl>    2 (     isHuman(Socrates)                               )   by Premise,
+</span></span><span class=line><span class=cl>    3 (     isHuman(Socrates) → isMortal(Socrates)          )   by AllE[T](1),
+</span></span><span class=line><span class=cl>    4 (     isMortal(Socrates)                              )   by ImplyE(3, 2)
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>We can read the justification <code>AllE[T](1)</code> as: &ldquo;for all elimination of the for all statement on line 1.</p><p>While our <code>AllE[T]</code> justification does not mention the particular individual that was plugged in to the for all statement (<em>Socrates</em>, in this case), it is required that whatever individual we plug in has already been show to be of type <code>T</code>. This is done by accepting the individual as a parameter of type <code>T</code> to the proof function. The full proof function would look like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>@pure def socMortal[T](isHuman: T =&gt; B @pure, isMortal: T =&gt; B @pure, Socrates: T): Unit = {
+</span></span><span class=line><span class=cl>    Deduce (
+</span></span><span class=line><span class=cl>        (   
+</span></span><span class=line><span class=cl>            ∀ ((x: T) =&gt; (isHuman(x) → isMortal(x))),  
+</span></span><span class=line><span class=cl>            isHuman(Socrates)    
+</span></span><span class=line><span class=cl>        ) 
+</span></span><span class=line><span class=cl>        ⊢ 
+</span></span><span class=line><span class=cl>        (   
+</span></span><span class=line><span class=cl>            isMortal(Socrates) 
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>        Proof(
+</span></span><span class=line><span class=cl>            1 (     ∀ ((x: T) =&gt; (isHuman(x) → isMortal(x)))      )   by Premise,
+</span></span><span class=line><span class=cl>            2 (     isHuman(Socrates)                             )   by Premise,
+</span></span><span class=line><span class=cl>            3 (     isHuman(Socrates) → isMortal(Socrates)        )   by AllE[T](1),
+</span></span><span class=line><span class=cl>            4 (     isMortal(Socrates)                            )   by ImplyE(3, 2)
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>In similar examples of <code>AllE[T]</code>, it is assumed that the named individual was accepted as a parameter of type <code>T</code> to the proof function.</p><h2 id=for-all-introduction>For all introduction</h2><p>If we can show that a property of the form <code>P(a)</code> holds for an arbitrary member <code>a</code> of a domain, then we can use for all introduction to conclude that the property must hold for ALL individuals in the domain &ndash; i.e., that <code>∀ x P(x)</code> (which we write in Logika as <code>∀ ((x: T) => P(x))</code>). We can formalize the rule as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>            Let (   (a: T) =&gt; SubProof(
+</span></span><span class=line><span class=cl>                ... 
+</span></span><span class=line><span class=cl>                P(a)  
+</span></span><span class=line><span class=cl>            )),
+</span></span><span class=line><span class=cl>AllI[T] : -------------------------------
+</span></span><span class=line><span class=cl>                 ∀ ((x: T) =&gt; P(x)) </span></span></code></pre></div><p>Here is a simple example showing the syntax of the <code>AllI[T]</code> rule: &ldquo;Everyone is healthy; everyone is happy. Therefore, everyone is both healthy and happy.&rdquo;:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (   
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; isHealthy(x)), ∀((y: T) =&gt; isHappy(y))
+</span></span><span class=line><span class=cl>    )  
+</span></span><span class=line><span class=cl>⊢  
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((z: T) =&gt; isHealthy(z) ∧ isHappy(z))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>Proof (
+</span></span><span class=line><span class=cl>    1 (     ∀((x: T) =&gt; isHealthy(x))               )   by Premise,
+</span></span><span class=line><span class=cl>    2 (     ∀((y: T) =&gt; isHappy(y))                 )   by Premise,
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    3 Let ((a: T) =&gt; SubProof(
+</span></span><span class=line><span class=cl>        4 (     isHealthy(a)                        )   by AllE[T](1),
+</span></span><span class=line><span class=cl>        5 (     isHappy(a)                          )   by AllE[T](2),
+</span></span><span class=line><span class=cl>        6 (     isHealthy(a) ∧ isHappy(a)           )   by AndI(4, 5)
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>    7 (     ∀((z: T) =&gt; isHealthy(z) ∧ isHappy(z))  )   by AllI[T](3)
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>If we wish to introduce a for all statement, the pattern is:</p><ul><li><p>Open a subproof where you introduce an arbitrary/fresh individual in the domain with &ldquo;Let&rdquo; (in the example above, we used <code>a</code>). It MUST be a name that we have not used elsewhere in the proof. The idea is that your individual could have been anyone/anything in the domain.</p></li><li><p>When you introduce the individual with &ldquo;Let&rdquo; and then open the subproof, you do NOT include a justification on that line</p></li><li><p>If you have other for all statements available within the scope of the subproof, then it is often useful to use <code>AllE[T]</code> to plug your fresh individual into them. After all, if those statements are true for ALL individuals, then they are also true for your fresh individual.</p></li><li><p>If you are trying to prove something of the form <code>∀ ((x: T) => P(x))</code>, then you need to reach <code>P(a)</code> by the end of the subproof. You need to show that your goal for all statement holds for your fresh individual. In our case, we wished to prove <code>∀((z: T) => isHealthy(z) ∧ isHappy(z))</code>, so we reached <code>isHealthy(a) ∧ isHappy(a)</code> by the end of the subproof.</p></li><li><p>After the subproof, you can use <code>∀i</code> to introduce a for-all statement for your last claim in the subproof &ndash; that since the individual could have been anyone, then the proposition holds for ALL individuals. The <code>∀i</code> justification needs the line number of the subproof.</p></li><li><p>When you use <code>AllI[T]</code>, it does not matter what variable you introduce into the for all statement. In the example above, we introduced <code>∀((z: T)</code> &ndash; but that was only to match the goal conclusion in the proof. We could have instead introduced <code>∀((x: T)</code>, <code>∀((y: T)</code>, <code>∀((people T)</code>, etc. We would use whatever variable we chose in the rest of that proposition &ndash; i.e., <code>∀((z: T) => isHealthy(z) ∧ isHappy(z))</code>, or <code>∀((people: T) => isHealthy(people) ∧ isHappy(people))</code>, etc.</p></li></ul><h2 id=examples>Examples</h2><p>In this section, we will look at additional proofs involving the universal quantifier.</p><h3 id=example-1>Example 1</h3><p>Suppose we wish to prove that, given the following premises in the domain of people:</p><ul><li>All students have a phone and/or a laptop</li><li>Everyone is a student</li></ul><p>Then we can conclude:</p><ul><li>Everyone has a phone and/or a laptop</li></ul><p>First, we identify the following predicates:</p><ul><li><code>isStudent(x)</code> - whether person x is a student</li><li><code>hasPhone(x)</code> - whether person x has a phone</li><li><code>hasLaptop(x)</code> = whether person x has a laptop</li></ul><p>Then, we can translate our premises and goal conclusion to predicate logic:</p><ul><li><em>All students have a phone and/or a laptop</em> translates to: <code>∀ x (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))</code></li><li><em>Everyone is a student</em> translates to: <code>∀ x isStudent(x)</code></li><li><em>Everyone has a phone and/or a laptop</em> translates to: <code>∀ x (hasPhone(x) ∨ hasLaptop(x))</code></li></ul><p>We need to prove the following sequent (where we rewrite the above predicate logic statements in our Logika format):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))), 
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; isStudent(x))
+</span></span><span class=line><span class=cl>    ) 
+</span></span><span class=line><span class=cl>⊢ 
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>As with our previous example, we see that we are trying to prove a for-all statement (<code>∀((y: T) => (hasPhone(y) ∨ hasLaptop(y)))</code>). This means we will need to open a subproof and introduce a fresh individual &ndash; perhaps <code>bob</code>. By the end of the subproof, we must show that our goal for-all statement holds for that individual &ndash; that <code>hasPhone(bob) ∨ hasLaptop(bob)</code>. We start the proof as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))), 
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; isStudent(x))
+</span></span><span class=line><span class=cl>    ) 
+</span></span><span class=line><span class=cl>⊢ 
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>Proof (
+</span></span><span class=line><span class=cl>    1 (     ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)))        )   by Premise,
+</span></span><span class=line><span class=cl>    2 (     ∀((x: T) =&gt; isStudent(x))                                       )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    3 Let ( (bob: T) =&gt; SubProof(
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        //goal: hasPhone(bob) ∨ hasLaptop(bob)
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    //use AllI to conclude ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>We have two available for-all statements within the subproof &ndash; <code>∀((x: T) => (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)))</code> and <code>∀((x: T) => isStudent(x))</code>. Since those propositions hold for all individuals, they also hold for <code>bob</code>. We use <code>AllE[T]</code> to plug in <code>bob</code> to those two propositions:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))), 
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; isStudent(x))
+</span></span><span class=line><span class=cl>    ) 
+</span></span><span class=line><span class=cl>⊢ 
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>Proof (
+</span></span><span class=line><span class=cl>    1 (     ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)))        )   by Premise,
+</span></span><span class=line><span class=cl>    2 (     ∀((x: T) =&gt; isStudent(x))                                       )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    3 Let ( (bob: T) =&gt; SubProof(
+</span></span><span class=line><span class=cl>        4 (     isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)             )   by AllET(1),
+</span></span><span class=line><span class=cl>        5 (     isStudent(bob)                                              )   by AllE[T](2),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //goal: hasPhone(bob) ∨ hasLaptop(bob)
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>    
+</span></span><span class=line><span class=cl>    //use AllI to conclude ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>Line 5 is an implies statement the form <code>p → q</code>, and line 6 is a statement of the form <code>p</code>. Thus we can use <code>→e</code> to conclude <code>hasPhone(bob) ∨ hasLaptop(bob)</code> (the &ldquo;q&rdquo; in that statement) &ndash; which is exactly what we needed to end the subproof. All that remains is to apply our <code>AlI</code> rule after the subproof. Here is the completed proof:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x))), 
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; isStudent(x))
+</span></span><span class=line><span class=cl>    ) 
+</span></span><span class=line><span class=cl>⊢ 
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>Proof (
+</span></span><span class=line><span class=cl>    1 (     ∀((x: T) =&gt; (isStudent(x) → hasPhone(x) ∨ hasLaptop(x)))        )   by Premise,
+</span></span><span class=line><span class=cl>    2 (     ∀((x: T) =&gt; isStudent(x))                                       )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    3 Let ( (bob: T) =&gt; SubProof(
+</span></span><span class=line><span class=cl>        4 (     isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)             )   by AllET(1),
+</span></span><span class=line><span class=cl>        5 (     isStudent(bob)                                              )   by AllE[T](2),
+</span></span><span class=line><span class=cl>        6 (     hasPhone(bob) ∨ hasLaptop(bob)                              )   by ImplyE(4, 5)
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>    7 (     ∀((y: T) =&gt; (hasPhone(y) ∨ hasLaptop(y)))                       )   by AllI[T](3)
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><h3 id=example-2>Example 2</h3><p>Next, suppose we wish to prove the following sequent:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (S(x) → Pz(x))),
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (Pz(x) → D(x))),
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; ¬D(x))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>⊢
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; ¬S(x))
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>We again see that the top-level operator of what we are trying to prove is a universal quantifier. We use our strategy to open a subproof with a fresh individual (maybe <code>a</code>), and plug that individual into any available for-all statements. Since we wish to prove <code>∀((x: T) => ¬S(x))</code>, then we will want to reach <code>¬S(a)</code> by the end of the subproof. Here is a sketch:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (S(x) → Pz(x))),
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (Pz(x) → D(x))),
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; ¬D(x))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>⊢
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; ¬S(x))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Proof(
+</span></span><span class=line><span class=cl>    1 (     ∀((x: T) =&gt; (S(x) → Pz(x)))     )   by Premise,
+</span></span><span class=line><span class=cl>    2 (     ∀((x: T) =&gt; (Pz(x) → D(x))      )   by Premise,
+</span></span><span class=line><span class=cl>    3 (     ∀((x: T) =&gt; ¬D(x))              )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    4 Let ((a: T) =&gt; SubProof (
+</span></span><span class=line><span class=cl>        5 (     S(a) → Pz(a)                )   by AllE[T](1),
+</span></span><span class=line><span class=cl>        6 (     Pz(a) → D(a)                )   by AllE[T](2),
+</span></span><span class=line><span class=cl>        7 (     ¬D(a)                       )   by AllE[T](3),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //goal: ¬S(a)
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>    //use AllI[T] to conclude ∀((x: T) =&gt; ¬S(x))
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>Now, we see that our goal is to reach <code>¬S(a)</code> by the end of the subproof &ndash; so we need to prove something whose top-level operator is a NOT. We recall that we have a strategy to prove NOT(something) from propositional logic &ndash; we open a subproof, assuming <em>something</em> (<code>S(a)</code>, in our case), try to get a contradiction, and use negation introduction after the subproof to conclude NOT (something) (<code>¬S(a)</code> for us). Here is the strategy:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (S(x) → Pz(x))),
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (Pz(x) → D(x))),
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; ¬D(x))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>⊢
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; ¬S(x))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Proof(
+</span></span><span class=line><span class=cl>    1 (     ∀((x: T) =&gt; (S(x) → Pz(x)))     )   by Premise,
+</span></span><span class=line><span class=cl>    2 (     ∀((x: T) =&gt; (Pz(x) → D(x))      )   by Premise,
+</span></span><span class=line><span class=cl>    3 (     ∀((x: T) =&gt; ¬D(x))              )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    4 Let ((a: T) =&gt; SubProof(
+</span></span><span class=line><span class=cl>        5 (     S(a) → Pz(a)                )   by AllE[T](1),
+</span></span><span class=line><span class=cl>        6 (     Pz(a) → D(a)                )   by AllE[T](2),
+</span></span><span class=line><span class=cl>        7 (     ¬D(a)                       )   by AllE[T](3),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        8 SubProof(
+</span></span><span class=line><span class=cl>            10 Assume( S(a) ),
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //goal: contradiction
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //use NegI to conclude ¬S(a)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //goal: ¬S(a)
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>    //use AllI[T] to conclude ∀((x: T) =&gt; ¬S(x))
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>We can complete the proof as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (S(x) → Pz(x))),
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; (Pz(x) → D(x))),
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; ¬D(x))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>⊢
+</span></span><span class=line><span class=cl>    (
+</span></span><span class=line><span class=cl>        ∀((x: T) =&gt; ¬S(x))
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Proof(
+</span></span><span class=line><span class=cl>    1 (     ∀((x: T) =&gt; (S(x) → Pz(x)))     )   by Premise,
+</span></span><span class=line><span class=cl>    2 (     ∀((x: T) =&gt; (Pz(x) → D(x))      )   by Premise,
+</span></span><span class=line><span class=cl>    3 (     ∀((x: T) =&gt; ¬D(x))              )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    4 Let ((a: T) =&gt; SubProof(
+</span></span><span class=line><span class=cl>        5 (     S(a) → Pz(a)                )   by AllE[T](1),
+</span></span><span class=line><span class=cl>        6 (     Pz(a) → D(a)                )   by AllE[T](2),
+</span></span><span class=line><span class=cl>        7 (     ¬D(a)                       )   by AllE[T](3),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        8 SubProof(
+</span></span><span class=line><span class=cl>            10 Assume( S(a) ),
+</span></span><span class=line><span class=cl>            11 (    Pz(a)                   )   by ImplyE(5, 10),
+</span></span><span class=line><span class=cl>            12 (    D(a)                    )   by ImplyE(6, 11),
+</span></span><span class=line><span class=cl>            13 (    F                       )   by NegE(12, 7)
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //goal: contradiction
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //use ¬i to conclude ¬S(a)
+</span></span><span class=line><span class=cl>        14 (    ¬S(a)                       )   by NegI(8)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //goal: ¬S(a)
+</span></span><span class=line><span class=cl>    )),
+</span></span><span class=line><span class=cl>    //use AllI[T] to conclude ∀((x: T) =&gt; ¬S(x))
+</span></span><span class=line><span class=cl>    15 (    ∀((x: T) =&gt; ¬S(x))              )   by AllI[T](4)
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><footer class=footline></footer></article></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Julie Thornton
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis301/commit/3ee7d6e929803e183bc58287cbf71613bf7528ae>Apr 25, 2024</a></p></div></div><script src=/cis301/js/clipboard.min.js?1719515004 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1719515004 defer></script><script src=/cis301/js/theme.js?1719515004 defer></script></body></html>

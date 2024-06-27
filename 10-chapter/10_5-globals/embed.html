@@ -1,641 +1,177 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 301: Logical Foundations of Programming">
-    <meta name="author" content="Julie Thornton">
-    <title>Global Variables :: CIS 301 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5-globals/index.html" rel="canonical" type="text/html" title="Global Variables :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5-globals/index.xml" rel="alternate" type="application/rss+xml" title="Global Variables :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5-globals/index.print.html" rel="alternate" type="text/html" title="Global Variables :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5-globals/tele.html" rel="alternate" type="text/html" title="Global Variables :: CIS 301 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924208" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924208" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1716924208" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924208" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924208" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1716924208" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924208" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924208" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1716924208" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1716924208" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1716924208" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1716924208" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1716924208" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1716924208"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1716924208"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1716924208" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support embed disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_5-globals/embed.html">
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-    
-    
-    
-<h2 id="motivation">Motivation</h2>
-<p>We will now consider programs with multiple functions that modify a shared pool of <em>global variables</em>. (This is very similar to the concerns in general classes in Java or C#, where multiple methods might edit fields/property values for an object). We want to be sure that global variables will maintain desired ranges and relationships between one another, even as multiple functions modify their values.</p>
-<h2 id="global-variables-in-logika">Global variables in Logika</h2>
-<p>A global variable exists before any function call, and still exists after any function ends.</p>
-<h3 id="functions-that-access-global-variables">Functions that access global variables</h3>
-<p>Consider the following program:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//global variable
-</span></span><span style="display:flex;"><span>var feetPerMile: Z = 5280  // feet in a mile mile
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def convertToFeet(m : Z): Z = {
-</span></span><span style="display:flex;"><span>    val feet: Z = m * feetPerMile
-</span></span><span style="display:flex;"><span>    return feet
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>/////////// Calling code ////////////////////
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var miles: Z = Z.read()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var totalFeet: Z = 0
-</span></span><span style="display:flex;"><span>if (miles &gt;= 0){
-</span></span><span style="display:flex;"><span>    totalFeet = convertToFeet(miles)
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here, <code>feetPerMile</code> is a global variable &ndash; it exists before the <code>convertToFeet</code> function is called, and still exists after <code>convertToFeet</code> ends. In contrast, the <code>feet</code> variable inside <code>convertToFeet</code> is NOT global &ndash; its scope ends when the <code>convertToFeet</code> function returns.</p>
-<p>(The <code>miles</code> and <code>totalFeet</code> variables in the calling code do not behave as global variables, as they were declared after any function definition. However, if we did add additional functions after our calling code, then <code>miles</code> and <code>totalFeet</code> would be global to those later functions. In Logika, the scope for any variable declared outside of a function begins at the point in the code where it is declared.)</p>
-<p>In the example above, <code>convertToFeet</code> only accesses the <code>feetPerMile</code> global variable. A global variable that is read (but not updated) by a function body can be safely used in the functions precondition and postcondition &ndash; it acts just like an extra parameter to the function. We might edit <code>convertToFeet</code> to have this function contract:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//global variable
-</span></span><span style="display:flex;"><span>var feetPerMile: Z = 5280  // feet in a mile mile
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def convertToFeet(m : Z): Z = {
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        Requires (
-</span></span><span style="display:flex;"><span>            m &gt;= 0,             //only do conversions on nonnegative distances
-</span></span><span style="display:flex;"><span>            feetPerMile &gt; 5200  //not needed, but demonstrates using global variables in preconditions
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //can use global variable in postcondition
-</span></span><span style="display:flex;"><span>        Ensures (Res[Z]== m * feetPerMile)
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    val feet: Z = m * feetPerMile
-</span></span><span style="display:flex;"><span>    return feet
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>/////////// Calling code ////////////////////
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var miles: Z = Z.read()
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var totalFeet: Z = 0
-</span></span><span style="display:flex;"><span>if (miles &gt;= 0){
-</span></span><span style="display:flex;"><span>    totalFeet = convertToFeet(miles)
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>However, we cannot assign to a global variable the result of calling a function. That is, <code>totalFeet = convertToFeet(5)</code> is ok, and so is <code>totalFeet = convertToFeet(feetPerMile)</code>, but <code>feetPerMile = convertToFeet(5)</code> is not.</p>
-<h3 id="functions-that-modify-global-variables">Functions that modify global variables</h3>
-<p>Every global variable that is modified by a function must be listed in that function&rsquo;s <code>Modifies</code> clause. Such functions must also describe in their postconditions how these global variables will be changed by the function from their original (pre-function call) values. We will use the notation <code>In(globalVariableName)</code> for the value of global variable <code>globalVariableName</code> at the start of the function, just as we did for sequences.</p>
-<p>Here is an example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//global variable
-</span></span><span style="display:flex;"><span>var time: Z = 0
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def tick(): Unit = {
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        Requires(time &gt; 0),
-</span></span><span style="display:flex;"><span>        Modifies (time),
-</span></span><span style="display:flex;"><span>        Ensures (time == In(time) + 1)
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    time = time + 1
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here, we have a global <code>time</code> variable and a <code>tick</code> function that increases the time by 1 with each function call. Since the <code>tick</code> function changes the <code>time</code> global variable, we must include two things in its function contract:</p>
-<ul>
-<li>A <code>Modifies</code> clause that lists <code>time</code> as one of the global variables modified by this function</li>
-<li>A postcondition that describes how the value of <code>time</code> after the function call compares to the value of <code>time</code> just before the function call. The statement <code>time == In(time) + 1</code> means: &ldquo;the value of time after the function call equals the value of time just before the function call, plus one&rdquo;.</li>
-</ul>
-<h2 id="global-invariants">Global invariants</h2>
-<p>When we have a program with global variables that are modified by multiple functions, we often want some way to ensure that the global variables always stay within a desired range, or always maintain a particular relationship among each other. We can accomplish these goals with <em>global invariants</em>, which specify what must always be true about global variables.</p>
-<h3 id="bank-example">Bank example</h3>
-<p>For example, consider the following partial program that represents a bank account:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//global variables
-</span></span><span style="display:flex;"><span>var balance: Z = 0
-</span></span><span style="display:flex;"><span>var elite: B = false
-</span></span><span style="display:flex;"><span>val eliteMin: Z = 1000000 //$1M is the minimum balance for elite status
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//global invariants
-</span></span><span style="display:flex;"><span>@spec def inv = Invariant(  
-</span></span><span style="display:flex;"><span>    balance &gt;= 0,                   //balance should be non-negative
-</span></span><span style="display:flex;"><span>    elite == (balance &gt;= eliteMin)  //elite status should reflect if balance is at least a million
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def deposit(amount: Z): Unit = {
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        //We still need to complete the function contract
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    balance = balance + amount
-</span></span><span style="display:flex;"><span>    if (balance &gt;= eliteMin) {
-</span></span><span style="display:flex;"><span>        elite = true
-</span></span><span style="display:flex;"><span>    } else {
-</span></span><span style="display:flex;"><span>        elite = false
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def withdraw(amount: Z): Unit = {
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        //We still need to complete the function contract
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    balance = balance - amount
-</span></span><span style="display:flex;"><span>    if (balance &gt;= eliteMin) {
-</span></span><span style="display:flex;"><span>        elite = true
-</span></span><span style="display:flex;"><span>    } else {
-</span></span><span style="display:flex;"><span>        elite = false
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Here, we have three global variables: <code>balance</code> (the bank account balance), <code>elite</code> (whether or not the customer has &ldquo;elite status&rdquo; with the bank, which is given to customers maintaining above a certain balance threshold), and <code>eliteMin</code> (a value representing the minimum account balance to achieve elite status). We have two global invariants describing what must always be true about these global variables:</p>
-<ul>
-<li><code>balance &gt;= 0</code>, which states that the account balance must never be negative</li>
-<li><code>elite == (balance &gt;= eliteMin)</code>, which states that the <code>elite</code> boolean flag should always accurately represent whether the customer&rsquo;s current account balance is over the minimum threshold for elite status</li>
-</ul>
-<h3 id="global-invariants-must-hold-before-each-function-call">Global invariants must hold before each function call</h3>
-<p>In any program with global invariants, we either must prove (in manual mode) or there must be sufficient evidence (in auto mode) that each global invariant holds immediately before any function call (including when the program first begins, before any function call). In our bank example, we see that the global variables are initialized as follows:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>var balance: Z = 0
-</span></span><span style="display:flex;"><span>var elite: B = false
-</span></span><span style="display:flex;"><span>val eliteMin: Z = 1000000</span></span></code></pre></div><p>In auto mode, there is clearly enough evidence that the global invariants all hold with those initial values &ndash; the balance is nonnegative, and the customer correctly does not have elite status (because they do not have about the $1,000,000 threshold).</p>
-<h3 id="global-invariants-must-still-hold-at-the-end-of-each-function-call">Global invariants must still hold at the end of each function call</h3>
-<p>Since we must demonstrate that global invariants hold before each function call, functions themselves can assume the global invariants are true at the beginning of the function. If we were using manual mode, we could list each global invariant as a <code>Premise</code> at the beginning of the function &ndash; much like we do with preconditions. Then, it is the job of each function to ensure that the global invariants STILL hold when the function ends. In manual mode, we would need to demonstrate that each global invariant claim <code>globalInvariant</code> still held in a logic block just before the end of the function:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Deduce(
-</span></span><span style="display:flex;"><span>    //each global invariant must still hold at the end of the function
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    1 ( globalInvariant )   by SomeJustification 
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>In auto mode, we do not need to include such logic blocks, but there must be sufficient detail in the function contract to infer that each global invariant will hold no matter what at the end of the function.</p>
-<h3 id="bank-function-contracts">Bank function contracts</h3>
-<p>Consider the <code>deposit</code> function in our bank example:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>def deposit(amount: Z): Unit = {
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        //We still need to complete the function contract
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    balance = balance + amount
-</span></span><span style="display:flex;"><span>    if (balance &gt;= eliteMin) {
-</span></span><span style="display:flex;"><span>        elite = true
-</span></span><span style="display:flex;"><span>    } else {
-</span></span><span style="display:flex;"><span>        elite = false
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Since <code>deposit</code> is modifying the global variables <code>balance</code> and <code>elite</code>, we know we must include two things in its function contract:</p>
-<ul>
-<li>A <code>Modifies</code> clause that lists <code>balance</code> and <code>elite</code> as global variables modified by this function</li>
-<li>A postcondition that describes how the value of <code>balance</code> after the function call compares to the value of <code>balance</code> just before the function call. We want to say, <code>balance == In(balance) + amount</code>, because the value of <code>balance</code> at the end of the function equals the value of <code>balance</code> at the beginning of the function, plus <code>amount</code>.</li>
-</ul>
-<p>We also must consider how the <code>elite</code> variable changes as a result of the function call. In the code, we use an if/else statement to ensure that <code>elite</code> gets correctly updated if the customer&rsquo;s new balance is above or below the threshold for elite status. If we were to write a postcondition that summarized how <code>elite</code> was updated by the function, we would write: <code>elite == (balance &gt;= eliteMin)</code> to say that the value of elite after the function equaled whether the new balance was above the threshold. However, this claim is already a global invariant, which already must hold at the end of the function. We do not need to list it again as a postcondition.</p>
-<p>Consider this potential function contract for <code>deposit</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>def deposit(amount: Z): Unit = {
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        //this function contract is not quite correct
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        Modifies (balance, elite ),
-</span></span><span style="display:flex;"><span>        Ensures( balance == In(balance) + amount )
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    balance = balance + amount
-</span></span><span style="display:flex;"><span>    if (balance &gt;= eliteMin) {
-</span></span><span style="display:flex;"><span>        elite = true
-</span></span><span style="display:flex;"><span>    } else {
-</span></span><span style="display:flex;"><span>        elite = false
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This function contract is close to correct, but contains a major flaw. In symexe mode, the function contract must be tight enough to guarantee that the global invariants will still hold after the function ends. Suppose <code>balance</code> still has its starting value of 0, and that we called <code>deposit(-100)</code>. With no other changes, the function code would dutifully update the <code>balance</code> global variable to be -100&hellip;which would violate the global invariant that <code>balance &gt;= 0</code>. In order to guarantee that the balance will never be negative after the <code>deposit</code> function ends, we must restrict the deposit amounts to be greater than or equal to 0. Since functions are can assume that the global invariants hold when they are called, we know that <code>balance</code> will be 0 at minimum at the beginning of <code>deposit</code>. If <code>amount</code> is also nonnegative, we can guarantee that the value of <code>balance</code> at the end of the <code>deposit</code> function will be greater than or equal to 0 &ndash; thus satisfying our global invariant.</p>
-<p>Here is the corrected <code>deposit</code> function:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>def deposit(amount: Z): Unit = {
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        Requires( amount &gt;= 0 ),
-</span></span><span style="display:flex;"><span>        Modifies( balance, elit e),
-</span></span><span style="display:flex;"><span>        Ensures( In(balance) == balance - amount )
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    balance = balance + amount
-</span></span><span style="display:flex;"><span>    if (balance &gt;= eliteMin) {
-</span></span><span style="display:flex;"><span>        elite = true
-</span></span><span style="display:flex;"><span>    } else {
-</span></span><span style="display:flex;"><span>        elite = false
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>We can similarly write the function contract for the <code>withdraw</code> function. Since withdraw is subtracting an amount from the balance, we must require that the withdraw amount be less than or equal to the account balance &ndash; otherwise, the account balance might become negative, and we would violate the global invariant. We will also require that our withdrawal amount be nonnegative, as it doesn&rsquo;t make any sense to withdraw a negative amount from a bank account:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>def withdraw(amount: Z): Unit = {
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        Requires( balance &gt;= amount ),
-</span></span><span style="display:flex;"><span>        Modifies( balance, elite ),
-</span></span><span style="display:flex;"><span>        Ensures( balance == In(balance) - amount )
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    balance = balance - amount
-</span></span><span style="display:flex;"><span>    if (balance &gt;= eliteMin) {
-</span></span><span style="display:flex;"><span>        elite = true
-</span></span><span style="display:flex;"><span>    } else {
-</span></span><span style="display:flex;"><span>        elite = false
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="bank-calling-code">Bank calling code</h3>
-<p>When we call a function in a program with global invariants (whether in the calling code or from another function), we must consider four things:</p>
-<ul>
-<li>We must demonstrate that all global variables hold before the function call</li>
-<li>We must demonstrate that the preconditions for the function holds</li>
-<li>We can assume that all global variables hold after the function call (as the function itself if responsible for showing that the global invariants still hold just before the function ends)</li>
-<li>We can assume the postcondition for the function holds after the function call</li>
-</ul>
-<p>Suppose we had this test code at the end of our bank program:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>deposit(500000)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//Assert will hold
-</span></span><span style="display:flex;"><span>assert(balance == 500000 &amp;&amp; elite == false)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>deposit(500000)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//Assert will hold
-</span></span><span style="display:flex;"><span>assert(balance == 1000000 &amp;&amp; elite == true)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//Precondition will not hold
-</span></span><span style="display:flex;"><span>withdraw(2000000)</span></span></code></pre></div><p>We already showed how our global invariants initially held for the starting values of the global variables (<code>balance = 0</code> and <code>elite = false</code>). When we consider the first function call, <code>deposit(500000)</code>, we can also see that the precondition holds (we are depositing a non-negative amount). The <code>deposit</code> postcondition tells us that the new value of <code>balance</code> is 500000 more than it was before the function call, so we know balance is now 500000. We can also assume that all global invariants hold after the <code>deposit</code> call, so we can infer that <code>elite</code> is still false (since the balance is not more than the threshold). Thus the next assert statement:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>assert(balance == 500000 &amp;&amp; elite == false)</span></span></code></pre></div><p>will hold in Logika&rsquo;s auto mode.</p>
-<p>The very next statement in the calling code is another call to <code>deposit</code>. Since we could assume the global invariants held immediately after the last call to deposit, we can infer that they still hold before the next <code>deposit</code> call. We also see that the function&rsquo;s precondition is satisfied, as we are depositing another nonnegative value. Just as before, we can use the <code>deposit</code> postcondition to see that <code>balance</code> will be 1000000 after the next function call (the postcondition tells us that <code>balance</code> is 500000 more than it was just before the function call). We also know that the global invariants hold, so we are sure <code>elite</code> has been updated to true. Thus our next assert holds as well:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>assert(balance == 1000000 &amp;&amp; elite == true)</span></span></code></pre></div><p>Our final function call, <code>withdraw(2000000)</code>, will not be allowed. We are trying to withdraw $2,000,000, but our account balance at this point is $1,000,000. We will get an error saying that the <code>withdraw</code> precondition has not been satisfied, as that function requires that our withdrawal amount be less than or equal to the account balance.</p>
-
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1716924208" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1716924208" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1716924208" defer></script>
-  </body>
-</html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="Motivation We will now consider programs with multiple functions that modify a shared pool of global variables. (This is very similar to the concerns in general classes in Java or C#, where multiple methods might edit fields/property values for an object). We want to be sure that global variables will maintain desired ranges and relationships between one another, even as multiple functions modify their values.
+Global variables in Logika A global variable exists before any function call, and still exists after any function ends."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Global Variables :: CIS 301 Textbook"><meta name=twitter:description content="Motivation We will now consider programs with multiple functions that modify a shared pool of global variables. (This is very similar to the concerns in general classes in Java or C#, where multiple methods might edit fields/property values for an object). We want to be sure that global variables will maintain desired ranges and relationships between one another, even as multiple functions modify their values.
+Global variables in Logika A global variable exists before any function call, and still exists after any function ends."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/10-chapter/10_5-globals/embed.html"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Global Variables :: CIS 301 Textbook"><meta property="og:description" content="Motivation We will now consider programs with multiple functions that modify a shared pool of global variables. (This is very similar to the concerns in general classes in Java or C#, where multiple methods might edit fields/property values for an object). We want to be sure that global variables will maintain desired ranges and relationships between one another, even as multiple functions modify their values.
+Global variables in Logika A global variable exists before any function call, and still exists after any function ends."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Sequences, Globals, and Termination"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2024-05-02T14:41:22-05:00"><meta itemprop=name content="Global Variables :: CIS 301 Textbook"><meta itemprop=description content="Motivation We will now consider programs with multiple functions that modify a shared pool of global variables. (This is very similar to the concerns in general classes in Java or C#, where multiple methods might edit fields/property values for an object). We want to be sure that global variables will maintain desired ranges and relationships between one another, even as multiple functions modify their values.
+Global variables in Logika A global variable exists before any function call, and still exists after any function ends."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2024-05-02T14:41:22-05:00"><meta itemprop=wordCount content="2352"><title>Global Variables :: CIS 301 Textbook</title>
+<link href=https://textbooks.cs.ksu.edu/cis301/10-chapter/10_5-globals/ rel=canonical type=text/html title="Global Variables :: CIS 301 Textbook"><link href=/cis301/10-chapter/10_5-globals/index.xml rel=alternate type=application/rss+xml title="Global Variables :: CIS 301 Textbook"><link href=/cis301/10-chapter/10_5-globals/index.print.html rel=alternate type=text/html title="Global Variables :: CIS 301 Textbook"><link href=/cis301/10-chapter/10_5-globals/tele.html rel=alternate type=text/html title="Global Variables :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1719515003 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1719515003 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1719515003 rel=stylesheet><link href=/cis301/css/auto-complete.css?1719515003 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1719515003 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1719515003 rel=stylesheet><link href=/cis301/css/fonts.css?1719515003 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1719515003 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1719515003 rel=stylesheet><link href=/cis301/css/theme-light-theme.css?1719515003 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-relearn-light.css?1719515003 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1719515003 rel=stylesheet><link href=/cis301/css/print.css?1719515003 rel=stylesheet media=print><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["light-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1719515003 rel=stylesheet></head><body class="mobile-support embed disableInlineCopyToClipboard" data-url=/cis301/10-chapter/10_5-globals/embed.html><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><h2 id=motivation>Motivation</h2><p>We will now consider programs with multiple functions that modify a shared pool of <em>global variables</em>. (This is very similar to the concerns in general classes in Java or C#, where multiple methods might edit fields/property values for an object). We want to be sure that global variables will maintain desired ranges and relationships between one another, even as multiple functions modify their values.</p><h2 id=global-variables-in-logika>Global variables in Logika</h2><p>A global variable exists before any function call, and still exists after any function ends.</p><h3 id=functions-that-access-global-variables>Functions that access global variables</h3><p>Consider the following program:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//global variable
+</span></span><span class=line><span class=cl>var feetPerMile: Z = 5280  // feet in a mile mile
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def convertToFeet(m : Z): Z = {
+</span></span><span class=line><span class=cl>    val feet: Z = m * feetPerMile
+</span></span><span class=line><span class=cl>    return feet
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>/////////// Calling code ////////////////////
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var miles: Z = Z.read()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var totalFeet: Z = 0
+</span></span><span class=line><span class=cl>if (miles &gt;= 0){
+</span></span><span class=line><span class=cl>    totalFeet = convertToFeet(miles)
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>Here, <code>feetPerMile</code> is a global variable &ndash; it exists before the <code>convertToFeet</code> function is called, and still exists after <code>convertToFeet</code> ends. In contrast, the <code>feet</code> variable inside <code>convertToFeet</code> is NOT global &ndash; its scope ends when the <code>convertToFeet</code> function returns.</p><p>(The <code>miles</code> and <code>totalFeet</code> variables in the calling code do not behave as global variables, as they were declared after any function definition. However, if we did add additional functions after our calling code, then <code>miles</code> and <code>totalFeet</code> would be global to those later functions. In Logika, the scope for any variable declared outside of a function begins at the point in the code where it is declared.)</p><p>In the example above, <code>convertToFeet</code> only accesses the <code>feetPerMile</code> global variable. A global variable that is read (but not updated) by a function body can be safely used in the functions precondition and postcondition &ndash; it acts just like an extra parameter to the function. We might edit <code>convertToFeet</code> to have this function contract:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//global variable
+</span></span><span class=line><span class=cl>var feetPerMile: Z = 5280  // feet in a mile mile
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def convertToFeet(m : Z): Z = {
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        
+</span></span><span class=line><span class=cl>        Requires (
+</span></span><span class=line><span class=cl>            m &gt;= 0,             //only do conversions on nonnegative distances
+</span></span><span class=line><span class=cl>            feetPerMile &gt; 5200  //not needed, but demonstrates using global variables in preconditions
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //can use global variable in postcondition
+</span></span><span class=line><span class=cl>        Ensures (Res[Z]== m * feetPerMile)
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    val feet: Z = m * feetPerMile
+</span></span><span class=line><span class=cl>    return feet
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>/////////// Calling code ////////////////////
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var miles: Z = Z.read()
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var totalFeet: Z = 0
+</span></span><span class=line><span class=cl>if (miles &gt;= 0){
+</span></span><span class=line><span class=cl>    totalFeet = convertToFeet(miles)
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>However, we cannot assign to a global variable the result of calling a function. That is, <code>totalFeet = convertToFeet(5)</code> is ok, and so is <code>totalFeet = convertToFeet(feetPerMile)</code>, but <code>feetPerMile = convertToFeet(5)</code> is not.</p><h3 id=functions-that-modify-global-variables>Functions that modify global variables</h3><p>Every global variable that is modified by a function must be listed in that function&rsquo;s <code>Modifies</code> clause. Such functions must also describe in their postconditions how these global variables will be changed by the function from their original (pre-function call) values. We will use the notation <code>In(globalVariableName)</code> for the value of global variable <code>globalVariableName</code> at the start of the function, just as we did for sequences.</p><p>Here is an example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//global variable
+</span></span><span class=line><span class=cl>var time: Z = 0
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def tick(): Unit = {
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        Requires(time &gt; 0),
+</span></span><span class=line><span class=cl>        Modifies (time),
+</span></span><span class=line><span class=cl>        Ensures (time == In(time) + 1)
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    time = time + 1
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>Here, we have a global <code>time</code> variable and a <code>tick</code> function that increases the time by 1 with each function call. Since the <code>tick</code> function changes the <code>time</code> global variable, we must include two things in its function contract:</p><ul><li>A <code>Modifies</code> clause that lists <code>time</code> as one of the global variables modified by this function</li><li>A postcondition that describes how the value of <code>time</code> after the function call compares to the value of <code>time</code> just before the function call. The statement <code>time == In(time) + 1</code> means: &ldquo;the value of time after the function call equals the value of time just before the function call, plus one&rdquo;.</li></ul><h2 id=global-invariants>Global invariants</h2><p>When we have a program with global variables that are modified by multiple functions, we often want some way to ensure that the global variables always stay within a desired range, or always maintain a particular relationship among each other. We can accomplish these goals with <em>global invariants</em>, which specify what must always be true about global variables.</p><h3 id=bank-example>Bank example</h3><p>For example, consider the following partial program that represents a bank account:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//global variables
+</span></span><span class=line><span class=cl>var balance: Z = 0
+</span></span><span class=line><span class=cl>var elite: B = false
+</span></span><span class=line><span class=cl>val eliteMin: Z = 1000000 //$1M is the minimum balance for elite status
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//global invariants
+</span></span><span class=line><span class=cl>@spec def inv = Invariant(  
+</span></span><span class=line><span class=cl>    balance &gt;= 0,                   //balance should be non-negative
+</span></span><span class=line><span class=cl>    elite == (balance &gt;= eliteMin)  //elite status should reflect if balance is at least a million
+</span></span><span class=line><span class=cl>)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def deposit(amount: Z): Unit = {
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        //We still need to complete the function contract
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    balance = balance + amount
+</span></span><span class=line><span class=cl>    if (balance &gt;= eliteMin) {
+</span></span><span class=line><span class=cl>        elite = true
+</span></span><span class=line><span class=cl>    } else {
+</span></span><span class=line><span class=cl>        elite = false
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def withdraw(amount: Z): Unit = {
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        //We still need to complete the function contract
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    balance = balance - amount
+</span></span><span class=line><span class=cl>    if (balance &gt;= eliteMin) {
+</span></span><span class=line><span class=cl>        elite = true
+</span></span><span class=line><span class=cl>    } else {
+</span></span><span class=line><span class=cl>        elite = false
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>Here, we have three global variables: <code>balance</code> (the bank account balance), <code>elite</code> (whether or not the customer has &ldquo;elite status&rdquo; with the bank, which is given to customers maintaining above a certain balance threshold), and <code>eliteMin</code> (a value representing the minimum account balance to achieve elite status). We have two global invariants describing what must always be true about these global variables:</p><ul><li><code>balance >= 0</code>, which states that the account balance must never be negative</li><li><code>elite == (balance >= eliteMin)</code>, which states that the <code>elite</code> boolean flag should always accurately represent whether the customer&rsquo;s current account balance is over the minimum threshold for elite status</li></ul><h3 id=global-invariants-must-hold-before-each-function-call>Global invariants must hold before each function call</h3><p>In any program with global invariants, we either must prove (in manual mode) or there must be sufficient evidence (in auto mode) that each global invariant holds immediately before any function call (including when the program first begins, before any function call). In our bank example, we see that the global variables are initialized as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var balance: Z = 0
+</span></span><span class=line><span class=cl>var elite: B = false
+</span></span><span class=line><span class=cl>val eliteMin: Z = 1000000</span></span></code></pre></div><p>In auto mode, there is clearly enough evidence that the global invariants all hold with those initial values &ndash; the balance is nonnegative, and the customer correctly does not have elite status (because they do not have about the $1,000,000 threshold).</p><h3 id=global-invariants-must-still-hold-at-the-end-of-each-function-call>Global invariants must still hold at the end of each function call</h3><p>Since we must demonstrate that global invariants hold before each function call, functions themselves can assume the global invariants are true at the beginning of the function. If we were using manual mode, we could list each global invariant as a <code>Premise</code> at the beginning of the function &ndash; much like we do with preconditions. Then, it is the job of each function to ensure that the global invariants STILL hold when the function ends. In manual mode, we would need to demonstrate that each global invariant claim <code>globalInvariant</code> still held in a logic block just before the end of the function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Deduce(
+</span></span><span class=line><span class=cl>    //each global invariant must still hold at the end of the function
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    1 ( globalInvariant )   by SomeJustification 
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>In auto mode, we do not need to include such logic blocks, but there must be sufficient detail in the function contract to infer that each global invariant will hold no matter what at the end of the function.</p><h3 id=bank-function-contracts>Bank function contracts</h3><p>Consider the <code>deposit</code> function in our bank example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>def deposit(amount: Z): Unit = {
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        //We still need to complete the function contract
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    balance = balance + amount
+</span></span><span class=line><span class=cl>    if (balance &gt;= eliteMin) {
+</span></span><span class=line><span class=cl>        elite = true
+</span></span><span class=line><span class=cl>    } else {
+</span></span><span class=line><span class=cl>        elite = false
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>Since <code>deposit</code> is modifying the global variables <code>balance</code> and <code>elite</code>, we know we must include two things in its function contract:</p><ul><li>A <code>Modifies</code> clause that lists <code>balance</code> and <code>elite</code> as global variables modified by this function</li><li>A postcondition that describes how the value of <code>balance</code> after the function call compares to the value of <code>balance</code> just before the function call. We want to say, <code>balance == In(balance) + amount</code>, because the value of <code>balance</code> at the end of the function equals the value of <code>balance</code> at the beginning of the function, plus <code>amount</code>.</li></ul><p>We also must consider how the <code>elite</code> variable changes as a result of the function call. In the code, we use an if/else statement to ensure that <code>elite</code> gets correctly updated if the customer&rsquo;s new balance is above or below the threshold for elite status. If we were to write a postcondition that summarized how <code>elite</code> was updated by the function, we would write: <code>elite == (balance >= eliteMin)</code> to say that the value of elite after the function equaled whether the new balance was above the threshold. However, this claim is already a global invariant, which already must hold at the end of the function. We do not need to list it again as a postcondition.</p><p>Consider this potential function contract for <code>deposit</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>def deposit(amount: Z): Unit = {
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        //this function contract is not quite correct
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        Modifies (balance, elite ),
+</span></span><span class=line><span class=cl>        Ensures( balance == In(balance) + amount )
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    balance = balance + amount
+</span></span><span class=line><span class=cl>    if (balance &gt;= eliteMin) {
+</span></span><span class=line><span class=cl>        elite = true
+</span></span><span class=line><span class=cl>    } else {
+</span></span><span class=line><span class=cl>        elite = false
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>This function contract is close to correct, but contains a major flaw. In symexe mode, the function contract must be tight enough to guarantee that the global invariants will still hold after the function ends. Suppose <code>balance</code> still has its starting value of 0, and that we called <code>deposit(-100)</code>. With no other changes, the function code would dutifully update the <code>balance</code> global variable to be -100&mldr;which would violate the global invariant that <code>balance >= 0</code>. In order to guarantee that the balance will never be negative after the <code>deposit</code> function ends, we must restrict the deposit amounts to be greater than or equal to 0. Since functions are can assume that the global invariants hold when they are called, we know that <code>balance</code> will be 0 at minimum at the beginning of <code>deposit</code>. If <code>amount</code> is also nonnegative, we can guarantee that the value of <code>balance</code> at the end of the <code>deposit</code> function will be greater than or equal to 0 &ndash; thus satisfying our global invariant.</p><p>Here is the corrected <code>deposit</code> function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>def deposit(amount: Z): Unit = {
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        Requires( amount &gt;= 0 ),
+</span></span><span class=line><span class=cl>        Modifies( balance, elit e),
+</span></span><span class=line><span class=cl>        Ensures( In(balance) == balance - amount )
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    balance = balance + amount
+</span></span><span class=line><span class=cl>    if (balance &gt;= eliteMin) {
+</span></span><span class=line><span class=cl>        elite = true
+</span></span><span class=line><span class=cl>    } else {
+</span></span><span class=line><span class=cl>        elite = false
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>We can similarly write the function contract for the <code>withdraw</code> function. Since withdraw is subtracting an amount from the balance, we must require that the withdraw amount be less than or equal to the account balance &ndash; otherwise, the account balance might become negative, and we would violate the global invariant. We will also require that our withdrawal amount be nonnegative, as it doesn&rsquo;t make any sense to withdraw a negative amount from a bank account:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>def withdraw(amount: Z): Unit = {
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        Requires( balance &gt;= amount ),
+</span></span><span class=line><span class=cl>        Modifies( balance, elite ),
+</span></span><span class=line><span class=cl>        Ensures( balance == In(balance) - amount )
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    balance = balance - amount
+</span></span><span class=line><span class=cl>    if (balance &gt;= eliteMin) {
+</span></span><span class=line><span class=cl>        elite = true
+</span></span><span class=line><span class=cl>    } else {
+</span></span><span class=line><span class=cl>        elite = false
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><h3 id=bank-calling-code>Bank calling code</h3><p>When we call a function in a program with global invariants (whether in the calling code or from another function), we must consider four things:</p><ul><li>We must demonstrate that all global variables hold before the function call</li><li>We must demonstrate that the preconditions for the function holds</li><li>We can assume that all global variables hold after the function call (as the function itself if responsible for showing that the global invariants still hold just before the function ends)</li><li>We can assume the postcondition for the function holds after the function call</li></ul><p>Suppose we had this test code at the end of our bank program:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>deposit(500000)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//Assert will hold
+</span></span><span class=line><span class=cl>assert(balance == 500000 &amp;&amp; elite == false)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>deposit(500000)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//Assert will hold
+</span></span><span class=line><span class=cl>assert(balance == 1000000 &amp;&amp; elite == true)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//Precondition will not hold
+</span></span><span class=line><span class=cl>withdraw(2000000)</span></span></code></pre></div><p>We already showed how our global invariants initially held for the starting values of the global variables (<code>balance = 0</code> and <code>elite = false</code>). When we consider the first function call, <code>deposit(500000)</code>, we can also see that the precondition holds (we are depositing a non-negative amount). The <code>deposit</code> postcondition tells us that the new value of <code>balance</code> is 500000 more than it was before the function call, so we know balance is now 500000. We can also assume that all global invariants hold after the <code>deposit</code> call, so we can infer that <code>elite</code> is still false (since the balance is not more than the threshold). Thus the next assert statement:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>assert(balance == 500000 &amp;&amp; elite == false)</span></span></code></pre></div><p>will hold in Logika&rsquo;s auto mode.</p><p>The very next statement in the calling code is another call to <code>deposit</code>. Since we could assume the global invariants held immediately after the last call to deposit, we can infer that they still hold before the next <code>deposit</code> call. We also see that the function&rsquo;s precondition is satisfied, as we are depositing another nonnegative value. Just as before, we can use the <code>deposit</code> postcondition to see that <code>balance</code> will be 1000000 after the next function call (the postcondition tells us that <code>balance</code> is 500000 more than it was just before the function call). We also know that the global invariants hold, so we are sure <code>elite</code> has been updated to true. Thus our next assert holds as well:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>assert(balance == 1000000 &amp;&amp; elite == true)</span></span></code></pre></div><p>Our final function call, <code>withdraw(2000000)</code>, will not be allowed. We are trying to withdraw $2,000,000, but our account balance at this point is $1,000,000. We will get an error saying that the <code>withdraw</code> precondition has not been satisfied, as that function requires that our withdrawal amount be less than or equal to the account balance.</p><footer class=footline></footer></article></div></main></div><script src=/cis301/js/clipboard.min.js?1719515003 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1719515003 defer></script><script src=/cis301/js/theme.js?1719515003 defer></script><script src=/cis301/js/embed-iframe.js?1719515003 defer></script></body></html>

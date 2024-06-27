@@ -1,604 +1,145 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 301: Logical Foundations of Programming">
-    <meta name="author" content="Julie Thornton">
-    <title>Implies Rules :: CIS 301 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/index.html" rel="canonical" type="text/html" title="Implies Rules :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/index.xml" rel="alternate" type="application/rss+xml" title="Implies Rules :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/tele.html" rel="alternate" type="text/html" title="Implies Rules :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/embed.html" rel="alternate" type="text/html" title="Implies Rules :: CIS 301 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924209" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924209" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924209" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924209" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1716924209" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1716924209" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/format-print.css?1716924209" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1716924209" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1716924209"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1716924209"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1716924209" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support print disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/index.html">
-    <div id="body" class="default-animation">
-      <div id="sidebar-overlay"></div>
-      <div id="toc-overlay"></div>
-      <nav id="topbar" class="highlightable">
-        <div>
-          <div id="top-tele-link">
-            <a class="print-link" title='Teleprompter View' href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/tele.html">
-              <i class="fas fa-tv fa-fw"></i>
-            </a>
-          </div>
-          <div id="top-embed-link">
-            <a class="print-link" title='Embeddable Version' href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/4_4-impliesrules/embed.html">
-              <i class="fas fa-expand-arrows-alt fa-fw"></i>
-            </a>
-          </div>
-          <div id="breadcrumbs">
-            <span id="sidebar-toggle-span">
-              <a href="#" id="sidebar-toggle" class="topbar-link" title='Menu (CTRL+ALT+n)'><i class="fas fa-bars fa-fw"></i></a>
-            </span>
-            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/index.html"><span itemprop="name">CIS 301 Textbook</span></a><meta itemprop="position" content="1"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="https://ksu-cs-textbooks.github.io/cis301/4-chapter/index.html"><span itemprop="name">Propositional Logic Proofs</span></a><meta itemprop="position" content="2"> &gt; </li>
-              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Implies Rules</span><meta itemprop="position" content="3"></li>
-            </ol>
-          </div>
-        </div>
-      </nav>
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="implies-rules">Implies Rules</h1>
-
-<p>In this section, we will see the deduction rules for the implies operator.</p>
-<h2 id="implies-elimination">Implies elimination</h2>
-<p>Remember that <code>→</code> is a kind of logical &ldquo;if-then&rdquo;. Here, we understand <code>p → q</code> to mean that <code>p</code> holds knowledge sufficient to deduce <code>q</code> – so, whenever <code>p</code> is proved to be a fact, then <code>p → q</code> enables <code>q</code> to be proved a fact, too. This is the implies elimination rule, <code>ImplyE</code>, and we can formalize it like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>            P → Q    P
-</span></span><span style="display:flex;"><span> ImplyE :  ------------
-</span></span><span style="display:flex;"><span>                Q</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>ImplyE</code> rule:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(a, a → b) ⊢ (b)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     a          )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     a → b      )   by Premise,
-</span></span><span style="display:flex;"><span>        3 (     b          )   by ImplyE(2, 1)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>Note that when we use <code>ImplyE</code>, we first list the line number of the implies statement, and then list the line number that contains the left side of that implies statement. The <code>ImplyE</code> allows us to claim the right side of that implies statement.</p>
-<h2 id="implies-introduction">Implies introduction</h2>
-<p>The idea behind the next deduction rule, implies introduction, is that we would be introducing a new implies statement of the form <code>P → Q</code>. In order to do this, we must be able to show our logical &ldquo;if-then&rdquo; &ndash; that IF <code>P</code> exists, THEN we promise that <code>Q</code> will also exist. We do this by way of a subproof where we assume <code>P</code>. If we can reach <code>Q</code> by the end of that subproof, we will have shown that anytime <code>P</code> is true, then <code>Q</code> is also true. We will be able to close the subproof by introducing <code>P → Q</code> with the <code>ImplyI</code> rule. We can formalize the rule like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>           SubProof(
-</span></span><span style="display:flex;"><span>              Assume(  P  ),
-</span></span><span style="display:flex;"><span>              ...
-</span></span><span style="display:flex;"><span>              Q
-</span></span><span style="display:flex;"><span>           ),
-</span></span><span style="display:flex;"><span>ImplyI : -------------- 
-</span></span><span style="display:flex;"><span>              P → Q </span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>ImplyI</code> rule:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(a → b, b → c) ⊢ (a → c)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     a → b           )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     b → c           )   by Premise,
-</span></span><span style="display:flex;"><span>        3 SubProof(
-</span></span><span style="display:flex;"><span>            //we want to prove a → c, so we start by assuming a
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            4 Assume(  a  ),
-</span></span><span style="display:flex;"><span>            5 (     b           )   by ImplyE(1, 4),
-</span></span><span style="display:flex;"><span>            6 (     c           )   by ImplyE(2, 5)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //...and try to end with c
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //then we can conclude that anytime a is true, then c is also true
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        7 (     a → c           )   by ImplyI(3)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>Note that when we use <code>ImplyI</code>, we list the line number of the subproof we just finished. We must have started that subproof by assuming the left side of the implies statement we are introducing, and ended that subproof with the right side of the implies statement we are introducing.</p>
-<h2 id="example-1">Example 1</h2>
-<p>Suppose we want to prove the following sequent:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → (q → r)) ⊢ ((q ∧ p) → r)</span></span></code></pre></div><p>We start by listing our premise:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → (q → r)) ⊢ ((q ∧ p) → r)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p → (q → r)        )   by Premise,
-</span></span><span style="display:flex;"><span>        ...
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>We can&rsquo;t extract any information from the premise, so we shift to examining our conclusion. The top-level operator of our conclusion is an implies statement, so this tells us that we will need to use the <code>ImplyI</code> rule. We want to prove <code>(q ∧ p) → r</code>, so we need to show that whenever <code>q ∧ p</code> is true, then <code>r</code> is also true. We open a subproof and assume the left side of our goal implies statement (<code>q ∧ p</code>). If we can reach <code>r</code> by the end of the subproof, then we can use <code>ImplyI</code> to conclude <code>(q ∧ p) → r</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → (q → r)) ⊢ ((q ∧ p) → r)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p → (q → r)        )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        2 SubProof(
-</span></span><span style="display:flex;"><span>            3 Assume(  q ∧ p  ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //goal: get to r
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //use ImplyI to conclude (q ∧ p) → r
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>Now we can complete the proof:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → (q → r)) ⊢ ((q ∧ p) → r)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p → (q → r)        )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        2 SubProof(
-</span></span><span style="display:flex;"><span>            3 Assume(  q ∧ p  ),
-</span></span><span style="display:flex;"><span>            4 (     q              )   by AndI1(3),
-</span></span><span style="display:flex;"><span>            5 (     p              )   by AndI2(3),
-</span></span><span style="display:flex;"><span>            6 (     q → r          )   by ImplyE(1, 5),
-</span></span><span style="display:flex;"><span>            7 (     r              )   by ImplyE(6, 4)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //goal: get to r
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //use ImplyI to conclude (q ∧ p) → r
-</span></span><span style="display:flex;"><span>        8 (     (q ∧ p) → r        )   by ImplyI(2)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><h2 id="example-2">Example 2</h2>
-<p>Suppose we want to prove the following sequent:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → (q → r) ⊢ (p → q) → (p → r))</span></span></code></pre></div><p>We see that we will have no information to extract from the premises. The top-level operator is an implies statement, so we start a subproof to introduce that implies statement. In our subproof, we will assume the left side of our goal implies statement (<code>p → q</code>) and will try to reach the right side of our goal (<code>p → r</code>):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → (q → r) ⊢ (p → q) → (p → r))
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p → (q → r)            )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        2 SubProof(
-</span></span><span style="display:flex;"><span>            3 Assume(  p → q  ),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //goal: get to p → r
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //use ImplyI to conclude (p → q) → (p → r)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>We can see that our goal is to reach <code>p → r</code> in our subproof &ndash; so we see that we need to introduce another implies statement. This tells us that we need to nest another subproof &ndash; in this one, we&rsquo;ll assume the left side of our <em>current</em> goal implies statement (<code>p</code>), and then try to reach the right side of that current goal (<code>r</code>). Then, we&rsquo;d be able to finish that inner subproof by using <code>ImplyI</code> to conclude <code>p → r</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → (q → r) ⊢ (p → q) → (p → r))
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p → (q → r)            )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        2 SubProof(
-</span></span><span style="display:flex;"><span>            3 Assume(  p → q  ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            4 SubProof(
-</span></span><span style="display:flex;"><span>                5 Assume(  p  ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                //goal: get to r
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            //use ImplyI to conclude p → r
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //goal: get to p → r
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //use ImplyI to conclude (p → q) → (p → r)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><p>Now we can complete the proof:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → (q → r) ⊢ (p → q) → (p → r))
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p → (q → r)             )   by Premise,
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        2 SubProof(
-</span></span><span style="display:flex;"><span>            3 Assume(  p → q  ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            4 SubProof(
-</span></span><span style="display:flex;"><span>                5 Assume(  p  ),
-</span></span><span style="display:flex;"><span>                6 (     q               )   by ImplyE(3, 5),
-</span></span><span style="display:flex;"><span>                7 (     q → r           )   by ImplyE(1, 5),
-</span></span><span style="display:flex;"><span>                8 (     r               )   by ImplyE(7, 6)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                //goal: get to r
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            //use ImplyI to conclude p → r
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            9 (     p → r               )   by ImplyI(4)
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //goal: get to p → r
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        //use ImplyI to conclude (p → q) → (p → r)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        10 (    (p → q) → (p → r)       )   by ImplyI(2)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div><h2 id="example-3">Example 3</h2>
-<p>Here is one more example, where we see we can nest an <code>ImplyI</code> subproof and a <code>OrE</code> subproof:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(p → r, q → r) ⊢ ((p ∨ q) → r)
-</span></span><span style="display:flex;"><span>    Proof(
-</span></span><span style="display:flex;"><span>        1 (     p → r              )   by Premise,
-</span></span><span style="display:flex;"><span>        2 (     q → r              )   by Premise,
-</span></span><span style="display:flex;"><span>        3 SubProof(
-</span></span><span style="display:flex;"><span>            //assume p ∨ q, try to get to r 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            4 Assume(  p ∨ q  ),
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            //nested subproof for OR elimination on p ∨ q
-</span></span><span style="display:flex;"><span>            //try to get to r in both cases
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            5 SubProof(
-</span></span><span style="display:flex;"><span>                6 Assume(  p  ),
-</span></span><span style="display:flex;"><span>                7 (     r          )   by ImplyE(1, 6)
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            8 SubProof(
-</span></span><span style="display:flex;"><span>                9 Assume(  q  ),
-</span></span><span style="display:flex;"><span>                10 (    r          )   by ImplyE(2, 9)
-</span></span><span style="display:flex;"><span>            ),
-</span></span><span style="display:flex;"><span>            11 (    r              )   by OrE(4, 5, 8)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            //goal: get to r
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        //use ImplyI to conclude (p ∨ q) → r
-</span></span><span style="display:flex;"><span>        12 (    (p ∨ q) → r        )   by ImplyI(3)
-</span></span><span style="display:flex;"><span>    )</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-
-
-        </div>
-      </main>
-    
-<div class="git-footer">
-<p class="theme-version-footer">5.18.0</p>
-<p>Last modified by: 
-            <i class='fas fa-user'></i> Julie Thornton
-            <i class='fas fa-calendar'></i> <a href="https://gitlab.cs.ksu.edu/cs-textbooks/cis301-textbook/-/commit/abe907d6126d4f74c719d4360298cfe09d72655a">Mar 28, 2024</a>
-</p>
-</div>
-
-    
-    </div>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1716924209" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1716924209" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1716924209" defer></script>
-  </body>
-</html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="In this section, we will see the deduction rules for the implies operator.
+Implies elimination Remember that → is a kind of logical “if-then”. Here, we understand p → q to mean that p holds knowledge sufficient to deduce q – so, whenever p is proved to be a fact, then p → q enables q to be proved a fact, too. This is the implies elimination rule, ImplyE, and we can formalize it like this:"><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Implies Rules :: CIS 301 Textbook"><meta name=twitter:description content="In this section, we will see the deduction rules for the implies operator.
+Implies elimination Remember that → is a kind of logical “if-then”. Here, we understand p → q to mean that p holds knowledge sufficient to deduce q – so, whenever p is proved to be a fact, then p → q enables q to be proved a fact, too. This is the implies elimination rule, ImplyE, and we can formalize it like this:"><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/4-chapter/4_4-impliesrules/"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Implies Rules :: CIS 301 Textbook"><meta property="og:description" content="In this section, we will see the deduction rules for the implies operator.
+Implies elimination Remember that → is a kind of logical “if-then”. Here, we understand p → q to mean that p holds knowledge sufficient to deduce q – so, whenever p is proved to be a fact, then p → q enables q to be proved a fact, too. This is the implies elimination rule, ImplyE, and we can formalize it like this:"><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Propositional Logic Proofs"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2024-03-28T16:29:05-05:00"><meta itemprop=name content="Implies Rules :: CIS 301 Textbook"><meta itemprop=description content="In this section, we will see the deduction rules for the implies operator.
+Implies elimination Remember that → is a kind of logical “if-then”. Here, we understand p → q to mean that p holds knowledge sufficient to deduce q – so, whenever p is proved to be a fact, then p → q enables q to be proved a fact, too. This is the implies elimination rule, ImplyE, and we can formalize it like this:"><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2024-03-28T16:29:05-05:00"><meta itemprop=wordCount content="1284"><title>Implies Rules :: CIS 301 Textbook</title>
+<link href=https://textbooks.cs.ksu.edu/cis301/4-chapter/4_4-impliesrules/ rel=canonical type=text/html title="Implies Rules :: CIS 301 Textbook"><link href=/cis301/4-chapter/4_4-impliesrules/index.xml rel=alternate type=application/rss+xml title="Implies Rules :: CIS 301 Textbook"><link href=/cis301/4-chapter/4_4-impliesrules/tele.html rel=alternate type=text/html title="Implies Rules :: CIS 301 Textbook"><link href=/cis301/4-chapter/4_4-impliesrules/embed.html rel=alternate type=text/html title="Implies Rules :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1719515004 rel=stylesheet><link href=/cis301/css/auto-complete.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1719515004 rel=stylesheet><link href=/cis301/css/fonts.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1719515004 rel=stylesheet><link href=/cis301/css/theme-auto.css?1719515004 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-auto.css?1719515004 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1719515004 rel=stylesheet><link href=/cis301/css/print.css?1719515004 rel=stylesheet media=print><link href=/cis301/css/format-print.css?1719515004 rel=stylesheet><script src=/cis301/js/variant.js?1719515004></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1719515004 rel=stylesheet></head><body class="mobile-support print disableInlineCopyToClipboard" data-url=/cis301/4-chapter/4_4-impliesrules/><div id=R-body class=default-animation><div id=R-body-overlay></div><nav id=R-topbar><div class=topbar-wrapper><div class=topbar-sidebar-divider></div><div class="topbar-area topbar-area-start" data-area=start><div class="topbar-button topbar-button-sidebar" data-content-empty=disable data-width-s=show data-width-m=hide data-width-l=hide><button class=topbar-control onclick=toggleNav() type=button title="Menu (CTRL+ALT+n)"><i class="fa-fw fas fa-bars"></i></button></div></div><ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype=http://schema.org/BreadcrumbList><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><a itemprop=item href=/cis301/4-chapter/><span itemprop=name>Propositional Logic Proofs</span></a><meta itemprop=position content="1">&nbsp;>&nbsp;</li><li itemscope itemtype=https://schema.org/ListItem itemprop=itemListElement><span itemprop=name>Implies Rules</span><meta itemprop=position content="2"></li></ol><div class="topbar-area topbar-area-end" data-area=end><div class="topbar-button topbar-button-prev" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/4-chapter/4_3-orrules/ title="OR Rules (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></div><div class="topbar-button topbar-button-next" data-content-empty=disable data-width-s=show data-width-m=show data-width-l=show><a class=topbar-control href=/cis301/4-chapter/4_5-notrules/ title="Negation Rules (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></div></div></div></nav><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=implies-rules>Implies Rules</h1><p>In this section, we will see the deduction rules for the implies operator.</p><h2 id=implies-elimination>Implies elimination</h2><p>Remember that <code>→</code> is a kind of logical &ldquo;if-then&rdquo;. Here, we understand <code>p → q</code> to mean that <code>p</code> holds knowledge sufficient to deduce <code>q</code> – so, whenever <code>p</code> is proved to be a fact, then <code>p → q</code> enables <code>q</code> to be proved a fact, too. This is the implies elimination rule, <code>ImplyE</code>, and we can formalize it like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>            P → Q    P
+</span></span><span class=line><span class=cl> ImplyE :  ------------
+</span></span><span class=line><span class=cl>                Q</span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>ImplyE</code> rule:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(a, a → b) ⊢ (b)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     a          )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     a → b      )   by Premise,
+</span></span><span class=line><span class=cl>        3 (     b          )   by ImplyE(2, 1)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>Note that when we use <code>ImplyE</code>, we first list the line number of the implies statement, and then list the line number that contains the left side of that implies statement. The <code>ImplyE</code> allows us to claim the right side of that implies statement.</p><h2 id=implies-introduction>Implies introduction</h2><p>The idea behind the next deduction rule, implies introduction, is that we would be introducing a new implies statement of the form <code>P → Q</code>. In order to do this, we must be able to show our logical &ldquo;if-then&rdquo; &ndash; that IF <code>P</code> exists, THEN we promise that <code>Q</code> will also exist. We do this by way of a subproof where we assume <code>P</code>. If we can reach <code>Q</code> by the end of that subproof, we will have shown that anytime <code>P</code> is true, then <code>Q</code> is also true. We will be able to close the subproof by introducing <code>P → Q</code> with the <code>ImplyI</code> rule. We can formalize the rule like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>           SubProof(
+</span></span><span class=line><span class=cl>              Assume(  P  ),
+</span></span><span class=line><span class=cl>              ...
+</span></span><span class=line><span class=cl>              Q
+</span></span><span class=line><span class=cl>           ),
+</span></span><span class=line><span class=cl>ImplyI : -------------- 
+</span></span><span class=line><span class=cl>              P → Q </span></span></code></pre></div><p>Here is a simple example of a proof that shows the syntax of the <code>ImplyI</code> rule:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(a → b, b → c) ⊢ (a → c)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     a → b           )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     b → c           )   by Premise,
+</span></span><span class=line><span class=cl>        3 SubProof(
+</span></span><span class=line><span class=cl>            //we want to prove a → c, so we start by assuming a
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            4 Assume(  a  ),
+</span></span><span class=line><span class=cl>            5 (     b           )   by ImplyE(1, 4),
+</span></span><span class=line><span class=cl>            6 (     c           )   by ImplyE(2, 5)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //...and try to end with c
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //then we can conclude that anytime a is true, then c is also true
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        7 (     a → c           )   by ImplyI(3)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>Note that when we use <code>ImplyI</code>, we list the line number of the subproof we just finished. We must have started that subproof by assuming the left side of the implies statement we are introducing, and ended that subproof with the right side of the implies statement we are introducing.</p><h2 id=example-1>Example 1</h2><p>Suppose we want to prove the following sequent:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → (q → r)) ⊢ ((q ∧ p) → r)</span></span></code></pre></div><p>We start by listing our premise:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → (q → r)) ⊢ ((q ∧ p) → r)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p → (q → r)        )   by Premise,
+</span></span><span class=line><span class=cl>        ...
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>We can&rsquo;t extract any information from the premise, so we shift to examining our conclusion. The top-level operator of our conclusion is an implies statement, so this tells us that we will need to use the <code>ImplyI</code> rule. We want to prove <code>(q ∧ p) → r</code>, so we need to show that whenever <code>q ∧ p</code> is true, then <code>r</code> is also true. We open a subproof and assume the left side of our goal implies statement (<code>q ∧ p</code>). If we can reach <code>r</code> by the end of the subproof, then we can use <code>ImplyI</code> to conclude <code>(q ∧ p) → r</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → (q → r)) ⊢ ((q ∧ p) → r)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p → (q → r)        )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        2 SubProof(
+</span></span><span class=line><span class=cl>            3 Assume(  q ∧ p  ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //goal: get to r
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //use ImplyI to conclude (q ∧ p) → r
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>Now we can complete the proof:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → (q → r)) ⊢ ((q ∧ p) → r)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p → (q → r)        )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        2 SubProof(
+</span></span><span class=line><span class=cl>            3 Assume(  q ∧ p  ),
+</span></span><span class=line><span class=cl>            4 (     q              )   by AndI1(3),
+</span></span><span class=line><span class=cl>            5 (     p              )   by AndI2(3),
+</span></span><span class=line><span class=cl>            6 (     q → r          )   by ImplyE(1, 5),
+</span></span><span class=line><span class=cl>            7 (     r              )   by ImplyE(6, 4)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //goal: get to r
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //use ImplyI to conclude (q ∧ p) → r
+</span></span><span class=line><span class=cl>        8 (     (q ∧ p) → r        )   by ImplyI(2)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><h2 id=example-2>Example 2</h2><p>Suppose we want to prove the following sequent:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → (q → r) ⊢ (p → q) → (p → r))</span></span></code></pre></div><p>We see that we will have no information to extract from the premises. The top-level operator is an implies statement, so we start a subproof to introduce that implies statement. In our subproof, we will assume the left side of our goal implies statement (<code>p → q</code>) and will try to reach the right side of our goal (<code>p → r</code>):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → (q → r) ⊢ (p → q) → (p → r))
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p → (q → r)            )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        2 SubProof(
+</span></span><span class=line><span class=cl>            3 Assume(  p → q  ),
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //goal: get to p → r
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //use ImplyI to conclude (p → q) → (p → r)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>We can see that our goal is to reach <code>p → r</code> in our subproof &ndash; so we see that we need to introduce another implies statement. This tells us that we need to nest another subproof &ndash; in this one, we&rsquo;ll assume the left side of our <em>current</em> goal implies statement (<code>p</code>), and then try to reach the right side of that current goal (<code>r</code>). Then, we&rsquo;d be able to finish that inner subproof by using <code>ImplyI</code> to conclude <code>p → r</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → (q → r) ⊢ (p → q) → (p → r))
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p → (q → r)            )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        2 SubProof(
+</span></span><span class=line><span class=cl>            3 Assume(  p → q  ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            4 SubProof(
+</span></span><span class=line><span class=cl>                5 Assume(  p  ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                //goal: get to r
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            //use ImplyI to conclude p → r
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //goal: get to p → r
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //use ImplyI to conclude (p → q) → (p → r)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><p>Now we can complete the proof:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → (q → r) ⊢ (p → q) → (p → r))
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p → (q → r)             )   by Premise,
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        2 SubProof(
+</span></span><span class=line><span class=cl>            3 Assume(  p → q  ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            4 SubProof(
+</span></span><span class=line><span class=cl>                5 Assume(  p  ),
+</span></span><span class=line><span class=cl>                6 (     q               )   by ImplyE(3, 5),
+</span></span><span class=line><span class=cl>                7 (     q → r           )   by ImplyE(1, 5),
+</span></span><span class=line><span class=cl>                8 (     r               )   by ImplyE(7, 6)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                //goal: get to r
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            //use ImplyI to conclude p → r
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            9 (     p → r               )   by ImplyI(4)
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //goal: get to p → r
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        //use ImplyI to conclude (p → q) → (p → r)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        10 (    (p → q) → (p → r)       )   by ImplyI(2)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><h2 id=example-3>Example 3</h2><p>Here is one more example, where we see we can nest an <code>ImplyI</code> subproof and a <code>OrE</code> subproof:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>(p → r, q → r) ⊢ ((p ∨ q) → r)
+</span></span><span class=line><span class=cl>    Proof(
+</span></span><span class=line><span class=cl>        1 (     p → r              )   by Premise,
+</span></span><span class=line><span class=cl>        2 (     q → r              )   by Premise,
+</span></span><span class=line><span class=cl>        3 SubProof(
+</span></span><span class=line><span class=cl>            //assume p ∨ q, try to get to r 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            4 Assume(  p ∨ q  ),
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            //nested subproof for OR elimination on p ∨ q
+</span></span><span class=line><span class=cl>            //try to get to r in both cases
+</span></span><span class=line><span class=cl>            
+</span></span><span class=line><span class=cl>            5 SubProof(
+</span></span><span class=line><span class=cl>                6 Assume(  p  ),
+</span></span><span class=line><span class=cl>                7 (     r          )   by ImplyE(1, 6)
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            8 SubProof(
+</span></span><span class=line><span class=cl>                9 Assume(  q  ),
+</span></span><span class=line><span class=cl>                10 (    r          )   by ImplyE(2, 9)
+</span></span><span class=line><span class=cl>            ),
+</span></span><span class=line><span class=cl>            11 (    r              )   by OrE(4, 5, 8)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            //goal: get to r
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        //use ImplyI to conclude (p ∨ q) → r
+</span></span><span class=line><span class=cl>        12 (    (p ∨ q) → r        )   by ImplyI(3)
+</span></span><span class=line><span class=cl>    )</span></span></code></pre></div><footer class=footline></footer></article></div></main><div class=git-footer><p class=theme-version-footer>6.0.0</p><p>Last modified by:
+<i class='fas fa-user'></i> Julie Thornton
+<i class='fas fa-calendar'></i> <a href=https://github.com/ksu-cs-textbooks/cis301/commit/abe907d6126d4f74c719d4360298cfe09d72655a>Mar 28, 2024</a></p></div></div><script src=/cis301/js/clipboard.min.js?1719515004 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1719515004 defer></script><script src=/cis301/js/theme.js?1719515004 defer></script></body></html>

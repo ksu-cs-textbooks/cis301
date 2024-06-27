@@ -1,576 +1,106 @@
-
-
-
-
-
-	
-	
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-		
-
-	
-	
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-
-	
-	
-		
-		
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.117.0">
-    <meta name="generator" content="Relearn 5.18.0">
-    <meta name="description" content="CIS 301: Logical Foundations of Programming">
-    <meta name="author" content="Julie Thornton">
-    <title>Sequences in Functions :: CIS 301 Textbook</title>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/index.html" rel="canonical" type="text/html" title="Sequences in Functions :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/index.xml" rel="alternate" type="application/rss+xml" title="Sequences in Functions :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/index.print.html" rel="alternate" type="text/html" title="Sequences in Functions :: CIS 301 Textbook">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/embed.html" rel="alternate" type="text/html" title="Sequences in Functions :: CIS 301 Textbook">
-    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924210" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fontawesome-all.min.css?1716924210" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/nucleus.css?1716924210" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924210" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/auto-complete.css?1716924210" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/perfect-scrollbar.min.css?1716924210" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924210" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="https://ksu-cs-textbooks.github.io/cis301/css/fonts.css?1716924210" rel="stylesheet"></noscript>
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme.css?1716924210" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/theme-auto.css?1716924210" rel="stylesheet" id="variant-style">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/variant.css?1716924210" rel="stylesheet">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/print.css?1716924210" rel="stylesheet" media="print">
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/ie.css?1716924210" rel="stylesheet">
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/url.js?1716924210"></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/variant.js?1716924210"></script>
-    <script>
-      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
-      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
-      window.index_js_url="https://ksu-cs-textbooks.github.io/cis301/index.search.js";
-      var root_url="https://ksu-cs-textbooks.github.io/cis301/";
-      var baseUri=root_url.replace(/\/$/, '');
-      // translations
-      window.T_Copy_to_clipboard = 'Copy to clipboard';
-      window.T_Copied_to_clipboard = 'Copied to clipboard!';
-      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
-      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
-      window.T_No_results_found = 'No results found for \u0022{0}\u0022';
-      window.T_N_results_found = '{1} results found for \u0022{0}\u0022';
-      // some further base stuff
-      var baseUriFull='https:\/\/ksu-cs-textbooks.github.io\/cis301/';
-      window.variants && variants.init( [ 'auto', 'light-theme', 'dark-theme' ] );
-    </script>
-    
-    <link href="https://ksu-cs-textbooks.github.io/cis301/css/custom.css?1716924210" rel="stylesheet">
-
-  </head>
-  <body class="mobile-support tele disableInlineCopyToClipboard" data-url="https://ksu-cs-textbooks.github.io/cis301/10-chapter/10_3-seqfn/index.html">
-    
-    <div id="tele" class="tele mirror">
-    
-    <div id="body" class="default-animation">
-      
-      
-      
-      <main id="body-inner" class="highlightable default" tabindex="-1">
-        <div class="flex-block-wrapper">
-          <article class="default">
-            <header class="headline">
-            </header>
-<h1 id="sequences-in-functions">Sequences in Functions</h1>
-
-<p>Sequences in Scala are passed to functions by reference. This means that if a function makes changes to a sequence parameter, then it will also change whatever sequence object was passed to the function. For example, the test code below passes <code>nums</code>, which has the value <code>ZS(1,2,3)</code>, to the <code>makeFirstZero</code> function. The <code>makeFirstZero</code> function changes the first position in its parameter (<code>seq</code>) to be 0, which means that the <code>nums</code> sequence in the test code will also have its first position set to 0 (making it have the value <code>ZS(0,2,3)</code>).</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def makeFirstZero(seq: ZS): Unit = {  // Unit is like void in Java and C#
-</span></span><span style="display:flex;"><span>    seq(0) = 0
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>///////////// Test code /////////////////
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var nums: ZS = ZS(1,2,3)
-</span></span><span style="display:flex;"><span>makeFirstZero(nums)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>assert(nums == ZS(0,2,3))</span></span></code></pre></div><h2 id="preconditions-with-sequences">Preconditions with sequences</h2>
-<p>When writing the precondition for a function that takes a sequence parameter, we must consider whether our function will only work correctly for particular sequence values or sizes. For example, our <code>makeFirstZero</code> function will not work if the size of the <code>seq</code> parameter is zero. We would need to add this requirement to the function&rsquo;s precondition (to its <code>Requires</code> clause):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>seq.size &gt; 0</span></span></code></pre></div><p>If we wanted to require that all values in a sequence parameter (say, <code>nums</code>) be between 10 and 20, we would add the following to the precondition:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>∀ (0 until nums.size)(x =&gt; (nums(x) &gt;= 10 ∧ nums(x) &lt;= 20))</span></span></code></pre></div><p>Sometimes, functions with sequence parameters will work for any size/values &ndash; in those cases, we don&rsquo;t need to list anything about the sequence in the precondition.</p>
-<h2 id="function-modifies-clause">Function <code>Modifies</code> clause</h2>
-<p>We learned in chapter 9 that the format of a function contract is:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Contract(
-</span></span><span style="display:flex;"><span>    Requires (  preconditions   ),
-</span></span><span style="display:flex;"><span>    Ensures (   postconditions  )
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>However, there is actually a third portion of the function contract that we have ommitted until this point &ndash; the <code>Modifies</code> clause. This clause is required whenever a function changes the values in a sequence parameter or changes global variables. For example, the <code>makeFirstZero</code> function DOES change its sequence parameter, <code>seq</code>, as it sets its first position to 0. <code>makeFirstZero</code> should therefore include this <code>Modifies</code> clause:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Modifies ( seq ),</span></span></code></pre></div><p>This clause goes between the precondition (<code>Requires</code>) and the postcondition (<code>Ensures</code>), making the new template for the function contract look like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Contract(
-</span></span><span style="display:flex;"><span>    Requires (  preconditions   ),
-</span></span><span style="display:flex;"><span>    Modifies (  comma-separated list of sequences/global variables modified by the function ),
-</span></span><span style="display:flex;"><span>    Ensures (   postconditions  )
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>If the function modifies more than one sequence or global variable, they are listed together in a comma-separated list in the <code>Modifies</code> clause.</p>
-<h2 id="postconditions-with-sequences">Postconditions with sequences</h2>
-<p>When writing the postcondition for a function that uses a sequence parameter, we must consider two things:</p>
-<ul>
-<li>How the return value relates to the sequence</li>
-<li>How the function will change the sequence</li>
-</ul>
-<h3 id="relating-return-values-to-sequence-elements">Relating return values to sequence elements</h3>
-<p>We will still use the <code>Res[Type]</code> keyword for describing the function&rsquo;s return value in the postcondition. For example, if a function was returning the smallest value in the integer sequence <code>nums</code>, we would say:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ensures(
-</span></span><span style="display:flex;"><span>    ∀ (0 until nums.size)(x =&gt; (Res[Z] &lt;= nums(x))),
-</span></span><span style="display:flex;"><span>    ∃ (0 until nums.size)(x =&gt; (Res[Z] == nums(x)))
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>Here, the first postcondition states that our return value will be less than or equal to every value in the sequence, and the second postcondition states that our return value is one of the sequence elements. (The second postcondition prevents us from sneakily returning some negative number and claiming that it was the smallest element in the sequence, when in fact it wasn&rsquo;t one of the sequence elements.)</p>
-<p>Sometimes, our postconditions will promise to return a particular value if some claim about the sequence is true. Suppose we have a function that returns whether or not (i.e., a boolean) all elements in the sequence <code>a</code> are negative. Our postcondition would be:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ensures(
-</span></span><span style="display:flex;"><span>    ( ∀ (0 until a.size)(x =&gt; (a(x) &lt; 0)) ) → (result == true),
-</span></span><span style="display:flex;"><span>    ( ∃ (0 until a.size)(x =&gt; (a(x) &gt;= 0)) ) → (result == false),
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>Here, the first postcondition promises that if all sequence elements are negative, then the function will return true. The second postcondition promises the opposite &ndash; that if there is a nonnegative sequence element, then the function will return false.</p>
-<h3 id="describing-how-the-function-changes-the-sequence">Describing how the function changes the sequence</h3>
-<p>Consider again the <code>makeFirstZero</code> function:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>def makeFirstZero(seq: ZS): Unit = {
-</span></span><span style="display:flex;"><span>    seq(0) = 0
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This function doesn&rsquo;t return anything (hence the <code>Unit</code> return type), but we do need to describe what impact calling this function will have on the sequence. We can partially accomplish our goal with this postcondition (in our <code>Ensures</code> clause):</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>seq(0) == 0</span></span></code></pre></div><p>Which promises that after the function ends, the first value in the sequence will be 0. However, suppose we wrote this instead for the <code>makeFirstZero</code> function:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>def makeFirstZero(seq: ZS): Unit = {
-</span></span><span style="display:flex;"><span>    seq(0) = 0
-</span></span><span style="display:flex;"><span>    seq(1) = 100
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>This version of the function DOES satisfy the postcondition &ndash; the first element is indeed set to 0 &ndash; but it changes other elements, too. The postcondition should be descriptive enough that anyone calling it can be certain EXACTLY what every single value in the sequence will be afterwards. Our postcondition needs to describe exactly what values in the sequence WILL change and exactly what values WON&rsquo;T change.</p>
-<p>This means that our <code>makeFirstZero</code> function needs to state that the first element in <code>seq</code> gets set to 0, and that every other value in the sequence <em>stays the same as its original value</em>. To help us describe the <em>original value</em> of a sequence, we can use the special <code>In(sequenceName)</code> syntax, which holds the value of a sequence parameter <code>sequenceName</code> at the time the function was called. (This <code>In</code> syntax can only be used in logic blocks, not in the code.)</p>
-<p>We can specify exactly what happens to each sequence element in our first version of <code>makeFirstZero</code> like this:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ensures(
-</span></span><span style="display:flex;"><span>    seq(0) == 0,
-</span></span><span style="display:flex;"><span>    ∀ (1 until seq.size)(x =&gt; ( seq(x) == In(seq)(x)))
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div><p>The second postcondition says: &ldquo;All elements from position 1 on keep their original values&rdquo;.</p>
-<h2 id="example-finished-makefirstzero-verification">Example: finished <code>makeFirstZero</code> verification</h2>
-<p>Now that we have seen all the pieces of writing function contracts for functions that work with sequences, we can put together the full function contract for our <code>makeFirstZero</code> function. The assert statement in the test code will be verified by Logika&rsquo;s auto mode:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def makeFirstZero(seq: ZS): Unit = {
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        Requires(  seq.size &gt; 0  ),
-</span></span><span style="display:flex;"><span>        Modifies(  seq  ), 
-</span></span><span style="display:flex;"><span>        Ensures(
-</span></span><span style="display:flex;"><span>        seq(0) == 0,
-</span></span><span style="display:flex;"><span>        ∀ (1 until seq.size)(x =&gt; ( seq(x) == In(seq)(x)))
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>    )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    seq(0) = 0
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//////////////// Test code //////////////
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var nums: ZS = ZS(1,2,3)
-</span></span><span style="display:flex;"><span>makeFirstZero(nums)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>assert(nums == ZS(0,2,3))</span></span></code></pre></div><h2 id="example-swap-program">Example: swap program</h2>
-<p>Suppose we have the following swap program:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def swap(list: ZS, pos1: Z, pos2: Z): Unit = {
-</span></span><span style="display:flex;"><span>    val temp: Z = list(pos1)
-</span></span><span style="display:flex;"><span>    list(pos1) = list(pos2)
-</span></span><span style="display:flex;"><span>    list(pos2) = temp
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>///////////// Test code ///////////////////
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var testList: ZS = ZS(1,2,3,4)
-</span></span><span style="display:flex;"><span>swap(testList,0,3)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//the values in positions 0 and 3 should be swapped
-</span></span><span style="display:flex;"><span>//all other elements should be the same
-</span></span><span style="display:flex;"><span>assert(testList == ZS(4,2,3,1))</span></span></code></pre></div><p>Here, <code>swap</code> takes an integer sequence (<code>list</code>) and two positions (<code>pos1</code> and <code>pos2</code>). It uses a temp variable to swap the values in <code>list</code> at <code>pos1</code> and <code>pos2</code>. We would like to write an appropriate function contract so the assert statement in the test code holds.</p>
-<p>We must first consider the precondition &ndash; does <code>swap</code> have any requirements about its parameters? Since <code>swap</code> uses <code>pos1</code> and <code>pos2</code> as positions within <code>list</code>, we can see that <code>swap</code> will crash if either position is out of bounds &ndash; either negative or past the end of the sequence.</p>
-<p>The function is changing the sequence, so we will need a <code>Modifies</code> clause. Finally, we must consider the postcondition. This function isn&rsquo;t returning a value, but it is changing the sequence &ndash; so we should describe exactly what values HAVE changed (and their new values) and what values have NOT changed. We want to say that:</p>
-<ul>
-<li><code>list(pos1)</code> has the value that was originally at <code>list(pos2)</code> (i.e, the value at <code>In(list)(pos2)</code>)</li>
-<li><code>list(pos2)</code> has the value that was originally at <code>list(pos1)</code> (i.e, the value at <code>In(list)(pos1)</code>)</li>
-<li>All other positions are unchanged (i.e., they are the same as they were in <code>In(list)</code>)</li>
-<li>The size doesn&rsquo;t change (which we must always list if a sequence is modified)</li>
-</ul>
-<p>We can now complete the function contract for <code>swap</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// #Sireum #Logika
-</span></span><span style="display:flex;"><span>//@Logika: --background save
-</span></span><span style="display:flex;"><span>import org.sireum._
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>def swap(list: ZS, pos1: Z, pos2: Z): Unit = {
-</span></span><span style="display:flex;"><span>    Contract(
-</span></span><span style="display:flex;"><span>        Requires(
-</span></span><span style="display:flex;"><span>            0 &lt;= pos1 &amp; pos1 &lt; list.size, // pos1 is a valid index
-</span></span><span style="display:flex;"><span>            0 &lt;= pos2 &amp; pos2 &lt; list.size  // pos2 is a valid index
-</span></span><span style="display:flex;"><span>        ),
-</span></span><span style="display:flex;"><span>        Modifies(list),           // documents list is modified
-</span></span><span style="display:flex;"><span>        Ensures(
-</span></span><span style="display:flex;"><span>            list(pos1) == In(list)(pos2),
-</span></span><span style="display:flex;"><span>            list(pos2) == In(list)(pos1),
-</span></span><span style="display:flex;"><span>            list.size == In(list).size,
-</span></span><span style="display:flex;"><span>            ∀ (0 until list.size)(x =&gt; (x != pos1 &amp; x != pos2 → list(x) == In(list)(x)))
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>  )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  val temp: Z = list(pos1)
-</span></span><span style="display:flex;"><span>  list(pos1) = list(pos2)
-</span></span><span style="display:flex;"><span>  list(pos2) = temp
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>//////////////// Test code //////////////
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>var testList: ZS = ZS(1,2,3,4)
-</span></span><span style="display:flex;"><span>swap(testList,0,3)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>assert(testList == ZS(4,2,3,1))</span></span></code></pre></div><p>If we test this program in Logika&rsquo;s symexe mode, the final assert will hold &ndash; we have enough information to make a claim about EXACTLY what the sequence will look like after calling <code>swap</code>.</p>
-<p>Note that we could have simplified the postcondition by using the <em>sequence update notation</em> described at the end of section 10.2. We want to say that the value of <code>list</code> at the end of the function is equivalent to the value of list at the beginning of the function (<code>In(list)</code>) with the following exceptions:</p>
-<ul>
-<li>The new value at <code>pos1</code> should be the original value at <code>pos2</code> (<code>In(list)(pos2)</code>)</li>
-<li>The new value at <code>pos2</code> should be the original value at <code>pos1</code> (<code>In(list)(pos1)</code>)</li>
-</ul>
-<p>Here is the equivalent (but shorter) postcondition for <code>swap</code>:</p>
-<div class="wrap-code highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Ensures(
-</span></span><span style="display:flex;"><span>    list ≡ In(list)(pos1 ~&gt; In(list)(pos2), pos2 ~&gt; In(list)(pos1))
-</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
-            <footer class="footline">
-
-            </footer>
-          </article>
-        </div>
-      </main>
-    </div>
-    
-    </div>
-    
-    
-    
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/clipboard.min.js?1716924210" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/perfect-scrollbar.min.js?1716924210" defer></script>
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/theme.js?1716924210" defer></script>
-    
-    <script src="https://ksu-cs-textbooks.github.io/cis301/js/tele-scroll.js?1716924210 defer"></script>
-    
-  </body>
-</html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="Sequences in Scala are passed to functions by reference. This means that if a function makes changes to a sequence parameter, then it will also change whatever sequence object was passed to the function. For example, the test code below passes nums, which has the value ZS(1,2,3), to the makeFirstZero function. The makeFirstZero function changes the first position in its parameter (seq) to be 0, which means that the nums sequence in the test code will also have its first position set to 0 (making it have the value ZS(0,2,3))."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Sequences in Functions :: CIS 301 Textbook"><meta name=twitter:description content="Sequences in Scala are passed to functions by reference. This means that if a function makes changes to a sequence parameter, then it will also change whatever sequence object was passed to the function. For example, the test code below passes nums, which has the value ZS(1,2,3), to the makeFirstZero function. The makeFirstZero function changes the first position in its parameter (seq) to be 0, which means that the nums sequence in the test code will also have its first position set to 0 (making it have the value ZS(0,2,3))."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/10-chapter/10_3-seqfn/"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Sequences in Functions :: CIS 301 Textbook"><meta property="og:description" content="Sequences in Scala are passed to functions by reference. This means that if a function makes changes to a sequence parameter, then it will also change whatever sequence object was passed to the function. For example, the test code below passes nums, which has the value ZS(1,2,3), to the makeFirstZero function. The makeFirstZero function changes the first position in its parameter (seq) to be 0, which means that the nums sequence in the test code will also have its first position set to 0 (making it have the value ZS(0,2,3))."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Sequences, Globals, and Termination"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2024-05-01T11:30:38-05:00"><meta itemprop=name content="Sequences in Functions :: CIS 301 Textbook"><meta itemprop=description content="Sequences in Scala are passed to functions by reference. This means that if a function makes changes to a sequence parameter, then it will also change whatever sequence object was passed to the function. For example, the test code below passes nums, which has the value ZS(1,2,3), to the makeFirstZero function. The makeFirstZero function changes the first position in its parameter (seq) to be 0, which means that the nums sequence in the test code will also have its first position set to 0 (making it have the value ZS(0,2,3))."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2024-05-01T11:30:38-05:00"><meta itemprop=wordCount content="1609"><title>Sequences in Functions :: CIS 301 Textbook</title>
+<link href=https://textbooks.cs.ksu.edu/cis301/10-chapter/10_3-seqfn/ rel=canonical type=text/html title="Sequences in Functions :: CIS 301 Textbook"><link href=/cis301/10-chapter/10_3-seqfn/index.xml rel=alternate type=application/rss+xml title="Sequences in Functions :: CIS 301 Textbook"><link href=/cis301/10-chapter/10_3-seqfn/index.print.html rel=alternate type=text/html title="Sequences in Functions :: CIS 301 Textbook"><link href=/cis301/10-chapter/10_3-seqfn/embed.html rel=alternate type=text/html title="Sequences in Functions :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1719515004 rel=stylesheet><link href=/cis301/css/auto-complete.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1719515004 rel=stylesheet><link href=/cis301/css/fonts.css?1719515004 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1719515004 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1719515004 rel=stylesheet><link href=/cis301/css/theme-auto.css?1719515004 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-auto.css?1719515004 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1719515004 rel=stylesheet><link href=/cis301/css/print.css?1719515004 rel=stylesheet media=print><script src=/cis301/js/variant.js?1719515004></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1719515004 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis301/10-chapter/10_3-seqfn/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=sequences-in-functions>Sequences in Functions</h1><p>Sequences in Scala are passed to functions by reference. This means that if a function makes changes to a sequence parameter, then it will also change whatever sequence object was passed to the function. For example, the test code below passes <code>nums</code>, which has the value <code>ZS(1,2,3)</code>, to the <code>makeFirstZero</code> function. The <code>makeFirstZero</code> function changes the first position in its parameter (<code>seq</code>) to be 0, which means that the <code>nums</code> sequence in the test code will also have its first position set to 0 (making it have the value <code>ZS(0,2,3)</code>).</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def makeFirstZero(seq: ZS): Unit = {  // Unit is like void in Java and C#
+</span></span><span class=line><span class=cl>    seq(0) = 0
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>///////////// Test code /////////////////
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var nums: ZS = ZS(1,2,3)
+</span></span><span class=line><span class=cl>makeFirstZero(nums)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>assert(nums == ZS(0,2,3))</span></span></code></pre></div><h2 id=preconditions-with-sequences>Preconditions with sequences</h2><p>When writing the precondition for a function that takes a sequence parameter, we must consider whether our function will only work correctly for particular sequence values or sizes. For example, our <code>makeFirstZero</code> function will not work if the size of the <code>seq</code> parameter is zero. We would need to add this requirement to the function&rsquo;s precondition (to its <code>Requires</code> clause):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>seq.size &gt; 0</span></span></code></pre></div><p>If we wanted to require that all values in a sequence parameter (say, <code>nums</code>) be between 10 and 20, we would add the following to the precondition:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>∀ (0 until nums.size)(x =&gt; (nums(x) &gt;= 10 ∧ nums(x) &lt;= 20))</span></span></code></pre></div><p>Sometimes, functions with sequence parameters will work for any size/values &ndash; in those cases, we don&rsquo;t need to list anything about the sequence in the precondition.</p><h2 id=function-modifies-clause>Function <code>Modifies</code> clause</h2><p>We learned in chapter 9 that the format of a function contract is:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Contract(
+</span></span><span class=line><span class=cl>    Requires (  preconditions   ),
+</span></span><span class=line><span class=cl>    Ensures (   postconditions  )
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>However, there is actually a third portion of the function contract that we have ommitted until this point &ndash; the <code>Modifies</code> clause. This clause is required whenever a function changes the values in a sequence parameter or changes global variables. For example, the <code>makeFirstZero</code> function DOES change its sequence parameter, <code>seq</code>, as it sets its first position to 0. <code>makeFirstZero</code> should therefore include this <code>Modifies</code> clause:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Modifies ( seq ),</span></span></code></pre></div><p>This clause goes between the precondition (<code>Requires</code>) and the postcondition (<code>Ensures</code>), making the new template for the function contract look like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Contract(
+</span></span><span class=line><span class=cl>    Requires (  preconditions   ),
+</span></span><span class=line><span class=cl>    Modifies (  comma-separated list of sequences/global variables modified by the function ),
+</span></span><span class=line><span class=cl>    Ensures (   postconditions  )
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>If the function modifies more than one sequence or global variable, they are listed together in a comma-separated list in the <code>Modifies</code> clause.</p><h2 id=postconditions-with-sequences>Postconditions with sequences</h2><p>When writing the postcondition for a function that uses a sequence parameter, we must consider two things:</p><ul><li>How the return value relates to the sequence</li><li>How the function will change the sequence</li></ul><h3 id=relating-return-values-to-sequence-elements>Relating return values to sequence elements</h3><p>We will still use the <code>Res[Type]</code> keyword for describing the function&rsquo;s return value in the postcondition. For example, if a function was returning the smallest value in the integer sequence <code>nums</code>, we would say:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Ensures(
+</span></span><span class=line><span class=cl>    ∀ (0 until nums.size)(x =&gt; (Res[Z] &lt;= nums(x))),
+</span></span><span class=line><span class=cl>    ∃ (0 until nums.size)(x =&gt; (Res[Z] == nums(x)))
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>Here, the first postcondition states that our return value will be less than or equal to every value in the sequence, and the second postcondition states that our return value is one of the sequence elements. (The second postcondition prevents us from sneakily returning some negative number and claiming that it was the smallest element in the sequence, when in fact it wasn&rsquo;t one of the sequence elements.)</p><p>Sometimes, our postconditions will promise to return a particular value if some claim about the sequence is true. Suppose we have a function that returns whether or not (i.e., a boolean) all elements in the sequence <code>a</code> are negative. Our postcondition would be:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Ensures(
+</span></span><span class=line><span class=cl>    ( ∀ (0 until a.size)(x =&gt; (a(x) &lt; 0)) ) → (result == true),
+</span></span><span class=line><span class=cl>    ( ∃ (0 until a.size)(x =&gt; (a(x) &gt;= 0)) ) → (result == false),
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>Here, the first postcondition promises that if all sequence elements are negative, then the function will return true. The second postcondition promises the opposite &ndash; that if there is a nonnegative sequence element, then the function will return false.</p><h3 id=describing-how-the-function-changes-the-sequence>Describing how the function changes the sequence</h3><p>Consider again the <code>makeFirstZero</code> function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>def makeFirstZero(seq: ZS): Unit = {
+</span></span><span class=line><span class=cl>    seq(0) = 0
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>This function doesn&rsquo;t return anything (hence the <code>Unit</code> return type), but we do need to describe what impact calling this function will have on the sequence. We can partially accomplish our goal with this postcondition (in our <code>Ensures</code> clause):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>seq(0) == 0</span></span></code></pre></div><p>Which promises that after the function ends, the first value in the sequence will be 0. However, suppose we wrote this instead for the <code>makeFirstZero</code> function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>def makeFirstZero(seq: ZS): Unit = {
+</span></span><span class=line><span class=cl>    seq(0) = 0
+</span></span><span class=line><span class=cl>    seq(1) = 100
+</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>This version of the function DOES satisfy the postcondition &ndash; the first element is indeed set to 0 &ndash; but it changes other elements, too. The postcondition should be descriptive enough that anyone calling it can be certain EXACTLY what every single value in the sequence will be afterwards. Our postcondition needs to describe exactly what values in the sequence WILL change and exactly what values WON&rsquo;T change.</p><p>This means that our <code>makeFirstZero</code> function needs to state that the first element in <code>seq</code> gets set to 0, and that every other value in the sequence <em>stays the same as its original value</em>. To help us describe the <em>original value</em> of a sequence, we can use the special <code>In(sequenceName)</code> syntax, which holds the value of a sequence parameter <code>sequenceName</code> at the time the function was called. (This <code>In</code> syntax can only be used in logic blocks, not in the code.)</p><p>We can specify exactly what happens to each sequence element in our first version of <code>makeFirstZero</code> like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Ensures(
+</span></span><span class=line><span class=cl>    seq(0) == 0,
+</span></span><span class=line><span class=cl>    ∀ (1 until seq.size)(x =&gt; ( seq(x) == In(seq)(x)))
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>The second postcondition says: &ldquo;All elements from position 1 on keep their original values&rdquo;.</p><h2 id=example-finished-makefirstzero-verification>Example: finished <code>makeFirstZero</code> verification</h2><p>Now that we have seen all the pieces of writing function contracts for functions that work with sequences, we can put together the full function contract for our <code>makeFirstZero</code> function. The assert statement in the test code will be verified by Logika&rsquo;s auto mode:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def makeFirstZero(seq: ZS): Unit = {
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        Requires(  seq.size &gt; 0  ),
+</span></span><span class=line><span class=cl>        Modifies(  seq  ), 
+</span></span><span class=line><span class=cl>        Ensures(
+</span></span><span class=line><span class=cl>        seq(0) == 0,
+</span></span><span class=line><span class=cl>        ∀ (1 until seq.size)(x =&gt; ( seq(x) == In(seq)(x)))
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>    )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    seq(0) = 0
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//////////////// Test code //////////////
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var nums: ZS = ZS(1,2,3)
+</span></span><span class=line><span class=cl>makeFirstZero(nums)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>assert(nums == ZS(0,2,3))</span></span></code></pre></div><h2 id=example-swap-program>Example: swap program</h2><p>Suppose we have the following swap program:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def swap(list: ZS, pos1: Z, pos2: Z): Unit = {
+</span></span><span class=line><span class=cl>    val temp: Z = list(pos1)
+</span></span><span class=line><span class=cl>    list(pos1) = list(pos2)
+</span></span><span class=line><span class=cl>    list(pos2) = temp
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>///////////// Test code ///////////////////
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var testList: ZS = ZS(1,2,3,4)
+</span></span><span class=line><span class=cl>swap(testList,0,3)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//the values in positions 0 and 3 should be swapped
+</span></span><span class=line><span class=cl>//all other elements should be the same
+</span></span><span class=line><span class=cl>assert(testList == ZS(4,2,3,1))</span></span></code></pre></div><p>Here, <code>swap</code> takes an integer sequence (<code>list</code>) and two positions (<code>pos1</code> and <code>pos2</code>). It uses a temp variable to swap the values in <code>list</code> at <code>pos1</code> and <code>pos2</code>. We would like to write an appropriate function contract so the assert statement in the test code holds.</p><p>We must first consider the precondition &ndash; does <code>swap</code> have any requirements about its parameters? Since <code>swap</code> uses <code>pos1</code> and <code>pos2</code> as positions within <code>list</code>, we can see that <code>swap</code> will crash if either position is out of bounds &ndash; either negative or past the end of the sequence.</p><p>The function is changing the sequence, so we will need a <code>Modifies</code> clause. Finally, we must consider the postcondition. This function isn&rsquo;t returning a value, but it is changing the sequence &ndash; so we should describe exactly what values HAVE changed (and their new values) and what values have NOT changed. We want to say that:</p><ul><li><code>list(pos1)</code> has the value that was originally at <code>list(pos2)</code> (i.e, the value at <code>In(list)(pos2)</code>)</li><li><code>list(pos2)</code> has the value that was originally at <code>list(pos1)</code> (i.e, the value at <code>In(list)(pos1)</code>)</li><li>All other positions are unchanged (i.e., they are the same as they were in <code>In(list)</code>)</li><li>The size doesn&rsquo;t change (which we must always list if a sequence is modified)</li></ul><p>We can now complete the function contract for <code>swap</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
+</span></span><span class=line><span class=cl>//@Logika: --background save
+</span></span><span class=line><span class=cl>import org.sireum._
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>def swap(list: ZS, pos1: Z, pos2: Z): Unit = {
+</span></span><span class=line><span class=cl>    Contract(
+</span></span><span class=line><span class=cl>        Requires(
+</span></span><span class=line><span class=cl>            0 &lt;= pos1 &amp; pos1 &lt; list.size, // pos1 is a valid index
+</span></span><span class=line><span class=cl>            0 &lt;= pos2 &amp; pos2 &lt; list.size  // pos2 is a valid index
+</span></span><span class=line><span class=cl>        ),
+</span></span><span class=line><span class=cl>        Modifies(list),           // documents list is modified
+</span></span><span class=line><span class=cl>        Ensures(
+</span></span><span class=line><span class=cl>            list(pos1) == In(list)(pos2),
+</span></span><span class=line><span class=cl>            list(pos2) == In(list)(pos1),
+</span></span><span class=line><span class=cl>            list.size == In(list).size,
+</span></span><span class=line><span class=cl>            ∀ (0 until list.size)(x =&gt; (x != pos1 &amp; x != pos2 → list(x) == In(list)(x)))
+</span></span><span class=line><span class=cl>        )
+</span></span><span class=line><span class=cl>  )
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  val temp: Z = list(pos1)
+</span></span><span class=line><span class=cl>  list(pos1) = list(pos2)
+</span></span><span class=line><span class=cl>  list(pos2) = temp
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>//////////////// Test code //////////////
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>var testList: ZS = ZS(1,2,3,4)
+</span></span><span class=line><span class=cl>swap(testList,0,3)
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>assert(testList == ZS(4,2,3,1))</span></span></code></pre></div><p>If we test this program in Logika&rsquo;s symexe mode, the final assert will hold &ndash; we have enough information to make a claim about EXACTLY what the sequence will look like after calling <code>swap</code>.</p><p>Note that we could have simplified the postcondition by using the <em>sequence update notation</em> described at the end of section 10.2. We want to say that the value of <code>list</code> at the end of the function is equivalent to the value of list at the beginning of the function (<code>In(list)</code>) with the following exceptions:</p><ul><li>The new value at <code>pos1</code> should be the original value at <code>pos2</code> (<code>In(list)(pos2)</code>)</li><li>The new value at <code>pos2</code> should be the original value at <code>pos1</code> (<code>In(list)(pos1)</code>)</li></ul><p>Here is the equivalent (but shorter) postcondition for <code>swap</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Ensures(
+</span></span><span class=line><span class=cl>    list ≡ In(list)(pos1 ~&gt; In(list)(pos2), pos2 ~&gt; In(list)(pos1))
+</span></span><span class=line><span class=cl>)</span></span></code></pre></div><footer class=footline></footer></article></div></main></div></div><script src=/cis301/js/clipboard.min.js?1719515004 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1719515004 defer></script><script src=/cis301/js/theme.js?1719515004 defer></script><script src=/cis301/js/tele-scroll.js?1719515004 defer></script></body></html>
