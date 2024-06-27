@@ -5,7 +5,7 @@ weight: 43
 date: 2018-08-24T10:53:26-05:00
 ---
 
-As we saw in [section 2.4]({{<ref "2-chapter/2_4-logicalEquiv.md" >}})), two logical statements are said to be *logically equivalent* if and only if they have the same truth value for every truth assignment.
+As we saw in [section 2.4]({{% ref "2-chapter/2_4-logicalEquiv.md"  %}})), two logical statements are said to be *logically equivalent* if and only if they have the same truth value for every truth assignment.
 
 We can extend this idea to our propositional logic translations -- two (English) statements are said to be *equivalent* iff they have the same underlying meaning, and iff their translations to propositional logic are logically equivalent.
 

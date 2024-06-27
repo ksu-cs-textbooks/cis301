@@ -98,7 +98,7 @@ We would then see that we are really taking the sentence, "The school has a pool
 
 When you see the word "or" in a sentence, or some other clear disjunction of statements, then you will translate it to a logical OR operator. Because the word "or" in English can be ambiguous, We first need to determine whether the "or" is *inclusive* (in which case we would replace it with a regular OR operator) or *exclusive* (in which case we need to add a clause to explicitly express that both statements cannot be true).
 
-As we saw in [section 1.1]({{<ref "1-chapter/1_1-logicBasics.md" >}}), the word "or" in an English sentence is usually meant to be exclusive. However, because the logical OR is *INclusive*, and since the purpose of this class is not to have you wrestle with subtleties of the English language, then you can assume that an "or" in a sentence is *inclusive* unless clearly stated otherwise.
+As we saw in [section 1.1]({{% ref "1-chapter/1_1-logicBasics.md"  %}}), the word "or" in an English sentence is usually meant to be exclusive. However, because the logical OR is *INclusive*, and since the purpose of this class is not to have you wrestle with subtleties of the English language, then you can assume that an "or" in a sentence is *inclusive* unless clearly stated otherwise.
 
 ### Inclusive OR statements
 
@@ -138,7 +138,7 @@ p: Jane goes for a run on Saturday
 q: Jane plays basketball on Saturday
 ```
 
-We then apply our equivalence for simulating an exclusive or operator, which we saw in [section 2.4]({{<ref "2-chapter/2_4-logicalEquiv.md" >}}). This leaves us with the following translation: 
+We then apply our equivalence for simulating an exclusive or operator, which we saw in [section 2.4]({{% ref "2-chapter/2_4-logicalEquiv.md"  %}}). This leaves us with the following translation: 
 
 ```text
 (p V q) ∧  ¬(p ∧ q)

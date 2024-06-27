@@ -4,7 +4,7 @@ weight: 44
 pre: "3.5. "
 ---
 
-Recall the Knights and Knaves puzzles from [section 1.2]({{<ref "1-chapter/1_2-knightsKnaves.md" >}}). In addition to solving these puzzle by hand, we can devise a strategy to first translate a Knights and Knaves puzzle to propositional logic, and then solve the puzzle using a truth table.
+Recall the Knights and Knaves puzzles from [section 1.2]({{% ref "1-chapter/1_2-knightsKnaves.md"  %}}). In addition to solving these puzzle by hand, we can devise a strategy to first translate a Knights and Knaves puzzle to propositional logic, and then solve the puzzle using a truth table.
 
 ## Identifying propositional atoms
 
