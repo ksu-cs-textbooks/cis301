@@ -14,31 +14,32 @@ Your GitHub account will need to be set up to use two-factor authentication (a n
 
 In CIS 301, we will use a tool called Logika, which is a verifier and a proof checker for propositional, predicate, and programming logic. You will need to install the IntelliJ-based Sireum IVE (Integrated Verification Environment), which contains Logika.
 
-Go [here](http://logika.v3.sireum.org/doc/01-getting-started/index.html) to install Logika. 
+### Getting Installer Script
 
-Under 1.1.1 Installation, with the Release tab selected, choose either "IVE for Window"s" or "IVE for macOS". The instructions below should update based on your selection. For Windows, you will see:
+Go [here](https://sireum.org/getting-started/#download) to install Logika. 
 
- ![download Sireum](/images/downloadSireum.png)
+Under "Using Installer Scripts", click either "Windows" or "macOS/Linux". The instructions below should update based on your selection. Copy the command listed for your operating system.
 
-Follow the instructions to download and run Logika. 
+### Installing and Running Sireum Logika - Windows
 
-### Windows Users
+For Windows users, open a command prompt and switch to the C:\ drive by typing:
 
-For Windows, right-click the download (sireum-v3-ive-win64.zip) and select "Extract All...". This should bring up the "Extract Compressed (Zipped) Folders" dialog. Type C:\ as the destination, so that the dialog looks like:
+```
+cd C:\
+```
 
- ![download Sireum](/images/extractOnC.png)
+Next, paste the command you copied in the previous step. You should immediately see feedback that your computer is fetching Sireum Logika.
 
-There should be NO subfolders -- you want to extract directly on the C:\ drive. Click "Extract". It will take a few minutes to extract the files, and then you should see the folder "C:\Sireum" with no subfolders. Navigate to "C:\Sireum\apps\idea\bin" and find the "idea64.exe" file:
+Once the installation is finished, open a file explorer and navigate to "C:\Sireum\bin\win\idea\bin\". In that folder, you should see the application "IVE.exe". Double-click that application to run it (if you see a popup that asks if you want to allow access to your computer, go ahead and choose that you want to do so).
 
- ![download Sireum](/images/idea64loc.png)
+You may find it handy to pin the "IVE.exe" application to your taskbar. You can do so by dragging the "IVE.exe" icon onto your taskbar and selecting "Pin to taskbar".
+ 
 
-Double-click the "idea64.exe" file to launch the Sireum IVE within IntelliJ. If you get a "Windows protected your PC" popup, click "More info" and then "Run anyway". I recommend pinning the Sireum IVE to your taskbar -- after you run the exe file, you can right-click the icon in the taskbar and select "pin to taskbar".
+### Installation and Running Sireum Logika - Mac
 
-### MacOS Users
+For Mac users, open a terminal window and paste the command you copied in the previous step. You should immediately see feedback that your computer is fetching Sireum Logika.
 
-For Mac users, start by opening the Terminal. Copy the command listed on the download page and execute that command in the terminal. That command should download Sireum IVE and avoid being blocked by GateKeeper. You should see a popup with the Sireum icon, and you can drag that icon into the Applications folder.
-
-To run Sireum, double-click the Sireum icon within the "Applications" folder.
+Once the installation is finished, go to the finder and search for "IVE". You should see the application "IVE.exe" - if you run it, it will open Sireum Logika.
 
 ## Using GitHub to start homework assignments
 
@@ -117,7 +118,7 @@ To clone a new project, select *File→New→Project* from *Version control*. Th
 
 ## Using Sireum IVE in the lab classrooms
 
-Sireum IVE (with Logika) is available in the CS computer lab classrooms (DUE 1114, 1116, and 1117). To find it, open a File Explorer, then open the C:\ drive. From there, navigate to "C:\Sireum\apps\idea\bin" and run the "idea64.exe" file. This will launch Sireum as usual.
+Sireum IVE (with Logika) is available in the CS computer lab classrooms (DUE 1114, 1116, and 1117). To find it, open a File Explorer, then open the C:\ drive. From there, navigate to "C:\Sireum\bin\win\idea\bin\" and run the "IVE.exe" file. This will launch Sireum as usual.
 
 If you want to complete your assignment using multiple computers, you can:
     - Clone the repo using the process above (if it is your first time working on the current assignment on this computer)
