@@ -7,6 +7,8 @@ date: 2018-08-24T10:53:26-05:00
 
 In this section, we will see the deduction rules for the implies operator.
 
+Note that in our Logika proofs, the implies operator is typed as `__>:` but is rendered as `→`.
+
 ## Implies elimination
 
 Remember that `→` is a kind of logical "if-then". Here, we understand `p → q` to mean that `p` holds knowledge sufficient to deduce `q` – so, whenever `p` is proved to be a fact, then `p → q` enables `q` to be proved a fact, too. This is the implies elimination rule, `ImplyE`, and we can formalize it like this:

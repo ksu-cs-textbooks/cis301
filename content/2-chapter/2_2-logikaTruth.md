@@ -122,6 +122,12 @@ Here is a summary of what keys to type in Logika for each traditional logical op
 
 In the remainder of this book, my examples will be of what you will SEE in Logika.
 
+## Logika mishandling of implies operator
+
+While the correct order of operations for logical operations is NOT, AND, OR, IMPLIES (from highest precedence to lowest precedence), the Logika tool does not handle the precedence of the implies operator correctly. The characters used for the implies operator in Logika are `->:` -- however, since Logika takes advantage of Scala's operator precedence, this means that it interprets an implies operation as having the same (higher) precedence as a minus operation. In this class, we will always use parentheses to force the implies to have the correct precedence.
+
+This incorrect precedence will only be present in our unit on truth tables -- other proofs in Logika will use a different operator for implies (`__>:`) to avoid the issue of being interpreted as a minus operation. (We cannot use `__>:` in truth tables as the rendering makes the column alignment unclear.)
+
 ## Example
 
 Suppose we want to write a Logika truth table for:
