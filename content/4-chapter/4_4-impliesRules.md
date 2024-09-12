@@ -113,8 +113,8 @@ Now we can complete the proof:
 
         2 SubProof(
             3 Assume(  q ∧ p  ),
-            4 (     q              )   by AndI1(3),
-            5 (     p              )   by AndI2(3),
+            4 (     q              )   by AndE1(3),
+            5 (     p              )   by AndE2(3),
             6 (     q → r          )   by ImplyE(1, 5),
             7 (     r              )   by ImplyE(6, 4)
 
