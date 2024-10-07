@@ -84,7 +84,7 @@ Proof(
 
         4 Let ( (a: T) => SubProof(
             5 Assume (  P(a)  ),
-            6 (     ¬P(x)               )   by AllE[T](1),
+            6 (     ¬P(a)               )   by AllE[T](1),
             7 (     F                   )   by NegE(5, 6),
         )),
         8 (     F                       )   By ExistsE[T](3, 4)
