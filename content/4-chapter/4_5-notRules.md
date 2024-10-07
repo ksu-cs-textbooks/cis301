@@ -329,7 +329,7 @@ We see that our goal in the subproof is the show ¬p -- if we could do that, the
             //use ¬i strategy to prove ¬p
             4 SubProof(
                 5 Assume(  p  ),
-                6 (     q       )   by NegE(1, 5),
+                6 (     q       )   by ImplyE(1, 5),
                 7 (     F       )   by NegE(6, 3)
             ),
             8 (     ¬p          )   by NegI(4)
