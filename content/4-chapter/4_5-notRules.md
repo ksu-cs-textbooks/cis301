@@ -53,11 +53,11 @@ The negation introduction rule allows us to introduce a NOT operation. If assumi
             ...
             F
         ),
-NotI : --------------
+NegI : --------------
            ¬P
 ```
 
-Here is a simple example of a proof that shows the syntax of the `NotI` rule:
+Here is a simple example of a proof that shows the syntax of the `NegI` rule:
 
 ```text
 (p,  q → ¬p)  ⊢  (¬q)
@@ -420,7 +420,7 @@ The *law of the excluded middle (LEM)* is famous consequence of `PbC`: from no s
                 5 (     p ∨ ¬ p         )   by OrI1(4),
                 6 (     F               )   by NegE(5, 2)
             ),
-            7 (     ¬p                  )   by NotI(3),
+            7 (     ¬p                  )   by NegI(3),
             8 (     p ∨ ¬p              )   by OrI2(7),
             9 (     F                   )   By NegE(8, 2)
         ),
@@ -444,7 +444,7 @@ In other proofs involving negation and no clear path forward, it is sometimes us
                 6 (     p ∨ ¬ p         )   by OrI1(5),
                 7 (     F               )   by NegE(6, 3)
             ),
-            8 (     ¬p                  )   by NotI(4),
+            8 (     ¬p                  )   by NegI(4),
             9 (     p ∨ ¬p              )   by OrI2(8),
             10 (    F                   )   By NegE(9, 3)
         ),
