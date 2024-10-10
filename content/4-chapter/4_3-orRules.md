@@ -174,12 +174,12 @@ The next consideration when we want to prove an OR statement is whether we have 
 
         4 SubProof(
             5 Assume(  q  ),
-            6 (     p ∧ q              )   by AndI2(5),
+            6 (     p ∧ q              )   by AndI(2,5),
             7 (     (p ∧ q) ∨ (p ∧ r)  )   by OrI1(6)
         ),
         8 SubProof(
             9 Assume(  r  ),
-            10 (    p ∧ r             )   by AndI2(9),
+            10 (    p ∧ r             )   by AndI(2,9),
             11 (    (p ∧ q) ∨ (p ∧ r) )   by OrI2(10)
         ),
         12 (  (p ∧ q) ∨ (p ∧ r)     )   by OrE(3, 4, 8)
