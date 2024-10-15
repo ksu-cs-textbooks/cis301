@@ -138,7 +138,7 @@ Deduce(
 Deduce(
     1 (     x + 1 == y - 4                          )   by SomeJustification,
     2 (     x*(x + 1) == (x + 1) + y                )   by SomeJustification,
-    3 (     (x + 1)*(x + 1) == (x + 1) + (x + 1)    )   by Subst_<(1, 2)
+    3 (     x*(y - 4) == (y - 4) + y                )   by Subst_<(1, 2)
 )
 ```
 
