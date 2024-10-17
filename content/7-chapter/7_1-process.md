@@ -57,11 +57,11 @@ We wish to use mathematical induction to prove that {{< math >}}$P(n)${{< /math 
 <br>
 <br>
 
-We will refer to {{< math >}}$1 + 2 + ... + n${{< /math >}} as {{< math >}}$LHS(n))${{< /math >}} and we will refer to {{< math >}}$\dfrac{n(n+1)}{2}${{< /math >}} as {{< math >}}$RHS(n))${{< /math >}}. To prove that {{< math >}}$P(n)${{< /math >}} holds for some positive integer {{< math >}}$n${{< /math >}}, we must prove that {{< math >}}$LHS(n)) = RHS(n))${{< /math >}}.
+We will refer to {{< math >}}$1 + 2 + ... + n${{< /math >}} as {{< math >}}$LHS(n)${{< /math >}} and we will refer to {{< math >}}$\dfrac{n(n+1)}{2}${{< /math >}} as {{< math >}}$RHS(n)${{< /math >}}. To prove that {{< math >}}$P(n)${{< /math >}} holds for some positive integer {{< math >}}$n${{< /math >}}, we must prove that {{< math >}}$LHS(n) = RHS(n)${{< /math >}}.
 
 ### Base case
 
-We must prove that {{< math >}}$P(n)${{< /math >}} holds for the smallest positive integer, {{< math >}}$n = 1${{< /math >}}, that is, that {{< math >}}$LHS(1) = RHS(1))${{< /math >}}. The sum of all integers from 1 to 1 is just 1, so we have that {{< math >}}$LHS(1) = 1${{< /math >}}. We also have that:
+We must prove that {{< math >}}$P(n)${{< /math >}} holds for the smallest positive integer, {{< math >}}$n = 1${{< /math >}}, that is, that {{< math >}}$LHS(1) = RHS(1)${{< /math >}}. The sum of all integers from 1 to 1 is just 1, so we have that {{< math >}}$LHS(1) = 1${{< /math >}}. We also have that:
 
 ```math
 $$
@@ -87,13 +87,13 @@ $$
 = LHS(k) + (k + 1) \tag{2} 
 $$
 $$
-= RHS_k + (k + 1) \tag{3}
+= RHS(k) + (k + 1) \tag{3}
 $$
 $$
 = \dfrac{k(k+1)}{2} + (k + 1) \tag{4}
 $$
 $$
-= \dfrac{k(k+1)}{2} + \dfrac{2(k+1)}{2} \tag{5}
+= \dfrac{k(k+1) + 2(k+1)}{2} \tag{5}
 $$
 $$
 = \dfrac{(k+1)(k + 2)}{2} \tag{6}
