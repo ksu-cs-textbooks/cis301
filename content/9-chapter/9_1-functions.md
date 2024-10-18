@@ -89,7 +89,7 @@ For example, the `div` function above should promise to return the integer divis
 def div(a: Z, b: Z) : Z =  {
     Contract(
         Requires(   b != 0  ),
-        Ensures(    Rez[Z] == a/b   )
+        Ensures(    Res[Z] == a/b   )
     )
 
     val ans: Z = a/b
