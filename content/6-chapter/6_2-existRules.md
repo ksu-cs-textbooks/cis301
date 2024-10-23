@@ -261,7 +261,7 @@ Proof(
         7 (         Bunny(thumper) → Fluffy(thumper)    )   by AllE[T](1),
         8 (         Fluffy(thumper)                     )   by ImplyE(7, 6),
         9 (         Fast(thumper) ∧ Fluffy(thumper)     )   by AndI(5, 8),
-        10 (        ∃((x: T) => (Fast(x) & Fluffy(x)))  )   by ExistsE[T](9)
+        10 (        ∃((x: T) => (Fast(x) & Fluffy(x)))  )   by ExistsI[T](9)
 
         //goal: ∃((x: T) => (Fast(x) & Fluffy(x)))
     )),
