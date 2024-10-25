@@ -1,11 +1,11 @@
 ---
-title: "Algebra and subst Rules"
+title: "Algebra and Subst Rules"
 pre: "8.4. "
 weight: 93
 date: 2018-08-24T10:53:26-05:00
 ---
 
-In this section, we will learn our first two proof rules for programming logic -- `algebra` and `subst`.
+In this section, we will learn our first two proof rules for programming logic -- `Algebra` and `Subst`.
 
 ## Verifying simple programs
 
@@ -132,7 +132,7 @@ Deduce(
 )
 ```
 
-`(claim)` rewrites `LINE_N` by substituting all ocurrences of `RHS_M` with `LHS_M`. The `_<` part of the justification name indicates the direction of the find/replace. You can think of as `LHS_M < RHS_M` (showing that each `LHS_M` is becoming a `RHS_M`). Here is an example:
+`(claim)` rewrites `LINE_N` by substituting all ocurrences of `RHS_M` with `LHS_M`. The `_<` part of the justification name indicates the direction of the find/replace. You can think of as `LHS_M <- RHS_M` (showing that `RHS_M` is coming in for each `LHS_M`). Here is an example:
 
 ```text
 Deduce(
@@ -160,7 +160,7 @@ Deduce(
 )
 ```
 
-Here, `(claim)` rewrites `LINE_N` by substituting all ocurrences of `LHS_M` with `LHS_M`. We can think of as indicating `LHS_M > RHS_M` (showing that each `RHS_M` is becoming a `LHS_M`). Here is an example:
+Here, `(claim)` rewrites `LINE_N` by substituting all ocurrences of `LHS_M` with `LHS_M`. We can think of as indicating `LHS_M -> RHS_M` (showing that `LHS_M` is coming in for each `RHS_M`). Here is an example:
 
 ```text
 Deduce(
