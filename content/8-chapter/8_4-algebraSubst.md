@@ -132,7 +132,7 @@ Deduce(
 )
 ```
 
-`(claim)` rewrites `LINE_N` by substituting all ocurrences of `RHS_M` with `LHS_M`. The `_<` part of the justification name indicates the direction of the find/replace. You can think of as `LHS_M <- RHS_M` (showing that `RHS_M` is coming in for each `LHS_M`). Here is an example:
+`(claim)` rewrites `LINE_N` by substituting all occurrences of `RHS_M` with `LHS_M`. The `_<` part of the justification name indicates the direction of the find/replace. You can think of it as `LHS_M <- RHS_M` (showing that `RHS_M` is coming in for each `LHS_M`). Here is an example:
 
 ```text
 Deduce(
@@ -160,7 +160,7 @@ Deduce(
 )
 ```
 
-Here, `(claim)` rewrites `LINE_N` by substituting all ocurrences of `LHS_M` with `LHS_M`. We can think of as indicating `LHS_M -> RHS_M` (showing that `LHS_M` is coming in for each `RHS_M`). Here is an example:
+Here, `(claim)` rewrites `LINE_N` by substituting all occurrences of `LHS_M` with `RHS_M`. We can think of it as indicating `LHS_M -> RHS_M` (showing that `LHS_M` is coming in for each `RHS_M`). Here is an example:
 
 ```text
 Deduce(
