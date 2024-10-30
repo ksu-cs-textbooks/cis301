@@ -64,7 +64,12 @@ Modulo (%) works the same way in Scala (and Logika) as it does in other programm
 
 ### Modulo checks on denominator
 
-Before using the modulo operator in the form `numerator % denominator`, either in a line of code or as a claim in a proof block, you must have previously established that `denominator` is not 0. This must be done even if the denominator is a literal value (like 2), and can be demonstrated in the same way as we did with division.
+Before using the modulo operator in the form `numerator % denominator`, either in a line of code or as a claim in a proof block, you must have previously established one of the following:
+
+- `denominator != 0`
+- `denominator > 0`
+
+This must be done even if the denominator is a literal value (like 2), and can be demonstrated in the same way as we did with division.
 
 For example:
 
