@@ -6,9 +6,11 @@ As with propositional logic, we can use the Logika tool to help check the correc
 Sireum Logika In CIS 301, we will use a tool called Logika, which is a verifier and a proof checker for propositional, predicate, and programming logic. You will need to install the VS Code-based Sireum IVE (Integrated Verification Environment), which contains Logika.
 Getting Installer Script Go here to install Logika.
 Under “VSCodium-based IVE Only”, click either “Windows” or “macOS/Linux”. The instructions below should update based on your selection. Copy the command listed for your operating system.
-Installing and Running Sireum Logika - Windows For Windows users, open a command prompt and switch to the C:\\ drive by typing:
-cd C:\\Next, paste the command you copied in the previous step. You should immediately see feedback that your computer is fetching Sireum Logika.
-Once the installation is finished, open a file explorer and navigate to “C:\\Sireum\\bin\\win\\vscode”. In that folder, you should see the application “CodeIVE.exe”. Double-click that application to run it (if you see a popup that asks if you want to allow access to your computer, go ahead and choose that you want to do so).
+Installing and Running Sireum Logika - Windows For Windows users, open a File Explorer and navigate to C:\\Users\\<yourAccountName>. Select the text in the address bar like this:
+Type “cmd” to overwrite the selected text:
+And hit Enter. It should open up a command prompt that is already in your C:\\Users\\<yourAccountName> folder:
+In the command prompt, paste the installer command you copied in the previous step. You should immediately see feedback that your computer is fetching Sireum Logika.
+Once the installation is finished, open a file explorer and navigate to C:\\Users\\<yourAccountName>\\Sireum\\bin\\win\\vscode. In that folder, you should see the application “CodeIVE.exe”. Double-click that application to run it (if you see a popup that asks if you want to allow access to your computer, go ahead and choose that you want to do so).
 You may find it handy to pin the “CodeIVE.exe” application to your taskbar. You can do so by right-clicking the “CodeIVE.exe” file and selecting “Pin to taskbar”.
 Installation and Running Sireum Logika - Mac For Mac users, open a terminal window and paste the command you copied in the previous step. You should immediately see feedback that your computer is fetching Sireum Logika.
 Once the installation is finished, go to the finder and search for “CodeIVE”. You should see the application “CodeIVE.exe” - if you run it, it will open Sireum Logika.
