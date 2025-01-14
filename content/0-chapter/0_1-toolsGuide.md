@@ -60,7 +60,7 @@ Next, open Sireum VS Codium (by running the CodeIVE application). You should see
 
 ![Open Sireum](/images/openSireum.png)
 
-You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is C:\Sireum) and confirm your selection.
+You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is `C:\Users\<yourAccountName>\Applications\Sireum`) and confirm your selection.
 
 Next, click the third icon in the column on the left side (the one that looks like a circuit and says "Source Control" when you hover over it). You should see:
 
