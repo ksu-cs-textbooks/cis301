@@ -60,7 +60,7 @@ Next, open Sireum VS Codium (by running the CodeIVE application). You should see
 
 ![Open Sireum](/images/openSireum.png)
 
-You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is `C:\Users\<yourAccountName>\Applications\Sireum`) and confirm your selection.
+You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is `C:\Users\<yourAccountName>\Applications\Sireum`) and confirm your selection. If you are asked to reimport Sireum, choose Yes. (You may see an error about "No workspace folder...". You can ignore this. You can also close the terminal window at the bottom.)
 
 Next, click the third icon in the column on the left side (the one that looks like a circuit and says "Source Control" when you hover over it). You should see:
 
@@ -80,7 +80,7 @@ Click *Select as Repository Destination*. You should see a popup that asks if yo
 
 ![Clone Result](/images/clonedResult.png)
 
-Find the popup in the bottom right that asks if you want to import a Sireum project. Click *Yes*. (You may see an error about "No workspace folder...". You can ignore this. You can also close the terminal window at the bottom.)
+If you see a popup in the bottom right that asks if you want to import a Sireum project, then click *Yes*. 
 
 ## Installing Sireum Fonts
 
