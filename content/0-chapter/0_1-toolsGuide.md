@@ -33,7 +33,7 @@ And hit Enter. It should open up a command prompt that is already in your `C:\Us
 
 In the command prompt, paste the installer command you copied in the previous step. You should immediately see feedback that your computer is fetching Sireum Logika.
 
-Once the installation is finished, open a file explorer and navigate to `C:\Users\<yourAccountName>\Sireum\bin\win\vscode`. In that folder, you should see the application "CodeIVE.exe". Double-click that application to run it (if you see a popup that asks if you want to allow access to your computer, go ahead and choose that you want to do so).
+Once the installation is finished, open a file explorer and navigate to `C:\Users\<yourAccountName>\Applications\Sireum\bin\win\vscode`. In that folder, you should see the application "CodeIVE.exe". Double-click that application to run it (if you see a popup that asks if you want to allow access to your computer, go ahead and choose that you want to do so).
 
 You may find it handy to pin the "CodeIVE.exe" application to your taskbar. You can do so by right-clicking the "CodeIVE.exe" file and selecting "Pin to taskbar".
 
