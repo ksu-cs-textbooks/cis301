@@ -19,15 +19,21 @@ Under "VSCodium-based IVE Only", click either "Windows" or "macOS/Linux". The in
 
 ### Installing and Running Sireum Logika - Windows
 
-For Windows users, open a command prompt and switch to the C:\ drive by typing:
+For Windows users, open a File Explorer and navigate to `C:\Users\<yourAccountName>`. Select the text in the address bar like this:
 
-```
-cd C:\
-```
+![File Explorer](/images/fileExplorer.png)
 
-Next, paste the command you copied in the previous step. You should immediately see feedback that your computer is fetching Sireum Logika.
+Type "cmd" to overwrite the selected text:
 
-Once the installation is finished, open a file explorer and navigate to "C:\Sireum\bin\win\vscode". In that folder, you should see the application "CodeIVE.exe". Double-click that application to run it (if you see a popup that asks if you want to allow access to your computer, go ahead and choose that you want to do so).
+![cmd](/images/cmd.png)
+
+And hit Enter. It should open up a command prompt that is already in your `C:\Users\<yourAccountName>` folder:
+
+![Open Command Prompt](/images/cmdOpen.png)
+
+In the command prompt, paste the installer command you copied in the previous step. You should immediately see feedback that your computer is fetching Sireum Logika.
+
+Once the installation is finished, open a file explorer and navigate to `C:\Users\<yourAccountName>\Sireum\bin\win\vscode`. In that folder, you should see the application "CodeIVE.exe". Double-click that application to run it (if you see a popup that asks if you want to allow access to your computer, go ahead and choose that you want to do so).
 
 You may find it handy to pin the "CodeIVE.exe" application to your taskbar. You can do so by right-clicking the "CodeIVE.exe" file and selecting "Pin to taskbar".
 
