@@ -17,13 +17,13 @@ Once the installation is finished, go to the finder and search for “CodeIVE”
 How to Start Homework Assignments To start a homework assignment (or to clone any existing repository, including homework solutions and lecture examples), first:
 Click to “accept the assignment” from the link in Canvas (if you are cloning a homework assignment or solution). Go to the URL created for your assignment (or to the URL of the repository you want to clone). You should be looking at a website that looks something like this: Click the Green Code button, so that you see something like this:
 Next, open Sireum VS Codium (by running the CodeIVE application). You should see:
-You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is C:\\Users\\<yourAccountName>\\Applications\\Sireum) and confirm your selection.
+You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is C:\\Users\\<yourAccountName>\\Applications\\Sireum) and confirm your selection. If you are asked to reimport Sireum, choose Yes. (You may see an error about “No workspace folder…”. You can ignore this. You can also close the terminal window at the bottom.)
 Next, click the third icon in the column on the left side (the one that looks like a circuit and says “Source Control” when you hover over it). You should see:
 Click Clone Repository. Now you should see something like:
 Paste the URL you copied from GitHub in the textbox indicated above. Click “Clone from URL”.
 You will then be prompted to choose a folder to clone your repository into. Navigate to a folder on your computer specifically for CIS 301 (create one if it doesn’t exist). Create a new empty folder within that CIS 301 folder to hold this new project. Select that new folder in the selection dialog, so that you now have something like this:
 Click Select as Repository Destination. You should see a popup that asks if you want to open the cloned repository. Select “Open”. Next you should see something like:
-Find the popup in the bottom right that asks if you want to import a Sireum project. Click Yes. (You may see an error about “No workspace folder…”. You can ignore this. You can also close the terminal window at the bottom.)
+If you see a popup in the bottom right that asks if you want to import a Sireum project, then click Yes.
 Installing Sireum Fonts When you have Sireum VS Codium open, click the gear icon in the lower-right corner. Click the option that says “Command Palette”:
 Type “run” in the resulting textbox. Click the option that says: “Tasks: Run Task”.
 Next, click the “sireum” folder:
