@@ -60,7 +60,7 @@ Next, open Sireum VS Codium (by running the CodeIVE application). You should see
 
 ![Open Sireum](/images/openSireum.png)
 
-You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is `C:\Users\<yourAccountName>\Applications\Sireum`) and confirm your selection. If you are asked to reimport Sireum, choose Yes. (You may see an error about "No workspace folder...". You can ignore this. You can also close the terminal window at the bottom.)
+You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is `C:\Users\<yourAccountName>\Applications\Sireum`) and confirm your selection. If you are asked to reimport Sireum, choose Yes. (You may see an error about "No workspace folder...". You can ignore this. You can also close the terminal window at the bottom.) NOTE: you may not be asked to choose the Sireum installation folder until you first open a Sireum project. If that's the case for you, don't worry about it -- you should get this popup later on.
 
 Next, click the third icon in the column on the left side (the one that looks like a circuit and says "Source Control" when you hover over it). You should see:
 
