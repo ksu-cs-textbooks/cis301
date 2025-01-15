@@ -60,7 +60,7 @@ Next, open Sireum VS Codium (by running the CodeIVE application). You should see
 
 ![Open Sireum](/images/openSireum.png)
 
-You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is `C:\Users\<yourAccountName>\Applications\Sireum` and for Mac, this is `\Applications\Sireum`) and confirm your selection. NOTE: you may not be asked to choose the Sireum installation folder until you first open a Sireum project. If that's the case for you, don't worry about it -- you should get this popup later on.
+You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is `C:\Users\<yourAccountName>\Applications\Sireum` and for Mac, this is `/Users/<yourAccountName>/Applications/Sireum`) and confirm your selection. NOTE: you may not be asked to choose the Sireum installation folder until you first open a Sireum project or install Sireum fonts. If that's the case for you, don't worry about it -- you should get this popup later on.
 
 Next, click the third icon in the column on the left side (the one that looks like a circuit and says "Source Control" when you hover over it). You should see:
 
@@ -100,6 +100,8 @@ Finally, click "sireum: --install-fonts":
 
 ![Install Fonts](/images/installFonts.png)
 
+You might be asked for the installation location of Sireum at this point -- if so, it is `C:\Users\<yourAccountName>\Applications\Sireum`  for Windows and `/Users/<yourAccountName>/Applications/Sireum` for Mac.
+
 ## Running Logika Checker
 
 When you are ready to verify a Logika truth table or proof, click the gear icon in the lower-right corner and select "Command Palette":
@@ -116,7 +118,7 @@ Next, click the "sireum logika" folder:
 
 Finally, choose the option that says "sireum logika: verifier (file)". You should see either a popup that says "Logika verified", or you should see red error markings in your file indicating where the logic doesn't hold up. You can hover over these red error markings to get popups with more information on the error.
 
-As a shortcut to verify a proof or truth table, you can do: Ctrl-Shift-W.
+As a shortcut to verify a proof or truth table, you can do: `Ctrl-Shift-W` on Windows or `Command-Shift-W` on Mac.
 
 ## Committing and Pushing Changes
 
