@@ -17,7 +17,7 @@ Once the installation is finished, go to the finder and search for “CodeIVE”
 How to Start Homework Assignments To start a homework assignment (or to clone any existing repository, including homework solutions and lecture examples), first:
 Click to “accept the assignment” from the link in Canvas (if you are cloning a homework assignment or solution). Go to the URL created for your assignment (or to the URL of the repository you want to clone). You should be looking at a website that looks something like this: Click the Green Code button, so that you see something like this:
 Next, open Sireum VS Codium (by running the CodeIVE application). You should see:
-You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is C:\\Users\\<yourAccountName>\\Applications\\Sireum and for Mac, this is \\Applications\\Sireum) and confirm your selection. NOTE: you may not be asked to choose the Sireum installation folder until you first open a Sireum project. If that’s the case for you, don’t worry about it – you should get this popup later on.
+You will be asked to choose the installation folder of Sireum. Navigate to where Sireum is installed (for Windows, this is C:\\Users\\<yourAccountName>\\Applications\\Sireum and for Mac, this is /Users/<yourAccountName>/Applications/Sireum) and confirm your selection. NOTE: you may not be asked to choose the Sireum installation folder until you first open a Sireum project or install Sireum fonts. If that’s the case for you, don’t worry about it – you should get this popup later on.
 Next, click the third icon in the column on the left side (the one that looks like a circuit and says “Source Control” when you hover over it). You should see:
 Click Clone Repository. Now you should see something like:
 Paste the URL you copied from GitHub in the textbox indicated above. Click “Clone from URL”.
@@ -28,11 +28,12 @@ Installing Sireum Fonts When you have Sireum VS Codium open, click the gear icon
 Type “run” in the resulting textbox. Click the option that says: “Tasks: Run Task”.
 Next, click the “sireum” folder:
 Finally, click “sireum: –install-fonts”:
+You might be asked for the installation location of Sireum at this point – if so, it is C:\\Users\\<yourAccountName>\\Applications\\Sireum for Windows and /Users/<yourAccountName>/Applications/Sireum for Mac.
 Running Logika Checker When you are ready to verify a Logika truth table or proof, click the gear icon in the lower-right corner and select “Command Palette”:
 Type “run” in the resulting textbox. Click the option that says: “Tasks: Run Task”.
 Next, click the “sireum logika” folder:
 Finally, choose the option that says “sireum logika: verifier (file)”. You should see either a popup that says “Logika verified”, or you should see red error markings in your file indicating where the logic doesn’t hold up. You can hover over these red error markings to get popups with more information on the error.
-As a shortcut to verify a proof or truth table, you can do: Ctrl-Shift-W.
+As a shortcut to verify a proof or truth table, you can do: Ctrl-Shift-W on Windows or Command-Shift-W on Mac.
 Committing and Pushing Changes When you are finished working, commit and push your changes to GitHub. (I recommend doing this anytime you are at a stopping point, as well as when you are completely done.)
 To do this, first save all your files (File-Save or Ctrl-S). Make sure none of the open file tabs have a solid circle next to the file name – this is an indication that they are unsaved. When everything is saved, click the third icon in the column on the left side (the one that looks like a circuit and says “Source Control” when you hover over it). This is the same icon you clicked when cloning your repsitory.
 Type in something in the “Message” box, and choose “Commit”.
