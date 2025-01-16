@@ -233,10 +233,8 @@ T: [T T F] [T F T] [T F F] [F T T] [F T F] [F F T] [F F F]
 F: [T T T]
 ```
 
-If you typed everything correctly, you should see a popup in Sireum logika that says: "Logika Verified" with a purple checkmark:
+If you typed everything correctly and run a Logika check (`Ctrl-Shift-W` in Windows and `Command-Shift-W` on Mac), you should see a popup in Sireum logika that says: "Logika Verified" (yours will not have the purple checkmark, but will have the same text)
 
  ![truth table verified](/images/ttVerified.png)
 
 If you instead see red error markings, hover over them and read the explanations -- it means there are errors in your truth table.
-
-If you see no errors and no purple check, you will need to manually run Logika. Right-click in the text area that contains your truth table, and select "Logika Check (All in File)".
