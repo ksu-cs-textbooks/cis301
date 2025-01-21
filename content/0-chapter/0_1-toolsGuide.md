@@ -98,7 +98,9 @@ Finally, click "sireum: --install-fonts":
 
 ![Install Fonts](/images/installFonts.png)
 
-You might be asked for the installation location of Sireum at this point -- if so, it is `C:\Users\<yourAccountName>\Applications\Sireum`  for Windows and `/Users/<yourAccountName>/Applications/Sireum` for Mac.
+You might be asked for the installation location of Sireum at this point -- if so, it is `C:\Users\<yourAccountName>\Applications\Sireum`  for Windows and `/Users/<yourAccountName>/Applications/Sireum` for Mac. Windows users might need to type the location directly into the address bar if you can't find the `Applications` folder in the file explorer. 
+
+If the new fonts (which show logic symbols instead of characters like `&` and `|`) don't immediately appear, try restarting Sireum VS Codium.
 
 ## Running Logika Checker
 
@@ -118,8 +120,7 @@ Finally, choose the option that says "sireum logika: verifier (file)". You shoul
 
 As a shortcut to verify a proof or truth table, you can do: `Ctrl-Shift-W` on Windows or `Command-Shift-W` on Mac.
 
-NOTE: You might be asked to choose the installation folder of Sireum the first time you run the Logika checker. If you are, the installation folder is `C:\Users\<yourAccountName>\Applications\Sireum` for Windows and `/Users/<yourAccountName>/Applications/Sireum` for Mac.
-
+NOTE: You might be asked to choose the installation folder of Sireum the first time you run the Logika checker. If you are, the installation folder is `C:\Users\<yourAccountName>\Applications\Sireum` for Windows and `/Users/<yourAccountName>/Applications/Sireum` for Mac. Windows users might need to type the location directly into the address bar if you can't find the `Applications` folder in the file explorer. 
 
 
 ## Committing and Pushing Changes
