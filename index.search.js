@@ -27,13 +27,14 @@ Installing Sireum Fonts When you have Sireum VS Codium open, click the gear icon
 Type “run” in the resulting textbox. Click the option that says: “Tasks: Run Task”.
 Next, click the “sireum” folder:
 Finally, click “sireum: –install-fonts”:
-You might be asked for the installation location of Sireum at this point – if so, it is C:\\Users\\<yourAccountName>\\Applications\\Sireum for Windows and /Users/<yourAccountName>/Applications/Sireum for Mac.
+You might be asked for the installation location of Sireum at this point – if so, it is C:\\Users\\<yourAccountName>\\Applications\\Sireum for Windows and /Users/<yourAccountName>/Applications/Sireum for Mac. Windows users might need to type the location directly into the address bar if you can’t find the Applications folder in the file explorer.
+If the new fonts (which show logic symbols instead of characters like & and |) don’t immediately appear, try restarting Sireum VS Codium.
 Running Logika Checker When you are ready to verify a Logika truth table or proof, click the gear icon in the lower-right corner and select “Command Palette”:
 Type “run” in the resulting textbox. Click the option that says: “Tasks: Run Task”.
 Next, click the “sireum logika” folder:
 Finally, choose the option that says “sireum logika: verifier (file)”. You should see either a popup that says “Logika verified”, or you should see red error markings in your file indicating where the logic doesn’t hold up. You can hover over these red error markings to get popups with more information on the error.
 As a shortcut to verify a proof or truth table, you can do: Ctrl-Shift-W on Windows or Command-Shift-W on Mac.
-NOTE: You might be asked to choose the installation folder of Sireum the first time you run the Logika checker. If you are, the installation folder is C:\\Users\\<yourAccountName>\\Applications\\Sireum for Windows and /Users/<yourAccountName>/Applications/Sireum for Mac.
+NOTE: You might be asked to choose the installation folder of Sireum the first time you run the Logika checker. If you are, the installation folder is C:\\Users\\<yourAccountName>\\Applications\\Sireum for Windows and /Users/<yourAccountName>/Applications/Sireum for Mac. Windows users might need to type the location directly into the address bar if you can’t find the Applications folder in the file explorer.
 Committing and Pushing Changes When you are finished working, commit and push your changes to GitHub. (I recommend doing this anytime you are at a stopping point, as well as when you are completely done.)
 To do this, first save all your files (File-Save or Ctrl-S). Make sure none of the open file tabs have a solid circle next to the file name – this is an indication that they are unsaved. When everything is saved, click the third icon in the column on the left side (the one that looks like a circuit and says “Source Control” when you hover over it). This is the same icon you clicked when cloning your repsitory.
 Type in something in the “Message” box, and choose “Commit”.
