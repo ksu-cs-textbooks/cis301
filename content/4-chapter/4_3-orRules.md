@@ -119,7 +119,7 @@ Here is a simple example showing the syntax of the `OrE` rule:
 
         2 SubProof(
             3 Assume (  p  ),
-            4 (     q ∨ p      )           by OrI12(3)
+            4 (     q ∨ p      )           by OrI2(3)
         ),
         5 SubProof(
             6 Assume (  q   ),
