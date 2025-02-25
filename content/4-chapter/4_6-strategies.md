@@ -54,14 +54,14 @@ Rule syntax summaries:
 ```text
     ...
     x (     p       )		by (...),
-    y (     p ∨ q   )       by AndE1(x),
+    y (     p ∨ q   )       by OrI1(x),
     ...
 ```
 
 ```text
     ...
     x (     q       )		by (...),
-    y (     p ∨ q   )       by AndE2(x),
+    y (     p ∨ q   )       by OrI2(x),
     ...
 ```
 
