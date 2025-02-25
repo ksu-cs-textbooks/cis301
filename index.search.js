@@ -490,7 +490,7 @@ AND rules Rule summaries:
 P Q P ∧ Q P ∧ Q AndI : --------- AndE1 : ---------- AndE2 : ---------- P ∧ Q P QRule syntax summaries:
 ... x ( p )	by (...), y ( q	) by (...), z ( p ∧ q ) by AndI(x, y), ... ... x ( p ∧ q )	by (...), y ( p	) by AndE1(x), z ( q ) by AndE2(y), ...OR rules Rule summaries:
 SubProof( SubProof( Assume ( P ), Assume (Q ), P ∨ Q ... ... R ... R } R P Q ), ), OrI1 : --------- OrI2 : ---------- OrE : ------------------------------------------------------- P ∨ Q P ∨ Q RRule syntax summaries:
-... x ( p )	by (...), y ( p ∨ q ) by AndE1(x), ... ... x ( q )	by (...), y ( p ∨ q ) by AndE2(x), ... ... a ( p ∨ q ) by (...), b SubProof( c Assume( p ), ... d ( r ) by (...) ), f SubProof( g Assume( q ), ... h ( r ) by (...) ), i ( r ) by OrE(a, b, f),Implies rules Rule summaries:
+... x ( p )	by (...), y ( p ∨ q ) by OrI1(x), ... ... x ( q )	by (...), y ( p ∨ q ) by OrI2(x), ... ... a ( p ∨ q ) by (...), b SubProof( c Assume( p ), ... d ( r ) by (...) ), f SubProof( g Assume( q ), ... h ( r ) by (...) ), i ( r ) by OrE(a, b, f),Implies rules Rule summaries:
 SubProof( Assume( P ), ... Q P → Q P ), ImplyE : ------------- ImplyI : ---------------- Q P → Q Rule syntax summaries:
 ... x ( p → q ) by (...),	y ( p ) by (...), z ( q ) by ImplyE(x, y), ... ... a SubProof( b Assume( p ), ... c ( q ) by (...) ), d ( p → q ) by ImplyI(a), ...Negation rules Rule summaries:
 P ¬P NegE : ---------- F SubProof( Assume ( P ), ... F ), NegI : -------------- ¬P F BottomE : ------ for any proposition, Q, at all Q SubProof( Assume( ¬P ), ... F ), PbC: -------------------- PRule syntax summaries:
