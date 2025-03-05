@@ -581,10 +581,10 @@ Finally, consider this proposition:
 If our domain includes a dog that has four legs If our domain includes an animal that is not a dog We likely only meant to include the first case. In that case, we would want to say, There exists a dog that has four legs – here is that translation:
 ∃ x (isDog(x) ∧ hasFourLegs(x))We will usually want to use the ∧ operator instead of the → operator when writing a proposition about one/some individuals.
 Predicates from math All of our examples in this section involved predicates over domains like people, animals, or living things. A different domain that we are used to working with is some set of numbers: the integers, the positive numbers, the rational numbers, etc.
-Perhaps our domain is the set of all integers. Then > is a predicate with two parameters – x > y is defined as whether x is bigger than y, for two integers x and y. We might write:
-∀ x (x + 1 > x)Because for all integers, x + 1 is bigger than x. We might also write:
-∃ x (x > x * x * x)Because -4 > -4 * -4 * -4, i.e., -4 > -64. The same is true for any negative number.
-Other common predicates in math are: <, <=, >=, ==, and !=.
+Perhaps our domain is the set of all integers. Then >= is a predicate with two parameters – x >= y is defined as whether x is greater than or equal to y, for two integers x and y. We might write:
+∀ x (x + 1 >= x)Because for all integers, x + 1 is greater than or equal to x. We might also write:
+∃ x (x >= x * x * x)Because -4 >= -4 * -4 * -4, i.e., -4 >= -64. The same is true for any negative number.
+Other common predicates in math are: <, >, <=, ==, and !=.
 Quantifier symbols The official symbol for the universal quantifier (“for all”) is an upside-down A, like this: ∀. You are welcome to substitute either a capital A, or with the word all or forall. This will be especially handy when we reach Chapter 6 on writing proofs in predicate logic.
 The official symbol for the existential quantifier (“there exists”) is a backwards E, like this: ∃. You are welcome to substitute either a capital E, or with the word some or exists.`,description:`In this section, we will examine the syntax for translating English sentences to predicate logic. We will still create propositions (statements that are either true or false) using logical connectives (∧, ∨, →, and ¬), but now we will identify the following from our English sentences
 predicates: these will be the verbs in the sentences individuals: these will be the nouns in the sentences quantifiers: these will help us specify if we mean all individuals or at least one individualDomains Predicate logic involves expressing truth about a set of individuals.`,tags:[],title:"Syntax",uri:"/cis301/5-chapter/5_2-predsyntax/"},{breadcrumb:"Predicate Logic Translations",content:`In this section, we will see how to translate simpler statements between English to predicate logic. These translations will involve a single quantifier.
