@@ -145,21 +145,21 @@ We will usually want to use the `∧` operator instead of the `→` operator whe
 
 All of our examples in this section involved predicates over domains like people, animals, or living things. A different domain that we are used to working with is some set of numbers: the integers, the positive numbers, the rational numbers, etc. 
 
-Perhaps our domain is the set of all integers. Then `>` is a predicate with two parameters -- `x > y` is defined as whether `x` is bigger than `y`, for two integers `x` and `y`. We might write:
+Perhaps our domain is the set of all integers. Then `>=` is a predicate with two parameters -- `x >= y` is defined as whether `x` is greater than or equal to `y`, for two integers `x` and `y`. We might write:
 
 ```text
-∀ x (x + 1 > x)
+∀ x (x + 1 >= x)
 ```
 
-Because for all integers, `x + 1` is bigger than `x`. We might also write:
+Because for all integers, `x + 1` is greater than or equal to `x`. We might also write:
 
 ```text
-∃ x (x > x * x * x)
+∃ x (x >= x * x * x)
 ```
 
-Because -4 > -4 * -4 * -4, i.e., -4 > -64. The same is true for any negative number.
+Because -4 >= -4 * -4 * -4, i.e., -4 >= -64. The same is true for any negative number.
 
-Other common predicates in math are: `<`, `<=`, `>=`, `==`, and `!=`.
+Other common predicates in math are: `<`, `>`, `<=`, `==`, and `!=`.
 
 ## Quantifier symbols
 
