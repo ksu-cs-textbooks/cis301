@@ -221,7 +221,7 @@ Proof (
     2 (     ∀((x: T) => isStudent(x))                                       )   by Premise,
 
     3 Let ( (bob: T) => SubProof(
-        4 (     isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)             )   by AllE[T](1),
+        4 (     isStudent(bob) → hasPhone(bob) ∨ hasLaptop(bob)             )   by AllET(1),
         5 (     isStudent(bob)                                              )   by AllE[T](2),
         6 (     hasPhone(bob) ∨ hasLaptop(bob)                              )   by ImplyE(4, 5)
     )),
