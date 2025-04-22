@@ -269,23 +269,6 @@ def plusOne(n: Z): Z = {
 ////////// Test code ///////////////
 
 var x: Z = 5
-Deduce(
-    1  (    x == 5  )   by Premise,
-    2  (    x >= 0  )   by Algebra*(1)
-)
-
-var added: Z = plusOne(x)
-
-Deduce(
-    1  (    x == 5                  ) by Premise,
-    2  (    added == x + 1          ) by Premise,
-    3  (    added > 0               ) by Premise,
-    4  (    added == 6              ) by Algebra*(1, 2),
-    5  (    added == ∧ & added > 0  ) by AndI(4, 3)
-)
-assert(added == 6 ∧ added > 0)
-
-var x: Z = 5
 
 Deduce(
     1 (     x == 5      )   by Premise,     //from the "x=5" assignment
