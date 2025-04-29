@@ -43,8 +43,8 @@ import org.sireum._
 
 def mult(m: Z, n: Z): Z = {
     Contract(
-        Requires(m >= 0 & n >= 0),  //precondition: y should be nonnegative
-        Ensures(Res[Z] == m * n)    //postcondition (we promise to return x*y)
+        Requires(n >= 0),  //precondition: n should be nonnegative
+        Ensures(Res[Z] == m * n)    //postcondition (we promise to return m*n)
     )
 
     var r: Z = 0

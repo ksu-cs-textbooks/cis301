@@ -248,8 +248,8 @@ Here is the corrected `deposit` function:
 def deposit(amount: Z): Unit = {
     Contract(
         Requires( amount >= 0 ),
-        Modifies( balance, elit e),
-        Ensures( In(balance) == balance - amount )
+        Modifies( balance, elite ),
+        Ensures( In(balance) == balance + amount )
     )
 
     balance = balance + amount

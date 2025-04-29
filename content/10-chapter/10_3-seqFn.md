@@ -52,7 +52,7 @@ Contract(
 )
 ```
 
-However, there is actually a third portion of the function contract that we have ommitted until this point -- the `Modifies` clause. This clause is required whenever a function changes the values in a sequence parameter or changes global variables. For example, the `makeFirstZero` function DOES change its sequence parameter, `seq`, as it sets its first position to 0. `makeFirstZero` should therefore include this `Modifies` clause:
+However, there is actually a third portion of the function contract that we have omitted until this point -- the `Modifies` clause. This clause is required whenever a function changes the values in a sequence parameter or changes global variables. For example, the `makeFirstZero` function DOES change its sequence parameter, `seq`, as it sets its first position to 0. `makeFirstZero` should therefore include this `Modifies` clause:
 
 ```text
 Modifies ( seq ),

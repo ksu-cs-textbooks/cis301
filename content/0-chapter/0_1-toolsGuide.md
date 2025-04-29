@@ -19,7 +19,7 @@ Select either "Windows" or "macOS/Linux". The instructions below should update b
 
 ### Installing and Running Sireum Logika - Windows
 
-For Windows users, open a File Explorer and navigate to `C:\Users\<yourAccountName>`. Select the text in the address bar like this:
+For Windows users, open a File Explorer and navigate to `C:\Users\<yourAccountName>\Applications`. Select the text in the address bar like this:
 
 ![File Explorer](/images/fileExplorer.png)
 
@@ -27,7 +27,7 @@ Type "cmd" to overwrite the selected text:
 
 ![cmd](/images/cmd.png)
 
-And hit Enter. It should open up a command prompt that is already in your `C:\Users\<yourAccountName>` folder:
+And hit Enter. It should open up a command prompt that is already in your `C:\Users\<yourAccountName>\Applications` folder:
 
 ![Open Command Prompt](/images/cmdOpen.png)
 
@@ -127,7 +127,7 @@ NOTE: You might be asked to choose the installation folder of Sireum the first t
 
 When you are finished working, commit and push your changes to GitHub. (I recommend doing this anytime you are at a stopping point, as well as when you are completely done.)
 
-To do this, first save all your files (File-Save or Ctrl-S). Make sure none of the open file tabs have a solid circle next to the file name -- this is an indication that they are unsaved. When everything is saved, click the third icon in the column on the left side (the one that looks like a circuit and says "Source Control" when you hover over it). This is the same icon you clicked when cloning your repsitory.
+To do this, first save all your files (File-Save or Ctrl-S). Make sure none of the open file tabs have a solid circle next to the file name -- this is an indication that they are unsaved. When everything is saved, click the third icon in the column on the left side (the one that looks like a circuit and says "Source Control" when you hover over it). This is the same icon you clicked when cloning your repository.
 
 Type in something in the "Message" box, and choose "Commit".
 
