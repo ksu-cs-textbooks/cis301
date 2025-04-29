@@ -58,7 +58,7 @@ And we can then translate the recursive definition to a Logika fact:
 )
 ```
 
-Let's consider each portion of this proof function. Here, `factDef` is the name given to the proof function. It takes one parameter, `n`, which is an integer, and it returns an integer. We have two possible ways of calculating the value for the proof function, which we detail in `factorialFacts`. First, we define our base case:
+Let's consider each portion of this proof function. Here, `factFunction` is the name given to the proof function. It takes one parameter, `n`, which is an integer, and it returns an integer. We have two possible ways of calculating the value for the proof function, which we detail in `factorialFacts`. First, we define our base case:
 
 ```text
 factFunction(1) == 1

@@ -184,7 +184,7 @@ Deduce(
     1 (     y == temp           )   by Premise,     //from the assignment statement
     2 (     temp == xOrig       )   by Premise,     //from the previous proof block (temp and xOrig are unchanged since)
     3 (     yOrig == Old(y)     )   by Premise,     //yOrig equaled the OLD value of y
-    4 (     x == xOrig          )   by Algebra*(1, 2),
+    4 (     y == xOrig          )   by Algebra*(1, 2),
     5 (     x == yOrig          )   by Premise,     //from the previous proof block (x and yOrig are unchanged since)  
     6 (     x == yOrig ∧ y == xOrig )   by AndI(5, 4)
 )
