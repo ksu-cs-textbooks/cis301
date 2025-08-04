@@ -52,6 +52,8 @@ To start a homework assignment (or to clone any existing repository, including h
 
 ![GitHub assignment](/images/gitHubAssign.png)
 
+### Get repo URL
+
 Click the Green *Code* button, so that you see something like this:
 
 ![GitHub clone](/images/gitHubClone.png)
@@ -122,22 +124,31 @@ As a shortcut to verify a proof or truth table, you can do: `Ctrl-Shift-W` on Wi
 
 NOTE: You might be asked to choose the installation folder of Sireum the first time you run the Logika checker. If you are, the installation folder is `C:\Users\<yourAccountName>\Applications\Sireum` for Windows and `/Users/<yourAccountName>/Applications/Sireum` for Mac. Windows users might need to type the location directly into the address bar if you can't find the `Applications` folder in the file explorer. 
 
-
 ## Committing and Pushing Changes
 
 When you are finished working, commit and push your changes to GitHub. (I recommend doing this anytime you are at a stopping point, as well as when you are completely done.)
 
-To do this, first save all your files (File-Save or Ctrl-S). Make sure none of the open file tabs have a solid circle next to the file name -- this is an indication that they are unsaved. When everything is saved, click the third icon in the column on the left side (the one that looks like a circuit and says "Source Control" when you hover over it). This is the same icon you clicked when cloning your repository.
+To do this, first save all your files (File-Save or Ctrl-S). Make sure none of the open file tabs have a solid circle next to the file name -- this is an indication that they are unsaved. When everything is saved, open the integrated terminal in Code IVE by choosing View->Terminal. From there, type:
 
-Type in something in the "Message" box, and choose "Commit".
+```text
+git add .
+```
 
- ![Commit](/images/commit.png)
+This will add all changes to the current commit. Then type:
 
-Next, click the button that says "Sync Changes" to push your commit to your remote repository:
+```text
+git commit -m "descriptive message"
+```
 
- ![Push](/images/push.png)
+to create a local commit, where "descriptive message" is replaced with a message describing your changes (you DO need to include the quotations). Finally, push your local commit to your remote repository:
 
-If you go back to the URL of your GitHub repository and refresh the page, you should see your latest work.
+```text
+git push
+```
+
+If you go to your GitHub repository URL and refresh the page, you should see the latest changes.
+
+If you have any errors using a `git` command, refer to the next section ("git Install" for instructions on getting the command-line version of `git`).
 
 Homework 0 will help you test the GitHub process. 
 
