@@ -1,379 +1,357 @@
-<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="A loop is a command that restarts itself over and over while its loop condition remains true. Loops are trickier to analyze than if/else statements, because we don’t know how many times the loop will execute. The loop condition might be initially false, in which case we would skip the body of the loop entirely. Or, the loop might go through 1 iteration, or 10 iterations, or 100 iterations…we don’t know."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Loops :: CIS 301 Textbook"><meta name=twitter:description content="A loop is a command that restarts itself over and over while its loop condition remains true. Loops are trickier to analyze than if/else statements, because we don’t know how many times the loop will execute. The loop condition might be initially false, in which case we would skip the body of the loop entirely. Or, the loop might go through 1 iteration, or 10 iterations, or 100 iterations…we don’t know."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/9-chapter/9_3-loops/embed.html"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Loops :: CIS 301 Textbook"><meta property="og:description" content="A loop is a command that restarts itself over and over while its loop condition remains true. Loops are trickier to analyze than if/else statements, because we don’t know how many times the loop will execute. The loop condition might be initially false, in which case we would skip the body of the loop entirely. Or, the loop might go through 1 iteration, or 10 iterations, or 100 iterations…we don’t know."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Functions and Loops"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2024-05-28T14:22:57-05:00"><meta itemprop=name content="Loops :: CIS 301 Textbook"><meta itemprop=description content="A loop is a command that restarts itself over and over while its loop condition remains true. Loops are trickier to analyze than if/else statements, because we don’t know how many times the loop will execute. The loop condition might be initially false, in which case we would skip the body of the loop entirely. Or, the loop might go through 1 iteration, or 10 iterations, or 100 iterations…we don’t know."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2024-05-28T14:22:57-05:00"><meta itemprop=wordCount content="3789"><title>Loops :: CIS 301 Textbook</title>
-<link href=https://textbooks.cs.ksu.edu/cis301/9-chapter/9_3-loops/ rel=canonical type=text/html title="Loops :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_3-loops/index.xml rel=alternate type=application/rss+xml title="Loops :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_3-loops/index.print.html rel=alternate type=text/html title="Loops :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_3-loops/tele.html rel=alternate type=text/html title="Loops :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1754341382 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1754341382 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1754341382 rel=stylesheet><link href=/cis301/css/auto-complete.css?1754341382 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1754341382 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1754341382 rel=stylesheet><link href=/cis301/css/fonts.css?1754341382 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1754341382 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1754341382 rel=stylesheet><link href=/cis301/css/theme-light-theme.css?1754341382 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-relearn-light.css?1754341382 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1754341382 rel=stylesheet><link href=/cis301/css/print.css?1754341382 rel=stylesheet media=print><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["light-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1754341382 rel=stylesheet></head><body class="mobile-support embed disableInlineCopyToClipboard" data-url=/cis301/9-chapter/9_3-loops/embed.html><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><p>A <em>loop</em> is a command that restarts itself over and over while its <em>loop condition</em> remains true. Loops are trickier to analyze than if/else statements, because we don&rsquo;t know how many times the loop will execute. The loop condition might be initially false, in which case we would skip the body of the loop entirely. Or, the loop might go through 1 iteration, or 10 iterations, or 100 iterations&mldr;we don&rsquo;t know. We want a way to analyze what we know to be true after the loop ends, regardless of how many iterations it makes.</p><p>The only loop available in Logika is a <em>while</em> loop, which behaves in the same way as while loops in other languages. If the loop condition is initially false, then the body of the while loop is skipped entirely. If the loop condition is initially true, then we execute the loop body and then recheck the condition. This continues until the loop condition becomes false.</p><p>Here is the syntax of a Scala while loop:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>while (condition) {
-</span></span><span class=line><span class=cl>   //body of loop
-</span></span><span class=line><span class=cl>}</span></span></code></pre></div><h2 id=loop-invariants>Loop invariants</h2><p>Our solution to analyzing loops despite not knowing the number of iterations is a tool called a <em>loop invariant</em>. The job of the loop invariant is to summarize what is always true about the loop. Often, the loop invariant describes the relationship between variables and demonstrates how much progress the loop has made. Sometimes the loop invariant also contains claims that certain variables will always stay in a particular range.</p><p>Whatever we choose as the loop invariant, we must be able to do the following:</p><ul><li>Prove the loop invariant is true before the loop begins</li><li>Assume the loop invariant is true at the beginning of an iteration, and prove that the invariant is STILL true at the end of the iteration</li></ul><h2 id=loop-invariants-and-mathematical-induction>Loop invariants and mathematical induction</h2><p>The process of proving the correctness of loop invariants is very similar to a mathematical induction proof. We must prove the loop invariant is true before the loop begins, which is analogous to the <em>base case</em> in mathematical induction. The process of assuming the invariant is true at the beginning of an iteration and proving that it is still true at the end of an iteration is just like mathematical induction&rsquo;s <em>inductive step</em>.</p><p>If we prove those two things about our invariant, we can be certain the invariant will still hold after the loop terminates. Why? For the same reason mathematical induction proves a property for a general
-<span class="math align-center">$n$</span>:</p><ul><li>We know the invariant holds before the loop begins</li><li>Because the invariant holds before the loop begins, we are sure it holds at the beginning of the first iteration</li><li>Because we&rsquo;ve proved the invariant still holds at the end of each iteration, we&rsquo;re sure it still holds at the end of the first iteration</li><li>Because we&rsquo;re sure it still holds at the end of the first iteration, we know it holds at the beginning of the second iteration</li><li>Because we&rsquo;ve proved the invariant still holds at the end of each iteration, we&rsquo;re sure it still holds at the end of the second iteration
-&mldr;</li><li>We&rsquo;re sure the invariant still holds at the end of each iteration, including the end of the LAST iteration. Thus we&rsquo;re certain the invariant holds just after the loop ends.</li></ul><h2 id=loop-invariant-block-syntax>Loop invariant block syntax</h2><p>In Logika, we will write a <em>loop invariant block</em> to describe our loop invariants. This block will go just inside the loop, before the loop body:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>while (condition) {
-</span></span><span class=line><span class=cl>    Invariant(
-</span></span><span class=line><span class=cl>        Modifies(comma-separated list of variables),
-</span></span><span class=line><span class=cl>        Invariant_1,
-</span></span><span class=line><span class=cl>        Invariant_2,
-</span></span><span class=line><span class=cl>        ...
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //loop body
-</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>Here is a summary of the different loop invariant clauses:</p><ul><li><code>Modifies</code>: uses a comma-separated list to name each variable whose value changes in the loop body</li><li><code>Invariant_i</code>: lists an invariant for the function. If we have multiple invariants, we can list them on separate lines (<code>Invariant_1</code>, <code>Invariant_2</code>, etc.)</li></ul><h2 id=example-loop-invariant-block-for-a-multiplication-loop>Example: loop invariant block for a multiplication loop</h2><p>Suppose we have the following loop to multiply two numbers, <code>x</code> and <code>y</code>, using repeated addition. (This is very similar to our <code>mult</code> function from section 9.2, except it does the additions using a loop instead of using recursion):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
-</span></span><span class=line><span class=cl>//@Logika: --manual --background save
-</span></span><span class=line><span class=cl>import org.sireum._
-</span></span><span class=line><span class=cl>import org.sireum.justification._
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>val x: Z = Z.read()
-</span></span><span class=line><span class=cl>val y: Z = Z.read()
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var sum: Z = 0
-</span></span><span class=line><span class=cl>var count: Z = 0
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>while (count != y) {
-</span></span><span class=line><span class=cl>    sum = sum + x
-</span></span><span class=line><span class=cl>    count = count + 1
-</span></span><span class=line><span class=cl>}
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//now sum is x*y</span></span></code></pre></div><p>Before writing the loop invariant block, let&rsquo;s make a table showing the values of different variables at different points in the loop:</p><table><thead><tr><th>Variable</th><th>Before loop</th><th>After iteration 1</th><th>After iteration 2</th><th>After iteration 3</th><th>&mldr;</th><th>After iteration y</th></tr></thead><tbody><tr><td><code>count</code></td><td>0</td><td>1</td><td>2</td><td>3</td><td>&mldr;</td><td>y</td></tr><tr><td><code>sum</code></td><td><span class="math align-center">$0 (= 0*x)$</span></td><td><span class="math align-center">$x (= 1*x)$</span></td><td><span class="math align-center">$x + x (= 2*x)$</span></td><td><span class="math align-center">$x + x + x (= 3*x)$</span></td><td>&mldr;</td><td><span class="math align-center">$x + x + ... + x (= y*x)$</span></td></tr></tbody></table><p>Before the loop begins, we&rsquo;ve added 0
-<span class="math align-center">$x$</span>&rsquo;s together, so the sum is 0. After the first iteration, we&rsquo;ve added 1
-<span class="math align-center">$x$</span> together, so the sum is
-<span class="math align-center">$x$</span>. After the second iteration, we&rsquo;ve added 2
-<span class="math align-center">$x$</span>&rsquo;s together, so the sum is
-<span class="math align-center">$x + x$</span> which is really
-<span class="math align-center">$2 * x$</span>. This continues until after the y-th iteration, when we&rsquo;ve added y
-<span class="math align-center">$x$</span>&rsquo;s together (and the sum is
-<span class="math align-center">$y*x$</span>).</p><p>Using this table, it is easy to see that at any point, <code>sum == count*x</code> (since <code>count</code> tracks the number of iterations). This is true both before the loop begins and at the end of each iteration, so it will be our loop invariant.</p><p>We now add a loop invariant block to our loop:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
-</span></span><span class=line><span class=cl>//@Logika: --manual --background save
-</span></span><span class=line><span class=cl>import org.sireum._
-</span></span><span class=line><span class=cl>import org.sireum.justification._
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>val x: Z = Z.read()
-</span></span><span class=line><span class=cl>val y: Z = Z.read()
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var sum: Z = 0
-</span></span><span class=line><span class=cl>var count: Z = 0
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>while (count != y) {
-</span></span><span class=line><span class=cl>    //loop invariant block (still needs to be proved)
-</span></span><span class=line><span class=cl>    Invariant(
-</span></span><span class=line><span class=cl>        Modifies(sum, count),
-</span></span><span class=line><span class=cl>        sum == count * x
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    sum = sum + x
-</span></span><span class=line><span class=cl>    count = count + 1
-</span></span><span class=line><span class=cl>}
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//now sum is x*y</span></span></code></pre></div><p>We list <code>sum</code> and <code>count</code> in the <code>Modifies</code> clause because those are the two variables that change value inside the loop.</p><h2 id=proving-the-loop-invariant>Proving the loop invariant</h2><p>In order to prove the correctness of a loop, we must do two things:</p><ul><li>Prove the loop invariant is true before the loop begins</li><li>Assume the loop invariant is true at the beginning of an iteration, and prove that the invariant is STILL true at the end of the iteration</li></ul><h3 id=proving-loop-invariant-before-loop-begins>Proving loop invariant before loop begins</h3><p>In our multiplication loop above, let&rsquo;s start by proving the loop invariant before the loop begins. This means that just before the loop, we must prove exactly the claim <code>sum == count*x</code>. We can do this with algebra on the current variable values:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
-</span></span><span class=line><span class=cl>//@Logika: --manual --background save
-</span></span><span class=line><span class=cl>import org.sireum._
-</span></span><span class=line><span class=cl>import org.sireum.justification._
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>val x: Z = Z.read()
-</span></span><span class=line><span class=cl>val y: Z = Z.read()
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var sum: Z = 0
-</span></span><span class=line><span class=cl>var count: Z = 0
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//prove the invariant before the loop begins
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     sum == 0        )   by Premise,         //from the &#34;sum = 0&#34; assignment
-</span></span><span class=line><span class=cl>    2 (     count == 0      )   by Premise,         //from the &#34;count = 0&#34; assignment
-</span></span><span class=line><span class=cl>    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>while (count != y) {
-</span></span><span class=line><span class=cl>    Invariant(
-</span></span><span class=line><span class=cl>        Modifies(sum, count),
-</span></span><span class=line><span class=cl>        sum == count * x
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    sum = sum + x
-</span></span><span class=line><span class=cl>    count = count + 1
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //we still need to prove the invariant after each iteration
-</span></span><span class=line><span class=cl>}
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//now sum is x*y</span></span></code></pre></div><h3 id=proving-loop-invariant-at-the-end-of-each-iteration>Proving loop invariant at the end of each iteration</h3><p>To prove the loop invariant still holds at the end of an iteration, we must have a logic block at the end of the loop body with exactly the claim in the loop invariant (which will now be referring to the updated values of each variable). Since this step has us assuming the loop invariant is true at the beginning of each iteration, we can list the loop invariant as a <em>premise</em> in a logic block just inside the loop body. Here is the structure we wish to follow for our multiplication loop:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>while (count != y) {
-</span></span><span class=line><span class=cl>    Invariant(
-</span></span><span class=line><span class=cl>        Modifies(sum, count),
-</span></span><span class=line><span class=cl>        sum == count * x
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    Deduce(
-</span></span><span class=line><span class=cl>        1 (     sum == count*x      )   by Premise,     //the loop invariant holds
-</span></span><span class=line><span class=cl>                                                        //at the beginning of an iteration
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    sum = sum + x
-</span></span><span class=line><span class=cl>    count = count + 1
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //need to prove exactly &#34;sum == count*x&#34;
-</span></span><span class=line><span class=cl>    //to prove our invariant still holds at the end of an iteration
-</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>We can complete the loop invariant proof by using our tools for processing assignment statements with mutations. Here is the completed verification:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
-</span></span><span class=line><span class=cl>//@Logika: --manual --background save
-</span></span><span class=line><span class=cl>import org.sireum._
-</span></span><span class=line><span class=cl>import org.sireum.justification._
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>val x: Z = Z.read()
-</span></span><span class=line><span class=cl>val y: Z = Z.read()
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var sum: Z = 0
-</span></span><span class=line><span class=cl>var count: Z = 0
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//prove the invariant before the loop begins
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     sum == 0        )   by Premise,         //from the &#34;sum = 0&#34; assignment
-</span></span><span class=line><span class=cl>    2 (     count == 0      )   by Premise,         //from the &#34;count = 0&#34; assignment
-</span></span><span class=line><span class=cl>    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>while (count != y) {
-</span></span><span class=line><span class=cl>    Invariant(
-</span></span><span class=line><span class=cl>        Modifies(sum, count),
-</span></span><span class=line><span class=cl>        sum == count * x
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    Deduce(
-</span></span><span class=line><span class=cl>        1 (     sum == count*x      )   by Premise,     //the loop invariant holds
-</span></span><span class=line><span class=cl>                                                        //at the beginning of an iteration
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    sum = sum + x
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    Deduce(
-</span></span><span class=line><span class=cl>        1 (     sum == Old(sum) + x     )   by Premise,         //from &#34;sum = sum + x&#34; assignment
-</span></span><span class=line><span class=cl>        2 (     Old(sum) == count*x     )   by Premise,         //loop invariant WAS true, but sum just changed
-</span></span><span class=line><span class=cl>        3 (     sum == count*x + x      )   by Algebra*(1,2)    //current knowledge without using Old
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    count = count + 1
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    Deduce(
-</span></span><span class=line><span class=cl>        1 (     count == Old(count)+ 1  )   by Premise,         //from &#34;count = count + 1&#34; assignment
-</span></span><span class=line><span class=cl>        2 (     sum == Old(count)*x + x )   by Premise,         //from previous &#34;sum = count*x + x&#34;, 
-</span></span><span class=line><span class=cl>                                                                //but count has changed
-</span></span><span class=line><span class=cl>        3 (     sum == (count-1)*x + x  )   by Algebra*(1,2),
-</span></span><span class=line><span class=cl>        4 (     sum == count*x - x + x  )   by Algebra*(3),
-</span></span><span class=line><span class=cl>        5 (     sum == count*x          )   by Algebra*(4)      //loop invariant holds at end of iteration
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>}
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//now sum is x*y</span></span></code></pre></div><h3 id=knowledge-after-loop-ends>Knowledge after loop ends</h3><p>In the example above, suppose we add the following assert after the loop ends:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>assert(sum == x*y)</span></span></code></pre></div><p>This seems like a reasonable claim &ndash; after all, we said that our loop was supposed to calculated <code>x * y</code> using repeated addition. We have proved the loop invariant, so we can be sure that <code>sum == count*x</code> after the loop&mldr;but that&rsquo;s not quite the same thing. Does <code>count</code> equal <code>y</code>? How do we know?</p><p>We can prove our assert statement by considering one more piece of information &ndash; if we have exited the loop, we know that the loop condition must be false. In fact, you always know two things (which you can claim as premises) after the loop ends:</p><ol><li>The loop condition is false (so we can claim <code>¬(condition)</code>)</li><li>The loop invariant is true, since we proved is true at the end of each iteration</li></ol><p>We can use those pieces of information to prove our assert statement:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>//the multiplication loop example goes here
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     sum == count*x  )   by Premise,     //the loop invariant holds
-</span></span><span class=line><span class=cl>    2 (     ¬(count != y)   )   by Premise,     //the loop condition is not true
-</span></span><span class=line><span class=cl>    3 (     count == y      )   by Algebra*(2),
-</span></span><span class=line><span class=cl>    4 (     sum == x*y      )   by Algebra*1,3  //proves our assert statement
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>assert(sum == x*y)</span></span></code></pre></div><h2 id=functions-with-loops>Functions with loops</h2><p>If we have a function that includes a loop, we must do the following:</p><ul><li>Prove the loop invariant is true before the loop begins</li><li>Given that the loop invariant is true at the beginning of an iteration, prove that it is still true at the end of the iteration</li><li>Use the combination of the loop invariant and the negation of the loop condition to prove the postcondition</li></ul><p>For example, suppose our loop multiplication is inside a function which is tested by some calling code. We would like to add a function contract, our loop invariant proof, and necessary logic blocks to show that our assert holds at the end of the calling code. Here is just the code for the example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
-</span></span><span class=line><span class=cl>//@Logika: --manual --background save
-</span></span><span class=line><span class=cl>import org.sireum._
-</span></span><span class=line><span class=cl>import org.sireum.justification._
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>def mult(x: Z, y: Z) : Z = {
-</span></span><span class=line><span class=cl>    var sum: Z = 0
-</span></span><span class=line><span class=cl>    var count: Z = 0
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    while (count != y) {
-</span></span><span class=line><span class=cl>        sum = sum + x
-</span></span><span class=line><span class=cl>        count = count + 1
-</span></span><span class=line><span class=cl>    }
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    return sum
-</span></span><span class=line><span class=cl>}
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//////////// Test code //////////////
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var one: Z = 3
-</span></span><span class=line><span class=cl>var two: Z = 4
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var answer: Z = mult(one, two)
-</span></span><span class=line><span class=cl>assert(answer == 12)</span></span></code></pre></div><p>We start by adding a function contract to <code>mult</code>, which will be the same as our function contract for the recursive version of this function in section 9.2 &ndash; <code>y</code> needs to be nonnegative, and we promise to return <code>x*y</code>. Here is the code after adding the function contract and our previous loop verificaton:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
-</span></span><span class=line><span class=cl>//@Logika: --manual --background save
-</span></span><span class=line><span class=cl>import org.sireum._
-</span></span><span class=line><span class=cl>import org.sireum.justification._
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>def mult(x: Z, y: Z) : Z = {
-</span></span><span class=line><span class=cl>    //function contract
-</span></span><span class=line><span class=cl>    Contract(
-</span></span><span class=line><span class=cl>        Requires(   y &gt;= 0          ),  //precondition: y should be nonnegative
-</span></span><span class=line><span class=cl>        Ensures(    Res[Z] == x * y )   //postcondition (we promise to return x*y)
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    var sum: Z = 0
-</span></span><span class=line><span class=cl>    var count: Z = 0
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //prove the invariant before the loop begins
-</span></span><span class=line><span class=cl>    Deduce(
-</span></span><span class=line><span class=cl>    1 (     sum == 0        )   by Premise,         //from the &#34;sum = 0&#34; assignment
-</span></span><span class=line><span class=cl>    2 (     count == 0      )   by Premise,         //from the &#34;count = 0&#34; assignment
-</span></span><span class=line><span class=cl>    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    while (count != y) {
-</span></span><span class=line><span class=cl>        Invariant(
-</span></span><span class=line><span class=cl>            Modifies(sum, count),
-</span></span><span class=line><span class=cl>            sum == count * x
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        Deduce(
-</span></span><span class=line><span class=cl>            1 (     sum == count*x      )   by Premise,     //the loop invariant holds
-</span></span><span class=line><span class=cl>                                                            //at the beginning of an iteration
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        sum = sum + x
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        Deduce(
-</span></span><span class=line><span class=cl>            1 (     sum == Old(sum) + x     )   by Premise,         //from &#34;sum = sum + x&#34; assignment
-</span></span><span class=line><span class=cl>            2 (     Old(sum) == count*x     )   by Premise,         //loop invariant WAS true, but sum just changed
-</span></span><span class=line><span class=cl>            3 (     sum == count*x + x      )   by Algebra*(1,2)    //current knowledge without using Old
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        count = count + 1
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        Deduce(
-</span></span><span class=line><span class=cl>            1 (     count == Old(count)+ 1  )   by Premise,         //from &#34;count = count + 1&#34; assignment
-</span></span><span class=line><span class=cl>            2 (     sum == Old(count)*x + x )   by Premise,         //from previous &#34;sum = count*x + x&#34;, 
-</span></span><span class=line><span class=cl>                                                                    //but count has changed
-</span></span><span class=line><span class=cl>            3 (     sum == (count-1)*x + x  )   by Algebra*(1,2),
-</span></span><span class=line><span class=cl>            4 (     sum == count*x - x + x  )   by Algebra*(3),
-</span></span><span class=line><span class=cl>            5 (     sum == count*x          )   by Algebra*(4)      //loop invariant holds at end of iteration
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>    }
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //STILL NEED TO PROVE POSTCONDITION
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    return sum
-</span></span><span class=line><span class=cl>}
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//////////// Test code //////////////
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var one: Z = 3
-</span></span><span class=line><span class=cl>var two: Z = 4
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//STILL NEED TO ADD VERIFICATION FOR ASSERT
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var answer: Z = mult(one, two)
-</span></span><span class=line><span class=cl>assert(answer == 12)</span></span></code></pre></div><p>We can use the negation of the loop condition (<code>¬(count != y)</code>) together with the loop invariant to prove the postcondition will hold before the function returns. We can also apply the same process as in sections 9.1 and 9.2 to prove the precondition in the calling code before calling the <code>mult</code> function, and to use the function&rsquo;s postcondition after the call to <code>mult</code> to prove our goal assert. Here is the completed example:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
-</span></span><span class=line><span class=cl>//@Logika: --manual --background save
-</span></span><span class=line><span class=cl>import org.sireum._
-</span></span><span class=line><span class=cl>import org.sireum.justification._
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>def mult(x: Z, y: Z) : Z = {
-</span></span><span class=line><span class=cl>    //function contract
-</span></span><span class=line><span class=cl>    Contract(
-</span></span><span class=line><span class=cl>        Requires(   y &gt;= 0          ),  //precondition: y should be nonnegative
-</span></span><span class=line><span class=cl>        Ensures(    Res[Z] == x * y )   //postcondition (we promise to return x*y)
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    var sum: Z = 0
-</span></span><span class=line><span class=cl>    var count: Z = 0
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //prove the invariant before the loop begins
-</span></span><span class=line><span class=cl>    Deduce(
-</span></span><span class=line><span class=cl>    1 (     sum == 0        )   by Premise,         //from the &#34;sum = 0&#34; assignment
-</span></span><span class=line><span class=cl>    2 (     count == 0      )   by Premise,         //from the &#34;count = 0&#34; assignment
-</span></span><span class=line><span class=cl>    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    while (count != y) {
-</span></span><span class=line><span class=cl>        Invariant(
-</span></span><span class=line><span class=cl>            Modifies(sum, count),
-</span></span><span class=line><span class=cl>            sum == count * x
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        Deduce(
-</span></span><span class=line><span class=cl>            1 (     sum == count*x      )   by Premise,     //the loop invariant holds
-</span></span><span class=line><span class=cl>                                                            //at the beginning of an iteration
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        sum = sum + x
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        Deduce(
-</span></span><span class=line><span class=cl>            1 (     sum == Old(sum) + x     )   by Premise,         //from &#34;sum = sum + x&#34; assignment
-</span></span><span class=line><span class=cl>            2 (     Old(sum) == count*x     )   by Premise,         //loop invariant WAS true, but sum just changed
-</span></span><span class=line><span class=cl>            3 (     sum == count*x + x      )   by Algebra*(1,2)    //current knowledge without using Old
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        count = count + 1
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        Deduce(
-</span></span><span class=line><span class=cl>            1 (     count == Old(count)+ 1  )   by Premise,         //from &#34;count = count + 1&#34; assignment
-</span></span><span class=line><span class=cl>            2 (     sum == Old(count)*x + x )   by Premise,         //from previous &#34;sum = count*x + x&#34;, 
-</span></span><span class=line><span class=cl>                                                                    //but count has changed
-</span></span><span class=line><span class=cl>            3 (     sum == (count-1)*x + x  )   by Algebra*(1,2),
-</span></span><span class=line><span class=cl>            4 (     sum == count*x - x + x  )   by Algebra*(3),
-</span></span><span class=line><span class=cl>            5 (     sum == count*x          )   by Algebra*(4)      //loop invariant holds at end of iteration
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>    }
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    Deduce(
-</span></span><span class=line><span class=cl>        1 (     ¬(count != y)       )   by Premise,         //loop condition is now false
-</span></span><span class=line><span class=cl>        2 (     sum == count*x      )   by Premise,         //loop invariant holds after loop
-</span></span><span class=line><span class=cl>        3 (     count == y          )   by Algebra*(1),
-</span></span><span class=line><span class=cl>        4 (     sum == x*y          )   by Algebra*(2,3)    //proves the postcondition
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    return sum
-</span></span><span class=line><span class=cl>}
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//////////// Test code //////////////
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var one: Z = 3
-</span></span><span class=line><span class=cl>var two: Z = 4
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     two == 4        )   by Premise,     //from the &#34;two = 4&#34; assignment
-</span></span><span class=line><span class=cl>    2 (     two &gt;= 0        )   by Algebra*(1)  //proves the mult precondition
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var answer: Z = mult(one, two)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     one == 3            )   by Premise,
-</span></span><span class=line><span class=cl>    2 (     two == 4            )   by Premise,
-</span></span><span class=line><span class=cl>    3 (     answer == one*two   )   by Premise          //from the mult postcondition
-</span></span><span class=line><span class=cl>    4 (     answer == 12        )   by Algebra*(1,2,3)  //proves the assert 
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>assert(answer == 12)</span></span></code></pre></div><h2 id=how-to-construct-a-loop-invariant>How to construct a loop invariant</h2><p>The most difficult part of the entire process of proving the correctness of a function with a loop is coming up with an appropriate loop invariant. In this section, we will study two additional loops and learn techniques for deriving loop invariants. In general, we need to think about what the loop is doing as it iterates, and what progress it has made so far towards its goal. A good first approach is to trace through the values of variables for several iterations of the loop, as we did with <code>mult</code> above &ndash; this helps us identify patterns that can then become the loop invariant.</p><h3 id=example-1-sum-of-odds>Example 1: Sum of odds</h3><p>Suppose <code>n</code> has already been declared and initialized, and that we have this loop:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var total: Z = 0
-</span></span><span class=line><span class=cl>var i: Z = 0
-</span></span><span class=line><span class=cl>while (i &lt; n) {
-</span></span><span class=line><span class=cl>    i = i + 1
-</span></span><span class=line><span class=cl>    total = total + (2*i - 1)
-</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>It might be difficult to tell what this code is doing before walking through a few iterations. Let&rsquo;s make a table showing the values of different variables at different points in the loop:</p><table><thead><tr><th>Variable</th><th>Before loop</th><th>After iteration 1</th><th>After iteration 2</th><th>After iteration 3</th><th>&mldr;</th><th>After iteration n</th></tr></thead><tbody><tr><td><code>i</code></td><td>0</td><td>1</td><td>2</td><td>3</td><td>&mldr;</td><td>n</td></tr><tr><td><code>total</code></td><td><span class="math align-center">$0 $</span></td><td><span class="math align-center">$1 $</span></td><td><span class="math align-center">$1 + 3 (= 4)$</span></td><td><span class="math align-center">$1 + 3 + 5 (= 9)$</span></td><td>&mldr;</td><td><span class="math align-center">$1 + 3 + 5 + ... + (2*n-1) (=n^2)$</span></td></tr></tbody></table><p>Now we can see the pattern &ndash; we are adding up the first
-<span class="math align-center">$n$</span> odd numbers. We can see that at the end of the i-th iteration we have added the first
-<span class="math align-center">$i$</span> odd numbers, where
-<span class="math align-center">$(2*i-1)$</span> is our most recent odd number. We also see that the sum of the first 1 odd number is 1, the sum of the first 2 odd numbers is
-<span class="math align-center">$2^2 = 4$</span>, &mldr;, and the sum of the first
-<span class="math align-center">$n$</span> odd numbers is
-<span class="math align-center">$n^2$</span>.</p><p>Since our loop invariant should describe what progress it has made towards its goal of adding the first
-<span class="math align-center">$n$</span> odd numbers, we can see that the loop invariant should be that at any point (before the loop begins and at the end each iteration),
-<span class="math align-center">$total$</span> holds the sum of the first
-<span class="math align-center">$i$</span> numbers (whose value is
-<span class="math align-center">$i^2$</span>). We first try this as our loop invariant:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var total: Z = 0
-</span></span><span class=line><span class=cl>var i: Z = 0
-</span></span><span class=line><span class=cl>while (i &lt; n) {
-</span></span><span class=line><span class=cl>    Invariant(
-</span></span><span class=line><span class=cl>        Modifies(i, n),
-</span></span><span class=line><span class=cl>        total == i*i
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    i = i + 1
-</span></span><span class=line><span class=cl>    total = total + (2*i - 1)
-</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>Another consideration of writing a loop invariant is that we should be able to deduce our overall goal once the loop ends. After our loop, we want to be sure that <code>total</code> holds the sum of the first <code>n</code> odd numbers &ndash; i.e., that <code>total == n*n</code>. Our loop invariant tells us that <code>total == i*i</code> after the loop ends &ndash; but does <code>n</code> necessarily equal <code>i</code>?</p><p>The way it is written, we can&rsquo;t be certain. We do know that the loop condition must be false after the loop, or that <code>¬(i &lt; n)</code>. But this is equivalent to <code>i >= n</code> and not <code>i == n</code>. We need to tighten our invariant to add a restriction that <code>i</code> always be less than or equal to n:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var total: Z = 0
-</span></span><span class=line><span class=cl>var i: Z = 0
-</span></span><span class=line><span class=cl>while (i &lt; n) {
-</span></span><span class=line><span class=cl>    Invariant(
-</span></span><span class=line><span class=cl>        Modifies(i, n),
-</span></span><span class=line><span class=cl>        total == i*i,
-</span></span><span class=line><span class=cl>        i &lt;= n
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>    
-</span></span><span class=line><span class=cl>    i = i + 1
-</span></span><span class=line><span class=cl>    total = total + (2*i - 1)
-</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>After the loop ends, we can now combine the negation of the loop condition, <code>¬(i &lt; n)</code> together with the <code>i &lt;= n</code> portion of the invariant to deduce that <code>i == n</code>. Together with the other half of the invariant &ndash; <code>total == i*i</code> &ndash; we can be sure that <code>total == n*n</code> when the loop ends.</p><h3 id=example-2-factorial>Example 2: factorial</h3><p>Suppose <code>n</code> has already been declared and initialized, and that we have this loop:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var prod: Z = 1
-</span></span><span class=line><span class=cl>var i: Z = 1
-</span></span><span class=line><span class=cl>while (i != n) {
-</span></span><span class=line><span class=cl>    i = i + 1
-</span></span><span class=line><span class=cl>    prod = prod * i
-</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>As before, let&rsquo;s make a table showing the values of different variables at different points in the loop:</p><table><thead><tr><th>Variable</th><th>Before loop</th><th>After iteration 1</th><th>After iteration 2</th><th>&mldr;</th><th>After iteration n</th></tr></thead><tbody><tr><td><code>i</code></td><td>1</td><td>2</td><td>3</td><td>&mldr;</td><td>n</td></tr><tr><td><code>prod</code></td><td><span class="math align-center">$1 $</span></td><td><span class="math align-center">$1 * 2$</span></td><td><span class="math align-center">$1 * 2 * 3$</span></td><td>&mldr;</td><td><span class="math align-center">$1 * 2 * 3 * ... * n$</span></td></tr></tbody></table><p>From this table, we can clearly see that after
-<span class="math align-center">$i$</span> iterations,
-<span class="math align-center">$prod == i!$</span> (i factorial). This <em>should</em> be our loop invariant&mldr;but as with many other languages, Logika does not recognize <code>!</code> as a factorial operator (instead, it is a negation operator). In the next section, we will see how to create a <em>Logika fact</em> to help define the factorial operation. We will then be able to use that Logika fact in place of <code>!</code> to let our invariant be a formalization of: <em>prod equals i factorial</em>.</p><footer class=footline></footer></article></div></main></div><script src=/cis301/js/clipboard.min.js?1754341382 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1754341382 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis301/js/mathjax/tex-mml-chtml.js?1754341382></script><script src=/cis301/js/theme.js?1754341382 defer></script><script src=/cis301/js/embed-iframe.js?1754341382 defer></script></body></html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article data-r-output-format=html><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.148.1"><meta name=generator content="Relearn 8.0.0"><meta name=description content="A loop is a command that restarts itself over and over while its loop condition remains true. Loops are trickier to analyze than if/else statements, because we don’t know how many times the loop will execute. The loop condition might be initially false, in which case we would skip the body of the loop entirely. Or, the loop might go through 1 iteration, or 10 iterations, or 100 iterations…we don’t know. We want a way to analyze what we know to be true after the loop ends, regardless of how many iterations it makes."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://textbooks.cs.ksu.edu/cis301/images/hero.png"><meta name=twitter:title content="Loops :: CIS 301 Textbook"><meta name=twitter:description content="A loop is a command that restarts itself over and over while its loop condition remains true. Loops are trickier to analyze than if/else statements, because we don’t know how many times the loop will execute. The loop condition might be initially false, in which case we would skip the body of the loop entirely. Or, the loop might go through 1 iteration, or 10 iterations, or 100 iterations…we don’t know. We want a way to analyze what we know to be true after the loop ends, regardless of how many iterations it makes."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/9-chapter/9_3-loops/index.html"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Loops :: CIS 301 Textbook"><meta property="og:description" content="A loop is a command that restarts itself over and over while its loop condition remains true. Loops are trickier to analyze than if/else statements, because we don’t know how many times the loop will execute. The loop condition might be initially false, in which case we would skip the body of the loop entirely. Or, the loop might go through 1 iteration, or 10 iterations, or 100 iterations…we don’t know. We want a way to analyze what we know to be true after the loop ends, regardless of how many iterations it makes."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="Functions and Loops"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2024-05-28T14:22:57-05:00"><meta property="og:image" content="https://textbooks.cs.ksu.edu/cis301/images/hero.png"><meta itemprop=name content="Loops :: CIS 301 Textbook"><meta itemprop=description content="A loop is a command that restarts itself over and over while its loop condition remains true. Loops are trickier to analyze than if/else statements, because we don’t know how many times the loop will execute. The loop condition might be initially false, in which case we would skip the body of the loop entirely. Or, the loop might go through 1 iteration, or 10 iterations, or 100 iterations…we don’t know. We want a way to analyze what we know to be true after the loop ends, regardless of how many iterations it makes."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2024-05-28T14:22:57-05:00"><meta itemprop=wordCount content="3805"><meta itemprop=image content="https://textbooks.cs.ksu.edu/cis301/images/hero.png"><title>Loops :: CIS 301 Textbook</title><link href=https://textbooks.cs.ksu.edu/cis301/9-chapter/9_3-loops/index.html rel=canonical type=text/html title="Loops :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_3-loops/index.xml rel=alternate type=application/rss+xml title="Loops :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_3-loops/index.print.html rel=alternate type=text/html title="Loops :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_3-loops/tele.html rel=alternate type=text/html title="Loops :: CIS 301 Textbook"><link href=/cis301/css/auto-complete/auto-complete.min.css?1755623696 rel=stylesheet><script src=/cis301/js/auto-complete/auto-complete.min.js?1755623696 defer></script><script src=/cis301/js/search-lunr.min.js?1755623696 defer></script><script src=/cis301/js/search.min.js?1755623696 defer></script><script>window.relearn=window.relearn||{},window.relearn.index_js_url="/cis301/searchindex.en.js?1755623696"</script><script src=/cis301/js/lunr/lunr.min.js?1755623696 defer></script><script src=/cis301/js/lunr/lunr.stemmer.support.min.js?1755623696 defer></script><script src=/cis301/js/lunr/lunr.multi.min.js?1755623696 defer></script><script src=/cis301/js/lunr/lunr.en.min.js?1755623696 defer></script><script>window.relearn=window.relearn||{},window.relearn.contentLangs=["en"]</script><link href=/cis301/fonts/fontawesome/css/fontawesome-all.min.css?1755623696 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/fonts/fontawesome/css/fontawesome-all.min.css?1755623696 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar/perfect-scrollbar.min.css?1755623696 rel=stylesheet><link href=/cis301/css/theme.min.css?1755623696 rel=stylesheet><link href=/cis301/css/format-html.min.css?1755623696 rel=stylesheet id=R-format-style><script>window.relearn=window.relearn||{},window.relearn.min=`.min`,window.relearn.path="/9-chapter/9_3-loops/index.html",window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.relearn.disableAnchorCopy=!1,window.relearn.disableAnchorScrolling=!1,window.relearn.disableInlineCopyToClipboard=!0,window.relearn.enableBlockCodeWrap=!1,window.relearn.getItem=(e,t)=>e.getItem(t),window.relearn.setItem=(e,t,n)=>e.setItem(t,n),window.relearn.removeItem=(e,t)=>e.removeItem(t),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`,window.relearn.themevariants=["light-theme"],window.relearn.customvariantname="my-custom-variant",window.relearn.writeVariant=!1,window.relearn.changeVariant=function(e){var t=document.documentElement.dataset.rThemeVariant;window.relearn.setItem(window.localStorage,window.relearn.absBaseUri+"/variant",e),document.documentElement.dataset.rThemeVariant=e,t!=e&&(document.dispatchEvent(new CustomEvent("themeVariantLoaded",{detail:{variant:e,oldVariant:t}})),window.relearn.markVariant())},window.relearn.markVariant=function(){var e=window.relearn.getItem(window.localStorage,window.relearn.absBaseUri+"/variant");document.querySelectorAll(".R-variantswitcher select").forEach(t=>{t.value=e})},window.relearn.initVariant=function(){var e=window.relearn.getItem(window.localStorage,window.relearn.absBaseUri+"/variant")??"";e==window.relearn.customvariantname||(!e||!window.relearn.themevariants.includes(e))&&(e=window.relearn.themevariants[0],window.relearn.writeVariant&&window.relearn.setItem(window.localStorage,window.relearn.absBaseUri+"/variant",e)),document.documentElement.dataset.rThemeVariant=e},window.relearn.initVariant(),window.relearn.markVariant()</script><link href=/cis301/css/custom.css?1755623696 rel=stylesheet></head><body class="mobile-support embed html" data-url=/cis301/9-chapter/9_3-loops/index.html><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable 9-chapter" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=loops>Loops</h1><p>A <em>loop</em> is a command that restarts itself over and over while its <em>loop condition</em> remains true. Loops are trickier to analyze than if/else statements, because we don&rsquo;t know how many times the loop will execute. The loop condition might be initially false, in which case we would skip the body of the loop entirely. Or, the loop might go through 1 iteration, or 10 iterations, or 100 iterations&mldr;we don&rsquo;t know. We want a way to analyze what we know to be true after the loop ends, regardless of how many iterations it makes.</p><p>The only loop available in Logika is a <em>while</em> loop, which behaves in the same way as while loops in other languages. If the loop condition is initially false, then the body of the while loop is skipped entirely. If the loop condition is initially true, then we execute the loop body and then recheck the condition. This continues until the loop condition becomes false.</p><p>Here is the syntax of a Scala while loop:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>while (condition) {
+</span></span><span style=display:flex><span>   //body of loop
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><h2 id=loop-invariants>Loop invariants</h2><p>Our solution to analyzing loops despite not knowing the number of iterations is a tool called a <em>loop invariant</em>. The job of the loop invariant is to summarize what is always true about the loop. Often, the loop invariant describes the relationship between variables and demonstrates how much progress the loop has made. Sometimes the loop invariant also contains claims that certain variables will always stay in a particular range.</p><p>Whatever we choose as the loop invariant, we must be able to do the following:</p><ul><li>Prove the loop invariant is true before the loop begins</li><li>Assume the loop invariant is true at the beginning of an iteration, and prove that the invariant is STILL true at the end of the iteration</li></ul><h2 id=loop-invariants-and-mathematical-induction>Loop invariants and mathematical induction</h2><p>The process of proving the correctness of loop invariants is very similar to a mathematical induction proof. We must prove the loop invariant is true before the loop begins, which is analogous to the <em>base case</em> in mathematical induction. The process of assuming the invariant is true at the beginning of an iteration and proving that it is still true at the end of an iteration is just like mathematical induction&rsquo;s <em>inductive step</em>.</p><p>If we prove those two things about our invariant, we can be certain the invariant will still hold after the loop terminates. Why? For the same reason mathematical induction proves a property for a general <span class="math align-center">$n$</span>:</p><ul><li>We know the invariant holds before the loop begins</li><li>Because the invariant holds before the loop begins, we are sure it holds at the beginning of the first iteration</li><li>Because we&rsquo;ve proved the invariant still holds at the end of each iteration, we&rsquo;re sure it still holds at the end of the first iteration</li><li>Because we&rsquo;re sure it still holds at the end of the first iteration, we know it holds at the beginning of the second iteration</li><li>Because we&rsquo;ve proved the invariant still holds at the end of each iteration, we&rsquo;re sure it still holds at the end of the second iteration
+&mldr;</li><li>We&rsquo;re sure the invariant still holds at the end of each iteration, including the end of the LAST iteration. Thus we&rsquo;re certain the invariant holds just after the loop ends.</li></ul><h2 id=loop-invariant-block-syntax>Loop invariant block syntax</h2><p>In Logika, we will write a <em>loop invariant block</em> to describe our loop invariants. This block will go just inside the loop, before the loop body:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>while (condition) {
+</span></span><span style=display:flex><span>    Invariant(
+</span></span><span style=display:flex><span>        Modifies(comma-separated list of variables),
+</span></span><span style=display:flex><span>        Invariant_1,
+</span></span><span style=display:flex><span>        Invariant_2,
+</span></span><span style=display:flex><span>        ...
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //loop body
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>Here is a summary of the different loop invariant clauses:</p><ul><li><code>Modifies</code>: uses a comma-separated list to name each variable whose value changes in the loop body</li><li><code>Invariant_i</code>: lists an invariant for the function. If we have multiple invariants, we can list them on separate lines (<code>Invariant_1</code>, <code>Invariant_2</code>, etc.)</li></ul><h2 id=example-loop-invariant-block-for-a-multiplication-loop>Example: loop invariant block for a multiplication loop</h2><p>Suppose we have the following loop to multiply two numbers, <code>x</code> and <code>y</code>, using repeated addition. (This is very similar to our <code>mult</code> function from section 9.2, except it does the additions using a loop instead of using recursion):</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// #Sireum #Logika
+</span></span><span style=display:flex><span>//@Logika: --manual --background save
+</span></span><span style=display:flex><span>import org.sireum._
+</span></span><span style=display:flex><span>import org.sireum.justification._
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>val x: Z = Z.read()
+</span></span><span style=display:flex><span>val y: Z = Z.read()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var sum: Z = 0
+</span></span><span style=display:flex><span>var count: Z = 0
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>while (count != y) {
+</span></span><span style=display:flex><span>    sum = sum + x
+</span></span><span style=display:flex><span>    count = count + 1
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//now sum is x*y</span></span></code></pre></div><p>Before writing the loop invariant block, let&rsquo;s make a table showing the values of different variables at different points in the loop:</p><table><thead><tr><th>Variable</th><th>Before loop</th><th>After iteration 1</th><th>After iteration 2</th><th>After iteration 3</th><th>&mldr;</th><th>After iteration y</th></tr></thead><tbody><tr><td><code>count</code></td><td>0</td><td>1</td><td>2</td><td>3</td><td>&mldr;</td><td>y</td></tr><tr><td><code>sum</code></td><td><span class="math align-center">$0 (= 0*x)$</span></td><td><span class="math align-center">$x (= 1*x)$</span></td><td><span class="math align-center">$x + x (= 2*x)$</span></td><td><span class="math align-center">$x + x + x (= 3*x)$</span></td><td>&mldr;</td><td><span class="math align-center">$x + x + ... + x (= y*x)$</span></td></tr></tbody></table><p>Before the loop begins, we&rsquo;ve added 0 <span class="math align-center">$x$</span>&rsquo;s together, so the sum is 0. After the first iteration, we&rsquo;ve added 1 <span class="math align-center">$x$</span> together, so the sum is <span class="math align-center">$x$</span>. After the second iteration, we&rsquo;ve added 2 <span class="math align-center">$x$</span>&rsquo;s together, so the sum is <span class="math align-center">$x + x$</span> which is really <span class="math align-center">$2 * x$</span>. This continues until after the y-th iteration, when we&rsquo;ve added y <span class="math align-center">$x$</span>&rsquo;s together (and the sum is <span class="math align-center">$y*x$</span>).</p><p>Using this table, it is easy to see that at any point, <code>sum == count*x</code> (since <code>count</code> tracks the number of iterations). This is true both before the loop begins and at the end of each iteration, so it will be our loop invariant.</p><p>We now add a loop invariant block to our loop:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// #Sireum #Logika
+</span></span><span style=display:flex><span>//@Logika: --manual --background save
+</span></span><span style=display:flex><span>import org.sireum._
+</span></span><span style=display:flex><span>import org.sireum.justification._
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>val x: Z = Z.read()
+</span></span><span style=display:flex><span>val y: Z = Z.read()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var sum: Z = 0
+</span></span><span style=display:flex><span>var count: Z = 0
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>while (count != y) {
+</span></span><span style=display:flex><span>    //loop invariant block (still needs to be proved)
+</span></span><span style=display:flex><span>    Invariant(
+</span></span><span style=display:flex><span>        Modifies(sum, count),
+</span></span><span style=display:flex><span>        sum == count * x
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    sum = sum + x
+</span></span><span style=display:flex><span>    count = count + 1
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//now sum is x*y</span></span></code></pre></div><p>We list <code>sum</code> and <code>count</code> in the <code>Modifies</code> clause because those are the two variables that change value inside the loop.</p><h2 id=proving-the-loop-invariant>Proving the loop invariant</h2><p>In order to prove the correctness of a loop, we must do two things:</p><ul><li>Prove the loop invariant is true before the loop begins</li><li>Assume the loop invariant is true at the beginning of an iteration, and prove that the invariant is STILL true at the end of the iteration</li></ul><h3 id=proving-loop-invariant-before-loop-begins>Proving loop invariant before loop begins</h3><p>In our multiplication loop above, let&rsquo;s start by proving the loop invariant before the loop begins. This means that just before the loop, we must prove exactly the claim <code>sum == count*x</code>. We can do this with algebra on the current variable values:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// #Sireum #Logika
+</span></span><span style=display:flex><span>//@Logika: --manual --background save
+</span></span><span style=display:flex><span>import org.sireum._
+</span></span><span style=display:flex><span>import org.sireum.justification._
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>val x: Z = Z.read()
+</span></span><span style=display:flex><span>val y: Z = Z.read()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var sum: Z = 0
+</span></span><span style=display:flex><span>var count: Z = 0
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//prove the invariant before the loop begins
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     sum == 0        )   by Premise,         //from the &#34;sum = 0&#34; assignment
+</span></span><span style=display:flex><span>    2 (     count == 0      )   by Premise,         //from the &#34;count = 0&#34; assignment
+</span></span><span style=display:flex><span>    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>while (count != y) {
+</span></span><span style=display:flex><span>    Invariant(
+</span></span><span style=display:flex><span>        Modifies(sum, count),
+</span></span><span style=display:flex><span>        sum == count * x
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    sum = sum + x
+</span></span><span style=display:flex><span>    count = count + 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //we still need to prove the invariant after each iteration
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//now sum is x*y</span></span></code></pre></div><h3 id=proving-loop-invariant-at-the-end-of-each-iteration>Proving loop invariant at the end of each iteration</h3><p>To prove the loop invariant still holds at the end of an iteration, we must have a logic block at the end of the loop body with exactly the claim in the loop invariant (which will now be referring to the updated values of each variable). Since this step has us assuming the loop invariant is true at the beginning of each iteration, we can list the loop invariant as a <em>premise</em> in a logic block just inside the loop body. Here is the structure we wish to follow for our multiplication loop:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>while (count != y) {
+</span></span><span style=display:flex><span>    Invariant(
+</span></span><span style=display:flex><span>        Modifies(sum, count),
+</span></span><span style=display:flex><span>        sum == count * x
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    Deduce(
+</span></span><span style=display:flex><span>        1 (     sum == count*x      )   by Premise,     //the loop invariant holds
+</span></span><span style=display:flex><span>                                                        //at the beginning of an iteration
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    sum = sum + x
+</span></span><span style=display:flex><span>    count = count + 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //need to prove exactly &#34;sum == count*x&#34;
+</span></span><span style=display:flex><span>    //to prove our invariant still holds at the end of an iteration
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>We can complete the loop invariant proof by using our tools for processing assignment statements with mutations. Here is the completed verification:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// #Sireum #Logika
+</span></span><span style=display:flex><span>//@Logika: --manual --background save
+</span></span><span style=display:flex><span>import org.sireum._
+</span></span><span style=display:flex><span>import org.sireum.justification._
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>val x: Z = Z.read()
+</span></span><span style=display:flex><span>val y: Z = Z.read()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var sum: Z = 0
+</span></span><span style=display:flex><span>var count: Z = 0
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//prove the invariant before the loop begins
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     sum == 0        )   by Premise,         //from the &#34;sum = 0&#34; assignment
+</span></span><span style=display:flex><span>    2 (     count == 0      )   by Premise,         //from the &#34;count = 0&#34; assignment
+</span></span><span style=display:flex><span>    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>while (count != y) {
+</span></span><span style=display:flex><span>    Invariant(
+</span></span><span style=display:flex><span>        Modifies(sum, count),
+</span></span><span style=display:flex><span>        sum == count * x
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    Deduce(
+</span></span><span style=display:flex><span>        1 (     sum == count*x      )   by Premise,     //the loop invariant holds
+</span></span><span style=display:flex><span>                                                        //at the beginning of an iteration
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    sum = sum + x
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    Deduce(
+</span></span><span style=display:flex><span>        1 (     sum == Old(sum) + x     )   by Premise,         //from &#34;sum = sum + x&#34; assignment
+</span></span><span style=display:flex><span>        2 (     Old(sum) == count*x     )   by Premise,         //loop invariant WAS true, but sum just changed
+</span></span><span style=display:flex><span>        3 (     sum == count*x + x      )   by Algebra*(1,2)    //current knowledge without using Old
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    count = count + 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    Deduce(
+</span></span><span style=display:flex><span>        1 (     count == Old(count)+ 1  )   by Premise,         //from &#34;count = count + 1&#34; assignment
+</span></span><span style=display:flex><span>        2 (     sum == Old(count)*x + x )   by Premise,         //from previous &#34;sum = count*x + x&#34;, 
+</span></span><span style=display:flex><span>                                                                //but count has changed
+</span></span><span style=display:flex><span>        3 (     sum == (count-1)*x + x  )   by Algebra*(1,2),
+</span></span><span style=display:flex><span>        4 (     sum == count*x - x + x  )   by Algebra*(3),
+</span></span><span style=display:flex><span>        5 (     sum == count*x          )   by Algebra*(4)      //loop invariant holds at end of iteration
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//now sum is x*y</span></span></code></pre></div><h3 id=knowledge-after-loop-ends>Knowledge after loop ends</h3><p>In the example above, suppose we add the following assert after the loop ends:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>assert(sum == x*y)</span></span></code></pre></div><p>This seems like a reasonable claim &ndash; after all, we said that our loop was supposed to calculated <code>x * y</code> using repeated addition. We have proved the loop invariant, so we can be sure that <code>sum == count*x</code> after the loop&mldr;but that&rsquo;s not quite the same thing. Does <code>count</code> equal <code>y</code>? How do we know?</p><p>We can prove our assert statement by considering one more piece of information &ndash; if we have exited the loop, we know that the loop condition must be false. In fact, you always know two things (which you can claim as premises) after the loop ends:</p><ol><li>The loop condition is false (so we can claim <code>¬(condition)</code>)</li><li>The loop invariant is true, since we proved is true at the end of each iteration</li></ol><p>We can use those pieces of information to prove our assert statement:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>//the multiplication loop example goes here
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     sum == count*x  )   by Premise,     //the loop invariant holds
+</span></span><span style=display:flex><span>    2 (     ¬(count != y)   )   by Premise,     //the loop condition is not true
+</span></span><span style=display:flex><span>    3 (     count == y      )   by Algebra*(2),
+</span></span><span style=display:flex><span>    4 (     sum == x*y      )   by Algebra*1,3  //proves our assert statement
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>assert(sum == x*y)</span></span></code></pre></div><h2 id=functions-with-loops>Functions with loops</h2><p>If we have a function that includes a loop, we must do the following:</p><ul><li>Prove the loop invariant is true before the loop begins</li><li>Given that the loop invariant is true at the beginning of an iteration, prove that it is still true at the end of the iteration</li><li>Use the combination of the loop invariant and the negation of the loop condition to prove the postcondition</li></ul><p>For example, suppose our loop multiplication is inside a function which is tested by some calling code. We would like to add a function contract, our loop invariant proof, and necessary logic blocks to show that our assert holds at the end of the calling code. Here is just the code for the example:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// #Sireum #Logika
+</span></span><span style=display:flex><span>//@Logika: --manual --background save
+</span></span><span style=display:flex><span>import org.sireum._
+</span></span><span style=display:flex><span>import org.sireum.justification._
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>def mult(x: Z, y: Z) : Z = {
+</span></span><span style=display:flex><span>    var sum: Z = 0
+</span></span><span style=display:flex><span>    var count: Z = 0
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    while (count != y) {
+</span></span><span style=display:flex><span>        sum = sum + x
+</span></span><span style=display:flex><span>        count = count + 1
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    return sum
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//////////// Test code //////////////
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var one: Z = 3
+</span></span><span style=display:flex><span>var two: Z = 4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var answer: Z = mult(one, two)
+</span></span><span style=display:flex><span>assert(answer == 12)</span></span></code></pre></div><p>We start by adding a function contract to <code>mult</code>, which will be the same as our function contract for the recursive version of this function in section 9.2 &ndash; <code>y</code> needs to be nonnegative, and we promise to return <code>x*y</code>. Here is the code after adding the function contract and our previous loop verificaton:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// #Sireum #Logika
+</span></span><span style=display:flex><span>//@Logika: --manual --background save
+</span></span><span style=display:flex><span>import org.sireum._
+</span></span><span style=display:flex><span>import org.sireum.justification._
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>def mult(x: Z, y: Z) : Z = {
+</span></span><span style=display:flex><span>    //function contract
+</span></span><span style=display:flex><span>    Contract(
+</span></span><span style=display:flex><span>        Requires(   y &gt;= 0          ),  //precondition: y should be nonnegative
+</span></span><span style=display:flex><span>        Ensures(    Res[Z] == x * y )   //postcondition (we promise to return x*y)
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    var sum: Z = 0
+</span></span><span style=display:flex><span>    var count: Z = 0
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //prove the invariant before the loop begins
+</span></span><span style=display:flex><span>    Deduce(
+</span></span><span style=display:flex><span>    1 (     sum == 0        )   by Premise,         //from the &#34;sum = 0&#34; assignment
+</span></span><span style=display:flex><span>    2 (     count == 0      )   by Premise,         //from the &#34;count = 0&#34; assignment
+</span></span><span style=display:flex><span>    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    while (count != y) {
+</span></span><span style=display:flex><span>        Invariant(
+</span></span><span style=display:flex><span>            Modifies(sum, count),
+</span></span><span style=display:flex><span>            sum == count * x
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        Deduce(
+</span></span><span style=display:flex><span>            1 (     sum == count*x      )   by Premise,     //the loop invariant holds
+</span></span><span style=display:flex><span>                                                            //at the beginning of an iteration
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        sum = sum + x
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        Deduce(
+</span></span><span style=display:flex><span>            1 (     sum == Old(sum) + x     )   by Premise,         //from &#34;sum = sum + x&#34; assignment
+</span></span><span style=display:flex><span>            2 (     Old(sum) == count*x     )   by Premise,         //loop invariant WAS true, but sum just changed
+</span></span><span style=display:flex><span>            3 (     sum == count*x + x      )   by Algebra*(1,2)    //current knowledge without using Old
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        count = count + 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        Deduce(
+</span></span><span style=display:flex><span>            1 (     count == Old(count)+ 1  )   by Premise,         //from &#34;count = count + 1&#34; assignment
+</span></span><span style=display:flex><span>            2 (     sum == Old(count)*x + x )   by Premise,         //from previous &#34;sum = count*x + x&#34;, 
+</span></span><span style=display:flex><span>                                                                    //but count has changed
+</span></span><span style=display:flex><span>            3 (     sum == (count-1)*x + x  )   by Algebra*(1,2),
+</span></span><span style=display:flex><span>            4 (     sum == count*x - x + x  )   by Algebra*(3),
+</span></span><span style=display:flex><span>            5 (     sum == count*x          )   by Algebra*(4)      //loop invariant holds at end of iteration
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //STILL NEED TO PROVE POSTCONDITION
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    return sum
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//////////// Test code //////////////
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var one: Z = 3
+</span></span><span style=display:flex><span>var two: Z = 4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//STILL NEED TO ADD VERIFICATION FOR ASSERT
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var answer: Z = mult(one, two)
+</span></span><span style=display:flex><span>assert(answer == 12)</span></span></code></pre></div><p>We can use the negation of the loop condition (<code>¬(count != y)</code>) together with the loop invariant to prove the postcondition will hold before the function returns. We can also apply the same process as in sections 9.1 and 9.2 to prove the precondition in the calling code before calling the <code>mult</code> function, and to use the function&rsquo;s postcondition after the call to <code>mult</code> to prove our goal assert. Here is the completed example:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// #Sireum #Logika
+</span></span><span style=display:flex><span>//@Logika: --manual --background save
+</span></span><span style=display:flex><span>import org.sireum._
+</span></span><span style=display:flex><span>import org.sireum.justification._
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>def mult(x: Z, y: Z) : Z = {
+</span></span><span style=display:flex><span>    //function contract
+</span></span><span style=display:flex><span>    Contract(
+</span></span><span style=display:flex><span>        Requires(   y &gt;= 0          ),  //precondition: y should be nonnegative
+</span></span><span style=display:flex><span>        Ensures(    Res[Z] == x * y )   //postcondition (we promise to return x*y)
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    var sum: Z = 0
+</span></span><span style=display:flex><span>    var count: Z = 0
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //prove the invariant before the loop begins
+</span></span><span style=display:flex><span>    Deduce(
+</span></span><span style=display:flex><span>    1 (     sum == 0        )   by Premise,         //from the &#34;sum = 0&#34; assignment
+</span></span><span style=display:flex><span>    2 (     count == 0      )   by Premise,         //from the &#34;count = 0&#34; assignment
+</span></span><span style=display:flex><span>    3 (     sum == count*x  )   by Algebra*(1, 2)   //proved EXACTLY the loop invariant
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    while (count != y) {
+</span></span><span style=display:flex><span>        Invariant(
+</span></span><span style=display:flex><span>            Modifies(sum, count),
+</span></span><span style=display:flex><span>            sum == count * x
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        Deduce(
+</span></span><span style=display:flex><span>            1 (     sum == count*x      )   by Premise,     //the loop invariant holds
+</span></span><span style=display:flex><span>                                                            //at the beginning of an iteration
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        sum = sum + x
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        Deduce(
+</span></span><span style=display:flex><span>            1 (     sum == Old(sum) + x     )   by Premise,         //from &#34;sum = sum + x&#34; assignment
+</span></span><span style=display:flex><span>            2 (     Old(sum) == count*x     )   by Premise,         //loop invariant WAS true, but sum just changed
+</span></span><span style=display:flex><span>            3 (     sum == count*x + x      )   by Algebra*(1,2)    //current knowledge without using Old
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        count = count + 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        Deduce(
+</span></span><span style=display:flex><span>            1 (     count == Old(count)+ 1  )   by Premise,         //from &#34;count = count + 1&#34; assignment
+</span></span><span style=display:flex><span>            2 (     sum == Old(count)*x + x )   by Premise,         //from previous &#34;sum = count*x + x&#34;, 
+</span></span><span style=display:flex><span>                                                                    //but count has changed
+</span></span><span style=display:flex><span>            3 (     sum == (count-1)*x + x  )   by Algebra*(1,2),
+</span></span><span style=display:flex><span>            4 (     sum == count*x - x + x  )   by Algebra*(3),
+</span></span><span style=display:flex><span>            5 (     sum == count*x          )   by Algebra*(4)      //loop invariant holds at end of iteration
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    Deduce(
+</span></span><span style=display:flex><span>        1 (     ¬(count != y)       )   by Premise,         //loop condition is now false
+</span></span><span style=display:flex><span>        2 (     sum == count*x      )   by Premise,         //loop invariant holds after loop
+</span></span><span style=display:flex><span>        3 (     count == y          )   by Algebra*(1),
+</span></span><span style=display:flex><span>        4 (     sum == x*y          )   by Algebra*(2,3)    //proves the postcondition
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    return sum
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//////////// Test code //////////////
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var one: Z = 3
+</span></span><span style=display:flex><span>var two: Z = 4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     two == 4        )   by Premise,     //from the &#34;two = 4&#34; assignment
+</span></span><span style=display:flex><span>    2 (     two &gt;= 0        )   by Algebra*(1)  //proves the mult precondition
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var answer: Z = mult(one, two)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     one == 3            )   by Premise,
+</span></span><span style=display:flex><span>    2 (     two == 4            )   by Premise,
+</span></span><span style=display:flex><span>    3 (     answer == one*two   )   by Premise          //from the mult postcondition
+</span></span><span style=display:flex><span>    4 (     answer == 12        )   by Algebra*(1,2,3)  //proves the assert 
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>assert(answer == 12)</span></span></code></pre></div><h2 id=how-to-construct-a-loop-invariant>How to construct a loop invariant</h2><p>The most difficult part of the entire process of proving the correctness of a function with a loop is coming up with an appropriate loop invariant. In this section, we will study two additional loops and learn techniques for deriving loop invariants. In general, we need to think about what the loop is doing as it iterates, and what progress it has made so far towards its goal. A good first approach is to trace through the values of variables for several iterations of the loop, as we did with <code>mult</code> above &ndash; this helps us identify patterns that can then become the loop invariant.</p><h3 id=example-1-sum-of-odds>Example 1: Sum of odds</h3><p>Suppose <code>n</code> has already been declared and initialized, and that we have this loop:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>var total: Z = 0
+</span></span><span style=display:flex><span>var i: Z = 0
+</span></span><span style=display:flex><span>while (i &lt; n) {
+</span></span><span style=display:flex><span>    i = i + 1
+</span></span><span style=display:flex><span>    total = total + (2*i - 1)
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>It might be difficult to tell what this code is doing before walking through a few iterations. Let&rsquo;s make a table showing the values of different variables at different points in the loop:</p><table><thead><tr><th>Variable</th><th>Before loop</th><th>After iteration 1</th><th>After iteration 2</th><th>After iteration 3</th><th>&mldr;</th><th>After iteration n</th></tr></thead><tbody><tr><td><code>i</code></td><td>0</td><td>1</td><td>2</td><td>3</td><td>&mldr;</td><td>n</td></tr><tr><td><code>total</code></td><td><span class="math align-center">$0 $</span></td><td><span class="math align-center">$1 $</span></td><td><span class="math align-center">$1 + 3 (= 4)$</span></td><td><span class="math align-center">$1 + 3 + 5 (= 9)$</span></td><td>&mldr;</td><td><span class="math align-center">$1 + 3 + 5 + ... + (2*n-1) (=n^2)$</span></td></tr></tbody></table><p>Now we can see the pattern &ndash; we are adding up the first <span class="math align-center">$n$</span> odd numbers. We can see that at the end of the i-th iteration we have added the first <span class="math align-center">$i$</span> odd numbers, where <span class="math align-center">$(2*i-1)$</span> is our most recent odd number. We also see that the sum of the first 1 odd number is 1, the sum of the first 2 odd numbers is <span class="math align-center">$2^2 = 4$</span>, &mldr;, and the sum of the first <span class="math align-center">$n$</span> odd numbers is <span class="math align-center">$n^2$</span>.</p><p>Since our loop invariant should describe what progress it has made towards its goal of adding the first <span class="math align-center">$n$</span> odd numbers, we can see that the loop invariant should be that at any point (before the loop begins and at the end each iteration), <span class="math align-center">$total$</span> holds the sum of the first <span class="math align-center">$i$</span> numbers (whose value is <span class="math align-center">$i^2$</span>). We first try this as our loop invariant:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>var total: Z = 0
+</span></span><span style=display:flex><span>var i: Z = 0
+</span></span><span style=display:flex><span>while (i &lt; n) {
+</span></span><span style=display:flex><span>    Invariant(
+</span></span><span style=display:flex><span>        Modifies(i, n),
+</span></span><span style=display:flex><span>        total == i*i
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    i = i + 1
+</span></span><span style=display:flex><span>    total = total + (2*i - 1)
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>Another consideration of writing a loop invariant is that we should be able to deduce our overall goal once the loop ends. After our loop, we want to be sure that <code>total</code> holds the sum of the first <code>n</code> odd numbers &ndash; i.e., that <code>total == n*n</code>. Our loop invariant tells us that <code>total == i*i</code> after the loop ends &ndash; but does <code>n</code> necessarily equal <code>i</code>?</p><p>The way it is written, we can&rsquo;t be certain. We do know that the loop condition must be false after the loop, or that <code>¬(i &lt; n)</code>. But this is equivalent to <code>i >= n</code> and not <code>i == n</code>. We need to tighten our invariant to add a restriction that <code>i</code> always be less than or equal to n:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>var total: Z = 0
+</span></span><span style=display:flex><span>var i: Z = 0
+</span></span><span style=display:flex><span>while (i &lt; n) {
+</span></span><span style=display:flex><span>    Invariant(
+</span></span><span style=display:flex><span>        Modifies(i, n),
+</span></span><span style=display:flex><span>        total == i*i,
+</span></span><span style=display:flex><span>        i &lt;= n
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    i = i + 1
+</span></span><span style=display:flex><span>    total = total + (2*i - 1)
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>After the loop ends, we can now combine the negation of the loop condition, <code>¬(i &lt; n)</code> together with the <code>i &lt;= n</code> portion of the invariant to deduce that <code>i == n</code>. Together with the other half of the invariant &ndash; <code>total == i*i</code> &ndash; we can be sure that <code>total == n*n</code> when the loop ends.</p><h3 id=example-2-factorial>Example 2: factorial</h3><p>Suppose <code>n</code> has already been declared and initialized, and that we have this loop:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>var prod: Z = 1
+</span></span><span style=display:flex><span>var i: Z = 1
+</span></span><span style=display:flex><span>while (i != n) {
+</span></span><span style=display:flex><span>    i = i + 1
+</span></span><span style=display:flex><span>    prod = prod * i
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>As before, let&rsquo;s make a table showing the values of different variables at different points in the loop:</p><table><thead><tr><th>Variable</th><th>Before loop</th><th>After iteration 1</th><th>After iteration 2</th><th>&mldr;</th><th>After iteration n</th></tr></thead><tbody><tr><td><code>i</code></td><td>1</td><td>2</td><td>3</td><td>&mldr;</td><td>n</td></tr><tr><td><code>prod</code></td><td><span class="math align-center">$1 $</span></td><td><span class="math align-center">$1 * 2$</span></td><td><span class="math align-center">$1 * 2 * 3$</span></td><td>&mldr;</td><td><span class="math align-center">$1 * 2 * 3 * ... * n$</span></td></tr></tbody></table><p>From this table, we can clearly see that after <span class="math align-center">$i$</span> iterations, <span class="math align-center">$prod == i!$</span> (i factorial). This <em>should</em> be our loop invariant&mldr;but as with many other languages, Logika does not recognize <code>!</code> as a factorial operator (instead, it is a negation operator). In the next section, we will see how to create a <em>Logika fact</em> to help define the factorial operation. We will then be able to use that Logika fact in place of <code>!</code> to let our invariant be a formalization of: <em>prod equals i factorial</em>.</p><footer class=footline></footer></article></div></main></div><script>window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},JSON.parse("{}"))</script><script id=MathJax-script async src=/cis301/js/mathjax/tex-mml-chtml.js?1755623696></script><script src=/cis301/js/clipboard/clipboard.min.js?1755623696 defer></script><script src=/cis301/js/perfect-scrollbar/perfect-scrollbar.min.js?1755623696 defer></script><script src=/cis301/js/theme.min.js?1755623696 defer></script><script src=/cis301/js/embed-iframe.min.js?1755623696 defer></script></body></html>

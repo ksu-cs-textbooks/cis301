@@ -1,291 +1,274 @@
-<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that $n! = n * (n-1) * (n-2) * ... * 2 * 1$, but we don’t have a way to describe the “…” portion using our current tools.
-In this section, we introduce Logika facts, which will let us create our own recursive proof functions that we can use in invariants and postconditions."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Logika Facts :: CIS 301 Textbook"><meta name=twitter:description content="We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that $n! = n * (n-1) * (n-2) * ... * 2 * 1$, but we don’t have a way to describe the “…” portion using our current tools.
-In this section, we introduce Logika facts, which will let us create our own recursive proof functions that we can use in invariants and postconditions."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/9-chapter/9_4-logikafacts/"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Logika Facts :: CIS 301 Textbook"><meta property="og:description" content="We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that $n! = n * (n-1) * (n-2) * ... * 2 * 1$, but we don’t have a way to describe the “…” portion using our current tools.
-In this section, we introduce Logika facts, which will let us create our own recursive proof functions that we can use in invariants and postconditions."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Functions and Loops"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2025-04-29T11:46:26-05:00"><meta itemprop=name content="Logika Facts :: CIS 301 Textbook"><meta itemprop=description content="We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that $n! = n * (n-1) * (n-2) * ... * 2 * 1$, but we don’t have a way to describe the “…” portion using our current tools.
-In this section, we introduce Logika facts, which will let us create our own recursive proof functions that we can use in invariants and postconditions."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2025-04-29T11:46:26-05:00"><meta itemprop=wordCount content="2715"><title>Logika Facts :: CIS 301 Textbook</title>
-<link href=https://textbooks.cs.ksu.edu/cis301/9-chapter/9_4-logikafacts/ rel=canonical type=text/html title="Logika Facts :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_4-logikafacts/index.xml rel=alternate type=application/rss+xml title="Logika Facts :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_4-logikafacts/index.print.html rel=alternate type=text/html title="Logika Facts :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_4-logikafacts/embed.html rel=alternate type=text/html title="Logika Facts :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1754341383 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1754341383 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1754341383 rel=stylesheet><link href=/cis301/css/auto-complete.css?1754341383 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1754341383 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1754341383 rel=stylesheet><link href=/cis301/css/fonts.css?1754341383 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1754341383 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1754341383 rel=stylesheet><link href=/cis301/css/theme-auto.css?1754341383 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-auto.css?1754341383 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1754341383 rel=stylesheet><link href=/cis301/css/print.css?1754341383 rel=stylesheet media=print><script src=/cis301/js/variant.js?1754341383></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1754341383 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis301/9-chapter/9_4-logikafacts/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=logika-facts>Logika Facts</h1><p>We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that
-<span class="math align-center">$n! = n * (n-1) * (n-2) * ... * 2 * 1$</span>, but we don&rsquo;t have a way to describe the &ldquo;&mldr;&rdquo; portion using our current tools.</p><p>In this section, we introduce <em>Logika facts</em>, which will let us create our own recursive proof functions that we can use in invariants and postconditions. We will usually want to use a Logika fact anytime our invariant or postcondition needs to express something that has a &ldquo;&mldr;&rdquo; to demonstrate a pattern.</p><h2 id=logika-fact-syntax>Logika fact syntax</h2><p>Logika allows these proof functions to be written in multiple ways, but we will start with the most straightforward of these options:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>@spec def proofFunction(paramList): returnType = $
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>@spec def proofFacts = Fact(
-</span></span><span class=line><span class=cl>    proofFunction(baseCase) == baseValue,
-</span></span><span class=line><span class=cl>    ...
-</span></span><span class=line><span class=cl>    ∀( (x: Z) =&gt; (rangeOfX) → (proofFunction(x) == proofFunction(x - 1) * x) )
-</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>In the above definition, <code>proofFunction</code> is the name we give our proof function, <code>paramList</code> is the list of parameter names and types needed for this proof function (which are formatted exactly like a parameter list in a regular Logika function), and <code>returnType</code> is the return type of the proof function (usually either <code>Z</code> for integer or <code>B</code> for boolean). The <code>= $</code> at the end of the proof function is indicating that its definition will be provided later.</p><p>Below the proof function, we include the <em>proof facts</em>, which is a recursive definition of the values for our proof function. We include one or more base cases, which list the value of our proof function for its smallest possible input (or for the smallest several inputs). Finally, we include our recursive case as a quantified statement &ndash; it lists the value of our proof function on all inputs bigger than our base cases. This recursive case uses the proof function&rsquo;s definition for a smaller value, like <code>proofFunction(x-1)</code>.</p><p>Logika facts are defined at the top of the Logika file, below the <code>import</code>s but before any of the code.</p><h2 id=example-logika-fact-to-define-factorial>Example: Logika fact to define factorial</h2><p>It is much easier to see how Logika facts work by using an example. Suppose we want to define the factorial operation. The first step is to come up with a <em>recursive definition</em>, which has us defining the operation the same way we would in a recursive function &ndash; with one or more <em>base cases</em> where we can define the operation for the simplest case, and one or more <em>recursive cases</em> that express a general instance of the problem in terms of a smaller instance.</p><p>For factorial, the simplest version is
-<span class="math align-center">$1!$</span>, which is just 1. In the general case, we have that:</p><span class="math align-center">$$
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article data-r-output-format=html><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.148.1"><meta name=generator content="Relearn 8.0.0"><meta name=description content="We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that $n! = n * (n-1) * (n-2) * ... * 2 * 1$, but we don’t have a way to describe the “…” portion using our current tools.
+In this section, we introduce Logika facts, which will let us create our own recursive proof functions that we can use in invariants and postconditions. We will usually want to use a Logika fact anytime our invariant or postcondition needs to express something that has a “…” to demonstrate a pattern."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://textbooks.cs.ksu.edu/cis301/images/hero.png"><meta name=twitter:title content="Logika Facts :: CIS 301 Textbook"><meta name=twitter:description content="We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that $n! = n * (n-1) * (n-2) * ... * 2 * 1$, but we don’t have a way to describe the “…” portion using our current tools.
+In this section, we introduce Logika facts, which will let us create our own recursive proof functions that we can use in invariants and postconditions. We will usually want to use a Logika fact anytime our invariant or postcondition needs to express something that has a “…” to demonstrate a pattern."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/9-chapter/9_4-logikafacts/index.html"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Logika Facts :: CIS 301 Textbook"><meta property="og:description" content="We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that $n! = n * (n-1) * (n-2) * ... * 2 * 1$, but we don’t have a way to describe the “…” portion using our current tools.
+In this section, we introduce Logika facts, which will let us create our own recursive proof functions that we can use in invariants and postconditions. We will usually want to use a Logika fact anytime our invariant or postcondition needs to express something that has a “…” to demonstrate a pattern."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="Functions and Loops"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2025-04-29T11:46:26-05:00"><meta property="og:image" content="https://textbooks.cs.ksu.edu/cis301/images/hero.png"><meta itemprop=name content="Logika Facts :: CIS 301 Textbook"><meta itemprop=description content="We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that $n! = n * (n-1) * (n-2) * ... * 2 * 1$, but we don’t have a way to describe the “…” portion using our current tools.
+In this section, we introduce Logika facts, which will let us create our own recursive proof functions that we can use in invariants and postconditions. We will usually want to use a Logika fact anytime our invariant or postcondition needs to express something that has a “…” to demonstrate a pattern."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2025-04-29T11:46:26-05:00"><meta itemprop=wordCount content="2731"><meta itemprop=image content="https://textbooks.cs.ksu.edu/cis301/images/hero.png"><title>Logika Facts :: CIS 301 Textbook</title><link href=https://textbooks.cs.ksu.edu/cis301/9-chapter/9_4-logikafacts/index.html rel=canonical type=text/html title="Logika Facts :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_4-logikafacts/index.xml rel=alternate type=application/rss+xml title="Logika Facts :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_4-logikafacts/index.print.html rel=alternate type=text/html title="Logika Facts :: CIS 301 Textbook"><link href=/cis301/9-chapter/9_4-logikafacts/embed.html rel=alternate type=text/html title="Logika Facts :: CIS 301 Textbook"><link href=/cis301/css/auto-complete/auto-complete.min.css?1755623696 rel=stylesheet><script src=/cis301/js/auto-complete/auto-complete.min.js?1755623696 defer></script><script src=/cis301/js/search-lunr.min.js?1755623696 defer></script><script src=/cis301/js/search.min.js?1755623696 defer></script><script>window.relearn=window.relearn||{},window.relearn.index_js_url="/cis301/searchindex.en.js?1755623696"</script><script src=/cis301/js/lunr/lunr.min.js?1755623696 defer></script><script src=/cis301/js/lunr/lunr.stemmer.support.min.js?1755623696 defer></script><script src=/cis301/js/lunr/lunr.multi.min.js?1755623696 defer></script><script src=/cis301/js/lunr/lunr.en.min.js?1755623696 defer></script><script>window.relearn=window.relearn||{},window.relearn.contentLangs=["en"]</script><link href=/cis301/fonts/fontawesome/css/fontawesome-all.min.css?1755623696 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/fonts/fontawesome/css/fontawesome-all.min.css?1755623696 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar/perfect-scrollbar.min.css?1755623696 rel=stylesheet><link href=/cis301/css/theme.min.css?1755623696 rel=stylesheet><link href=/cis301/css/format-html.min.css?1755623696 rel=stylesheet id=R-format-style><script>window.relearn=window.relearn||{},window.relearn.min=`.min`,window.relearn.path="/9-chapter/9_4-logikafacts/index.html",window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.relearn.disableAnchorCopy=!1,window.relearn.disableAnchorScrolling=!1,window.relearn.disableInlineCopyToClipboard=!0,window.relearn.enableBlockCodeWrap=!1,window.relearn.getItem=(e,t)=>e.getItem(t),window.relearn.setItem=(e,t,n)=>e.setItem(t,n),window.relearn.removeItem=(e,t)=>e.removeItem(t),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`,window.relearn.themevariants=["light-theme"],window.relearn.customvariantname="my-custom-variant",window.relearn.writeVariant=!1,window.relearn.changeVariant=function(e){var t=document.documentElement.dataset.rThemeVariant;window.relearn.setItem(window.localStorage,window.relearn.absBaseUri+"/variant",e),document.documentElement.dataset.rThemeVariant=e,t!=e&&(document.dispatchEvent(new CustomEvent("themeVariantLoaded",{detail:{variant:e,oldVariant:t}})),window.relearn.markVariant())},window.relearn.markVariant=function(){var e=window.relearn.getItem(window.localStorage,window.relearn.absBaseUri+"/variant");document.querySelectorAll(".R-variantswitcher select").forEach(t=>{t.value=e})},window.relearn.initVariant=function(){var e=window.relearn.getItem(window.localStorage,window.relearn.absBaseUri+"/variant")??"";e==window.relearn.customvariantname||(!e||!window.relearn.themevariants.includes(e))&&(e=window.relearn.themevariants[0],window.relearn.writeVariant&&window.relearn.setItem(window.localStorage,window.relearn.absBaseUri+"/variant",e)),document.documentElement.dataset.rThemeVariant=e},window.relearn.initVariant(),window.relearn.markVariant()</script><link href=/cis301/css/custom.css?1755623696 rel=stylesheet></head><body class="mobile-support html" data-url=/cis301/9-chapter/9_4-logikafacts/index.html><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable 9-chapter" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=logika-facts>Logika Facts</h1><p>We saw at the end of section 9.3 that we sometimes need a more expressive way of specifying a loop invariant (or, similarly, for postconditions). In our last example, we wanted to describe the factorial operation. We know that <span class="math align-center">$n! = n * (n-1) * (n-2) * ... * 2 * 1$</span>, but we don&rsquo;t have a way to describe the &ldquo;&mldr;&rdquo; portion using our current tools.</p><p>In this section, we introduce <em>Logika facts</em>, which will let us create our own recursive proof functions that we can use in invariants and postconditions. We will usually want to use a Logika fact anytime our invariant or postcondition needs to express something that has a &ldquo;&mldr;&rdquo; to demonstrate a pattern.</p><h2 id=logika-fact-syntax>Logika fact syntax</h2><p>Logika allows these proof functions to be written in multiple ways, but we will start with the most straightforward of these options:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>@spec def proofFunction(paramList): returnType = $
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@spec def proofFacts = Fact(
+</span></span><span style=display:flex><span>    proofFunction(baseCase) == baseValue,
+</span></span><span style=display:flex><span>    ...
+</span></span><span style=display:flex><span>    ∀( (x: Z) =&gt; (rangeOfX) → (proofFunction(x) == proofFunction(x - 1) * x) )
+</span></span><span style=display:flex><span>)</span></span></code></pre></div><p>In the above definition, <code>proofFunction</code> is the name we give our proof function, <code>paramList</code> is the list of parameter names and types needed for this proof function (which are formatted exactly like a parameter list in a regular Logika function), and <code>returnType</code> is the return type of the proof function (usually either <code>Z</code> for integer or <code>B</code> for boolean). The <code>= $</code> at the end of the proof function is indicating that its definition will be provided later.</p><p>Below the proof function, we include the <em>proof facts</em>, which is a recursive definition of the values for our proof function. We include one or more base cases, which list the value of our proof function for its smallest possible input (or for the smallest several inputs). Finally, we include our recursive case as a quantified statement &ndash; it lists the value of our proof function on all inputs bigger than our base cases. This recursive case uses the proof function&rsquo;s definition for a smaller value, like <code>proofFunction(x-1)</code>.</p><p>Logika facts are defined at the top of the Logika file, below the <code>import</code>s but before any of the code.</p><h2 id=example-logika-fact-to-define-factorial>Example: Logika fact to define factorial</h2><p>It is much easier to see how Logika facts work by using an example. Suppose we want to define the factorial operation. The first step is to come up with a <em>recursive definition</em>, which has us defining the operation the same way we would in a recursive function &ndash; with one or more <em>base cases</em> where we can define the operation for the simplest case, and one or more <em>recursive cases</em> that express a general instance of the problem in terms of a smaller instance.</p><p>For factorial, the simplest version is <span class="math align-center">$1!$</span>, which is just 1. In the general case, we have that:</p><span class="math align-center">$$
 n! = n * (n-1) * (n-2) * ... * 2 * 1 = n * (n-1)!
-$$</span><br><p>So we can write the following recursive definition:</p><ul><li>Base case:
-<span class="math align-center">$1! = 1$</span></li><li>Recursive case: for values of
-<span class="math align-center">$n$</span> greater than 1,
-<span class="math align-center">$n! = n * (n-1)!$</span></li></ul><p>And we can then translate the recursive definition to a Logika fact:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>@spec def factFunction(n: Z): Z = $
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>@spec def factorialFacts = Fact(
-</span></span><span class=line><span class=cl>    factFunction(1) == 1,
-</span></span><span class=line><span class=cl>    ∀ ( (x: Z) =&gt; (x &gt; 1) → (factFunction(x) == factFunction(x-1)*x) )
-</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>Let&rsquo;s consider each portion of this proof function. Here, <code>factFunction</code> is the name given to the proof function. It takes one parameter, <code>n</code>, which is an integer, and it returns an integer. We have two possible ways of calculating the value for the proof function, which we detail in <code>factorialFacts</code>. First, we define our base case:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>factFunction(1) == 1</span></span></code></pre></div><p>Which says that <code>factFunction(n)</code> is 1 if
-<span class="math align-center">$n == 1$</span>. This is the same as our base case in our recursive definition for factorial &ndash;
-<span class="math align-center">$1! = 1$</span>.</p><p>Next, consider the recursive case of our proof function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>∀ ( (x: Z) =&gt; (x &gt; 1) → (factFunction(x) == factFunction(x-1)*x) )</span></span></code></pre></div><p>This case states that for all integers <code>x</code> that are bigger than 1, we define <code>factFunction(x) == x * factFunction(x - 1)</code>. This is the same as our recursive case in our recursive definition for factorial &ndash; for values of
-<span class="math align-center">$n$</span> greater than 1,
-<span class="math align-center">$n! = n * (n-1)!$</span>.</p><h2 id=evaluating-a-logika-fact>Evaluating a Logika fact</h2><p>Suppose we used our <code>factorialFacts</code> proof function to calculate <code>factFunction(3)</code>. We would have:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>factFunction(3) == 3 * factFunction(2)      //we use the recursive case, since 3 &gt; 1
-</span></span><span class=line><span class=cl>factFunction(2) == 2 * factFunction(1)      //we use the recursive case, since 2 &gt; 1
-</span></span><span class=line><span class=cl>factFunction(1) == 1                        //we use the base case       </span></span></code></pre></div><p>Once we work down to:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>factFunction(1) == 1</span></span></code></pre></div><p>We can plug <code>1</code> in for <code>facfactFunctiontDef(1)</code> in <code>factFunction(2) == 2 * factFunction(1)</code>, which gives us:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>factFunction(2) == 2</span></span></code></pre></div><p>Similarly, we can plug <code>2</code> in for <code>factFunction(2)</code> in <code>factFunction(3) == 3 * factFunction(2)</code>, and see that:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>factFunction(3) == 6</span></span></code></pre></div><h2 id=using-logika-facts-as-justifications>Using Logika facts as justifications</h2><p>If we had our proof function, <code>factFunction</code>, then we could pull its two facts from its <code>factorialFacts</code> recursive definition into a proof block like this:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     factFunction(1) == 1                                                )   by ClaimOf(factorialFacts _),                                             
-</span></span><span class=line><span class=cl>    2 (     ∀ ( (x: Z) =&gt; (x &gt; 1) → (factFunction(x) == factFunction(x-1)*x) )  )   by ClaimOf(factorialFacts _)
-</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>Note that we must pull in the definitions EXACTLY as they are written in the proof function. The justification is always <code>ClaimOf(proofFacts _)</code> where <code>proofFacts</code> is the name of the recursive definition.</p><h2 id=using-logika-facts-in-postconditions-and-invariants>Using Logika facts in postconditions and invariants</h2><p>Consider the following full Logika program that includes a function to find and return a factorial, as well as test code that calls our factorial function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
-</span></span><span class=line><span class=cl>//@Logika: --manual --background save
-</span></span><span class=line><span class=cl>import org.sireum._
-</span></span><span class=line><span class=cl>import org.sireum.justification._
-</span></span><span class=line><span class=cl>import org.sireum.justification.natded.prop._
-</span></span><span class=line><span class=cl>import org.sireum.justification.natded.pred._
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>// n! = n * (n-1) * (n-2) * .. * 1
-</span></span><span class=line><span class=cl>// 1! = 1
-</span></span><span class=line><span class=cl>def factorial(n: Z): Z = {
-</span></span><span class=line><span class=cl>    var i: Z = 1        //how many multiplications we have done
-</span></span><span class=line><span class=cl>    var product: Z = 1  //our current calculation
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    while (i != n) {
-</span></span><span class=line><span class=cl>        i = i + 1
-</span></span><span class=line><span class=cl>        product = product * i
-</span></span><span class=line><span class=cl>    }
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    return product
-</span></span><span class=line><span class=cl>}
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//////// Test code ///////////
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var num: Z = 2
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var answer: Z = factorial(num)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>assert(answer == 2)</span></span></code></pre></div><p>We want to add a function contract, loop invariant block, and supporting logic blocks to demonstrate that <code>factorial</code> is returning <code>n!</code> and to prove the assert in our text code.</p><h3 id=writing-a-function-contract-using-a-logika-fact>Writing a function contract using a Logika fact</h3><p>We want our <code>factorial</code> function contract to say that it is returning <code>n!</code>, and that it is only defined for values of <code>n</code> that are greater than or equal to 0. We recall that our Logika fact, <code>factFunction</code>, defines the factorial operation:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>@spec def factFunction(n: Z): Z = $
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>@spec def factorialFacts = Fact(
-</span></span><span class=line><span class=cl>    factFunction(1) == 1,
-</span></span><span class=line><span class=cl>    ∀ ( (x: Z) =&gt; (x &gt; 1) → (factFunction(x) == factFunction(x-1)*x) )
-</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>And we will use <code>factFunction</code> to define what we mean by &ldquo;factorial&rdquo; in our <code>factorial</code> function contract:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>def factorial(n: Z): Z = {
-</span></span><span class=line><span class=cl>    Contract(
-</span></span><span class=line><span class=cl>        Requires(   n &gt;= 1                      ),  //factFunction(n) is only defined when n &gt;= 1
-</span></span><span class=line><span class=cl>        Ensures(    Res[Z] == factFunction(n)   )   //we promise to return factFunction(n), where factFunction defines n!
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //code for factorial function
-</span></span><span class=line><span class=cl>}</span></span></code></pre></div><h3 id=writing-a-loop-invariant-block-using-a-logika-fact>Writing a loop invariant block using a Logika fact</h3><p>We can similarly use <code>factFunction</code> in our loop invariant block. We noted at the end of section 9.3 that the invariant in our loop should be: <em>prod equals i factorial</em>. Now we have a way to express what we mean by &ldquo;factorial&rdquo;, so our invariant will be: <code>prod == factFunction(i)</code>. Since the <code>factFunction</code> proof function is only defined for parameters greater than or equal to 1, we need to add a second piece to the invariant to guarantee that <code>i</code> will always be greater than or equal to 1. We now have the following loop invariant block:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>while (i != n) {
-</span></span><span class=line><span class=cl>    Invariant(
-</span></span><span class=line><span class=cl>        Modifies(i, product),
-</span></span><span class=line><span class=cl>        product == factFunction(i),
-</span></span><span class=line><span class=cl>        i &gt;= 1
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //loop body
-</span></span><span class=line><span class=cl>}</span></span></code></pre></div><h3 id=finishing-the-verification>Finishing the verification</h3><p>All that remains is to:</p><ul><li>Prove our loop invariant holds before the loop begins</li><li>When we assume the loop invariant holds at the beginning of an iteration, prove that it still holds at the end of the iteration</li><li>Use the loop invariant together with the negation of the loop condition to prove the <code>factorial</code> postcondition</li><li>Prove the precondition holds in the calling code just before calling <code>factorial</code></li><li>Use the postcondition after calling <code>factorial</code> to prove the final assert</li></ul><p>Here is the completed verification:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
-</span></span><span class=line><span class=cl>//@Logika: --manual --background save
-</span></span><span class=line><span class=cl>import org.sireum._
-</span></span><span class=line><span class=cl>import org.sireum.justification._
-</span></span><span class=line><span class=cl>import org.sireum.justification.natded.prop._
-</span></span><span class=line><span class=cl>import org.sireum.justification.natded.pred._
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>@spec def factFunction(n: Z): Z = $
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>@spec def factorialFacts = Fact(
-</span></span><span class=line><span class=cl>    factFunction(1) == 1,
-</span></span><span class=line><span class=cl>    ∀((x: Z) =&gt; (x &gt; 1) → (factFunction(x) == factFunction(x-1)*x))
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>def factorial(n: Z): Z = {
-</span></span><span class=line><span class=cl>    Contract(
-</span></span><span class=line><span class=cl>        Requires(   n &gt;= 1                      ),  //factFunction(n) is only defined when n &gt;= 1
-</span></span><span class=line><span class=cl>        Ensures(    Res[Z] == factFunction(n)   )   //we promise to return factFunction(n), where factFunction defines n!
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    var i: Z = 1        //how many multiplications we have done
-</span></span><span class=line><span class=cl>    var product: Z = 1  //my current calculation
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //Prove invariant before loop begins
-</span></span><span class=line><span class=cl>    Deduce(
-</span></span><span class=line><span class=cl>        1 (     i == 1                      ) by Premise,
-</span></span><span class=line><span class=cl>        2 (     product == 1                ) by Premise,
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>         //pull in proof function base case
-</span></span><span class=line><span class=cl>        3 (     factFunction(1) == 1        ) by ClaimOf(factorialFacts _),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        //proves first loop invariant holds 
-</span></span><span class=line><span class=cl>        4 (     product == factFunction(i)  ) by Algebra*(1, 2, 3),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        //proves second loop invariant holds 
-</span></span><span class=line><span class=cl>        5 (     i &gt;= 1                      ) by Algebra*(1)
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    while (i != n) {
-</span></span><span class=line><span class=cl>        Invariant(
-</span></span><span class=line><span class=cl>            Modifies(i, product),
-</span></span><span class=line><span class=cl>            product == factFunction(i),
-</span></span><span class=line><span class=cl>            i &gt;= 1
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        i = i + 1
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        Deduce(
-</span></span><span class=line><span class=cl>            //from &#34;i = i + 1&#34;
-</span></span><span class=line><span class=cl>            1 (     i == Old(i) + 1                  ) by Premise,
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>            //loop invariant held before changing i
-</span></span><span class=line><span class=cl>            2 (     product == factFunction(Old(i))  ) by Premise,
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>            //rewrite invariant with no &#34;Old&#34;
-</span></span><span class=line><span class=cl>            3 (     product == factFunction(i - 1)   ) by Algebra*(1, 2),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>            //second loop invariant held before changing i
-</span></span><span class=line><span class=cl>            4 (     Old(i) &gt;= 1                      ) by Premise,
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>            //needed for the Logika fact
-</span></span><span class=line><span class=cl>            5 (     i &gt; 1                            ) by Algebra*(1, 4)
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        product = product * i
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        //Prove invariant still holds at end of iteration
-</span></span><span class=line><span class=cl>        Deduce(
-</span></span><span class=line><span class=cl>            //from &#34;product = product * i&#34;
-</span></span><span class=line><span class=cl>            1 (  product == Old(product) * i                                        ) by Premise,
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>            //from previous logic block
-</span></span><span class=line><span class=cl>            2 (  Old(product) == factFunction(i - 1)                                ) by Premise,
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>             //pull in recursive case from proof function
-</span></span><span class=line><span class=cl>            3 (  ∀( (x: Z) =&gt; x &gt; 1 → factFunction(x) == factFunction(x - 1) * x )  ) by ClaimOf(factorialFacts _),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>            //plug in &#34;i&#34; for &#34;x&#34; (where i is of type Z)
-</span></span><span class=line><span class=cl>            4 (  i &gt; 1 → factFunction(i) == factFunction(i - 1) * i                 ) by AllE[Z](3),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>            //from previous logic block
-</span></span><span class=line><span class=cl>            5 (  i &gt; 1                                                              ) by Premise,
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>            //i &gt; 1, so get right side of →
-</span></span><span class=line><span class=cl>            6 (  factFunction(i) == factFunction(i - 1) * i                         ) by ImplyE(4, 5),
-</span></span><span class=line><span class=cl>            7 (  product == factFunction(i - 1) * i                                 ) by Algebra*(1, 2),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>            //proves first invariant still holds
-</span></span><span class=line><span class=cl>            8 (  product == factFunction(i)                                         ) by Algebra*(6, 7),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>            //proves second invariant still holds
-</span></span><span class=line><span class=cl>            9 (  i &gt;= 1                                                             ) by Algebra*(5)
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>    }
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //Prove postcondition
-</span></span><span class=line><span class=cl>    Deduce(
-</span></span><span class=line><span class=cl>        1 (     product == factFunction(i)  ) by Premise,      //loop invariant
-</span></span><span class=line><span class=cl>        2 (     !(i != n)                   ) by Premise,      //loop condition false
-</span></span><span class=line><span class=cl>        3 (     i == n                      ) by Algebra*(2),
-</span></span><span class=line><span class=cl>        4 (     product == factFunction(n)  ) by Algebra*(1, 3)
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    return product
-</span></span><span class=line><span class=cl>}
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//////// Test code ///////////
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var num: Z = 2
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//Prove precondition
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     num == 2  ) by Premise,
-</span></span><span class=line><span class=cl>    2 (     num &gt;= 1  ) by Algebra*(1)     //proves factorial precondition
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>var answer: Z = factorial(num)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (  answer == factFunction(num)                                        ) by Premise,       //factorial postcondition
-</span></span><span class=line><span class=cl>    2 (  num == 2                                                           ) by Premise,
-</span></span><span class=line><span class=cl>    3 (  answer == factFunction(2)                                          ) by Algebra*(1, 2),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //pull in recursive case from proof function
-</span></span><span class=line><span class=cl>    4 (  ∀( (x: Z) =&gt; x &gt; 1 → factFunction(x) == factFunction(x - 1) * x )  ) by ClaimOf(factorialFacts _),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>     //plug in &#34;2&#34; for &#34;x&#34; (where 2 is an integer of type Z)
-</span></span><span class=line><span class=cl>    5 (  2 &gt; 1 → factFunction(2) == factFunction(2 - 1) * 2                 ) by AllE[Z](4),
-</span></span><span class=line><span class=cl>    6 (  2 &gt; 1                                                              ) by Algebra*(),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //2 &gt; 1, so use →
-</span></span><span class=line><span class=cl>    7 (  factFunction(2) == factFunction(2 - 1) * 2                         ) by ImplyE(5, 6),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //pull in base case from proof function
-</span></span><span class=line><span class=cl>    8 (  factFunction(1) == 1                                               ) by ClaimOf(factorialFacts _),
-</span></span><span class=line><span class=cl>    9 (  factFunction(2) == factFunction(1) * 2                             ) by Algebra*(7),
-</span></span><span class=line><span class=cl>    10 (  factFunction(2) == 2                                              ) by Algebra*(8, 9),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //proves claim in assert
-</span></span><span class=line><span class=cl>    11 (  answer == 2                                                       ) by Algebra*(1, 2, 10)
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>assert(answer == 2)</span></span></code></pre></div><h2 id=logika-fact-for-multiplication>Logika fact for multiplication</h2><p>Suppose we wanted to create a Logika fact that recursively defined multiplication. We first recursively define how we would multiply
-<span class="math align-center">$x * y$</span>. We know that our base case will be when
-<span class="math align-center">$y == 0$</span>, because anything times 0 is 0. We also saw that multiplication can be defined as repeated addition, so that
-<span class="math align-center">$x * y == x + x + ... x$</span> for a total of
-<span class="math align-center">$y$</span> additions. We also see that
-<span class="math align-center">$x * y == x + x * (y-1)$</span>, since we can pull out one of the additions and then have
-<span class="math align-center">$y-1$</span> additions left to do.</p><p>Here is our recursive definition of the problem:</p><ul><li>Base case: for all numbers x, x * 0 is 0</li><li>Recursive case: for all numbers x and all positive numbers y, x * y = x + x * (y-1)</li></ul><p>We can translate this directly to a proof function:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>@spec def multFunction(m: Z, n: Z): Z = $
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>@spec def multFacts = Fact(
-</span></span><span class=line><span class=cl>    //anything multiplied by 0 is just 0
-</span></span><span class=line><span class=cl>    ∀((x: Z) =&gt; multFunction(x, 0) == 0 ),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //defines m * n = m + m + ... + m (n times)
-</span></span><span class=line><span class=cl>    ∀( (x: Z) =&gt; ∀( (y: Z) =&gt; (y &gt; 1) → (multFunction(x, y) == multFunction(x,y-1)) ) )
-</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>We could use this Logika fact in the postcondition and loop invariant block for a multiplication function as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>// #Sireum #Logika
-</span></span><span class=line><span class=cl>//@Logika: --manual --background save
-</span></span><span class=line><span class=cl>import org.sireum._
-</span></span><span class=line><span class=cl>import org.sireum.justification._
-</span></span><span class=line><span class=cl>import org.sireum.justification.natded.prop._
-</span></span><span class=line><span class=cl>import org.sireum.justification.natded.pred._
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>@spec def multFunction(m: Z, n: Z): Z = $
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>@spec def multFacts = Fact(
-</span></span><span class=line><span class=cl>    //anything multiplied by 0 is just 0
-</span></span><span class=line><span class=cl>    ∀((x: Z) =&gt; multFunction(x, 0) == 0 ),
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //defines m * n = m + m + ... + m (n times)
-</span></span><span class=line><span class=cl>    ∀( (x: Z) =&gt; ∀( (y: Z) =&gt; (y &gt; 1) → (multFunction(x, y) == multFunction(x,y-1)) ) )
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//want to find: num1 + num1 + ... + num1 (a total of num2 times)
-</span></span><span class=line><span class=cl>def mult(num1: Z, num2: Z): Z = {
-</span></span><span class=line><span class=cl>    Contract( 
-</span></span><span class=line><span class=cl>        Requires( num2 &gt;= 1 ),
-</span></span><span class=line><span class=cl>        Ensures( Res[Z] == multFunction(num1, num2) )
-</span></span><span class=line><span class=cl>    )
-</span></span><span class=line><span class=cl>  
-</span></span><span class=line><span class=cl>    var answer: Z = 0
-</span></span><span class=line><span class=cl>    var cur: Z = 0
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    while (cur != num2) {
-</span></span><span class=line><span class=cl>        Invariant(
-</span></span><span class=line><span class=cl>            Modifies(cur, answer),
-</span></span><span class=line><span class=cl>            answer == multFunction(num1, cur),
-</span></span><span class=line><span class=cl>            cur &gt;= 0
-</span></span><span class=line><span class=cl>        )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>        cur = cur + 1
-</span></span><span class=line><span class=cl>        answer = answer + num1
-</span></span><span class=line><span class=cl>    }
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    return answer
-</span></span><span class=line><span class=cl>}</span></span></code></pre></div><p>The example above does not include the verification steps to prove the loop invariant and postcondition, but those things could be accomplished in the same way as for the <code>factorial</code> function.</p><h2 id=logika-fact-for-fibonacci-numbers>Logika fact for Fibonacci numbers</h2><p>The Fibonacci sequence is:</p><span class="math align-center">$$
+$$</span><br><p>So we can write the following recursive definition:</p><ul><li>Base case: <span class="math align-center">$1! = 1$</span></li><li>Recursive case: for values of <span class="math align-center">$n$</span> greater than 1, <span class="math align-center">$n! = n * (n-1)!$</span></li></ul><p>And we can then translate the recursive definition to a Logika fact:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>@spec def factFunction(n: Z): Z = $
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@spec def factorialFacts = Fact(
+</span></span><span style=display:flex><span>    factFunction(1) == 1,
+</span></span><span style=display:flex><span>    ∀ ( (x: Z) =&gt; (x &gt; 1) → (factFunction(x) == factFunction(x-1)*x) )
+</span></span><span style=display:flex><span>)</span></span></code></pre></div><p>Let&rsquo;s consider each portion of this proof function. Here, <code>factFunction</code> is the name given to the proof function. It takes one parameter, <code>n</code>, which is an integer, and it returns an integer. We have two possible ways of calculating the value for the proof function, which we detail in <code>factorialFacts</code>. First, we define our base case:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>factFunction(1) == 1</span></span></code></pre></div><p>Which says that <code>factFunction(n)</code> is 1 if <span class="math align-center">$n == 1$</span>. This is the same as our base case in our recursive definition for factorial &ndash; <span class="math align-center">$1! = 1$</span>.</p><p>Next, consider the recursive case of our proof function:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>∀ ( (x: Z) =&gt; (x &gt; 1) → (factFunction(x) == factFunction(x-1)*x) )</span></span></code></pre></div><p>This case states that for all integers <code>x</code> that are bigger than 1, we define <code>factFunction(x) == x * factFunction(x - 1)</code>. This is the same as our recursive case in our recursive definition for factorial &ndash; for values of <span class="math align-center">$n$</span> greater than 1, <span class="math align-center">$n! = n * (n-1)!$</span>.</p><h2 id=evaluating-a-logika-fact>Evaluating a Logika fact</h2><p>Suppose we used our <code>factorialFacts</code> proof function to calculate <code>factFunction(3)</code>. We would have:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>factFunction(3) == 3 * factFunction(2)      //we use the recursive case, since 3 &gt; 1
+</span></span><span style=display:flex><span>factFunction(2) == 2 * factFunction(1)      //we use the recursive case, since 2 &gt; 1
+</span></span><span style=display:flex><span>factFunction(1) == 1                        //we use the base case       </span></span></code></pre></div><p>Once we work down to:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>factFunction(1) == 1</span></span></code></pre></div><p>We can plug <code>1</code> in for <code>facfactFunctiontDef(1)</code> in <code>factFunction(2) == 2 * factFunction(1)</code>, which gives us:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>factFunction(2) == 2</span></span></code></pre></div><p>Similarly, we can plug <code>2</code> in for <code>factFunction(2)</code> in <code>factFunction(3) == 3 * factFunction(2)</code>, and see that:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>factFunction(3) == 6</span></span></code></pre></div><h2 id=using-logika-facts-as-justifications>Using Logika facts as justifications</h2><p>If we had our proof function, <code>factFunction</code>, then we could pull its two facts from its <code>factorialFacts</code> recursive definition into a proof block like this:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     factFunction(1) == 1                                                )   by ClaimOf(factorialFacts _),                                             
+</span></span><span style=display:flex><span>    2 (     ∀ ( (x: Z) =&gt; (x &gt; 1) → (factFunction(x) == factFunction(x-1)*x) )  )   by ClaimOf(factorialFacts _)
+</span></span><span style=display:flex><span>)</span></span></code></pre></div><p>Note that we must pull in the definitions EXACTLY as they are written in the proof function. The justification is always <code>ClaimOf(proofFacts _)</code> where <code>proofFacts</code> is the name of the recursive definition.</p><h2 id=using-logika-facts-in-postconditions-and-invariants>Using Logika facts in postconditions and invariants</h2><p>Consider the following full Logika program that includes a function to find and return a factorial, as well as test code that calls our factorial function:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// #Sireum #Logika
+</span></span><span style=display:flex><span>//@Logika: --manual --background save
+</span></span><span style=display:flex><span>import org.sireum._
+</span></span><span style=display:flex><span>import org.sireum.justification._
+</span></span><span style=display:flex><span>import org.sireum.justification.natded.prop._
+</span></span><span style=display:flex><span>import org.sireum.justification.natded.pred._
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>// n! = n * (n-1) * (n-2) * .. * 1
+</span></span><span style=display:flex><span>// 1! = 1
+</span></span><span style=display:flex><span>def factorial(n: Z): Z = {
+</span></span><span style=display:flex><span>    var i: Z = 1        //how many multiplications we have done
+</span></span><span style=display:flex><span>    var product: Z = 1  //our current calculation
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    while (i != n) {
+</span></span><span style=display:flex><span>        i = i + 1
+</span></span><span style=display:flex><span>        product = product * i
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    return product
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//////// Test code ///////////
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var num: Z = 2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var answer: Z = factorial(num)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>assert(answer == 2)</span></span></code></pre></div><p>We want to add a function contract, loop invariant block, and supporting logic blocks to demonstrate that <code>factorial</code> is returning <code>n!</code> and to prove the assert in our text code.</p><h3 id=writing-a-function-contract-using-a-logika-fact>Writing a function contract using a Logika fact</h3><p>We want our <code>factorial</code> function contract to say that it is returning <code>n!</code>, and that it is only defined for values of <code>n</code> that are greater than or equal to 0. We recall that our Logika fact, <code>factFunction</code>, defines the factorial operation:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>@spec def factFunction(n: Z): Z = $
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@spec def factorialFacts = Fact(
+</span></span><span style=display:flex><span>    factFunction(1) == 1,
+</span></span><span style=display:flex><span>    ∀ ( (x: Z) =&gt; (x &gt; 1) → (factFunction(x) == factFunction(x-1)*x) )
+</span></span><span style=display:flex><span>)</span></span></code></pre></div><p>And we will use <code>factFunction</code> to define what we mean by &ldquo;factorial&rdquo; in our <code>factorial</code> function contract:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>def factorial(n: Z): Z = {
+</span></span><span style=display:flex><span>    Contract(
+</span></span><span style=display:flex><span>        Requires(   n &gt;= 1                      ),  //factFunction(n) is only defined when n &gt;= 1
+</span></span><span style=display:flex><span>        Ensures(    Res[Z] == factFunction(n)   )   //we promise to return factFunction(n), where factFunction defines n!
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //code for factorial function
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><h3 id=writing-a-loop-invariant-block-using-a-logika-fact>Writing a loop invariant block using a Logika fact</h3><p>We can similarly use <code>factFunction</code> in our loop invariant block. We noted at the end of section 9.3 that the invariant in our loop should be: <em>prod equals i factorial</em>. Now we have a way to express what we mean by &ldquo;factorial&rdquo;, so our invariant will be: <code>prod == factFunction(i)</code>. Since the <code>factFunction</code> proof function is only defined for parameters greater than or equal to 1, we need to add a second piece to the invariant to guarantee that <code>i</code> will always be greater than or equal to 1. We now have the following loop invariant block:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>while (i != n) {
+</span></span><span style=display:flex><span>    Invariant(
+</span></span><span style=display:flex><span>        Modifies(i, product),
+</span></span><span style=display:flex><span>        product == factFunction(i),
+</span></span><span style=display:flex><span>        i &gt;= 1
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //loop body
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><h3 id=finishing-the-verification>Finishing the verification</h3><p>All that remains is to:</p><ul><li>Prove our loop invariant holds before the loop begins</li><li>When we assume the loop invariant holds at the beginning of an iteration, prove that it still holds at the end of the iteration</li><li>Use the loop invariant together with the negation of the loop condition to prove the <code>factorial</code> postcondition</li><li>Prove the precondition holds in the calling code just before calling <code>factorial</code></li><li>Use the postcondition after calling <code>factorial</code> to prove the final assert</li></ul><p>Here is the completed verification:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// #Sireum #Logika
+</span></span><span style=display:flex><span>//@Logika: --manual --background save
+</span></span><span style=display:flex><span>import org.sireum._
+</span></span><span style=display:flex><span>import org.sireum.justification._
+</span></span><span style=display:flex><span>import org.sireum.justification.natded.prop._
+</span></span><span style=display:flex><span>import org.sireum.justification.natded.pred._
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@spec def factFunction(n: Z): Z = $
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@spec def factorialFacts = Fact(
+</span></span><span style=display:flex><span>    factFunction(1) == 1,
+</span></span><span style=display:flex><span>    ∀((x: Z) =&gt; (x &gt; 1) → (factFunction(x) == factFunction(x-1)*x))
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>def factorial(n: Z): Z = {
+</span></span><span style=display:flex><span>    Contract(
+</span></span><span style=display:flex><span>        Requires(   n &gt;= 1                      ),  //factFunction(n) is only defined when n &gt;= 1
+</span></span><span style=display:flex><span>        Ensures(    Res[Z] == factFunction(n)   )   //we promise to return factFunction(n), where factFunction defines n!
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    var i: Z = 1        //how many multiplications we have done
+</span></span><span style=display:flex><span>    var product: Z = 1  //my current calculation
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //Prove invariant before loop begins
+</span></span><span style=display:flex><span>    Deduce(
+</span></span><span style=display:flex><span>        1 (     i == 1                      ) by Premise,
+</span></span><span style=display:flex><span>        2 (     product == 1                ) by Premise,
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>         //pull in proof function base case
+</span></span><span style=display:flex><span>        3 (     factFunction(1) == 1        ) by ClaimOf(factorialFacts _),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        //proves first loop invariant holds 
+</span></span><span style=display:flex><span>        4 (     product == factFunction(i)  ) by Algebra*(1, 2, 3),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        //proves second loop invariant holds 
+</span></span><span style=display:flex><span>        5 (     i &gt;= 1                      ) by Algebra*(1)
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    while (i != n) {
+</span></span><span style=display:flex><span>        Invariant(
+</span></span><span style=display:flex><span>            Modifies(i, product),
+</span></span><span style=display:flex><span>            product == factFunction(i),
+</span></span><span style=display:flex><span>            i &gt;= 1
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        i = i + 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        Deduce(
+</span></span><span style=display:flex><span>            //from &#34;i = i + 1&#34;
+</span></span><span style=display:flex><span>            1 (     i == Old(i) + 1                  ) by Premise,
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            //loop invariant held before changing i
+</span></span><span style=display:flex><span>            2 (     product == factFunction(Old(i))  ) by Premise,
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            //rewrite invariant with no &#34;Old&#34;
+</span></span><span style=display:flex><span>            3 (     product == factFunction(i - 1)   ) by Algebra*(1, 2),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            //second loop invariant held before changing i
+</span></span><span style=display:flex><span>            4 (     Old(i) &gt;= 1                      ) by Premise,
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            //needed for the Logika fact
+</span></span><span style=display:flex><span>            5 (     i &gt; 1                            ) by Algebra*(1, 4)
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        product = product * i
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        //Prove invariant still holds at end of iteration
+</span></span><span style=display:flex><span>        Deduce(
+</span></span><span style=display:flex><span>            //from &#34;product = product * i&#34;
+</span></span><span style=display:flex><span>            1 (  product == Old(product) * i                                        ) by Premise,
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            //from previous logic block
+</span></span><span style=display:flex><span>            2 (  Old(product) == factFunction(i - 1)                                ) by Premise,
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>             //pull in recursive case from proof function
+</span></span><span style=display:flex><span>            3 (  ∀( (x: Z) =&gt; x &gt; 1 → factFunction(x) == factFunction(x - 1) * x )  ) by ClaimOf(factorialFacts _),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            //plug in &#34;i&#34; for &#34;x&#34; (where i is of type Z)
+</span></span><span style=display:flex><span>            4 (  i &gt; 1 → factFunction(i) == factFunction(i - 1) * i                 ) by AllE[Z](3),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            //from previous logic block
+</span></span><span style=display:flex><span>            5 (  i &gt; 1                                                              ) by Premise,
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            //i &gt; 1, so get right side of →
+</span></span><span style=display:flex><span>            6 (  factFunction(i) == factFunction(i - 1) * i                         ) by ImplyE(4, 5),
+</span></span><span style=display:flex><span>            7 (  product == factFunction(i - 1) * i                                 ) by Algebra*(1, 2),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            //proves first invariant still holds
+</span></span><span style=display:flex><span>            8 (  product == factFunction(i)                                         ) by Algebra*(6, 7),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            //proves second invariant still holds
+</span></span><span style=display:flex><span>            9 (  i &gt;= 1                                                             ) by Algebra*(5)
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //Prove postcondition
+</span></span><span style=display:flex><span>    Deduce(
+</span></span><span style=display:flex><span>        1 (     product == factFunction(i)  ) by Premise,      //loop invariant
+</span></span><span style=display:flex><span>        2 (     !(i != n)                   ) by Premise,      //loop condition false
+</span></span><span style=display:flex><span>        3 (     i == n                      ) by Algebra*(2),
+</span></span><span style=display:flex><span>        4 (     product == factFunction(n)  ) by Algebra*(1, 3)
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    return product
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//////// Test code ///////////
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var num: Z = 2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//Prove precondition
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     num == 2  ) by Premise,
+</span></span><span style=display:flex><span>    2 (     num &gt;= 1  ) by Algebra*(1)     //proves factorial precondition
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>var answer: Z = factorial(num)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (  answer == factFunction(num)                                        ) by Premise,       //factorial postcondition
+</span></span><span style=display:flex><span>    2 (  num == 2                                                           ) by Premise,
+</span></span><span style=display:flex><span>    3 (  answer == factFunction(2)                                          ) by Algebra*(1, 2),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //pull in recursive case from proof function
+</span></span><span style=display:flex><span>    4 (  ∀( (x: Z) =&gt; x &gt; 1 → factFunction(x) == factFunction(x - 1) * x )  ) by ClaimOf(factorialFacts _),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>     //plug in &#34;2&#34; for &#34;x&#34; (where 2 is an integer of type Z)
+</span></span><span style=display:flex><span>    5 (  2 &gt; 1 → factFunction(2) == factFunction(2 - 1) * 2                 ) by AllE[Z](4),
+</span></span><span style=display:flex><span>    6 (  2 &gt; 1                                                              ) by Algebra*(),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //2 &gt; 1, so use →
+</span></span><span style=display:flex><span>    7 (  factFunction(2) == factFunction(2 - 1) * 2                         ) by ImplyE(5, 6),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //pull in base case from proof function
+</span></span><span style=display:flex><span>    8 (  factFunction(1) == 1                                               ) by ClaimOf(factorialFacts _),
+</span></span><span style=display:flex><span>    9 (  factFunction(2) == factFunction(1) * 2                             ) by Algebra*(7),
+</span></span><span style=display:flex><span>    10 (  factFunction(2) == 2                                              ) by Algebra*(8, 9),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //proves claim in assert
+</span></span><span style=display:flex><span>    11 (  answer == 2                                                       ) by Algebra*(1, 2, 10)
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>assert(answer == 2)</span></span></code></pre></div><h2 id=logika-fact-for-multiplication>Logika fact for multiplication</h2><p>Suppose we wanted to create a Logika fact that recursively defined multiplication. We first recursively define how we would multiply <span class="math align-center">$x * y$</span>. We know that our base case will be when <span class="math align-center">$y == 0$</span>, because anything times 0 is 0. We also saw that multiplication can be defined as repeated addition, so that <span class="math align-center">$x * y == x + x + ... x$</span> for a total of <span class="math align-center">$y$</span> additions. We also see that <span class="math align-center">$x * y == x + x * (y-1)$</span>, since we can pull out one of the additions and then have <span class="math align-center">$y-1$</span> additions left to do.</p><p>Here is our recursive definition of the problem:</p><ul><li>Base case: for all numbers x, x * 0 is 0</li><li>Recursive case: for all numbers x and all positive numbers y, x * y = x + x * (y-1)</li></ul><p>We can translate this directly to a proof function:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>@spec def multFunction(m: Z, n: Z): Z = $
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@spec def multFacts = Fact(
+</span></span><span style=display:flex><span>    //anything multiplied by 0 is just 0
+</span></span><span style=display:flex><span>    ∀((x: Z) =&gt; multFunction(x, 0) == 0 ),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //defines m * n = m + m + ... + m (n times)
+</span></span><span style=display:flex><span>    ∀( (x: Z) =&gt; ∀( (y: Z) =&gt; (y &gt; 1) → (multFunction(x, y) == multFunction(x,y-1)) ) )
+</span></span><span style=display:flex><span>)</span></span></code></pre></div><p>We could use this Logika fact in the postcondition and loop invariant block for a multiplication function as follows:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>// #Sireum #Logika
+</span></span><span style=display:flex><span>//@Logika: --manual --background save
+</span></span><span style=display:flex><span>import org.sireum._
+</span></span><span style=display:flex><span>import org.sireum.justification._
+</span></span><span style=display:flex><span>import org.sireum.justification.natded.prop._
+</span></span><span style=display:flex><span>import org.sireum.justification.natded.pred._
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@spec def multFunction(m: Z, n: Z): Z = $
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@spec def multFacts = Fact(
+</span></span><span style=display:flex><span>    //anything multiplied by 0 is just 0
+</span></span><span style=display:flex><span>    ∀((x: Z) =&gt; multFunction(x, 0) == 0 ),
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //defines m * n = m + m + ... + m (n times)
+</span></span><span style=display:flex><span>    ∀( (x: Z) =&gt; ∀( (y: Z) =&gt; (y &gt; 1) → (multFunction(x, y) == multFunction(x,y-1)) ) )
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//want to find: num1 + num1 + ... + num1 (a total of num2 times)
+</span></span><span style=display:flex><span>def mult(num1: Z, num2: Z): Z = {
+</span></span><span style=display:flex><span>    Contract( 
+</span></span><span style=display:flex><span>        Requires( num2 &gt;= 1 ),
+</span></span><span style=display:flex><span>        Ensures( Res[Z] == multFunction(num1, num2) )
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>    var answer: Z = 0
+</span></span><span style=display:flex><span>    var cur: Z = 0
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    while (cur != num2) {
+</span></span><span style=display:flex><span>        Invariant(
+</span></span><span style=display:flex><span>            Modifies(cur, answer),
+</span></span><span style=display:flex><span>            answer == multFunction(num1, cur),
+</span></span><span style=display:flex><span>            cur &gt;= 0
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        cur = cur + 1
+</span></span><span style=display:flex><span>        answer = answer + num1
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    return answer
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>The example above does not include the verification steps to prove the loop invariant and postcondition, but those things could be accomplished in the same way as for the <code>factorial</code> function.</p><h2 id=logika-fact-for-fibonacci-numbers>Logika fact for Fibonacci numbers</h2><p>The Fibonacci sequence is:</p><span class="math align-center">$$
 1, 1, 2, 3, 5, 8, 13, ...
-$$</span><p><br><br></p><p>The first two Fibonacci numbers are both 1, and subsequent Fibonacci numbers are found by adding the two previous values. In the sequence above, we see that the two latest numbers were 8 and 13, so the next number in the sequence will be
-<span class="math align-center">$8 + 13 = 21$</span>.</p><p>We can recursively define the Fibonacci sequence as follows:</p><ul><li>Base case 1: the first Fibonacci number is 1</li><li>Base case 2: the second Fibonacci number is 1</li><li>Recursive case: for all numbers x greater than 2, the x-th Fibonacci number is the (x-1)-th Fibonacci number + the (x-2)-th Fibonacci number</li></ul><p>We can translate this directly to a Logika fact:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>//defines the nth number in the Fibonacci sequence
-</span></span><span class=line><span class=cl>//1, 1, 2, 3, 5, 8, 13, ...
-</span></span><span class=line><span class=cl>@spec def fibFunction(n: Z): Z = $
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>@spec def fibFacts = Fact(
-</span></span><span class=line><span class=cl>    fibFunction(1) == 1,
-</span></span><span class=line><span class=cl>    fibFunction(2) == 2,
-</span></span><span class=line><span class=cl>    ∀( (x: Z) =&gt; (x &gt; 2) → fibFunction(x-1) + fibFunction(x-2) )
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    //defines m * n = m + m + ... + m (n times)
-</span></span><span class=line><span class=cl>    ∀( (x: Z) =&gt; ∀( (y: Z) =&gt; (y &gt; 1) → (multFunction(x, y) == multFunction(x,y-1)) ) )
-</span></span><span class=line><span class=cl>)</span></span></code></pre></div><p>Which we could use in a postcondition and loop invariant if we wrote a function to compute the Fibonacci numbers.</p><footer class=footline></footer></article></div></main></div></div><script src=/cis301/js/clipboard.min.js?1754341383 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1754341383 defer></script><script>function useMathJax(e){window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},e)}useMathJax(JSON.parse("{}"))</script><script id=MathJax-script async src=/cis301/js/mathjax/tex-mml-chtml.js?1754341383></script><script src=/cis301/js/theme.js?1754341383 defer></script><script src=/cis301/js/tele-scroll.js?1754341383 defer></script></body></html>
+$$</span><p><br><br></p><p>The first two Fibonacci numbers are both 1, and subsequent Fibonacci numbers are found by adding the two previous values. In the sequence above, we see that the two latest numbers were 8 and 13, so the next number in the sequence will be <span class="math align-center">$8 + 13 = 21$</span>.</p><p>We can recursively define the Fibonacci sequence as follows:</p><ul><li>Base case 1: the first Fibonacci number is 1</li><li>Base case 2: the second Fibonacci number is 1</li><li>Recursive case: for all numbers x greater than 2, the x-th Fibonacci number is the (x-1)-th Fibonacci number + the (x-2)-th Fibonacci number</li></ul><p>We can translate this directly to a Logika fact:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>//defines the nth number in the Fibonacci sequence
+</span></span><span style=display:flex><span>//1, 1, 2, 3, 5, 8, 13, ...
+</span></span><span style=display:flex><span>@spec def fibFunction(n: Z): Z = $
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@spec def fibFacts = Fact(
+</span></span><span style=display:flex><span>    fibFunction(1) == 1,
+</span></span><span style=display:flex><span>    fibFunction(2) == 2,
+</span></span><span style=display:flex><span>    ∀( (x: Z) =&gt; (x &gt; 2) → fibFunction(x-1) + fibFunction(x-2) )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    //defines m * n = m + m + ... + m (n times)
+</span></span><span style=display:flex><span>    ∀( (x: Z) =&gt; ∀( (y: Z) =&gt; (y &gt; 1) → (multFunction(x, y) == multFunction(x,y-1)) ) )
+</span></span><span style=display:flex><span>)</span></span></code></pre></div><p>Which we could use in a postcondition and loop invariant if we wrote a function to compute the Fibonacci numbers.</p><footer class=footline></footer></article></div></main></div><script>window.MathJax=Object.assign(window.MathJax||{},{tex:{inlineMath:[["\\(","\\)"],["$","$"]],displayMath:[["\\[","\\]"],["$$","$$"]]},options:{enableMenu:!1}},JSON.parse("{}"))</script><script id=MathJax-script async src=/cis301/js/mathjax/tex-mml-chtml.js?1755623696></script><script src=/cis301/js/clipboard/clipboard.min.js?1755623696 defer></script><script src=/cis301/js/perfect-scrollbar/perfect-scrollbar.min.js?1755623696 defer></script><script src=/cis301/js/theme.min.js?1755623696 defer></script></div><script src=/cis301/js/tele-scroll.min.js?1755623696 defer></script></body></html>

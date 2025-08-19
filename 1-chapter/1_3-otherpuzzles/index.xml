@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Other Puzzles :: CIS 301 Textbook</title><link>https://textbooks.cs.ksu.edu/cis301/1-chapter/1_3-otherpuzzles/</link><description>We will look at a variety of other logic puzzles, each of which involve some statements being false and some statements being true.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Other Puzzles :: CIS 301 Textbook</title><link>https://textbooks.cs.ksu.edu/cis301/1-chapter/1_3-otherpuzzles/index.html</link><description>We will look at a variety of other logic puzzles, each of which involve some statements being false and some statements being true.
 Lion and Unicorn The setup for a Lion and Unicorn puzzle can vary, but the idea is that both Lion and Unicorn have specific days that they tell only lies, and other specific days that they only tell the truth.
 Here is one example:
-Lion always lies on Mondays, Tuesdays, and Wednesdays.</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://textbooks.cs.ksu.edu/cis301/1-chapter/1_3-otherpuzzles/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+Lion always lies on Mondays, Tuesdays, and Wednesdays.
+Lion always tells the truth on other days.
+Unicorn always lies on Thursdays, Fridays, and Saturdays, and always tells the truth on other days. On Sunday, everyone tells the truth. Lion says: “Yesterday was one of my lying days."
+Unicorn says: “Yesterday was one of my lying days, too.” What day is it?</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://textbooks.cs.ksu.edu/cis301/1-chapter/1_3-otherpuzzles/index.xml" rel="self" type="application/rss+xml"/></channel></rss>

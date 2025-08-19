@@ -1,125 +1,124 @@
-<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.128.0"><meta name=generator content="Relearn 6.0.0"><meta name=description content="Assignment statements in a program come in two forms – with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.
-For example, an increment statement like x = x + 1 MUTATES the value of x by updating its value to be one bigger than it was before."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary"><meta name=twitter:title content="Assignment Statements :: CIS 301 Textbook"><meta name=twitter:description content="Assignment statements in a program come in two forms – with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.
-For example, an increment statement like x = x + 1 MUTATES the value of x by updating its value to be one bigger than it was before."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/8-chapter/8_5-assignment/"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Assignment Statements :: CIS 301 Textbook"><meta property="og:description" content="Assignment statements in a program come in two forms – with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.
-For example, an increment statement like x = x + 1 MUTATES the value of x by updating its value to be one bigger than it was before."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="Intro to Programming Logic"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2025-04-29T11:46:26-05:00"><meta itemprop=name content="Assignment Statements :: CIS 301 Textbook"><meta itemprop=description content="Assignment statements in a program come in two forms – with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.
-For example, an increment statement like x = x + 1 MUTATES the value of x by updating its value to be one bigger than it was before."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2025-04-29T11:46:26-05:00"><meta itemprop=wordCount content="1501"><title>Assignment Statements :: CIS 301 Textbook</title>
-<link href=https://textbooks.cs.ksu.edu/cis301/8-chapter/8_5-assignment/ rel=canonical type=text/html title="Assignment Statements :: CIS 301 Textbook"><link href=/cis301/8-chapter/8_5-assignment/index.xml rel=alternate type=application/rss+xml title="Assignment Statements :: CIS 301 Textbook"><link href=/cis301/8-chapter/8_5-assignment/index.print.html rel=alternate type=text/html title="Assignment Statements :: CIS 301 Textbook"><link href=/cis301/8-chapter/8_5-assignment/embed.html rel=alternate type=text/html title="Assignment Statements :: CIS 301 Textbook"><link href=/cis301/css/fontawesome-all.min.css?1754341383 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fontawesome-all.min.css?1754341383 rel=stylesheet></noscript><link href=/cis301/css/nucleus.css?1754341383 rel=stylesheet><link href=/cis301/css/auto-complete.css?1754341383 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/auto-complete.css?1754341383 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar.min.css?1754341383 rel=stylesheet><link href=/cis301/css/fonts.css?1754341383 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/css/fonts.css?1754341383 rel=stylesheet></noscript><link href=/cis301/css/theme.css?1754341383 rel=stylesheet><link href=/cis301/css/theme-auto.css?1754341383 rel=stylesheet id=R-variant-style><link href=/cis301/css/chroma-auto.css?1754341383 rel=stylesheet id=R-variant-chroma-style><link href=/cis301/css/variant.css?1754341383 rel=stylesheet><link href=/cis301/css/print.css?1754341383 rel=stylesheet media=print><script src=/cis301/js/variant.js?1754341383></script><script>window.relearn=window.relearn||{},window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.index_js_url="/cis301/index.search.js",window.variants&&variants.init(["auto","light-theme","dark-theme"]),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`</script><link href=/cis301/css/custom.css?1754341383 rel=stylesheet></head><body class="mobile-support tele disableInlineCopyToClipboard" data-url=/cis301/8-chapter/8_5-assignment/><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable default" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=assignment-statements>Assignment Statements</h1><p>Assignment statements in a program come in two forms &ndash; with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.</p><p>For example, an increment statement like <code>x = x + 1</code> MUTATES the value of <code>x</code> by updating its value to be one bigger than it was before. In order to make sense of such a statement, we need to know the previous value of <code>x</code>.</p><p>In contrast, a statement like <code>y = x + 1</code> assigns to <code>y</code> one more than the value in <code>x</code>. We do not need to know the previous value of <code>y</code>, as we are not using it in the assignment statement. (We do need to know the value of <code>x</code>).</p><h2 id=assignments-without-mutation>Assignments without mutation</h2><p>We have already seen the steps necessary to process assignment statements that do not involve variable mutation. Recall that we can declare as a <code>Premise</code> any assignment statement or claim from a previous proof block involving variables that have not since changed.</p><p>For example, suppose we want to verify the following program so the assert statement at the end will hold (this example again eliminates the Logika mode notation and the necessary import statements, which we will continue to do in subsequent examples):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>val x: Z = 4
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>val y: Z = x + 2
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>val z: Z = 10 - x
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//the assert will not hold yet
-</span></span><span class=line><span class=cl>assert(y == z &amp; y == 6)</span></span></code></pre></div><p>Since none of the statements involve variable mutation, we can do the verification in a single proof block:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>val x: Z = 4    
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>val y: Z = x + 2
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>val z: Z = 10 - x
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     x == 4          )   by Premise,     //assignment of unchanged variable
-</span></span><span class=line><span class=cl>    2 (     y == x + 2      )   by Premise,     //assignment of unchanged variable
-</span></span><span class=line><span class=cl>    3 (     z == 10 - x     )   by Premise,     //assignment of unchanged variable
-</span></span><span class=line><span class=cl>    4 (     y == 4 + 2      )   by Subst_&lt;(1, 2),
-</span></span><span class=line><span class=cl>    5 (     z == 10 - 4     )   by Subst_&lt;(1, 3),
-</span></span><span class=line><span class=cl>    6 (     y == 6          )   by Algebra*(4),
-</span></span><span class=line><span class=cl>    7 (     z == 6          )   by Algebra*(5),
-</span></span><span class=line><span class=cl>    8 (     y == z          )   by Subst_&gt;(7, 6),
-</span></span><span class=line><span class=cl>    9 (     y == z ∧ y == 6 )   by AndI(8, 6)
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//now the assert will hold
-</span></span><span class=line><span class=cl>assert(y == z &amp; y == 6)</span></span></code></pre></div><p>Note that we did need to do <code>AndI</code> so that the last claim was <code>y == z ∧ y == 6 </code>, even though we had previously established the claims <code>y == z</code> and <code>y == 6</code>. In order for an assert to hold (at least until we switch Logika modes in chapter 10), we need to have established EXACTLY the claim in the assert in a previous proof block.</p><h2 id=assignments-with-mutation>Assignments with mutation</h2><p>Assignments with mutation are trickier &ndash; we need to know the old value of a variable in order to reason about its new value. For example, if we have the following program:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var x: Z = 4
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>x = x + 1
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//this assert will not hold yet
-</span></span><span class=line><span class=cl>assert(x == 5)</span></span></code></pre></div><p>Then we might try to add the following proof blocks:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var x: Z = 4
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     x == 4      )   by Premise  //from previous variable assignment
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>x = x + 1
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     x == x + 1  )   by Premise, //NO! Need to distinguish between old x (right side) and new x (left side)
-</span></span><span class=line><span class=cl>    2 (     x == 4      )   by Premise, //NO! x has changed since this claim
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//this assert will not hold yet
-</span></span><span class=line><span class=cl>assert(x == 5)</span></span></code></pre></div><p>&mldr;but then we get stuck in the second proof block. There, <code>x</code> is supposed to refer to the CURRENT value of <code>x</code> (after being incremented), but both our attempted claims are untrue. The current value of <code>x</code> is not one more than itself (this makes no sense!), and we can tell from reading the code that <code>x</code> is now 5, not 4.</p><p>To help reason about changing variables, Logika has a special <code>Old(varName)</code> function that refers to the OLD value of a variable called <code>varName</code>, just before the latest update. In the example above, we can use <code>Old(x)</code> in the second proof block to refer to <code>x</code>&rsquo;s value just before it was incremented. We can now change our premises and finish the verification as follows:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var x: Z = 4
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     x == 4      )   by Premise  //from previous variable assignment
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>x = x + 1
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     x == Old(x) + 1     )   by Premise, //Yes! x equals its old value plus 1
-</span></span><span class=line><span class=cl>    2 (     Old(x) == 4         )   by Premise, //Yes! The old value of x was 4
-</span></span><span class=line><span class=cl>    3 (     x == 4 + 1          )   by Subst_&lt;(2, 1),
-</span></span><span class=line><span class=cl>    4 (     x == 5              )   by Algebra*(3)  //Could have skipped line 3 and used &#34;Algebra*(1, 2)&#34; instead
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//now the assert will hold
-</span></span><span class=line><span class=cl>assert(x == 5)</span></span></code></pre></div><p>By the end of the proof block following a variable mutation, we need to express everything we know about the variable&rsquo;s current value WITHOUT using the <code>Old</code> terminology, as its scope will end when the proof block ends. Moreover, we only ever have one <code>Old</code> value available in a proof block &ndash; the variable that was most recently changed. This means we will need proof blocks after each variable mutation to process the changes to any related facts.</p><h2 id=variable-swap-example>Variable swap example</h2><p>Suppose we have the following program:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var x: Z = Z.read()
-</span></span><span class=line><span class=cl>var y: Z = Z.read()
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>val temp: Z = x
-</span></span><span class=line><span class=cl>x = y
-</span></span><span class=line><span class=cl>y = temp
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//what do we want to assert we did?</span></span></code></pre></div><p>We can see that this program gets two user input values, <code>x</code> and <code>y</code>, and then swaps their values. So if <code>x</code> was originally 4 and <code>y</code> was originally 6, then at the end of the program <code>x</code> would be 6 and <code>y</code> would be 4.</p><p>We would like to be able to assert what we did &ndash; that <code>x</code> now has the original value from <code>y</code>, and that <code>y</code> now has the original value from <code>x</code>. To do this, we might invent dummy constants called <code>xOrig</code> and <code>yOrig</code> that represent the original values of those variables. Then we can add our assert:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var x: Z = Z.read()
-</span></span><span class=line><span class=cl>var y: Z = Z.read()
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//the original values of both inputs
-</span></span><span class=line><span class=cl>val xOrig: Z = x
-</span></span><span class=line><span class=cl>val yOrig: Z = y
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>val temp: Z = x
-</span></span><span class=line><span class=cl>x = y
-</span></span><span class=line><span class=cl>y = temp
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//x and y have swapped
-</span></span><span class=line><span class=cl>//x has y&#39;s original value, and y has x&#39;s original value
-</span></span><span class=line><span class=cl>assert(x == yOrig ∧ y == xOrig)     //this assert will not yet hold</span></span></code></pre></div><p>We can complete the verification by adding proof blocks after assignment statements, being careful to update all we know (without using the <code>Old</code> value) by the end of each block:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>var x: Z = Z.read()
-</span></span><span class=line><span class=cl>var y: Z = Z.read()
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//the original values of both inputs
-</span></span><span class=line><span class=cl>val xOrig: Z = x
-</span></span><span class=line><span class=cl>val yOrig: Z = y
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     xOrig == x  )   by Premise,
-</span></span><span class=line><span class=cl>    2 (     yOrig == y  )   by Premise
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//swap x and y
-</span></span><span class=line><span class=cl>val temp: Z = x
-</span></span><span class=line><span class=cl>x = y
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     x == y              )   by Premise,     //from the assignment statement
-</span></span><span class=line><span class=cl>    2 (     temp == Old(x)      )   by Premise,     //temp equaled the OLD value of x
-</span></span><span class=line><span class=cl>    3 (     xOrig == Old(x)     )   by Premise,     //xOrig equaled the OLD value of x
-</span></span><span class=line><span class=cl>    4 (     yOrig == y          )   by Premise,     //yOrig still equals y
-</span></span><span class=line><span class=cl>    5 (     temp == xOrig       )   by Algebra*(2, 3),
-</span></span><span class=line><span class=cl>    6 (     x == yOrig          )   by Algebra*(1, 4)
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>y = temp
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>Deduce(
-</span></span><span class=line><span class=cl>    1 (     y == temp           )   by Premise,     //from the assignment statement
-</span></span><span class=line><span class=cl>    2 (     temp == xOrig       )   by Premise,     //from the previous proof block (temp and xOrig are unchanged since)
-</span></span><span class=line><span class=cl>    3 (     yOrig == Old(y)     )   by Premise,     //yOrig equaled the OLD value of y
-</span></span><span class=line><span class=cl>    4 (     y == xOrig          )   by Algebra*(1, 2),
-</span></span><span class=line><span class=cl>    5 (     x == yOrig          )   by Premise,     //from the previous proof block (x and yOrig are unchanged since)  
-</span></span><span class=line><span class=cl>    6 (     x == yOrig ∧ y == xOrig )   by AndI(5, 4)
-</span></span><span class=line><span class=cl>)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>//x and y have swapped
-</span></span><span class=line><span class=cl>//x has y&#39;s original value, and y has x&#39;s original value
-</span></span><span class=line><span class=cl>assert(x == yOrig ∧ y == xOrig)     //this assert will hold now</span></span></code></pre></div><p>Notice that in each proof block, we express as much as we can about all variables/values in the program. In the first proof block, even though <code>xOrig</code> and <code>yOrig</code> were not used in the previous assignment statement, we still expressed how the current values our other variables compared to <code>xOrig</code> and <code>yOrig</code>. It helps to think about what you are trying to claim in the final assert &ndash; since our assert involved <code>xOrig</code> and <code>yOrig</code>, we needed to relate the current values of our variables to those values as we progressed through the program.</p><footer class=footline></footer></article></div></main></div></div><script src=/cis301/js/clipboard.min.js?1754341383 defer></script><script src=/cis301/js/perfect-scrollbar.min.js?1754341383 defer></script><script src=/cis301/js/theme.js?1754341383 defer></script><script src=/cis301/js/tele-scroll.js?1754341383 defer></script></body></html>
+<!doctype html><html lang=en-us dir=ltr itemscope itemtype=http://schema.org/Article data-r-output-format=html><head><meta charset=utf-8><meta name=viewport content="height=device-height,width=device-width,initial-scale=1,minimum-scale=1"><meta name=generator content="Hugo 0.148.1"><meta name=generator content="Relearn 8.0.0"><meta name=description content="Assignment statements in a program come in two forms – with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.
+For example, an increment statement like x = x + 1 MUTATES the value of x by updating its value to be one bigger than it was before. In order to make sense of such a statement, we need to know the previous value of x."><meta name=author content="Julie Thornton"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://textbooks.cs.ksu.edu/cis301/images/hero.png"><meta name=twitter:title content="Assignment Statements :: CIS 301 Textbook"><meta name=twitter:description content="Assignment statements in a program come in two forms – with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.
+For example, an increment statement like x = x + 1 MUTATES the value of x by updating its value to be one bigger than it was before. In order to make sense of such a statement, we need to know the previous value of x."><meta property="og:url" content="https://textbooks.cs.ksu.edu/cis301/8-chapter/8_5-assignment/index.html"><meta property="og:site_name" content="CIS 301 Textbook"><meta property="og:title" content="Assignment Statements :: CIS 301 Textbook"><meta property="og:description" content="Assignment statements in a program come in two forms – with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.
+For example, an increment statement like x = x + 1 MUTATES the value of x by updating its value to be one bigger than it was before. In order to make sense of such a statement, we need to know the previous value of x."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="Intro to Programming Logic"><meta property="article:published_time" content="2018-08-24T10:53:26-05:00"><meta property="article:modified_time" content="2025-04-29T11:46:26-05:00"><meta property="og:image" content="https://textbooks.cs.ksu.edu/cis301/images/hero.png"><meta itemprop=name content="Assignment Statements :: CIS 301 Textbook"><meta itemprop=description content="Assignment statements in a program come in two forms – with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.
+For example, an increment statement like x = x + 1 MUTATES the value of x by updating its value to be one bigger than it was before. In order to make sense of such a statement, we need to know the previous value of x."><meta itemprop=datePublished content="2018-08-24T10:53:26-05:00"><meta itemprop=dateModified content="2025-04-29T11:46:26-05:00"><meta itemprop=wordCount content="1509"><meta itemprop=image content="https://textbooks.cs.ksu.edu/cis301/images/hero.png"><title>Assignment Statements :: CIS 301 Textbook</title><link href=https://textbooks.cs.ksu.edu/cis301/8-chapter/8_5-assignment/index.html rel=canonical type=text/html title="Assignment Statements :: CIS 301 Textbook"><link href=/cis301/8-chapter/8_5-assignment/index.xml rel=alternate type=application/rss+xml title="Assignment Statements :: CIS 301 Textbook"><link href=/cis301/8-chapter/8_5-assignment/index.print.html rel=alternate type=text/html title="Assignment Statements :: CIS 301 Textbook"><link href=/cis301/8-chapter/8_5-assignment/embed.html rel=alternate type=text/html title="Assignment Statements :: CIS 301 Textbook"><link href=/cis301/css/auto-complete/auto-complete.min.css?1755623696 rel=stylesheet><script src=/cis301/js/auto-complete/auto-complete.min.js?1755623696 defer></script><script src=/cis301/js/search-lunr.min.js?1755623696 defer></script><script src=/cis301/js/search.min.js?1755623696 defer></script><script>window.relearn=window.relearn||{},window.relearn.index_js_url="/cis301/searchindex.en.js?1755623696"</script><script src=/cis301/js/lunr/lunr.min.js?1755623696 defer></script><script src=/cis301/js/lunr/lunr.stemmer.support.min.js?1755623696 defer></script><script src=/cis301/js/lunr/lunr.multi.min.js?1755623696 defer></script><script src=/cis301/js/lunr/lunr.en.min.js?1755623696 defer></script><script>window.relearn=window.relearn||{},window.relearn.contentLangs=["en"]</script><link href=/cis301/fonts/fontawesome/css/fontawesome-all.min.css?1755623696 rel=stylesheet media=print onload='this.media="all",this.onload=null'><noscript><link href=/cis301/fonts/fontawesome/css/fontawesome-all.min.css?1755623696 rel=stylesheet></noscript><link href=/cis301/css/perfect-scrollbar/perfect-scrollbar.min.css?1755623696 rel=stylesheet><link href=/cis301/css/theme.min.css?1755623696 rel=stylesheet><link href=/cis301/css/format-html.min.css?1755623696 rel=stylesheet id=R-format-style><script>window.relearn=window.relearn||{},window.relearn.min=`.min`,window.relearn.path="/8-chapter/8_5-assignment/index.html",window.relearn.relBasePath="../..",window.relearn.relBaseUri="../../..",window.relearn.absBaseUri="https://textbooks.cs.ksu.edu/cis301",window.relearn.disableAnchorCopy=!1,window.relearn.disableAnchorScrolling=!1,window.relearn.disableInlineCopyToClipboard=!0,window.relearn.enableBlockCodeWrap=!1,window.relearn.getItem=(e,t)=>e.getItem(t),window.relearn.setItem=(e,t,n)=>e.setItem(t,n),window.relearn.removeItem=(e,t)=>e.removeItem(t),window.T_Copy_to_clipboard=`Copy to clipboard`,window.T_Copied_to_clipboard=`Copied to clipboard!`,window.T_Copy_link_to_clipboard=`Copy link to clipboard`,window.T_Link_copied_to_clipboard=`Copied link to clipboard!`,window.T_Reset_view=`Reset view`,window.T_View_reset=`View reset!`,window.T_No_results_found=`No results found for "{0}"`,window.T_N_results_found=`{1} results found for "{0}"`,window.relearn.themevariants=["light-theme"],window.relearn.customvariantname="my-custom-variant",window.relearn.writeVariant=!1,window.relearn.changeVariant=function(e){var t=document.documentElement.dataset.rThemeVariant;window.relearn.setItem(window.localStorage,window.relearn.absBaseUri+"/variant",e),document.documentElement.dataset.rThemeVariant=e,t!=e&&(document.dispatchEvent(new CustomEvent("themeVariantLoaded",{detail:{variant:e,oldVariant:t}})),window.relearn.markVariant())},window.relearn.markVariant=function(){var e=window.relearn.getItem(window.localStorage,window.relearn.absBaseUri+"/variant");document.querySelectorAll(".R-variantswitcher select").forEach(t=>{t.value=e})},window.relearn.initVariant=function(){var e=window.relearn.getItem(window.localStorage,window.relearn.absBaseUri+"/variant")??"";e==window.relearn.customvariantname||(!e||!window.relearn.themevariants.includes(e))&&(e=window.relearn.themevariants[0],window.relearn.writeVariant&&window.relearn.setItem(window.localStorage,window.relearn.absBaseUri+"/variant",e)),document.documentElement.dataset.rThemeVariant=e},window.relearn.initVariant(),window.relearn.markVariant()</script><link href=/cis301/css/custom.css?1755623696 rel=stylesheet></head><body class="mobile-support html" data-url=/cis301/8-chapter/8_5-assignment/index.html><div id=tele class="tele mirror"><div id=R-body class=default-animation><div id=R-body-overlay></div><div id=R-main-overlay></div><main id=R-body-inner class="highlightable 8-chapter" tabindex=-1><div class=flex-block-wrapper><article class=default><header class=headline></header><h1 id=assignment-statements>Assignment Statements</h1><p>Assignment statements in a program come in two forms &ndash; with and without mutations. Assignments without mutation are those that give a value to a variable without using the old value of that variable. Assignments with mutation are variable assignments that use the old value of a variable to calculate a value for the variable.</p><p>For example, an increment statement like <code>x = x + 1</code> MUTATES the value of <code>x</code> by updating its value to be one bigger than it was before. In order to make sense of such a statement, we need to know the previous value of <code>x</code>.</p><p>In contrast, a statement like <code>y = x + 1</code> assigns to <code>y</code> one more than the value in <code>x</code>. We do not need to know the previous value of <code>y</code>, as we are not using it in the assignment statement. (We do need to know the value of <code>x</code>).</p><h2 id=assignments-without-mutation>Assignments without mutation</h2><p>We have already seen the steps necessary to process assignment statements that do not involve variable mutation. Recall that we can declare as a <code>Premise</code> any assignment statement or claim from a previous proof block involving variables that have not since changed.</p><p>For example, suppose we want to verify the following program so the assert statement at the end will hold (this example again eliminates the Logika mode notation and the necessary import statements, which we will continue to do in subsequent examples):</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>val x: Z = 4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>val y: Z = x + 2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>val z: Z = 10 - x
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//the assert will not hold yet
+</span></span><span style=display:flex><span>assert(y == z &amp; y == 6)</span></span></code></pre></div><p>Since none of the statements involve variable mutation, we can do the verification in a single proof block:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>val x: Z = 4    
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>val y: Z = x + 2
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>val z: Z = 10 - x
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     x == 4          )   by Premise,     //assignment of unchanged variable
+</span></span><span style=display:flex><span>    2 (     y == x + 2      )   by Premise,     //assignment of unchanged variable
+</span></span><span style=display:flex><span>    3 (     z == 10 - x     )   by Premise,     //assignment of unchanged variable
+</span></span><span style=display:flex><span>    4 (     y == 4 + 2      )   by Subst_&lt;(1, 2),
+</span></span><span style=display:flex><span>    5 (     z == 10 - 4     )   by Subst_&lt;(1, 3),
+</span></span><span style=display:flex><span>    6 (     y == 6          )   by Algebra*(4),
+</span></span><span style=display:flex><span>    7 (     z == 6          )   by Algebra*(5),
+</span></span><span style=display:flex><span>    8 (     y == z          )   by Subst_&gt;(7, 6),
+</span></span><span style=display:flex><span>    9 (     y == z ∧ y == 6 )   by AndI(8, 6)
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//now the assert will hold
+</span></span><span style=display:flex><span>assert(y == z &amp; y == 6)</span></span></code></pre></div><p>Note that we did need to do <code>AndI</code> so that the last claim was <code>y == z ∧ y == 6 </code>, even though we had previously established the claims <code>y == z</code> and <code>y == 6</code>. In order for an assert to hold (at least until we switch Logika modes in chapter 10), we need to have established EXACTLY the claim in the assert in a previous proof block.</p><h2 id=assignments-with-mutation>Assignments with mutation</h2><p>Assignments with mutation are trickier &ndash; we need to know the old value of a variable in order to reason about its new value. For example, if we have the following program:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>var x: Z = 4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>x = x + 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//this assert will not hold yet
+</span></span><span style=display:flex><span>assert(x == 5)</span></span></code></pre></div><p>Then we might try to add the following proof blocks:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>var x: Z = 4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     x == 4      )   by Premise  //from previous variable assignment
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>x = x + 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     x == x + 1  )   by Premise, //NO! Need to distinguish between old x (right side) and new x (left side)
+</span></span><span style=display:flex><span>    2 (     x == 4      )   by Premise, //NO! x has changed since this claim
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//this assert will not hold yet
+</span></span><span style=display:flex><span>assert(x == 5)</span></span></code></pre></div><p>&mldr;but then we get stuck in the second proof block. There, <code>x</code> is supposed to refer to the CURRENT value of <code>x</code> (after being incremented), but both our attempted claims are untrue. The current value of <code>x</code> is not one more than itself (this makes no sense!), and we can tell from reading the code that <code>x</code> is now 5, not 4.</p><p>To help reason about changing variables, Logika has a special <code>Old(varName)</code> function that refers to the OLD value of a variable called <code>varName</code>, just before the latest update. In the example above, we can use <code>Old(x)</code> in the second proof block to refer to <code>x</code>&rsquo;s value just before it was incremented. We can now change our premises and finish the verification as follows:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>var x: Z = 4
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     x == 4      )   by Premise  //from previous variable assignment
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>x = x + 1
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     x == Old(x) + 1     )   by Premise, //Yes! x equals its old value plus 1
+</span></span><span style=display:flex><span>    2 (     Old(x) == 4         )   by Premise, //Yes! The old value of x was 4
+</span></span><span style=display:flex><span>    3 (     x == 4 + 1          )   by Subst_&lt;(2, 1),
+</span></span><span style=display:flex><span>    4 (     x == 5              )   by Algebra*(3)  //Could have skipped line 3 and used &#34;Algebra*(1, 2)&#34; instead
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//now the assert will hold
+</span></span><span style=display:flex><span>assert(x == 5)</span></span></code></pre></div><p>By the end of the proof block following a variable mutation, we need to express everything we know about the variable&rsquo;s current value WITHOUT using the <code>Old</code> terminology, as its scope will end when the proof block ends. Moreover, we only ever have one <code>Old</code> value available in a proof block &ndash; the variable that was most recently changed. This means we will need proof blocks after each variable mutation to process the changes to any related facts.</p><h2 id=variable-swap-example>Variable swap example</h2><p>Suppose we have the following program:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>var x: Z = Z.read()
+</span></span><span style=display:flex><span>var y: Z = Z.read()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>val temp: Z = x
+</span></span><span style=display:flex><span>x = y
+</span></span><span style=display:flex><span>y = temp
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//what do we want to assert we did?</span></span></code></pre></div><p>We can see that this program gets two user input values, <code>x</code> and <code>y</code>, and then swaps their values. So if <code>x</code> was originally 4 and <code>y</code> was originally 6, then at the end of the program <code>x</code> would be 6 and <code>y</code> would be 4.</p><p>We would like to be able to assert what we did &ndash; that <code>x</code> now has the original value from <code>y</code>, and that <code>y</code> now has the original value from <code>x</code>. To do this, we might invent dummy constants called <code>xOrig</code> and <code>yOrig</code> that represent the original values of those variables. Then we can add our assert:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>var x: Z = Z.read()
+</span></span><span style=display:flex><span>var y: Z = Z.read()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//the original values of both inputs
+</span></span><span style=display:flex><span>val xOrig: Z = x
+</span></span><span style=display:flex><span>val yOrig: Z = y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>val temp: Z = x
+</span></span><span style=display:flex><span>x = y
+</span></span><span style=display:flex><span>y = temp
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//x and y have swapped
+</span></span><span style=display:flex><span>//x has y&#39;s original value, and y has x&#39;s original value
+</span></span><span style=display:flex><span>assert(x == yOrig ∧ y == xOrig)     //this assert will not yet hold</span></span></code></pre></div><p>We can complete the verification by adding proof blocks after assignment statements, being careful to update all we know (without using the <code>Old</code> value) by the end of each block:</p><div class=highlight dir=auto><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>var x: Z = Z.read()
+</span></span><span style=display:flex><span>var y: Z = Z.read()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//the original values of both inputs
+</span></span><span style=display:flex><span>val xOrig: Z = x
+</span></span><span style=display:flex><span>val yOrig: Z = y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     xOrig == x  )   by Premise,
+</span></span><span style=display:flex><span>    2 (     yOrig == y  )   by Premise
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//swap x and y
+</span></span><span style=display:flex><span>val temp: Z = x
+</span></span><span style=display:flex><span>x = y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     x == y              )   by Premise,     //from the assignment statement
+</span></span><span style=display:flex><span>    2 (     temp == Old(x)      )   by Premise,     //temp equaled the OLD value of x
+</span></span><span style=display:flex><span>    3 (     xOrig == Old(x)     )   by Premise,     //xOrig equaled the OLD value of x
+</span></span><span style=display:flex><span>    4 (     yOrig == y          )   by Premise,     //yOrig still equals y
+</span></span><span style=display:flex><span>    5 (     temp == xOrig       )   by Algebra*(2, 3),
+</span></span><span style=display:flex><span>    6 (     x == yOrig          )   by Algebra*(1, 4)
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>y = temp
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Deduce(
+</span></span><span style=display:flex><span>    1 (     y == temp           )   by Premise,     //from the assignment statement
+</span></span><span style=display:flex><span>    2 (     temp == xOrig       )   by Premise,     //from the previous proof block (temp and xOrig are unchanged since)
+</span></span><span style=display:flex><span>    3 (     yOrig == Old(y)     )   by Premise,     //yOrig equaled the OLD value of y
+</span></span><span style=display:flex><span>    4 (     y == xOrig          )   by Algebra*(1, 2),
+</span></span><span style=display:flex><span>    5 (     x == yOrig          )   by Premise,     //from the previous proof block (x and yOrig are unchanged since)  
+</span></span><span style=display:flex><span>    6 (     x == yOrig ∧ y == xOrig )   by AndI(5, 4)
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//x and y have swapped
+</span></span><span style=display:flex><span>//x has y&#39;s original value, and y has x&#39;s original value
+</span></span><span style=display:flex><span>assert(x == yOrig ∧ y == xOrig)     //this assert will hold now</span></span></code></pre></div><p>Notice that in each proof block, we express as much as we can about all variables/values in the program. In the first proof block, even though <code>xOrig</code> and <code>yOrig</code> were not used in the previous assignment statement, we still expressed how the current values our other variables compared to <code>xOrig</code> and <code>yOrig</code>. It helps to think about what you are trying to claim in the final assert &ndash; since our assert involved <code>xOrig</code> and <code>yOrig</code>, we needed to relate the current values of our variables to those values as we progressed through the program.</p><footer class=footline></footer></article></div></main></div><script src=/cis301/js/clipboard/clipboard.min.js?1755623696 defer></script><script src=/cis301/js/perfect-scrollbar/perfect-scrollbar.min.js?1755623696 defer></script><script src=/cis301/js/theme.min.js?1755623696 defer></script></div><script src=/cis301/js/tele-scroll.min.js?1755623696 defer></script></body></html>
