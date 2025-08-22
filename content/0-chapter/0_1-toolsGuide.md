@@ -13,7 +13,7 @@ In CIS 301, we will use a tool called Logika, which is a verifier and a proof ch
 
 ### Getting Installer Script
 
-Go [here](https://sireum.org/getting-started/#latest-release-bin-codeive) under "Latest Release/VSCodium-based IVE Only" to install Logika. 
+Go [here](https://sireum.org/getting-started/#latest-release-bin-codeive) under "VSCodium-based IVE Only" (which is also under the "Latest Release" heading above) to install Logika. 
 
 Select either "Windows" or "macOS/Linux". The instructions below should update based on your selection. Copy the command listed for your operating system.
 
