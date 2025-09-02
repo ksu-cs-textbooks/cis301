@@ -54,7 +54,7 @@ OR: P Q |
 NOT: P |
 -------------
      T | F
-     T | T
+     F | T
 
 
 IMPLIES: P Q |
