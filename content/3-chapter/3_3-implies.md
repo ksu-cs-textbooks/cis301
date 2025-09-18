@@ -103,7 +103,7 @@ Equivalently, we are certain that if Evelyn DOESN'T make cookies, then Wilma won
 However, if we know that Evelyn makes cookies, we can't be sure that Wilma will eat them. We know she won't eat any other kind of cookie, but maybe Wilma is full today and won't even eat Evelyn's cookies...we can't be sure.
 
 
-## p UNLESS b, p EXCEPT IF q
+## p UNLESS q, p EXCEPT IF q
 
 The statements "p UNLESS q" and "p EXCEPT IF q" are equivalent...and both can sometimes be ambiguous. For example, consider the following sentence:
 
