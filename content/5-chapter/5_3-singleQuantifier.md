@@ -101,7 +101,7 @@ We will practice translating from predicate logic to English. Think about what t
 - `∀ x (inHouse(x) → isMouse(x))`
     - <details>
         <summary> <b> Click here for solution </b></summary>
-            --> "Everything in the house is a mouse."
+            --> "Every animal in the house is a mouse."
         </details>
         <br>
 
@@ -109,7 +109,7 @@ We will practice translating from predicate logic to English. Think about what t
 
     - <details>
         <summary> <b> Click here for solution </b></summary>
-            --> "Not everything in the house is a mouse."
+            --> "Not every animal in the house is a mouse."
         </details>
         <br>
 
