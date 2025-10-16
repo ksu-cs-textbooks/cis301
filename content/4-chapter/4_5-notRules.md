@@ -250,7 +250,7 @@ We see that both OR elimination subproofs ended with a contradiction (`F`). Just
             ),
             
             //use OrE rule to tie together subproofs
-            12 (        F       )   by OrE(5, 6 , 8)
+            12 (        F       )   by OrE(5, 6 , 9)
 
             //want to reach a contradiction
         ),
