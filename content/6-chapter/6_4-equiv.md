@@ -55,8 +55,8 @@ Proof(
 
         3 SubProof(
             4 Assume (  P(a)  ),
-            5 (     ∃((x: T) => P(x))   ) by ExistsI[T](3),
-            6 (     F                   ) by NegE(4, 1)
+            5 (     ∃((x: T) => P(x))   ) by ExistsI[T](4),
+            6 (     F                   ) by NegE(5, 1)
         ),
         7 (     ¬P(a)                   ) by NegI(3)
 
