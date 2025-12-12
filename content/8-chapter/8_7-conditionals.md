@@ -136,7 +136,7 @@ if (x > y) {
 } else {
     Deduce(
         1 (     ¬(x > y)    )   by Premise,    //the condition is NOT true
-        2 (     x <= y      )   by Algebra*(2)
+        2 (     x <= y      )   by Algebra*(1)
     )
 
     max = y
